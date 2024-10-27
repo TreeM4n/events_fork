@@ -1,0 +1,44 @@
+
+###########
+# trime_stuff.gfx
+# made by:
+# tr33
+#
+###########
+
+
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_trime_hourglass"
+		texturefile = "gfx/models/portraits/trimetimelord/trime_hourglass_mini.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_leader_recruitment_bg_trime_timelord"
+		texturefile = "gfx/trime_stuff/trime_leader_background.dds"
+	}
+
+	
+	#spriteType = {
+	#	name = "GFX_trime_background"
+	#	texturefile = "gfx/trime_stuff/portraits/city_sets/trime_background.dds"
+	#}
+
+	spriteType = {
+		name = "GFX_trime_event_background"
+		texturefile = "gfx/trime_stuff/trime_event_background.dds"
+	}
+
+	spriteType = {
+		name = "GFX_trime_hourglass_tick"
+		texturefile = "gfx/trime_stuff/trime_hourglass_message.dds"
+	}
+
+	spriteType = {
+		name = "GFX_trime_future_fleet_arrived"
+		texturefile = "gfx/trime_stuff/message_dimensional_fleet_destroyed.dds"
+	}
+
+	
+}

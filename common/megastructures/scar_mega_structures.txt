@@ -1,0 +1,542 @@
+# aevums palace
+
+# TODO: make this locked by tech not flag , and the event gives the tech .... more obvious for players
+scar_mega_chronomancer_palace = {
+	entity = "SCAR_archaeology_guild_entity"	# thx wamo
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = {
+		x = -27
+		y = -27
+	}
+	scales_with_planet = yes
+	build_time = 1800
+	resources = {
+		category = megastructures
+		cost = {
+			minerals = 5000
+			unity = 2500
+			influence = 100
+		}
+		upkeep = {
+			energy = 5
+		}
+		produces = {
+			trigger = {
+				host_has_dlc = "Ancient Relics Story Pack"
+			}
+			minor_artifacts = 2
+		}
+	}
+	#prerequisites = { 
+	#"tech_interstellar_assembly"
+	# }
+	potential = {
+		has_country_flag = trime_buildgianttemple
+	}
+	possible = {
+		exists = starbase
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		#custom_tooltip = {
+		#	fail_text = "requires_no_existing_megastructure"
+		#	has_no_non_gate_megastructure = yes
+		#}
+		custom_tooltip = {
+			fail_text = "requires_surveyed_system"
+			NOT = {
+				any_system_planet = {
+					is_surveyed = {
+						who = prev.from
+						status = no
+					}
+				}
+			}
+		}
+		#custom_tooltip = {
+		#	fail_text = "requires_capital_system"
+		#	from.capital_scope.solar_system = { is_same_value = root }
+		#}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "requires_survey_not_habitable"
+				is_surveyed = {
+					# prevent leaking habitability information
+					who = prev.from
+					status = yes
+				}
+				colonizable_planet = no
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				NOT = {
+					has_anomaly = yes
+				}
+			}
+			#custom_tooltip = {
+			#	fail_text = "requires_not_minor_planetary_body"
+			#	NOR = {
+			#		is_asteroid = yes
+			#		is_moon = yes
+			#	}
+			#}
+			custom_tooltip = {
+				fail_text = "requires_not_star"
+				is_star = no
+			}
+			#custom_tooltip = {
+			#	fail_text = "requires_not_astral_scar"
+			#	is_astral_scar = no
+			#}
+			custom_tooltip = {
+				fail_text = "requires_not_ring_world"
+				is_ringworld = no
+			}
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		factor = 100
+		#modifier = {
+		#	factor = 0.1
+		#	starbase = { NOT = { has_starbase_size >= starbase_starfortress } }
+		#}
+		modifier = {
+			factor = 0.1
+			any_neighbor_system = {
+				exists = owner
+				NOT = {
+					owner = {
+						is_same_value = from
+					}
+				}
+			}
+		}
+	}
+	country_modifier = {
+		planet_building_build_speed_mult = 0.2
+	}
+	on_build_start = {
+	}
+	on_build_cancel = {
+	}
+	on_build_complete = {
+		from = {
+			remove_country_flag = trime_buildgianttemple
+			country_event = {
+				id = trime.11
+			}
+		}
+	}
+}
+
+# archeological guild
+scar_mega_archeological_guild = {
+	entity = "SCAR_archaeology_guild_entity"	# thx, WanM
+	#portrait = "" #TODO
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = {
+		x = -27
+		y = -27
+	}
+	#show_in_outliner = yes
+	scales_with_planet = no
+	build_time = 720
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 1000
+			#unity = 2500
+			influence = 100
+			minor_artifacts = 200
+		}
+		upkeep = {
+			energy = 20
+		}
+		produces = {
+			#minor_artifacts = 2
+		}
+	}
+	prerequisites = {
+		"scar_tech_unlock_archeoguild"
+	}
+	potential = {
+		host_has_dlc = "Ancient Relics Story Pack"
+	}
+	possible = {
+		exists = starbase
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_megastructure"
+			has_no_non_gate_megastructure = yes
+		}
+		custom_tooltip = {
+			fail_text = "requires_surveyed_system"
+			NOT = {
+				any_system_planet = {
+					is_surveyed = {
+						who = prev.from
+						status = no
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = scar_requires_no_archeo_guild
+			from = {
+				NOT = {
+					has_country_flag = scar_mega_archeological_guild_build
+				}
+			}
+		}
+		#custom_tooltip = {
+		#	fail_text = "requires_capital_system"
+		#	from.capital_scope.solar_system = { is_same_value = root }
+		#}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "requires_survey_not_habitable"
+				is_surveyed = {
+					# prevent leaking habitability information
+					who = prev.from
+					status = yes
+				}
+				colonizable_planet = no
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				NOT = {
+					has_anomaly = yes
+				}
+			}
+			custom_tooltip = {
+				fail_text = "scar_requires_archaeological_site"
+				OR = {
+					has_deposit = d_artifacts_research_1
+					has_deposit = d_artifacts_research_2
+					has_deposit = d_artifacts_research_3
+					has_deposit = d_artifacts_mining_1
+					has_deposit = d_artifacts_mining_2
+					has_deposit = d_artifacts_mining_3
+					has_deposit = d_artifacts_planet_1
+					has_deposit = d_artifacts_planet_2
+					has_deposit = d_artifacts_planet_3
+				}
+			}
+			#custom_tooltip = {
+			#	fail_text = "requires_not_minor_planetary_body"
+			#	NOR = {
+			#		is_asteroid = yes
+			#		is_moon = yes
+			#	}
+			#}
+			#custom_tooltip = {
+			#	fail_text = "requires_not_star"
+			#	is_star = no
+			#}
+			#custom_tooltip = {
+			#	fail_text = "requires_not_astral_scar"
+			#	is_astral_scar = no
+			#}
+			#custom_tooltip = {
+			#	fail_text = "requires_not_ring_world"
+			#	is_ringworld = no
+			#}	
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		factor = 100
+		#modifier = {
+		#	factor = 0.1
+		#	starbase = { NOT = { has_starbase_size >= starbase_starfortress } }
+		#}
+		modifier = {
+			factor = 0.1
+			any_neighbor_system = {
+				exists = owner
+				NOT = {
+					owner = {
+						is_same_value = from
+					}
+				}
+			}
+		}
+	}
+	country_modifier = {
+		#station_researchers_produces_mult = 0.4
+		#category_archaeostudies_research_speed_mult = 0.2
+		#stations_astral_threads_produces_add = 1
+		custom_tooltip = scar_mega_archeological_guild_tt #TODO: make a second stage where the actual country modifiers are
+	}
+	on_build_start = {
+	}
+	on_build_cancel = {
+	}
+	on_build_complete = {
+		solar_system = {
+			while = {
+				count = 3
+				random_system_planet = {
+					limit = {
+						colonizable_planet = no
+						is_terraforming_candidate = no
+						OR = {
+							has_deposit_for = shipclass_research_station
+							has_deposit = no
+						}
+					}
+					random_list = {
+						4 = {
+							add_deposit = d_artifacts_research_1
+						}
+						2 = {
+							add_deposit = d_artifacts_research_2
+						}
+						1 = {
+							add_deposit = d_artifacts_research_3
+						}
+					}
+				}
+			}
+			owner = {
+				set_country_flag = scar_mega_archeological_guild_build
+			}
+		}
+	}
+}
+
+#shroud needle
+scar_mega_shroud_needle = {
+	entity = "SCAR_psi_core_entity_stage_0"	# thx, WanM
+	#portrait = "" #TODO
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = {
+		x = -27
+		y = -27
+	}
+	#show_in_outliner = yes
+	use_planet_resource = yes
+	scales_with_planet = no
+	build_time = 1080
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 1000
+			#unity = 2500
+			influence = 100
+			sr_zro = 200
+		}
+		upkeep = {
+			energy = 20
+		}
+		produces = {
+			#minor_artifacts = 2
+		}
+	}
+	prerequisites = {
+		"scar_tech_unlock_shroud_needle"
+	}
+	potential = {
+		host_has_dlc = "Ancient Relics Story Pack"
+		NOT = {
+			has_country_flag = scar_build_scar_mega_shroud_needle
+		}
+	}
+	possible = {
+		exists = starbase
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_megastructure"
+			has_no_non_gate_megastructure = yes
+		}
+		custom_tooltip = {
+			fail_text = "requires_surveyed_system"
+			NOT = {
+				any_system_planet = {
+					is_surveyed = {
+						who = prev.from
+						status = no
+					}
+				}
+			}
+		}
+		#custom_tooltip = {
+		#	fail_text = "requires_capital_system"
+		#	from.capital_scope.solar_system = { is_same_value = root }
+		#}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "requires_no_existing_megastructure"
+				NOR = {
+					has_planet_flag = megastructure
+					has_planet_flag = has_megastructure
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_survey_not_habitable"
+				is_surveyed = {
+					# prevent leaking habitability information
+					who = prev.from
+					status = yes
+				}
+				colonizable_planet = no
+			}
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				NOT = {
+					has_anomaly = yes
+				}
+			}			
+			custom_tooltip = {
+				fail_text = "requires_not_minor_planetary_body"
+				NOR = {
+					is_asteroid = yes
+					is_moon = yes
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_star"
+				is_star = no
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_astral_scar"
+				is_astral_scar = no
+			}
+			custom_tooltip = {
+				fail_text = "requires_not_ring_world"
+				is_ringworld = no
+			}
+		}
+	}
+	# root = system
+	# from = country
+	ai_weight = {
+		factor = 100
+		#modifier = {
+		#	factor = 0.1
+		#	starbase = { NOT = { has_starbase_size >= starbase_starfortress } }
+		#}
+		modifier = {
+			factor = 0.1
+			any_neighbor_system = {
+				exists = owner
+				NOT = {
+					owner = {
+						is_same_value = from
+					}
+				}
+			}
+		}
+	}
+	country_modifier = {
+		custom_tooltip = SCAR_shroud_needle_3_mod_tooltip
+	}
+	on_build_start = {
+	}
+	on_build_cancel = {
+	}
+	on_build_complete = {
+		solar_system = {
+			while = {
+				count = 7
+				random_system_planet = {
+					limit = {
+						colonizable_planet = no
+						is_terraforming_candidate = no
+						OR = {
+							has_deposit_for = shipclass_research_station
+							has_deposit = no
+						}
+					}
+					random_list = {
+						4 = {
+							add_deposit = d_zro_deposit_1
+						}
+						2 = {
+							add_deposit = d_zro_deposit_2
+						}
+						1 = {
+							add_deposit = d_zro_deposit_3
+						}
+					}
+				}
+			}
+			owner = {
+				set_country_flag = scar_build_scar_mega_shroud_needle
+			}
+		}
+	}
+}
+
+scar_mega_shroud_needle_2 = {
+	entity = "SCAR_psi_core_entity_stage_1"
+	construction_entity = "SCAR_psi_core_entity_stage_1"
+	#construction_scale = 1.02 #to avoid z-fighting of consrucion entity with the base entity
+	portrait = "GFX_megastructure_construction_background"
+	entity_offset = {
+		x = -27
+		y = -27
+	}	
+	#show_in_outliner = no
+	use_planet_resource = yes
+	scales_with_planet = no
+	build_time = 1080	# 3 years
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 2500
+			#unity = 2500
+			influence = 200
+			sr_zro = 500
+		}
+		upkeep = {
+			energy = 40
+		}
+	}
+	construction_blocks_and_blocked_by = none
+	upgrade_from = {
+		scar_mega_shroud_needle
+	}
+	prerequisites = {
+		"scar_tech_unlock_shroud_needle"
+	}
+	potential = {
+		always = yes
+	}
+	country_modifier = {
+		shroud_delve_cost = -0.3
+		shroud_delve_cooldown = -0.2
+	}
+	on_build_start = {
+		#set_star_flag = arc_furnace_construction
+	}
+	on_build_cancel = {
+		#remove_star_flag = arc_furnace_construction
+	}
+	on_build_complete = {
+		#remove_star_flag = arc_furnace_construction
+		
+	}
+}
