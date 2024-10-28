@@ -84,16 +84,15 @@ trime_leader_trait_exhaustion = {
 		TIER = none
 	}
 	self_modifier = {
-		species_leader_exp_gain = -0.3
-		leaders_upkeep_mult = 0.2
+		#species_leader_exp_gain = -0.3
+		leaders_upkeep_mult = 0.25
 	}
 	leader_class = {
 		scientist
 		commander
 		official
 	}
-	leader_trait_type = negative
-	#negative = yes
+	leader_trait_type = negative	
 	initial = no
 	randomized = no
 	notify_on_gained = no

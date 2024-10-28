@@ -35,10 +35,7 @@ spriteTypes = {
 		texturefile = "gfx/trime_stuff/trime_hourglass_message.dds"
 	}
 
-	spriteType = {
-		name = "GFX_trime_future_fleet_arrived"
-		texturefile = "gfx/trime_stuff/message_dimensional_fleet_destroyed.dds"
-	}
+	
 
 	
 }

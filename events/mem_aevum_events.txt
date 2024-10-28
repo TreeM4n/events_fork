@@ -1,21 +1,47 @@
-
 namespace = trime
-
 ###########
 # 
 # made by:
 # tr33
 #
 ###########
-
 ############################################################################################################
 # Setup Events
 ############################################################################################################
-# mem_eden_protocol.1   |	Gamestart setup
-# mem_eden_protocol.2   |	Yearly Pulse event for seeding and terraforming
-# mem_eden_protocol.3   |	Notification for standard terraforming
-# mem_eden_protocol.4   |	Notification for gaia terraforming
-# mem_eden_protocol.5   |	Notification for primitive seeding
+# mem_aevum.0   	|	Gamestart setup/ allowed check/ 10% he spawns
+# mem_aevum.999  	|	quick setup / test event
+
+############################################################################################################
+# Story / pre- recruitment events
+############################################################################################################
+# mem_aevum.1   	|	Surveyed planet with Aevum on it, only first one 
+# mem_aevum.2   	|	Entered special system and get notified
+# mem_aevum.5   	|	First quest completed. Made lightshow. Want another?
+# mem_aevum.4   	|	Second quest? Wait 20 years situation
+# mem_aevum.6   	|	On ground combat win. Invaded planet and killed aevum
+# mem_aevum.7   	|	Notify player about invasion and curse his capitel
+# mem_aevum.9   	|	Situation event. Wait another 10 years
+# mem_aevum.10   	|	Second quest complete. get third quest. Situation finished
+# mem_aevum.11   	|	Third quest complete. Built megastructure. Recruitment screen.
+
+############################################################################################################
+# Story / side quests
+############################################################################################################
+# mem_aevum.3   	|	Hidden event, begins event chain
+# mem_aevum.12   	|	Logic for new messages, on special project complete
+# mem_aevum.13   	|	Message 1
+# mem_aevum.14   	|	Message 2
+# mem_aevum.15   	|	Message 3
+# mem_aevum.16   	|	Message 4, call him?
+# mem_aevum.17   	|	Begins signal event chain 
+# mem_aevum.18   	|	Decrypted all messages and ask him about it
+# mem_aevum.19   	|	Random leaders comes back from the future
+# mem_aevum.20   	|	Random leader has to go back to continue time loop
+# mem_aevum.21   	|	wanna talk with strange vessel appraochiing ( contains random leader)
+
+############################################################################################################
+# After recruitment random leader events
+############################################################################################################
 
 namespace = trime
 event = {
@@ -24,9 +50,9 @@ event = {
 	is_triggered_only = yes
 	immediate = {
 		random_list = {
-			95 = {
+			90 = {
 			}
-			5 = {
+			10 = {
 				if = {
 					limit = {
 						always = yes
@@ -187,6 +213,7 @@ country_event = {
 	#found weird signal
 }
 
+# surveyed planet
 # this = ship | from = tplanet
 ship_event = {
 	id = trime.1
@@ -255,14 +282,6 @@ ship_event = {
 			name = trime_make_lightshow
 			owner = this.owner
 			location = from
-		}
-		hidden_effect = {
-			this.owner = {
-				country_event = {
-					id = trime.3
-					days = 30
-				}
-			}
 		}
 		#}
 	}
@@ -337,11 +356,18 @@ ship_event = {
 					}
 				}
 			}
+			this.owner = {
+				country_event = {
+					id = trime.3
+					days = 30
+				}
+			}
 		}
 	}
 	#found weird signal
 }
 
+# Entered system for first time 
 # Scope = Ship
 # From = System
 # FromFrom = Country
@@ -349,11 +375,6 @@ ship_event = {
 	id = trime.2
 	title = trime.2.name
 	desc = trime.2.desc
-	#desc = {
-	#	trigger = { has_country_flag = flag_azaryn_option_hesitate }
-	#	text = paragon.226.desc_no # switched places with desc_yes below, as they are mixed up in loc
-	#}
-	#
 	#show_sound = evn_inhabited_solar_system_03
 	location = event_target:trime_primitive_rewind_world
 	is_triggered_only = yes
@@ -366,16 +387,6 @@ ship_event = {
 		}
 	}
 	immediate = {
-		if = {
-			limit = {
-				this.owner = {
-					has_event_chain = trime_findsystem
-				}
-			}
-			this.owner = {
-				end_event_chain = trime_findsystem
-			}
-		}
 	}
 	#diplomatic = yes
 	picture = GFX_evt_clocks
@@ -395,11 +406,6 @@ country_event = {
 	id = trime.5
 	title = trime.5.name
 	desc = trime.5.desc
-	#desc = {
-	#	trigger = { has_country_flag = flag_azaryn_option_hesitate }
-	#	text = paragon.226.desc_no # switched places with desc_yes below, as they are mixed up in loc
-	#}
-	#
 	show_sound = event_conversation
 	location = event_target:trime_primitive_rewind_world
 	is_triggered_only = yes
@@ -440,11 +446,6 @@ country_event = {
 	id = trime.4
 	title = trime.4.name
 	desc = trime.4.desc
-	#desc = {
-	#	trigger = { has_country_flag = flag_azaryn_option_hesitate }
-	#	text = paragon.226.desc_no # switched places with desc_yes below, as they are mixed up in loc
-	#}
-	#
 	show_sound = event_conversation
 	location = event_target:trime_primitive_rewind_world
 	is_triggered_only = yes
@@ -499,11 +500,6 @@ country_event = {
 country_event = {
 	id = trime.6
 	hide_window = yes
-	#desc = {
-	#	trigger = { has_country_flag = flag_azaryn_option_hesitate }
-	#	text = paragon.226.desc_no # switched places with desc_yes below, as they are mixed up in loc
-	#}
-	#
 	is_triggered_only = yes
 	trigger = {
 		fromfrom = {
@@ -527,11 +523,6 @@ country_event = {
 	id = trime.7
 	title = trime.7.name
 	desc = trime.7.desc
-	#desc = {
-	#	trigger = { has_country_flag = flag_azaryn_option_hesitate }
-	#	text = paragon.226.desc_no # switched places with desc_yes below, as they are mixed up in loc
-	#}
-	#
 	show_sound = event_conversation
 	location = event_target:trime_primitive_rewind_world
 	is_triggered_only = yes
@@ -580,11 +571,6 @@ situation_event = {
 	id = trime.9
 	title = trime.9.name
 	desc = trime.9.desc
-	#desc = {
-	#	trigger = { has_country_flag = flag_azaryn_option_hesitate }
-	#	text = paragon.226.desc_no # switched places with desc_yes below, as they are mixed up in loc
-	#}
-	#
 	show_sound = event_conversation
 	location = this.target
 	is_triggered_only = yes
@@ -658,9 +644,10 @@ situation_event = {
 		begin_event_chain = {
 			event_chain = trime_buildtemple
 		}
-		hidden_effect = {
-			this.owner = {
-				set_country_flag = trime_buildgianttemple
+		this.owner = {
+			add_tech_progress = {
+				tech = mem_aevum_unlock_chronopalace
+				progress = 1
 			}
 		}
 	}
@@ -691,11 +678,6 @@ country_event = {
 	id = trime.11
 	title = trime.11.name
 	desc = trime.11.desc
-	#desc = {
-	#	trigger = { has_country_flag = flag_azaryn_option_hesitate }
-	#	text = paragon.226.desc_no # switched places with desc_yes below, as they are mixed up in loc
-	#}
-	#
 	show_sound = event_celebration
 	#location = event_target:trime_primitive_rewind_world
 	trigger = {
@@ -886,7 +868,7 @@ country_event = {
 		# HIRE
 		name = HIRE
 		tag = hire_leader
-		#custom_tooltip = trime.11.b.custom_tooltip		# Azaryn joins
+		#custom_tooltip = trime.11.b.custom_tooltip		
 		sound = cute_molluscoid_starfish_greetings
 		#this.owner = {
 		#	add_relic = r_trime_houglass
@@ -898,15 +880,15 @@ country_event = {
 		#	}
 		#}
 		trime_endallevents = yes
-		remove_country_flag = trime_claimed1
-		remove_country_flag = trime_claimed2
-		remove_country_flag = trime_claimed3
-		#hidden_effect = {
+		hidden_effect = {
+			remove_country_flag = trime_claimed1
+			remove_country_flag = trime_claimed2
+			remove_country_flag = trime_claimed3
+		}
 		event_target:trime_time_lord = {
 			set_owner = root
 		}
 		add_relic = r_trime_houglass
-		#}
 		ai_chance = {
 			factor = 100
 		}
@@ -926,9 +908,11 @@ country_event = {
 			}
 		}
 		trime_endallevents = yes
-		remove_country_flag = trime_claimed1
-		remove_country_flag = trime_claimed2
-		remove_country_flag = trime_claimed3
+		hidden_effect = {
+			remove_country_flag = trime_claimed1
+			remove_country_flag = trime_claimed2
+			remove_country_flag = trime_claimed3
+		}
 		#this.owner = {
 		#	if = {
 		#		limit = {
@@ -957,16 +941,11 @@ country_event = {
 country_event = {
 	id = trime.3
 	hide_window = yes
-	#desc = {
-	#	trigger = { has_country_flag = flag_azaryn_option_hesitate }
-	#	text = paragon.226.desc_no # switched places with desc_yes below, as they are mixed up in loc
-	#}
-	#
 	is_triggered_only = yes
 	trigger = {
-		NOT = {
-			has_completed_event_chain = trime_decoded_messages_chain
-		}
+		#NOT = {
+			#has_completed_event_chain = trime_decoded_messages_chain
+		#}
 	}
 	immediate = {
 		if = {
@@ -1585,16 +1564,12 @@ country_event = {
 	}
 }
 
+# TODO makes finishing the event chain interesting
 # this = country 
 country_event = {
 	id = trime.18
 	title = trime.18.name
 	desc = trime.18.desc
-	#desc = {
-	#	trigger = { has_country_flag = flag_azaryn_option_hesitate }
-	#	text = paragon.226.desc_no # switched places with desc_yes below, as they are mixed up in loc
-	#}
-	#
 	show_sound = event_conversation
 	location = event_target:trime_primitive_rewind_world
 	is_triggered_only = yes
@@ -1636,16 +1611,12 @@ country_event = {
 	}
 }
 
+# get random leader 
 # this = country 
 country_event = {
 	id = trime.19
 	title = trime.19.name
 	desc = trime.19.desc
-	#desc = {
-	#	trigger = { has_country_flag = flag_azaryn_option_hesitate }
-	#	text = paragon.226.desc_no # switched places with desc_yes below, as they are mixed up in loc
-	#}
-	#
 	trigger = {
 		this = {
 			any_owned_leader = {
@@ -1681,6 +1652,7 @@ country_event = {
 			}
 			last_created_leader = {
 				add_age = 10
+				add_skill = 3
 				save_event_target_as = trime_future_leader
 				exile_leader_as = trime_future_leader
 			}
@@ -1734,10 +1706,6 @@ country_event = {
 				save_event_target_as = trime_future_leader
 			}
 		}
-		#}
-		#begin_event_chain = {
-		#	event_chain = trime_findsystem
-		#}
 	}
 	option = {
 		# DISMISS
@@ -1753,9 +1721,6 @@ country_event = {
 				}
 			}
 		}
-		#begin_event_chain = {
-		#	event_chain = trime_findsystem
-		#}
 	}
 }
 
@@ -2422,7 +2387,6 @@ leader_event = {
 		event_target:trime_bullyhim = {
 			add_age = 40
 		}
-		
 	}
 	option = {
 		name = trime.114.b
@@ -2442,9 +2406,8 @@ leader_event = {
 	}
 }
 
-
 # return timelord 
-# revive? idk, wtf, where is this used?, maybe remove 
+# he comes back after dead and you can recruit him again
 country_event = {
 	id = trime.110
 	title = "trime.110.name"
@@ -2612,5 +2575,3 @@ country_event = {
 		set_global_flag = trime_time_lorddied
 	}
 }
-
-

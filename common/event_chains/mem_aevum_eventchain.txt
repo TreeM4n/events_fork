@@ -32,10 +32,6 @@ trime_decoded_messages_chain = {
 	}
 }
 
-trime_findsystem = {
-	icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
-	picture = GFX_evt_a_rift_in_space
-}
 
 trime_buildtemple = {
 	icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"

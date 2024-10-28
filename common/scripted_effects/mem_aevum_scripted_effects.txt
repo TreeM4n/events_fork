@@ -44,12 +44,7 @@ trime_endallevents = {
 		}
 		end_event_chain = trime_decoded_messages_chain
 	}
-	if = {
-		limit = {
-			has_event_chain = trime_findsystem
-		}
-		end_event_chain = trime_findsystem
-	}
+	
 	#if = {
 	#	limit = {
 	#		has_country_flag = trime_buildgianttemple

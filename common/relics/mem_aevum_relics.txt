@@ -4,6 +4,11 @@
 # tr33
 #
 ###########
+
+
+# i dont like the spinning, relic realted stuff? 
+# active deage sounds good
+# passive tho? what about a passive which declines with time? and then resets
 @activation_cost = 3000
 @triumph_duration = 3600
 @triumph_duration_short = 1800
@@ -121,6 +126,7 @@ r_trime_houglass = {
 				#}
 		#	}
 		#}
+		# TODO: make these tooltips cleaner
 		custom_tooltip = trime_button2_title
 		custom_tooltip = trime_button2_deage_all_tt
 		hidden_effect = {

@@ -21,7 +21,9 @@ trime_slowgrowing = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_time_acceleration.dds"
 }
 
-
+trime_leader_chrono_sick = {
+	leaders_upkeep_mult = 0.25
+}
 
 trime_speedgrowing = {
 	

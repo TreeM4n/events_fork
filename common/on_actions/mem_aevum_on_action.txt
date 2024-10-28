@@ -8,10 +8,7 @@
 on_game_start = {
 	events = {
 		trime.0 # flag allowed + random spawn
-		scar.199 # create stealer of relics
-		scar.203 # set value of grail knights just in case
-		scar.204 # spawn archeoguild
-		scar.300 # create relic world in homesystem
+		
 	}
 }
 
@@ -43,8 +40,7 @@ on_entering_system_first_time = {
 on_planet_attackers_win = {
 	events = {
 		trime.6 # invaded his planet
-		scar.200 # additional theft chance for grail knights
-		scar.402 # minor artifacts from invasion
+		
 	}	
 }
 
@@ -122,82 +118,6 @@ on_five_year_pulse = {
 		trime.102 ## hourglass spin
 		trime.113 ## random stuff
 	}
-	random_events = {
-		#150 = 0
-		#50 = situation.2000 # Situation - The Kaleidoscope
-	}
-}
-
-# This = owner of fleet 1 (combatant)
-# From = owner of fleet 2 (destroyed)
-# FromFrom = fleet 1
-# FromFromFrom = fleet 2
-on_fleet_destroyed_perp = {
-	events = {
-		scar.105 # first relic stealer fleet got destroyed
-	}	
-}
-
-
-# This = Country
-on_relic_lost = {
-	events = {
-		#trime.103
-	}
-}
-
-# This = Country
-on_relic_received = {
-	events = {
-		#trime.103 # steal relic back event
-		scar.201
-	}
-	random_events = {
-		5 = scar.100
-		95 = 0
-	}
-}
-
-# This = Country
-on_relic_activated = {
-	events = {
-		#trime.108 #relic cd reset power
-		
-	}
-}
-
-# This = country
-# From = opponent war leader
-on_entering_war = {
-	events = {
-		#trime.107 #summon fleet power
-	}
-}
-
-on_arch_site_finished = {
-	events = {
-		scar.205 # archeotech for guild
-	}
 	
 }
 
-
-# Fired when a ship finishes researching an anomaly.
-# this = ship
-# from = planet
-anomaly_success = {
-	events = {
-		scar.401
-	}
-}
-
-# Fired when a science ship succesfully analyzed or scavenged debris
-# this = country
-# from = debris
-# fromfrom = controller of destroyed ship
-# fromfromfrom = science ship
-on_debris_researched = {
-	events = {
-		scar.403
-	}
-}

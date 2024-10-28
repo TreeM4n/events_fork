@@ -11,13 +11,10 @@
  trimed.40520.a:0 "What is up with your beard?"
  NAME_trime_time_lord:0 "Chronomancer Aevum"
 
-
- trime_empty:0 ""
-
  trime_color:0"§Y§!"
  spawn_trime:0 "Spawn §Y$NAME_trime_time_lord$§!"
  trime_time_lord_catchphrase:0 "Time is relative, the Past not finished and Future is already unfolding. Only tomorrow knows what shall be."
- trime_time_lord_backstory:0 "Once a scientist, now near godhood. As the sole survivor of Observation Station 37, he gained chronomatic abilities. Even though he likes playing God, he is just as mortal as anyone with his sickness."
+ trime_time_lord_backstory:0 "Once a scientist, now a self proclaimed god. As the sole survivor of Observation Station 37, he gained chronomatic abilities. Even if he likes playing God, he is just as mortal as anyone with his sickness would be."
 
  trime_allowed:0 "§G$NAME_trime_time_lord$ Allowed§!"
  trime_disabled:0 "§R$NAME_trime_time_lord$ Disabled§!"
@@ -56,10 +53,7 @@
  trime_decode_message:0 "Study the Message"
  trime_cursedworld:0 "Frozen in Time"
  trime_buildtemple_title:0 "Build the Temple of §Y$NAME_trime_time_lord$§!"
- #trime_building_temple:0 "$trime_buildtemple_title$"
- trime_buildtemple_desc:0 "The last of his trials. Hopefully. Let's build a Kilostructure the Temple of §Y$NAME_trime_time_lord$§!."
-
-
+ trime_buildtemple_desc:0 "The last of his trials. Hopefully. Let's build a Kilostructure the temple of §Y$NAME_trime_time_lord$§!."
  trime_stage1:0 "Waiting"
  trime_stage2:0 "More Waiting"
  trime.1.name:0 "Second Meeting"
@@ -103,11 +97,7 @@
  trime.11.desc:0 "Yes well done. Take pride in your achievements. You inquire: What is our reward for such great patience and endeavor? It is simple, era dweller, indeed! A god shall grace your realms.§Y I, $NAME_trime_time_lord$, shall join your empire.§! Feel the freedom to worship my presence throughout the passing of seasons."
 
  trime_decode_message_DESC:0 "Like a Message in a Bottle"
- #trime_decoded_messages2:0 "Like a Message in a Bottle, Part 2"
- #trime_decoded_messages3:0 "Like a Message in a Bottle, Part 3"
- #trime_decoded_messages4:0 "Like a Message in a Bottle, Part 4"
-
- #recruit window dialogue
+ 
  trime.11.a:0 "What can you offer us?"
  trime.11.a.response:0 "Oh, young one, cease the queries of what I can offer your realm. Instead, ponder what offerings you shall present to a god. Your trials, a testament to worthiness, draw to a close. Embrace the culmination, bask in the power bestowed upon you. Why question that which transcends your young current?\n§Y*He pauses to think.*§!\nLet me reveal the tapestry of my capabilities. Have you ever contemplated the weaponization of time, the art of delaying foes, hastening economic flow, or expediting the construction of grand structures?"
  trime.11.b:0 "What happened to the creature, which destroyed Observation Station 37?"
@@ -116,7 +106,6 @@
  trime.11.c.response:0 "You have touched upon a tender chord, era dweller. As painful as it is, I suspect my messages never found their way home. Lost in this system, Echoes endlessly reverberating back and forth, a lament sung by the timeless corridors. Nothing more than mockery, a cruel jest played by the cosmic forces upon the stage of my existence. The fate of me and my crew, now shrouded in the veils of your knowledge alone."
  trime.11.d:0 "You are no god, are you?"
  trime.11.d.response:0 "§Y*Long pause. Probably the longest he ever took.*§!\nWhat do you expect me to say? Yes and no, both veiled in untruths. I harbor no illusions for you to comprehend the boundaries of my power. Understand this: no god, in essence, is without Limits. Were you born a god, or did the flow of time grant you the title? Through millennia my power surpassed your era-bound understanding, and yet remains bounded. In the eyes of the primitives, you and I are divine, each possessing godlike abilities. It is not the absence of limitations that defines godhood, but the manifestation of what can be achieved. In this present epoch, I am a god, until the day when I am no longer."
- #trime.11.b.custom_tooltip:0 "REPLACE_ME"
 
  trime.16.name:0 "Captain's Log: Day 1276"
  trime.16.desc:0 "At last, I got this thing to work again. If only for one last message. Confirming: This will be my last recording. After our evacuation from the observation station, our escape pods passed several anomalies. One crew member de-aged into non-existence, another aged rapidly, succumbing to age within mere moments. Only three of us made it the surface. Most of our rations were spoiled. Our only option was to continue to the nearest primitive city and look for food and shelter. To hell with the prime directive. I could not let my crew die like this.\n§Y*A small sigh escapes him in the recording.*§!\n We managed to enter a city. Not as aliens were we met, but as messiahs. They believed us to be messengers of god. Somehow our appearances were already carved on several walls. In the following year, Shlay and Dirko died. Shlay had contracted a fatal infection. Dirko was mauled to death by a group of heretics after abusing his new role. What shameful deaths. I, however, remain. For what purpose? Who knows. \n§Y*A long pause.*§!\nTo whoever finds this message, tell our kin to expect us dead.\n- Aevum T. Dohrnii - Only survivor of Observation Station 37 "
@@ -190,9 +179,7 @@
  trime.100.name:0 "All in Time"
  trime.100.desc:0 "I applaud your grand design, yet, regretfully, I must declare that the currents do not favor its fruition at this time. I demand a cessation of all construction endeavors until I, §Y$NAME_trime_time_lord$§!, ascertain that the moment is ripe. One might question the wisdom of an idle megastructure. The answer, however, is simple: let it rest, engage in contemplation, and resume with a purpose refined by the deliberations of time"
  trime.100.a:0 "Whatever..."
- #trime.100.a.tooltip:0 "REPLACE_ME"
  trime.100.b:0 "Under no Circumstances."
- #this:0 "REPLACE_ME"
  trime.105.name:0 "Stolen Property"
  trime.105.desc:0 "I applaud your acquisition, yet, regretfully, I must take back what is rightfully mine. However, I shall provide a small compensation."
  trime.105.a:0 "What?"
@@ -229,8 +216,6 @@
  trime_leader_trait_legendary_houtglasskeeper_desc:0 "Crafted from alien parts the $r_trime_houglass$ was made with one purpose: channelling the raw chronomatic energies $NAME_trime_time_lord$ obtained during the Vumi incident."
  trime_trait_houtglass_access:0 "§YGet Access to Chronomancy via $r_trime_houglass$ Active Effect§!"
  trime_thisisugly:0 "§OThis took me several hours and 30% of my time on the mod.\n... Enjoy.§!"
- trime.109.name:0 "REPLACE_ME"
- trime.109.desc:0 "REPLACE_ME"
 
  trime.110.name:0 "Timely Demise"
  trime.110.desc:0 "Oh, you, unable to bear the weight of your own failures, have circled back to me. The consequences of your choices echo in the shadows of your return."
