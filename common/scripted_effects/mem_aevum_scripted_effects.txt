@@ -6,9 +6,8 @@
 ###########
 
 
-
-spawn_trime = {
-	#set_global_flag = trime_system_spawned
+# spawns the system
+spawn_trime = {	
 	if = {
 		limit = {
 			NOT = {
@@ -20,17 +19,11 @@ spawn_trime = {
 			initializer = trime_orgin_system
 		}
 	}
-	#root = {
-	#	hidden_effect = {
-	#		country_event = { id = trime.21 days = 30 }
-	#	}
-	#	
-	#}
 	last_created_system = {
 		log = "spawned \\[This.GetName\\]"
 	}
 }
-
+# ends al levents related to him
 trime_endallevents = {
 	if = {
 		limit = {
@@ -44,13 +37,6 @@ trime_endallevents = {
 		}
 		end_event_chain = trime_decoded_messages_chain
 	}
-	
-	#if = {
-	#	limit = {
-	#		has_country_flag = trime_buildgianttemple
-	#	}
-	#	remove_country_flag = trime_buildgianttemple
-	#}
 	if = {
 		limit = {
 			has_special_project = trime_make_lightshow
@@ -68,7 +54,7 @@ trime_endallevents = {
 		}
 	}
 }
-
+# change his portrait depending on age
 trime_setportrait = {
 	this = {
 		set_variable = {

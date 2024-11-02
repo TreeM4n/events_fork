@@ -4,8 +4,6 @@
 # tr33
 #
 ###########
-
-
 # i dont like the spinning, relic realted stuff? 
 # active deage sounds good
 # passive tho? what about a passive which declines with time? and then resets
@@ -21,142 +19,74 @@ r_trime_houglass = {
 		category = relics
 		# Activation cost
 		cost = {
-			influence = 100
+			sr_zro = 200
 		}
 	}
 	ai_weight = {
 		weight = 20
 	}
+	can_be_stolen = no
 	triggered_country_modifier = {
 		potential = {
 			always = yes
 		}
-		custom_tooltip = trime_spinny_boi
+		lithoid_pop_happiness = -0.02		# its made out of lithoids, head-canon
 	}
 	triggered_country_modifier = {
 		potential = {
-			has_global_flag = trime_stage1
+			always = yes
 		}
-		custom_tooltip = trime_stage1_AnteCogitationem
-	}
-	triggered_country_modifier = {
-		potential = {
-			has_global_flag = trime_stage1
-		}
-		pop_happiness = 0.05
-	}
-	triggered_country_modifier = {
-		potential = {
-			has_global_flag = trime_stage2
-		}
-		custom_tooltip = trime_stage2_Cogitatio
-	}
-	triggered_country_modifier = {
-		potential = {
-			has_global_flag = trime_stage2
-		}
-		country_unity_produces_mult = -0.1
-	}
-	triggered_country_modifier = {
-		potential = {
-			has_global_flag = trime_stage3
-		}
-		custom_tooltip = trime_stage3_Paratio
-	}
-	triggered_country_modifier = {
-		potential = {
-			has_global_flag = trime_stage3
-		}
-		country_produces_mult = 0.1
-	}
-	triggered_country_modifier = {
-		potential = {
-			has_global_flag = trime_stage4
-		}
-		custom_tooltip = trime_stage4_Actio
-	}
-	triggered_country_modifier = {
-		potential = {
-			has_global_flag = trime_stage4
-		}
-		ship_weapon_damage = 0.1
-	}
-	triggered_country_modifier = {
-		potential = {
-			has_global_flag = trime_stage5
-		}
-		custom_tooltip = trime_stage5_Manutentio
-	}
-	triggered_country_modifier = {
-		potential = {
-			has_global_flag = trime_stage5
-		}
-		ships_upkeep_mult = -0.1
+		country_sr_zro_produces_mult = 0.1
 	}
 	score = 500
 	active_effect = {
-
-		#### alot of unused stuff here now the relic just removes leader age from all leaders
-		#add_modifier = {
-		#	modifier = "ether_drake_triumph"
-		#	days = @triumph_duration
-		#}
-		#custom_tooltip = relic_triumph_cooldown
-		#if = {
-		#	limit = {
-		#		has_global_flag = trime_time_lorddied
-		#	}
-			#remove_country_flag = trime_killedtimelord
-		#	custom_tooltip = trime_revivetimelord
-		#	hidden_effect = {
-		#		country_event = {
-		#			id = trime.108
-		#		}
-		#	}
-		#}
-		#else = {
-		#	custom_tooltip = trime_opencastmenu
-		#	hidden_effect = {
-		#		country_event = {
-		#			id = trime.109
-		#		}
-				#add_modifier = {
-				#	modifier = "relic_activation_cooldown"
-				#	days = @triumph_duration
-				#}
-		#	}
-		#}
-		# TODO: make these tooltips cleaner
-		custom_tooltip = trime_button2_title
-		custom_tooltip = trime_button2_deage_all_tt
-		hidden_effect = {
-			every_owned_leader = {
-				limit = {
-					NOR = {
-						has_trait = trime_leader_trait_exhaustion
-						has_trait = trime_leader_trait_legendary_timeskipper
-					}
-				}
-				add_age = -20
-				add_timed_trait = {
-					trait = trime_leader_trait_exhaustion
-					days = 360
-				}
-				if = {
-					limit = {
-						exists = event_target:trime_time_lord
-					}
-					event_target:trime_time_lord = {
-						add_age = 10
-						trime_setportrait = yes
-					}					
+		# TODO: make these tooltips cleaner and check between immortal and non leader, 
+		# only mortal leaders count for eavum, triggered description based on leaders present
+		# custom_tooltip = trime_button2_title
+		custom_tooltip = trime_button2_deage_all_tt		
+		if = {
+			limit = {
+				any_owned_leader = {
+					has_trait = trime_leader_trait_legendary_houtglasskeeper
 				}
 			}
+			custom_tooltip = trime_button2_deage_all_tt_except_aevum
+		}
+		add_modifier = {
+			modifier = trime_confused_leadership
+			days = 360
 		}
 		custom_tooltip = relic_triumph_cooldown
 		add_modifier = {
 			modifier = "relic_activation_cooldown"
 			days = @triumph_duration
+		}
+		hidden_effect = {
+			every_owned_leader = {
+				limit = {
+					NOR = {
+						has_trait = trime_leader_trait_legendary_timeskipper
+					}
+				}
+				if = {
+					limit = {
+						is_immortal = yes
+					}
+					add_experience = 300
+				}
+				else = {
+					add_age = -30
+					if = {
+						limit = {
+							exists = event_target:trime_time_lord
+						}
+						event_target:trime_time_lord = {
+							add_age = 10
+							trime_setportrait = yes
+						}
+					}
+				}
+			}
 		}
 	}
 	# Possible check for activation
@@ -167,17 +97,5 @@ r_trime_houglass = {
 				has_modifier = relic_activation_cooldown
 			}
 		}
-		#custom_tooltip = {
-		#	fail_text = "trime_deadfr_tt"
-		#	NOT = {
-		#		has_global_flag = trime_time_lorddiedfr
-		#	}
-		#}
-		#custom_tooltip = {
-		#	fail_text = "trime_chronomancer_on_cooldown_tt"
-		#	NOT = {
-		#		has_modifier = trime_chronomancer_on_cooldown
-		#	}
-		#}
 	}
 }

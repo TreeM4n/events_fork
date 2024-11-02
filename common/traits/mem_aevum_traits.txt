@@ -22,16 +22,47 @@ trime_leader_trait_legendary_timeskipper = {
 		}
 		text = trime_trait_scaleswithage
 	}
+	#triggered_councilor_modifier = {
+	#	potential = {
+	#		always = yes
+	#		#owner = {
+	#		#	is_machine_empire = no
+	#		#}
+	##	}
+	#	leader_lifespan_add = 4
+	#	mult = root.value:trime_leader_lifespan2
+	#}
 	triggered_councilor_modifier = {
 		potential = {
-			always = yes
-			#owner = {
-			#	is_machine_empire = no
-			#}
+			leader_age >= 100			
 		}
-		leader_lifespan_add = 4
-		mult = root.value:trime_leader_lifespan2
+		ruler_skill_add =  1
+		
 	}
+
+	triggered_councilor_modifier = {
+		potential = {
+			leader_age >= 300			
+		}
+		country_sr_zro_produces_mult = 0.2		
+		
+	}
+
+	triggered_councilor_modifier = {
+		potential = {
+			leader_age >= 600			
+		}
+		leader_lifespan_mult = 0.5			
+	}
+
+	triggered_councilor_modifier = {
+		potential = {
+			leader_age >= 1000			
+		}
+		leader_skill_levels = 4	
+		scientist_exp_gain = 0.5	
+	}
+
 	# machine get age too with rework
 	#triggered_planet_modifier = {
 	#	potential = {
@@ -51,8 +82,6 @@ trime_leader_trait_legendary_timeskipper = {
 }
 
 trime_leader_trait_legendary_houtglasskeeper = {
-	#Origin trait
-	#cost = 0
 	inline_script = {
 		script = trait/icon
 		CLASS = leader
@@ -61,10 +90,24 @@ trime_leader_trait_legendary_houtglasskeeper = {
 		COUNCIL = no
 		TIER = none
 	}
-	#custom_tooltip_with_modifiers = trime_trait_scaleswithage
-	councilor_modifier = {
+	triggered_desc = {
+		trigger = {
+			always = yes
+		}
+		text = trime_trait_getsagefromrelics
+	}
+	triggered_planet_modifier = {
+		potential = {
+			has_ancrel = yes
+		}
 		planet_jobs_minor_artifacts_produces_mult = 0.1
 	}
+	triggered_planet_modifier = {
+		potential = {
+			has_ancrel = no
+		}
+		planet_jobs_society_research_produces_mult = 0.1
+	}
 	leader_class = {
 		scientist
 	}
@@ -72,29 +115,3 @@ trime_leader_trait_legendary_houtglasskeeper = {
 	randomized = no
 	notify_on_gained = no
 }
-
-trime_leader_trait_exhaustion = {
-	#sucked years off
-	inline_script = {
-		script = trait/icon
-		CLASS = leader
-		ICON = "GFX_leader_trait_volatile"
-		RARITY = common
-		COUNCIL = no
-		TIER = none
-	}
-	self_modifier = {
-		#species_leader_exp_gain = -0.3
-		leaders_upkeep_mult = 0.25
-	}
-	leader_class = {
-		scientist
-		commander
-		official
-	}
-	leader_trait_type = negative	
-	initial = no
-	randomized = no
-	notify_on_gained = no
-}
-

@@ -16,7 +16,7 @@ spriteTypes = {
 	
 	spriteType = {
 		name = "GFX_leader_recruitment_bg_trime_timelord"
-		texturefile = "gfx/trime_stuff/trime_leader_background.dds"
+		texturefile = "gfx/portraits/backgrounds/mem_aevum_leader_background.dds"
 	}
 
 	
@@ -27,14 +27,23 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_trime_event_background"
-		texturefile = "gfx/trime_stuff/trime_event_background.dds"
+		texturefile = "gfx/portraits/backgrounds/mem_aevum_event_background.dds"
 	}
 
 	spriteType = {
 		name = "GFX_trime_hourglass_tick"
-		texturefile = "gfx/trime_stuff/trime_hourglass_message.dds"
+		texturefile = "gfx/portraits/message_icons/mem_aevum_hourglass_message.dds"
 	}
 
+	spriteType = {
+		name = "GFX_scar_mega_chronomancer_palace_outliner_icon"
+		textureFile = "gfx/interface/icons/megastructures/think_tank.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_scar_mega_chronomancer_palace_build_icon"
+		textureFile = "gfx/interface/icons/technologies/mem_aevum_unlock_chronopalace.dds"
+	}
 	
 
 	

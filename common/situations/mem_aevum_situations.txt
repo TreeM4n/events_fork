@@ -17,35 +17,15 @@ trime_sit_wait_20years = {
 	}
 	start_value = 0
 	on_monthly = {
-		#random_events = {
-		#80 = 0
-		#20 = origin.4170	# Payback | MSI helping you
-		#}
+		
 	}
 	stages = {
 		trime_stage1 = {
 			icon = GFX_situation_stage_1
 			icon_background = GFX_situation_stage_frame_blue
-			end = 220
-			modifier = {
-				#pop_happiness = -0.1
-			}
-		}
-		trime_stage2 = {
-			icon = GFX_situation_stage_1
-			icon_background = GFX_situation_stage_frame_blue
 			end = 240
-			modifier = {
-				#pop_happiness = -0.1
-			}
-			on_first_enter = {
-				hidden_effect = {
-					situation_event = {
-						id = trime.9
-					}
-				}
-			}
-		}
+			
+		}		
 	}
 	on_progress_complete = {
 		custom_tooltip = trime_hmm_okletswait
@@ -62,14 +42,28 @@ trime_sit_wait_20years = {
 		name = trime_letswait_approach
 		icon = GFX_situation_approach_shrug
 		icon_background = GFX_situation_approach_bg_yellow
-		#modifier = {
-		#}
+		
 		on_select = {
-			custom_tooltip = trime_empty
+			custom_tooltip = trime_empty_appraoch
 		}
 		ai_weight = {
 			base = 1
 		}
 		default = yes
+		
+	}
+	approach = {
+		name = trime_letswait_approach2
+		icon = GFX_situation_approach_shrug
+		icon_background = GFX_situation_approach_bg_red
+		
+		on_select = {
+			custom_tooltip = trime_empty_appraoch
+		}
+		ai_weight = {
+			base = 0
+		}
+		
+		
 	}
 }
