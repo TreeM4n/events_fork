@@ -110,12 +110,18 @@ trime_orgin_system = {
 			entity_offset_height = -5 # Set to spawn far below the planets
 			location = this
 		}
+		
 		last_created_ambient_object = {
 			set_location = {
 				target = prev
 				distance = 0
 				angle = random
 			}
+		}
+		create_nebula = {
+			radius = 1
+			name = "trime_stasis_nabula"
+			
 		}
 		add_modifier = { modifier = trime_ship_frozen }
 	}

@@ -4,9 +4,6 @@
 # tr33
 #
 ###########
-# i dont like the spinning, relic realted stuff? 
-# active deage sounds good
-# passive tho? what about a passive which declines with time? and then resets
 @activation_cost = 3000
 @triumph_duration = 3600
 @triumph_duration_short = 1800
@@ -40,18 +37,16 @@ r_trime_houglass = {
 	}
 	score = 500
 	active_effect = {
-		# TODO: make these tooltips cleaner and check between immortal and non leader, 
-		# only mortal leaders count for eavum, triggered description based on leaders present
-		# custom_tooltip = trime_button2_title
+		
 		custom_tooltip = trime_button2_deage_all_tt		
-		if = {
-			limit = {
-				any_owned_leader = {
-					has_trait = trime_leader_trait_legendary_houtglasskeeper
-				}
-			}
-			custom_tooltip = trime_button2_deage_all_tt_except_aevum
-		}
+		#if = {
+		#	limit = {
+		#		any_owned_leader = {
+		#			has_trait = trime_leader_trait_legendary_houtglasskeeper
+		#		}
+		#	}
+		#	custom_tooltip = trime_button2_deage_all_tt_except_aevum
+		#}
 		add_modifier = {
 			modifier = trime_confused_leadership
 			days = 360
@@ -76,15 +71,15 @@ r_trime_houglass = {
 				}
 				else = {
 					add_age = -30
-					if = {
-						limit = {
-							exists = event_target:trime_time_lord
-						}
-						event_target:trime_time_lord = {
-							add_age = 10
-							trime_setportrait = yes
-						}
-					}
+					#if = {
+					#	limit = {
+					#		exists = event_target:trime_time_lord
+					#	}
+					#	event_target:trime_time_lord = {
+					#		add_age = 10
+					#		trime_setportrait = yes
+					#	}
+					#}
 				}
 			}
 		}
