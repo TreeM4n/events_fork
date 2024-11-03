@@ -15,6 +15,7 @@ trime_leader_trait_legendary_timeskipper = {
 		COUNCIL = no
 		TIER = none
 	}
+	
 	#custom_tooltip_with_modifiers = trime_trait_scaleswithage
 	triggered_desc = {
 		trigger = {
@@ -34,35 +35,82 @@ trime_leader_trait_legendary_timeskipper = {
 	#}
 	triggered_councilor_modifier = {
 		potential = {
-			leader_age >= 100			
+			leader_age >= 100
 		}
-		ruler_skill_add =  1
-		
+		ruler_skill_add = 1
 	}
-
+	triggered_modifier = {
+		potential = {
+			leader_age >= 300
+		}
+		ship_anomaly_generation_chance_mult = 0.5
+		#species_leader_exp_gain = 0.5
+		ship_disengage_opportunities_add = 5
+		ship_evasion_add = 20
+	}
+	#triggered_councilor_modifier = {
+	#	potential = {
+	#		leader_age >= 300			
+	#	}
+	#	planet_jobs_physics_research_produces_mult = 0.05
+	#}
+	triggered_planet_modifier = {
+		potential = {
+			leader_age >= 600
+		}
+		planet_researchers_unity_produces_add = 1
+	}
 	triggered_councilor_modifier = {
 		potential = {
-			leader_age >= 300			
+			leader_age >= 600
 		}
-		country_sr_zro_produces_mult = 0.2		
-		
+		leader_lifespan_mult = 0.5
 	}
-
+	triggered_modifier = {
+		potential = {
+			leader_age >= 1000
+		}
+		ship_anomaly_research_speed_mult = 1
+		ship_astral_rift_clues_add = 5
+		ship_archaeological_site_clues_add = 5
+	}
 	triggered_councilor_modifier = {
 		potential = {
-			leader_age >= 600			
+			leader_age >= 1000
 		}
-		leader_lifespan_mult = 0.5			
+		scientist_initial_skill = 4
+		scientist_exp_gain = 0.5
+		#leader_scientists_sr_zro_upkeep_add = 1
 	}
-
-	triggered_councilor_modifier = {
+	triggered_self_modifier = {
 		potential = {
-			leader_age >= 1000			
+			leader_age >= 1000
 		}
-		leader_skill_levels = 4	
-		scientist_exp_gain = 0.5	
+		leader_scientists_sr_zro_upkeep_add = 1
 	}
-
+	triggered_planet_modifier = {
+		potential = {
+			AND = {
+				leader_age >= 1000
+				owner = {
+					is_gestalt = yes
+				}
+				#is_gestalt = yes
+			}
+		}
+		planet_researchers_sr_dark_matter_produces_add = 0.5
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_age >= 2000
+		}
+		planet_researchers_sr_zro_produces_add = 0.5
+	}
+	inline_script = {
+		script = paragon/leader_resource_upkeep
+		RESOURCE = sr_zro
+		AMOUNT = 1
+	}
 	# machine get age too with rework
 	#triggered_planet_modifier = {
 	#	potential = {

@@ -5,12 +5,13 @@ scar_mega_chronomancer_palace = {
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_scar_mega_chronomancer_palace"
 	place_entity_on_planet_plane = no
+	show_in_outliner = no
 	entity_offset = {
 		x = -27
 		y = -27
 	}
 	scales_with_planet = no
-	build_time = 1800
+	build_time = 3600
 	resources = {
 		category = megastructures
 		cost = {
@@ -163,13 +164,13 @@ scar_mega_chronomancer_palace = {
 		}
 		every_system_planet = {
 			random_list = {
-				10 = {
+				50 = {
 					add_deposit = d_zro_deposit_1
 				}
-				10 = {
+				25 = {
 					add_deposit = d_zro_deposit_2
 				}
-				10 = {
+				5 = {
 					add_deposit = d_zro_deposit_3
 				}
 			}

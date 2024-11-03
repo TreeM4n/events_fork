@@ -3,7 +3,7 @@ trime_orgin_system = {
 	class = "sc_t"
 	name = "trime_system"
 	flags = {
-		trime_system		
+		trime_system
 	}
 	usage = misc_system_init
 	usage_odds = {
@@ -19,7 +19,6 @@ trime_orgin_system = {
 			max = 25
 		}
 		has_ring = no
-		
 	}
 	change_orbit = 20
 	planet = {
@@ -53,7 +52,7 @@ trime_orgin_system = {
 		init_effect = {
 			prevent_anomaly = yes
 			#generate_primitives_on_planet = yes
-			generate_very_early_pre_ftls_on_planet = yes						
+			generate_very_early_pre_ftls_on_planet = yes
 			#save_event_target_as = trime_primitive_rewind_world
 			save_global_event_target_as = trime_primitive_rewind_world
 			set_planet_flag = trime_primitive_rewind_world
@@ -79,8 +78,9 @@ trime_orgin_system = {
 	}
 	asteroid_belt = {
 		type = rocky_asteroid_belt
-		radius = 70
+		radius = 50
 	}
+	change_orbit = 25
 	planet = {
 		count = {
 			min = 2
@@ -92,25 +92,24 @@ trime_orgin_system = {
 			min = 0
 			max = 360
 		}
-		#size = {
-		#	min = 5
-		#	max = 8
-		#}
+		size = {
+			min = 5
+			max = 8
+		}
 		has_ring = no
+		
 	}
 	asteroid_belt = {
 		type = icy_asteroid_belt
-		radius = 160
-		
+		radius = 200
 	}
 	init_effect = {
 		# Create Ambient Object 2
 		create_ambient_object = {
 			type = "turbulent_nebula_2"
-			entity_offset_height = -5 # Set to spawn far below the planets
+			entity_offset_height = -5			# Set to spawn far below the planets
 			location = this
 		}
-		
 		last_created_ambient_object = {
 			set_location = {
 				target = prev
@@ -121,8 +120,18 @@ trime_orgin_system = {
 		create_nebula = {
 			radius = 1
 			name = "trime_stasis_nabula"
-			
 		}
-		add_modifier = { modifier = trime_ship_frozen }
+		add_modifier = {
+			modifier = trime_ship_frozen
+		}
+		every_system_planet = {
+			random_list = {
+				50 = {
+					add_deposit = d_zro_deposit_1
+				}
+				100 = {
+				}
+			}
+		}
 	}
 }

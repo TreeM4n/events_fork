@@ -35,5 +35,5 @@ trime_decoded_messages_chain = {
 
 trime_buildtemple = {
 	icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
-	picture = GFX_evt_astral_rift_genesis_2
+	picture = GFX_scar_mega_chronomancer_palace
 }

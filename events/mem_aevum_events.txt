@@ -46,10 +46,13 @@ namespace = trime
 # mem_aevum.117   	|	leader event, are you upgrading megastructure? why not give aevum some time of it
 # mem_aevum.116   	|	leader event, planets population has born a new generation in mere seconds
 # mem_aevum.118   	|	leader event, skip time of a situation, aevum can skip it
+# mem_aevum.119   	|	leader event, relic on cooldown? aevum can remove it
 # mem_aevum.113   	|	logic for leader events
 # mem_aevum.114   	|	leader event, random leader had argument and got forcefully aged by aevum
 # mem_aevum.111   	|	on leader fired, check if it was aevum, then what?, not active
 # mem_aevum.112   	|	on relic gained and activated, add age to all with hoursglass trait
+# mem_aevum.200   	|	on aged, new powers 
+# mem_aevum.201   	|	on aged, final tier
 namespace = trime
 event = {
 	id = trime.0
@@ -136,7 +139,7 @@ country_event = {
 		name = STRANGE
 		add_tech_progress = {
 			tech = mem_aevum_unlock_chronopalace
-			progress = 100
+			progress = 111
 		}
 	}
 	option = {
@@ -167,6 +170,46 @@ country_event = {
 				tech = mem_aevum_unlock_chronopalace
 				progress = 1
 			}
+		}
+	}
+	option = {
+		name = STRANGE
+		every_owned_leader = {
+			limit = {
+				has_trait = trime_leader_trait_legendary_houtglasskeeper
+			}
+			add_age = 300
+			trime_setportrait = yes
+		}
+	}
+	option = {
+		name = STRANGE
+		every_owned_leader = {
+			limit = {
+				has_trait = trime_leader_trait_legendary_houtglasskeeper
+			}
+			add_age = 600
+			trime_setportrait = yes
+		}
+	}
+	option = {
+		name = STRANGE
+		every_owned_leader = {
+			limit = {
+				has_trait = trime_leader_trait_legendary_houtglasskeeper
+			}
+			add_age = 1000
+			trime_setportrait = yes
+		}
+	}
+	option = {
+		name = STRANGE
+		every_owned_leader = {
+			limit = {
+				has_trait = trime_leader_trait_legendary_houtglasskeeper
+			}
+			add_age = 2000
+			trime_setportrait = yes
 		}
 	}
 }
@@ -200,7 +243,7 @@ ship_event = {
 	}
 	diplomatic = yes
 	picture_event_data = {
-		portrait = GFX_trime_time_lord
+		portrait = GFX_trime_time_lord_stage2
 		room = pre_ftl_victorian_room
 		planet_background = pc_continental
 	}
@@ -232,7 +275,12 @@ ship_event = {
 		# You would make a fine slave
 		allow = {
 			this.owner = {
-				is_authoritarian = yes
+				OR = {
+					has_ethic = ethic_authoritarian
+					has_ethic = ethic_fanatic_authoritarian
+					has_ethic = ethic_fanatic_xenophobe
+					has_ethic = ethic_fanatic_xenophobe
+				}
 			}
 		}
 		name = trime.1.g
@@ -250,7 +298,8 @@ ship_event = {
 		allow = {
 			this.owner = {
 				OR = {
-					is_spiritualist = yes
+					has_ethic = ethic_spiritualist
+					has_ethic = ethic_fanatic_spiritualist
 					has_technology = tech_psionic_theory
 				}
 			}
@@ -438,7 +487,7 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	picture_event_data = {
-		portrait = GFX_trime_time_lord
+		portrait = GFX_trime_time_lord_stage2
 		room = pre_ftl_victorian_room
 		planet_background = pc_continental
 	}
@@ -502,7 +551,7 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	picture_event_data = {
-		portrait = GFX_trime_time_lord
+		portrait = GFX_trime_time_lord_stage2
 		room = pre_ftl_victorian_room
 		planet_background = pc_continental
 	}
@@ -515,10 +564,16 @@ country_event = {
 	option = {
 		# you have played enough xeno
 		name = trime.4.e
+		trigger = {
+			NOT = {
+				has_country_flag = trime_askedtoomuch
+			}
+		}
 		allow = {
 			OR = {
-				is_xenophobe = yes
-				is_gestalt = yes
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+				has_ethic = ethic_gestalt_consciousness
 			}
 		}
 		custom_tooltip = trime_will_age_aevum
@@ -529,6 +584,7 @@ country_event = {
 				which = trime_aevum_start_age
 				value = 20
 			}
+			set_country_flag = trime_askedtoomuch
 		}
 	}
 	option = {
@@ -569,6 +625,14 @@ country_event = {
 		}
 		#}
 	}
+	after = {
+		if = {
+			limit = {
+				has_country_flag = trime_askedtoomuch
+			}
+			remove_country_flag = trime_askedtoomuch
+		}
+	}
 }
 
 # This = country, lead attacker
@@ -606,7 +670,7 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	picture_event_data = {
-		portrait = GFX_trime_time_lord
+		portrait = GFX_trime_time_lord_stage2
 		room = pre_ftl_victorian_room
 		planet_background = pc_continental
 		#graphical_culture = prim
@@ -654,7 +718,7 @@ situation_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	picture_event_data = {
-		portrait = GFX_trime_time_lord
+		portrait = GFX_trime_time_lord_stage2
 		room = pre_ftl_victorian_room
 		planet_background = pc_continental
 	}
@@ -698,7 +762,7 @@ situation_event = {
 		name = trime.9.d
 		allow = {
 			this.owner = {
-				is_megacorp = yes
+				has_authority = auth_corporate
 				resource_stockpile_compare = {
 					resource = energy
 					value > 3600
@@ -747,7 +811,7 @@ situation_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	picture_event_data = {
-		portrait = GFX_trime_time_lord
+		portrait = GFX_trime_time_lord_stage2
 		room = pre_ftl_victorian_room
 		planet_background = pc_continental
 	}
@@ -831,11 +895,17 @@ situation_event = {
 					is_lithoid = yes
 					is_machine_empire = yes
 				}
+				NOT = {
+					has_country_flag = trime_askedtoomuch2
+				}
 			}
 		}
 		this.owner = {
 			add_resource = {
 				food = 100
+			}
+			hidden_effect = {
+				set_country_flag = trime_askedtoomuch2
 			}
 		}
 	}
@@ -866,11 +936,18 @@ situation_event = {
 					}
 					remove_country_flag = trime_askedtoomuch
 				}
+				if = {
+					limit = {
+						has_country_flag = trime_askedtoomuch2
+					}
+					remove_country_flag = trime_askedtoomuch2
+				}
 			}
 		}
 	}
 }
 
+# here are too many options  to show all
 # this = country 
 country_event = {
 	id = trime.11
@@ -919,7 +996,7 @@ country_event = {
 				create_species = {
 					name = "NAME_Unknown"
 					class = PARAGON
-					portrait = GFX_trime_time_lord
+					portrait = GFX_trime_time_lord_stage2
 					namelist = "PRT1"
 					traits = {
 						trait = trait_decadent
@@ -972,6 +1049,7 @@ country_event = {
 						clear_variable = trime_aevum_start_age
 					}
 				}
+				trime_setportrait = yes
 			}
 		}
 	}
@@ -1053,10 +1131,11 @@ country_event = {
 	}
 	option = {
 		# is the hourglass made from lithoids?
-		allow = {
+		trigger = {
 			OR = {
 				is_lithoid = yes
-				is_xenophile = yes
+				has_ethic = ethic_xenophile
+				has_ethic = ethic_xenophile
 			}
 		}
 		name = trime.11.e
@@ -1075,15 +1154,15 @@ country_event = {
 	}
 	option = {
 		# lets shave you
-		allow = {
-			AND = {
-				or = {
-					is_xenophobe = yes
-					is_militarist = yes
-				}
-				event_target:trime_time_lord = {
-					leader_age > 150
-				}
+		trigger = {
+			OR = {
+				has_ethic = ethic_militarist
+				has_ethic = ethic_fanatic_militarist
+				has_ethic = ethic_xenophobe
+				has_ethic = ethic_fanatic_xenophobe
+			}
+			event_target:trime_time_lord = {
+				leader_age > 150
 			}
 		}
 		name = trime.11.g
@@ -1103,15 +1182,13 @@ country_event = {
 	option = {
 		# become more liek us
 		trigger = {
-			AND = {
-				or = {
-					has_civic = civic_machine_assimilator
-					has_tradition = tr_cybernetics_adopt
-				}
-				event_target:trime_time_lord = {
-					NOT = {
-						has_trait = leader_trait_cyborg
-					}
+			or = {
+				has_civic = civic_machine_assimilator
+				has_tradition = tr_cybernetics_adopt
+			}
+			event_target:trime_time_lord = {
+				NOT = {
+					has_trait = leader_trait_cyborg
 				}
 			}
 		}
@@ -1125,7 +1202,6 @@ country_event = {
 		event_target:trime_time_lord = {
 			add_trait = leader_trait_cyborg
 		}
-		
 	}
 	option = {
 		# can u be more resourceful?
@@ -1136,8 +1212,9 @@ country_event = {
 		}
 		allow = {
 			NOR = {
-				is_megacorp = yes
-				is_materialist = yes
+				has_authority = auth_corporate
+				has_ethic = ethic_materialist
+				has_ethic = ethic_fanatic_materialist
 			}
 		}
 		name = trime.11.i
@@ -1145,11 +1222,13 @@ country_event = {
 		is_dialog_only = yes
 		event_target:trime_time_lord = {
 			add_age = -20
+			hidden_effect = {
+				trime_setportrait = yes
+			}
 			remove_trait = leader_trait_lavish_lifestyle_2
 			add_trait = leader_trait_lavish_lifestyle
 		}
 	}
-
 	option = {
 		# HIRE
 		name = HIRE
@@ -1836,7 +1915,6 @@ country_event = {
 	}
 }
 
-# TODO makes finishing the event chain interesting
 # this = country 
 country_event = {
 	id = trime.18
@@ -1848,7 +1926,7 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	picture_event_data = {
-		portrait = GFX_trime_time_lord
+		portrait = GFX_trime_time_lord_stage2
 		room = pre_ftl_victorian_room
 		planet_background = pc_continental
 	}
@@ -1929,9 +2007,15 @@ country_event = {
 					limit = {
 						is_ruler = no
 						leader_class = scientist
+						if = {
+							limit = {
+								is_gestalt = yes
+							}
+							is_councilor = no
+						}
 					}
 					save_event_target_as = trime_future_leader
-					#save_global_event_target_as = trime_leader_hastoreturn
+					set_leader_flag = trime_has_to_go
 				}
 			}
 			clone_leader = {
@@ -1990,7 +2074,6 @@ country_event = {
 			}
 			last_created_leader = {
 				set_owner = root
-				save_event_target_as = trime_future_leader
 			}
 		}
 	}
@@ -1999,7 +2082,6 @@ country_event = {
 		sound = event_airlock
 		name = DISMISS
 		tag = dismiss_leader
-		#add_relic = r_trime_houglass
 		hidden_effect = {
 			event_target:trime_future_leader = {
 				#save_global_event_target_as = trime_time_lord
@@ -2039,6 +2121,7 @@ country_event = {
 				is_ruler = no
 				#is_councilor = no
 				leader_class = scientist
+				has_leader_flag = trime_has_to_go
 			}
 			save_event_target_as = trime_future_leader2
 		}
@@ -2205,6 +2288,9 @@ leader_event = {
 		}
 		this = {
 			add_age = 20
+			hidden_effect = {
+				trime_setportrait = yes
+			}
 		}
 	}
 	option = {
@@ -2238,6 +2324,9 @@ leader_event = {
 		}
 		this = {
 			add_age = -20
+			hidden_effect = {
+				trime_setportrait = yes
+			}
 		}
 	}
 }
@@ -2287,6 +2376,9 @@ leader_event = {
 		}
 		this = {
 			add_age = 20
+			hidden_effect = {
+				trime_setportrait = yes
+			}
 		}
 	}
 	option = {
@@ -2320,6 +2412,9 @@ leader_event = {
 		}
 		this = {
 			add_age = -20
+			hidden_effect = {
+				trime_setportrait = yes
+			}
 		}
 	}
 }
@@ -2362,6 +2457,9 @@ leader_event = {
 		}
 		this = {
 			add_age = 100
+			hidden_effect = {
+				trime_setportrait = yes
+			}
 		}
 	}
 	option = {
@@ -2463,7 +2561,6 @@ event = {
 						random = 900
 					}
 				}
-				# TODO instead of growth, just add pops, different events for machines and bio?
 				# speed growth 
 				5 = {
 					leader_event = {
@@ -2503,6 +2600,22 @@ event = {
 								count_situation = {
 									count >= 1
 								}
+							}
+						}
+						factor = 0
+					}
+				}
+				# reset relic cooldown 
+				5 = {
+					leader_event = {
+						id = trime.119
+						days = 1
+						random = 900
+					}
+					modifier = {
+						owner = {
+							NOT = {
+								has_modifier = relic_activation_cooldown
 							}
 						}
 						factor = 0
@@ -2559,6 +2672,48 @@ leader_event = {
 		owner = {
 			add_resource = {
 				influence = -100
+			}
+		}
+	}
+}
+
+# resest relic cooldown
+leader_event = {
+	id = trime.119
+	title = trime.119.name
+	desc = trime.119.desc
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = event_default
+	is_triggered_only = yes
+	#fire_only_once = yes
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_trime_timelord"
+	picture_event_data = {
+		portrait = root
+	}
+	trigger = {
+		event_target:trime_time_lord = {
+			leader_age > 100
+		}
+	}
+	option = {
+		name = trime.119.a
+		event_target:trime_time_lord = {
+			add_age = -100
+			hidden_effect = {
+				trime_setportrait = yes
+			}
+		}
+		owner = {
+			remove_modifier = relic_activation_cooldown
+		}
+	}
+	option = {
+		name = trime.119.b
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = 3
 			}
 		}
 	}
@@ -2720,11 +2875,104 @@ country_event = {
 				has_trait = trime_leader_trait_legendary_houtglasskeeper
 			}
 			add_age = 50
+			hidden_effect = {
+				trime_setportrait = yes
+			}
 		}
 		create_message = {
 			type = trime_hourglass_tick
 			localization = trime_aevum_got_stronger_from_relics
 			days = 30
+		}
+	}
+}
+
+#
+# ascended his trait
+leader_event = {
+	id = trime.200
+	title = trime.200.name
+	desc = trime.200.desc
+	picture = GFX_evt_psionics
+	show_sound = event_default
+	is_triggered_only = yes
+	#fire_only_once = yes
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_trime_timelord"
+	picture_event_data = {
+		portrait = root
+	}
+	immediate = {
+	}
+	option = {
+		trigger = {
+			has_trait = trime_leader_trait_legendary_timeskipper
+		}
+		name = FASCINATING
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 6
+			}
+		}
+	}
+	# double so one shows the trait when selecting , other for debug
+	option = {
+		trigger = {
+			NOT = {
+				has_trait = trime_leader_trait_legendary_timeskipper
+			}
+		}
+		name = DISTURBING
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 6
+			}
+		}
+	}
+}
+
+# final level
+leader_event = {
+	id = trime.201
+	title = trime.201.name
+	desc = trime.201.desc
+	picture = GFX_evt_zro_2
+	show_sound = event_default
+	is_triggered_only = yes
+	#fire_only_once = yes
+	event_window_type = leader_story
+	event_picture_background = "GFX_leader_recruitment_bg_trime_timelord"
+	picture_event_data = {
+		portrait = root
+	}
+	immediate = {
+	}
+	option = {
+		trigger = {
+			has_trait = trime_leader_trait_legendary_timeskipper
+		}
+		name = DISTURBING
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 36
+			}
+		}
+	}
+	option = {
+		trigger = {
+			NOT = {
+				has_trait = trime_leader_trait_legendary_timeskipper
+			}
+		}
+		name = DISTURBING
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 36
+			}
 		}
 	}
 }

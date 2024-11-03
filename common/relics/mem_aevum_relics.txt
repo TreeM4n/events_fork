@@ -37,8 +37,7 @@ r_trime_houglass = {
 	}
 	score = 500
 	active_effect = {
-		
-		custom_tooltip = trime_button2_deage_all_tt		
+		custom_tooltip = trime_button2_deage_all_tt
 		#if = {
 		#	limit = {
 		#		any_owned_leader = {
@@ -52,9 +51,11 @@ r_trime_houglass = {
 			days = 360
 		}
 		custom_tooltip = relic_triumph_cooldown
-		add_modifier = {
-			modifier = "relic_activation_cooldown"
-			days = @triumph_duration
+		hidden_effect = {
+			add_modifier = {
+				modifier = "relic_activation_cooldown"
+				days = @triumph_duration
+			}
 		}
 		hidden_effect = {
 			every_owned_leader = {
