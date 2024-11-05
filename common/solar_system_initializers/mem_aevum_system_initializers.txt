@@ -1,9 +1,9 @@
 # time lord system
-trime_orgin_system = {
+mem_aevum_orgin_system = {
 	class = "sc_t"
-	name = "trime_system"
+	name = "mem_aevum_system"
 	flags = {
-		trime_system
+		mem_aevum_system
 	}
 	usage = misc_system_init
 	usage_odds = {
@@ -53,11 +53,11 @@ trime_orgin_system = {
 			prevent_anomaly = yes
 			#generate_primitives_on_planet = yes
 			generate_very_early_pre_ftls_on_planet = yes
-			#save_event_target_as = trime_primitive_rewind_world
-			save_global_event_target_as = trime_primitive_rewind_world
-			set_planet_flag = trime_primitive_rewind_world
-			set_planet_flag = trime_time_lordishere
-			set_planet_flag = trime_first_timer
+			#save_event_target_as = mem_aevum_primitive_rewind_world
+			save_global_event_target_as = mem_aevum_primitive_rewind_world
+			set_planet_flag = mem_aevum_primitive_rewind_world
+			set_planet_flag = mem_aevum_time_lordishere
+			set_planet_flag = mem_aevum_first_timer
 			create_ambient_object = {
 				type = abandoned_starbase_01_object
 				location = this
@@ -119,10 +119,10 @@ trime_orgin_system = {
 		}
 		create_nebula = {
 			radius = 1
-			name = "trime_stasis_nabula"
+			name = "mem_aevum_stasis_nabula"
 		}
 		add_modifier = {
-			modifier = trime_ship_frozen
+			modifier = mem_aevum_ship_frozen
 		}
 		every_system_planet = {
 			random_list = {

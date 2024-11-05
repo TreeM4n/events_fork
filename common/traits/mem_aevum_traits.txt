@@ -1,10 +1,10 @@
 ###########
-# trime_traits
+# mem_aevum_traits
 # made by:
 # tr33
 #
 ###########
-trime_leader_trait_legendary_timeskipper = {
+mem_aevum_leader_trait_legendary_timeskipper = {
 	#Origin trait
 	#cost = 0
 	inline_script = {
@@ -16,12 +16,12 @@ trime_leader_trait_legendary_timeskipper = {
 		TIER = none
 	}
 	
-	#custom_tooltip_with_modifiers = trime_trait_scaleswithage
+	#custom_tooltip_with_modifiers = mem_aevum_trait_scaleswithage
 	triggered_desc = {
 		trigger = {
 			always = yes
 		}
-		text = trime_trait_scaleswithage
+		text = mem_aevum_trait_scaleswithage
 	}
 	#triggered_councilor_modifier = {
 	#	potential = {
@@ -31,13 +31,14 @@ trime_leader_trait_legendary_timeskipper = {
 	#		#}
 	##	}
 	#	leader_lifespan_add = 4
-	#	mult = root.value:trime_leader_lifespan2
+	#	mult = root.value:mem_aevum_leader_lifespan2
 	#}
 	triggered_councilor_modifier = {
 		potential = {
 			leader_age >= 100
 		}
 		ruler_skill_add = 1
+		
 	}
 	triggered_modifier = {
 		potential = {
@@ -119,7 +120,7 @@ trime_leader_trait_legendary_timeskipper = {
 	#		}
 	#	}
 	#	planetary_ascension_cost_mult = 0.05
-	#	mult = this.value:trime_leader_lifespan2
+	#	mult = this.value:mem_aevum_leader_lifespan2
 	#}
 	leader_class = {
 		scientist
@@ -129,7 +130,7 @@ trime_leader_trait_legendary_timeskipper = {
 	notify_on_gained = no
 }
 
-trime_leader_trait_legendary_houtglasskeeper = {
+mem_aevum_leader_trait_legendary_houtglasskeeper = {
 	inline_script = {
 		script = trait/icon
 		CLASS = leader
@@ -142,7 +143,7 @@ trime_leader_trait_legendary_houtglasskeeper = {
 		trigger = {
 			always = yes
 		}
-		text = trime_trait_getsagefromrelics
+		text = mem_aevum_trait_getsagefromrelics
 	}
 	triggered_planet_modifier = {
 		potential = {

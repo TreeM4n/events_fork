@@ -1,10 +1,10 @@
 ###########
-# trime_situations
+# mem_aevum_situations
 # made by:
 # tr33
 #
 ###########
-trime_sit_wait_20years = {
+mem_aevum_sit_wait_20years = {
 	picture = GFX_evt_deficit
 	category = neutral
 	#fail_icon = GFX_situation_outcome_meh
@@ -20,7 +20,7 @@ trime_sit_wait_20years = {
 		
 	}
 	stages = {
-		trime_stage1 = {
+		mem_aevum_stage1 = {
 			icon = GFX_situation_stage_1
 			icon_background = GFX_situation_stage_frame_blue
 			end = 240
@@ -28,10 +28,10 @@ trime_sit_wait_20years = {
 		}		
 	}
 	on_progress_complete = {
-		custom_tooltip = trime_hmm_okletswait
+		custom_tooltip = mem_aevum_hmm_okletswait
 		hidden_effect = {
 			situation_event = {
-				id = trime.10
+				id = mem_aevum.10
 			}
 		}
 	}
@@ -39,12 +39,12 @@ trime_sit_wait_20years = {
 		base = 1
 	}
 	approach = {
-		name = trime_letswait_approach
+		name = mem_aevum_letswait_approach
 		icon = GFX_situation_approach_shrug
 		icon_background = GFX_situation_approach_bg_yellow
 		
 		on_select = {
-			custom_tooltip = trime_empty_appraoch
+			custom_tooltip = mem_aevum_empty_appraoch
 		}
 		ai_weight = {
 			base = 1
@@ -53,12 +53,12 @@ trime_sit_wait_20years = {
 		
 	}
 	approach = {
-		name = trime_letswait_approach2
+		name = mem_aevum_letswait_approach2
 		icon = GFX_situation_approach_shrug
 		icon_background = GFX_situation_approach_bg_red
 		
 		on_select = {
-			custom_tooltip = trime_empty_appraoch
+			custom_tooltip = mem_aevum_empty_appraoch
 		}
 		ai_weight = {
 			base = 0

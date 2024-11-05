@@ -1,9 +1,9 @@
 # aevums palace
-scar_mega_chronomancer_palace = {
-	entity = "SCAR_psi_core_entity_stage_1"	# thx wamo
+mem_aevum_mega_chronomancer_palace = {
+	entity = "mem_aevum_psi_core_entity_stage_1"	# thx wamo
 	show_galactic_map_icon = yes
 	construction_entity = "construction_platform_entity"
-	portrait = "GFX_scar_mega_chronomancer_palace"
+	portrait = "GFX_mem_aevum_mega_chronomancer_palace"
 	place_entity_on_planet_plane = no
 	show_in_outliner = no
 	entity_offset = {
@@ -95,7 +95,7 @@ scar_mega_chronomancer_palace = {
 			}
 			custom_tooltip = {
 				fail_text = "requires_not_astral_scar"
-				is_astral_scar = no
+				is_astral_scar =  no
 			}
 			custom_tooltip = {
 				fail_text = "requires_not_ring_world"
@@ -135,15 +135,15 @@ scar_mega_chronomancer_palace = {
 			set_country_flag = mem_aevum_has_built_chronopalace
 			if = {
 				limit = {
-					has_event_chain = trime_buildtemple
+					has_event_chain = mem_aevum_buildtemple
 				}
 				country_event = {
-					id = trime.11
+					id = mem_aevum.11
 				}
 			}
 		}
 		add_modifier = {
-			modifier = trime_ship_frozen
+			modifier = mem_aevum_ship_frozen
 		}
 		create_ambient_object = {
 			type = "turbulent_nebula_2"
@@ -159,7 +159,7 @@ scar_mega_chronomancer_palace = {
 		}
 		create_nebula = {
 			radius = 1
-			name = "trime_stasis_nabula"
+			name = "mem_aevum_stasis_nabula"
 			
 		}
 		every_system_planet = {

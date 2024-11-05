@@ -1,5 +1,5 @@
 ###########
-# trime_on_action
+# mem_aevum_on_action
 # made by:
 # tr33
 #
@@ -7,7 +7,7 @@
 
 on_game_start = {
 	events = {
-		trime.0 # flag allowed + random spawn
+		mem_aevum.0 # flag allowed + random spawn
 		
 	}
 }
@@ -17,7 +17,7 @@ on_game_start = {
 # From = Planet
 on_survey_planet = {
 	events = {
-		trime.1 # someone opened channel
+		mem_aevum.1 # someone opened channel
 	}
 
 }
@@ -28,7 +28,7 @@ on_survey_planet = {
 # FromFrom = Country
 on_entering_system_first_time = {
 	events = {
-		trime.2 # weird time in this system
+		mem_aevum.2 # weird time in this system
 	}
 }
 
@@ -39,7 +39,7 @@ on_entering_system_first_time = {
 # 'Attacker' is the side that "IsHostile" to the planet controller. For example: spawned monster armies are attackers, but if they win and the player attempts to retake the planet, the player is the attacker
 on_planet_attackers_win = {
 	events = {
-		trime.6 # invaded his planet
+		mem_aevum.6 # invaded his planet
 		
 	}	
 }
@@ -51,7 +51,7 @@ on_planet_attackers_win = {
 # From = Leader
 on_leader_death = {
 	events = {
-		trime.106 #check if he died	and send shitpost event	
+		mem_aevum.106 #check if he died	and send shitpost event	
 	}
 }
 
@@ -60,7 +60,7 @@ on_leader_death = {
 # From = Leader
 on_leader_fired = {
 	events = {
-		#trime.111 #kill him fr
+		#mem_aevum.111 #kill him fr
 		
 	}
 }
@@ -71,7 +71,7 @@ on_leader_fired = {
 # FromFrom = System
 on_megastructure_upgrade_begin = {
 	events = {
-		#trime.99 instant mega power
+		#mem_aevum.99 instant mega power
 	}
 }
 
@@ -79,14 +79,14 @@ on_megastructure_upgrade_begin = {
 # No scope, like on_game_start
 on_yearly_pulse = {
 	events = {
-		trime.101 #deage him
+		mem_aevum.101 #deage him
 	}
 }
 
 # No scope, like on_game_start
 on_five_year_pulse = {
 	events = {
-		trime.113 ## random stuff
+		mem_aevum.113 ## random stuff
 	}
 	
 }
@@ -94,13 +94,13 @@ on_five_year_pulse = {
 # This = Country
 on_relic_received = {
 	events = {
-		trime.112 # add age
+		mem_aevum.112 # add age
 	}
 }
 
 # This = Country
 on_relic_activated = {
 	events = {
-		trime.112 #add age
+		mem_aevum.112 #add age
 	}
 }

@@ -1,11 +1,11 @@
 ###########
-# trime_room_selector
+# mem_aevum_room_selector
 # made by:
 # tr33
 #
 ###########
 
-trime_room_selector = {
+mem_aevum_room_selector = {
 	#default = "d_room"	#point to textures that end with "_room.dds" but remove the file ending
 
 	#default = "command2_room"	#point to textures that end with "_room.dds" but remove the file ending
@@ -13,7 +13,7 @@ trime_room_selector = {
 	#will run with a limited country scope. species and government is set but the country does not actually exist
 	
 	game_setup = {	
-		"trime_background_room" = { always = yes }	
+		"mem_aevum_background_room" = { always = yes }	
 				
 	}
 

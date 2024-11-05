@@ -1,5 +1,5 @@
 ###########
-# trime_messages
+# mem_aevum_messages
 # made by:
 # tr33
 #
@@ -7,11 +7,11 @@
 
 
 message_type = {
-	key = "trime_hourglass_tick"
-	icon = "GFX_trime_hourglass_tick"
+	key = "mem_aevum_hourglass_tick"
+	icon = "GFX_mem_aevum_hourglass_tick"
 	icon_frame = 1
 
-	name = "trime_hourglass_tick_title"
+	name = "mem_aevum_hourglass_tick_title"
 	sound = "notification"
 	ping = "ping_notification_green"
 

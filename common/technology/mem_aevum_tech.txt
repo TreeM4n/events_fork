@@ -11,7 +11,7 @@ mem_aevum_unlock_chronopalace= {
 	weight = @tier5weight3
 
 	potential = {
-		has_country_flag = trime_allowedtogettemple
+		has_country_flag = mem_aevum_allowedtogettemple
 		#always = no
 	}
 	modifier = {

@@ -1,27 +1,27 @@
 ###########
-# trime_static_modifiers
+# mem_aevum_static_modifiers
 # made by:
 # tr33
 #
 ###########
 
 
-#################### trime modifiers ###########################
+#################### mem_aevum modifiers ###########################
 
-trime_cursedworld = {
+mem_aevum_cursedworld = {
 	planet_pops_upkeep_mult =  -0.5
 	planet_jobs_produces_mult = -0.5
 	icon = "gfx/interface/icons/planet_modifiers/pm_time_acceleration.dds"
 }
 
-trime_slowgrowing = {
+mem_aevum_slowgrowing = {
 	pop_growth_speed = -0.4
 	planet_pop_assembly_mult = -0.4
 	planet_pop_assembly_organic_mult = -0.4
 	icon = "gfx/interface/icons/planet_modifiers/pm_time_acceleration.dds"
 }
 
-trime_speedgrowing = {
+mem_aevum_speedgrowing = {
 	
 	pop_growth_speed = 0.4
 	planet_pop_assembly_mult = 0.4
@@ -31,18 +31,18 @@ trime_speedgrowing = {
 }
 
 
-trime_blessedworld = {
+mem_aevum_blessedworld = {
 	planet_pops_upkeep_mult =  0.5
 	planet_jobs_produces_mult = 0.5
 	icon = "gfx/interface/icons/planet_modifiers/pm_time_acceleration.dds"
 }
 
-trime_chronomancer_on_cooldown = {
-	custom_tooltip = trime_chronomancer_on_cooldown_tt
+mem_aevum_chronomancer_on_cooldown = {
+	custom_tooltip = mem_aevum_chronomancer_on_cooldown_tt
 	icon = "gfx/interface/icons/modifiers/mod_tech_cost_empire_size_mult.dds"
 }
 
-trime_ship_frozen = {
+mem_aevum_ship_frozen = {
 	
 	ship_speed_reduction = 0.9
 	ship_fire_rate_mult = -0.5
@@ -50,7 +50,7 @@ trime_ship_frozen = {
 }
 
 
-trime_confused_leadership = {	
+mem_aevum_confused_leadership = {	
 	leaders_upkeep_mult = 0.25
 	
 }

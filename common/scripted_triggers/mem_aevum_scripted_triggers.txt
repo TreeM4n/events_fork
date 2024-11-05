@@ -1,10 +1,10 @@
 ###########
-# trime_scripted_triggers
+# mem_aevum_scripted_triggers
 # made by:
 # tr33
 #
 ###########
-trime_trigger = {
+mem_aevum_trigger = {
 	is_homicidal = no	#sry genocidals
 }
 

@@ -1,20 +1,20 @@
 ###########
-# trime_scripted_effects
+# mem_aevum_scripted_effects
 # made by:
 # tr33
 #
 ###########
 # spawns the system
-spawn_trime = {
+spawn_mem_aevum = {
 	if = {
 		limit = {
 			NOT = {
-				has_global_flag = trime_system_spawned
+				has_global_flag = mem_aevum_system_spawned
 			}
 		}
-		set_global_flag = trime_system_spawned
+		set_global_flag = mem_aevum_system_spawned
 		spawn_system = {
-			initializer = trime_orgin_system
+			initializer = mem_aevum_orgin_system
 		}
 	}
 	last_created_system = {
@@ -23,131 +23,131 @@ spawn_trime = {
 }
 
 # ends al levents related to him
-trime_endallevents = {
+mem_aevum_endallevents = {
 	if = {
 		limit = {
-			has_event_chain = trime_buildtemple
+			has_event_chain = mem_aevum_buildtemple
 		}
-		end_event_chain = trime_buildtemple
+		end_event_chain = mem_aevum_buildtemple
 	}
 	if = {
 		limit = {
-			has_event_chain = trime_decoded_messages_chain
+			has_event_chain = mem_aevum_decoded_messages_chain
 		}
-		end_event_chain = trime_decoded_messages_chain
+		end_event_chain = mem_aevum_decoded_messages_chain
 	}
 	if = {
 		limit = {
-			has_special_project = trime_make_lightshow
+			has_special_project = mem_aevum_make_lightshow
 		}
 		abort_special_project = {
-			type = trime_make_lightshow
+			type = mem_aevum_make_lightshow
 		}
 	}
 	if = {
 		limit = {
-			has_special_project = trime_decode_message
+			has_special_project = mem_aevum_decode_message
 		}
 		abort_special_project = {
-			type = trime_decode_message
+			type = mem_aevum_decode_message
 		}
 	}
 }
 
 # change his portrait depending on age
-trime_setportrait = {
+mem_aevum_setportrait = {
 	this = {
 		#set_variable = {
-		#	which = trime_death_age
+		#	which = mem_aevum_death_age
 		#	value = this.trigger:leader_age
 		#}
 		if = {
 			limit = {
-				event_target:trime_time_lord = {
+				event_target:mem_aevum_time_lord = {
 					leader_age < 100
 				}
 			}
-			event_target:trime_time_lord = {
-				change_leader_portrait = GFX_trime_time_lord_stage1
+			event_target:mem_aevum_time_lord = {
+				change_leader_portrait = GFX_mem_aevum_time_lord_stage1
 			}
 		}
 		else_if = {
 			limit = {
-				event_target:trime_time_lord = {
+				event_target:mem_aevum_time_lord = {
 					leader_age < 300
 				}
 			}
-			event_target:trime_time_lord = {
-				change_leader_portrait = GFX_trime_time_lord_stage2
+			event_target:mem_aevum_time_lord = {
+				change_leader_portrait = GFX_mem_aevum_time_lord_stage2
 				if = {
 					limit = {
 						NOT = {
-							has_leader_flag = trime_power_unlocked2
+							has_leader_flag = mem_aevum_power_unlocked2
 						}
 					}
 					leader_event = {
-						id = trime.200
+						id = mem_aevum.200
 					}
 					
-					set_leader_flag = trime_power_unlocked2
+					set_leader_flag = mem_aevum_power_unlocked2
 				}
 			}
 		}
 		else_if = {
 			limit = {
-				event_target:trime_time_lord = {
+				event_target:mem_aevum_time_lord = {
 					leader_age < 600
 				}
 			}
-			event_target:trime_time_lord = {
-				change_leader_portrait = GFX_trime_time_lord_stage3
+			event_target:mem_aevum_time_lord = {
+				change_leader_portrait = GFX_mem_aevum_time_lord_stage3
 				if = {
 					limit = {
 						NOT = {
-							has_leader_flag = trime_power_unlocked3
+							has_leader_flag = mem_aevum_power_unlocked3
 						}
 					}
 					leader_event = {
-						id = trime.200
+						id = mem_aevum.200
 					}
-					set_leader_flag = trime_power_unlocked3
+					set_leader_flag = mem_aevum_power_unlocked3
 				}
 			}
 		}
 		else_if = {
 			limit = {
-				event_target:trime_time_lord = {
+				event_target:mem_aevum_time_lord = {
 					leader_age < 1000
 				}
 			}
-			event_target:trime_time_lord = {
-				change_leader_portrait = GFX_trime_time_lord
+			event_target:mem_aevum_time_lord = {
+				change_leader_portrait = GFX_mem_aevum_time_lord
 				if = {
 					limit = {
 						NOT = {
-							has_leader_flag = trime_power_unlocked4
+							has_leader_flag = mem_aevum_power_unlocked4
 						}
 					}
 					leader_event = {
-						id = trime.200
+						id = mem_aevum.200
 					}
-					set_leader_flag = trime_power_unlocked4
+					set_leader_flag = mem_aevum_power_unlocked4
 				}
 			}
 		}
 		else = {
-			event_target:trime_time_lord = {
-				change_leader_portrait = GFX_trime_time_lord_stageultimate
+			event_target:mem_aevum_time_lord = {
+				change_leader_portrait = GFX_mem_aevum_time_lord_stageultimate
 				if = {
 					limit = {
 						NOT = {
-							has_leader_flag = trime_power_unlocked5
+							has_leader_flag = mem_aevum_power_unlocked5
 						}
 					}
 					leader_event = {
-						id = trime.201
+						id = mem_aevum.201
 					}
-					set_leader_flag = trime_power_unlocked5
+					set_leader_flag = mem_aevum_power_unlocked5
 				}
 			}
 		}

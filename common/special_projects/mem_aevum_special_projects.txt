@@ -1,12 +1,12 @@
 ###########
-# trime_specialp
+# mem_aevum_specialp
 # made by:
 # tr33
 #
 ###########
 # lightshow
 special_project = {
-	key = "trime_make_lightshow"
+	key = "mem_aevum_make_lightshow"
 	#cost = 0
 	days_to_research = 180
 	tech_department = society_technology
@@ -28,7 +28,7 @@ special_project = {
 	on_success = {
 		owner = {
 			country_event = {
-				id = trime.5
+				id = mem_aevum.5
 			}
 		}
 	}
@@ -39,13 +39,13 @@ special_project = {
 
 # time message found
 special_project = {
-	key = "trime_decode_message"
+	key = "mem_aevum_decode_message"
 	cost = 200
 	#days_to_research = 1800
 	tech_department = physics_technology
 	picture = GFX_evt_intelligence_report
 	#timelimit = 1080
-	event_chain = trime_decoded_messages_chain
+	event_chain = mem_aevum_decoded_messages_chain
 	event_scope = ship_event
 	requirements = {
 		shipclass_science_ship = 1
@@ -66,7 +66,7 @@ special_project = {
 		hidden_effect = {
 			owner = {
 				country_event = {
-					id = trime.12
+					id = mem_aevum.12
 				}
 			}
 		}

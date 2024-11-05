@@ -1,495 +1,6 @@
-######################testing#######################
-entity = {
-	name = "SCAR_wormhole_01_entity"
-	pdxmesh = "abandoned_wormhole_station_01_mesh"
-	locator = { name = "root" }
-	default_state = "idle" 
-	state = { name = "idle" animation = "idle" }
-	state = { name = "death" animation = "death" looping = no
-		event = { time = 0.0 node = "explosion_generator_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 0.2 node = "explosion_generator_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		
-		event = { time = 0.5 node = "explosion_ring_up_5" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 0.8 node = "explosion_ring_up_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 1.1 node = "explosion_ring_up_4" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 1.4 node = "explosion_ring_up_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 2.4 node = "explosion_ring_up_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 2.6 node = "explosion_ring_up_6" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		
-		event = { time = 0.8 node = "explosion_ring_down_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 1.2 node = "explosion_ring_down_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 1.25 node = "explosion_ring_down_5" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 1.7 node = "explosion_ring_down_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 2.0 node = "explosion_ring_down_4" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 2.7 node = "explosion_ring_down_6" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		
-		event = { time = 2.9 node = "explosion_generator_1" particle = "medium_station_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 2.9 node = "explosion_generator_2" particle = "medium_station_explosion_particle" keep_particle = yes trigger_once = yes }
-	}
-	scale = 2.0
-	attach = { "root" 			= "SCAR_portal_edge_entity" }
-	attach = { "root" 			= "SCAR_portal_entity" }
-}
-
-#INCOMPLETE PORTAL
-entity = {
-	name = "SCAR_wormhole_empty_01_entity"
-	pdxmesh = "abandoned_wormhole_station_01_mesh"
-	locator = { name = "root" }
-	default_state = "idle" 
-	state = { name = "idle" animation = "idle" }
-	state = { name = "death" animation = "death" looping = no
-		event = { time = 0.0 node = "explosion_generator_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 0.2 node = "explosion_generator_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		
-		event = { time = 0.5 node = "explosion_ring_up_5" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 0.8 node = "explosion_ring_up_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 1.1 node = "explosion_ring_up_4" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 1.4 node = "explosion_ring_up_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 2.4 node = "explosion_ring_up_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 2.6 node = "explosion_ring_up_6" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		
-		event = { time = 0.8 node = "explosion_ring_down_2" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 1.2 node = "explosion_ring_down_1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 1.25 node = "explosion_ring_down_5" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 1.7 node = "explosion_ring_down_3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 2.0 node = "explosion_ring_down_4" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 2.7 node = "explosion_ring_down_6" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes }
-		
-		event = { time = 2.9 node = "explosion_generator_1" particle = "medium_station_explosion_particle" keep_particle = yes trigger_once = yes }
-		event = { time = 2.9 node = "explosion_generator_2" particle = "medium_station_explosion_particle" keep_particle = yes trigger_once = yes }
-	}
-	scale = 2.0
-}
-
-entity = {
-	name = "SCAR_portal_entity"
-	pdxmesh = "hyper_relay_01_portal_mesh"
-
-	scale = 0.3
-		game_data = {
-		bloom_factor			= 1.5
-		uv_animation_speed 		= -0.5
-		uv_animation_direction 	= { 0.7 -0.8 }
-		}
-}
-
-entity = {
-	name = "SCAR_portal_edge_entity"
-	pdxmesh = "hyper_relay_01_portal_edge_mesh"
-
-	scale = 0.25
-		game_data = {
-		bloom_factor			= 1
-		uv_animation_speed 		= -2
-		uv_animation_direction 	= { 0.2 0.7 }
-		}
-}
-#stage 1
-entity = { #use this entity to get the full model
-	name = "SCAR_storage_core_entity_stage_1"
-	pdxmesh = "space_cloud_mesh"
-
-	locator = { name = "root"	position = { 0 0 0} }
-	locator = { name = "pos1"	position = { 0 5 0} }
-	default_state = "idle"
-	state = { name = "idle" animation = "idle" 
-
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum" } }
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum_treble" } }
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_distortion" } }
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_pulse" } }
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_conveyor" } }
-
-	}
-	attach = { "pos1" 			= "SCAR_art_part_entity" }
-	attach = { "root" 			= "SCAR_ring_part_entity" }
-}
-
-entity = {
-	name = "SCAR_art_part_entity"
-	pdxmesh = "mega_art_institution_01_stage_2_mesh"
-	
-		meshsettings = {
-			name = "polySurface13Shape"
-			index = 0
-			texture_diffuse = "arthropoid_01_mega_art_institution_diffuse.dds"
-			texture_normal = "arthropoid_01_mega_art_institution_normal.dds"
-			texture_specular = "arthropoid_01_mega_art_institution_specular.dds"
-			shader = "PdxMeshShip"
-		}
-	
-	default_state = "idle"
-	state = { name = "idle" animation = "idle" animation_speed = 0.7 
-		start_event = { node = "part1" particle = "mega_art_core_2_effect" keep_particle = yes trigger_once = yes }
-
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_mega_art_installation_hum" } }
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_mega_art_installation_energy" } }
-	}
-	scale = 2.0
-}
-
-entity = {
-	name = "SCAR_ring_part_entity"
-	pdxmesh = "interstellar_assembly_01_stage_4_mesh"
-	
-	default_state = "idle"
-	state = { name = "idle" animation = "idle" animation_speed = 0.2 
-##		start_event = { node = "effect_1" particle = "interstellar_assembly_effect" keep_particle = yes trigger_once = yes }
-
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_interstellar_assembly_hum" } }
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_interstellar_assembly_pulse" } }
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_interstellar_assembly_beats" } }
-	}
-
-	meshsettings = {
-		name = "body_4Shape"
-		index = 0
-		texture_diffuse = "arthropoid_01_interstellar_assembly_diffuse.dds"
-		texture_normal = "arthropoid_01_interstellar_assembly_normal.dds"
-		texture_specular = "arthropoid_01_interstellar_assembly_specular.dds"
-		shader = "PdxMeshShip"
-	}
-
-	scale = 1.0
-}
-
-entity = {
-	name = "SCAR_ring_part_entity_2"
-	pdxmesh = "interstellar_assembly_01_stage_4_mesh"
-	
-	default_state = "idle"
-	state = { name = "idle" animation = "idle" animation_speed = 0.2 
-##		start_event = { node = "effect_1" particle = "interstellar_assembly_effect" keep_particle = yes trigger_once = yes }
-
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_interstellar_assembly_hum" } }
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_interstellar_assembly_pulse" } }
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_interstellar_assembly_beats" } }
-	}
-
-	meshsettings = {
-		name = "body_4Shape"
-		index = 0
-		texture_diffuse = "arthropoid_01_interstellar_assembly_diffuse.dds"
-		texture_normal = "arthropoid_01_interstellar_assembly_normal.dds"
-		texture_specular = "arthropoid_01_interstellar_assembly_specular.dds"
-		shader = "PdxMeshShip"
-	}
-
-	scale = 1.2
-}
-#stage 2
-entity = { #use this entity to get the full model
-	name = "SCAR_storage_core_entity_stage_2"
-	pdxmesh = "space_cloud_mesh"
-
-	locator = { name = "root"	position = { 0 0 0} }
-	locator = { name = "pos1"	position = { 0 5 0} }
-	locator = { name = "pos2"	position = { 0 -6 0} }
-	default_state = "idle"
-	state = { name = "idle" animation = "idle" 
-
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum" } }
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum_treble" } }
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_distortion" } }
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_pulse" } }
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_conveyor" } }
-
-	}
-	attach = { "pos1" 			= "SCAR_art_part_entity" }
-	attach = { "pos2" 			= "SCAR_ring_part_entity" }
-	attach = { "root" 			= "SCAR_ring_part_entity_2" }
-}
-
-#stage 0
-entity = { #use this entity to get the full model
-	name = "SCAR_storage_core_entity_stage_0"
-	pdxmesh = "space_cloud_mesh"
-
-	locator = { name = "pos1"	position = { 0 5 0} }
-	default_state = "idle"
-	state = { name = "idle" animation = "idle" 
-
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum" } }
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum_treble" } }
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_distortion" } }
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_pulse" } }
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_conveyor" } }
-
-	}
-	attach = { "pos1" 			= "SCAR_art_part_entity" }
-}
-
-entity = { #use this entity to get the full model
-	name = "SCAR_dreadnought_entity"
-	pdxmesh = "mammalian_01_military_station_large_mesh"
-
-	locator = { name = "root"	position = { 0 0 0} }
-	locator = { name = "bow"	position = { 0 1 -28.5} }
-	locator = { name = "mid1"	position = { 0 1 -22} }
-	locator = { name = "mid2"	position = { 0 1 -7.3} }
-	locator = { name = "stern"	position = { 0 2 0} }
-	locator = { name = "thrust1"	position = { -6.5 0 4 } rotation = { 0 0 -90 } }
-	locator = { name = "thrust2"	position = { 6.5 0 4 } rotation = { 0 0 90 } }
-	default_state = "idle"
-	state = { name = "idle" state_time = 5
-		start_event = { trigger_once = yes sound = { soundeffect = "defense_station_idle_hum" } }
-
-		event = { time = 0.0 node = "light_locator_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
-		event = { time = 0.0 node = "light_locator_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
-		event = { time = 0.0 node = "light_locator_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
-		event = { time = 0.0 node = "light_locator_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
-		event = { time = 0.0 node = "light_locator_05" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
-
-	}
-
-	state = { name = "death" state_time = 5 looping = no
-		event = { time = 0.0 node = "light_locator_01" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
-		event = { time = 0.5 node = "part3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
-		event = { time = 1.5 node = "part6" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
-		event = { time = 2.0 node = "part1" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
-		event = { time = 3.0 node = "part3" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
-		event = { time = 4.0 node = "part7" particle = "ship_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_small" } }
-
-		event = { time = 4.9 particle = "medium_station_explosion_particle" keep_particle = yes trigger_once = yes sound = { soundeffect = "station_explosion_large" } }
-	}
-	scale = 1.0
-	game_data = {
-		size = 1.0
-		emissive_recolor_crunch = 5.0
-	}
-	attach = { "bow" 			= "SCAR_battleship_bow_XL1_entity" }
-	attach = { "mid1" 			= "SCAR_cruiser_mid_S2HB_entity" }
-	attach = { "mid2" 			= "SCAR_cruiser_mid_L1M1_entity" }
-	attach = { "stern" 			= "SCAR_battleship_stern_M1S2_entity" }
-	attach = { "thrust1" 			= "SCAR_transport_ship_entity" }
-	attach = { "thrust2" 			= "SCAR_transport_ship_entity" }
-}
-
-entity = {
-	name = "SCAR_battleship_bow_XL1_entity"
-	pdxmesh = "mammalian_01_battleship_bow_XL1_mesh"
-
-	default_state = "idle"
-	state = { name = idle	state_time = 5
-		event = { time = 0 node = "light_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
-		event = { time = 0 node = "light_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
-	}
-
-	state = { name = moving	state_time = 5
-		event = { time = 0 node = "light_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
-		event = { time = 0 node = "light_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
-	}
-
-	state = { name = "death" state_time = 5 }
-
-	# XL weapon windup locator names: xl_windup_1-10
-}
-
-entity = {
-	name = "SCAR_battleship_stern_M1S2_entity"
-	pdxmesh = "mammalian_01_battleship_stern_M1S2_mesh"
-
-	default_state = idle
-	state = { name = "idle" state_time = 5
-		event = { time = 0 node = "engine_medium_01" particle = "generic_075_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_medium_02" particle = "generic_075_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_medium_03" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_medium_04" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
-
-		event = { time = 0 node = "light_01" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "light_02" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
-	}
-	state = { name = "moving" state_time = 5
-		event = { time = 0 node = "engine_medium_01" particle = "generic_1_exhaust_line_moving" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_medium_02" particle = "generic_1_exhaust_line_moving" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_medium_03" particle = "generic_05_exhaust_line_moving" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_medium_04" particle = "generic_05_exhaust_line_moving" trigger_once = yes keep_particle = yes }
-
-		event = { time = 0 node = "light_01" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "light_02" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
-	}
-	state = { name = "death" state_time = 5 }
-
-	attach = { "medium_gun_01" 		= "mammalian_01_medium_kinetic_gun_entity" }
-	attach = { "small_gun_01" 			= "mammalian_01_small_kinetic_gun_entity" }
-	attach = { "small_gun_02" 			= "mammalian_01_small_kinetic_gun_entity" }
-}
-
-entity = {
-	name = "SCAR_cruiser_mid_S2HB_entity"
-	pdxmesh = "mammalian_01_cruiser_mid_S2HB_mesh"
-
-	default_state = "idle"
-	state = { name = "idle" state_time = 5
-		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
-	}
-	state = { name = "moving" state_time = 5
-		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
-	}
-	state = { name = "death" state_time = 5 }
-
-	attach = { "small_gun_01" 			= "mammalian_01_small_kinetic_gun_entity" }
-	attach = { "small_gun_02" 			= "mammalian_01_small_kinetic_gun_entity" }
-	scale = 1.3
-}
-
-entity = {
-	name = "SCAR_cruiser_mid_L1M1_entity"
-	pdxmesh = "mammalian_01_cruiser_mid_L1M1_mesh"
-
-	default_state = "idle"
-	state = { name = "idle" state_time = 5
-		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
-	}
-	state = { name = "moving" state_time = 5
-		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
-	}
-	state = { name = "death" state_time = 5 }
-
-	attach = { "large_gun_01" 			= "mammalian_01_large_kinetic_gun_entity" }
-	attach = { "medium_gun_01" 			= "mammalian_01_medium_kinetic_gun_entity" }
-	scale = 1.3
-}
-
-entity = {
- name = "SCAR_transport_ship_entity"
-	pdxmesh = "mammalian_01_transport_mesh"
-
-	default_state = "idle"
-	state = { name = "idle" state_time = 5
-		event = { time = 0 node = "engine_small_01" particle = "generic_05_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_small_02" particle = "generic_05_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_medium_01" particle = "generic_05_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_medium_02" particle = "generic_05_exhaust_circle_idle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_01_1" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_01_2" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_02_1" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_02_2" particle = "generic_035_exhaust_line_idle" trigger_once = yes keep_particle = yes }
-
-		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
-		start_event = { trigger_once = yes sound = { soundeffect = "amb_transport_ship_hum" } }
-	}
-	state = { name = "moving" state_time = 5
-		event = { time = 0 node = "engine_small_01" particle = "generic_075_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_small_02" particle = "generic_075_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_medium_01" particle = "generic_075_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_medium_02" particle = "generic_075_exhaust_circle_moving" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_01_1" particle = "generic_06_exhaust_line_moving" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_01_2" particle = "generic_06_exhaust_line_moving" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_02_1" particle = "generic_06_exhaust_line_moving" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "engine_large_02_2" particle = "generic_06_exhaust_line_moving" trigger_once = yes keep_particle = yes }
-
-		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
-
-		event = { trigger_once = yes sound = { soundeffect = "moving_out_transport" } }
-	}
-	state = { name = "death" chance = 1 looping = no state_time = 10
-
-		event = { time = 0.0 node = "transport_explosion_locator1" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
-		event = { time = 1.4 node = "transport_explosion_locator7" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
-		event = { time = 1.0 node = "transport_explosion_locator10" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
-		event = { time = 1.6 node = "transport_explosion_locator2" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
-		event = { time = 1.9 node = "transport_explosion_locator9" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
-		event = { time = 2.1 node = "transport_explosion_locator8" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
-		event = { time = 2.83 node = "transport_explosion_locator3" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
-		event = { time = 3.26 node = "transport_explosion_locator4" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
-		event = { time = 3.9 node = "transport_explosion_locator5" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
-		event = { time = 4.1 node = "transport_explosion_locator6" particle = "ship_explosion_particle" sound = { soundeffect = ship_destroyed } }
-	}
-
-	game_data = {
-		trail_locators = {
-			"engine_large_01_1" = 		{ width = @small_trail_W 	lenght = @medium_trail_L   	}
-			"engine_large_01_2" = 		{ width = @small_trail_W 	lenght = @medium_trail_L   	}
-			"engine_large_02_1" = 		{ width = @small_trail_W 	lenght = @medium_trail_L   	}
-			"engine_large_02_2" = 		{ width = @small_trail_W 	lenght = @medium_trail_L   	}
-			"engine_small_01" = 		{ width = @small_trail_W 	lenght = @small_trail_L   	}
-			"engine_small_02" = 		{ width = @small_trail_W 	lenght = @small_trail_L   	}
-			"engine_medium_02" = 		{ width = @small_trail_W 	lenght = @small_trail_L   	}
-			"engine_medium_01" = 		{ width = @small_trail_W 	lenght = @small_trail_L   	}
-		}
-	}
-}
-
-entity = {
-	name = "SCAR_matter_decompressor_entity"
-	pdxmesh = "matter_decompressor_01_stage_3_mesh"
-	
-		meshsettings = {
-			name = "body3Shape"
-			index = 0
-			texture_diffuse = "arthropoid_01_matter_decompressor_diffuse.dds"
-			texture_normal = "arthropoid_01_matter_decompressor_normal.dds"
-			texture_specular = "arthropoid_01_matter_decompressor_specular.dds"
-			shader = "PdxMeshShip"
-		}
-	
-	default_state = "idle"
-	state = { name = "idle" animation = "idle" 
-		
-		start_event = { node = "core" particle = "matde_black_hole_effect" keep_particle = yes trigger_once = yes }
-	
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum" } }
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_hum_treble" } }
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_matter_decompressor_distortion" } }
-	}
-	scale = 0.2
-}
-
-entity = {
-	name = "SCAR_strategic_coordination_center_entity"
-	pdxmesh = "strategic_coordination_center_01_stage_1_mesh"
-	
-		meshsettings = {
-			name = "body1Shape"
-			index = 0
-			texture_diffuse = "avian_01_strategic_coordination_center_diffuse.dds"
-			texture_normal = "avian_01_strategic_coordination_center_normal.dds"
-			texture_specular = "avian_01_strategic_coordination_center_specular.dds"
-			shader = "PdxMeshShip"
-		}
-	
-	default_state = "idle"
-	state = { name = "idle" state_time = 5 
-		event = { time = 0 node = "light_locator_01" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "light_locator_02" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "light_locator_03" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
-		event = { time = 0 node = "light_locator_04" particle = "ship_light_blue_effect" trigger_once = yes keep_particle = yes }
-
-		start_event = { trigger_once = yes sound = { soundeffect = "sfx_strategic_coordination_center_hum" } }
-	}
-	scale = 0.15
-}
-
-entity = { #use this for the full model
-	name = "SCAR_archaeology_guild_entity"
-	pdxmesh = "orbital_ring_tier_03_mesh"
-	locator = { name = "pos1"	position = { 0 0 0 } rotation = { 0 -90 0 } }
-	scale = 4.0
-	attach = { "part1" 			= "avian_01_orbital_ring_section_entity" }
-	attach = { "part2" 			= "avian_01_orbital_ring_section_entity" }
-	attach = { "part3" 			= "avian_01_orbital_ring_section_entity" }
-	attach = { "part4" 			= "avian_01_orbital_ring_section_entity" }
-	attach = { "hub1" 			= "SCAR_strategic_coordination_center_entity" }
-	attach = { "hub2" 			= "SCAR_strategic_coordination_center_entity" }
-	attach = { "hub3" 			= "SCAR_strategic_coordination_center_entity" }
-	attach = { "hub4" 			= "SCAR_strategic_coordination_center_entity" }
-	attach = { "pos1" 			= "SCAR_matter_decompressor_entity" }
-
-	default_state = "idle"
-	state = { name = "idle" state_time = 5 animation = "idle"
-		start_event = { trigger_once = yes sound = { soundeffect = "amb_megastructure_orbital_ring_03_idle" } }
-	}
-}
-
 #use this model here
 entity = {
-	name = "SCAR_psi_core_entity_stage_1"
+	name = "mem_aevum_psi_core_entity_stage_1"
 	#pdxmesh = "space_cloud_mesh"
 	locator = { name = "part1" }
 	locator = { name = "pos1"	position = { 0 0 0 } rotation = { 0 47 0 } }
@@ -499,16 +10,16 @@ entity = {
 	game_data = {
 		size = 15
 	}
-	attach = { "pos1" 			= "SCAR_default_ring_2_entity" }
-	attach = { "pos2" 			= "SCAR_default_ring_3_entity" }
-	attach = { "pos3" 			= "SCAR_default_ring_1_entity" }
-	attach = { "pos4"			= "SCAR_extra_dimensional_system_effect_2_s" }
+	attach = { "pos1" 			= "mem_aevum_default_ring_2_entity" }
+	attach = { "pos2" 			= "mem_aevum_default_ring_3_entity" }
+	attach = { "pos3" 			= "mem_aevum_default_ring_1_entity" }
+	attach = { "pos4"			= "mem_aevum_extra_dimensional_system_effect_2_s" }
 	
 	scale = 2
 }
 
 entity = {
-	name = "SCAR_default_ring_1_entity"
+	name = "mem_aevum_default_ring_1_entity"
 	pdxmesh = "orbital_ring_tier_03_mesh"
 	scale = 2.0
 	attach = { "part1" 			= "avian_01_orbital_ring_section_entity" }
@@ -527,7 +38,7 @@ entity = {
 }
 
 entity = {
-	name = "SCAR_default_ring_2_entity"
+	name = "mem_aevum_default_ring_2_entity"
 	pdxmesh = "orbital_ring_tier_03_mesh"
 	scale = 2.2
 	attach = { "part1" 			= "avian_01_orbital_ring_section_entity" }
@@ -546,7 +57,7 @@ entity = {
 }
 
 entity = {
-	name = "SCAR_default_ring_3_entity"
+	name = "mem_aevum_default_ring_3_entity"
 	pdxmesh = "orbital_ring_tier_03_mesh"
 	scale = 2.4
 	attach = { "part1" 			= "avian_01_orbital_ring_section_entity" }
@@ -565,7 +76,7 @@ entity = {
 }
 
 entity = {
-	name = "SCAR_psi_core_entity_stage_0"
+	name = "mem_aevum_psi_core_entity_stage_0"
 	#pdxmesh = "space_cloud_mesh"
 	locator = { name = "part1" }
 	locator = { name = "pos1"	position = { 0 0 0 } rotation = { 0 0 0 } }
@@ -575,13 +86,13 @@ entity = {
 	game_data = {
 		size = 15
 	}
-	attach = { "pos1" 			= "SCAR_default_ring_1_entity" }
-	attach = { "pos2"			= "SCAR_extra_dimensional_system_effect_2_s" }
+	attach = { "pos1" 			= "mem_aevum_default_ring_1_entity" }
+	attach = { "pos2"			= "mem_aevum_extra_dimensional_system_effect_2_s" }
 	scale = 2
 }
 
 entity = {
-	name = "SCAR_extra_dimensional_system_effect_2_s"
+	name = "mem_aevum_extra_dimensional_system_effect_2_s"
 	locator = { name = "core" position = { 0 -5 0 } rotation = { 217 -40 0} }
 	scale = 0.2
 	

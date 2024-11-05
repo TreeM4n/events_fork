@@ -1,5 +1,5 @@
 ###########
-# trime_relics
+# mem_aevum_relics
 # made by:
 # tr33
 #
@@ -8,9 +8,9 @@
 @triumph_duration = 3600
 @triumph_duration_short = 1800
 @triumph_duration_veryshort = 900
-r_trime_houglass = {
+r_mem_aevum_houglass = {
 	activation_duration = 0
-	portrait = "GFX_trime_hourglass"
+	portrait = "GFX_mem_aevum_hourglass"
 	sound = "relic_activation_miniature_galaxy"
 	resources = {
 		category = relics
@@ -37,17 +37,17 @@ r_trime_houglass = {
 	}
 	score = 500
 	active_effect = {
-		custom_tooltip = trime_button2_deage_all_tt
+		custom_tooltip = mem_aevum_button2_deage_all_tt
 		#if = {
 		#	limit = {
 		#		any_owned_leader = {
-		#			has_trait = trime_leader_trait_legendary_houtglasskeeper
+		#			has_trait = mem_aevum_leader_trait_legendary_houtglasskeeper
 		#		}
 		#	}
-		#	custom_tooltip = trime_button2_deage_all_tt_except_aevum
+		#	custom_tooltip = mem_aevum_button2_deage_all_tt_except_aevum
 		#}
 		add_modifier = {
-			modifier = trime_confused_leadership
+			modifier = mem_aevum_confused_leadership
 			days = 360
 		}
 		custom_tooltip = relic_triumph_cooldown
@@ -61,7 +61,7 @@ r_trime_houglass = {
 			every_owned_leader = {
 				limit = {
 					NOR = {
-						has_trait = trime_leader_trait_legendary_timeskipper
+						has_trait = mem_aevum_leader_trait_legendary_timeskipper
 					}
 				}
 				if = {
@@ -74,11 +74,11 @@ r_trime_houglass = {
 					add_age = -30
 					#if = {
 					#	limit = {
-					#		exists = event_target:trime_time_lord
+					#		exists = event_target:mem_aevum_time_lord
 					#	}
-					#	event_target:trime_time_lord = {
+					#	event_target:mem_aevum_time_lord = {
 					#		add_age = 10
-					#		trime_setportrait = yes
+					#		mem_aevum_setportrait = yes
 					#	}
 					#}
 				}
