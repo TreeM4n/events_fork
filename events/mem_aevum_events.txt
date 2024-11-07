@@ -9,7 +9,7 @@ namespace = mem_aevum
 # Setup Events
 ############################################################################################################
 # mem_aevum.0   	|	Gamestart setup/ allowed check/ 10% he spawns
-# mem_aevum.999  	|	quick setup / test event / spawns system near
+# mem_aevum.999  	|	hidden setup event for testing use mem_aevum.998 for options
 # mem_aevum.998  	|	quick setup / test event / give access to various stuff
 ############################################################################################################
 # Story / pre- recruitment events
