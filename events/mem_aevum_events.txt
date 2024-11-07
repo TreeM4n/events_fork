@@ -136,10 +136,16 @@ country_event = {
 	#diplomatic = yes
 	picture = GFX_evt_clocks
 	option = {
+		allow = {
+			NOT = {
+				has_global_flag = mem_aevum_system_spawned
+			}
+		}
 		name = STRANGE
-		add_tech_progress = {
-			tech = mem_aevum_unlock_chronopalace
-			progress = 111
+		capital_scope = {
+			solar_system = {
+				spawn_mem_aevum = yes
+			}
 		}
 	}
 	option = {
@@ -160,15 +166,32 @@ country_event = {
 	}
 	option = {
 		name = STRANGE
-		hidden_effect = {
-			owner = {
-				set_country_flag = mem_aevum_allowedtogettemple
-			}
+		#hidden_effect = {
+		owner = {
+			set_country_flag = mem_aevum_allowedtogettemple
 		}
+		#}
 		this.owner = {
 			add_tech_progress = {
 				tech = mem_aevum_unlock_chronopalace
-				progress = 1
+				progress = 1.11
+			}
+		}
+	}
+	option = {
+		name = STRANGE
+		this.owner = {
+			add_relic = r_mem_aevum_houglass
+			give_specimen = {
+				key = mem_aevum_beard
+			}
+		}
+	}
+	option = {
+		name = STRANGE
+		this.owner = {
+			country_event = {
+				id = mem_aevum.11
 			}
 		}
 	}
@@ -178,7 +201,7 @@ country_event = {
 			limit = {
 				has_trait = mem_aevum_leader_trait_legendary_houtglasskeeper
 			}
-			add_age = 300
+			set_age = 300
 			mem_aevum_setportrait = yes
 		}
 	}
@@ -188,7 +211,7 @@ country_event = {
 			limit = {
 				has_trait = mem_aevum_leader_trait_legendary_houtglasskeeper
 			}
-			add_age = 600
+			set_age = 600
 			mem_aevum_setportrait = yes
 		}
 	}
@@ -198,7 +221,7 @@ country_event = {
 			limit = {
 				has_trait = mem_aevum_leader_trait_legendary_houtglasskeeper
 			}
-			add_age = 1000
+			set_age = 1000
 			mem_aevum_setportrait = yes
 		}
 	}
@@ -208,7 +231,7 @@ country_event = {
 			limit = {
 				has_trait = mem_aevum_leader_trait_legendary_houtglasskeeper
 			}
-			add_age = 2000
+			set_age = 2000
 			mem_aevum_setportrait = yes
 		}
 	}
@@ -682,7 +705,9 @@ country_event = {
 		#is_dialog_only = yes
 		this = {
 			add_relic = r_mem_aevum_houglass
-			give_specimen = { key = mem_aevum_beard }			
+			give_specimen = {
+				key = mem_aevum_beard
+			}
 			capital_scope = {
 				add_modifier = {
 					modifier = mem_aevum_cursedworld
@@ -1194,7 +1219,6 @@ country_event = {
 			}
 		}
 	}
-	
 	option = {
 		# become more liek us
 		trigger = {
@@ -2232,7 +2256,6 @@ event = {
 	}
 }
 
-#TODO beard relic with some value
 # on leader death
 #notification event that he died
 country_event = {
@@ -2257,7 +2280,9 @@ country_event = {
 	}
 	option = {
 		name = mem_aevum.106.a
-		give_specimen = { key = mem_aevum_beard }	
+		give_specimen = {
+			key = mem_aevum_beard
+		}
 		#event_target:mem_aevum_time_lord = {
 		#	kill_leader = {
 		#		show_notification = yes
@@ -2330,7 +2355,7 @@ leader_event = {
 		name = mem_aevum.115.c
 		allow = {
 			this = {
-				leader_age > 30
+				leader_age > 210
 			}
 		}
 		event_target:planet_governed = {
@@ -2340,7 +2365,7 @@ leader_event = {
 			}
 		}
 		this = {
-			add_age = -20
+			add_age = -200
 			hidden_effect = {
 				mem_aevum_setportrait = yes
 			}
@@ -2418,7 +2443,7 @@ leader_event = {
 		name = mem_aevum.116.c
 		allow = {
 			this = {
-				leader_age > 30
+				leader_age > 210
 			}
 		}
 		event_target:planet_governed = {
@@ -2428,7 +2453,7 @@ leader_event = {
 			}
 		}
 		this = {
-			add_age = -20
+			add_age = -200
 			hidden_effect = {
 				mem_aevum_setportrait = yes
 			}
@@ -2710,13 +2735,13 @@ leader_event = {
 	}
 	trigger = {
 		event_target:mem_aevum_time_lord = {
-			leader_age > 100
+			leader_age > 200
 		}
 	}
 	option = {
 		name = mem_aevum.119.a
 		event_target:mem_aevum_time_lord = {
-			add_age = -100
+			add_age = -200
 			hidden_effect = {
 				mem_aevum_setportrait = yes
 			}
@@ -2860,7 +2885,7 @@ country_event = {
 	}
 }
 
-# check if aevum was fired, remove
+# check if aevum was fired, unused
 country_event = {
 	id = mem_aevum.111
 	hide_window = yes

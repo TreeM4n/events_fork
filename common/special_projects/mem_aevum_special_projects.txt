@@ -40,7 +40,7 @@ special_project = {
 # time message found
 special_project = {
 	key = "mem_aevum_decode_message"
-	cost = 200
+	cost = 1000
 	#days_to_research = 1800
 	tech_department = physics_technology
 	picture = GFX_evt_intelligence_report
