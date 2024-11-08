@@ -1,6 +1,10 @@
-version="3.13"
+version="v3.14.*"
 tags={
 	"Events"
+	"Gameplay"
+	"Leaders"
+	"Galaxy Generation"
 }
-name="fork"
-supported_version="v3.14.*"
+name="Aevum #MODJAM2024 [3.14]"
+supported_version="v3.14.15"
+remote_file_id="3361990668"
