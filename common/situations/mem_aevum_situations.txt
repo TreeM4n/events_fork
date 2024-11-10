@@ -9,7 +9,7 @@ mem_aevum_sit_wait_20years = {
 	category = neutral
 	#fail_icon = GFX_situation_outcome_meh
 	#fail_icon_frame = GFX_situation_outcome_frame_green
-	complete_icon = GFX_situation_outcome_positive
+	complete_icon = GFX_situation_outcome_unknown
 	complete_icon_frame = GFX_situation_outcome_frame_green
 	on_start = {
 	}
@@ -46,6 +46,9 @@ mem_aevum_sit_wait_20years = {
 		on_select = {
 			custom_tooltip = mem_aevum_empty_appraoch
 		}
+		modifier = {
+			all_technology_research_speed = 0.02
+		}
 		ai_weight = {
 			base = 1
 		}
@@ -54,12 +57,16 @@ mem_aevum_sit_wait_20years = {
 	}
 	approach = {
 		name = mem_aevum_letswait_approach2
-		icon = GFX_situation_approach_shrug
-		icon_background = GFX_situation_approach_bg_red
+		icon = GFX_situation_approach_unity
+		icon_background = GFX_situation_approach_bg_yellow
 		
 		on_select = {
 			custom_tooltip = mem_aevum_empty_appraoch
 		}
+		modifier = {
+			country_unity_produces_mult = 0.02
+		}
+		
 		ai_weight = {
 			base = 0
 		}

@@ -130,6 +130,7 @@ country_event = {
 	is_triggered_only = yes
 	#diplomatic_title = BLANK_STRING
 	trigger = {
+		
 	}
 	immediate = {
 	}
@@ -266,7 +267,7 @@ ship_event = {
 	}
 	diplomatic = yes
 	picture_event_data = {
-		portrait = GFX_mem_aevum_time_lord_stage2
+		portrait = GFX_mem_aevum_time_lord_stage3
 		room = pre_ftl_victorian_room
 		planet_background = pc_continental
 	}
@@ -329,10 +330,22 @@ ship_event = {
 		}
 		response_text = mem_aevum.1.f.response
 		is_dialog_only = yes
-		this.owner = {
-			add_monthly_resource_mult = {
-				resource = society_research
-				value = 3
+		if = {
+			limit = {
+				Not = {
+					this.owner = {
+						has_country_flag = mem_aevum_askedtoomuch
+					}
+				}
+			}
+			this.owner = {
+				add_monthly_resource_mult = {
+					resource = society_research
+					value = 3
+				}
+				hidden_effect = {
+					set_country_flag = mem_aevum_askedtoomuch
+				}
 			}
 		}
 	}
@@ -460,6 +473,14 @@ ship_event = {
 					}
 				}
 			}
+			this.owner = {
+				if = {
+					limit = {
+						has_country_flag = mem_aevum_askedtoomuch
+					}
+					remove_country_flag = mem_aevum_askedtoomuch
+				}
+			}
 		}
 	}
 	#found weird signal
@@ -510,7 +531,7 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	picture_event_data = {
-		portrait = GFX_mem_aevum_time_lord_stage2
+		portrait = GFX_mem_aevum_time_lord_stage3
 		room = pre_ftl_victorian_room
 		planet_background = pc_continental
 	}
@@ -574,7 +595,7 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	picture_event_data = {
-		portrait = GFX_mem_aevum_time_lord_stage2
+		portrait = GFX_mem_aevum_time_lord_stage3
 		room = pre_ftl_victorian_room
 		planet_background = pc_continental
 	}
@@ -693,7 +714,7 @@ country_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	picture_event_data = {
-		portrait = GFX_mem_aevum_time_lord_stage2
+		portrait = GFX_mem_aevum_time_lord_stage3
 		room = pre_ftl_victorian_room
 		planet_background = pc_continental
 		#graphical_culture = prim
@@ -744,7 +765,7 @@ situation_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	picture_event_data = {
-		portrait = GFX_mem_aevum_time_lord_stage2
+		portrait = GFX_mem_aevum_time_lord_stage3
 		room = pre_ftl_victorian_room
 		planet_background = pc_continental
 	}
@@ -837,7 +858,7 @@ situation_event = {
 	diplomatic_title = BLANK_STRING
 	diplomatic = yes
 	picture_event_data = {
-		portrait = GFX_mem_aevum_time_lord_stage2
+		portrait = GFX_mem_aevum_time_lord_stage3
 		room = pre_ftl_victorian_room
 		planet_background = pc_continental
 	}
@@ -857,10 +878,14 @@ situation_event = {
 			event_chain = mem_aevum_buildtemple
 		}
 		this.owner = {
-			add_tech_progress = {
+			give_technology = {
 				tech = mem_aevum_unlock_chronopalace
-				progress = 1
+				message = yes
 			}
+			#add_tech_progress = {
+			#	tech = mem_aevum_unlock_chronopalace
+			#	progress = 1
+			#}
 		}
 	}
 	option = {
@@ -1161,7 +1186,7 @@ country_event = {
 			OR = {
 				is_lithoid = yes
 				has_ethic = ethic_xenophile
-				has_ethic = ethic_xenophile
+				has_ethic = ethic_fanatic_xenophile
 			}
 		}
 		name = mem_aevum.11.e
@@ -1183,14 +1208,30 @@ country_event = {
 		name = mem_aevum.11.j
 		response_text = mem_aevum.11.j.response		# how could you tell?
 		is_dialog_only = yes
-		add_monthly_resource_mult = {
-			resource = unity
-			value = 4
+		trigger = {
+			event_target:mem_aevum_time_lord = {
+				leader_age < 100
+			}
 		}
-		add_modifier = {
-			modifier = mem_aevum_confused_leadership
-			days = 60
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = mem_aevum_askedtoomuch2
+				}
+			}
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 4
+			}
+			add_modifier = {
+				modifier = mem_aevum_confused_leadership
+				days = 60
+			}
+			hidden_effect = {
+				set_country_flag = mem_aevum_askedtoomuch2
+			}
 		}
+	
 	}
 	option = {
 		# lets shave you
@@ -1320,6 +1361,7 @@ country_event = {
 				destroy_country = yes
 				set_global_flag = mem_aevum_stage1
 			}
+			remove_country_flag = mem_aevum_askedtoomuch2
 		}
 	}
 }
