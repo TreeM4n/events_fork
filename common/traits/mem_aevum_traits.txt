@@ -103,9 +103,9 @@ mem_aevum_leader_trait_legendary_timeskipper = {
 	}
 	triggered_planet_modifier = {
 		potential = {
-			leader_age >= 2000
+			leader_age >= 1000
 		}
-		planet_researchers_sr_zro_produces_add = 0.5
+		planet_researchers_sr_zro_produces_add = 0.2
 	}
 	inline_script = {
 		script = paragon/leader_resource_upkeep
