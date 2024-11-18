@@ -201,6 +201,16 @@ country_event = {
 			limit = {
 				has_trait = mem_aevum_leader_trait_legendary_houtglasskeeper
 			}
+			set_age = 1
+			mem_aevum_setportrait = yes
+		}
+	}
+	option = {
+		name = STRANGE
+		every_owned_leader = {
+			limit = {
+				has_trait = mem_aevum_leader_trait_legendary_houtglasskeeper
+			}
 			set_age = 300
 			mem_aevum_setportrait = yes
 		}
@@ -227,12 +237,10 @@ country_event = {
 	}
 	option = {
 		name = STRANGE
-		every_owned_leader = {
-			limit = {
-				has_trait = mem_aevum_leader_trait_legendary_houtglasskeeper
+		event_target:mem_aevum_time_lord = {
+			kill_leader = {
+				show_notification = yes
 			}
-			set_age = 2000
-			mem_aevum_setportrait = yes
 		}
 	}
 }
@@ -2284,10 +2292,16 @@ event = {
 			}
 			else = {
 				#set_global_flag = mem_aevum_time_lorddiedfr
-				root = {
-					country_event = {
-						id = mem_aevum.106
-					}
+				#root = {
+				#	country_event = {
+				#		id = mem_aevum.106
+				#		scopes = {
+				#			from = event_target:mem_aevum_time_lord
+				#		}
+				#	}
+				#}
+				kill_leader = {
+					show_notification = yes
 				}
 			}
 		}
@@ -2313,8 +2327,7 @@ country_event = {
 		has_global_flag = mem_aevum_system_spawned
 		from = {
 			has_leader_flag = mem_aevum_time_lord
-		}
-		#has_country_flag = 
+		}		
 	}
 	option = {
 		name = mem_aevum.106.a
