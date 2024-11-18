@@ -53,7 +53,7 @@
  mem_aevum_decode_message:0 "Study the Message"
  mem_aevum_cursedworld:0 "Frozen in Time"
  mem_aevum_buildtemple_title:0 "Build the Temple of $NAME_mem_aevum_time_lord$"
- mem_aevum_buildtemple_desc:0 "The last of his trials. Hopefully. Let's build a Kilostructure the temple of §Y$NAME_mem_aevum_time_lord$§!."
+ mem_aevum_buildtemple_desc:0 "The last of his trials. Hopefully. Let's build a Kilostructure the temple for §Y$NAME_mem_aevum_time_lord$§!."
  mem_aevum_stage1:0 "Waiting"
  mem_aevum_stage2:0 "More Waiting"
  mem_aevum.1.name:0 "A Second Meeting?"
@@ -234,7 +234,7 @@
  mem_aevum.119.a:0 "OK."
  mem_aevum.119.b:0 "Please do not."
  mem_aevum.114.name:0 "Leader Skip"
- mem_aevum.114.desc:0 "This is an awkward admission, but I seek your judgment. I found myself enraged after [mem_aevum_bullyhim.getName] dared to assail me, verbally, of course. [mem_aevum_bullyhim.GetSheHeCap] truly does not know [mem_aevum_bullyhim.getHerHis] place. As I contemplate the punishment for such frivolous treachery, I am inclined toward rapidly aging [mem_aevum_bullyhim.getHerHis]. However, given our amicable terms, I shall defer the decision to you"
+ mem_aevum.114.desc:0 "This is an awkward admission, but I seek your judgment. I found myself enraged after [mem_aevum_bullyhim.getName] dared to assault me, verbally, of course. [mem_aevum_bullyhim.GetSheHeCap] truly does not know [mem_aevum_bullyhim.getHerHis] place. As I contemplate the punishment for such frivolous treachery, I am inclined toward rapidly aging [mem_aevum_bullyhim.getHerHis]. However, given our amicable terms, I shall defer the decision to you"
  mem_aevum.114.a:0 "Have it your way."
  mem_aevum.114.b:0 "No."
 

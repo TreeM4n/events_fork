@@ -53,9 +53,6 @@ namespace = mem_aevum
 # mem_aevum.112   	|	on relic gained and activated, add age to all with hoursglass trait
 # mem_aevum.200   	|	on aged, new powers 
 # mem_aevum.201   	|	on aged, final tier
-
-
-
 namespace = mem_aevum
 event = {
 	id = mem_aevum.0
@@ -133,7 +130,6 @@ country_event = {
 	is_triggered_only = yes
 	#diplomatic_title = BLANK_STRING
 	trigger = {
-		
 	}
 	immediate = {
 	}
@@ -943,14 +939,18 @@ situation_event = {
 		response_text = mem_aevum.10.e.response		# try it?
 		is_dialog_only = yes
 		#abort_situation = this
+		trigger = {
+			owner = {
+				NOT = {
+					has_country_flag = mem_aevum_askedtoomuch2
+				}
+			}
+		}
 		allow = {
 			owner = {
 				OR = {
 					is_lithoid = yes
 					is_machine_empire = yes
-				}
-				NOT = {
-					has_country_flag = mem_aevum_askedtoomuch2
 				}
 			}
 		}
@@ -1234,7 +1234,6 @@ country_event = {
 				set_country_flag = mem_aevum_askedtoomuch2
 			}
 		}
-	
 	}
 	option = {
 		# lets shave you
@@ -2730,6 +2729,9 @@ leader_event = {
 	picture_event_data = {
 		portrait = root
 	}
+	trigger = {
+		exists = event_target:mem_aevum_bullyhim
+	}
 	immediate = {
 		owner = {
 			random_owned_leader = {
@@ -2778,13 +2780,18 @@ leader_event = {
 	picture_event_data = {
 		portrait = root
 	}
-	trigger = {
-		event_target:mem_aevum_time_lord = {
-			leader_age > 200
-		}
-	}
+	#trigger = {
+	#	event_target:mem_aevum_time_lord = {
+	#		leader_age > 200
+	#	}
+	#}
 	option = {
 		name = mem_aevum.119.a
+		allow = {
+			event_target:mem_aevum_time_lord = {
+				leader_age > 220
+			}
+		}
 		event_target:mem_aevum_time_lord = {
 			add_age = -200
 			hidden_effect = {

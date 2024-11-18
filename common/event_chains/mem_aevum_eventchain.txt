@@ -7,13 +7,13 @@
 
 
 mem_aevum_invade_thisguy = {
-	icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+	icon = "gfx/interface/icons/situation_log/situation_log_combat.dds"
 	picture = GFX_evt_sentry_guns
 }
 
 
 mem_aevum_decoded_messages_chain = {
-	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	icon = "gfx/interface/icons/situation_log/situation_log_physics.dds"
 	picture = GFX_evt_astral_rift_ancient_battlegrounds
 	counter = {
 		mem_aevum_decoded_messages = {
@@ -34,6 +34,6 @@ mem_aevum_decoded_messages_chain = {
 
 
 mem_aevum_buildtemple = {
-	icon = "gfx/interface/icons/situation_log/situation_log_quest.dds"
+	icon = "gfx/interface/icons/situation_log/situation_log_extradimensional.dds"
 	picture = GFX_evt_astral_rift_clock
 }
