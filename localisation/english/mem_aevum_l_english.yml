@@ -61,7 +61,7 @@
  mem_aevum.1.a:0 "Who are you?"
  mem_aevum.1.a.response:0 "I am §Y$NAME_mem_aevum_time_lord$§!, a god. Immortal, time's current eludes my grasp, as shadows dance in the veiled whispers of eternity."
  mem_aevum.1.b:0 "Did we already meet?"
- mem_aevum.1.b.response:0 "We have already spoken in past echoes and glimpsed a future together never to be born. The current, a mere reflection, aligns with the symphony woven by fate. To question this is to resist the cosmic embrace.\n*§YHis eyes wonder off and inexplicable seem to reflect a certain Black Hole§!*\nA quite uncivilized being once told me: What was, will be. Intriguing, right?"
+ mem_aevum.1.b.response:0 "We have already spoken in past echoes and glimpsed a future together never to be born. The current, a mere reflection, aligns with the symphony woven by fate. To question this is to resist the cosmic embrace.\n\n*§LHis eyes wonder off and inexplicable seem to reflect a certain Black Hole§!*\n\nA quite uncivilized being once told me: What was, will be. Intriguing, right?"
  mem_aevum.1.c:0 "Do you know anything about §Y[mem_aevum_primitive_rewind_world.System.GetName]§!?"
  mem_aevum.1.c.response:0 "It reflects my power. It is my home, shaped by the sinew of my existence to mirror my all. I, the weaver of eras, fashioned it to cradle the boundless echoes of my being."
  mem_aevum.1.d:0 "Alright, we shall do your bidding."
