@@ -276,18 +276,12 @@ ship_event = {
 		is_dialog_only = yes
 		response_text = mem_aevum.1.a.response
 	}
-	# unable to ever happen, since the event is always after this one
-	#option = {
-	# why did you send @eventtarget back in time
-	#	trigger = {
-	#	this.owner = {
-	#		has_country_flag = mem_aevum_send_scienctist
-	#	}
-	#}
-	#name = mem_aevum.1.b
-	#is_dialog_only = yes
-	#response_text = mem_aevum.1.b.reponse
-	#}
+	option = {
+		# Have we already met		
+		name = mem_aevum.1.b
+		is_dialog_only = yes
+		response_text = mem_aevum.1.b.response
+	}	
 	option = {
 		# What is this system
 		name = mem_aevum.1.c
