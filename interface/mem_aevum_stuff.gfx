@@ -76,4 +76,8 @@ spriteTypes = {
 		name = "GFX_specimen_mem_aevum_beard_specimen"
 		texturefile = "gfx/interface/icons/specimens/trime_beard_specimen_2.dds"
 	}
+	spriteType = {
+		name = "GFX_mem_aevum_mega_nuke"
+		texturefile = "gfx/interface/icons/ship_parts/mem_aevum_ship_part_mega_nuke.dds"
+	}
 }
