@@ -1,7 +1,6 @@
 This mod adds a new legendary leader and events along with it.
-Standalone mod for Aevum, originally a part of Stellaris Modjam 2024.
+Standalone mod for Aevum, originally a part of [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3106012498] Stellaris Modjam 2024 [/url] 
 
-https://steamcommunity.com/sharedfiles/filedetails/?id=3106012498
 
 
 [h3]Description[/h3]
@@ -35,7 +34,7 @@ Yes, I spent some time [i]"refining"[/i] his concept and bring it more in line w
 What's new?
 > More flavour options. A lot actually. I have added ~30 new options to the event chain, many are locked behind ethics, civics or the mortality of your ruler.
 > Refined textures and text. Some complained about the way he speaks even though it was intentional. Now he has a less cryptic way of speaking. Nontheless he will still sound like an enigma.
-> [b]1[/b] new megastructure: [b]The Timeless Temple[/b] with custom model and a interesting effect. [spoiler] Like an [/b]Arc Furnace[/b] for Zro and a [/b]Zroni Stormcaster[/b] combined [/spoiler] 
+> [b]1[/b] new megastructure: [b]The Timeless Temple[/b] with custom model and a interesting effect. [spoiler] Like an Arc Furnace for Zro and a Zroni Stormcaster combined [/spoiler] 
 
 What's gone?
 > His powers you could cast via custom UI. It felt out of place. I wanted a leader you could add to Vanilla.
@@ -51,4 +50,4 @@ What's gone?
     [*] Why are all your event IDs "mem_aevum", that's a [url=https://steamcommunity.com/sharedfiles/filedetails/?id=727000451] More Events Mod [/url] thing? I have talked with Malthus and with his approval, this Aevum will be added to MEM
     [*] 
     [*] Many thanks to [b]Wandering Modder[/b] for the custom model, to [b]Malthus[/b] for generally helping me and proofreading and [b]Jin[/b] for constructive feedback
-[/list] 
+[/list]
