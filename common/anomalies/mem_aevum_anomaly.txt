@@ -5,10 +5,7 @@ mem_aevum_anomaly_category = {
 	level = 8
 
 	spawn_chance = {
-		modifier = {
-			has_global_flag = mem_aevum_system_spawned
-			factor = 0
-		}
+		base = 1
 		modifier = {
 			add = 1
 			is_planet_class = pc_crystal_asteroid
@@ -16,6 +13,10 @@ mem_aevum_anomaly_category = {
 		modifier = {
 			add = 5
 			is_planet_class = pc_shrouded
+		}
+		modifier = {
+			has_global_flag = mem_aevum_system_spawned
+			factor = 0
 		}
 	}
 	on_spawn = {

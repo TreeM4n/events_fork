@@ -1,42 +1,46 @@
 mem_aevum_building_archeo_obelisks = {
 	base_buildtime = @b2_time
 	can_build = yes
-	category = resource
+	category = research
 	base_cap_amount = 1
-	#allow = {
-	#	exists = owner
-	#	owner = {
-	#		has_valid_civic = scar_civic_archeo_obelisk
-	#	}
-	#}
+	# allow = {
+	# 	exists = owner
+	# 	NOT = {
+	# 		has_building = mem_aevum_building_archeo_obelisks
+	# 	}
+	# }
 	potential = {
 		exists = owner
 		#always = yes
 		owner = {
 			has_technology = mem_aevum_unlock_time_building
 		}
+		NOT = {
+			has_building = mem_aevum_building_archeo_obelisks
+		}
 	}
-	#destroy_trigger = {
-	#	NOR = {
-	#		exists = owner
-	#		owner = {
-	#			has_valid_civic = scar_civic_archeo_obelisk
-	#		}
-	#	}
-	#}
-	custom_tooltip = mem_aevum_building_archeo_obelisks_tt
+	destroy_trigger = {
+		NOR = {
+			exists = owner
+			owner = {
+				has_technology = mem_aevum_unlock_time_building
+			}
+		}
+	}
+	triggered_desc = {
+		text = mem_aevum_building_archeo_obelisks_tt
+	}
 	planet_modifier = {
 		pop_happiness = -0.05
 		#planet_farmers_food_produces_add = 2
 	}
-	#
 	#inline_script = {
 	#	script = jobs/farmers_add
 	#	FARMER_AMOUNT = 2
 	#	ANGLER_AMOUNT = 2
 	#}
 	resources = {
-		category = planet_researchers
+		category = planet_buildings
 		cost = {
 			minerals = 900
 			sr_zro = 100
@@ -53,6 +57,9 @@ mem_aevum_building_archeo_obelisks = {
 			sr_zro = 0.2
 			multiplier = this.trigger:num_pops
 		}
+		upkeep = {
+			sr_zro = 0.1
+		}
 		produces = {
 			trigger = {
 				owner = {
@@ -66,6 +73,11 @@ mem_aevum_building_archeo_obelisks = {
 			society_research = 1
 			engineering_research = 1
 			multiplier = this.trigger:num_pops
+		}
+		produces = {
+			physics_research = 1
+			society_research = 1
+			engineering_research = 1
 		}
 	}
 	on_built = {

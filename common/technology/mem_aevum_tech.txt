@@ -30,13 +30,13 @@ mem_aevum_unlock_chronopalace = {
 # unlock agenda
 mem_aevum_unlock_agenda = {
 	cost = @tier3cost3
-	area = physics
+	area = society
 	category = {
 		archaeostudies
 	}
 	tier = 3
 	prerequisites = {
-		"mem_aevum_unlock_chronopalace"
+		#"mem_aevum_unlock_chronopalace"
 	}
 	is_rare = yes
 	#is_dangerous = yes
@@ -48,7 +48,9 @@ mem_aevum_unlock_agenda = {
 	}
 	modifier = {
 		custom_tooltip = mem_aevum_unlock_agenda_tt
+		
 	}
+	
 	weight_modifier = {
 		modifier = {
 			factor = 0
@@ -60,13 +62,13 @@ mem_aevum_unlock_agenda = {
 # unlock armor + spikes
 mem_aevum_unlock_time_components = {
 	cost = @tier3cost3
-	area = physics
+	area = engineering
 	category = {
 		archaeostudies
 	}
 	tier = 3
 	prerequisites = {
-		"mem_aevum_unlock_chronopalace"
+		#"mem_aevum_unlock_chronopalace"
 	}
 	is_rare = yes
 	#is_dangerous = yes
@@ -96,7 +98,7 @@ mem_aevum_unlock_time_building = {
 	}
 	tier = 3
 	prerequisites = {
-		"mem_aevum_unlock_chronopalace"
+		#"mem_aevum_unlock_chronopalace"
 	}
 	is_rare = yes
 	#is_dangerous = yes
@@ -107,7 +109,7 @@ mem_aevum_unlock_time_building = {
 		#always = no
 	}
 	modifier = {
-		#custom_tooltip = mem_aevum_unlock_agenda_tt
+		custom_tooltip = mem_aevum_unlock_time_building_tt
 	}
 	weight_modifier = {
 		modifier = {

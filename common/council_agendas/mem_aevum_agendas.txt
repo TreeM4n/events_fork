@@ -8,12 +8,14 @@ mem_aevum_zro_party = {
 		always = yes
 		# custom_tooltip = {
 		# 	fail_text = "agenda_dark_matter_breakthrough_techs_obsolete"
-			
 		# }
 	}
 	init_effect = {
 		hidden_effect = {
-			
+			set_variable = {
+				which = mem_aevum_zro_amount #avoid error log spam
+				value = 0
+			}
 		}
 	}
 	modifier = {
@@ -30,14 +32,14 @@ mem_aevum_zro_party = {
 				resource = sr_zro
 				variable = mem_aevum_zro_amount
 			}
-		}
-		add_resource = {
-			sr_zro = -1
-			mult = mem_aevum_zro_amount
-		}
-		add_resource = {
-			unity = 10
-			mult = mem_aevum_zro_amount
+			add_resource = {
+				sr_zro = -1
+				mult = mem_aevum_zro_amount
+			}
+			add_resource = {
+				unity = 10
+				mult = mem_aevum_zro_amount
+			}
 		}
 	}
 }

@@ -96,7 +96,6 @@ mem_aevum_party_hard = {
 		events = {
 			mem_aevum.205
 		}
-		
 	}
 	stages = {
 		mem_aevum_stage1 = {
@@ -106,7 +105,12 @@ mem_aevum_party_hard = {
 		}
 	}
 	on_progress_complete = {
-		custom_tooltip = mem_aevum_nothing?		
+		#custom_tooltip = mem_aevum_nothing?
+		#hidden_effect = {
+		situation_event = {
+			id = mem_aevum.215
+		}
+		#}		
 	}
 	monthly_progress = {
 		base = 0.01
@@ -119,8 +123,7 @@ mem_aevum_party_hard = {
 			custom_tooltip = mem_aevum_empty_appraoch
 		}
 		modifier = {
-			country_sr_zro_produces_mult = -0.5
-			
+			country_sr_zro_produces_mult = -0.3
 		}
 		ai_weight = {
 			base = 1
@@ -135,8 +138,9 @@ mem_aevum_party_hard = {
 			custom_tooltip = mem_aevum_empty_appraoch
 		}
 		modifier = {
-			country_sr_zro_produces_mult = -0.7
 			country_unity_produces_mult = 0.2
+			country_sr_zro_produces_mult = -0.7
+			#country_unity_produces_mult = 0.2
 		}
 		ai_weight = {
 			base = 0
@@ -150,8 +154,27 @@ mem_aevum_party_hard = {
 			custom_tooltip = mem_aevum_ages_aevum
 		}
 		modifier = {
-			country_sr_zro_produces_mult = -1
-			
+			#leaders_sr_zro_upkeep_mult = -0.5
+			country_sr_zro_produces_mult = -0.9
+		}
+		ai_weight = {
+			base = 0
+		}
+	}
+	approach = {
+		name = mem_aevum_party_hard_approach4
+		icon = GFX_situation_approach_this_is_fine
+		icon_background = GFX_situation_approach_bg_red
+		on_select = {
+			destroy_situation = this
+			owner = {
+				capital_scope = {
+					add_modifier = {
+						modifier = mem_aevum_cursedworld
+						days = 360
+					}
+				}
+			}
 		}
 		ai_weight = {
 			base = 0

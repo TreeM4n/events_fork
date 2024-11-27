@@ -69,7 +69,6 @@ namespace = mem_aevum
 # mem_aevum.325   	|	anomaly event 1 
 # mem_aevum.335   	|	anomaly event 2
 # mem_aevum.330   	|	anomaly event 3
-
 namespace = mem_aevum
 event = {
 	id = mem_aevum.0
@@ -167,11 +166,6 @@ country_event = {
 	}
 	option = {
 		name = STRANGE
-		allow = {
-			any_situation = {
-				is_situation_type = mem_aevum_sit_wait_20years
-			}
-		}
 		random_situation = {
 			limit = {
 				this = {
@@ -209,6 +203,13 @@ country_event = {
 		this.owner = {
 			country_event = {
 				id = mem_aevum.11
+			}
+			# country_event = {
+			# 	id = mem_aevum.204
+			# 	days = 2
+			# }
+			start_situation = {
+				type = mem_aevum_party_hard
 			}
 		}
 	}
@@ -258,6 +259,20 @@ country_event = {
 			kill_leader = {
 				show_notification = yes
 			}
+		}
+	}
+	option = {
+		name = STRANGE
+		capital_star = {
+			add_anomaly = {
+				category = mem_aevum_anomaly_category
+			}
+		}
+	}
+	option = {
+		name = STRANGE
+		capital_scope = {
+			create_archaeological_site = mem_aevum_hourglas_site
 		}
 	}
 }
@@ -1114,9 +1129,16 @@ country_event = {
 					add_trait = leader_trait_adaptable_2
 					add_trait = subclass_scientist_governor
 					#add_trait = leader_trait_great_researcher
-					while = {
-						count = root.mem_aevum_aevum_start_age
-						add_age = 1
+					if = {
+						limit = {
+							root = {
+								is_variable_set = mem_aevum_aevum_start_age
+							}
+						}
+						while = {
+							count = root.mem_aevum_aevum_start_age
+							add_age = 1
+						}
 					}
 					root = {
 						clear_variable = mem_aevum_aevum_start_age
@@ -3100,7 +3122,7 @@ leader_event = {
 	}
 }
 
-# random event
+# party ?
 country_event = {
 	id = mem_aevum.204
 	title = mem_aevum.204.name
@@ -3118,6 +3140,11 @@ country_event = {
 		exists = event_target:mem_aevum_time_lord
 		has_global_flag = mem_aevum_system_spawned
 		exists = event_target:mem_aevum_time_lord.owner
+		NOT = {
+			any_situation = {
+				is_situation_type = mem_aevum_party_hard
+			}
+		}
 	}
 	immediate = {
 	}
@@ -3141,7 +3168,7 @@ situation_event = {
 	hide_window = yes
 	trigger = {
 		exists = event_target:mem_aevum_time_lord
-		has_global_flag = mem_aevum_system_spawned
+		#has_global_flag = mem_aevum_system_spawned
 		#exists = event_target:mem_aevum_time_lord.owner
 	}
 	is_triggered_only = yes
@@ -3155,26 +3182,18 @@ situation_event = {
 				mem_aevum_setportrait = yes
 			}
 		}
-		# if = {
-		# 	limit = {
-		# 		check_variable = {
-		# 			which = mem_aevum_boredom
-		# 			value > 0
-		# 		}
-		# 	}
 		change_variable = {
 			which = mem_aevum_boredom
-			value = 1
+			value = 0.7
 		}
-		#}
 		random_list = {
-			100 = {
+			250 = {
 			}
 			1 = {
 				modifier = {
 					check_variable = {
 						which = mem_aevum_boredom
-						value > 0
+						value > 40
 					}
 					factor = mem_aevum_boredom
 				}
@@ -3184,16 +3203,25 @@ situation_event = {
 					}
 					factor = 0
 				}
+				remove_situation_flag = mem_aevum_sit_firstevent
 				situation_event = {
 					id = mem_aevum.215					# he got bored
 				}
 			}
-			5 = {
+			10 = {
 				modifier = {
-					has_situation_flag = mem_aevum_sit_firstevent
+					has_situation_flag = mem_aevum_sit_firstevent2
 					factor = 0
 				}
+				# modifier = {
+				# 	check_variable = {
+				# 		which = mem_aevum_boredom
+				# 		value > 0
+				# 	}
+				# 	factor = mem_aevum_boredom
+				# }
 				set_situation_flag = mem_aevum_sit_firstevent
+				set_situation_flag = mem_aevum_sit_firstevent2
 				situation_event = {
 					# you found something weird how do you want to use it?
 					id = mem_aevum.210					# initianlizs his boredom, add set varaible here
@@ -3224,7 +3252,7 @@ situation_event = {
 			# 		id = mem_aevum.220					# added primitives to planet
 			# 	}
 			# }
-			1 = {
+			10 = {
 				modifier = {
 					has_situation_flag = mem_aevum_nomorespeedmega
 					factor = 0
@@ -3244,7 +3272,7 @@ situation_event = {
 					id = mem_aevum.225					# finsihes megacosntruction
 				}
 			}
-			1 = {
+			10 = {
 				modifier = {
 					has_situation_flag = mem_aevum_nomorefastage
 					factor = 0
@@ -3278,16 +3306,23 @@ situation_event = {
 		exists = event_target:mem_aevum_time_lord.owner
 	}
 	option = {
-		name = mem_aevum.204.a		# nah lets party
+		name = mem_aevum.210.a		# nah lets party
 		owner = {
 			give_technology = {
 				tech = mem_aevum_unlock_agenda
+			}
+			hidden_effect = {
+				set_variable = {
+					which = mem_aevum_zro_amount					#avoid error log spam
+					value = 0
+				}
 			}
 		}
 	}
 	option = {
 		name = mem_aevum.210.b		# prefer tech
 		owner = {
+			add_research_option = mem_aevum_unlock_time_building
 			add_tech_progress = {
 				tech = mem_aevum_unlock_time_building
 				progress = 0.1
@@ -3297,37 +3332,38 @@ situation_event = {
 	option = {
 		name = mem_aevum.210.c		# prefer weapons
 		owner = {
+			add_research_option = mem_aevum_unlock_time_components
 			add_tech_progress = {
 				tech = mem_aevum_unlock_time_components
 				progress = 0.25
 			}
 		}
 	}
-	option = {
-		name = mem_aevum.210.d		# gamble
-		owner = {
-			random_list = {
-				10 = {
-					add_tech_progress = {
-						tech = mem_aevum_unlock_agenda
-						progress = 0.5
-					}
-				}
-				10 = {
-					add_tech_progress = {
-						tech = mem_aevum_unlock_time_building
-						progress = 0.5
-					}
-				}
-				10 = {
-					add_tech_progress = {
-						tech = mem_aevum_unlock_time_components
-						progress = 0.5
-					}
-				}
-			}
-		}
-	}
+	# option = {
+	# 	name = mem_aevum.210.d		# gamble
+	# 	owner = {
+	# 		random_list = {
+	# 			10 = {
+	# 				add_tech_progress = {
+	# 					tech = mem_aevum_unlock_agenda
+	# 					progress = 0.5
+	# 				}
+	# 			}
+	# 			10 = {
+	# 				add_tech_progress = {
+	# 					tech = mem_aevum_unlock_time_building
+	# 					progress = 0.5
+	# 				}
+	# 			}
+	# 			10 = {
+	# 				add_tech_progress = {
+	# 					tech = mem_aevum_unlock_time_components
+	# 					progress = 0.5
+	# 				}
+	# 			}
+	# 		}
+	# 	}
+	# }
 	# after = {
 	# 	hidden_effect = {
 	# 		set_situation_flag = mem_aevum_sit_firstevent
@@ -3405,6 +3441,7 @@ situation_event = {
 	}
 	option = {
 		name = mem_aevum.225.a
+		custom_tooltip = mem_aevum.225.a.tt
 		owner = {
 			event_target:mem_aevum_megaforu = {
 				finish_upgrade = yes
@@ -3450,7 +3487,7 @@ situation_event = {
 		owner = {
 			event_target:mem_aevum_bullyhimnot = {
 				add_age = 120
-				add_skill = 8
+				add_skill_without_trait_selection = 8
 			}
 		}
 	}
@@ -3458,6 +3495,7 @@ situation_event = {
 		name = mem_aevum.220.b
 	}
 }
+
 # found cave
 fleet_event = {
 	id = mem_aevum.300
@@ -3466,6 +3504,7 @@ fleet_event = {
 	picture = GFX_evt_crystal_asteroids
 	show_sound = event_coronation
 	is_triggered_only = yes
+	archaeology = yes
 	option = {
 		name = mem_aevum.300.a
 		owner = {
@@ -3475,6 +3514,7 @@ fleet_event = {
 		}
 	}
 }
+
 # found logs
 fleet_event = {
 	id = mem_aevum.305
@@ -3482,6 +3522,7 @@ fleet_event = {
 	desc = "mem_aevum.305.desc"
 	picture = GFX_evt_enlightenment_failure
 	show_sound = event_coronation
+	archaeology = yes
 	is_triggered_only = yes
 	option = {
 		name = mem_aevum.305.a
@@ -3501,10 +3542,33 @@ fleet_event = {
 	desc = "mem_aevum.310.desc"
 	picture = GFX_evt_crystal_mining
 	show_sound = event_coronation
+	archaeology = yes
 	is_triggered_only = yes
+	immediate = {
+		solar_system = {
+			random_system_planet = {
+				limit = {
+					num_pops > 0
+				}
+				save_event_target_as = mem_aevum_digsiteplanet				# this is not clean but how do scope planets from digsites?
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = event_target:mem_aevum_digsiteplanet
+				}
+			}
+			solar_system = {
+				random_system_planet = {
+					save_event_target_as = mem_aevum_digsiteplanet					# this is not clean but how do scope planets from digsites?
+				}
+			}
+		}
+	}
 	option = {
 		name = mem_aevum.310.a
-		from = {
+		event_target:mem_aevum_digsiteplanet = {
 			add_deposit = d_zro_deposit_5
 		}
 	}
@@ -3518,6 +3582,7 @@ fleet_event = {
 	picture = GFX_evt_scanning_remains
 	show_sound = event_coronation
 	is_triggered_only = yes
+	archaeology = yes
 	option = {
 		name = mem_aevum.315.a
 		owner = {
@@ -3624,7 +3689,6 @@ country_event = {
 	}
 }
 
-
 # got building
 ship_event = {
 	id = mem_aevum.325
@@ -3674,6 +3738,12 @@ ship_event = {
 		owner = {
 			give_technology = {
 				tech = mem_aevum_unlock_agenda
+			}
+			hidden_effect = {
+				set_variable = {
+					which = mem_aevum_zro_amount					#avoid error log spam
+					value = 0
+				}
 			}
 		}
 	}

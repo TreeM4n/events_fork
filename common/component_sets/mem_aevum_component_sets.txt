@@ -6,6 +6,6 @@ component_set = {
 
 component_set = {
 	key = "mem_aevum_shield"
-	icon = "GFX_mem_aevum_shield" #TODO
+	icon = "GFX_mem_aevum_shield" 
 	icon_frame = 1
 }
