@@ -944,14 +944,16 @@ situation_event = {
 			}
 		}
 		this.owner = {
-			add_tech_progress = {
-				tech = tech_mine_zro
-				progress = 0.1
-			}
-			add_tech_progress = {
-				tech = tech_mine_dark_matter
-				progress = 0.1
-			}
+			# add_tech_progress = {
+			# 	tech = tech_mine_zro
+			# 	progress = 0.1
+			# }
+			add_research_option = tech_mine_zro
+			add_research_option = tech_mine_dark_matter
+			# add_tech_progress = {
+			# 	tech = tech_mine_dark_matter
+			# 	progress = 0.1
+			# }
 			add_resource = {
 				influence = -100
 			}
@@ -3316,6 +3318,9 @@ situation_event = {
 					which = mem_aevum_zro_amount					#avoid error log spam
 					value = 0
 				}
+				owner = {
+					set_country_flag = mem_aevum_tech1
+				}
 			}
 		}
 	}
@@ -3328,6 +3333,11 @@ situation_event = {
 				progress = 0.1
 			}
 		}
+		hidden_effect = {
+			owner = {
+				set_country_flag = mem_aevum_tech2
+			}
+		}
 	}
 	option = {
 		name = mem_aevum.210.c		# prefer weapons
@@ -3336,6 +3346,11 @@ situation_event = {
 			add_tech_progress = {
 				tech = mem_aevum_unlock_time_components
 				progress = 0.25
+			}
+		}
+		hidden_effect = {
+			owner = {
+				set_country_flag = mem_aevum_tech3
 			}
 		}
 	}
@@ -3395,15 +3410,21 @@ situation_event = {
 		owner = {
 			if = {
 				limit = {
-					has_modifier = relic_activation_cooldown
+					has_country_flag = mem_aevum_tech1
 				}
-				remove_modifier = relic_activation_cooldown
+				add_research_option = mem_aevum_unlock_time_building
+				add_research_option = mem_aevum_unlock_time_components
+			}
+			else_if = {
+				limit = {
+					has_country_flag = mem_aevum_tech2
+				}
+				add_research_option = mem_aevum_unlock_agenda
+				add_research_option = mem_aevum_unlock_time_components
 			}
 			else = {
-				add_monthly_resource_mult = {
-					resource = unity
-					value = 3
-				}
+				add_research_option = mem_aevum_unlock_agenda
+				add_research_option = mem_aevum_unlock_time_building
 			}
 		}
 	}

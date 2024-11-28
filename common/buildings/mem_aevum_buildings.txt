@@ -69,9 +69,9 @@ mem_aevum_building_archeo_obelisks = {
 					}
 				}
 			}
-			physics_research = 1
-			society_research = 1
-			engineering_research = 1
+			physics_research = 0.8
+			society_research = 0.8
+			engineering_research = 0.8
 			multiplier = this.trigger:num_pops
 		}
 		produces = {
