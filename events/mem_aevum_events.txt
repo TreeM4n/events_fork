@@ -139,10 +139,10 @@ country_event = {
 
 country_event = {
 	id = mem_aevum.998
-	title = mem_aevum.2.name
-	desc = mem_aevum.2.desc
+	title = STRANGE
+	desc = STRANGE
 	#show_sound = evn_inhabited_solar_system_03
-	location = event_target:mem_aevum_primitive_rewind_world
+	#location = event_target:mem_aevum_primitive_rewind_world
 	is_triggered_only = yes
 	#diplomatic_title = BLANK_STRING
 	trigger = {

@@ -354,7 +354,7 @@
  mem_aevum.225.a:0 "Thanks?"
  mem_aevum.225.a.tt:0 "Finishes a currently upgrading, random megastructure instantly"
  mem_aevum.220.name:0 "An Old Friend"
- mem_aevum.220.desc:0 "Among your kin, timebound one, there walks a being I hold in highest regards, §Y[mem_aevum_bullyhimnot.GetName]§!. One whose presence stirs even the currents of eternity.\n\n§LDid he just make a friend?§!\n\nLet me unveil the boundless wonders that lie within the realm of aging."
+ mem_aevum.220.desc:0 "Among your kin, timebound one, there walks a being I hold in highest regards, §Y[mem_aevum_bullyhimnot.GetName]§!. One whose presence stirs even the currents of eternity.\n\n§LYou wonder if he knows the word 'friend'.§!\n\nLet me unveil the boundless wonders that lie within the realm of aging."
  mem_aevum.220.a:0 "Certainly."
  mem_aevum.220.b:0 "No."
  mem_aevum.300.name:0 "Cave in Sight"
