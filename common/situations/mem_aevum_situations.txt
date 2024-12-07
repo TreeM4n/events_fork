@@ -7,6 +7,7 @@
 mem_aevum_sit_wait_20years = {
 	picture = GFX_evt_deficit
 	category = neutral
+
 	#fail_icon = GFX_situation_outcome_meh
 	#fail_icon_frame = GFX_situation_outcome_frame_green
 	complete_icon = GFX_situation_outcome_unknown
