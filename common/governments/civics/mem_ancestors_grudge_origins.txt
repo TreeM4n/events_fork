@@ -1,0 +1,80 @@
+mem_ancestors_grudge_origin = {
+	#TODO gfx
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/mem_ancestors_grudge_origin.dds"
+	picture = GFX_mem_ancestors_grudge_origin
+	max_once_global = yes
+	# initializers = {
+	# 	mem_ancestors_grudge_system
+	# }
+	playable = {
+		#host_has_dlc = "Ancient Relics Story Pack"
+	}
+	potential = {
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+	}
+	possible = {
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
+		#is_regular_empire = yes
+	}
+	description = "mem_ancestors_grudge_origin_effects"
+	flags = {
+		custom_start_screen
+	}
+	traits = {
+	}
+	modifier = {
+		country_resource_max_minor_artifacts_add = 10000
+	}
+	random_weight = {
+		base = 5
+	}
+}
+
+mem_ancestors_grudge_origin_robots = {
+	#TODO gfx
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/mem_ancestors_grudge_origin.dds"
+	picture = GFX_mem_ancestors_grudge_origin
+	max_once_global = yes
+	# initializers = {
+	# 	mem_ancestors_grudge_system
+	# }
+	playable = {
+		#host_has_dlc = "Ancient Relics Story Pack"
+	}
+	potential = {
+		ethics = {
+			#NOT = {
+				value = ethic_gestalt_consciousness
+			#}
+		}
+	}
+	possible = {
+		ethics = {
+			#NOT = {
+				value = ethic_gestalt_consciousness
+			#}
+		}
+	}
+	description = "mem_ancestors_grudge_origin_robots_effects"
+	flags = {
+		custom_start_screen
+	}
+	traits = {
+	}
+	modifier = {
+		country_resource_max_minor_artifacts_add = 10000
+	}
+	random_weight = {
+		base = 5
+	}
+}

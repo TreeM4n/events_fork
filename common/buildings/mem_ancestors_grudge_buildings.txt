@@ -1,0 +1,361 @@
+# ruins of the forge
+mem_ancestors_grudge_building_ruins = {
+	base_buildtime = @b2_time
+	can_build = no
+	can_be_disabled = no
+	#can_be_ruined = no
+	can_demolish = no
+	category = resource
+	# planet_modifier = {
+	# 	planet_max_buildings_add = 1
+	# }
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 900
+		}
+	}
+	triggered_desc = {
+		text = mem_ancestors_grudge_building_ruins_effect		#upgrade to remove
+	}
+	triggered_desc = {
+		trigger = {
+			owner = {
+				is_mem_runesmith = yes
+			}
+		}
+		text = mem_ancestors_grudge_boosts_repairs_effect		#advance
+	}
+	# on_repaired = {
+	# 	remove_building = mem_ancestors_grudge_building_ruins
+	# 	owner = {
+	# 		add_resource = {
+	# 			minor_artifacts = 100
+	# 		}
+	# 	}
+	# 	hidden_effect = {
+	# 		owner = {
+	# 			country_event = {
+	# 				id = mem_ancestors_grudge.30
+	# 			}
+	# 		}
+	# 	}
+	# }
+	upgrades = {
+		mem_ancestors_grudge_building_ruins_1
+	}
+}
+
+mem_ancestors_grudge_building_ruins_1 = {
+	base_buildtime = @b2_time
+	can_build = no
+	can_be_disabled = no
+	#can_be_ruined = no
+	can_demolish = no
+	category = resource
+	# planet_modifier = {
+	# 	planet_max_buildings_add = 1
+	# }
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 450
+		}
+	}
+	# triggered_desc = {
+	# 	text = mem_ancestors_grudge_building_ruins_effect
+	# }
+	# triggered_desc = {
+	# 	trigger = {
+	# 		owner = {
+	# 			is_mem_runesmith = yes
+	# 		}
+	# 	}
+	# 	text = mem_ancestors_grudge_boosts_repairs_effect
+	# }
+	on_built = {
+		remove_building = mem_ancestors_grudge_building_ruins_1
+		owner = {
+			mem_ancestors_grudge_give_random_archeotech = yes
+		}
+		hidden_effect = {
+			owner = {
+				country_event = {
+					id = mem_ancestors_grudge.30
+				}
+			}
+		}
+	}
+}
+
+# ruins of the forge
+mem_ancestors_grudge_building_forge_0 = {
+	base_buildtime = @b2_time
+	can_build = no
+	can_be_disabled = no
+	can_be_ruined = no
+	can_demolish = no
+	position_priority = 1
+	#empire_limit = 1
+	category = resource
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 900
+			#minor_artifacts = 100
+		}
+		# upkeep = {
+		# 	energy = 8
+		# 	minerals = 10
+		# }
+		# produces = {
+		# 	minor_artifacts = 5
+		# }
+	}
+	upgrades = {
+		mem_ancestors_grudge_building_forge_1
+	}
+}
+
+mem_ancestors_grudge_building_forge_1 = {
+	base_buildtime = @b3_time
+	can_build = no
+	can_be_disabled = no
+	can_be_ruined = no
+	can_demolish = no
+	position_priority = 1
+	#empire_limit = 1
+	category = resource
+	allow = {
+		owner = {
+			is_mem_runesmith = yes
+		}
+		custom_tooltip = mem_ancestors_grudge_building_forge_1_tt
+		hidden_trigger = {
+			has_planet_flag = mem_ancestors_grudge_building_forge_1
+		}
+		#has_planet_flag = mem_ancestors_grudge_building_forge_1
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1800
+			alloys = 600
+		}
+		cost = {
+			trigger = {
+				host_has_dlc = "Ancient Relics Story Pack"
+			}
+			minor_artifacts = 300
+		}
+		upkeep = {
+			energy = 8
+			minerals = 12
+		}
+		produces = {
+			trigger = {
+				host_has_dlc = "Ancient Relics Story Pack"
+			}
+			minor_artifacts = 4
+		}
+	}
+	inline_script = {
+		script = mem_ancestors_grudge/mem_ancestors_grudge_building_forge_1
+	}
+	# on_built = {
+	# }
+	upgrades = {
+		mem_ancestors_grudge_building_forge_2
+	}
+}
+
+#additional jobs
+mem_ancestors_grudge_building_forge_2 = {
+	base_buildtime = @b3_time
+	can_build = no
+	can_be_disabled = no
+	can_be_ruined = no
+	can_demolish = no
+	position_priority = 1
+	#empire_limit = 1
+	category = resource
+	allow = {
+		owner = {
+			is_mem_runesmith = yes
+		}
+		custom_tooltip = mem_ancestors_grudge_building_forge_1_tt
+		hidden_trigger = {
+			has_planet_flag = mem_ancestors_grudge_building_forge_2
+		}
+		#has_planet_flag = mem_ancestors_grudge_building_forge_1
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			#minerals = 1800
+			alloys = 2400
+		}
+		cost = {
+			trigger = {
+				host_has_dlc = "Ancient Relics Story Pack"
+			}
+			minor_artifacts = 1200
+		}
+		upkeep = {
+			energy = 12
+			#minerals = 12
+			alloys = 6
+		}
+		produces = {
+			trigger = {
+				host_has_dlc = "Ancient Relics Story Pack"
+			}
+			minor_artifacts = 8
+		}
+	}
+	inline_script = {
+		script = mem_ancestors_grudge/mem_ancestors_grudge_building_forge_2
+	}
+	inline_script = {
+		script = mem_ancestors_grudge/mem_ancestors_grudge_building_forge_1
+	}
+	on_built = {
+		owner = {
+			country_event = {
+				id = mem_ancestors_grudge.40
+			}
+			# start_situation = {
+			# 	type = situation_mem_ancestors_grudge_crafting
+			# }
+		}
+	}
+	upgrades = {
+		mem_ancestors_grudge_building_forge_3
+	}
+}
+
+# ecu upgrade
+mem_ancestors_grudge_building_forge_3 = {
+	base_buildtime = 3600
+	can_build = no
+	can_be_disabled = no
+	can_be_ruined = no
+	can_demolish = no
+	position_priority = 1
+	#empire_limit = 1
+	category = resource
+	allow = {
+		owner = {
+			is_mem_runesmith = yes
+		}
+		custom_tooltip = mem_ancestors_grudge_building_forge_1_tt
+		hidden_trigger = {
+			has_planet_flag = mem_ancestors_grudge_building_forge_3
+		}
+		#has_planet_flag = mem_ancestors_grudge_building_forge_1
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 20000
+			influence = 200
+		}
+		cost = {
+			trigger = {
+				host_has_dlc = "Ancient Relics Story Pack"
+			}
+			minor_artifacts = 1600
+		}
+		upkeep = {
+			energy = 24
+			#minerals = 12
+			alloys = 12
+		}
+		produces = {
+			trigger = {
+				host_has_dlc = "Ancient Relics Story Pack"
+			}
+			minor_artifacts = 16
+		}
+	}
+	inline_script = {
+		script = mem_ancestors_grudge/mem_ancestors_grudge_building_forge_2
+	}
+	inline_script = {
+		script = mem_ancestors_grudge/mem_ancestors_grudge_building_forge_1
+	}
+	on_built = {
+		planet_event = {
+			id = mem_ancestors_grudge.35
+		}
+		#change_pc = pc_city
+	}
+	upgrades = {
+		mem_ancestors_grudge_building_forge_4
+	}
+}
+
+# modifier
+mem_ancestors_grudge_building_forge_4 = {
+	base_buildtime = @b3_time
+	can_build = no
+	can_be_disabled = no
+	can_be_ruined = no
+	can_demolish = no
+	position_priority = 1
+	#empire_limit = 1
+	category = resource
+	triggered_country_modifier = {
+		weapon_archaeotech_weapon_damage_mult = 1
+		mult = owner.modifier:mem_ancestors_grudge_artifact_power_cost_mult
+	}
+	triggered_country_modifier = {
+		category_archaeostudies_research_speed_mult = 1
+		mult = owner.modifier:mem_ancestors_grudge_rune_power_cost_mult
+	}
+	allow = {
+		owner = {
+			is_mem_runesmith = yes
+		}
+		custom_tooltip = mem_ancestors_grudge_building_forge_1_tt
+		hidden_trigger = {
+			has_planet_flag = mem_ancestors_grudge_building_forge_4
+		}
+		#has_planet_flag = mem_ancestors_grudge_building_forge_1
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = 3600
+		}
+		cost = {
+			trigger = {
+				host_has_dlc = "Ancient Relics Story Pack"
+			}
+			minor_artifacts = 2000
+		}
+		upkeep = {
+			energy = 28
+			#minerals = 12
+			alloys = 16
+		}
+		produces = {
+			trigger = {
+				host_has_dlc = "Ancient Relics Story Pack"
+			}
+			minor_artifacts = 20
+		}
+	}
+	inline_script = {
+		script = mem_ancestors_grudge/mem_ancestors_grudge_building_forge_2
+	}
+	inline_script = {
+		script = mem_ancestors_grudge/mem_ancestors_grudge_building_forge_1
+	}
+	# on_built = {
+	# 	change_pc = pc_city
+	# }
+	# upgrades = {
+	# 	#scar_building_outpost_forge_1
+	# }
+}

@@ -1,0 +1,100 @@
+# mem_ancestors_grudge_rune_power = {
+# 	add = this.modifier:mem_ancestors_grudge_rune_power_cost_mult
+# 	#add = species.modifier:planet_jobs_worker_only_produces_mult
+# }
+# mem_ancestors_grudge_rune_power = {
+# 	add = this.modifier:mem_ancestors_grudge_artifact_power_cost_mult
+# 	#add = species.modifier:planet_jobs_worker_only_produces_mult
+# }
+mem_ancestors_grudge_situation_speed = {
+	base = -100
+	#add = modifier:mem_ancestors_grudge_artifact_power_cost_mult
+	mult = modifier:mem_ancestors_grudge_artifact_power_cost_mult
+}
+
+mem_ancestors_grudge_situation_speed_runes = {
+	base = 100
+	#add = modifier:mem_ancestors_grudge_artifact_power_cost_mult
+	mult = modifier:mem_ancestors_grudge_rune_power_cost_mult
+}
+
+# pop number but /100
+mem_ancestors_grudge_situation_pop_count = {
+	base = 0
+	add = trigger:num_pops
+	mult = 0.005
+}
+
+# determines rarity of relics
+mem_ancestors_grudge_situation_rarity = {
+	base = 0
+	add = modifier:mem_ancestors_grudge_artifact_power_cost_mult
+	modulo = 50
+	max = 4
+}
+
+# # determines strengh of modifiers for relcs
+# mem_ancestors_grudge_situation_rarity = {
+# 	base = 0
+# 	add = modifier:mem_ancestors_grudge_rune_power_cost_mult
+# 	mult = 0.02
+# 	add = 1
+# 	max = 4
+# }
+
+mem_smith_job_number = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_owned_pop
+		parameters = {
+			limit = {
+				OR = {
+					has_job = mem_ancestors_grudge_relicsmith
+					has_job = mem_ancestors_grudge_relicsmith_drone
+					has_job = mem_ancestors_grudge_runesmith
+					has_job = mem_ancestors_grudge_runesmith_drone
+				}
+			}
+		}
+		mult = 0.01
+		mode = add
+	}
+	# complex_trigger_modifier = {
+	# 	potential = {
+	# 		owner = {
+	# 			is_overlord = yes
+	# 		}
+	# 	}
+	# 	trigger = count_galaxy_planet
+	# 	parameters = {
+	# 		limit = {
+	# 			has_owner = yes
+	# 			has_holding = {
+	# 				holding = holding_knight_commandery
+	# 				owner = root
+	# 			}
+	# 		}
+	# 	}
+	# 	mult = 0.05
+	# 	mode = add
+	# }
+	# complex_trigger_modifier = {
+	# 	potential = {
+	# 		owner = {
+	# 			has_corporate_government = yes
+	# 		}
+	# 	}
+	# 	trigger = count_galaxy_planet
+	# 	parameters = {
+	# 		limit = {
+	# 			has_owner = yes
+	# 			has_holding = {
+	# 				holding = building_knightly_theme_park
+	# 				owner = root
+	# 			}
+	# 		}
+	# 	}
+	# 	mult = 0.01
+	# 	mode = add
+	# }
+}

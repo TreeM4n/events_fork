@@ -1,0 +1,6 @@
+mem_ancestors_grudge_city_planet = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_land_appropriated.dds"
+	icon_frame = 1
+
+	planet_max_buildings_add = 16
+}

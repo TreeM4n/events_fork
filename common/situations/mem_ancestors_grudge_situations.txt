@@ -1,0 +1,389 @@
+situation_mem_ancestors_grudge_forge_repairs = {
+	#this is for repairing the forge
+	picture = GFX_evt_failed_observation
+	complete_icon_frame = GFX_situation_outcome_frame_green
+	complete_icon = GFX_situation_outcome_ascension
+	category = positive
+	on_progress_complete = {
+		# final choice
+		custom_tooltip = situation_mem_ancestors_grudge_forge_repairs_final
+		hidden_effect = {
+			situation_event = {
+				id = mem_ancestors_grudge.26
+			}
+		}
+	}
+	triggered_blocked_desc = {
+		text = situation_mem_ancestors_grudge_forge_repairs_deficit_minor_artifacts
+		trigger = {
+			owner = {
+				has_deficit = minor_artifacts
+			}
+		}
+	}
+	triggered_blocked_desc = {
+		text = situation_mem_ancestors_grudge_forge_repairs_buidling1
+		trigger = {
+			target = {
+				AND = {
+					has_building = mem_ancestors_grudge_building_forge_0
+					has_planet_flag = mem_ancestors_grudge_building_forge_1
+				}
+			}
+		}
+	}
+	triggered_blocked_desc = {
+		text = situation_mem_ancestors_grudge_forge_repairs_buidling1
+		trigger = {
+			target = {
+				AND = {
+					has_building = mem_ancestors_grudge_building_forge_1
+					has_planet_flag = mem_ancestors_grudge_building_forge_2
+				}
+			}
+		}
+	}
+	triggered_blocked_desc = {
+		text = situation_mem_ancestors_grudge_forge_repairs_buidling1
+		trigger = {
+			target = {
+				AND = {
+					has_building = mem_ancestors_grudge_building_forge_2
+					has_planet_flag = mem_ancestors_grudge_building_forge_3
+				}
+			}
+		}
+	}
+	triggered_blocked_desc = {
+		text = situation_mem_ancestors_grudge_forge_repairs_buidling1
+		trigger = {
+			target = {
+				AND = {
+					has_building = mem_ancestors_grudge_building_forge_3
+					has_planet_flag = mem_ancestors_grudge_building_forge_4
+				}
+			}
+		}
+	}
+	on_monthly = {
+		random_events = {
+			200 = 0
+			# mutants under the ruble
+			# vazuran bomb
+			# archeotech / minor artifacts
+		}
+	}
+	start_value = 0
+	stages = {
+		# upgrade 1: repair actual building
+		# upgrade 2: full potential acievhed, unlock relic crafting
+		# upgrade 3: ecumonopolis
+		# upgrade 4: final power, convert rune/relic power to country buffs
+		#choices
+		situation_mem_ancestors_grudge_forge_repairs_stage0 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_green
+			end = 100
+			# on_first_enter = {
+			# 	situation_event = {
+			# 		id = mem_ancestors_grudge.26
+			# 	}
+			# }
+		}
+		situation_mem_ancestors_grudge_forge_repairs_stage1 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_green
+			end = 200
+			on_first_enter = {
+				situation_event = {
+					id = mem_ancestors_grudge.10
+				}
+			}
+		}
+		situation_mem_ancestors_grudge_forge_repairs_stage2 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_green
+			end = 300
+			on_first_enter = {
+				situation_event = {
+					id = mem_ancestors_grudge.15
+				}
+			}
+		}
+		situation_mem_ancestors_grudge_forge_repairs_stage3 = {
+			icon = GFX_situation_stage_4
+			icon_background = GFX_situation_stage_frame_green
+			end = 400
+			on_first_enter = {
+				situation_event = {
+					id = mem_ancestors_grudge.20
+				}
+			}
+		}
+		situation_mem_ancestors_grudge_forge_repairs_stage4 = {
+			icon = GFX_situation_stage_5
+			icon_background = GFX_situation_stage_frame_green
+			end = 500
+			on_first_enter = {
+				situation_event = {
+					id = mem_ancestors_grudge.25
+				}
+			}
+		}
+	}
+	monthly_progress = {
+		base = 0.1		# 
+		modifier = {
+			factor = 1.25
+			current_situation_approach = approach_mem_ancestors_grudge_forge_repairs_3
+			desc = string_current_approach
+		}
+		modifier = {
+			add = target.value:mem_ancestors_grudge_situation_pop_count
+			desc = mem_ancestors_grudge_situation_pop_count
+		}
+		modifier = {
+			factor = 0
+			current_situation_approach = approach_mem_ancestors_grudge_forge_repairs_1
+			desc = string_current_approach
+		}
+		modifier = {
+			desc = situation_mem_ancestors_grudge_forge_repairs_buidling1
+			target = {
+				AND = {
+					has_building = mem_ancestors_grudge_building_forge_0
+					has_planet_flag = mem_ancestors_grudge_building_forge_1
+				}
+			}
+			factor = 0
+		}
+		modifier = {
+			desc = situation_mem_ancestors_grudge_forge_repairs_buidling1
+			target = {
+				AND = {
+					has_building = mem_ancestors_grudge_building_forge_1
+					has_planet_flag = mem_ancestors_grudge_building_forge_2
+				}
+			}
+			factor = 0
+		}
+		modifier = {
+			desc = situation_mem_ancestors_grudge_forge_repairs_buidling1
+			target = {
+				AND = {
+					has_building = mem_ancestors_grudge_building_forge_2
+					has_planet_flag = mem_ancestors_grudge_building_forge_3
+				}
+			}
+			factor = 0
+		}
+		modifier = {
+			desc = situation_mem_ancestors_grudge_forge_repairs_buidling1
+			target = {
+				AND = {
+					has_building = mem_ancestors_grudge_building_forge_3
+					has_planet_flag = mem_ancestors_grudge_building_forge_4
+				}
+			}
+			factor = 0
+		}
+		modifier = {
+			desc = situation_mem_ancestors_grudge_forge_repairs_needforgetocontinue
+			target = {
+				exists = owner
+				owner = {
+					NOT = {
+						is_same_value = root.owner
+					}
+				}
+			}
+			factor = 0
+		}
+	}
+	approach = {
+		name = approach_mem_ancestors_grudge_forge_repairs_1
+		icon = GFX_situation_approach_balance_sheet
+		icon_background = GFX_situation_approach_bg_red
+		on_select = {
+			custom_tooltip = "mem_ancestors_grudge_empty"
+		}
+		modifier = {
+			country_unity_produces_mult = -0.33
+		}
+	}
+	approach = {
+		name = approach_mem_ancestors_grudge_forge_repairs_2
+		icon = GFX_situation_approach_minerals
+		icon_background = GFX_situation_approach_bg_yellow
+		#on_select = {
+		#custom_tooltip = studying_insights_tt
+		#}
+		triggered_modifier = {
+			potential = {
+				target = {
+					exists = owner
+					owner = {
+						is_same_value = root.owner
+					}
+				}
+			}
+			country_minerals_produces_mult = -0.2
+			country_energy_produces_mult = -0.3
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				minor_artifacts = 5
+				#unity = 20
+			}
+		}
+		default = yes
+	}
+	approach = {
+		name = approach_mem_ancestors_grudge_forge_repairs_3
+		icon = GFX_situation_approach_research
+		icon_background = GFX_situation_approach_bg_red
+		#on_select = {
+		#custom_tooltip = studying_insights_tt
+		#}
+		triggered_modifier = {
+			potential = {
+				target = {
+					exists = owner
+					owner = {
+						is_same_value = root.owner
+					}
+				}
+			}
+			category_archaeostudies_draw_chance_mult = 0.5
+			country_minerals_produces_mult = -0.35
+			country_energy_produces_mult = -0.4
+		}
+		resources = {
+			category = situations
+			upkeep = {
+				minor_artifacts = 10
+			}
+		}
+	}
+	#abort_trigger = {}
+}
+
+situation_mem_ancestors_grudge_crafting = {
+	#this is for crafting relics
+	# TODO proper description with values
+	picture = GFX_evt_failed_observation
+	complete_icon_frame = GFX_situation_outcome_frame_green
+	complete_icon = GFX_situation_outcome_ascension
+	category = positive
+	on_progress_complete = {
+		# final choice
+		custom_tooltip = situation_mem_ancestors_grudge_crafting_finish
+		hidden_effect = {
+			situation_event = {
+				id = mem_ancestors_grudge.50
+			}
+		}
+	}
+	triggered_blocked_desc = {
+		text = situation_mem_ancestors_grudge_forge_repairs_deficit_minor_artifacts
+		trigger = {
+			owner = {
+				has_deficit = minor_artifacts
+			}
+		}
+	}
+	on_monthly = {
+		random_events = {
+			# TODO
+		}
+	}
+	start_value = 0
+	stages = {
+		#crafting process
+		situation_mem_ancestors_grudge_crafting_stage0 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_green
+			end = 100
+			# on_first_enter = {
+			# 	#situation_event = {
+			# 	#	id = mem_ancestors_grudge.101
+			# 	#}
+			# }
+		}
+	}
+	monthly_progress = {
+		base = 1		# 
+		# modifier = {
+		# 	#the better is gonna be the longer it takes
+		# 	subtract = owner.trigger:mem_ancestors_grudge_situation_speed
+		# 	desc = string_current_approach
+		# }
+		# modifier = {
+		# 	desc = situation_mem_ancestors_grudge_crafting_complexity
+		# 	add = owner.value:mem_ancestors_grudge_situation_speed
+		# }
+		# modifier = {
+		# 	desc = situation_mem_ancestors_grudge_crafting_smith_speed
+		# 	add = owner.value:mem_ancestors_grudge_situation_speed_runes
+		# }
+		modifier = {
+			desc = situation_mem_ancestors_grudge_crafting_smith_job_number
+			add = owner.value:mem_smith_job_number
+		}
+		modifier = {
+			factor = 0
+			current_situation_approach = situation_mem_ancestors_grudge_crafting_1
+			desc = string_current_approach
+		}
+	}
+	approach = {
+		name = situation_mem_ancestors_grudge_crafting_1
+		icon = GFX_situation_approach_balance_sheet
+		icon_background = GFX_situation_approach_bg_red
+		# on_select = {
+		# 	custom_tooltip = "mem_ancestors_grudge_empty"
+		# }
+		resources = {
+			category = situations
+			upkeep = {
+				influence = 2
+			}
+		}
+	}
+	approach = {
+		name = situation_mem_ancestors_grudge_crafting_repairs_2
+		icon = GFX_situation_approach_energy_credits
+		icon_background = GFX_situation_approach_bg_green
+		#on_select = {
+		#custom_tooltip = studying_insights_tt
+		#}
+		# modifier = {
+		# }
+		resources = {
+			category = situations
+			upkeep = {
+				trigger = {
+					host_has_dlc = "Ancient Relics Story Pack"
+				}
+				minor_artifacts = 5
+				#unity = 20
+			}
+			upkeep = {
+				trigger = {
+					NOT = {
+						host_has_dlc = "Ancient Relics Story Pack"
+					}
+				}
+				alloys = 20
+				#unity = 20
+			}
+		}
+		modifier = {
+			planet_mem_rune_smiths_produces_mult = -0.5
+			planet_mem_relic_smiths_produces_mult = -0.5
+		}
+		default = yes
+	}
+	#abort_trigger = {}
+}

@@ -1,0 +1,71 @@
+defined_text = {
+	name = MemGetRarity
+	random = no
+	text = {
+		trigger = {
+			has_country_flag = mem_ancestors_grudge_common
+		}
+		localization_key = mem_ancestors_grudge_common
+	}
+	text = {
+		trigger = {
+			has_country_flag = mem_ancestors_grudge_rare
+		}
+		localization_key = mem_ancestors_grudge_rare
+	}
+	text = {
+		trigger = {
+			has_country_flag = mem_ancestors_grudge_epic
+		}
+		localization_key = mem_ancestors_grudge_epic
+	}
+	text = {
+		trigger = {
+			has_country_flag = mem_ancestors_grudge_exceptional
+		}
+		localization_key = mem_ancestors_grudge_exceptional
+	}
+	default = WEIRD
+}
+
+# defined_text = {
+# 	name = MemGetRarityTrait
+# 	random = no
+# 	text = {
+# 		trigger = {
+# 			#has_leader_flag = 
+# 		}
+# 		localization_key = mem_ancestors_grudge_common
+# 	}
+# 	default = WEIRD
+# }
+
+defined_text = {
+	name = MemGetRelicNameRarity
+	random = no
+	text = {
+		trigger = {
+			has_leader_flag = mem_ancestors_grudge_common
+		}
+		localization_key = mem_ancestors_grudge_common
+	}
+	text = {
+		trigger = {
+			has_leader_flag = mem_ancestors_grudge_epic
+		}
+		localization_key = mem_ancestors_grudge_epic
+	}
+	text = {
+		trigger = {
+			has_leader_flag = mem_ancestors_grudge_rare
+		}
+		localization_key = mem_ancestors_grudge_rare
+	}
+	text = {
+		trigger = {
+			has_leader_flag = mem_ancestors_grudge_exceptional
+		}
+		localization_key = mem_ancestors_grudge_exceptional
+	}
+	default = mem_nothing
+}

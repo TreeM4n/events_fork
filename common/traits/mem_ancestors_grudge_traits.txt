@@ -1,0 +1,334 @@
+###########
+# mem_ancestors_grudge
+# made by:
+# tr33
+#
+###########
+mem_ancestors_grudge_trait_robot_rune_golem = {
+	cost = 0
+	allowed_archetypes = {
+		ROBOT
+		MACHINE
+	}
+	opposites = {
+	}
+	icon = "gfx/interface/icons/traits/trait_robotic_1.dds"
+	species_potential_add = {
+		always = no
+	}	
+	species_potential_remove = {
+		always = no
+	}
+	modifier = {
+		planet_jobs_minor_artifacts_produces_mult = 0.2
+		army_health = 0.5
+		planet_pop_assembly_mult = -0.1
+	}
+	slave_cost = {
+		energy = 500
+	}
+}
+
+# ugly ass script 
+mem_ancestors_grudge_trait_relicowner = {
+	#Origin trait
+	#cost = 0
+	inline_script = {
+		script = trait/icon
+		ICON = "GFX_leader_trait_mem_ancestors_grudge_trait_relicowner"
+		CLASS = leader
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	# triggered_desc = {
+	# 	trigger = {
+	# 		always = yes
+	# 	}
+	# 	text = mem_aevum_trait_scaleswithage
+	# }
+	# weapon fire rate
+	# hull repair in frinedly territory
+	# shields
+	# armor
+	# debris
+	# stealth
+	# bombardment damage
+	# starbase damage
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+			has_leader_flag = mem_ancestors_grudge_relic_flag1
+		}
+		ship_fire_rate_mult = 0.15
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+			has_leader_flag = mem_ancestors_grudge_relic_flag2
+		}
+		ship_hull_regen_add_perc = 0.04
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+			has_leader_flag = mem_ancestors_grudge_relic_flag3
+		}
+		ship_shield_mult = 0.1
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+			has_leader_flag = mem_ancestors_grudge_relic_flag4
+		}
+		ship_armor_mult = 0.05
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+			has_leader_flag = mem_ancestors_grudge_relic_flag5
+		}
+		create_debris_chance = 0.2
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+			has_leader_flag = mem_ancestors_grudge_relic_flag6
+		}
+		ship_cloaking_strength_add = 2
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+			has_leader_flag = mem_ancestors_grudge_relic_flag7
+		}
+		ship_orbital_bombardment_mult = 0.5
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	triggered_fleet_modifier = {
+		potential = {
+			leader_class = commander
+			has_leader_flag = mem_ancestors_grudge_relic_flag8
+		}
+		ship_damage_against_starbases_mult = 0.1
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	#################################################
+	# survey speed/anomaly chance
+	# exp gain
+	# rift speed/ skill/lifespan
+	# digsite skill/speed
+	# scienctist output
+	# monthly research flat
+	# stealth/evasion
+	# unity from researchers
+	triggered_modifier = {
+		potential = {
+			leader_class = scientist
+			has_leader_flag = mem_ancestors_grudge_relic_flag1
+		}
+		science_ship_survey_speed = 0.16
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = scientist
+			has_leader_flag = mem_ancestors_grudge_relic_flag2
+		}
+		species_leader_exp_gain = 0.08
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	triggered_modifier = {
+		potential = {
+			leader_class = scientist
+			has_leader_flag = mem_ancestors_grudge_relic_flag3
+		}
+		ship_astral_rift_clues_add = 1.5
+		country_astral_rift_speed_mult = 0.2
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	triggered_modifier = {
+		potential = {
+			leader_class = scientist
+			has_leader_flag = mem_ancestors_grudge_relic_flag4
+		}
+		ship_archaeological_site_clues_add = 1.5
+		ship_archaeological_site_excavation_speed_mult = 0.2
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = scientist
+			has_leader_flag = mem_ancestors_grudge_relic_flag5
+		}
+		planet_researchers_produces_mult = 0.12
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	triggered_modifier = {
+		potential = {
+			leader_class = scientist
+			has_leader_flag = mem_ancestors_grudge_relic_flag6
+		}
+		ship_cloaking_strength_add = 1.5
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = scientist
+			has_leader_flag = mem_ancestors_grudge_relic_flag7
+		}
+		leader_scientists_physics_research_produces_add = 10
+		leader_scientists_society_research_produces_add = 10
+		leader_scientists_engineering_research_produces_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = scientist
+			has_leader_flag = mem_ancestors_grudge_relic_flag8
+		}
+		planet_researchers_unity_produces_add = 1
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	########################################################################
+	# federation guy
+	# worker class
+	# specialist class
+	# happiness
+	# exp gain
+	# psionic
+	# robot
+	# building/district upkeep
+	triggered_galcom_modifier = {
+		potential = {
+			leader_class = official
+			has_leader_flag = mem_ancestors_grudge_relic_flag1
+		}
+		diplo_weight_mult = 0.04
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = official
+			has_leader_flag = mem_ancestors_grudge_relic_flag2
+			owner = {
+				is_regular_empire = yes
+			}
+		}
+		planet_jobs_worker_produces_mult = 0.1
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = official
+			has_leader_flag = mem_ancestors_grudge_relic_flag2
+			owner = {
+				is_regular_empire = no
+			}
+		}
+		planet_jobs_simple_drone_produces_mult = 0.1
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = official
+			has_leader_flag = mem_ancestors_grudge_relic_flag3
+			owner = {
+				is_regular_empire = yes
+			}
+		}
+		planet_jobs_specialist_produces_mult = 0.1
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = official
+			has_leader_flag = mem_ancestors_grudge_relic_flag3
+			owner = {
+				is_regular_empire = no
+			}
+		}
+		planet_jobs_complex_drone_produces_mult = 0.1
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = official
+			has_leader_flag = mem_ancestors_grudge_relic_flag4
+		}
+		pop_happiness = 0.05
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = official
+			has_leader_flag = mem_ancestors_grudge_relic_flag5
+		}
+		species_leader_exp_gain = 0.08
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = official
+			has_leader_flag = mem_ancestors_grudge_relic_flag6
+		}
+		planet_psionic_jobs_produces_mult = 0.1
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = official
+			has_leader_flag = mem_ancestors_grudge_relic_flag7
+		}
+		planet_jobs_robot_worker_produces_mult = 0.1
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	triggered_planet_modifier = {
+		potential = {
+			leader_class = official
+			has_leader_flag = mem_ancestors_grudge_relic_flag8
+		}
+		planet_districts_upkeep_mult = -0.1
+		planet_buildings_upkeep_mult = -0.1
+		mult = this.mem_ancestors_grudge_rune_intensity
+	}
+	# inline_script = {
+	# 	script = paragon/leader_resource_upkeep
+	# 	RESOURCE = 
+	# 	AMOUNT = 1
+	# }
+	triggered_self_modifier = {
+		potential = {
+			leader_class = commander
+			host_has_dlc = "Ancient Relics Story Pack"
+		}
+		leader_commanders_minor_artifacts_upkeep_add = 1
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = official
+			host_has_dlc = "Ancient Relics Story Pack"
+		}
+		leader_officials_minor_artifacts_upkeep_add = 1
+	}
+	triggered_self_modifier = {
+		potential = {
+			leader_class = scientist
+			host_has_dlc = "Ancient Relics Story Pack"
+		}
+		leader_scientists_minor_artifacts_upkeep_add = 1
+	}
+	leader_class = {
+		scientist
+		commander
+		official
+	}
+	initial = no
+	randomized = no
+	notify_on_gained = yes
+}

@@ -1,0 +1,193 @@
+## Possible Deposit Variables ##
+# resources, resource and amount
+# potential trigger (planet scope)
+# blocked_modifier - applied to planet
+# constant_modifier - applied to planet always
+# station = station class in orbit to gather
+@blocker_high = 10
+@blocker_low = 5
+@ranger_small_production = 0.5
+@ranger_large_production = 1
+d_mem_ancestors_grudge_boulder = {
+	#time = 270
+	icon = d_mem_ancestors_grudge_boulder
+	is_for_colonizable = yes
+	category = deposit_cat_blockers_natural
+	can_be_cleared = {
+		always = no
+	}
+	resources = {
+		category = deposit_blockers_natural
+		# cost = {
+		# 	energy = 1000
+		# }
+		produces = {
+			unity = 1
+		}
+	}
+	potential = {
+		always = no
+	}
+	# planet_modifier = {
+	# 	unity
+	# 	planet_max_districts_add = -2
+	# }
+	# country_modifier = {
+	# 	unity
+	# }
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		exists = owner
+	# 		owner = {
+	# 			has_civic = civic_environmentalist
+	# 		}
+	# 	}
+	# 	planet_rangers_minerals_produces_add = 2
+	# }
+	# inline_script = deposits/environmental_architects_natural_blocker_modifier
+	# inline_script = deposits/environmental_architects_natural_blocker_pops
+	# inline_script = deposits/ai_weight_natural_blocker
+	# drop_weight = {
+	# 	weight = @blocker_low
+	# 	modifier = {
+	# 		factor = 2
+	# 		is_planet_class = pc_alpine
+	# 	}
+	# 	modifier = {
+	# 		factor = 0.5
+	# 		planet_size < 15
+	# 	}
+	# 	modifier = {
+	# 		factor = 0
+	# 		num_free_districts = {
+	# 			type = district_city
+	# 			value < 2
+	# 		}
+	# 	}
+	# }
+	#prerequisites = { "tech_mountain_range" }
+}
+
+d_mem_ancestors_grudge_city_ruins = {
+	icon = d_mem_ancestors_grudge_city_ruins
+	time = 360
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+	potential = {
+		is_planet_class = pc_nuked
+		is_planet_class = pc_relic
+	}
+	planet_modifier = {
+		planet_max_districts_add = -2
+	}
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 1200
+		}
+	}
+	on_cleared = {
+		custom_tooltip = mem_ancestors_grudge_boosts_repairs_effect
+		owner = {
+			add_resource = {
+				minor_artifacts = 25
+			}
+		}
+		hidden_effect = {
+			owner = {
+				country_event = {
+					id = mem_ancestors_grudge.30
+				}
+			}
+		}
+	}
+	drop_weight = {
+		weight = @blocker_high
+		modifier = {
+			factor = 0
+			num_free_districts = {
+				type = district_city
+				value < 2
+			}
+		}
+	}
+}
+
+d_mem_ancestors_grudge_bomb_crater = {
+	icon = d_mem_ancestors_grudge_bomb_crater
+	time = 270
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+	all_blocker_swap_types = yes
+	potential = {
+		is_planet_class = pc_nuked
+	}
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+	on_cleared = {
+		custom_tooltip = mem_ancestors_grudge_boosts_repairs_effect
+		owner = {
+			add_resource = {
+				minor_artifacts = 25
+			}
+		}
+		hidden_effect = {
+			owner = {
+				country_event = {
+					id = mem_ancestors_grudge.30
+				}
+			}
+		}
+	}
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 800
+		}
+	}
+	drop_weight = {
+		weight = @blocker_low
+		modifier = {
+			factor = 0
+			num_free_districts = {
+				type = district_city
+				value < 2
+			}
+		}
+	}
+}
+
+d_mem_ancestors_grudge_ruined_district = {
+	time = 200
+	is_for_colonizable = no
+	category = deposit_cat_blockers
+	icon = d_crater
+	potential = {
+		always = no
+	}
+	planet_modifier = {
+		planet_max_districts_add = -1
+	}
+	on_cleared = {
+		custom_tooltip = mem_ancestors_grudge_boosts_repairs_effect
+		owner = {
+			add_resource = {
+				minor_artifacts = 25
+			}
+		}
+		hidden_effect = {
+			owner = {
+				country_event = {
+					id = mem_ancestors_grudge.30
+				}
+			}
+		}
+	}
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 300
+		}
+	}
+}

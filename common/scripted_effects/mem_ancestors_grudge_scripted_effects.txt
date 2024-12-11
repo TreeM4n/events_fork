@@ -1,0 +1,147 @@
+mem_ancestors_grudge_give_random_archeotech = {
+	add_random_research_option = {
+		category = archaeostudies
+		#area = RANDOM
+		#tier = <int>
+		add_progress = 10
+		ignore_prereqs = yes
+		ignore_rare = yes
+		only_rare = no
+		ignore_insight = yes
+		fail_effects = {
+			add_resource = {
+				minor_artifacts = 100
+			}
+		}
+	}
+}
+
+mem_ancestors_grudge_remove_all_relics = {
+	if = {
+		limit = {
+			has_relic = r_mem_ancestors_grudge_pauldron
+		}
+		remove_relic = r_mem_ancestors_grudge_pauldron
+	}
+	else_if = {
+		limit = {
+			has_relic = r_mem_ancestors_grudge_ring
+		}
+		remove_relic = r_mem_ancestors_grudge_ring
+	}
+	else_if = {
+		limit = {
+			has_relic = r_mem_ancestors_grudge_sword
+		}
+		remove_relic = r_mem_ancestors_grudge_sword
+	}
+}
+
+mem_ancestors_grudge_trait_effect = {
+	add_trait = mem_ancestors_grudge_trait_relicowner
+	hidden_effect = {
+		set_variable = {
+			which = mem_ancestors_grudge_rune_intensity
+			value = owner.mem_ancestors_grudge_rune_intensity
+		}
+		if = {
+			limit = {
+				#leader_class = commander
+				owner = {
+					has_country_flag = mem_ancestors_grudge_common
+				}
+			}
+			set_leader_flag = mem_ancestors_grudge_common
+		}
+		if = {
+			limit = {
+				#leader_class = commander
+				owner = {
+					has_country_flag = mem_ancestors_grudge_rare
+				}
+			}
+			set_leader_flag = mem_ancestors_grudge_rare
+		}
+		if = {
+			limit = {
+				#leader_class = commander
+				owner = {
+					has_country_flag = mem_ancestors_grudge_epic
+				}
+			}
+			set_leader_flag = mem_ancestors_grudge_epic
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = mem_ancestors_grudge_exceptional
+				}
+			}
+			set_leader_flag = mem_ancestors_grudge_exceptional
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = mem_ancestors_grudge_relic_flag1
+				}
+			}
+			set_leader_flag = mem_ancestors_grudge_relic_flag1
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = mem_ancestors_grudge_relic_flag2
+				}
+			}
+			set_leader_flag = mem_ancestors_grudge_relic_flag2
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = mem_ancestors_grudge_relic_flag3
+				}
+			}
+			set_leader_flag = mem_ancestors_grudge_relic_flag3
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = mem_ancestors_grudge_relic_flag4
+				}
+			}
+			set_leader_flag = mem_ancestors_grudge_relic_flag4
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = mem_ancestors_grudge_relic_flag5
+				}
+			}
+			set_leader_flag = mem_ancestors_grudge_relic_flag5
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = mem_ancestors_grudge_relic_flag6
+				}
+			}
+			set_leader_flag = mem_ancestors_grudge_relic_flag6
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = mem_ancestors_grudge_relic_flag7
+				}
+			}
+			set_leader_flag = mem_ancestors_grudge_relic_flag7
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = mem_ancestors_grudge_relic_flag8
+				}
+			}
+			set_leader_flag = mem_ancestors_grudge_relic_flag8
+		}
+	}
+}

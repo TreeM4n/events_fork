@@ -1,0 +1,110 @@
+mem_ancestors_grudge_rune_power = {
+	icon = rejectlesson
+	generate_mult_modifiers = {
+		cost
+	}
+	modifier_category = country
+	use_for_ai_budget = no
+}
+
+mem_ancestors_grudge_artifact_power = {
+	icon = acceptlesson
+	#parent = country_container
+	# generate_add_modifiers = {
+	# 	upkeep
+	# 	produces
+	# }
+	# generate_mult_modifiers = {
+	# 	upkeep
+	# 	produces
+	# }
+	generate_mult_modifiers = {
+		cost
+	}
+	modifier_category = country
+	use_for_ai_budget = no
+}
+
+planet_mem_rune_smiths = {
+	parent = planet_jobs_productive
+	modifier_category = pop
+	generate_mult_modifiers = {
+		produces
+	}
+	# Inherited Modifiers
+	triggered_produces_modifier = {
+		key = planet_administrators
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			always = yes
+		}
+		use_parent_icon = yes
+	}
+	triggered_upkeep_modifier = {
+		key = planet_administrators
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			always = yes
+		}
+		use_parent_icon = yes
+	}
+	triggered_produces_modifier = {
+		key = planet_artisans
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			always = yes
+		}
+		use_parent_icon = yes
+	}
+	triggered_upkeep_modifier = {
+		key = planet_artisans
+		modifier_types = {
+			mult
+		}
+		trigger = {
+			always = yes
+		}
+		use_parent_icon = yes
+	}
+}
+
+
+planet_mem_relic_smiths = {
+	parent = planet_jobs_productive
+	modifier_category = pop
+	generate_mult_modifiers = {
+		produces
+	}
+	# Inherited Modifiers
+	triggered_produces_modifier = {
+		key = planet_foundry
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			always = yes
+		}
+		use_parent_icon = yes
+	}
+	triggered_upkeep_modifier = {
+		key = planet_foundry
+		modifier_types = {
+			mult
+			add
+		}
+		trigger = {
+			always = yes
+		}
+		use_parent_icon = yes
+	}
+}

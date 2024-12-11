@@ -1,0 +1,901 @@
+namespace = mem_ancestors_grudge
+###########
+# 
+# made by:
+# tr33
+#
+###########
+############################################################################################################
+# Setup Events
+############################################################################################################
+# mem_aevum.0   	|	Gamestart setup/ allowed check/ 10% he spawns
+# mem_aevum.999  	|	hidden setup event for testing use mem_aevum.998 for options
+# mem_aevum.998  	|	quick setup / test event / give access to various stuff
+namespace = mem_ancestors_grudge
+country_event = {
+	id = mem_ancestors_grudge.999
+	title = WEIRD
+	desc = WEIRD
+	picture = GFX_evt_ancient_alien_temple
+	show_sound = event_collapsing_ruins
+	location = event_target:mem_ancestors_grudge_planet
+	is_triggered_only = yes
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				has_planet_flag = mem_ancestors_grudge_planet
+			}
+			save_event_target_as = mem_ancestors_grudge_planet
+		}
+	}
+	option = {
+		name = WEIRD
+		event_target:mem_ancestors_grudge_planet = {
+			add_building = mem_ancestors_grudge_building_forge_0
+		}
+	}
+	option = {
+		name = WEIRD
+		start_situation = {
+			type = situation_mem_ancestors_grudge_forge_repairs
+			target = event_target:mem_ancestors_grudge_planet
+		}
+		random_situation = {
+			limit = {
+				is_situation_type = situation_mem_ancestors_grudge_forge_repairs
+			}
+			add_situation_progress = 20000
+		}
+	}
+	option = {
+		name = WEIRD
+		start_situation = {
+			type = situation_mem_ancestors_grudge_crafting
+			target = event_target:mem_ancestors_grudge_planet
+		}
+		random_situation = {
+			limit = {
+				is_situation_type = situation_mem_ancestors_grudge_crafting
+			}
+			add_situation_progress = 20000
+		}
+	}
+	option = {
+		name = WEIRD
+		add_relic = r_mem_ancestors_grudge_pauldron
+		set_country_flag = mem_ancestors_grudge_relic_flag1
+		set_country_flag = mem_ancestors_grudge_relic_flag2
+		set_country_flag = mem_ancestors_grudge_relic_flag3
+		set_country_flag = mem_ancestors_grudge_relic_flag4
+		set_country_flag = mem_ancestors_grudge_relic_flag5
+		set_country_flag = mem_ancestors_grudge_relic_flag6
+		set_country_flag = mem_ancestors_grudge_relic_flag7
+		set_country_flag = mem_ancestors_grudge_relic_flag8
+		set_country_flag = mem_ancestors_grudge_common
+		set_country_flag = mem_ancestors_grudge_exceptional
+		set_country_flag = mem_ancestors_grudge_rare
+		set_country_flag = mem_ancestors_grudge_epic
+		set_variable = {
+			which = mem_ancestors_grudge_rune_intensity
+			value = 4
+		}
+	}
+	option = {
+		name = WEIRD
+		add_relic = r_mem_ancestors_grudge_ring
+		set_country_flag = mem_ancestors_grudge_relic_flag1
+		set_country_flag = mem_ancestors_grudge_relic_flag2
+		set_country_flag = mem_ancestors_grudge_relic_flag3
+		set_country_flag = mem_ancestors_grudge_relic_flag4
+		set_country_flag = mem_ancestors_grudge_relic_flag5
+		set_country_flag = mem_ancestors_grudge_relic_flag6
+		set_country_flag = mem_ancestors_grudge_relic_flag7
+		set_country_flag = mem_ancestors_grudge_relic_flag8
+		set_country_flag = mem_ancestors_grudge_common
+		set_country_flag = mem_ancestors_grudge_exceptional
+		set_country_flag = mem_ancestors_grudge_rare
+		set_country_flag = mem_ancestors_grudge_epic
+		set_variable = {
+			which = mem_ancestors_grudge_rune_intensity
+			value = 4
+		}
+	}
+	option = {
+		name = WEIRD
+		add_relic = r_mem_ancestors_grudge_sword
+		set_country_flag = mem_ancestors_grudge_relic_flag1
+		set_country_flag = mem_ancestors_grudge_relic_flag2
+		set_country_flag = mem_ancestors_grudge_relic_flag3
+		set_country_flag = mem_ancestors_grudge_relic_flag4
+		set_country_flag = mem_ancestors_grudge_relic_flag5
+		set_country_flag = mem_ancestors_grudge_relic_flag6
+		set_country_flag = mem_ancestors_grudge_relic_flag7
+		set_country_flag = mem_ancestors_grudge_relic_flag8
+		set_country_flag = mem_ancestors_grudge_common
+		set_country_flag = mem_ancestors_grudge_exceptional
+		set_country_flag = mem_ancestors_grudge_rare
+		set_country_flag = mem_ancestors_grudge_epic
+		set_variable = {
+			which = mem_ancestors_grudge_rune_intensity
+			value = 4
+		}
+	}
+	option = {
+		name = WEIRD
+		add_resource = {
+			unity = 1000
+			mult = this.modifier:mem_ancestors_grudge_artifact_power_cost_mult
+		}
+	}
+	option = {
+		name = WEIRD
+		add_resource = {
+			unity = 1000
+			mult = this.modifier:mem_ancestors_grudge_rune_power_cost_mult
+		}
+	}
+	option = {
+		name = WEIRD
+		add_resource = {
+			unity = 1000
+			mult = this.value:mem_ancestors_grudge_situation_rarity
+		}
+	}
+}
+
+# setup 
+# fired at gamestart to setup the habitat
+country_event = {
+	id = mem_ancestors_grudge.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			has_origin = mem_ancestors_grudge_origin
+			has_origin = mem_ancestors_grudge_origin_robots
+		}
+	}
+	immediate = {
+		capital_scope = {
+			while = {
+				count = 6
+				random_owned_pop = {
+					#save_event_target_as = mem_ancestors_grudge_origin_species
+					kill_pop = yes
+				}
+				#
+			}
+			set_planet_flag = mem_ancestors_grudge_planet
+			#change_pc = "pc_relic"
+		}
+		random_owned_planet = {
+			limit = {
+				has_planet_flag = mem_ancestors_grudge_planet
+			}
+			create_colony = {
+				owner = root
+			}
+			add_modifier = {
+				modifier = mem_ancestors_grudge_city_planet
+			}
+			add_deposit = d_mem_ancestors_grudge_boulder
+			while = {
+				count = 6
+				add_building = mem_ancestors_grudge_building_ruins
+				#ruin_building = mem_ancestors_grudge_building_ruins
+			}
+			while = {
+				count = 3
+				add_deposit = d_mem_ancestors_grudge_bomb_crater
+				add_deposit = d_mem_ancestors_grudge_ruined_district
+			}
+			while = {
+				count = 5
+				add_deposit = d_mem_ancestors_grudge_city_ruins
+			}
+			while = {
+				count = 2
+				create_pop = {
+					species = owner_main_species
+				}
+			}
+		}
+		country_event = {
+			id = mem_ancestors_grudge.5
+			days = 30
+		}
+	}
+}
+
+# found the forge
+country_event = {
+	id = mem_ancestors_grudge.5
+	title = mem_ancestors_grudge.5.name
+	desc = mem_ancestors_grudge.5.desc
+	picture = GFX_evt_ancient_alien_temple
+	show_sound = event_collapsing_ruins
+	location = event_target:mem_ancestors_grudge_planet
+	is_triggered_only = yes
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				has_planet_flag = mem_ancestors_grudge_planet
+			}
+			save_event_target_as = mem_ancestors_grudge_planet
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.5.a
+		start_situation = {
+			type = situation_mem_ancestors_grudge_forge_repairs
+			target = event_target:mem_ancestors_grudge_planet
+		}
+		event_target:mem_ancestors_grudge_planet = {
+			remove_building = mem_ancestors_grudge_building_ruins
+			add_building = mem_ancestors_grudge_building_forge_0
+		}
+	}
+}
+
+# learned to repair it
+situation_event = {
+	id = mem_ancestors_grudge.10
+	title = mem_ancestors_grudge.10.name
+	desc = mem_ancestors_grudge.10.desc
+	picture = GFX_evt_ancient_alien_temple
+	show_sound = event_collapsing_ruins
+	location = event_target:mem_ancestors_grudge_planet
+	is_triggered_only = yes
+	immediate = {
+		owner = {
+			random_owned_planet = {
+				limit = {
+					has_planet_flag = mem_ancestors_grudge_planet
+				}
+				save_event_target_as = mem_ancestors_grudge_planet
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.10.a
+		hidden_effect = {
+			event_target:mem_ancestors_grudge_planet = {
+				set_planet_flag = mem_ancestors_grudge_building_forge_1
+			}
+		}
+	}
+}
+
+# learned to repair it + how to forge
+situation_event = {
+	id = mem_ancestors_grudge.15
+	title = mem_ancestors_grudge.15.name
+	desc = mem_ancestors_grudge.15.desc
+	picture = GFX_evt_ancient_alien_temple
+	show_sound = event_collapsing_ruins
+	location = event_target:mem_ancestors_grudge_planet
+	is_triggered_only = yes
+	immediate = {
+		owner = {
+			random_owned_planet = {
+				limit = {
+					has_planet_flag = mem_ancestors_grudge_planet
+				}
+				save_event_target_as = mem_ancestors_grudge_planet
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.15.a
+		hidden_effect = {
+			event_target:mem_ancestors_grudge_planet = {
+				set_planet_flag = mem_ancestors_grudge_building_forge_2
+			}
+		}
+	}
+}
+
+#  lets upgrade this even further
+situation_event = {
+	id = mem_ancestors_grudge.20
+	title = mem_ancestors_grudge.20.name
+	desc = mem_ancestors_grudge.20.desc
+	picture = GFX_evt_ancient_alien_temple
+	show_sound = event_collapsing_ruins
+	location = event_target:mem_ancestors_grudge_planet
+	is_triggered_only = yes
+	immediate = {
+		owner = {
+			random_owned_planet = {
+				limit = {
+					has_planet_flag = mem_ancestors_grudge_planet
+				}
+				save_event_target_as = mem_ancestors_grudge_planet
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.20.a
+		# owner = {
+		# 	start_situation = {
+		# 		type = situation_mem_ancestors_grudge_crafting
+		# 	}
+		# }
+		hidden_effect = {
+			event_target:mem_ancestors_grudge_planet = {
+				set_planet_flag = mem_ancestors_grudge_building_forge_3
+			}
+		}
+	}
+}
+
+#  to perfection and beyond
+situation_event = {
+	id = mem_ancestors_grudge.25
+	title = mem_ancestors_grudge.25.name
+	desc = mem_ancestors_grudge.25.desc
+	picture = GFX_evt_ancient_alien_temple
+	show_sound = event_collapsing_ruins
+	location = event_target:mem_ancestors_grudge_planet
+	is_triggered_only = yes
+	immediate = {
+		owner = {
+			random_owned_planet = {
+				limit = {
+					has_planet_flag = mem_ancestors_grudge_planet
+				}
+				save_event_target_as = mem_ancestors_grudge_planet
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.25.a
+		hidden_effect = {
+			event_target:mem_ancestors_grudge_planet = {
+				set_planet_flag = mem_ancestors_grudge_building_forge_4
+			}
+		}
+	}
+}
+
+#  we are finished
+situation_event = {
+	id = mem_ancestors_grudge.26
+	title = mem_ancestors_grudge.26.name
+	desc = mem_ancestors_grudge.26.desc
+	picture = GFX_evt_ancient_alien_temple
+	show_sound = event_collapsing_ruins
+	location = target
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.26.a
+		target = {
+			change_planet_size = 2
+		}
+		destroy_situation = this
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 12
+			}
+		}
+	}
+}
+
+#  rapired something on planet
+country_event = {
+	id = mem_ancestors_grudge.30
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		random_situation = {
+			limit = {
+				is_situation_type = situation_mem_ancestors_grudge_forge_repairs
+			}
+			add_situation_progress = 5
+		}
+	}
+}
+
+#  3.stage ecu restored
+planet_event = {
+	id = mem_ancestors_grudge.35
+	title = mem_ancestors_grudge.35.name
+	desc = mem_ancestors_grudge.35.desc
+	picture = GFX_evt_ancient_alien_temple
+	show_sound = event_collapsing_ruins
+	location = this
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.35.a
+	}
+	after = {
+		change_pc = pc_city
+		hidden_effect = {
+			save_deposits = yes
+			clear_deposits = yes
+			restore_saved_deposits = yes
+			set_industrial_focus_flags = yes
+			#change_pc = pc_city
+			relic_world_conversion_effect = {
+				DISTRICT = district_arcology_housing
+				VARIABLE = num_housing_districts
+			}
+			relic_world_conversion_effect = {
+				DISTRICT = district_arcology_arms_industry
+				VARIABLE = num_industrial_districts
+			}
+			add_deposit = d_former_relic_world
+			set_ecu_industrial_districts_effect = yes
+			set_planet_entity = {
+				entity = "city_planet_entity"
+				graphical_culture = owner
+			}
+			planet_event = {
+				id = action.68
+			}
+			# owner = {
+			# 	country_event = { id = distar.201 } # port for living planet distar.197, triggers in event
+			# }
+			# planet_event = { id = mega.200 }
+			if = {
+				limit = {
+					OR = {
+						is_active_resolution = "resolution_ecology_environmental_control_board"
+						is_active_resolution = "resolution_ecology_paradise_initiative"
+					}
+				}
+				owner = {
+					set_timed_country_flag = {
+						flag = resolution_breached_terraformed
+						days = 3600
+					}
+				}
+			}
+		}
+		remove_modifier = mem_ancestors_grudge_city_planet
+		remove_deposit = d_mem_ancestors_grudge_boulder
+	}
+}
+
+# start forging
+country_event = {
+	id = mem_ancestors_grudge.40
+	title = mem_ancestors_grudge.40.name
+	desc = mem_ancestors_grudge.40.desc
+	picture = GFX_evt_ancient_alien_temple
+	show_sound = event_collapsing_ruins
+	#location = event_target:mem_ancestors_grudge_planet
+	is_triggered_only = yes
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				has_planet_flag = mem_ancestors_grudge_planet
+			}
+			save_event_target_as = mem_ancestors_grudge_planet
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.40.a
+		start_situation = {
+			type = situation_mem_ancestors_grudge_crafting
+			target = event_target:mem_ancestors_grudge_planet
+		}
+		# random_situation = {
+		# 	limit = {
+		# 		is_situation_type = situation_mem_ancestors_grudge_crafting
+		# 	}
+		# 	add_situation_progress = 20
+		# }
+	}
+}
+
+#  crafted a relics
+situation_event = {
+	id = mem_ancestors_grudge.50
+	title = mem_ancestors_grudge.50.name
+	desc = mem_ancestors_grudge.50.desc
+	picture = GFX_evt_ancient_alien_temple
+	show_sound = event_collapsing_ruins
+	location = target
+	is_triggered_only = yes
+	immediate = {
+		# clear old stuff
+		owner = {
+			clear_variable = mem_ancestors_grudge_rune_intensity
+			remove_country_flag = mem_ancestors_grudge_common
+			remove_country_flag = mem_ancestors_grudge_rare
+			remove_country_flag = mem_ancestors_grudge_epic
+			remove_country_flag = mem_ancestors_grudge_exceptional
+			remove_country_flag = mem_ancestors_grudge_relic_flag1
+			remove_country_flag = mem_ancestors_grudge_relic_flag2
+			remove_country_flag = mem_ancestors_grudge_relic_flag3
+			remove_country_flag = mem_ancestors_grudge_relic_flag4
+			remove_country_flag = mem_ancestors_grudge_relic_flag5
+			remove_country_flag = mem_ancestors_grudge_relic_flag6
+			remove_country_flag = mem_ancestors_grudge_relic_flag7
+			remove_country_flag = mem_ancestors_grudge_relic_flag8
+		}
+		# roll for relic modifiers
+		owner = {
+			set_variable = {
+				which = mem_ancestors_grudge_rune_intensity
+				value = owner.modifier:mem_ancestors_grudge_rune_power_cost_mult
+			}
+			change_variable = {
+				which = mem_ancestors_grudge_rune_intensity
+				value = 1
+			}
+		}
+		owner = {
+			if = {
+				limit = {
+					check_variable_arithmetic = {
+						which = owner.value:mem_ancestors_grudge_situation_rarity
+						value <= 2
+					}
+				}
+				set_country_flag = mem_ancestors_grudge_common
+			}
+			else_if = {
+				limit = {
+					check_variable_arithmetic = {
+						which = owner.value:mem_ancestors_grudge_situation_rarity
+						value <= 3
+					}
+				}
+				set_country_flag = mem_ancestors_grudge_rare
+			}
+			else_if = {
+				limit = {
+					check_variable_arithmetic = {
+						which = owner.value:mem_ancestors_grudge_situation_rarity
+						value <= 4
+					}
+				}
+				set_country_flag = mem_ancestors_grudge_epic
+			}
+			else_if = {
+				limit = {
+					check_variable_arithmetic = {
+						which = owner.value:mem_ancestors_grudge_situation_rarity
+						value <= 5
+					}
+				}
+				set_country_flag = mem_ancestors_grudge_exceptional
+			}
+		}
+		# at leasst on emodifer should be gainabale
+		owner = {
+			random_list = {
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag1
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag1
+						factor = 0
+					}
+				}
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag2
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag2
+						factor = 0
+					}
+				}
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag3
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag3
+						factor = 0
+					}
+				}
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag4
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag4
+						factor = 0
+					}
+				}
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag5
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag5
+						factor = 0
+					}
+				}
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag6
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag6
+						factor = 0
+					}
+				}
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag7
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag7
+						factor = 0
+					}
+				}
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag8
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag8
+						factor = 0
+					}
+				}
+			}
+		}
+		while = {
+			count = owner.value:mem_ancestors_grudge_situation_rarity
+			owner = {
+				random_list = {
+					1 = {
+						set_country_flag = mem_ancestors_grudge_relic_flag1
+						modifier = {
+							has_country_flag = mem_ancestors_grudge_relic_flag1
+							factor = 0
+						}
+					}
+					1 = {
+						set_country_flag = mem_ancestors_grudge_relic_flag2
+						modifier = {
+							has_country_flag = mem_ancestors_grudge_relic_flag2
+							factor = 0
+						}
+					}
+					1 = {
+						set_country_flag = mem_ancestors_grudge_relic_flag3
+						modifier = {
+							has_country_flag = mem_ancestors_grudge_relic_flag3
+							factor = 0
+						}
+					}
+					1 = {
+						set_country_flag = mem_ancestors_grudge_relic_flag4
+						modifier = {
+							has_country_flag = mem_ancestors_grudge_relic_flag4
+							factor = 0
+						}
+					}
+					1 = {
+						set_country_flag = mem_ancestors_grudge_relic_flag5
+						modifier = {
+							has_country_flag = mem_ancestors_grudge_relic_flag5
+							factor = 0
+						}
+					}
+					1 = {
+						set_country_flag = mem_ancestors_grudge_relic_flag6
+						modifier = {
+							has_country_flag = mem_ancestors_grudge_relic_flag6
+							factor = 0
+						}
+					}
+					1 = {
+						set_country_flag = mem_ancestors_grudge_relic_flag7
+						modifier = {
+							has_country_flag = mem_ancestors_grudge_relic_flag7
+							factor = 0
+						}
+					}
+					1 = {
+						set_country_flag = mem_ancestors_grudge_relic_flag8
+						modifier = {
+							has_country_flag = mem_ancestors_grudge_relic_flag8
+							factor = 0
+						}
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.50.a
+		destroy_situation = this
+		owner = {
+			add_relic = r_mem_ancestors_grudge_pauldron
+		}
+	}
+}
+
+# actiavted a relic
+country_event = {
+	id = mem_ancestors_grudge.45
+	title = mem_ancestors_grudge.45.name
+	desc = mem_ancestors_grudge.45.desc
+	picture = GFX_evt_ancient_alien_temple
+	show_sound = event_collapsing_ruins
+	#location = event_target:mem_ancestors_grudge_planet
+	is_triggered_only = yes
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				has_planet_flag = mem_ancestors_grudge_planet
+			}
+			save_event_target_as = mem_ancestors_grudge_planet
+		}
+		change_variable = {
+			which = mem_ancestors_grudge_activated_relics_counter
+			value = 1
+		}
+		# i hate this
+		if = {
+			limit = {
+				has_relic = r_mem_ancestors_grudge_pauldron
+			}
+			random_owned_leader = {
+				limit = {
+					leader_class = official
+					NOT = {
+						has_trait = mem_ancestors_grudge_trait_relicowner
+					}
+				}
+				save_event_target_as = leader_1
+			}
+			if = {
+				limit = {
+					exists = event_target:leader_1
+				}
+				random_owned_leader = {
+					limit = {
+						leader_class = official
+						NOR = {
+							is_same_value = event_target:leader_1
+							has_trait = mem_ancestors_grudge_trait_relicowner
+						}
+					}
+					save_event_target_as = leader_2
+				}
+			}
+			if = {
+				limit = {
+					exists = event_target:leader_2
+				}
+				random_owned_leader = {
+					limit = {
+						leader_class = official
+						NOR = {
+							is_same_value = event_target:leader_1
+							is_same_value = event_target:leader_2
+							has_trait = mem_ancestors_grudge_trait_relicowner
+						}
+					}
+					save_event_target_as = leader_3
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_relic = r_mem_ancestors_grudge_sword
+			}
+			random_owned_leader = {
+				limit = {
+					leader_class = commander
+					NOT = {
+						has_trait = mem_ancestors_grudge_trait_relicowner
+					}
+				}
+				save_event_target_as = leader_1
+			}
+			if = {
+				limit = {
+					exists = event_target:leader_1
+				}
+				random_owned_leader = {
+					limit = {
+						leader_class = commander
+						NOR = {
+							is_same_value = event_target:leader_1
+							has_trait = mem_ancestors_grudge_trait_relicowner
+						}
+					}
+					save_event_target_as = leader_2
+				}
+			}
+			if = {
+				limit = {
+					exists = event_target:leader_2
+				}
+				random_owned_leader = {
+					limit = {
+						leader_class = commander
+						NOR = {
+							is_same_value = event_target:leader_1
+							is_same_value = event_target:leader_2
+							has_trait = mem_ancestors_grudge_trait_relicowner
+						}
+					}
+					save_event_target_as = leader_3
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_relic = r_mem_ancestors_grudge_ring
+			}
+			random_owned_leader = {
+				limit = {
+					leader_class = commander
+					NOT = {
+						has_trait = mem_ancestors_grudge_trait_relicowner
+					}
+				}
+				save_event_target_as = leader_1
+			}
+			if = {
+				limit = {
+					exists = event_target:leader_1
+				}
+				random_owned_leader = {
+					limit = {
+						leader_class = commander
+						NOT = {
+							is_same_value = event_target:leader_1
+						}
+						NOT = {
+							has_trait = mem_ancestors_grudge_trait_relicowner
+						}
+					}
+					save_event_target_as = leader_2
+				}
+			}
+			if = {
+				limit = {
+					exists = event_target:leader_2
+				}
+				random_owned_leader = {
+					limit = {
+						leader_class = commander
+						NOR = {
+							is_same_value = event_target:leader_1
+							is_same_value = event_target:leader_2
+						}
+						NOT = {
+							has_trait = mem_ancestors_grudge_trait_relicowner
+						}
+					}
+					save_event_target_as = leader_3
+				}
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.45.a
+		trigger = {
+			exists = event_target:leader_1
+		}
+		event_target:leader_1 = {
+			mem_ancestors_grudge_trait_effect = yes
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.45.b
+		trigger = {
+			exists = event_target:leader_2
+		}
+		event_target:leader_2 = {
+			mem_ancestors_grudge_trait_effect = yes
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.45.c
+		trigger = {
+			exists = event_target:leader_3
+		}
+		event_target:leader_3 = {
+			mem_ancestors_grudge_trait_effect = yes
+		}
+	}
+	after = {
+		mem_ancestors_grudge_remove_all_relics = yes
+		start_situation = {
+			type = situation_mem_ancestors_grudge_crafting
+			target = event_target:mem_ancestors_grudge_planet
+		}
+	}
+}
