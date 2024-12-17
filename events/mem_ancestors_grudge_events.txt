@@ -122,16 +122,24 @@ country_event = {
 	}
 	option = {
 		name = WEIRD
-		add_resource = {
-			unity = 1000
-			mult = this.modifier:mem_ancestors_grudge_artifact_power_cost_mult
+		add_relic = r_mem_ancestors_grudge_anvil
+		set_variable = {
+			which = mem_ancestors_grudge_activated_relics_counter
+			value = 1
 		}
 	}
 	option = {
 		name = WEIRD
 		add_resource = {
 			unity = 1000
-			mult = this.modifier:mem_ancestors_grudge_rune_power_cost_mult
+			mult = this.modifier:mem_ancestors_grudge_artifact_power_produces_mult
+		}
+	}
+	option = {
+		name = WEIRD
+		add_resource = {
+			unity = 1000
+			mult = this.modifier:mem_ancestors_grudge_rune_power_produces_mult
 		}
 	}
 	option = {
@@ -139,6 +147,28 @@ country_event = {
 		add_resource = {
 			unity = 1000
 			mult = this.value:mem_ancestors_grudge_situation_rarity
+		}
+	}
+	option = {
+		name = WEIRD
+		capital_scope = {
+			solar_system = {
+				spawn_system = {
+					initializer = mem_ancestors_grudge_system_lost_colony_1
+				}
+			}
+		}
+	}
+	option = {
+		name = WEIRD
+		random_playable_country = {
+			save_event_target_as = mem_this
+		}
+		country_event = {
+			id = mem_ancestors_grudge.205
+			scopes = {
+				from = event_target:mem_this
+			}
 		}
 	}
 }
@@ -156,6 +186,7 @@ country_event = {
 		}
 	}
 	immediate = {
+		save_event_target_as = mem_ancestors_grudge_origin
 		capital_scope = {
 			while = {
 				count = 6
@@ -165,22 +196,42 @@ country_event = {
 				}
 				#
 			}
-			set_planet_flag = mem_ancestors_grudge_planet
-			#change_pc = "pc_relic"
+			# solar_system = {
+			# 	random_system_planet = {
+			# 		limit = {
+			# 			NOT = {
+			# 				is_same_value = prevprev
+			# 			}
+			# 		}
+			# 		change_pc = pc_relic
+			# 		set_planet_flag = mem_ancestors_grudge_planet
+			# 	}
+			# }
 		}
-		random_owned_planet = {
+		random_planet_within_border = {
 			limit = {
 				has_planet_flag = mem_ancestors_grudge_planet
 			}
-			create_colony = {
+			start_colony = {
 				owner = root
+				species = research_station.
+				#ethos = root.ethos
 			}
+			add_colony_progress = 0.8
+			# create_colony = {
+			# 	owner = root
+			# 	species = root.species
+			# 	#	ethos = random
+			# }
 			add_modifier = {
 				modifier = mem_ancestors_grudge_city_planet
 			}
+			add_modifier = {
+				modifier = low_gravity
+			}
 			add_deposit = d_mem_ancestors_grudge_boulder
 			while = {
-				count = 6
+				count = 8
 				add_building = mem_ancestors_grudge_building_ruins
 				#ruin_building = mem_ancestors_grudge_building_ruins
 			}
@@ -202,7 +253,71 @@ country_event = {
 		}
 		country_event = {
 			id = mem_ancestors_grudge.5
-			days = 30
+			days = 360
+		}
+		################### create enemy #######################
+		create_country = {
+			species = random
+			name_list = random
+			type = default
+			origin = "mem_ancestors_grudge_origin_advanced_start"
+			#authority = auth_imperial
+			ignore_initial_colony_error = yes
+			day_zero_contact = no
+			randomize_ethos = yes
+			ethos = {
+				ethic = "ethic_xenophobe"
+				ethic = "ethic_militarist"
+				ethic = "ethic_fanatic_militarist"
+			}
+			# government_restrictions = {
+			# 	authority = {
+			# 		NOR = {
+			# 			value = auth_machine_intelligence
+			# 			value = auth_hive_mind
+			# 		}
+			# 	}
+			# }
+			# civics = {
+			# 	civic = civic_barbaric_despoilers
+			# 	civic = random
+			# }
+		}
+		last_created_country = {
+			add_resource = {
+				unity = 10000
+				minerals = 20000
+				influence = 200
+				alloys = 5000
+				food = 10000
+				consumer_goods = 5000
+				energy = 20000
+			}
+			force_add_civic = civic_barbaric_despoilers
+			set_country_flag = mem_ancestors_grudge_system_lost_colony_country
+			save_global_event_target_as = mem_ancestors_grudge_system_lost_colony_country
+			#save_event_target_as = mem_ancestors_grudge_system_lost_colony_country
+		}
+		#set_global_flag = mem_ancestors_grudge_system_lost_colony_1
+		random_owned_starbase = {
+			solar_system = {
+				spawn_system = {
+					initializer = mem_ancestors_grudge_system_lost_colony_1
+					min_jumps = 10
+					#min_distance = 20
+				}
+			}
+			last_created_system = {
+				every_system_planet = {
+					limit = {
+						habitable_planet = yes
+					}
+					create_colony = {
+						owner = event_target:mem_ancestors_grudge_system_lost_colony_country
+					}
+					set_owner = event_target:mem_ancestors_grudge_system_lost_colony_country
+				}
+			}
 		}
 	}
 }
@@ -212,7 +327,7 @@ country_event = {
 	id = mem_ancestors_grudge.5
 	title = mem_ancestors_grudge.5.name
 	desc = mem_ancestors_grudge.5.desc
-	picture = GFX_evt_ancient_alien_temple
+	picture = GFX_evt_relic_world
 	show_sound = event_collapsing_ruins
 	location = event_target:mem_ancestors_grudge_planet
 	is_triggered_only = yes
@@ -242,10 +357,11 @@ situation_event = {
 	id = mem_ancestors_grudge.10
 	title = mem_ancestors_grudge.10.name
 	desc = mem_ancestors_grudge.10.desc
-	picture = GFX_evt_ancient_alien_temple
-	show_sound = event_collapsing_ruins
+	picture = GFX_evt_relic_world_building
+	show_sound = event_energy_field
 	location = event_target:mem_ancestors_grudge_planet
 	is_triggered_only = yes
+	situation = this
 	immediate = {
 		owner = {
 			random_owned_planet = {
@@ -258,6 +374,9 @@ situation_event = {
 	}
 	option = {
 		name = mem_ancestors_grudge.10.a
+		owner = {
+			add_research_option = tech_archaeostudies
+		}
 		hidden_effect = {
 			event_target:mem_ancestors_grudge_planet = {
 				set_planet_flag = mem_ancestors_grudge_building_forge_1
@@ -271,9 +390,10 @@ situation_event = {
 	id = mem_ancestors_grudge.15
 	title = mem_ancestors_grudge.15.name
 	desc = mem_ancestors_grudge.15.desc
-	picture = GFX_evt_ancient_alien_temple
+	picture = GFX_evt_riftworld_archsite_crater
 	show_sound = event_collapsing_ruins
 	location = event_target:mem_ancestors_grudge_planet
+	situation = this
 	is_triggered_only = yes
 	immediate = {
 		owner = {
@@ -287,6 +407,9 @@ situation_event = {
 	}
 	option = {
 		name = mem_ancestors_grudge.15.a
+		target = {
+			create_archaeological_site = mem_ancestors_grudge_anvil_site
+		}
 		hidden_effect = {
 			event_target:mem_ancestors_grudge_planet = {
 				set_planet_flag = mem_ancestors_grudge_building_forge_2
@@ -300,9 +423,10 @@ situation_event = {
 	id = mem_ancestors_grudge.20
 	title = mem_ancestors_grudge.20.name
 	desc = mem_ancestors_grudge.20.desc
-	picture = GFX_evt_ancient_alien_temple
+	picture = GFX_evt_city_ruins
 	show_sound = event_collapsing_ruins
 	location = event_target:mem_ancestors_grudge_planet
+	situation = this
 	is_triggered_only = yes
 	immediate = {
 		owner = {
@@ -321,6 +445,13 @@ situation_event = {
 		# 		type = situation_mem_ancestors_grudge_crafting
 		# 	}
 		# }
+		owner = {
+			add_resource = {
+				volatile_motes = 50
+				exotic_gases = 50
+				rare_crystals = 50
+			}
+		}
 		hidden_effect = {
 			event_target:mem_ancestors_grudge_planet = {
 				set_planet_flag = mem_ancestors_grudge_building_forge_3
@@ -334,9 +465,10 @@ situation_event = {
 	id = mem_ancestors_grudge.25
 	title = mem_ancestors_grudge.25.name
 	desc = mem_ancestors_grudge.25.desc
-	picture = GFX_evt_ancient_alien_temple
-	show_sound = event_collapsing_ruins
+	picture = GFX_evt_city_planet_2
+	show_sound = event_celebration
 	location = event_target:mem_ancestors_grudge_planet
+	situation = this
 	is_triggered_only = yes
 	immediate = {
 		owner = {
@@ -350,6 +482,11 @@ situation_event = {
 	}
 	option = {
 		name = mem_ancestors_grudge.25.a
+		owner = {
+			give_technology = {
+				tech = tech_repeatable_mem_ancestors_grudge
+			}
+		}
 		hidden_effect = {
 			event_target:mem_ancestors_grudge_planet = {
 				set_planet_flag = mem_ancestors_grudge_building_forge_4
@@ -363,9 +500,10 @@ situation_event = {
 	id = mem_ancestors_grudge.26
 	title = mem_ancestors_grudge.26.name
 	desc = mem_ancestors_grudge.26.desc
-	picture = GFX_evt_ancient_alien_temple
-	show_sound = event_collapsing_ruins
+	picture = GFX_evt_coronation
+	show_sound = event_celebration
 	location = target
+	situation = this
 	is_triggered_only = yes
 	immediate = {
 	}
@@ -404,8 +542,8 @@ planet_event = {
 	id = mem_ancestors_grudge.35
 	title = mem_ancestors_grudge.35.name
 	desc = mem_ancestors_grudge.35.desc
-	picture = GFX_evt_ancient_alien_temple
-	show_sound = event_collapsing_ruins
+	picture = GFX_evt_city_planet_2
+	show_sound = event_cityscape
 	location = this
 	is_triggered_only = yes
 	immediate = {
@@ -458,7 +596,7 @@ planet_event = {
 			}
 		}
 		remove_modifier = mem_ancestors_grudge_city_planet
-		remove_deposit = d_mem_ancestors_grudge_boulder
+		#remove_deposit = d_mem_ancestors_grudge_boulder #i like keeping it
 	}
 }
 
@@ -467,8 +605,8 @@ country_event = {
 	id = mem_ancestors_grudge.40
 	title = mem_ancestors_grudge.40.name
 	desc = mem_ancestors_grudge.40.desc
-	picture = GFX_evt_ancient_alien_temple
-	show_sound = event_collapsing_ruins
+	picture = GFX_evt_cosmic_storms_calibration
+	show_sound = event_finding_loot
 	#location = event_target:mem_ancestors_grudge_planet
 	is_triggered_only = yes
 	immediate = {
@@ -499,9 +637,10 @@ situation_event = {
 	id = mem_ancestors_grudge.50
 	title = mem_ancestors_grudge.50.name
 	desc = mem_ancestors_grudge.50.desc
-	picture = GFX_evt_ancient_alien_temple
-	show_sound = event_collapsing_ruins
+	picture = GFX_evt_ancient_artifact
+	show_sound = event_finding_loot
 	location = target
+	situation = this
 	is_triggered_only = yes
 	immediate = {
 		# clear old stuff
@@ -519,12 +658,15 @@ situation_event = {
 			remove_country_flag = mem_ancestors_grudge_relic_flag6
 			remove_country_flag = mem_ancestors_grudge_relic_flag7
 			remove_country_flag = mem_ancestors_grudge_relic_flag8
+			# remove_country_flag = mem_ancestors_grudge_sword_flag
+			# remove_country_flag = mem_ancestors_grudge_ring_flag
+			# remove_country_flag = mem_ancestors_grudge_pauldron_flag
 		}
 		# roll for relic modifiers
 		owner = {
 			set_variable = {
 				which = mem_ancestors_grudge_rune_intensity
-				value = owner.modifier:mem_ancestors_grudge_rune_power_cost_mult
+				value = owner.modifier:mem_ancestors_grudge_rune_power_produces_mult
 			}
 			change_variable = {
 				which = mem_ancestors_grudge_rune_intensity
@@ -693,12 +835,63 @@ situation_event = {
 				}
 			}
 		}
+		# roll for relic
+		owner = {
+			random_list = {
+				100 = {
+					set_country_flag = mem_ancestors_grudge_sword_flag
+				}
+				100 = {
+					set_country_flag = mem_ancestors_grudge_ring_flag
+				}
+				100 = {
+					set_country_flag = mem_ancestors_grudge_pauldron_flag
+				}
+			}
+		}
 	}
 	option = {
 		name = mem_ancestors_grudge.50.a
 		destroy_situation = this
 		owner = {
-			add_relic = r_mem_ancestors_grudge_pauldron
+			if = {
+				limit = {
+					has_country_flag = mem_ancestors_grudge_sword_flag
+				}
+				add_relic = r_mem_ancestors_grudge_sword
+			}
+			else_if = {
+				limit = {
+					has_country_flag = mem_ancestors_grudge_ring_flag
+				}
+				add_relic = r_mem_ancestors_grudge_ring
+			}
+			else_if = {
+				limit = {
+					has_country_flag = mem_ancestors_grudge_pauldron_flag
+				}
+				add_relic = r_mem_ancestors_grudge_pauldron
+			}
+		}
+	}
+	# option = {
+	# 	name = mem_ancestors_grudge.50.b
+	# }
+	after = {
+		owner = {
+			if = {
+				limit = {
+					has_modifier = relic_activation_cooldown
+				}
+				remove_modifier = relic_activation_cooldown
+			}
+		}
+		hidden_effect = {
+			owner = {
+				remove_country_flag = mem_ancestors_grudge_sword_flag
+				remove_country_flag = mem_ancestors_grudge_pauldron_flag
+				remove_country_flag = mem_ancestors_grudge_ring_flag
+			}
 		}
 	}
 }
@@ -708,8 +901,8 @@ country_event = {
 	id = mem_ancestors_grudge.45
 	title = mem_ancestors_grudge.45.name
 	desc = mem_ancestors_grudge.45.desc
-	picture = GFX_evt_ancient_alien_temple
-	show_sound = event_collapsing_ruins
+	picture = GFX_evt_knights
+	show_sound = evn_tox_knights_of_the_toxic_god
 	#location = event_target:mem_ancestors_grudge_planet
 	is_triggered_only = yes
 	immediate = {
@@ -891,11 +1084,557 @@ country_event = {
 			mem_ancestors_grudge_trait_effect = yes
 		}
 	}
+	option = {
+		name = mem_ancestors_grudge.45.d
+		add_resource = {
+			minor_artifacts = 1000
+			mult = owner.mem_ancestors_grudge_rune_intensity
+		}
+	}
+	# option = {
+	# 	name = mem_ancestors_grudge.45.e
+	# }
 	after = {
 		mem_ancestors_grudge_remove_all_relics = yes
 		start_situation = {
 			type = situation_mem_ancestors_grudge_crafting
 			target = event_target:mem_ancestors_grudge_planet
+		}
+	}
+}
+
+# we found our enemy
+# Executed right after country has established communications with another country. Always fires, even if comms are established with establish_communications_no_message
+# This = Country which established the communications
+# From = Country which communications were established with
+country_event = {
+	id = mem_ancestors_grudge.55
+	title = mem_ancestors_grudge.55.name
+	desc = mem_ancestors_grudge.55.desc
+	picture = GFX_evt_crisis_declared
+	show_sound = event_dangerous_animals
+	location = from.capital_star
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			AND = {
+				is_mem_runesmith = yes
+				from = {
+					has_origin = mem_ancestors_grudge_origin_advanced_start
+				}
+			}
+			AND = {
+				from = {
+					is_mem_runesmith = yes
+				}
+				has_origin = mem_ancestors_grudge_origin_advanced_start
+			}
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.55.a
+		# communcation is not triggered for both countries so we just proc it for both
+		if = {
+			limit = {
+				has_origin = mem_ancestors_grudge_origin_advanced_start
+			}
+			from = {
+				country_event = {
+					id = mem_ancestors_grudge.55
+					scopes = {
+						from = root
+					}
+				}
+			}
+		}
+		else = {
+			begin_event_chain = {
+				event_chain = mem_ancestors_grudge_revenge_arc
+			}
+		}
+	}
+}
+
+# we killed them, hidden
+#This = destroyed country
+#From = optional, destroyer (country)
+country_event = {
+	id = mem_ancestors_grudge.60
+	hide_window = yes
+	#location = event_target:mem_ancestors_grudge_planet
+	is_triggered_only = yes
+	trigger = {
+		AND = {
+			has_origin = mem_ancestors_grudge_origin_advanced_start
+			from = {
+				is_mem_runesmith = yes
+			}
+		}
+	}
+	immediate = {
+		from = {
+			country_event = {
+				id = mem_ancestors_grudge.75
+			}
+		}
+	}
+}
+
+# we killed them, notify
+country_event = {
+	id = mem_ancestors_grudge.75
+	title = mem_ancestors_grudge.75.name
+	desc = mem_ancestors_grudge.75.desc
+	picture = GFX_evt_crisis_defeated
+	show_sound = event_space_battle
+	#location = event_target:mem_ancestors_grudge_planet
+	is_triggered_only = yes
+	# trigger = {
+	# 	AND = {
+	# 		has_origin = mem_ancestors_grudge_origin_advanced_start
+	# 		from = {
+	# 			is_mem_runesmith = yes
+	# 		}
+	# 	}
+	# }
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.75.a
+		add_modifier = {
+			modifier = mem_ancestors_grudge_lost_forge_beat_sworn_enemy
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.75.b
+		add_monthly_resource_mult = {
+			resource = unity
+			value = 24
+		}
+		add_resource = {
+			influence = 500
+		}
+	}
+	after = {
+		end_event_chain = mem_ancestors_grudge_revenge_arc
+	}
+}
+
+# others killed them
+#This = destroyed country
+#From = optional, destroyer (country)
+country_event = {
+	id = mem_ancestors_grudge.65
+	is_triggered_only = yes
+	trigger = {
+		AND = {
+			has_origin = mem_ancestors_grudge_origin_advanced_start
+			NOT = {
+				from = {
+					is_mem_runesmith = yes
+				}
+			}
+		}
+	}
+	immediate = {
+		every_playable_country = {
+			limit = {
+				is_mem_runesmith = yes
+				has_communications = root
+			}
+			country_event = {
+				id = mem_ancestors_grudge.70
+				scopes = {
+					from = from
+					fromfrom = root
+				}
+			}
+		}
+	}
+}
+
+# others  killed them notify
+country_event = {
+	id = mem_ancestors_grudge.70
+	title = mem_ancestors_grudge.70.name
+	desc = mem_ancestors_grudge.70.desc
+	picture = GFX_evt_crisis_defeated
+	show_sound = event_space_battle
+	#location = event_target:mem_ancestors_grudge_planet
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.70.a
+		end_event_chain = mem_ancestors_grudge_revenge_arc
+	}
+}
+
+# (Mutated Creatures)
+situation_event = {
+	id = mem_ancestors_grudge.100
+	title = "mem_ancestors_grudge.100.title"
+	desc = "mem_ancestors_grudge.100.desc"
+	picture = GFX_evt_ground_combat
+	show_sound = event_ground_battle
+	location = target
+	is_triggered_only = yes
+	situation = this
+	immediate = {
+		target = {
+			create_country = {
+				name = "NAME_Deformed_Creatures"
+				type = faction
+				effect = {
+					establish_communications_no_message = root.owner
+				}
+			}
+			while = {
+				count = 2
+				create_army = {
+					name = "NAME_Deformed_Creatures"
+					owner = last_created_country
+					type = "mutant_army"
+				}
+				create_army = {
+					name = "NAME_Twisted_Beasts"
+					owner = last_created_country
+					type = "mutant_army"
+				}
+				create_army = {
+					name = "NAME_Mutated_Horrors"
+					owner = last_created_country
+					type = "mutant_army"
+				}
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.100.a
+		custom_tooltip = terraforming_mutants_attack
+		add_situation_progress = 10
+	}
+}
+
+# random tech
+situation_event = {
+	id = mem_ancestors_grudge.105
+	title = "mem_ancestors_grudge.105.title"
+	desc = "mem_ancestors_grudge.105.desc"
+	picture = GFX_evt_obelisk_tourists
+	show_sound = event_activating_unknown_technology
+	location = target
+	is_triggered_only = yes
+	situation = this
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.105.a
+		owner = {
+			mem_ancestors_grudge_give_random_archeotech = yes
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.105.b
+		add_situation_progress = 20
+	}
+	option = {
+		name = mem_ancestors_grudge.105.c
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = 3
+			}
+		}
+	}
+}
+
+# add shield gen
+situation_event = {
+	id = mem_ancestors_grudge.110
+	title = "mem_ancestors_grudge.110.title"
+	desc = "mem_ancestors_grudge.110.desc"
+	picture = GFX_evt_obelisk_tourists
+	show_sound = event_activating_unknown_technology
+	location = target
+	is_triggered_only = yes
+	situation = this
+	immediate = {
+	}
+	trigger = {
+		target = {
+			NOT = {
+				has_building = building_planetary_shield_generator
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.110.a
+		target = {
+			if = {
+				limit = {
+					has_building = mem_ancestors_grudge_building_ruins
+				}
+				remove_building = mem_ancestors_grudge_building_ruins
+			}
+			add_building = building_planetary_shield_generator
+			ruin_building = building_planetary_shield_generator
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.110.b
+		owner = {
+			add_research_option = tech_planetary_shield_generator
+		}
+	}
+}
+
+# stasis pod
+situation_event = {
+	id = mem_ancestors_grudge.115
+	title = "mem_ancestors_grudge.115.title"
+	desc = "mem_ancestors_grudge.115.desc"
+	picture = GFX_evt_clones
+	show_sound = event_ancient_drone
+	location = target
+	is_triggered_only = yes
+	situation = this
+	immediate = {
+	}
+	# trigger = {
+	# 	target = {
+	# 		NOT = {
+	# 			has_building = building_planetary_shield_generator
+	# 		}
+	# 	}
+	# }
+	option = {
+		name = mem_ancestors_grudge.115.a
+		allow = {
+			owner = {
+				resource_stockpile_compare = {
+					resource = influence
+					value >= 20
+				}
+			}
+		}
+		target = {
+			add_deposit = d_mem_ancestors_grudge_ruined_stasis
+		}
+		owner = {
+			add_resource = {
+				influence = -20
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.115.b
+		add_situation_progress = 10
+	}
+}
+
+#  someone else got forge
+planet_event = {
+	id = mem_ancestors_grudge.200
+	hide_window = yes
+	#show_sound = event_collapsing_ruins
+	location = this
+	is_triggered_only = yes
+	trigger = {
+		has_planet_flag = mem_ancestors_grudge_planet
+		owner = {
+			is_mem_runesmith = no
+		}
+		has_mem_relicforge = yes
+	}
+	immediate = {
+		# owner = {
+		# 	save_event_target_as = mem_ancestors_grudge_revengetarget
+		# }
+		every_playable_country = {
+			limit = {
+				is_mem_runesmith = yes
+			}
+			country_event = {
+				id = mem_ancestors_grudge.205
+				scopes = {
+					from = root.owner
+				}
+			}
+		}
+	}
+}
+
+# notify runesmiths
+country_event = {
+	id = mem_ancestors_grudge.205
+	title = mem_ancestors_grudge.205.name
+	desc = mem_ancestors_grudge.205.desc
+	picture = GFX_evt_crisis_declared
+	show_sound = event_ship_bridge
+	is_triggered_only = yes
+	option = {
+		name = mem_ancestors_grudge.205.a		# they have wronged us !
+		if = {
+			limit = {
+				AND = {
+					exists = from
+					NOT = {
+						is_at_war_with = from
+					}
+				}
+			}
+			declare_war = {
+				target = from
+				attacker_war_goal = wg_wipe_them_out
+			}
+		}
+		add_modifier = {
+			modifier = mem_ancestors_grudge_lost_forge_butrevenge
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.205.b		# its ok 
+		add_modifier = {
+			modifier = mem_ancestors_grudge_lost_forge
+		}
+	}
+}
+
+#  you got it back
+planet_event = {
+	id = mem_ancestors_grudge.210
+	hide_window = yes
+	#show_sound = event_collapsing_ruins
+	#location = this
+	is_triggered_only = yes
+	trigger = {
+		has_planet_flag = mem_ancestors_grudge_planet
+		owner = {
+			is_mem_runesmith = yes
+			OR = {
+				has_modifier = mem_ancestors_grudge_lost_forge
+				has_modifier = mem_ancestors_grudge_lost_forge_butrevenge
+			}
+		}
+		has_mem_relicforge = yes
+	}
+	immediate = {
+		owner = {
+			country_event = {
+				id = mem_ancestors_grudge.215
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mem_ancestors_grudge.215
+	title = mem_ancestors_grudge.215.name
+	desc = mem_ancestors_grudge.215.desc
+	picture = GFX_evt_crisis_defeated
+	show_sound = event_announcement
+	is_triggered_only = yes
+	option = {
+		name = mem_ancestors_grudge.215.a		# we got it back
+		if = {
+			limit = {
+				has_modifier = mem_ancestors_grudge_lost_forge
+			}
+			remove_modifier = mem_ancestors_grudge_lost_forge
+		}
+		else = {
+			remove_modifier = mem_ancestors_grudge_lost_forge_butrevenge
+		}
+	}
+}
+
+#  digiste 1
+fleet_event = {
+	id = mem_ancestors_grudge.300
+	title = mem_ancestors_grudge.300.name
+	desc = mem_ancestors_grudge.300.desc
+	picture = GFX_evt_ancient_alien_temple
+	show_sound = event_collapsing_ruins
+	#location = target
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.300.a
+	}
+}
+
+#  digiste 2
+fleet_event = {
+	id = mem_ancestors_grudge.305
+	title = mem_ancestors_grudge.305.name
+	desc = mem_ancestors_grudge.305.desc
+	picture = GFX_evt_ancient_alien_temple
+	show_sound = event_collapsing_ruins
+	#location = target
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.305.a
+	}
+}
+
+#  digiste 3
+fleet_event = {
+	id = mem_ancestors_grudge.310
+	title = mem_ancestors_grudge.310.name
+	desc = mem_ancestors_grudge.310.desc
+	picture = GFX_evt_ancient_alien_temple
+	show_sound = event_collapsing_ruins
+	#location = target
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.310.a
+	}
+}
+
+#  digiste 4
+fleet_event = {
+	id = mem_ancestors_grudge.315
+	title = mem_ancestors_grudge.315.name
+	desc = mem_ancestors_grudge.315.desc
+	picture = GFX_evt_ancient_alien_temple
+	show_sound = event_collapsing_ruins
+	#location = target
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.315.a
+		owner = {
+			add_relic = r_mem_ancestors_grudge_anvil
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					owner = {
+						is_variable_set = mem_ancestors_grudge_activated_relics_counter
+					}
+				}
+			}
+			else = {
+				owner = {
+					set_variable = {
+						which = mem_ancestors_grudge_activated_relics_counter
+						value = 1
+					}
+				}
+			}
 		}
 	}
 }

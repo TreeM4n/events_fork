@@ -3,4 +3,4 @@ tags={
 	"Buildings"
 }
 name="relic_origin"
-supported_version="v3.14.1592"
+supported_version="v3.14.*"

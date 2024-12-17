@@ -1,7 +1,10 @@
 mem_ancestors_grudge_rune_power = {
 	icon = rejectlesson
+	# generate_mult_modifiers = {
+	# 	cost
+	# }
 	generate_mult_modifiers = {
-		cost
+		produces
 	}
 	modifier_category = country
 	use_for_ai_budget = no
@@ -18,8 +21,11 @@ mem_ancestors_grudge_artifact_power = {
 	# 	upkeep
 	# 	produces
 	# }
+	# generate_mult_modifiers = {
+	# 	cost
+	# }
 	generate_mult_modifiers = {
-		cost
+		produces
 	}
 	modifier_category = country
 	use_for_ai_budget = no
@@ -86,7 +92,7 @@ planet_mem_relic_smiths = {
 	}
 	# Inherited Modifiers
 	triggered_produces_modifier = {
-		key = planet_foundry
+		key = planet_metallurgists
 		modifier_types = {
 			mult
 			add
@@ -97,7 +103,7 @@ planet_mem_relic_smiths = {
 		use_parent_icon = yes
 	}
 	triggered_upkeep_modifier = {
-		key = planet_foundry
+		key = planet_metallurgists
 		modifier_types = {
 			mult
 			add

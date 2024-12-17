@@ -3,29 +3,69 @@ mem_ancestors_grudge_building_ruins = {
 	base_buildtime = @b2_time
 	can_build = no
 	can_be_disabled = no
-	#can_be_ruined = no
+	can_be_ruined = no
 	can_demolish = no
 	category = resource
-	# planet_modifier = {
-	# 	planet_max_buildings_add = 1
-	# }
 	resources = {
 		category = planet_buildings
 		cost = {
 			minerals = 900
 		}
 	}
-	triggered_desc = {
-		text = mem_ancestors_grudge_building_ruins_effect		#upgrade to remove
+	planet_modifier = {
+		planet_housing_add = 1
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+			}
+		}
+		modifier = {
+			job_scrap_miner_add = 1
+		}
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		modifier = {
+			job_scrap_miner_drone_add = 1
+		}
 	}
 	triggered_desc = {
 		trigger = {
+			exists = owner
 			owner = {
-				is_mem_runesmith = yes
+				is_gestalt = yes
 			}
 		}
-		text = mem_ancestors_grudge_boosts_repairs_effect		#advance
+		text = job_scrap_miner_drone_effect_desc
 	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+			}
+		}
+		text = job_scrap_miner_effect_desc
+	}
+	# triggered_desc = {
+	# 	text = mem_ancestors_grudge_building_ruins_effect		#upgrade to remove
+	# }
+	# triggered_desc = {
+	# 	trigger = {
+	# 		owner = {
+	# 			is_mem_runesmith = yes
+	# 		}
+	# 	}
+	# 	text = mem_ancestors_grudge_boosts_repairs_effect		#advance
+	# }
 	# on_repaired = {
 	# 	remove_building = mem_ancestors_grudge_building_ruins
 	# 	owner = {
@@ -62,17 +102,17 @@ mem_ancestors_grudge_building_ruins_1 = {
 			minerals = 450
 		}
 	}
-	# triggered_desc = {
-	# 	text = mem_ancestors_grudge_building_ruins_effect
-	# }
-	# triggered_desc = {
-	# 	trigger = {
-	# 		owner = {
-	# 			is_mem_runesmith = yes
-	# 		}
-	# 	}
-	# 	text = mem_ancestors_grudge_boosts_repairs_effect
-	# }
+	triggered_desc = {
+		text = mem_ancestors_grudge_building_ruins_effect
+	}
+	triggered_desc = {
+		trigger = {
+			owner = {
+				is_mem_runesmith = yes
+			}
+		}
+		text = mem_ancestors_grudge_boosts_repairs_effect
+	}
 	on_built = {
 		remove_building = mem_ancestors_grudge_building_ruins_1
 		owner = {
@@ -112,6 +152,14 @@ mem_ancestors_grudge_building_forge_0 = {
 		# 	minor_artifacts = 5
 		# }
 	}
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		owner = {
+	# 			is_mem_runesmith = yes
+	# 		}
+	# 	}
+	# 	planet_miners_minor_artifacts_produces_add = 0.1
+	# }
 	upgrades = {
 		mem_ancestors_grudge_building_forge_1
 	}
@@ -307,11 +355,11 @@ mem_ancestors_grudge_building_forge_4 = {
 	category = resource
 	triggered_country_modifier = {
 		weapon_archaeotech_weapon_damage_mult = 1
-		mult = owner.modifier:mem_ancestors_grudge_artifact_power_cost_mult
+		mult = owner.modifier:mem_ancestors_grudge_artifact_power_produces_mult
 	}
 	triggered_country_modifier = {
 		category_archaeostudies_research_speed_mult = 1
-		mult = owner.modifier:mem_ancestors_grudge_rune_power_cost_mult
+		mult = owner.modifier:mem_ancestors_grudge_rune_power_produces_mult
 	}
 	allow = {
 		owner = {

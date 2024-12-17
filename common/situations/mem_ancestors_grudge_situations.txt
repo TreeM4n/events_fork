@@ -67,10 +67,12 @@ situation_mem_ancestors_grudge_forge_repairs = {
 	}
 	on_monthly = {
 		random_events = {
-			200 = 0
-			# mutants under the ruble
-			# vazuran bomb
-			# archeotech / minor artifacts
+			2000 = 0
+			1 = mem_ancestors_grudge.100			# monsters
+			#1 = mem_ancestors_grudge.100 # found bomb			
+			1 = mem_ancestors_grudge.105			# archeotech / minor artifacts
+			1 = mem_ancestors_grudge.110			# shiel gen ruined found
+			1 = mem_ancestors_grudge.115			# stasis pop found
 		}
 	}
 	start_value = 0
@@ -233,6 +235,11 @@ situation_mem_ancestors_grudge_forge_repairs = {
 		resources = {
 			category = situations
 			upkeep = {
+				trigger = {
+					NOT = {
+						current_stage = situation_mem_ancestors_grudge_crafting_stage0
+					}
+				}
 				minor_artifacts = 5
 				#unity = 20
 			}
@@ -304,7 +311,7 @@ situation_mem_ancestors_grudge_crafting = {
 		situation_mem_ancestors_grudge_crafting_stage0 = {
 			icon = GFX_situation_stage_1
 			icon_background = GFX_situation_stage_frame_green
-			end = 100
+			end = 200
 			# on_first_enter = {
 			# 	#situation_event = {
 			# 	#	id = mem_ancestors_grudge.101

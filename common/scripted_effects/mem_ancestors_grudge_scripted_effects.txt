@@ -1,16 +1,39 @@
 mem_ancestors_grudge_give_random_archeotech = {
-	add_random_research_option = {
-		category = archaeostudies
-		#area = RANDOM
-		#tier = <int>
-		add_progress = 10
-		ignore_prereqs = yes
-		ignore_rare = yes
-		only_rare = no
-		ignore_insight = yes
-		fail_effects = {
-			add_resource = {
-				minor_artifacts = 100
+	if = {
+		limit = {
+			host_has_dlc = "Ancient Relics Story Pack"
+		}
+		add_random_research_option = {
+			category = archaeostudies
+			#area = RANDOM
+			#tier = <int>
+			add_progress = 10
+			ignore_prereqs = yes
+			ignore_rare = yes
+			only_rare = no
+			ignore_insight = yes
+			fail_effects = {
+				add_resource = {
+					minor_artifacts = 100
+				}
+			}
+		}
+	}
+	else = {
+		add_random_research_option = {
+			category = materials
+			#area = RANDOM
+			#tier = <int>
+			add_progress = 10
+			ignore_prereqs = no
+			ignore_rare = yes
+			only_rare = no
+			ignore_insight = yes
+			fail_effects = {
+				add_monthly_resource_mult = {
+					resource = engineering_research
+					value = 3
+				}
 			}
 		}
 	}
@@ -23,13 +46,13 @@ mem_ancestors_grudge_remove_all_relics = {
 		}
 		remove_relic = r_mem_ancestors_grudge_pauldron
 	}
-	else_if = {
+	if = {
 		limit = {
 			has_relic = r_mem_ancestors_grudge_ring
 		}
 		remove_relic = r_mem_ancestors_grudge_ring
 	}
-	else_if = {
+	if = {
 		limit = {
 			has_relic = r_mem_ancestors_grudge_sword
 		}

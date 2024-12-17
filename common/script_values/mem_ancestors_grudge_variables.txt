@@ -1,34 +1,34 @@
 # mem_ancestors_grudge_rune_power = {
-# 	add = this.modifier:mem_ancestors_grudge_rune_power_cost_mult
+# 	add = this.modifier:mem_ancestors_grudge_rune_power_produces_mult
 # 	#add = species.modifier:planet_jobs_worker_only_produces_mult
 # }
 # mem_ancestors_grudge_rune_power = {
-# 	add = this.modifier:mem_ancestors_grudge_artifact_power_cost_mult
+# 	add = this.modifier:mem_ancestors_grudge_artifact_power_produces_mult
 # 	#add = species.modifier:planet_jobs_worker_only_produces_mult
 # }
 mem_ancestors_grudge_situation_speed = {
 	base = -100
-	#add = modifier:mem_ancestors_grudge_artifact_power_cost_mult
-	mult = modifier:mem_ancestors_grudge_artifact_power_cost_mult
+	#add = modifier:mem_ancestors_grudge_artifact_power_produces_mult
+	mult = modifier:mem_ancestors_grudge_artifact_power_produces_mult
 }
 
 mem_ancestors_grudge_situation_speed_runes = {
 	base = 100
-	#add = modifier:mem_ancestors_grudge_artifact_power_cost_mult
-	mult = modifier:mem_ancestors_grudge_rune_power_cost_mult
+	#add = modifier:mem_ancestors_grudge_artifact_power_produces_mult
+	mult = modifier:mem_ancestors_grudge_rune_power_produces_mult
 }
 
 # pop number but /100
 mem_ancestors_grudge_situation_pop_count = {
 	base = 0
 	add = trigger:num_pops
-	mult = 0.005
+	mult = 0.1
 }
 
 # determines rarity of relics
 mem_ancestors_grudge_situation_rarity = {
 	base = 0
-	add = modifier:mem_ancestors_grudge_artifact_power_cost_mult
+	add = modifier:mem_ancestors_grudge_artifact_power_produces_mult
 	modulo = 50
 	max = 4
 }
@@ -36,7 +36,7 @@ mem_ancestors_grudge_situation_rarity = {
 # # determines strengh of modifiers for relcs
 # mem_ancestors_grudge_situation_rarity = {
 # 	base = 0
-# 	add = modifier:mem_ancestors_grudge_rune_power_cost_mult
+# 	add = modifier:mem_ancestors_grudge_rune_power_produces_mult
 # 	mult = 0.02
 # 	add = 1
 # 	max = 4
@@ -56,7 +56,7 @@ mem_smith_job_number = {
 				}
 			}
 		}
-		mult = 0.01
+		mult = 0.1
 		mode = add
 	}
 	# complex_trigger_modifier = {

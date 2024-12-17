@@ -116,7 +116,7 @@ mem_ancestors_grudge_trait_relicowner = {
 			leader_class = commander
 			has_leader_flag = mem_ancestors_grudge_relic_flag8
 		}
-		ship_damage_against_starbases_mult = 0.1
+		ship_damage_against_starbases_mult = 0.15
 		mult = this.mem_ancestors_grudge_rune_intensity
 	}
 	#################################################

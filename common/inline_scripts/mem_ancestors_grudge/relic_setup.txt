@@ -14,7 +14,7 @@ resources = {
 				host_has_dlc = "Ancient Relics Story Pack"
 			}
 		}
-		unity = 200
+		influence = 200
 	}
 }
 ai_weight = {

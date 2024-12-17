@@ -1,13 +1,13 @@
 ### Origins - Placed before the pre-scripted empires as only the first valid one is chosen. 
 # From the Ashes
-part = {
-	location = 0
-	localization = "START_SCREEN_MEM_FROM_THE_ASHES"
+# part = {
+# 	location = 0
+# 	localization = "START_SCREEN_MEM_FROM_THE_ASHES"
 	
-	trigger = {
-		has_origin = origin_mem_from_the_ashes
-	}
-}
+# 	trigger = {
+# 		has_origin = origin_mem_from_the_ashes
+# 	}
+# }
 
 # Ancestors Grudge
 part = {
@@ -20,32 +20,32 @@ part = {
 }
 
 
-# Fainthearted Backwater
-part = {
-	location = 0
-	localization = "START_SCREEN_MEM_FAINTHEARTED"
+# # Fainthearted Backwater
+# part = {
+# 	location = 0
+# 	localization = "START_SCREEN_MEM_FAINTHEARTED"
 	
-	trigger = {
-		has_origin = origin_mem_fainthearted
-	}
-}
+# 	trigger = {
+# 		has_origin = origin_mem_fainthearted
+# 	}
+# }
 
-# Ceaseless Gaze
-part = {
-	location = 0
-	localization = "START_SCREEN_MEM_CEASELESS_GAZE"
+# # Ceaseless Gaze
+# part = {
+# 	location = 0
+# 	localization = "START_SCREEN_MEM_CEASELESS_GAZE"
 	
-	trigger = {
-		has_origin = origin_mem_ceaseless_gaze
-	}
-}
+# 	trigger = {
+# 		has_origin = origin_mem_ceaseless_gaze
+# 	}
+# }
 
-# E.D.E.N. Protocol
-part = {
-	location = 0
-	localization = "START_SCREEN_MEM_EDEN_PROTOCOL"
+# # E.D.E.N. Protocol
+# part = {
+# 	location = 0
+# 	localization = "START_SCREEN_MEM_EDEN_PROTOCOL"
 	
-	trigger = {
-		has_origin = origin_mem_eden_protocol
-	}
-}
+# 	trigger = {
+# 		has_origin = origin_mem_eden_protocol
+# 	}
+# }

@@ -55,7 +55,7 @@ mem_ancestors_grudge_relicsmith = {
 		}
 	}
 	country_modifier = {
-		mem_ancestors_grudge_artifact_power_cost_mult = 0.01
+		mem_ancestors_grudge_artifact_power_produces_mult = 0.01
 	}
 	weight = {
 		weight = @specialist_job_weight		# Fairly important job
@@ -130,7 +130,7 @@ mem_ancestors_grudge_relicsmith_drone = {
 		}
 	}
 	country_modifier = {
-		mem_ancestors_grudge_artifact_power_cost_mult = 0.01
+		mem_ancestors_grudge_artifact_power_produces_mult = 0.01
 	}
 	
 	weight = {
@@ -204,7 +204,7 @@ mem_ancestors_grudge_runesmith = {
 		}
 	}
 	country_modifier = {
-		mem_ancestors_grudge_rune_power_cost_mult = 0.01
+		mem_ancestors_grudge_rune_power_produces_mult = 0.01
 	}
 	weight = {
 		weight = @specialist_job_weight		# Fairly important job
@@ -300,7 +300,7 @@ mem_ancestors_grudge_runesmith_drone = {
 		}
 	}
 	country_modifier = {
-		mem_ancestors_grudge_rune_power_cost_mult = 0.01
+		mem_ancestors_grudge_rune_power_produces_mult = 0.01
 	}
 
 	weight = {

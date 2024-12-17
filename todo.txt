@@ -1,11 +1,10 @@
-- digsite with artifact
 - random events for both situations
-- enraged smiths event chain
 - relic gfx
-- more relics
 - event locs
-- event chain for exocotic materials
+
 
 
 - mem vazuran integration
 - hive version
+- more relics
+- event chain for exocotic materials

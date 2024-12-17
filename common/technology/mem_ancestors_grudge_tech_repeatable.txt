@@ -1,0 +1,59 @@
+tech_repeatable_mem_ancestors_grudge = {
+	area = society
+	cost = @repeatableTechBaseCost
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier
+	category = {
+		archaeostudies
+	}
+	levels = -1
+	prerequisites = {
+		"tech_repeatable_mem_ancestors_grudge" # only runesmith empire get this
+	}
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repatableTechFactor
+	}
+	ai_weight = {
+		factor = @technician_ai_factor
+	}
+	weight_groups = {
+		repeatable
+	}
+	mod_weight_if_group_picked = {
+		repeatable = 0.01
+	}
+	modifier = {
+		weapon_archaeotech_weapon_damage_mult = 0.05
+	}
+}
+
+tech_repeatable_mem_ancestors_grudge_2 = {
+	area = society
+	cost = @repeatableTechBaseCost
+	cost_per_level = @repeatableTechLevelCost
+	tier = @repeatableTechTier
+	category = {
+		archaeostudies
+	}
+	levels = -1
+	prerequisites = {
+		"tech_repeatable_mem_ancestors_grudge"
+	}
+	weight = @repeatableTechWeight
+	weight_modifier = {
+		factor = @repatableTechFactor
+	}
+	ai_weight = {
+		factor = @technician_ai_factor
+	}
+	weight_groups = {
+		repeatable
+	}
+	mod_weight_if_group_picked = {
+		repeatable = 0.01
+	}
+	modifier = {
+		weapon_archaeotech_weapon_fire_rate_mult = 0.05
+	}
+}
