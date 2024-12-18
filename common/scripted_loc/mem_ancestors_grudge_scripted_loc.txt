@@ -39,7 +39,6 @@ defined_text = {
 # 	}
 # 	default = WEIRD
 # }
-
 defined_text = {
 	name = MemGetRelicNameRarity
 	random = no
@@ -68,4 +67,46 @@ defined_text = {
 		localization_key = mem_ancestors_grudge_exceptional
 	}
 	default = mem_nothing
+}
+
+defined_text = {
+	name = MemGetSituationRarity
+	random = no
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = owner.value:mem_ancestors_grudge_situation_rarity
+				value <= 2
+			}
+		}
+		localization_key = mem_ancestors_grudge_common
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = owner.value:mem_ancestors_grudge_situation_rarity
+				value <= 4
+			}
+		}
+		localization_key = mem_ancestors_grudge_epic
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = owner.value:mem_ancestors_grudge_situation_rarity
+				value <= 3
+			}
+		}
+		localization_key = mem_ancestors_grudge_rare
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = owner.value:mem_ancestors_grudge_situation_rarity
+				value <= 5
+			}
+		}
+		localization_key = mem_ancestors_grudge_exceptional
+	}
+	default = WEIRD
 }

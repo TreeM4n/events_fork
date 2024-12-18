@@ -302,7 +302,11 @@ situation_mem_ancestors_grudge_crafting = {
 	}
 	on_monthly = {
 		random_events = {
+			4000 = 0
 			# TODO
+			# digraced runesmith
+			# inventive artificer
+			# a new alloying method
 		}
 	}
 	start_value = 0

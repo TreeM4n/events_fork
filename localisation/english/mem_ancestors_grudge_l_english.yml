@@ -9,7 +9,7 @@ l_english:
 
 #########################
  START_SCREEN_MEM_ANCESTORS_GRUDGE:0 "REPLACE_ME"
- NAME_mem_ancestors_grudge_system:0 "REPLACE_ME"
+ NAME_mem_ancestors_grudge_system:0 "Ancestors Grudge"
  mem_ancestors_grudge_origin_effects:0 "REPLACE_ME"
  mem_ancestors_grudge_origin_robots_effects:0 "$mem_ancestors_grudge_origin_effects$ + REPLACEME Trait"
 
@@ -95,8 +95,8 @@ l_english:
 
  approach_mem_ancestors_grudge_forge_repairs_2:0 "Normal Funding"
  approach_mem_ancestors_grudge_forge_repairs_3:0 "Excessive Funding"
- situation_mem_ancestors_grudge_crafting:0 "Trial of the Forge"
- situation_mem_ancestors_grudge_crafting_desc:0 "REPLACE ME" ##TODO
+ situation_mem_ancestors_grudge_crafting:0 "Forge Ritual"
+ situation_mem_ancestors_grudge_crafting_desc:0 "Our smiths are currently hard at work to make smith the next runed artifact. \n\nPredicted Quality: [MemGetSituationRarity]" 
  situation_mem_ancestors_grudge_crafting_stage0:0 "Waiting For Results" 
  situation_mem_ancestors_grudge_crafting_type:0 "$situation_mem_ancestors_grudge_crafting$"
  situation_mem_ancestors_grudge_crafting_monthly_change_tooltip:0 "Progress"
@@ -222,3 +222,8 @@ l_english:
  mem_ancestors_grudge.115.desc:0 "It seems that during our reconstruction efforts, we have made a discovery: an ancestor from the old times, preserved in cryogenic slumber. The mechanisms around them are worn and failing, yet they still cling to life. We must act swiftly to stabilize the systems and ensure their survival."
  mem_ancestors_grudge.115.a:0 "Safe them!"
  mem_ancestors_grudge.115.b:0 "His honor is long gone."
+
+ tech_repeatable_mem_ancestors_grudge:0 "Archeo-Alloying Studies"
+ tech_repeatable_mem_ancestors_grudge_desc:0 "The continued study of ancient alloying methods should provide a better understanding of their technology."
+ tech_repeatable_mem_ancestors_grudge_2:0 "Archeo-Artificing Studies"
+ tech_repeatable_mem_ancestors_grudge_2_desc:0 "The continued study of ancient artificing methods should provide a better understanding of their technology."
