@@ -15,7 +15,7 @@ mem_ancestors_grudge_trait_robot_rune_golem = {
 	icon = "gfx/interface/icons/traits/trait_robotic_1.dds"
 	species_potential_add = {
 		always = no
-	}	
+	}
 	species_potential_remove = {
 		always = no
 	}
@@ -40,6 +40,9 @@ mem_ancestors_grudge_trait_relicowner = {
 		RARITY = paragon
 		COUNCIL = no
 		TIER = none
+	}
+	self_modifier = {
+		leader_lifespan_add = 20
 	}
 	# triggered_desc = {
 	# 	trigger = {
@@ -183,9 +186,7 @@ mem_ancestors_grudge_trait_relicowner = {
 			leader_class = scientist
 			has_leader_flag = mem_ancestors_grudge_relic_flag7
 		}
-		leader_scientists_physics_research_produces_add = 10
-		leader_scientists_society_research_produces_add = 10
-		leader_scientists_engineering_research_produces_add = 10
+		planet_jobs_engineering_research_produces_mult = 0.2
 	}
 	triggered_planet_modifier = {
 		potential = {

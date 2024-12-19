@@ -8,7 +8,7 @@
 r_mem_ancestors_grudge_sword = {
 	activation_duration = 0
 	portrait = "GFX_r_mem_ancestors_grudge_sword"
-	sound = "relic_activation_miniature_galaxy"
+	sound = "relic_activation_blade_of_the_huntress"
 	inline_script = {
 		script = mem_ancestors_grudge/relic_setup
 	}
@@ -102,8 +102,8 @@ r_mem_ancestors_grudge_sword = {
 
 r_mem_ancestors_grudge_ring = {
 	activation_duration = 0
-	portrait = "GFX_mem_ancestors_grudge_hourglass"	# TODO
-	sound = "relic_activation_miniature_galaxy"
+	portrait = "GFX_r_mem_ancestors_grudge_ring"	
+	sound = "relic_activation_cybrex_war_forge"
 	inline_script = {
 		script = mem_ancestors_grudge/relic_setup
 	}
@@ -185,9 +185,7 @@ r_mem_ancestors_grudge_ring = {
 		potential = {
 			has_country_flag = mem_ancestors_grudge_relic_flag7
 		}
-		country_base_physics_research_produces_add = 5
-		country_base_society_research_produces_add = 5
-		country_base_engineering_research_produces_add = 5
+		planet_jobs_engineering_research_produces_mult = 0.1
 		mult = mem_ancestors_grudge_rune_intensity
 	}
 	triggered_country_modifier = {
@@ -212,8 +210,8 @@ r_mem_ancestors_grudge_ring = {
 
 r_mem_ancestors_grudge_pauldron = {
 	activation_duration = 0
-	portrait = "GFX_mem_ancestors_grudge_hourglass"	# TODO
-	sound = "relic_activation_miniature_galaxy"
+	portrait = "GFX_r_mem_ancestors_grudge_pauldron"	
+	sound = "relic_activation_khans_throne"
 	inline_script = {
 		script = mem_ancestors_grudge/relic_setup
 	}
@@ -229,7 +227,7 @@ r_mem_ancestors_grudge_pauldron = {
 		potential = {
 			has_country_flag = mem_ancestors_grudge_relic_flag1
 		}
-		diplo_weight_mult = 0.02
+		diplo_weight_mult = 0.05
 		mult = mem_ancestors_grudge_rune_intensity
 	}
 	triggered_country_modifier = {

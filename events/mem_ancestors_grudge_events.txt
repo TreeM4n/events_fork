@@ -928,7 +928,7 @@ country_event = {
 						has_trait = mem_ancestors_grudge_trait_relicowner
 					}
 				}
-				save_event_target_as = leader_1
+				save_global_event_target_as  = leader_1
 			}
 			if = {
 				limit = {
@@ -942,7 +942,7 @@ country_event = {
 							has_trait = mem_ancestors_grudge_trait_relicowner
 						}
 					}
-					save_event_target_as = leader_2
+					save_global_event_target_as  = leader_2
 				}
 			}
 			if = {
@@ -958,7 +958,7 @@ country_event = {
 							has_trait = mem_ancestors_grudge_trait_relicowner
 						}
 					}
-					save_event_target_as = leader_3
+					save_global_event_target_as  = leader_3
 				}
 			}
 		}
@@ -973,7 +973,7 @@ country_event = {
 						has_trait = mem_ancestors_grudge_trait_relicowner
 					}
 				}
-				save_event_target_as = leader_1
+				save_global_event_target_as  = leader_1
 			}
 			if = {
 				limit = {
@@ -987,7 +987,7 @@ country_event = {
 							has_trait = mem_ancestors_grudge_trait_relicowner
 						}
 					}
-					save_event_target_as = leader_2
+					save_global_event_target_as  = leader_2
 				}
 			}
 			if = {
@@ -1003,7 +1003,7 @@ country_event = {
 							has_trait = mem_ancestors_grudge_trait_relicowner
 						}
 					}
-					save_event_target_as = leader_3
+					save_global_event_target_as  = leader_3
 				}
 			}
 		}
@@ -1018,7 +1018,7 @@ country_event = {
 						has_trait = mem_ancestors_grudge_trait_relicowner
 					}
 				}
-				save_event_target_as = leader_1
+				save_global_event_target_as  = leader_1
 			}
 			if = {
 				limit = {
@@ -1034,7 +1034,7 @@ country_event = {
 							has_trait = mem_ancestors_grudge_trait_relicowner
 						}
 					}
-					save_event_target_as = leader_2
+					save_global_event_target_as  = leader_2
 				}
 			}
 			if = {
@@ -1052,7 +1052,7 @@ country_event = {
 							has_trait = mem_ancestors_grudge_trait_relicowner
 						}
 					}
-					save_event_target_as = leader_3
+					save_global_event_target_as  = leader_3
 				}
 			}
 		}

@@ -307,6 +307,7 @@ situation_mem_ancestors_grudge_crafting = {
 			# digraced runesmith
 			# inventive artificer
 			# a new alloying method
+			# ways to choose the relic and it buffs
 		}
 	}
 	start_value = 0

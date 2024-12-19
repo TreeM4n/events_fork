@@ -110,3 +110,27 @@ defined_text = {
 	}
 	default = WEIRD
 }
+
+defined_text = {
+	name = MemGetLeaderClass
+	random = no
+	text = {
+		trigger = {
+			has_relic = r_mem_ancestors_grudge_sword
+		}
+		localization_key = mem_ancestors_grudge_commander
+	}
+	text = {
+		trigger = {
+			has_relic = r_mem_ancestors_grudge_pauldron
+		}
+		localization_key = mem_ancestors_grudge_official
+	}
+	text = {
+		trigger = {
+			has_relic = r_mem_ancestors_grudge_ring
+		}
+		localization_key = mem_ancestors_grudge_scientist
+	}
+	default = mem_nothing
+}
