@@ -1,5 +1,4 @@
 - random events for crafting
-- relic gfx
 
 - origin description:
  - restore destroyed relic world

@@ -1,0 +1,42 @@
+concept_mem_ancestors_grudge_runeforge = {
+	icon = "gfx/interface/icons/buildings/mem_ancestors_grudge_building_forge_2.dds"
+}
+
+# concept_mem_ancestors_grudge_runeforge_0 = {
+# 	icon = "gfx/interface/icons/buildings/mem_ancestors_grudge_building_forge_0.dds"
+# }
+
+# concept_mem_ancestors_grudge_runeforge_1 = {
+# 	icon = "gfx/interface/icons/buildings/mem_ancestors_grudge_building_forge_1.dds"
+# }
+
+# concept_mem_ancestors_grudge_runeforge_2 = {
+# 	icon = "gfx/interface/icons/buildings/mem_ancestors_grudge_building_forge_2.dds"
+# }
+
+# concept_mem_ancestors_grudge_runeforge_3 = {
+# 	icon = "gfx/interface/icons/buildings/mem_ancestors_grudge_building_forge_3.dds"
+# }
+
+# concept_mem_ancestors_grudge_runeforge_4 = {
+# 	icon = "gfx/interface/icons/buildings/mem_ancestors_grudge_building_forge_4.dds"
+# }
+
+concept_mem_ancestors_grudge_crafting = {
+	icon = "gfx/interface/icons/buildings/mem_ancestors_grudge_building_forge_1.dds"
+}
+
+
+concept_mem_ancestors_grudge_artifact_intensity = {
+	icon = "gfx/interface/icons/modifiers/mod_rejectlesson_produces_mult.dds"
+}
+
+
+concept_mem_ancestors_grudge_rune_intensity = {
+	icon = "gfx/interface/icons/modifiers/mod_acceptlesson_produces_mult.dds"
+}
+
+
+concept_mem_ancestors_grudge_rune_relics = {
+	icon = "gfx/interface/icons/modifiers/mod_job_artificer_add.dds"
+}
