@@ -14,3 +14,13 @@ has_mem_relicforge = {
 		has_building = mem_ancestors_grudge_building_forge_4
 	}
 }
+
+mem_has_not_relic_flag ={
+	owner = {
+		NOR = {
+			has_country_flag = mem_ancestors_grudge_sword_flag
+			has_country_flag = mem_ancestors_grudge_ring_flag
+			has_country_flag = mem_ancestors_grudge_pauldron_flag
+		}
+	}
+}

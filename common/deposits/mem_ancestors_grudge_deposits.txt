@@ -74,8 +74,7 @@ d_mem_ancestors_grudge_city_ruins = {
 	is_for_colonizable = yes
 	category = deposit_cat_blockers
 	potential = {
-		is_planet_class = pc_nuked
-		is_planet_class = pc_relic
+		always = no
 	}
 	planet_modifier = {
 		planet_max_districts_add = -2
@@ -88,9 +87,14 @@ d_mem_ancestors_grudge_city_ruins = {
 	}
 	on_cleared = {
 		custom_tooltip = mem_ancestors_grudge_boosts_repairs_effect
-		owner = {
-			add_resource = {
-				minor_artifacts = 25
+		if = {
+			limit = {
+				host_has_dlc = "Ancient Relics Story Pack"
+			}
+			owner = {
+				add_resource = {
+					minor_artifacts = 25
+				}
 			}
 		}
 		hidden_effect = {
@@ -102,14 +106,7 @@ d_mem_ancestors_grudge_city_ruins = {
 		}
 	}
 	drop_weight = {
-		weight = @blocker_high
-		modifier = {
-			factor = 0
-			num_free_districts = {
-				type = district_city
-				value < 2
-			}
-		}
+		weight = 0
 	}
 }
 
@@ -120,16 +117,21 @@ d_mem_ancestors_grudge_bomb_crater = {
 	category = deposit_cat_blockers
 	all_blocker_swap_types = yes
 	potential = {
-		is_planet_class = pc_nuked
+		always = no
 	}
 	planet_modifier = {
 		planet_max_districts_add = -1
 	}
 	on_cleared = {
 		custom_tooltip = mem_ancestors_grudge_boosts_repairs_effect
-		owner = {
-			add_resource = {
-				minor_artifacts = 25
+		if = {
+			limit = {
+				host_has_dlc = "Ancient Relics Story Pack"
+			}
+			owner = {
+				add_resource = {
+					minor_artifacts = 25
+				}
 			}
 		}
 		hidden_effect = {
@@ -147,14 +149,7 @@ d_mem_ancestors_grudge_bomb_crater = {
 		}
 	}
 	drop_weight = {
-		weight = @blocker_low
-		modifier = {
-			factor = 0
-			num_free_districts = {
-				type = district_city
-				value < 2
-			}
-		}
+		weight = 0
 	}
 }
 
@@ -171,9 +166,14 @@ d_mem_ancestors_grudge_ruined_district = {
 	}
 	on_cleared = {
 		custom_tooltip = mem_ancestors_grudge_boosts_repairs_effect
-		owner = {
-			add_resource = {
-				minor_artifacts = 25
+		if = {
+			limit = {
+				host_has_dlc = "Ancient Relics Story Pack"
+			}
+			owner = {
+				add_resource = {
+					minor_artifacts = 25
+				}
 			}
 		}
 		hidden_effect = {
@@ -192,30 +192,31 @@ d_mem_ancestors_grudge_ruined_district = {
 	}
 }
 
-
 # stasis cpsuels
 d_mem_ancestors_grudge_ruined_stasis = {
 	icon = d_ancient_vault
 	time = 120
-
 	is_for_colonizable = yes
 	category = deposit_cat_blockers
-
-	potential = { always = no }
-
-
+	potential = {
+		always = no
+	}
 	on_cleared = {
 		hidden_effect = {
 			if = {
 				limit = {
 					any_owned_pop = {
-						NOT = { has_trait = trait_hive_mind }
+						NOT = {
+							has_trait = trait_hive_mind
+						}
 						is_robot_pop = no
 					}
 				}
 				random_owned_pop = {
 					limit = {
-						NOT = { has_trait = trait_hive_mind }
+						NOT = {
+							has_trait = trait_hive_mind
+						}
 						is_robot_pop = no
 					}
 					root = {
@@ -237,9 +238,7 @@ d_mem_ancestors_grudge_ruined_stasis = {
 		}
 		custom_tooltip = d_decrepit_dwellings_custom_tooltip
 	}
-
 	inline_script = deposits/ai_weight_pop_creating_blocker
-
 	resources = {
 		category = deposit_blockers
 		cost = {
@@ -249,5 +248,4 @@ d_mem_ancestors_grudge_ruined_stasis = {
 			energy = 1
 		}
 	}
-
 }

@@ -1,12 +1,5 @@
 - random events for crafting
 
-- origin description:
- - restore destroyed relic world
- - learn to craft like your ancestors
- - spawned advanced empire, you will hate them
- - lose the forge lose all related 
- 
- - concepts for boths intensities
 
 - mem vazuran integration
 - hive version

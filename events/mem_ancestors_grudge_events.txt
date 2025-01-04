@@ -130,6 +130,14 @@ country_event = {
 	}
 	option = {
 		name = WEIRD
+		add_relic = r_mem_ancestors_grudge_modern_art
+		set_variable = {
+			which = mem_ancestors_grudge_activated_relics_counter
+			value = 1
+		}
+	}
+	option = {
+		name = WEIRD
 		add_resource = {
 			unity = 1000
 			mult = this.modifier:mem_ancestors_grudge_artifact_power_produces_mult
@@ -196,6 +204,15 @@ country_event = {
 				}
 				#
 			}
+			while = {
+				count = 1
+				add_deposit = d_mem_ancestors_grudge_bomb_crater
+				add_deposit = d_mem_ancestors_grudge_ruined_district
+			}
+			while = {
+				count = 3
+				add_deposit = d_mem_ancestors_grudge_city_ruins
+			}
 			# solar_system = {
 			# 	random_system_planet = {
 			# 		limit = {
@@ -218,6 +235,7 @@ country_event = {
 				#ethos = root.ethos
 			}
 			add_colony_progress = 0.8
+			add_planet_devastation = 0.8
 			# create_colony = {
 			# 	owner = root
 			# 	species = root.species
@@ -377,6 +395,7 @@ situation_event = {
 		owner = {
 			add_research_option = tech_archaeostudies
 		}
+		custom_tooltip = mem_ancestors_grudge_unlocks_forge_upgrade_tt
 		hidden_effect = {
 			event_target:mem_ancestors_grudge_planet = {
 				set_planet_flag = mem_ancestors_grudge_building_forge_1
@@ -410,6 +429,7 @@ situation_event = {
 		target = {
 			create_archaeological_site = mem_ancestors_grudge_anvil_site
 		}
+		custom_tooltip = mem_ancestors_grudge_unlocks_forge_upgrade_tt
 		hidden_effect = {
 			event_target:mem_ancestors_grudge_planet = {
 				set_planet_flag = mem_ancestors_grudge_building_forge_2
@@ -452,6 +472,7 @@ situation_event = {
 				rare_crystals = 50
 			}
 		}
+		custom_tooltip = mem_ancestors_grudge_unlocks_forge_upgrade_tt
 		hidden_effect = {
 			event_target:mem_ancestors_grudge_planet = {
 				set_planet_flag = mem_ancestors_grudge_building_forge_3
@@ -487,6 +508,7 @@ situation_event = {
 				tech = tech_repeatable_mem_ancestors_grudge
 			}
 		}
+		custom_tooltip = mem_ancestors_grudge_unlocks_forge_upgrade_tt
 		hidden_effect = {
 			event_target:mem_ancestors_grudge_planet = {
 				set_planet_flag = mem_ancestors_grudge_building_forge_4
@@ -596,7 +618,7 @@ planet_event = {
 			}
 		}
 		remove_modifier = mem_ancestors_grudge_city_planet
-		#remove_deposit = d_mem_ancestors_grudge_boulder #i like keeping it
+		remove_deposit = d_mem_ancestors_grudge_boulder		#i like keeping it, maybe not
 	}
 }
 
@@ -623,12 +645,12 @@ country_event = {
 			type = situation_mem_ancestors_grudge_crafting
 			target = event_target:mem_ancestors_grudge_planet
 		}
-		# random_situation = {
-		# 	limit = {
-		# 		is_situation_type = situation_mem_ancestors_grudge_crafting
-		# 	}
-		# 	add_situation_progress = 20
-		# }
+		random_situation = {
+			limit = {
+				is_situation_type = situation_mem_ancestors_grudge_crafting
+			}
+			add_situation_progress = 50
+		}
 	}
 }
 
@@ -835,17 +857,22 @@ situation_event = {
 				}
 			}
 		}
-		# roll for relic
-		owner = {
-			random_list = {
-				100 = {
-					set_country_flag = mem_ancestors_grudge_sword_flag
-				}
-				100 = {
-					set_country_flag = mem_ancestors_grudge_ring_flag
-				}
-				100 = {
-					set_country_flag = mem_ancestors_grudge_pauldron_flag
+		if = {
+			limit = {
+				mem_has_not_relic_flag = yes
+			}
+			# roll for relic
+			owner = {
+				random_list = {
+					100 = {
+						set_country_flag = mem_ancestors_grudge_sword_flag
+					}
+					100 = {
+						set_country_flag = mem_ancestors_grudge_ring_flag
+					}
+					100 = {
+						set_country_flag = mem_ancestors_grudge_pauldron_flag
+					}
 				}
 			}
 		}
@@ -928,7 +955,7 @@ country_event = {
 						has_trait = mem_ancestors_grudge_trait_relicowner
 					}
 				}
-				save_global_event_target_as  = leader_1
+				save_event_target_as = leader_1
 			}
 			if = {
 				limit = {
@@ -942,7 +969,7 @@ country_event = {
 							has_trait = mem_ancestors_grudge_trait_relicowner
 						}
 					}
-					save_global_event_target_as  = leader_2
+					save_event_target_as = leader_2
 				}
 			}
 			if = {
@@ -958,7 +985,7 @@ country_event = {
 							has_trait = mem_ancestors_grudge_trait_relicowner
 						}
 					}
-					save_global_event_target_as  = leader_3
+					save_event_target_as = leader_3
 				}
 			}
 		}
@@ -973,7 +1000,7 @@ country_event = {
 						has_trait = mem_ancestors_grudge_trait_relicowner
 					}
 				}
-				save_global_event_target_as  = leader_1
+				save_event_target_as = leader_1
 			}
 			if = {
 				limit = {
@@ -987,7 +1014,7 @@ country_event = {
 							has_trait = mem_ancestors_grudge_trait_relicowner
 						}
 					}
-					save_global_event_target_as  = leader_2
+					save_event_target_as = leader_2
 				}
 			}
 			if = {
@@ -1003,7 +1030,7 @@ country_event = {
 							has_trait = mem_ancestors_grudge_trait_relicowner
 						}
 					}
-					save_global_event_target_as  = leader_3
+					save_event_target_as = leader_3
 				}
 			}
 		}
@@ -1018,7 +1045,7 @@ country_event = {
 						has_trait = mem_ancestors_grudge_trait_relicowner
 					}
 				}
-				save_global_event_target_as  = leader_1
+				save_event_target_as = leader_1
 			}
 			if = {
 				limit = {
@@ -1034,7 +1061,7 @@ country_event = {
 							has_trait = mem_ancestors_grudge_trait_relicowner
 						}
 					}
-					save_global_event_target_as  = leader_2
+					save_event_target_as = leader_2
 				}
 			}
 			if = {
@@ -1052,7 +1079,7 @@ country_event = {
 							has_trait = mem_ancestors_grudge_trait_relicowner
 						}
 					}
-					save_global_event_target_as  = leader_3
+					save_event_target_as = leader_3
 				}
 			}
 		}
@@ -1086,9 +1113,14 @@ country_event = {
 	}
 	option = {
 		name = mem_ancestors_grudge.45.d
-		add_resource = {
-			minor_artifacts = 1000
-			mult = owner.mem_ancestors_grudge_rune_intensity
+		if = {
+			limit = {
+				host_has_dlc = "Ancient Relics Story Pack"
+			}
+			add_resource = {
+				minor_artifacts = 1000
+				mult = owner.mem_ancestors_grudge_rune_intensity
+			}
 		}
 	}
 	# option = {
@@ -1636,5 +1668,332 @@ fleet_event = {
 				}
 			}
 		}
+	}
+}
+
+##############################
+# inventive runesmith
+# inventive artificer
+# failed several times and underperformed
+# modern art relic
+# violated safety regualtiosn
+# unwanted fusion
+# new materials technique 
+# sentient metal
+# rival sabotage
+situation_event = {
+	id = mem_ancestors_grudge.400
+	title = "mem_ancestors_grudge.400.title"
+	desc = "mem_ancestors_grudge.400.desc"
+	picture = GFX_mem_ancestors_grudge_relicsmith
+	show_sound = evn_tox_knights_of_the_toxic_god
+	location = target
+	is_triggered_only = yes
+	situation = this
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.400.a
+		owner = {
+			add_monthly_resource_mult = {
+				resource = alloys
+				value = 1
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.400.b
+		add_situation_progress = 10
+	}
+}
+
+situation_event = {
+	id = mem_ancestors_grudge.405
+	title = "mem_ancestors_grudge.405.title"
+	desc = "mem_ancestors_grudge.405.desc"
+	picture = GFX_mem_ancestors_grudge_relicsmith
+	show_sound = evn_tox_knights_of_the_toxic_god
+	location = target
+	is_triggered_only = yes
+	situation = this
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.405.a
+		owner = {
+			if = {
+				limit = {
+					country_uses_consumer_goods = yes
+				}
+				add_monthly_resource_mult = {
+					resource = consumer_goods
+					value = 1
+				}
+			}
+			else = {
+				add_monthly_resource_mult = {
+					resource = unity
+					value = 1
+				}
+			}
+		}
+		add_situation_progress = -5
+	}
+	option = {
+		name = mem_ancestors_grudge.405.b
+		add_situation_progress = 10
+	}
+}
+
+situation_event = {
+	id = mem_ancestors_grudge.410
+	title = "mem_ancestors_grudge.410.title"
+	desc = "mem_ancestors_grudge.410.desc"
+	picture = GFX_evt_deficit
+	show_sound = evn_tox_knights_of_the_toxic_god
+	location = target
+	is_triggered_only = yes
+	situation = this
+	immediate = {
+	}
+	trigger = {
+		situation_progress >= 21
+		host_has_dlc = "Ancient Relics Story Pack"
+	}
+	option = {
+		name = mem_ancestors_grudge.410.a
+		owner = {
+			add_monthly_resource_mult = {
+				resource = minor_artifacts
+				value = 12
+			}
+		}
+		add_situation_progress = -20
+	}
+}
+
+situation_event = {
+	id = mem_ancestors_grudge.415
+	title = "mem_ancestors_grudge.415.title"
+	desc = "mem_ancestors_grudge.415.desc"
+	picture = GFX_evt_civil_action
+	show_sound = evn_tox_knights_of_the_toxic_god
+	location = target
+	is_triggered_only = yes
+	situation = this
+	trigger = {
+		situation_progress >= 51
+	}
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.415.a
+		owner = {
+			add_relic = r_mem_ancestors_grudge_modern_art
+		}
+		abort_situation = this
+	}
+	option = {
+		name = mem_ancestors_grudge.415.b
+		add_situation_progress = -30
+		allow = {
+			owner = {
+				NOT = {
+					has_ethic = ethic_gestalt_consciousness
+				}
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.415.c
+		allow = {
+			owner = {
+				has_ethic = ethic_gestalt_consciousness
+			}
+		}
+	}
+}
+
+situation_event = {
+	id = mem_ancestors_grudge.420
+	title = "mem_ancestors_grudge.420.title"
+	desc = "mem_ancestors_grudge.420.desc"
+	picture = GFX_evt_archaeologists_escaping
+	show_sound = evn_tox_knights_of_the_toxic_god
+	location = target
+	is_triggered_only = yes
+	situation = this
+	immediate = {
+	}
+	trigger = {
+		situation_progress >= 6
+	}
+	option = {
+		name = mem_ancestors_grudge.420.a
+	}
+	option = {
+		name = mem_ancestors_grudge.420.b		#compensate family
+		owner = {
+			add_resource = {
+				energy = -1
+				unity = 1
+			}
+		}
+		allow = {
+			owner = {
+				NOT = {
+					has_ethic = ethic_gestalt_consciousness
+				}
+			}
+		}
+	}
+	after = {
+		target = {
+			random_owned_pop = {
+				limit = {
+					OR = {
+						has_job = mem_ancestors_grudge_relicsmith
+						has_job = mem_ancestors_grudge_relicsmith_drone
+						has_job = mem_ancestors_grudge_runesmith
+						has_job = mem_ancestors_grudge_runesmith_drone
+					}
+				}
+				kill_pop = yes
+			}
+		}
+		add_situation_progress = -5
+	}
+}
+
+situation_event = {
+	id = mem_ancestors_grudge.425
+	title = "mem_ancestors_grudge.425.title"
+	desc = "mem_ancestors_grudge.425.desc"
+	picture = GFX_evt_decryption
+	show_sound = evn_tox_knights_of_the_toxic_god
+	location = target
+	is_triggered_only = yes
+	situation = this
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.425.a
+		owner = {
+			add_resource = {
+				volatile_motes = 200
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.425.b
+		add_situation_progress = 20
+	}
+	after = {
+	}
+}
+
+situation_event = {
+	id = mem_ancestors_grudge.430
+	title = "mem_ancestors_grudge.430.title"
+	desc = "mem_ancestors_grudge.430.desc"
+	picture = GFX_evt_engineering_bay
+	show_sound = evn_tox_knights_of_the_toxic_god
+	location = target
+	is_triggered_only = yes
+	situation = this
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.430.a
+		owner = {
+			add_random_research_option = {
+				category = materials
+				#area = RANDOM
+				#tier = <int>
+				add_progress = 30
+				ignore_prereqs = no
+				ignore_rare = no
+				only_rare = no
+				ignore_insight = yes
+				fail_effects = {
+					add_monthly_resource_mult = {
+						resource = engineering_research
+						value = 12
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.430.b
+		add_situation_progress = 30
+	}
+}
+
+situation_event = {
+	id = mem_ancestors_grudge.435
+	title = "mem_ancestors_grudge.435.title"
+	desc = "mem_ancestors_grudge.435.desc"
+	picture = GFX_evt_gray_goo
+	show_sound = evn_tox_knights_of_the_toxic_god
+	location = target
+	is_triggered_only = yes
+	situation = this
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.435.a
+		owner = {
+			add_resource = {
+				nanites = 300
+			}
+		}
+		
+	}
+	option = {
+		name = mem_ancestors_grudge.435.b
+		add_situation_progress = 30
+	}
+	after = {
+		target = {
+			add_planet_devastation = 10
+		}
+	}
+}
+
+situation_event = {
+	id = mem_ancestors_grudge.440
+	title = "mem_ancestors_grudge.440.title"
+	desc = "mem_ancestors_grudge.440.desc"
+	picture = GFX_evt_ancient_artifact
+	show_sound = evn_tox_knights_of_the_toxic_god
+	location = target
+	is_triggered_only = yes
+	situation = this
+	trigger = {
+		exists = event_target:mem_ancestors_grudge_rival
+		situation_progress >= 21
+		owner = {
+			num_rivals >= 1
+		}
+	}
+	immediate = {
+		owner = {
+			random_rival_country = {
+				save_event_target_as = mem_ancestors_grudge_rival
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.440.a
+	}
+	after = {
+		owner = {
+			add_opinion_modifier = {
+				who = event_target:mem_ancestors_grudge_rival
+				modifier = opinion_insult
+			}
+		}
+		add_situation_progress = -20
 	}
 }

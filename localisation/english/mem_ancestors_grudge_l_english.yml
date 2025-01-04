@@ -11,7 +11,7 @@ l_english:
  START_SCREEN_MEM_ANCESTORS_GRUDGE:0 "REPLACE_ME"
  NAME_mem_ancestors_grudge_system:0 "Ancestors Grudge"
  mem_ancestors_grudge_origin_effects:0 "- $INITIAL_POPS$ §R-4§!$NEW_LINE$- Start with an additional ['concept_pc_relic'] (Size: £planetsize£ 6)$NEW_LINE$- Repair the ['concept_mem_ancestors_grudge_runeforge']$NEW_LINE$- Learn to ['concept_mem_ancestors_grudge_crafting'] unique ['concept_mem_ancestors_grudge_rune_relics']$NEW_LINE$- Spawn an ['concept_advanced_empires'] somewhere in the galaxy. You will hate them."
- mem_ancestors_grudge_origin_robots_effects:0 "$mem_ancestors_grudge_origin_effects$ + REPLACEME Trait"
+ mem_ancestors_grudge_origin_robots_effects:0 "$mem_ancestors_grudge_origin_effects$$NEW_LINE$-Species Traits: ['trait:mem_ancestors_grudge_trait_robot_rune_golem']"
 
  r_mem_ancestors_grudge_pauldron:0 "Rune-Infused Pauldron"
  r_mem_ancestors_grudge_pauldron_desc:0 "A masterwork done by our smiths."
@@ -131,7 +131,7 @@ l_english:
  mem_ancestors_grudge.5.desc:0 "Our scouts bring tidings from the expedition to the lost hold. Their company have ventured forth to chart its ruins and discern the task that lies afore us. Herein, they present our ancestors crowning jewel: the Relic-Forge\n\nMuch work lies ahead if we ever want to it the planet to its former glory."
  mem_ancestors_grudge.5.a:0 "Good News."
  mem_ancestors_grudge.10.name:0 "Barely Functional"
- mem_ancestors_grudge.10.desc:0 "The pillars of our former home stand still, though battered and blackened by fire. Their runes are faded, but their frame holds strong—testament to the craft of our ancestors.\n\nA glimmer of hope: the Relic-Forge appears intact. Though buried beneath rubble, it hums faintly, as though awaiting dwarven hands to wake it from its slumber. If it can be rekindled, it may serve as the hearthstone for the holds restoration."
+ mem_ancestors_grudge.10.desc:0 "The pillars of our former home stand still, though battered and blackened by fire. Their runes are faded, but their frame holds strong, a testament to the craft of our ancestors.\n\nA glimmer of hope: the Relic-Forge appears intact. Though buried beneath rubble, it hums faintly, as though awaiting dwarven hands to wake it from its slumber. If it can be rekindled, it may serve as the hearthstone for the holds restoration."
  mem_ancestors_grudge.10.a:0 "Repair it, now!"
  mem_ancestors_grudge.15.name:0 "Ancestors Holds"
  mem_ancestors_grudge.15.desc:0 "During our cleanup our workers found quite the deep entrenchment. It seems to be one of several bunkers constructed with haste during the siege. This one seems to be one of the largest we have found.\n\nIn the same time our scientists finally found the reason the forge was constructed on this small planet. We should now be able to repair it further."
@@ -180,7 +180,7 @@ l_english:
  mem_ancestors_grudge.300.desc:0 "Our excavation team ventured forth expecting to uncover a sealed hold, its gates bound tight and defensive runes still glowing upon the barricades.\n\nWhat we found instead was a gate cracked and sundered. The corridors beyond layered with corpses, which seem to belong to two different species. The first one quite similar to our own. The second kind is taller.\n\nStill, we should press onward. Answers lie ahead and we should not turn back. Let us procede with caution."
  mem_ancestors_grudge.300.a:0 "Proceed."
  mem_ancestors_grudge.305.name:0 "Left And Right" # more corridors
- mem_ancestors_grudge.305.desc:0 "The corridors stretch endlessly before us. Each time our teams round a corner, yet another corridor lies in wait, identical to the last. The air is thick with unease, and the silence broken only by the crunch of boots on ancient bones.\n\nSkeletons litter the way—countless dead whose stories remain untold and though we find what  seems to be old supplies and rations, there seems little else of value. No chambers, no signs of life, only this maze of death and decay.\n\nStill, the team stays motivated to march on. Whatever secrets these endless halls conceal, they shall be uncovered them. Let us hope they do not join the dead before finding the truth."
+ mem_ancestors_grudge.305.desc:0 "The corridors stretch endlessly before us. Each time our teams round a corner, yet another corridor lies in wait, identical to the last. The air is thick with unease, and the silence broken only by the crunch of boots on ancient bones.\n\nSkeletons litter the way. Countless dead whose stories remain untold and though we find what  seems to be old supplies and rations, there seems little else of value. No chambers, no signs of life, only this maze of death and decay.\n\nStill, the team stays motivated to march on. Whatever secrets these endless halls conceal, they shall be uncovered them. Let us hope they do not join the dead before finding the truth."
  mem_ancestors_grudge.305.a:0 "Disturbing."
  mem_ancestors_grudge.310.name:0 "At The End Of The Tunnel" # main area 
  mem_ancestors_grudge.310.desc:0 "After what feels like years wandering those cursed, unending corridors, the team has at last reached the Great Hall at the heart of this complex.T he hall lies in utter ruin, its once-mighty stonework shattered, its grandeur brought low by the violence of the past. The truth of what happened here is now plain to see. This hold was breached, likely by the second species, the accursed Vazurans. And yet, our ancestors defended it to the bitter end.\n\nAt the center of the hall, a single skeleton of our kin rests. Surrounding it lie the remains of dozens of Vazurans, their bones cracked and their skulls smashed as though by an unrelenting fury. This lone warrior must have fought to their final breath, their hammer claiming many lives before they fell.\n\nEven when all hope was lost, they fought on, defiant to the end. Let their deeds not be forgotten for they have earned a place in the songs of our kin."
@@ -194,6 +194,7 @@ l_english:
  triggered_runesmiths_to_grudgers:0 "Ancestor's Grudge"
  mem_ancestors_grudge_system_lost_colony_1_name:0 "Hashut"
  mem_ancestors_grudge_lost_forge_beat_sworn_enemy:0 "Grudge Settled"
+situation_mem_ancestors_grudge_crafting_no_ma:0 "Minor Artifact Deficit"
 
  mem_ancestors_grudge.55.name:0 "They Live, Yet"
  mem_ancestors_grudge.55.desc:0 "After all these decades, they still live. Time has not softened their ways, nor have they strayed from the path that once brough us ruin. They look upon us and do not even recognize their former victims, as if the blood debt between us has been forgotten.\n\nBut we remember, and in time, they shall too. Our vengeance shall come and the wrongs of the past shall be paid in blood."
@@ -222,14 +223,54 @@ l_english:
  mem_ancestors_grudge.110.a:0 "Repair it."
  mem_ancestors_grudge.110.b:0 "Study it."
  mem_ancestors_grudge.115.title:0 "Living Tombstone"
- mem_ancestors_grudge.115.desc:0 "It seems that during our reconstruction efforts, we have made a discovery: an ancestor from the old times, preserved in cryogenic slumber. The mechanisms around them are worn and failing, yet they still cling to life. We must act swiftly to stabilize the systems and ensure their survival."
+ mem_ancestors_grudge.115.desc:0 "It seems that during our reconstruction efforts, we have made a discovery: ancestors from the old times, preserved in cryogenic slumber. The mechanisms around them are worn and failing, yet they still cling to life. We must act swiftly to stabilize the systems and ensure their survival."
  mem_ancestors_grudge.115.a:0 "Safe them!"
- mem_ancestors_grudge.115.b:0 "His honor is long gone."
+ mem_ancestors_grudge.115.b:0 "Their honor is long gone."
+ r_mem_ancestors_grudge_modern_art:0 "Runed Cube"
+ r_mem_ancestors_grudge_modern_art_desc:0 "This interesting piece of art was created by a single Artifactsmith. It is a rather odd artifact."
+ r_mem_ancestors_grudge_cube_effect_tt_passive:0 "§LImprovised§!"
+ r_mem_ancestors_grudge_cube_effect_tt_active:0 "Convert all your £minor_artifacts£ §Y$minor_artifacts$§! to £unity£ §Y$unity$§!"
+ mem_ancestors_grudge.400.title:0 "Alloys Ahead" # inventive runesmith
+ mem_ancestors_grudge.400.desc:0 "Our Artifact-Smiths have surpassed themselves, producing approximately 3.81% more alloys than the usual yield. By tradition, all excess production should be dedicated to the Trial. Yet, in these times, when the strength of our fleets dictates the survival of our kin, perhaps a portion of this surplus could be sned to bolster our armories."
+ mem_ancestors_grudge.400.a:0 "Alloys!"
+ mem_ancestors_grudge.400.b:0 "Tradition."
+ mem_ancestors_grudge.405.title:0 "Breaking Runes" # inventive artificer
+ mem_ancestors_grudge.405.desc:0 "Our Rune-Smiths, pushed beyond their usual limits resulting in a minor surplus. Tradition dictates that all such excess should be dedicated to the Trial. However, this abundance presents us with an opportunity."
+ mem_ancestors_grudge.405.a:0 "Resources!"
+ mem_ancestors_grudge.405.b:0 "Tradition."
+ mem_ancestors_grudge.410.title:0 "Curses!" # failed several times and underperformed
+ mem_ancestors_grudge.410.desc:0 "Several attempts have failed, my lord, and our kin have fallen short of the expectations placed upon them. The work has tested their skill and resolve, yet still, they could not deliver.\n\n As for the leading smith, their response was: §LThese [REDACTED] could not even do [REDACTED] right.§!"
+ mem_ancestors_grudge.410.a:0 "Disturbing."
+ mem_ancestors_grudge.415.title:0 "The Cube" # modern art relic
+ mem_ancestors_grudge.415.desc:0 "Today, one of our artificers approached us with a most curious enigma. In their efforts to craft relevant artifacts for the Trial, they have unexpectedly produced a Runed Cube.\n\nAt first glance, it appears an oddity. Yet the runes upon its surface pulse faintly. Though its purpose is unclear, it may very well qualify as an artifact, in its own right."
+ mem_ancestors_grudge.415.a:0 "Claim it."
+ mem_ancestors_grudge.415.b:0 "Start from scratch"
+ mem_ancestors_grudge.415.c:0 "Amusing."
+ mem_ancestors_grudge.420.title:0 "Safety Violations" # violated safety regualtiosn
+ mem_ancestors_grudge.420.desc:0 "Several of our kin, through ignorance and disregard for established safety procedures, have caused the death of one of our own."
+ mem_ancestors_grudge.420.a:0 "Tragic."
+ mem_ancestors_grudge.420.b:0 "Compensate the Family."
+ mem_ancestors_grudge.425.title:0 "Explosive Invention" # unwanted fusion
+ mem_ancestors_grudge.425.desc:0 "A peculiar incident has arisen. One of our artificers, in an unintended turn of experimentation, has crafted a substance of extraordinary volatility. Highly explosive in nature."
+ mem_ancestors_grudge.425.a:0 "Motes!"
+ mem_ancestors_grudge.425.b:0 "Trial Addition."
+ mem_ancestors_grudge.430.title:0 "Material research" # new materials technique 
+ mem_ancestors_grudge.430.desc:0 "Our smiths, ever striving for perfection, have achieved an improvement in their techniques. What began as a minor refinement has sparked a wave of fascination among our scientists, who see in this innovation the potential to elevate our own research to new heights."
+ mem_ancestors_grudge.430.a:0 "Research it."
+ mem_ancestors_grudge.430.b:0 "Advance the Trial."
+ mem_ancestors_grudge.435.title:0 "Sentient Invention" # sentient metal
+ mem_ancestors_grudge.435.desc:0 "A peculiar incident has arisen. One of our artificers, in an unintended turn of experimentation, has crafted a sentient metal. It took our kin somoe time to get it under control."
+ mem_ancestors_grudge.435.a:0 "Nanites!"
+ mem_ancestors_grudge.435.b:0 "Into the Forge!"
+ mem_ancestors_grudge.440.title:0 "Rival Interference" # rival sabotage
+ mem_ancestors_grudge.440.desc:0 "Our rival [mem_ancestors_grudge_rival.GetName] has once again shown their treachery. Their meddling has resulted in a setback to our progress. The deliberate act of sabotage  cannot be ignored. While our rage burns hot, the situation calls for a measured response.\n\nWe shall draft a strongly worded letter!"
+ mem_ancestors_grudge.440.a:0 "Do it!"
 
  tech_repeatable_mem_ancestors_grudge:0 "Archeo-Alloying Studies"
  tech_repeatable_mem_ancestors_grudge_desc:0 "The continued study of ancient alloying methods should provide a better understanding of their technology."
  tech_repeatable_mem_ancestors_grudge_2:0 "Archeo-Artificing Studies"
  tech_repeatable_mem_ancestors_grudge_2_desc:0 "The continued study of ancient artificing methods should provide a better understanding of their technology."
+ mem_ancestors_grudge_unlocks_forge_upgrade_tt:0 "§LUnlocks the next upgrade of the§! ['concept_mem_ancestors_grudge_runeforge']."
  ########### concepts
  concept_mem_ancestors_grudge_runeforge:0 "Relic-Forge"
  concept_mem_ancestors_grudge_runeforge_desc:0 "['building:mem_ancestors_grudge_building_forge_0']$NEW_LINE$['building:mem_ancestors_grudge_building_forge_1']$NEW_LINE$['building:mem_ancestors_grudge_building_forge_2']$NEW_LINE$['building:mem_ancestors_grudge_building_forge_3']$NEW_LINE$['building:mem_ancestors_grudge_building_forge_4']"
@@ -250,4 +291,4 @@ l_english:
  concept_mem_ancestors_grudge_rune_intensity:0 "Rune Intensity"
  concept_mem_ancestors_grudge_rune_intensity_desc:0 "Determines the potency of ['concept_mem_ancestors_grudge_rune_relics']"
  concept_mem_ancestors_grudge_rune_relics:0 "Rune-Relics"
- concept_mem_ancestors_grudge_rune_relics_desc:0 "Smithed Relics enhanced with Runes"
+ concept_mem_ancestors_grudge_rune_relics_desc:0 "Smithed Relics enhanced with Runes$NEW_LINE$- Rarity based on ['concept_mem_ancestors_grudge_artifact_intensity'] decides the amount of modifiers$NEW_LINE$- Modifiers multiplied by ['concept_mem_ancestors_grudge_rune_intensity']$NEW_LINE$- Smithing speed influenced by number of §YArtifact Smiths§! and §YRune Artificers§!"

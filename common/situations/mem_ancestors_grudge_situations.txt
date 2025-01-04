@@ -235,13 +235,7 @@ situation_mem_ancestors_grudge_forge_repairs = {
 		resources = {
 			category = situations
 			upkeep = {
-				trigger = {
-					NOT = {
-						current_stage = situation_mem_ancestors_grudge_crafting_stage0
-					}
-				}
-				minor_artifacts = 5
-				#unity = 20
+				unity = 5
 			}
 		}
 		default = yes
@@ -269,7 +263,7 @@ situation_mem_ancestors_grudge_forge_repairs = {
 		resources = {
 			category = situations
 			upkeep = {
-				minor_artifacts = 10
+				unity = 20
 			}
 		}
 	}
@@ -278,7 +272,6 @@ situation_mem_ancestors_grudge_forge_repairs = {
 
 situation_mem_ancestors_grudge_crafting = {
 	#this is for crafting relics
-	# TODO proper description with values
 	picture = GFX_evt_failed_observation
 	complete_icon_frame = GFX_situation_outcome_frame_green
 	complete_icon = GFX_situation_outcome_ascension
@@ -302,12 +295,16 @@ situation_mem_ancestors_grudge_crafting = {
 	}
 	on_monthly = {
 		random_events = {
-			4000 = 0
-			# TODO
-			# digraced runesmith
-			# inventive artificer
-			# a new alloying method
-			# ways to choose the relic and it buffs
+			10000 = 0
+			1 = mem_ancestors_grudge.400
+			1 = mem_ancestors_grudge.405
+			1 = mem_ancestors_grudge.410
+			1 = mem_ancestors_grudge.415
+			1 = mem_ancestors_grudge.420
+			1 = mem_ancestors_grudge.425
+			1 = mem_ancestors_grudge.430
+			1 = mem_ancestors_grudge.435
+			1 = mem_ancestors_grudge.440	
 		}
 	}
 	start_value = 0
@@ -317,45 +314,31 @@ situation_mem_ancestors_grudge_crafting = {
 			icon = GFX_situation_stage_1
 			icon_background = GFX_situation_stage_frame_green
 			end = 200
-			# on_first_enter = {
-			# 	#situation_event = {
-			# 	#	id = mem_ancestors_grudge.101
-			# 	#}
-			# }
 		}
 	}
 	monthly_progress = {
-		base = 1		# 
-		# modifier = {
-		# 	#the better is gonna be the longer it takes
-		# 	subtract = owner.trigger:mem_ancestors_grudge_situation_speed
-		# 	desc = string_current_approach
-		# }
-		# modifier = {
-		# 	desc = situation_mem_ancestors_grudge_crafting_complexity
-		# 	add = owner.value:mem_ancestors_grudge_situation_speed
-		# }
-		# modifier = {
-		# 	desc = situation_mem_ancestors_grudge_crafting_smith_speed
-		# 	add = owner.value:mem_ancestors_grudge_situation_speed_runes
-		# }
+		base = 1		
 		modifier = {
 			desc = situation_mem_ancestors_grudge_crafting_smith_job_number
 			add = owner.value:mem_smith_job_number
 		}
 		modifier = {
-			factor = 0
+			factor = 0.1
 			current_situation_approach = situation_mem_ancestors_grudge_crafting_1
 			desc = string_current_approach
+		}
+		modifier = {
+			factor = 0
+			owner = {
+				has_deficit = minor_artifacts
+			}
+			desc = situation_mem_ancestors_grudge_crafting_no_ma
 		}
 	}
 	approach = {
 		name = situation_mem_ancestors_grudge_crafting_1
 		icon = GFX_situation_approach_balance_sheet
 		icon_background = GFX_situation_approach_bg_red
-		# on_select = {
-		# 	custom_tooltip = "mem_ancestors_grudge_empty"
-		# }
 		resources = {
 			category = situations
 			upkeep = {
@@ -367,11 +350,6 @@ situation_mem_ancestors_grudge_crafting = {
 		name = situation_mem_ancestors_grudge_crafting_repairs_2
 		icon = GFX_situation_approach_energy_credits
 		icon_background = GFX_situation_approach_bg_green
-		#on_select = {
-		#custom_tooltip = studying_insights_tt
-		#}
-		# modifier = {
-		# }
 		resources = {
 			category = situations
 			upkeep = {
@@ -379,7 +357,6 @@ situation_mem_ancestors_grudge_crafting = {
 					host_has_dlc = "Ancient Relics Story Pack"
 				}
 				minor_artifacts = 5
-				#unity = 20
 			}
 			upkeep = {
 				trigger = {
@@ -388,12 +365,11 @@ situation_mem_ancestors_grudge_crafting = {
 					}
 				}
 				alloys = 20
-				#unity = 20
 			}
 		}
 		modifier = {
-			planet_mem_rune_smiths_produces_mult = -0.5
-			planet_mem_relic_smiths_produces_mult = -0.5
+			planet_mem_rune_smiths_produces_mult = -0.2
+			planet_mem_relic_smiths_produces_mult = -0.2
 		}
 		default = yes
 	}

@@ -55,32 +55,6 @@ mem_ancestors_grudge_building_ruins = {
 		}
 		text = job_scrap_miner_effect_desc
 	}
-	# triggered_desc = {
-	# 	text = mem_ancestors_grudge_building_ruins_effect		#upgrade to remove
-	# }
-	# triggered_desc = {
-	# 	trigger = {
-	# 		owner = {
-	# 			is_mem_runesmith = yes
-	# 		}
-	# 	}
-	# 	text = mem_ancestors_grudge_boosts_repairs_effect		#advance
-	# }
-	# on_repaired = {
-	# 	remove_building = mem_ancestors_grudge_building_ruins
-	# 	owner = {
-	# 		add_resource = {
-	# 			minor_artifacts = 100
-	# 		}
-	# 	}
-	# 	hidden_effect = {
-	# 		owner = {
-	# 			country_event = {
-	# 				id = mem_ancestors_grudge.30
-	# 			}
-	# 		}
-	# 	}
-	# }
 	upgrades = {
 		mem_ancestors_grudge_building_ruins_1
 	}
@@ -115,9 +89,9 @@ mem_ancestors_grudge_building_ruins_1 = {
 	}
 	on_built = {
 		remove_building = mem_ancestors_grudge_building_ruins_1
-		owner = {
-			mem_ancestors_grudge_give_random_archeotech = yes
-		}
+		# owner = {
+		# 	mem_ancestors_grudge_give_random_archeotech = yes
+		# }
 		hidden_effect = {
 			owner = {
 				country_event = {

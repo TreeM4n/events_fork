@@ -5,6 +5,11 @@
 # helm - commander / governor (for later)
 # rune cube - general
 # failed/modern art - no trait but unity
+
+# legendary ideas: 
+# commander: restore all lost hitpoints when defeating a fleet with an admiral
+# scientist: finishing a digsite has a 50% chance to spawn another
+# governor: increasing ascension level will add another 
 r_mem_ancestors_grudge_sword = {
 	activation_duration = 0
 	portrait = "GFX_r_mem_ancestors_grudge_sword"
@@ -102,7 +107,7 @@ r_mem_ancestors_grudge_sword = {
 
 r_mem_ancestors_grudge_ring = {
 	activation_duration = 0
-	portrait = "GFX_r_mem_ancestors_grudge_ring"	
+	portrait = "GFX_r_mem_ancestors_grudge_ring"
 	sound = "relic_activation_cybrex_war_forge"
 	inline_script = {
 		script = mem_ancestors_grudge/relic_setup
@@ -210,7 +215,7 @@ r_mem_ancestors_grudge_ring = {
 
 r_mem_ancestors_grudge_pauldron = {
 	activation_duration = 0
-	portrait = "GFX_r_mem_ancestors_grudge_pauldron"	
+	portrait = "GFX_r_mem_ancestors_grudge_pauldron"
 	sound = "relic_activation_khans_throne"
 	inline_script = {
 		script = mem_ancestors_grudge/relic_setup
@@ -311,10 +316,9 @@ r_mem_ancestors_grudge_pauldron = {
 	}
 }
 
-
 r_mem_ancestors_grudge_anvil = {
 	activation_duration = 3600
-	portrait = GFX_r_mem_ancestors_grudge_anvil	
+	portrait = GFX_r_mem_ancestors_grudge_anvil
 	sound = "relic_activation_miniature_galaxy"
 	resources = {
 		category = relics
@@ -350,12 +354,12 @@ r_mem_ancestors_grudge_anvil = {
 			always = yes
 		}
 		mem_ancestors_grudge_artifact_power_produces_mult = 0.01
-		mem_ancestors_grudge_rune_power_produces_mult = 0.01		
+		mem_ancestors_grudge_rune_power_produces_mult = 0.01
+		country_resource_max_minor_artifacts_add = 100
 		mult = mem_ancestors_grudge_activated_relics_counter
 	}
 	active_effect = {
 		custom_tooltip = r_mem_ancestors_grudge_anvil_effect_tt_active
-		# TODO
 	}
 	# Possible check for activation
 	possible = {
@@ -364,5 +368,85 @@ r_mem_ancestors_grudge_anvil = {
 		# 	script = relics/activation_checks
 		# 	RELIC = r_mem_ancestors_grudge_pauldron
 		# }
+	}
+}
+
+r_mem_ancestors_grudge_modern_art = {
+	activation_duration = 3600
+	portrait = GFX_r_mem_ancestors_grudge_modern_art	
+	sound = "relic_activation_miniature_galaxy"
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			trigger = {
+				host_has_dlc = "Ancient Relics Story Pack"
+			}
+			minor_artifacts = 500
+		}
+		cost = {
+			trigger = {
+				NOT = {
+					host_has_dlc = "Ancient Relics Story Pack"
+				}
+			}
+			influence = 200
+		}
+	}
+	ai_weight = {
+		weight = 20000
+	}
+	can_be_stolen = no
+	score = 0
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		custom_tooltip = r_mem_ancestors_grudge_cube_effect_tt_passive
+	}
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		country_unity_produces_mult = -0.05
+	}
+	active_effect = {
+		custom_tooltip = r_mem_ancestors_grudge_cube_effect_tt_active
+		hidden_effect = {
+			set_variable = {
+				which = mem_ancestors_grudge_zro_amount
+				value = 0
+			}
+			export_resource_stockpile_to_variable = {
+				resource = minor_artifacts
+				variable = mem_ancestors_grudge_zro_amount
+			}
+		}
+		add_resource = {
+			minor_artifacts = -1
+			mult = mem_ancestors_grudge_zro_amount
+		}
+		add_resource = {
+			unity = 10
+			mult = mem_ancestors_grudge_zro_amount
+		}
+		start_situation = {
+			type = situation_mem_ancestors_grudge_crafting
+		}
+		hidden_effect = {
+			clear_variable = mem_ancestors_grudge_zro_amount
+			change_variable = {
+				which = mem_ancestors_grudge_activated_relics_counter
+				value = 1
+			}
+		}
+		#custom_tooltip = r_mem_ancestors_grudge_anvil_effect_tt_active
+	}
+	# Possible check for activation
+	possible = {
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_mem_ancestors_grudge_modern_art
+		}
 	}
 }
