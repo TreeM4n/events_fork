@@ -44,12 +44,17 @@ mem_ancestors_grudge_trait_relicowner = {
 	self_modifier = {
 		leader_lifespan_add = 20
 	}
-	# triggered_desc = {
-	# 	trigger = {
-	# 		always = yes
-	# 	}
-	# 	text = mem_aevum_trait_scaleswithage
-	# }
+	triggered_desc = {
+		trigger = {
+			NOR = {
+				has_leader_flag = mem_ancestors_grudge_common
+				has_leader_flag = mem_ancestors_grudge_rare
+				has_leader_flag = mem_ancestors_grudge_exceptional
+				has_leader_flag = mem_ancestors_grudge_epic
+			}
+		}
+		text = mem_ancestors_grudge_trait_relicowner_tt
+	}
 	# weapon fire rate
 	# hull repair in frinedly territory
 	# shields
@@ -181,7 +186,7 @@ mem_ancestors_grudge_trait_relicowner = {
 		ship_cloaking_strength_add = 1.5
 		mult = this.mem_ancestors_grudge_rune_intensity
 	}
-	triggered_self_modifier = {
+	triggered_planet_modifier = {
 		potential = {
 			leader_class = scientist
 			has_leader_flag = mem_ancestors_grudge_relic_flag7

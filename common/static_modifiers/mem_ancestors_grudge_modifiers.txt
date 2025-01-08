@@ -2,7 +2,14 @@ mem_ancestors_grudge_city_planet = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_land_appropriated.dds"
 	icon_frame = 1
 	planet_colony_development_speed_mult = 2
+	pop_resettlement_cost_mult = -0.5
 	planet_max_buildings_add = 8
+}
+
+mem_ancestors_grudge_city_planet_restored = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_arcology_project.dds"
+	icon_frame = 1
+	planet_max_districts_add = 2
 }
 
 mem_ancestors_grudge_lost_forge = {
@@ -27,4 +34,11 @@ mem_ancestors_grudge_lost_forge_beat_sworn_enemy = {
 	#icon_frame = 1
 	mem_ancestors_grudge_artifact_power_produces_mult = 0.5
 	mem_ancestors_grudge_rune_power_produces_mult = 0.5
+}
+
+mem_ancestors_grudge_golden_age = {
+	#icon = "gfx/interface/icons/planet_modifiers/pm_land_appropriated.dds"
+	#icon_frame = 1
+	planet_jobs_produces_mult = 1
+	planet_jobs_upkeep_mult = 1
 }

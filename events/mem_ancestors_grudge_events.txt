@@ -532,7 +532,9 @@ situation_event = {
 	option = {
 		name = mem_ancestors_grudge.26.a
 		target = {
-			change_planet_size = 2
+			add_modifier = {
+				modifier = mem_ancestors_grudge_city_planet_restored
+			}
 		}
 		destroy_situation = this
 		owner = {
@@ -943,144 +945,32 @@ country_event = {
 			which = mem_ancestors_grudge_activated_relics_counter
 			value = 1
 		}
-		# i hate this
+		# i hate this ... now with scripts this looks better and i can actually read it
 		if = {
 			limit = {
 				has_relic = r_mem_ancestors_grudge_pauldron
 			}
-			random_owned_leader = {
-				limit = {
-					leader_class = official
-					NOT = {
-						has_trait = mem_ancestors_grudge_trait_relicowner
-					}
-				}
-				save_event_target_as = leader_1
-			}
-			if = {
-				limit = {
-					exists = event_target:leader_1
-				}
-				random_owned_leader = {
-					limit = {
-						leader_class = official
-						NOR = {
-							is_same_value = event_target:leader_1
-							has_trait = mem_ancestors_grudge_trait_relicowner
-						}
-					}
-					save_event_target_as = leader_2
-				}
-			}
-			if = {
-				limit = {
-					exists = event_target:leader_2
-				}
-				random_owned_leader = {
-					limit = {
-						leader_class = official
-						NOR = {
-							is_same_value = event_target:leader_1
-							is_same_value = event_target:leader_2
-							has_trait = mem_ancestors_grudge_trait_relicowner
-						}
-					}
-					save_event_target_as = leader_3
-				}
+			inline_script = {
+				script = mem_ancestors_grudge/random_leader
+				LEADER = official
 			}
 		}
 		else_if = {
 			limit = {
 				has_relic = r_mem_ancestors_grudge_sword
 			}
-			random_owned_leader = {
-				limit = {
-					leader_class = commander
-					NOT = {
-						has_trait = mem_ancestors_grudge_trait_relicowner
-					}
-				}
-				save_event_target_as = leader_1
-			}
-			if = {
-				limit = {
-					exists = event_target:leader_1
-				}
-				random_owned_leader = {
-					limit = {
-						leader_class = commander
-						NOR = {
-							is_same_value = event_target:leader_1
-							has_trait = mem_ancestors_grudge_trait_relicowner
-						}
-					}
-					save_event_target_as = leader_2
-				}
-			}
-			if = {
-				limit = {
-					exists = event_target:leader_2
-				}
-				random_owned_leader = {
-					limit = {
-						leader_class = commander
-						NOR = {
-							is_same_value = event_target:leader_1
-							is_same_value = event_target:leader_2
-							has_trait = mem_ancestors_grudge_trait_relicowner
-						}
-					}
-					save_event_target_as = leader_3
-				}
+			inline_script = {
+				script = mem_ancestors_grudge/random_leader
+				LEADER = commander
 			}
 		}
 		else_if = {
 			limit = {
 				has_relic = r_mem_ancestors_grudge_ring
 			}
-			random_owned_leader = {
-				limit = {
-					leader_class = commander
-					NOT = {
-						has_trait = mem_ancestors_grudge_trait_relicowner
-					}
-				}
-				save_event_target_as = leader_1
-			}
-			if = {
-				limit = {
-					exists = event_target:leader_1
-				}
-				random_owned_leader = {
-					limit = {
-						leader_class = commander
-						NOT = {
-							is_same_value = event_target:leader_1
-						}
-						NOT = {
-							has_trait = mem_ancestors_grudge_trait_relicowner
-						}
-					}
-					save_event_target_as = leader_2
-				}
-			}
-			if = {
-				limit = {
-					exists = event_target:leader_2
-				}
-				random_owned_leader = {
-					limit = {
-						leader_class = commander
-						NOR = {
-							is_same_value = event_target:leader_1
-							is_same_value = event_target:leader_2
-						}
-						NOT = {
-							has_trait = mem_ancestors_grudge_trait_relicowner
-						}
-					}
-					save_event_target_as = leader_3
-				}
+			inline_script = {
+				script = mem_ancestors_grudge/random_leader
+				LEADER = scientist
 			}
 		}
 	}
@@ -1113,14 +1003,95 @@ country_event = {
 	}
 	option = {
 		name = mem_ancestors_grudge.45.d
-		if = {
-			limit = {
+		trigger = {
+			host_has_dlc = "Ancient Relics Story Pack"
+		}
+		add_resource = {
+			minor_artifacts = 1000
+			mult = owner.mem_ancestors_grudge_rune_intensity
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.45.d
+		trigger = {
+			NOT = {
 				host_has_dlc = "Ancient Relics Story Pack"
 			}
-			add_resource = {
-				minor_artifacts = 1000
-				mult = owner.mem_ancestors_grudge_rune_intensity
+		}
+		add_resource = {
+			unity = 1000
+			mult = owner.mem_ancestors_grudge_rune_intensity
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.45.e
+		trigger = {
+			OR = {
+				has_country_flag = mem_ancestors_grudge_rare
+				has_country_flag = mem_ancestors_grudge_epic
+				has_country_flag = mem_ancestors_grudge_exceptional
 			}
+		}
+		add_monthly_resource_mult = {
+			resource = physics_research
+			value = 6
+		}
+		add_monthly_resource_mult = {
+			resource = society_research
+			value = 6
+		}
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = 6
+		}
+	}
+	# option = {
+	# 	name = mem_ancestors_grudge.45.f
+	# 	trigger = {
+	# 		has_country_flag = mem_ancestors_grudge_epic
+	# 	}
+	# }
+	option = {
+		name = mem_ancestors_grudge.45.g
+		trigger = {
+			has_country_flag = mem_ancestors_grudge_exceptional
+			has_relic = r_mem_ancestors_grudge_pauldron
+		}
+		#custom_tooltip = mem_ancestors_grudge.45.exceptional_pauldron
+		add_modifier = {
+			modifier = mem_ancestors_grudge_golden_age
+			days = 360
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.45.h
+		trigger = {
+			has_country_flag = mem_ancestors_grudge_exceptional
+			has_relic = r_mem_ancestors_grudge_ring
+		}
+		while = {
+			count = 5
+			add_random_research_option = {
+				add_progress = 0.2
+				ignore_rare = yes
+				# fail_effects = { #should never fail, when do  you truly run out of research?
+				# }
+			}
+		}
+		custom_tooltip = mem_ancestors_grudge.45.exceptional_ring
+	}
+	option = {
+		name = mem_ancestors_grudge.45.i
+		trigger = {
+			has_country_flag = mem_ancestors_grudge_exceptional
+			has_relic = r_mem_ancestors_grudge_sword
+		}
+		custom_tooltip = mem_ancestors_grudge.45.exceptional_sword
+		every_playable_country = {
+			limit = {
+				has_truce = root
+			}
+			end_truce = root
 		}
 	}
 	# option = {
@@ -1948,7 +1919,6 @@ situation_event = {
 				nanites = 300
 			}
 		}
-		
 	}
 	option = {
 		name = mem_ancestors_grudge.435.b

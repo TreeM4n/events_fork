@@ -300,6 +300,14 @@ mem_ancestors_grudge_building_forge_3 = {
 			minor_artifacts = 16
 		}
 	}
+	triggered_desc = {
+		trigger = {
+			NOT = {
+				is_planet_class = pc_city
+			}
+		}
+		text = mem_ancestors_grudge_building_forge_terraform_tt
+	}
 	inline_script = {
 		script = mem_ancestors_grudge/mem_ancestors_grudge_building_forge_2
 	}
@@ -327,6 +335,7 @@ mem_ancestors_grudge_building_forge_4 = {
 	position_priority = 1
 	#empire_limit = 1
 	category = resource
+	#show only for upgrades not for the building
 	triggered_country_modifier = {
 		weapon_archaeotech_weapon_damage_mult = 1
 		mult = owner.modifier:mem_ancestors_grudge_artifact_power_produces_mult
