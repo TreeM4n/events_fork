@@ -324,18 +324,7 @@ r_mem_ancestors_grudge_anvil = {
 		category = relics
 		# Activation cost
 		cost = {
-			trigger = {
-				host_has_dlc = "Ancient Relics Story Pack"
-			}
-			minor_artifacts = 500
-		}
-		cost = {
-			trigger = {
-				NOT = {
-					host_has_dlc = "Ancient Relics Story Pack"
-				}
-			}
-			influence = 200
+			society_research = 42					
 		}
 	}
 	ai_weight = {

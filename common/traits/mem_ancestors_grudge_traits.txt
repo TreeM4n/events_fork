@@ -16,9 +16,9 @@ mem_ancestors_grudge_trait_robot_rune_golem = {
 	species_potential_add = {
 		always = no
 	}
-	species_potential_remove = {
-		always = no
-	}
+	# species_potential_remove = {
+	# 	always = no
+	# }
 	modifier = {
 		planet_jobs_minor_artifacts_produces_mult = 0.2
 		army_health = 0.5

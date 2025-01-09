@@ -661,7 +661,7 @@ situation_event = {
 	id = mem_ancestors_grudge.50
 	title = mem_ancestors_grudge.50.name
 	desc = mem_ancestors_grudge.50.desc
-	picture = GFX_evt_ancient_artifact
+	picture = GFX_mem_ancestors_grudge_runesmith_in_forge
 	show_sound = event_finding_loot
 	location = target
 	situation = this
@@ -901,6 +901,7 @@ situation_event = {
 				}
 				add_relic = r_mem_ancestors_grudge_pauldron
 			}
+			custom_tooltip = mem_ancestors_grudge.50.a.tt
 		}
 	}
 	# option = {
@@ -1231,6 +1232,7 @@ country_event = {
 country_event = {
 	id = mem_ancestors_grudge.65
 	is_triggered_only = yes
+	hide_window = yes
 	trigger = {
 		AND = {
 			has_origin = mem_ancestors_grudge_origin_advanced_start
@@ -1656,7 +1658,7 @@ situation_event = {
 	id = mem_ancestors_grudge.400
 	title = "mem_ancestors_grudge.400.title"
 	desc = "mem_ancestors_grudge.400.desc"
-	picture = GFX_mem_ancestors_grudge_relicsmith
+	picture = GFX_mem_ancestors_grudge_runesmith_in_forge
 	show_sound = evn_tox_knights_of_the_toxic_god
 	location = target
 	is_triggered_only = yes
@@ -1682,7 +1684,7 @@ situation_event = {
 	id = mem_ancestors_grudge.405
 	title = "mem_ancestors_grudge.405.title"
 	desc = "mem_ancestors_grudge.405.desc"
-	picture = GFX_mem_ancestors_grudge_relicsmith
+	picture = GFX_mem_ancestors_grudge_runesmith_in_forge
 	show_sound = evn_tox_knights_of_the_toxic_god
 	location = target
 	is_triggered_only = yes

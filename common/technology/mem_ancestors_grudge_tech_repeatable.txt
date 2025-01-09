@@ -7,12 +7,18 @@ tech_repeatable_mem_ancestors_grudge = {
 		archaeostudies
 	}
 	levels = -1
-	prerequisites = {
-		"tech_repeatable_mem_ancestors_grudge" # only runesmith empire get this
-	}
+	# prerequisites = {
+	# 	"tech_repeatable_mem_ancestors_grudge" # only runesmith empire get this
+	# }
 	weight = @repeatableTechWeight
 	weight_modifier = {
 		factor = @repatableTechFactor
+		modifier = {
+			factor = 0
+			NOT = {
+				has_technology = tech_repeatable_mem_ancestors_grudge
+			}
+		}
 	}
 	ai_weight = {
 		factor = @technician_ai_factor
@@ -37,12 +43,18 @@ tech_repeatable_mem_ancestors_grudge_2 = {
 		archaeostudies
 	}
 	levels = -1
-	prerequisites = {
-		"tech_repeatable_mem_ancestors_grudge"
-	}
+	# prerequisites = {
+	# 	"tech_repeatable_mem_ancestors_grudge"
+	# }
 	weight = @repeatableTechWeight
 	weight_modifier = {
 		factor = @repatableTechFactor
+		modifier = {
+			factor = 0
+			NOT = {
+				has_technology = tech_repeatable_mem_ancestors_grudge
+			}
+		}
 	}
 	ai_weight = {
 		factor = @technician_ai_factor

@@ -40,3 +40,12 @@ concept_mem_ancestors_grudge_rune_intensity = {
 concept_mem_ancestors_grudge_rune_relics = {
 	icon = "gfx/interface/icons/modifiers/mod_job_artificer_add.dds"
 }
+
+concept_mem_ancestors_grudge_rarity = {
+	icon = "gfx/interface/icons/modifiers/mod_rejectlesson_produces_mult.dds"
+}
+
+
+concept_mem_ancestors_grudge_intensity = {
+	icon = "gfx/interface/icons/modifiers/mod_acceptlesson_produces_mult.dds"
+}
