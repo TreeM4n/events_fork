@@ -1,7 +1,14 @@
-- random events for crafting
+resoruce rich mining drone infested system mit 1 quest
+more mineral upkeep for more output, but flat +1 mineral or so
+living metal: smiths produce it for massive increase upkeep or relic power
+motes: upkeep for more output smiths or relic power
+crystal: artificer upkeep and more unity or rune power
+dark matter: runers produce it for massive increase upkeep or rune intensity
+quests locked by techs and to the smithing situation
+chitin plating: food upkeep for more alloys or artifact power
+dragon event for endgame smithing
 
 
 - mem vazuran integration
 - hive version
 - more relics
-- event chain for exocotic materials

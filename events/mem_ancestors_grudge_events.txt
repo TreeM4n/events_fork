@@ -235,7 +235,7 @@ country_event = {
 				#ethos = root.ethos
 			}
 			add_colony_progress = 0.8
-			add_planet_devastation = 0.8
+			add_planet_devastation = 100
 			# create_colony = {
 			# 	owner = root
 			# 	species = root.species
@@ -317,26 +317,41 @@ country_event = {
 			#save_event_target_as = mem_ancestors_grudge_system_lost_colony_country
 		}
 		#set_global_flag = mem_ancestors_grudge_system_lost_colony_1
-		random_owned_starbase = {
-			solar_system = {
-				spawn_system = {
-					initializer = mem_ancestors_grudge_system_lost_colony_1
-					min_jumps = 10
-					#min_distance = 20
+		random_system = {
+			limit = {
+				NOR = {
+					has_star_flag = empire_cluster
+					has_star_flag = empire_home_system
+					exists = owner
+					any_neighbor_system = {
+						has_star_flag = empire_cluster
+						has_star_flag = empire_home_system
+						exists = owner
+					}
 				}
 			}
-			last_created_system = {
-				every_system_planet = {
-					limit = {
-						habitable_planet = yes
-					}
-					create_colony = {
-						owner = event_target:mem_ancestors_grudge_system_lost_colony_country
-					}
-					set_owner = event_target:mem_ancestors_grudge_system_lost_colony_country
-				}
+			spawn_system = {
+				initializer = mem_ancestors_grudge_system_lost_colony_1
+				#min_jumps = 10
+				hyperlane = yes
+				#min_distance = 200
 			}
 		}
+		last_created_system = {
+			every_system_planet = {
+				limit = {
+					habitable_planet = yes
+				}
+				create_colony = {
+					owner = event_target:mem_ancestors_grudge_system_lost_colony_country
+				}
+				set_owner = event_target:mem_ancestors_grudge_system_lost_colony_country
+			}
+		}
+		# random_owned_starbase = {
+		# 	solar_system = {
+		# 	}
+		# }
 	}
 }
 
