@@ -68,11 +68,11 @@ situation_mem_ancestors_grudge_forge_repairs = {
 	on_monthly = {
 		random_events = {
 			2000 = 0
-			1 = mem_ancestors_grudge.100			# monsters
-			#1 = mem_ancestors_grudge.100 # found bomb			
+			1 = mem_ancestors_grudge.100			# monsters					
 			1 = mem_ancestors_grudge.105			# archeotech / minor artifacts
 			1 = mem_ancestors_grudge.110			# shiel gen ruined found
 			1 = mem_ancestors_grudge.115			# stasis pop found
+			1 = mem_ancestors_grudge.120			# ordnance exploded
 		}
 	}
 	start_value = 0
@@ -145,7 +145,7 @@ situation_mem_ancestors_grudge_forge_repairs = {
 			desc = mem_ancestors_grudge_situation_pop_count
 		}
 		modifier = {
-			factor = 0
+			factor = 0.01
 			current_situation_approach = approach_mem_ancestors_grudge_forge_repairs_1
 			desc = string_current_approach
 		}
@@ -314,32 +314,13 @@ situation_mem_ancestors_grudge_crafting = {
 			icon = GFX_situation_stage_1
 			icon_background = GFX_situation_stage_frame_green
 			end = 100
-			triggered_modifier = {
-				potential = {
-					NOT = {
-						current_situation_approach = situation_mem_ancestors_grudge_crafting_1
-					}
-				}
-				planet_mem_relic_smiths_produces_mult = -0.25
-			}
+
 		}
 		situation_mem_ancestors_grudge_crafting_stage1 = {
 			icon = GFX_situation_stage_2
 			icon_background = GFX_situation_stage_frame_green
 			end = 200
-			triggered_modifier = {
-				potential = {
-					NOT = {
-						current_situation_approach = situation_mem_ancestors_grudge_crafting_1
-					}
-				}
-				planet_mem_rune_smiths_produces_mult = -0.25
-			}
-			modifier = {
-				
-				planet_mem_rune_smiths_produces_mult = -0.25
-				#planet_mem_relic_smiths_produces_mult = -0.25
-			}
+			
 		}
 	}
 	monthly_progress = {
@@ -349,7 +330,7 @@ situation_mem_ancestors_grudge_crafting = {
 			add = owner.value:mem_smith_job_number
 		}
 		modifier = {
-			factor = 0.1
+			factor = 0.01
 			current_situation_approach = situation_mem_ancestors_grudge_crafting_1
 			desc = string_current_approach
 		}
@@ -392,6 +373,18 @@ situation_mem_ancestors_grudge_crafting = {
 				}
 				alloys = 20
 			}
+		}
+		triggered_modifier = {
+			potential = {
+				current_stage = situation_mem_ancestors_grudge_crafting_stage0
+			}
+			planet_mem_relic_smiths_produces_mult = -0.25
+		}
+		triggered_modifier = {
+			potential = {
+				current_stage = situation_mem_ancestors_grudge_crafting_stage1
+			}
+			planet_mem_rune_smiths_produces_mult = -0.25
 		}
 		# modifier = {
 		# 	planet_mem_rune_smiths_produces_mult = -0.2

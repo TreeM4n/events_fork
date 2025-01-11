@@ -419,9 +419,6 @@ r_mem_ancestors_grudge_modern_art = {
 			unity = 10
 			mult = mem_ancestors_grudge_zro_amount
 		}
-		start_situation = {
-			type = situation_mem_ancestors_grudge_crafting
-		}
 		hidden_effect = {
 			clear_variable = mem_ancestors_grudge_zro_amount
 			change_variable = {
