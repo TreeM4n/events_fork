@@ -12,3 +12,4 @@ dragon event for endgame smithing
 - mem vazuran integration
 - hive version
 - more relics
+- event list for mem integration
