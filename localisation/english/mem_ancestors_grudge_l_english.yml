@@ -209,6 +209,7 @@ l_english:
  mem_ancestors_grudge.315.desc:0 "The lone warrior who made his last stand in the Great Hall was none other than Dranir himself, the legendary Artifact Smith of our people. In the hall stands his famed runed anvil. His hammer lies beside him, now a weapon turned to violence in defense of his kin. By ancient tradition, such an act meant the smith swore an oath to never to forge again.\n\nIn death, Dranir held true to that oath, felling dozens of Vazurans before his own life was bygone. We shall fulfill his final rite as is fitting. Dranir will be laid to rest alongside his hammer, never to forge nor fight again, his oath carried into eternity. The anvil will remain here, as a silent reminder of the past."
  mem_ancestors_grudge.315.a:0 "Make it so."
 
+ mem_ancestors_grudge_origin_advanced_start_name:0 "Vazuran Hegemony"
  mem_ancestors_grudge_origin_advanced_start:0 "Blood and Iron"
  mem_ancestors_grudge_origin_advanced_start_desc:0 "The civilization based only on plunder and warfare. They believe everything can be plundered if you only apply enough pressure. And with pressure they only mean military strength."
  triggered_runesmiths_to_grudgers:0 "Ancestor's Grudge"

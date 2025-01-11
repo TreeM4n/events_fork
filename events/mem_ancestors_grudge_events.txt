@@ -388,6 +388,7 @@ country_event = {
 		create_country = {
 			species = random
 			name_list = random
+			name = mem_ancestors_grudge_origin_advanced_start_name
 			type = default
 			origin = "mem_ancestors_grudge_origin_advanced_start"
 			#authority = auth_imperial
