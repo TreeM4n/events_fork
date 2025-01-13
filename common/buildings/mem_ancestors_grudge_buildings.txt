@@ -189,6 +189,9 @@ mem_ancestors_grudge_building_forge_1 = {
 	upgrades = {
 		mem_ancestors_grudge_building_forge_2
 	}
+	ai_weight = {
+		base = 9996		
+	}
 }
 
 #additional jobs
@@ -253,6 +256,9 @@ mem_ancestors_grudge_building_forge_2 = {
 	}
 	upgrades = {
 		mem_ancestors_grudge_building_forge_3
+	}
+	ai_weight = {
+		base = 9997	
 	}
 }
 
@@ -323,6 +329,9 @@ mem_ancestors_grudge_building_forge_3 = {
 	upgrades = {
 		mem_ancestors_grudge_building_forge_4
 	}
+	ai_weight = {
+		base = 9998		
+	}
 }
 
 # modifier
@@ -383,6 +392,10 @@ mem_ancestors_grudge_building_forge_4 = {
 	inline_script = {
 		script = mem_ancestors_grudge/mem_ancestors_grudge_building_forge_1
 	}
+	ai_weight = {
+		base = 9999		
+	}
+	
 	# on_built = {
 	# 	change_pc = pc_city
 	# }

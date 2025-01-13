@@ -212,6 +212,7 @@ situation_mem_ancestors_grudge_forge_repairs = {
 		modifier = {
 			country_unity_produces_mult = -0.33
 		}
+		ai_weight = 0
 	}
 	approach = {
 		name = approach_mem_ancestors_grudge_forge_repairs_2
@@ -238,6 +239,7 @@ situation_mem_ancestors_grudge_forge_repairs = {
 				unity = 5
 			}
 		}
+		ai_weight = 20
 		default = yes
 	}
 	approach = {
@@ -352,6 +354,7 @@ situation_mem_ancestors_grudge_crafting = {
 				influence = 2
 			}
 		}
+		ai_weight = 0
 	}
 	approach = {
 		name = situation_mem_ancestors_grudge_crafting_repairs_2
@@ -391,6 +394,7 @@ situation_mem_ancestors_grudge_crafting = {
 		# 	planet_mem_relic_smiths_produces_mult = -0.2
 		# }
 		default = yes
+		ai_weight = 20
 	}
 	#abort_trigger = {}
 }

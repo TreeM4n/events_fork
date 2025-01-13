@@ -527,6 +527,17 @@ situation_event = {
 			event_target:mem_ancestors_grudge_planet = {
 				set_planet_flag = mem_ancestors_grudge_building_forge_1
 			}
+			if = {
+				limit = {
+					owner = {
+						is_ai = yes
+					}
+				}
+				target = {
+					remove_building = mem_ancestors_grudge_building_forge_0
+					add_building = mem_ancestors_grudge_building_forge_1
+				}
+			}
 		}
 	}
 }
@@ -560,6 +571,22 @@ situation_event = {
 		hidden_effect = {
 			event_target:mem_ancestors_grudge_planet = {
 				set_planet_flag = mem_ancestors_grudge_building_forge_2
+			}
+			if = {
+				limit = {
+					owner = {
+						is_ai = yes
+					}
+				}
+				target = {
+					remove_building = mem_ancestors_grudge_building_forge_1
+					add_building = mem_ancestors_grudge_building_forge_2
+				}
+				owner = {
+					country_event = {
+						id = mem_ancestors_grudge.40
+					}
+				}
 			}
 		}
 	}
@@ -604,6 +631,20 @@ situation_event = {
 			event_target:mem_ancestors_grudge_planet = {
 				set_planet_flag = mem_ancestors_grudge_building_forge_3
 			}
+			if = {
+				limit = {
+					owner = {
+						is_ai = yes
+					}
+				}
+				target = {
+					remove_building = mem_ancestors_grudge_building_forge_2
+					add_building = mem_ancestors_grudge_building_forge_3
+					planet_event = {
+						id = mem_ancestors_grudge.35
+					}
+				}
+			}
 		}
 	}
 }
@@ -639,6 +680,17 @@ situation_event = {
 		hidden_effect = {
 			event_target:mem_ancestors_grudge_planet = {
 				set_planet_flag = mem_ancestors_grudge_building_forge_4
+			}
+			if = {
+				limit = {
+					owner = {
+						is_ai = yes
+					}
+				}
+				target = {
+					remove_building = mem_ancestors_grudge_building_forge_3
+					add_building = mem_ancestors_grudge_building_forge_4
+				}
 			}
 		}
 	}

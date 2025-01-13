@@ -326,3 +326,6 @@ mem_ancestors_grudge_revenge_arc_counter:0 "Grudges Settled"
  mem_ancestors_grudge_rune_power:0 "$concept_mem_ancestors_grudge_rune_intensity$"
  mem_ancestors_grudge_artifact_power:0 "$concept_mem_ancestors_grudge_artifact_intensity$"
  planet_mem_rune_smiths:0 "$job_mem_ancestors_grudge_runesmith$"
+
+ mem_ancestors_grudge_system_NAME:0 "$NAME_mem_ancestors_grudge_system$"
+ mem_ancestors_grudge_system_DESC:0 "$NAME_mem_ancestors_grudge_system$" # TODO
