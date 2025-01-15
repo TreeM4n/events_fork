@@ -291,6 +291,18 @@ mem_ancestors_grudge_revenge_arc_counter:0 "Grudges Settled"
  mem_ancestors_grudge.440.desc:0 "Our rival [mem_ancestors_grudge_rival.GetName] has once again shown their treachery. Their meddling has resulted in a setback to our progress. The deliberate act of sabotage  cannot be ignored. While our rage burns hot, the situation calls for a measured response.\n\nWe shall draft a strongly worded letter!"
  mem_ancestors_grudge.440.a:0 "Do it!"
 
+ mem_ancestors_grudge_diggy_hole:0 "Swing with me!"
+ mem_ancestors_grudge.445.title:0 "Brothers of the Mine Rejoice!"
+ mem_ancestors_grudge.445.desc:0 ""...Swing! Swing! Swing with me!" echoes through many a workplace. "Diggy Diggy Hole" enjoys popularity like never before, closely followed by "When the Hammer Falls" and "Hammerdeep" - all of them songs of yore resung. As a result work morale has skyrocketed and mineral production has far exceeded its quotas.\n\nWe could let this situation run its course and benefit from this improved productivity as it is or we could invest to potentially reap far greater gains."
+ mem_ancestors_grudge.445.a:0 "I am a [root.GetSpeciesName], and I'm... Say again?"
+ mem_ancestors_grudge.445.b:0 "We can never dig too deep!"
+ mem_ancestors_grudge.446.title:0 "REPLACE_ME" #it was a hit #TODO
+ mem_ancestors_grudge.446.desc:0 "REPLACE_ME"
+ mem_ancestors_grudge.446.a:0 "REPLACE_ME"
+ mem_ancestors_grudge.447.title:0 "REPLACE_ME" # it flopped / only temporary
+ mem_ancestors_grudge.447.desc:0 "REPLACE_ME"
+ mem_ancestors_grudge.447.a:0 "REPLACE_ME"
+
  tech_repeatable_mem_ancestors_grudge:0 "Archeo-Alloying Studies"
  tech_repeatable_mem_ancestors_grudge_desc:0 "The continued study of ancient alloying methods should provide a better understanding of their technology."
  tech_repeatable_mem_ancestors_grudge_2:0 "Archeo-Artificing Studies"

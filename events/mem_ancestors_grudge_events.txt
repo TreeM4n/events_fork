@@ -8,9 +8,73 @@ namespace = mem_ancestors_grudge
 ############################################################################################################
 # Setup Events
 ############################################################################################################
-# mem_aevum.0   	|	Gamestart setup/ allowed check/ 10% he spawns
-# mem_aevum.999  	|	hidden setup event for testing use mem_aevum.998 for options
-# mem_aevum.998  	|	quick setup / test event / give access to various stuff
+# mem_ancestors_grudge.999  	|	test event / give access to various stuff
+# mem_ancestors_grudge.998  	|	test all situation events. crafting
+# mem_ancestors_grudge.997  	|	test all situation events. restoration
+# mem_ancestors_grudge.1	  	|	nromal begin game setup (forge + arch nemesis)
+
+############################################################################################################
+# Story Events
+############################################################################################################
+# mem_ancestors_grudge.5	  	|	found the forge
+## restoration situation
+# mem_ancestors_grudge.10	  	|	situation event stage 1
+# mem_ancestors_grudge.15	  	|	situation event stage 2
+# mem_ancestors_grudge.20	  	|	situation event stage 3
+# mem_ancestors_grudge.25	  	|	situation event stage 4
+# mem_ancestors_grudge.26	  	|	situation event stage 5 final
+# mem_ancestors_grudge.30	  	|	hidden repaired/cleareed somethign
+# mem_ancestors_grudge.35	  	|	on upgrade forge: make it an ecu world
+# mem_ancestors_grudge.40	  	|	on upgrade forge: learn to forge
+## crafting situation
+# mem_ancestors_grudge.50	  	|	finished crafting situation/ randomize relic
+# mem_ancestors_grudge.45	  	|	activated crafted relic
+# mem_ancestors_grudge.55	  	|	on communication: arch nemesis 
+# mem_ancestors_grudge.60	  	|	on country destroyed: we arch nemesis hidden
+# mem_ancestors_grudge.75	  	|	on country destroyed: we arch nemesis 
+# mem_ancestors_grudge.65	  	|	on country destroyed: others arch nemesis hidden
+# mem_ancestors_grudge.70	  	|	on country destroyed: others arch nemesis notify us
+
+# mem_ancestors_grudge.200	  	|	on planet conquered: someone stole forge hidden
+# mem_ancestors_grudge.205	  	|	on planet conquered: someone stole forge notify
+# mem_ancestors_grudge.210	  	|	on planet conquered: we got it back hidden
+# mem_ancestors_grudge.215	  	|	on planet conquered: we got it back hidden notify
+
+############################################################################################################
+# random events for restoration situation
+############################################################################################################
+# mem_ancestors_grudge.100	  	|	mutants!
+# mem_ancestors_grudge.105	  	|	random tech!
+# mem_ancestors_grudge.110	  	|	shield gen found
+# mem_ancestors_grudge.115	  	|	stasis pod
+# mem_ancestors_grudge.120	  	|	bomb found
+
+############################################################################################################
+# digsite events
+############################################################################################################
+# mem_ancestors_grudge.300	  	|	digsite 1
+# mem_ancestors_grudge.305	  	|	digsite 2
+# mem_ancestors_grudge.310	  	|	digsite 3
+# mem_ancestors_grudge.315	  	|	digsite 4 final
+
+############################################################################################################
+# random events for crafting situation
+############################################################################################################
+# mem_ancestors_grudge.400	  	|	alloys
+# mem_ancestors_grudge.405	  	|	consumer goods
+# mem_ancestors_grudge.410	  	|	failed but MA
+# mem_ancestors_grudge.415	  	|	rick/cube relic
+# mem_ancestors_grudge.420	  	|	accident/dead smith
+# mem_ancestors_grudge.425	  	|	motes
+# mem_ancestors_grudge.430	  	|	tech
+# mem_ancestors_grudge.435	  	|	nanites
+# mem_ancestors_grudge.440	  	|	rival sabotage
+# mem_ancestors_grudge.445	  	|	diggy hole 
+# mem_ancestors_grudge.446	  	|	diggy hole success
+# mem_ancestors_grudge.447	  	|	diggy hole fail
+
+
+
 namespace = mem_ancestors_grudge
 country_event = {
 	id = mem_ancestors_grudge.999
@@ -264,6 +328,9 @@ situation_event = {
 		}
 		situation_event = {
 			id = mem_ancestors_grudge.440
+		}
+		situation_event = {
+			id = mem_ancestors_grudge.445
 		}
 	}
 }
@@ -2181,5 +2248,103 @@ situation_event = {
 			}
 		}
 		add_situation_progress = -20
+	}
+}
+
+situation_event = {
+	id = mem_ancestors_grudge.445
+	title = "mem_ancestors_grudge.445.title"
+	desc = "mem_ancestors_grudge.445.desc"
+	picture = GFX_evt_ship_offloading_cargo
+	show_sound = evn_tox_knights_of_the_toxic_god
+	location = target
+	is_triggered_only = yes
+	situation = this
+	trigger = {
+		owner = {
+			NOT = {
+				has_modifier = mem_ancestors_grudge_diggy_hole
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.445.a
+		owner = {
+			add_modifier = {
+				modifier = mem_ancestors_grudge_diggy_hole
+				days = 1800
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.445.b
+		allow = {
+			owner = {
+				resource_stockpile_compare = {
+					resource = energy
+					value = 2000
+				}
+			}
+		}
+		hidden_effect = {
+			owner = {
+				random_list = {
+					66 = {
+						country_event = {
+							id = mem_ancestors_grudge.446
+						}
+					}
+					33 = {
+						country_event = {
+							id = mem_ancestors_grudge.215
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = mem_ancestors_grudge.446
+	title = "mem_ancestors_grudge.446.title"
+	desc = "mem_ancestors_grudge.446.desc"
+	picture = GFX_evt_signing
+	show_sound = evn_tox_knights_of_the_toxic_god
+	location = target
+	is_triggered_only = yes
+	immediate = {
+		# random_owned_planet = {
+		# 	limit = {
+		# 		OR = {
+		# 			has_designation = col_mining
+		# 			has_designation = col_habitat_mining
+		# 		}				
+		# 	}
+		# 	save_event_target_as = mem_ancestors_grudge_mine_planet
+		# }
+	}
+	option = {
+		name = mem_ancestors_grudge.446.a
+		add_modifier = {
+			modifier = mem_ancestors_grudge_diggy_hole
+		}
+	}
+}
+
+country_event = {
+	id = mem_ancestors_grudge.447
+	title = "mem_ancestors_grudge.447.title"
+	desc = "mem_ancestors_grudge.447.desc"
+	picture = GFX_evt_tradestation_interior
+	show_sound = evn_tox_knights_of_the_toxic_god
+	location = target
+	is_triggered_only = yes
+	option = {
+		name = mem_ancestors_grudge.447.a
+		add_monthly_resource_mult = {
+			resource = minerals
+			value = 1
+		}
 	}
 }

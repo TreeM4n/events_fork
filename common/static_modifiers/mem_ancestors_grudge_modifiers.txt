@@ -43,3 +43,9 @@ mem_ancestors_grudge_golden_age = {
 	planet_jobs_produces_mult = 1
 	planet_jobs_upkeep_mult = 1
 }
+
+mem_ancestors_grudge_diggy_hole = {
+	#icon = "gfx/interface/icons/planet_modifiers/pm_land_appropriated.dds"
+	#icon_frame = 1
+	planet_miners_produces_mult = 0.2
+}
