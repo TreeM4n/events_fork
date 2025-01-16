@@ -1,25 +1,27 @@
 ﻿l_english: 
 
-###########
-# made by:
-# tr33
-###########
+ ###########
+ # made by:
+ # tr33
+ ###########
 
-l_english: 
+ # Of legend and myth is the craft of the smith.
 
-#########################
- START_SCREEN_MEM_ANCESTORS_GRUDGE:0 "Long ago, in a far away past our kin lived in prosperity. After they discovered the uniqueness of our homeworld's moon, they learned to bend metal to their will. Envied by many they continued to hone their craft and forge an empire of runes and steel. The greatest of achievement was the Relic-Forge, a mighty complex to smith the finest of artifacts.\n\nTo their surprise, this wealth drew unwanted attention. Our ancestors called them: Vazurans. These Invaders, barbaric and uncivilized warmongers, started to rampage in our ancestors territory. Unable do deter and confine this threat, a century-long war broke out. In the final days millions of our ancestors laid down their life in defense of the Relic-Forge ... all in vain.\n\nEven though they slaughtered everyone in sight, not all was lost. After decades the survivors regrouped. And now is the time to rise again from the ashes and rebuilt our empire."
- START_SCREEN_MEM_ANCESTORS_GRUDGE_ROBOTS:0 "Long ago, in a far away past our makers lived in prosperity. After they discovered the uniqueness of our homeworld's moon, they learned to bend metal to their will. Envied by many they continued to hone their craft and forge an empire of runes and steel. The greatest of achievement was the Relic-Forge, a mighty complex to smith the finest of artifacts.\n\nTo their surprise, this wealth drew unwanted attention. Our makers called them: Vazurans. These Invaders,  barbaric and uncivilized warmongers, started to rampage in our makers territory. Unable do deter and confine this threat, a century-long war broke out. In the final days millions of our makers laid down their life in defense of the Relic-Forge ... all in vain.\n\nEven though they slaughtered everyone in sight, some of us remained functional. After decades the automata reformed, upgraded. Now with a new purpose, to rebuilt the legacy of our makers, we shall rebuilt their empire."
+ #########################
+ START_SCREEN_MEM_ANCESTORS_GRUDGE:0 "Long, long ago, in ages past our kin lived in wealth and prosperity. Their rule spread all across [GetHomeWorldName] and even space, first among their colonies was our homeworld's moon, which became the industrial center of our ancestors' empire. There they bent metal to their will, continuing to hone their craft, and forged an empire of runes and durasteel.\n\nTheir greatest of achievements was the Relic-Forge, a mighty complex providing all the necessities to smith the finest of artifacts.\n\nBut wealth draws unwanted attention. And so it came to be that our ancestors were beset by many envious foes. Invaders, barbaric and uncivilized warmongers, started to rampage in our ancestors' territory. Unable do deter and confine this threat, a century-long devastating war broke out. During the final days countless of our ancestors laid down their lives in defense of the Relic-Forge... All in vain.\n\nTheir empire laid to ruin, billions lost to orbital bombardment, but not all was lost. After decades, survivors on [GetHomeWorldName] slowly began to reemerge from the vaults that saved them from the apocalypse.\n\nIt has now been nearly 500 cycles since the fall and we are finally ready to reclaim what is ours by right."
+
+ START_SCREEN_MEM_ANCESTORS_GRUDGE_ROBOTS:0 "In the distant past our creators ruled the stars, their fleets patroled far away systems, protecting their wealth and prosperity. [GetHomeWorldName] was their homeworld and capital, but for them its moon was of even higher importance. It was their industrial center, where they bent metal to their will and honed their craft to smith artifacts of imcomparable quality. For this they had built a mighty complex to provide their smiths all required necessities - the Relic-Forge.\n\nBut their wealth made them a target for envious foes. Invaders, barbaric and uncivilized warmongers, started to rampage in our creators' territory. Unable do deter and confine this threat, a century-long devastating war broke out. It was during the final days of that conflict that we were activated. While the majority of their forces remained to protect the Relic-Forge in a futile last stand, we were sent from our factories to [GetHomeWorldName]. Here we were meant to protect civilians during their evacuation, but we failed. The planet's surface was set ablaze by orbital bombardment.\n\nWith only few of us remaining and our creators gone, it took many cycles for us to rebuild. Now the only thing left for us is vengeance."
+
  NAME_mem_ancestors_grudge_system:0 "Ancestors Grudge"
  mem_ancestors_grudge_origin_effects:0 "- $INITIAL_POPS$ §R-4§!$NEW_LINE$- $STARTING_PLANET$ §YAdditional £blocker£ Blockers§!$NEW_LINE$- Start with an additional, devastated, ['concept_pc_relic'] (Size: £planetsize£ 6)$NEW_LINE$- Repair the ['concept_mem_ancestors_grudge_runeforge']$NEW_LINE$- Learn to ['concept_mem_ancestors_grudge_crafting'] unique ['concept_mem_ancestors_grudge_rune_relics']$NEW_LINE$- Spawn an ['concept_advanced_empires'] somewhere in the galaxy. You will hate them."
  mem_ancestors_grudge_origin_robots_effects:0 "$mem_ancestors_grudge_origin_effects$$NEW_LINE$- Species Traits: ['trait:mem_ancestors_grudge_trait_robot_rune_golem']"
 
  r_mem_ancestors_grudge_pauldron:0 "Rune-Infused Pauldron"
- r_mem_ancestors_grudge_pauldron_desc:0 "A masterwork done by our smiths."
+ r_mem_ancestors_grudge_pauldron_desc:0 "A masterwork created by our smiths. All craftsmanship is of the highest quality."
  r_mem_ancestors_grudge_ring:0 "Runic Ring"
- r_mem_ancestors_grudge_ring_desc:0 "A masterwork done by our smiths."
+ r_mem_ancestors_grudge_ring_desc:0 "A masterwork created by our smiths. All craftsmanship is of the highest quality."
  r_mem_ancestors_grudge_sword:0 "Rune-Forged Sword"
- r_mem_ancestors_grudge_sword_desc:0 "A masterwork done by our smiths."
+ r_mem_ancestors_grudge_sword_desc:0 "A masterwork created by our smiths. All craftsmanship is of the highest quality."
  mem_ancestors_grudge_building_ruins:0 "Ruins"
  mem_ancestors_grudge_building_ruins_desc:0 "Once great buildings, now just rubble left for us to clear."
  mem_ancestors_grudge_building_ruins_effect:0 "\n§LUpgrade to remove!§!\n"
@@ -29,30 +31,30 @@ l_english:
  mem_ancestors_grudge_building_forge_0:0 "Ruined Relic-Forge"
  mem_ancestors_grudge_building_forge_0_desc:0 "Leftovers of the once great Relic-Forge."
  mem_ancestors_grudge_building_forge_1:0 "Patched Relic-Forge"
- mem_ancestors_grudge_building_forge_1_desc:0 "A barely functioning forge. Enough for some us to work there."
+ mem_ancestors_grudge_building_forge_1_desc:0 "A barely functioning forge. Enough for some of us to work there."
  mem_ancestors_grudge_building_forge_1_tt:0 "§YWe need additional progress in $situation_mem_ancestors_grudge_forge_repairs_type$§!"
  mem_ancestors_grudge_building_forge_2:0 "Restored Relic-Forge"
  mem_ancestors_grudge_building_forge_2_desc:0 "The forge has been restored, but is still not at 100% capacity." 
  mem_ancestors_grudge_building_forge_3:0 "Enhanced Relic-Forge"
- mem_ancestors_grudge_building_forge_3_desc:0 "Our continued progress on restoring the planet to its former glory lead to new highs."
+ mem_ancestors_grudge_building_forge_3_desc:0 "Our continued progress on restoring the planet to its former glory led to new heights."
  mem_ancestors_grudge_building_forge_4:0 "Grand Relic-Forge"
  mem_ancestors_grudge_building_forge_4_desc:0 "We fully restored our homeworld and with it the Relic-Forge."
  d_mem_ancestors_grudge_boulder:0 "Statue of the Unknown Warrior"
- d_mem_ancestors_grudge_boulder_desc:0 "A memorial for the fallen warriors before. Nobody dares to lay a finger on it."
+ d_mem_ancestors_grudge_boulder_desc:0 "A memorial to the fallen warriors of yore. Nobody dares to lay a finger on it."
  d_mem_ancestors_grudge_city_ruins:0 "Destroyed Cities"
  d_mem_ancestors_grudge_city_ruins_desc:0 "Ruins and whatever is left from continuous bombardment."
  d_mem_ancestors_grudge_bomb_crater:0 "Bomb Crater"
- d_mem_ancestors_grudge_bomb_crater_desc:0 "Holes in the ground to remind of us the present."
+ d_mem_ancestors_grudge_bomb_crater_desc:0 "Wounds of the world itself and a reminder of the past."
  d_mem_ancestors_grudge_ruined_district:0 "Destroyed District"
- d_mem_ancestors_grudge_ruined_district_desc:0 "Entire section of residential, industrial and commercial districts ruined."
- mem_ancestors_grudge_origin:0 "Ancestors Grudge"
- mem_ancestors_grudge_origin_desc:0 "A once great nation of the finest smiths that barely survived the Vazuran onslaught. Now the survivors once again venture into the stars. First and foremost to restore their former homeworld."
- mem_ancestors_grudge_origin_robots:0 "Ancestors Automata"
- mem_ancestors_grudge_origin_robots_desc:0 "A once great nation of the finest smiths that did not survive the Vazuran onslaught. Now their construct venture into the stars. First and foremost to restore their creators homeworld."
+ d_mem_ancestors_grudge_ruined_district_desc:0 "Entire sections of residential, industrial and commercial districts laid to ruin."
+ mem_ancestors_grudge_origin:0 "Ancestors' Grudge"
+ mem_ancestors_grudge_origin_desc:0 "A once great nation of the finest smiths who just barely survived the destruction of their empire. Now the survivors have recovered and once again venture into the stars. First and foremost to reclaim their ancestor's most holy site - the Relic-Forge. And then vengeance..."
+ mem_ancestors_grudge_origin_robots:0 "Ancestors' Automata"
+ mem_ancestors_grudge_origin_robots_desc:0 "A once great nation of the finest smiths fell to the onslaught of a merciless foe. Now, the only remnants of that past - automata created to support their makers - venture into the stars. First and foremost to restore their creators' most holy site - the Relic-Forge. And then vengeance..."
  job_mem_ancestors_grudge_relicsmith_effect_desc:0 "£job_foundry£ $job_mem_ancestors_grudge_relicsmith_plural$ turn £minerals£ §Y$minerals$§! (or £food£ §Y$food$§!) into £alloys£ §Y$alloys$§! and £minor_artifacts£ §Y$minor_artifacts$§!"
  job_mem_ancestors_grudge_runesmith_effect_desc:0 "£job_artisan£ $job_mem_ancestors_grudge_runesmith_plural$ turn £minerals£ §Y$minerals$§! (or £food£ §Y$food$§!) into £consumer_goods£ §Y$consumer_goods$§! (or £unity£ §Y$unity$§!) and £minor_artifacts£ §Y$minor_artifacts$§!"
  mem_ancestors_grudge_building_forge_effect_designation:0 "The §YRelic-Forge§! will shift jobs from Consumer Goods (or Unity) to Alloy production depending on designation.\n\n"
- mem_ancestors_grudge_activate_crafted_relic_tt:0 "Bestow the Relic to a[MemGetLeaderClass]\n\nSmith a new Relic and lose the current Relic."
+ mem_ancestors_grudge_activate_crafted_relic_tt:0 "Bestow the Relic to a [MemGetLeaderClass]\n\nSmith a new Relic and lose the current Relic."
  job_mem_ancestors_grudge_relicsmith:0 "Artifact Smith"
  job_mem_ancestors_grudge_relicsmith_plural:0 "$job_mem_ancestors_grudge_relicsmith$s"
  job_mem_ancestors_grudge_relicsmith_desc:0 "Trained in the finest arts of smelting and welding steel."
@@ -63,15 +65,15 @@ l_english:
  mod_job_mem_ancestors_grudge_relicsmith_drone_add:0 "$job_mem_ancestors_grudge_relicsmith_drone$ Jobs"
  job_mem_ancestors_grudge_runesmith:0 "Rune Artificer"
  job_mem_ancestors_grudge_runesmith_plural:0 "$job_mem_ancestors_grudge_runesmith$s"
- job_mem_ancestors_grudge_runesmith_desc:0 "Trained in the arts of making and applying runes to anything they want to."
+ job_mem_ancestors_grudge_runesmith_desc:0 "Trained in the arts of making and applying runes to anything they deem worthy."
  mod_job_mem_ancestors_grudge_runesmith_add:0 "§job_mem_ancestors_grudge_runesmith$ Jobs"
  job_mem_ancestors_grudge_runesmith_drone:0 "Rune Artificing Drone"
  job_mem_ancestors_grudge_runesmith_drone_plural:0 "$job_mem_ancestors_grudge_runesmith_drone$s"
  job_mem_ancestors_grudge_runesmith_drone_desc:0 "$job_mem_ancestors_grudge_runesmith_desc$"
  mod_job_mem_ancestors_grudge_runesmith_drone_add:0 "$job_mem_ancestors_grudge_runesmith_drone$ Jobs"
  mem_ancestors_grudge_trait_relicowner:0 "Relic Keeper [MemGetRelicNameRarity]"
- mem_ancestors_grudge_trait_relicowner_desc:0 "This leader was gifted with a rune-infused relic. One of the greatest honors someone in our service can receive."
- mem_ancestors_grudge_trait_relicowner_tt:0 "§LThis leader will inherit even stronger modifiers of the given relic.\n\nEach leader can only have maximal one relic in his possession!§!"
+ mem_ancestors_grudge_trait_relicowner_desc:0 "This leader was gifted a rune-infused relic. One of the greatest honors someone in our service can receive."
+ mem_ancestors_grudge_trait_relicowner_tt:0 "§LThis leader will inherit even stronger modifiers of the given relic.\n\nEach leader can have no more than one relic in his possession!§!"
  mem_ancestors_grudge_common:0 "§CCommon§!"
  mem_ancestors_grudge_rare:0 "§BRare§!"
  mem_ancestors_grudge_epic:0 "§MEpic§!"
@@ -89,7 +91,7 @@ l_english:
  mem_ancestors_grudge_situation_pop_count:0 "Active Population"
  situation_mem_ancestors_grudge_forge_repairs_needforgetocontinue:0 "Missing Relic-Forge"
  approach_mem_ancestors_grudge_forge_repairs_1:0 "No Funding"
- situation_mem_ancestors_grudge_forge_repairs_desc:0 "Our former homeworld lies in ruins. A shadow of the greatness it once held. It falls to us, the children of runes and steel, now united, to mend what was broken and restore our world to its former glory."
+ situation_mem_ancestors_grudge_forge_repairs_desc:0 "Our former industrial capital lies in ruins. A shadow of the greatness it once held. It falls to us, the children of runes and durasteel, now united, to mend what was broken and restore this world to its former glory."
  situation_mem_ancestors_grudge_forge_repairs_stage0:0 "Removing Rubble"
  situation_mem_ancestors_grudge_forge_repairs_stage1:0 "Installing Energy Grid"
  situation_mem_ancestors_grudge_forge_repairs_stage2:0 "Restoring Housing"
@@ -103,7 +105,7 @@ l_english:
  situation_mem_ancestors_grudge_crafting:0 "Forge Ritual"
  situation_mem_ancestors_grudge_crafting_desc:0 "Our smiths are currently hard at work to smith the next ['concept_mem_ancestors_grudge_rune_relics']\n\nPredicted Quality: [MemGetSituationRarity]" 
  situation_mem_ancestors_grudge_crafting_stage0:0 "Smithing" 
- situation_mem_ancestors_grudge_crafting_stage1:0 "Rune-ing" 
+ situation_mem_ancestors_grudge_crafting_stage1:0 "Runecrafting" 
  situation_mem_ancestors_grudge_crafting_type:0 "$situation_mem_ancestors_grudge_crafting$"
  situation_mem_ancestors_grudge_crafting_monthly_change_tooltip:0 "Progress"
  situation_mem_ancestors_grudge_crafting_finish:0 "A new ['concept_mem_ancestors_grudge_rune_relics'] will be ours."
@@ -133,9 +135,9 @@ l_english:
  mod_leader_commanders_minor_artifacts_upkeep_add:0 "$r_minor_artifacts$ $UPKEEP$"
  planet_mem_relic_smiths:0 "$job_mem_ancestors_grudge_relicsmith_plural$"
  mem_nothing:0 ""
-#################                  events            ##################################
+ #################                  events            ##################################
  mem_ancestors_grudge.5.name:0 "Among The Ruins"
- mem_ancestors_grudge.5.desc:0 "Our scouts bring tidings from the expedition to the lost hold. Their company have ventured forth to chart its ruins and discern the task that lies afore us. Herein, they present our ancestors crowning jewel: the Relic-Forge\n\nMuch work lies ahead if we ever want to it the planet to its former glory."
+ mem_ancestors_grudge.5.desc:0 "Our scouts bring tidings from the expedition to our lost hold. Their company have ventured forth to chart its ruins and discern the task that lies afore us. Herein, they present our ancestors crowning jewel: the Relic-Forge\n\nMuch work lies ahead if we ever want to it the planet to its former glory."
  mem_ancestors_grudge.5.a:0 "Good News."
  mem_ancestors_grudge.10.name:0 "Barely Functional"
  mem_ancestors_grudge.10.desc:0 "The pillars of our former home stand still, though battered and blackened by fire. Their runes are faded, but their frame holds strong, a testament to the craft of our ancestors.\n\nA glimmer of hope: the Relic-Forge appears intact. Though buried beneath rubble, it hums faintly, as though awaiting dwarven hands to wake it from its slumber. If it can be rekindled, it may serve as the hearthstone for the holds restoration."
@@ -215,7 +217,7 @@ l_english:
  triggered_runesmiths_to_grudgers:0 "Ancestor's Grudge"
  mem_ancestors_grudge_system_lost_colony_1_name:0 "Hashut"
  mem_ancestors_grudge_lost_forge_beat_sworn_enemy:0 "Grudge Settled"
-situation_mem_ancestors_grudge_crafting_no_ma:0 "Minor Artifact Deficit"
+ situation_mem_ancestors_grudge_crafting_no_ma:0 "Minor Artifact Deficit"
 
  mem_ancestors_grudge.55.name:0 "They Live, Yet"
  mem_ancestors_grudge.55.desc:0 "After all these decades, they still live. Time has not softened their ways, nor have they strayed from the path that once brought us ruin. They look upon us and do not even recognize their former victims, as if the blood debt between us has been forgotten.\n\nBut we remember, and in time, they shall too. Our vengeance shall come and the wrongs of the past shall be paid in blood."
@@ -228,7 +230,7 @@ situation_mem_ancestors_grudge_crafting_no_ma:0 "Minor Artifact Deficit"
  d_mem_ancestors_grudge_ruined_stasis_desc:0 "A sleeping beauty ready to smith again like in the old days."
  mem_ancestors_grudge_revenge_arc_title:0 "Grudge Not Forgotten"
  mem_ancestors_grudge_revenge_arc_desc:0 "We have not forgotten what happened eons ago. The wounds of that time still burn within our hearts, and the deeds of our enemies remain written in the stone of our homes. They sowed destruction, but it shall be us who bring final reckoning.\n\n Only when their empire is no more, we shall find peace."
-mem_ancestors_grudge_revenge_arc_counter:0 "Grudges Settled"
+ mem_ancestors_grudge_revenge_arc_counter:0 "Grudges Settled"
  mem_ancestors_grudge.70.name:0 "Grudge Settled"
  mem_ancestors_grudge.70.desc:0 "Our ancestors can now rest. The burden of vengeance we carried for generations is lifted, for today, our sworn enemy drew their final breath. Their shadow no longer darkens our path. Sadly we did not got them first."
  mem_ancestors_grudge.70.a:0 "Regrettable"
@@ -311,16 +313,16 @@ mem_ancestors_grudge_revenge_arc_counter:0 "Grudges Settled"
  ########### concepts
  concept_mem_ancestors_grudge_runeforge:0 "Relic-Forge"
  concept_mem_ancestors_grudge_runeforge_desc:0 "['building:mem_ancestors_grudge_building_forge_0']$NEW_LINE$['building:mem_ancestors_grudge_building_forge_1']$NEW_LINE$['building:mem_ancestors_grudge_building_forge_2']$NEW_LINE$['building:mem_ancestors_grudge_building_forge_3']$NEW_LINE$['building:mem_ancestors_grudge_building_forge_4']"
-#  concept_mem_ancestors_grudge_runeforge_0:0 "REPLACE_ME"
-#  concept_mem_ancestors_grudge_runeforge_0_desc:0 "REPLACE_ME"
-#  concept_mem_ancestors_grudge_runeforge_1:0 "REPLACE_ME"
-#  concept_mem_ancestors_grudge_runeforge_1_desc:0 "REPLACE_ME"
-#  concept_mem_ancestors_grudge_runeforge_2:0 "REPLACE_ME"
-#  concept_mem_ancestors_grudge_runeforge_2_desc:0 "REPLACE_ME"
-#  concept_mem_ancestors_grudge_runeforge_3:0 "REPLACE_ME"
-#  concept_mem_ancestors_grudge_runeforge_3_desc:0 "REPLACE_ME"
-#  concept_mem_ancestors_grudge_runeforge_4:0 "REPLACE_ME"
-#  concept_mem_ancestors_grudge_runeforge_4_desc:0 "REPLACE_ME"
+ #concept_mem_ancestors_grudge_runeforge_0:0 "REPLACE_ME"
+ #concept_mem_ancestors_grudge_runeforge_0_desc:0 "REPLACE_ME"
+ #concept_mem_ancestors_grudge_runeforge_1:0 "REPLACE_ME"
+ #concept_mem_ancestors_grudge_runeforge_1_desc:0 "REPLACE_ME"
+ #concept_mem_ancestors_grudge_runeforge_2:0 "REPLACE_ME"
+ #concept_mem_ancestors_grudge_runeforge_2_desc:0 "REPLACE_ME"
+ #concept_mem_ancestors_grudge_runeforge_3:0 "REPLACE_ME"
+ #concept_mem_ancestors_grudge_runeforge_3_desc:0 "REPLACE_ME"
+ #concept_mem_ancestors_grudge_runeforge_4:0 "REPLACE_ME"
+ #concept_mem_ancestors_grudge_runeforge_4_desc:0 "REPLACE_ME"
  concept_mem_ancestors_grudge_crafting:0 "Relic Smith"
  concept_mem_ancestors_grudge_crafting_desc:0 "The art of combining ['concept_mem_ancestors_grudge_artifact_intensity'] and ['concept_mem_ancestors_grudge_rune_intensity']"
  concept_mem_ancestors_grudge_artifact_intensity:0 "Artifact Intensity"
@@ -334,10 +336,26 @@ mem_ancestors_grudge_revenge_arc_counter:0 "Grudges Settled"
  concept_mem_ancestors_grudge_intensity:0 "Strength"
  concept_mem_ancestors_grudge_intensity_desc:0 "- A multiplier of the ['concept_mem_ancestors_grudge_rune_relics'] passive effect between 0% and 200%$NEW_LINE$- Directly based on ['concept_mem_ancestors_grudge_artifact_intensity']"
 
-############# placeholders so the log does not cry 
+ ############# placeholders so the log does not cry 
  mem_ancestors_grudge_rune_power:0 "$concept_mem_ancestors_grudge_rune_intensity$"
  mem_ancestors_grudge_artifact_power:0 "$concept_mem_ancestors_grudge_artifact_intensity$"
  planet_mem_rune_smiths:0 "$job_mem_ancestors_grudge_runesmith$"
 
  mem_ancestors_grudge_system_NAME:0 "$NAME_mem_ancestors_grudge_system$"
  mem_ancestors_grudge_system_DESC:0 "$NAME_mem_ancestors_grudge_system$" # TODO
+
+ # Random events
+ # title: "Brothers of the Mine Rejoice!"
+ # desc: ""...Swing! Swing! Swing with me!" echoes through many a workplace. "Diggy Diggy Hole" enjoys popularity like never before, closely followed by "When the Hammer Falls" and "Hammerdeep" - all of them songs of yore resung. As a result work morale has skyrocketed and mineral production has far exceeded its quotas.\n\nWe could let this situation run its course and benefit from this improved productivity as it is or we could invest to potentially reap far greater gains."
+ # option 1: "I am a [root.GetSpeciesName], and I'm... Say again?"
+ # option 2: "We can never dig too deep!"
+
+ # success 1
+ # title: "Hidden in the Mountain Store"
+ # desc: "During our additionally funded digs, miners on [root.GetName] struck a surprisingly rich rare mineral vein. Further exploratory drills in the vicinity outline an unexpectedly large deposit. In response the mineral classification of [root.GetName] has been updated to ultra-rich.\n\nLocal workers are celebrating the prospect of many more years of mining to come."
+ # Add Planet modifier
+
+ # success 2
+ # title: "Hidden in the Mountain Store"
+ # desc: "During our additionally funded digs, miners on [root.GetName] struck a previously unknown cavesystem. Within they found a rich deposit of rare resources.\n\nLocal workers celebrate the discovery."
+ # Add rich rare resource deposit (random list crystal, motes, gasses)
