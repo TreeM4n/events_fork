@@ -45,7 +45,7 @@ mem_ancestors_grudge_golden_age = {
 }
 
 mem_ancestors_grudge_diggy_hole = {
-	#icon = "gfx/interface/icons/planet_modifiers/pm_land_appropriated.dds"
-	#icon_frame = 1
+	icon = "gfx/interface/icons/planet_modifiers/pm_ultra_rich.dds"
+	icon_frame = 1
 	planet_miners_produces_mult = 0.2
 }

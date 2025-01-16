@@ -12,7 +12,6 @@ namespace = mem_ancestors_grudge
 # mem_ancestors_grudge.998  	|	test all situation events. crafting
 # mem_ancestors_grudge.997  	|	test all situation events. restoration
 # mem_ancestors_grudge.1	  	|	nromal begin game setup (forge + arch nemesis)
-
 ############################################################################################################
 # Story Events
 ############################################################################################################
@@ -34,12 +33,10 @@ namespace = mem_ancestors_grudge
 # mem_ancestors_grudge.75	  	|	on country destroyed: we arch nemesis 
 # mem_ancestors_grudge.65	  	|	on country destroyed: others arch nemesis hidden
 # mem_ancestors_grudge.70	  	|	on country destroyed: others arch nemesis notify us
-
 # mem_ancestors_grudge.200	  	|	on planet conquered: someone stole forge hidden
 # mem_ancestors_grudge.205	  	|	on planet conquered: someone stole forge notify
 # mem_ancestors_grudge.210	  	|	on planet conquered: we got it back hidden
 # mem_ancestors_grudge.215	  	|	on planet conquered: we got it back hidden notify
-
 ############################################################################################################
 # random events for restoration situation
 ############################################################################################################
@@ -48,7 +45,6 @@ namespace = mem_ancestors_grudge
 # mem_ancestors_grudge.110	  	|	shield gen found
 # mem_ancestors_grudge.115	  	|	stasis pod
 # mem_ancestors_grudge.120	  	|	bomb found
-
 ############################################################################################################
 # digsite events
 ############################################################################################################
@@ -56,7 +52,6 @@ namespace = mem_ancestors_grudge
 # mem_ancestors_grudge.305	  	|	digsite 2
 # mem_ancestors_grudge.310	  	|	digsite 3
 # mem_ancestors_grudge.315	  	|	digsite 4 final
-
 ############################################################################################################
 # random events for crafting situation
 ############################################################################################################
@@ -72,9 +67,6 @@ namespace = mem_ancestors_grudge
 # mem_ancestors_grudge.445	  	|	diggy hole 
 # mem_ancestors_grudge.446	  	|	diggy hole success
 # mem_ancestors_grudge.447	  	|	diggy hole fail
-
-
-
 namespace = mem_ancestors_grudge
 country_event = {
 	id = mem_ancestors_grudge.999
@@ -2262,14 +2254,39 @@ situation_event = {
 	situation = this
 	trigger = {
 		owner = {
-			NOT = {
-				has_modifier = mem_ancestors_grudge_diggy_hole
+			any_owned_planet = {
+				NOT = {
+					has_modifier = mem_ancestors_grudge_diggy_hole
+				}
+			}
+		}
+	}
+	immediate = {
+		owner = {
+			random_owned_planet = {
+				limit = {
+					OR = {
+						has_designation = col_mining
+						has_designation = col_habitat_mining
+					}
+				}
+				save_event_target_as = mem_ancestors_grudge_mine_planet
+			}
+			if = {
+				limit = {
+					NOT = {
+						exists = event_target:mem_ancestors_grudge_mine_planet
+					}
+				}
+				random_owned_planet = {
+					save_event_target_as = mem_ancestors_grudge_mine_planet
+				}
 			}
 		}
 	}
 	option = {
 		name = mem_ancestors_grudge.445.a
-		owner = {
+		event_target:mem_ancestors_grudge_mine_planet = {
 			add_modifier = {
 				modifier = mem_ancestors_grudge_diggy_hole
 				days = 1800
@@ -2314,20 +2331,32 @@ country_event = {
 	location = target
 	is_triggered_only = yes
 	immediate = {
-		# random_owned_planet = {
-		# 	limit = {
-		# 		OR = {
-		# 			has_designation = col_mining
-		# 			has_designation = col_habitat_mining
-		# 		}				
-		# 	}
-		# 	save_event_target_as = mem_ancestors_grudge_mine_planet
-		# }
+		random_owned_planet = {
+			limit = {
+				OR = {
+					has_designation = col_mining
+					has_designation = col_habitat_mining
+				}
+			}
+			save_event_target_as = mem_ancestors_grudge_mine_planet
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = event_target:mem_ancestors_grudge_mine_planet
+				}
+			}
+			random_owned_planet = {
+				save_event_target_as = mem_ancestors_grudge_mine_planet
+			}
+		}
 	}
 	option = {
 		name = mem_ancestors_grudge.446.a
-		add_modifier = {
-			modifier = mem_ancestors_grudge_diggy_hole
+		event_target:mem_ancestors_grudge_mine_planet = {
+			add_modifier = {
+				modifier = mem_ancestors_grudge_diggy_hole
+			}
 		}
 	}
 }
@@ -2340,11 +2369,32 @@ country_event = {
 	show_sound = evn_tox_knights_of_the_toxic_god
 	location = target
 	is_triggered_only = yes
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				OR = {
+					has_designation = col_mining
+					has_designation = col_habitat_mining
+				}
+			}
+			save_event_target_as = mem_ancestors_grudge_mine_planet
+		}
+		if = {
+			limit = {
+				NOT = {
+					exists = event_target:mem_ancestors_grudge_mine_planet
+				}
+			}
+			random_owned_planet = {
+				save_event_target_as = mem_ancestors_grudge_mine_planet
+			}
+		}
+	}
 	option = {
 		name = mem_ancestors_grudge.447.a
-		add_monthly_resource_mult = {
-			resource = minerals
-			value = 1
+		event_target:mem_ancestors_grudge_mine_planet = {
+			add_deposit = d_crystalline_caverns
 		}
+		
 	}
 }
