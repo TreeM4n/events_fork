@@ -54,6 +54,7 @@
  job_mem_ancestors_grudge_relicsmith_effect_desc:0 "£job_foundry£ $job_mem_ancestors_grudge_relicsmith_plural$ turn £minerals£ §Y$minerals$§! (or £food£ §Y$food$§!) into £alloys£ §Y$alloys$§! and £minor_artifacts£ §Y$minor_artifacts$§!"
  job_mem_ancestors_grudge_runesmith_effect_desc:0 "£job_artisan£ $job_mem_ancestors_grudge_runesmith_plural$ turn £minerals£ §Y$minerals$§! (or £food£ §Y$food$§!) into £consumer_goods£ §Y$consumer_goods$§! (or £unity£ §Y$unity$§!) and £minor_artifacts£ §Y$minor_artifacts$§!"
  mem_ancestors_grudge_building_forge_effect_designation:0 "The §YRelic-Forge§! will shift jobs from Consumer Goods (or Unity) to Alloy production depending on designation.\n\n"
+ #[MemGetLeaderClass] uses variable text pieces -> mem_ancestors_grudge_commander / mem_ancestors_grudge_official / mem_ancestors_grudge_scientist
  mem_ancestors_grudge_activate_crafted_relic_tt:0 "Bestow the Relic to a[MemGetLeaderClass]\n\nSmith a new Relic and lose the current Relic."
  job_mem_ancestors_grudge_relicsmith:0 "Artifact Smith"
  job_mem_ancestors_grudge_relicsmith_plural:0 "$job_mem_ancestors_grudge_relicsmith$s"
@@ -137,7 +138,7 @@
  mem_nothing:0 ""
  #################                  events            ##################################
  mem_ancestors_grudge.5.name:0 "Among The Ruins"
- mem_ancestors_grudge.5.desc:0 "Our scouts bring tidings from the expedition to our lost hold. Their company have ventured forth to chart its ruins and discern the task that lies afore us. Herein, they present our ancestors crowning jewel: the Relic-Forge\n\nMuch work lies ahead if we ever want to it the planet to its former glory."
+ mem_ancestors_grudge.5.desc:0 "Our scouts bring tidings from the expedition to our lost hold. Their company has ventured forth to chart the ruins surrounding our landing site and ascertain the task that lies before us. The location for our planetfall had not been chosen by chance, however, and so they quickly located our main objective - our ancestors' crowning jewel: the Relic-Forge. Half in ruins and buried by debris, yet despite all that it still stands. A testament to the mastery of skill displayed in its construction.\n\nMuch work lies ahead, if we ever want to return this world to its former glory."
  mem_ancestors_grudge.5.a:0 "Good News."
  mem_ancestors_grudge.10.name:0 "Barely Functional"
  mem_ancestors_grudge.10.desc:0 "The pillars of our former home stand still, though battered and blackened by fire. Their runes are faded, but their frame holds strong, a testament to the craft of our ancestors.\n\nA glimmer of hope: the Relic-Forge appears intact. Though buried beneath rubble, it hums faintly, as though awaiting dwarven hands to wake it from its slumber. If it can be rekindled, it may serve as the hearthstone for the holds restoration."
