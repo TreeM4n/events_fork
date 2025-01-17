@@ -622,7 +622,7 @@ situation_event = {
 		}
 	}
 	option = {
-		name = mem_ancestors_grudge.15.a
+		name = INTERESTING
 		target = {
 			create_archaeological_site = mem_ancestors_grudge_anvil_site
 		}
@@ -672,7 +672,7 @@ situation_event = {
 		}
 	}
 	option = {
-		name = mem_ancestors_grudge.20.a
+		name = FASCINATING
 		# owner = {
 		# 	start_situation = {
 		# 		type = situation_mem_ancestors_grudge_crafting
