@@ -444,33 +444,53 @@ country_event = {
 			days = 360
 		}
 		################### create enemy #######################
+		create_species = {
+			name = "Vazuran"
+			plural = "Vazurans"
+			class = ART
+			portrait = art17
+			traits = {
+				trait = trait_intelligent
+				trait = trait_natural_physicists
+				trait = trait_venerable
+				trait = trait_slow_breeders
+				trait = trait_weak
+			}
+			extra_trait_points = 3
+		}
 		create_country = {
-			species = random
-			name_list = random
 			name = mem_ancestors_grudge_origin_advanced_start_name
-			type = default
+			name_list = "ART2"
+			type = mem_vazurans
 			origin = "mem_ancestors_grudge_origin_advanced_start"
-			#authority = auth_imperial
 			ignore_initial_colony_error = yes
 			day_zero_contact = no
-			randomize_ethos = yes
-			ethos = {
-				ethic = "ethic_xenophobe"
-				ethic = "ethic_militarist"
-				ethic = "ethic_fanatic_militarist"
+			authority = auth_dictatorial
+			civics = {
+				civic = civic_warrior_culture
+				civic = civic_nationalistic_zeal
 			}
-			# government_restrictions = {
-			# 	authority = {
-			# 		NOR = {
-			# 			value = auth_machine_intelligence
-			# 			value = auth_hive_mind
-			# 		}
-			# 	}
-			# }
-			# civics = {
-			# 	civic = civic_barbaric_despoilers
-			# 	civic = random
-			# }
+			species = last_created_species
+			ethos = {
+				ethic = ethic_xenophobe
+				ethic = ethic_fanatic_militarist
+			}
+			flag = {
+				icon = {
+					category = "domination"
+					file = "domination_21.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors={
+					"black"
+					"dark_purple"
+					"null"
+					"null"
+				}
+			}
 		}
 		last_created_country = {
 			add_resource = {
