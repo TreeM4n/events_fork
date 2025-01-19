@@ -40,25 +40,30 @@ Whatever you do its a one time use and after that you have to craft a new relic
 
 [list]
     [*] Hive version
-    [*] Some more special events to further improve your craft, so called "Material Quest"
+    [*] Some more special events to further improve your craft, so called "Material Quests"
     [*] A new asset for the anvil relic and some polishing for other assets
     [*] Some minor artifact actions and peaceful/more archeotechs. (maybe for everyone)
     [*] Some more flavor for machine version
     [*] Hive version!    
 [/list]
 
-[h3]FAQ and notes from me[/h3]
+[h3]FAQ[/h3]
 
 [list]
-    [*] Wait, relic-crafting and a big forge. Have I seen this before? Ye, from my first public mod. Though this is a completely new version from the ground up.
-        After 2 years I refined my own craft of coding and mod making to bring this idea back to life with some much needed QA
     [*] DLC requirements? Kinda none, but without Ancient Relics you will miss out on a lot of content
     [*] Compatible with X? Yes, no overwrites! 
     [*] Found a bug? Tell me. I cant fix which Im not aware of.
     [*] I do (not) like X? Tell me. Im open for feedback and suggestions.
-    [*] Why does it say "(or Food)" in the job description? For all those catalytic lovers out their 
+    [*] Why does it say "(or Food)" in the job description? For all those catalytic lovers out there
+[/list]
+
+[h3]Notes from me[/h3]
+
+[list]
+    [*] Wait, relic-crafting and a big forge. Have I seen this before? Ye, from my first public mod. Though this is a completely new version from the ground up.
+        After 2 years I refined my own craft of coding and mod making to bring this idea back to life with some much needed QA 
     [*] Why are all your event IDs "mem_*", that's a [url=https://steamcommunity.com/sharedfiles/filedetails/?id=727000451] More Events Mod [/url] thing?
         In the not so far future this will be integrated into MEM as a replacement for "From the Ashes" origin
+    [*] Small advice: use your capital as a basic resource planet and the forge as alloys/ consumer good printer. [spoiler]if it wasnt too obvious[/spoiler]
     [*] Should you pick dwarfs portraits for this origin? Im not the one to tell you, but have you ever seen scifi mushrooms with hammers and anvils?
-
 [/list]

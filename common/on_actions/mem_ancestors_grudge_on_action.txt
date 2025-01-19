@@ -34,3 +34,11 @@ on_country_destroyed = {
 		mem_ancestors_grudge.65 # others desstroyed them
 	}
 }
+
+# A colony has been destroyed. Called just before owner and controller is cleared
+# Scope = Planet
+on_colony_destroyed = {
+	events = {
+		mem_ancestors_grudge.221
+	}
+}

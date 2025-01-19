@@ -383,6 +383,21 @@ country_event = {
 				count = 3
 				add_deposit = d_mem_ancestors_grudge_city_ruins
 			}
+			if = {
+				limit = {
+					owner = {
+						is_catalytic_empire = yes
+					}
+				}
+				add_modifier = {
+					modifier = lush_planet
+				}
+			}
+			else = {
+				add_modifier = {
+					modifier = mineral_rich
+				}
+			}
 			# solar_system = {
 			# 	random_system_planet = {
 			# 		limit = {
@@ -447,7 +462,7 @@ country_event = {
 		create_country = {
 			species = random
 			name_list = random
-			name = mem_ancestors_grudge_origin_advanced_start_name
+			name = "mem_ancestors_grudge_origin_advanced_start_name"
 			type = default
 			origin = "mem_ancestors_grudge_origin_advanced_start"
 			#authority = auth_imperial
@@ -1525,6 +1540,9 @@ situation_event = {
 	location = target
 	is_triggered_only = yes
 	situation = this
+	trigger = {
+		situation_progress >= 300		# if you get this too early, you are screwed
+	}
 	immediate = {
 		target = {
 			create_country = {
@@ -1820,6 +1838,92 @@ country_event = {
 		}
 		else = {
 			remove_modifier = mem_ancestors_grudge_lost_forge_butrevenge
+		}
+	}
+}
+
+# this = planet
+# colony destroyed
+planet_event = {
+	id = mem_ancestors_grudge.221
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_planet_flag = mem_ancestors_grudge_planet
+		habitable_planet = no
+	}
+	immediate = {
+		every_playable_country = {
+			limit = {
+				is_mem_runesmith = yes
+			}
+			country_event = {
+				id = mem_ancestors_grudge.220
+			}
+		}
+		remove_building = mem_ancestors_grudge_building_forge_0
+		remove_building = mem_ancestors_grudge_building_forge_1
+		remove_building = mem_ancestors_grudge_building_forge_2
+		remove_building = mem_ancestors_grudge_building_forge_3
+		remove_building = mem_ancestors_grudge_building_forge_4
+	}
+}
+
+# notify
+# colony destroyed
+country_event = {
+	id = mem_ancestors_grudge.220
+	title = mem_ancestors_grudge.220.name
+	desc = mem_ancestors_grudge.220.desc
+	picture = GFX_evt_large_explosion
+	show_sound = event_collapsing_ruins
+	is_triggered_only = yes
+	trigger = {
+	}
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.220.a
+	}
+	after = {
+		if = {
+			limit = {
+				owner = {
+					any_situation = {
+						is_situation_type = situation_mem_ancestors_grudge_crafting
+					}
+				}
+			}
+			owner = {
+				random_situation = {
+					limit = {
+						is_situation_type = situation_mem_ancestors_grudge_crafting
+					}
+					destroy_situation = this
+				}
+			}
+		}
+		if = {
+			limit = {
+				owner = {
+					any_situation = {
+						is_situation_type = situation_mem_ancestors_grudge_forge_repairs
+					}
+				}
+			}
+			owner = {
+				random_situation = {
+					limit = {
+						is_situation_type = situation_mem_ancestors_grudge_forge_repairs
+					}
+					destroy_situation = this
+				}
+			}
+		}
+		owner = {
+			add_modifier = {
+				modifier = mem_ancestors_grudge_lost_forge_butrevenge
+			}
 		}
 	}
 }
@@ -2395,6 +2499,5 @@ country_event = {
 		event_target:mem_ancestors_grudge_mine_planet = {
 			add_deposit = d_crystalline_caverns
 		}
-		
 	}
 }

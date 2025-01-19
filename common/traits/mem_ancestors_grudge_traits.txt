@@ -12,7 +12,7 @@ mem_ancestors_grudge_trait_robot_rune_golem = {
 	}
 	opposites = {
 	}
-	icon = "gfx/interface/icons/traits/trait_robotic_1.dds"
+	icon = "gfx/interface/icons/traits/mem_ancestors_grudge_trait_robot_rune_golem.dds"
 	species_potential_add = {
 		always = no
 	}
