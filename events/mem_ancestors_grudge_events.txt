@@ -2508,6 +2508,7 @@ country_event = {
 	}
 	option = {
 		name = mem_ancestors_grudge.449.a
+		remove_modifier = mem_ancestors_grudge_diggy_hole
 	}
 }
 
