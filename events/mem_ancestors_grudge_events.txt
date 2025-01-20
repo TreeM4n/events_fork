@@ -37,6 +37,8 @@ namespace = mem_ancestors_grudge
 # mem_ancestors_grudge.205	  	|	on planet conquered: someone stole forge notify
 # mem_ancestors_grudge.210	  	|	on planet conquered: we got it back hidden
 # mem_ancestors_grudge.215	  	|	on planet conquered: we got it back hidden notify
+# mem_ancestors_grudge.220	  	|	on colony lost: its over planet got destroyed notify owner
+# mem_ancestors_grudge.221	  	|	on colony lost: its over planet got destroyed
 ############################################################################################################
 # random events for restoration situation
 ############################################################################################################
@@ -65,8 +67,11 @@ namespace = mem_ancestors_grudge
 # mem_ancestors_grudge.435	  	|	nanites
 # mem_ancestors_grudge.440	  	|	rival sabotage
 # mem_ancestors_grudge.445	  	|	diggy hole 
-# mem_ancestors_grudge.446	  	|	diggy hole success
-# mem_ancestors_grudge.447	  	|	diggy hole fail
+# mem_ancestors_grudge.446	  	|	diggy hole success 1
+# mem_ancestors_grudge.447	  	|	diggy hole success 2
+# mem_ancestors_grudge.448	  	|	diggy hole success 3
+# mem_ancestors_grudge.449	  	|	diggy hole fail
+
 namespace = mem_ancestors_grudge
 country_event = {
 	id = mem_ancestors_grudge.999
@@ -2379,15 +2384,15 @@ situation_event = {
 	situation = this
 	trigger = {
 		owner = {
-			any_owned_planet = {
-				NOT = {
-					has_modifier = mem_ancestors_grudge_diggy_hole
-				}
+			NOT = {
+				has_country_flag = mem_ancestors_grudge_diggyhole
 			}
+			
 		}
 	}
 	immediate = {
 		owner = {
+			set_country_flag = mem_ancestors_grudge_diggyhole
 			random_owned_planet = {
 				limit = {
 					OR = {
@@ -2411,12 +2416,6 @@ situation_event = {
 	}
 	option = {
 		name = mem_ancestors_grudge.445.a
-		event_target:mem_ancestors_grudge_mine_planet = {
-			add_modifier = {
-				modifier = mem_ancestors_grudge_diggy_hole
-				days = 1800
-			}
-		}
 	}
 	option = {
 		name = mem_ancestors_grudge.445.b
@@ -2431,17 +2430,39 @@ situation_event = {
 		hidden_effect = {
 			owner = {
 				random_list = {
-					66 = {
+					25 = {
 						country_event = {
 							id = mem_ancestors_grudge.446
+							days = 380
 						}
 					}
-					33 = {
+					25 = {
 						country_event = {
-							id = mem_ancestors_grudge.215
+							id = mem_ancestors_grudge.447
+							days = 380
+						}
+					}
+					25 = {
+						country_event = {
+							id = mem_ancestors_grudge.448
+							days = 380
+						}
+					}
+					25 = {
+						country_event = {
+							id = mem_ancestors_grudge.449
+							days = 380
 						}
 					}
 				}
+			}
+		}
+	}
+	after = {
+		event_target:mem_ancestors_grudge_mine_planet = {
+			add_modifier = {
+				modifier = mem_ancestors_grudge_diggy_hole
+				days = 360
 			}
 		}
 	}
@@ -2520,5 +2541,38 @@ country_event = {
 		event_target:mem_ancestors_grudge_mine_planet = {
 			add_deposit = d_crystalline_caverns
 		}
+	}
+}
+
+country_event = {
+	id = mem_ancestors_grudge.448
+	title = "mem_ancestors_grudge.448.title"
+	desc = "mem_ancestors_grudge.448.desc"
+	picture = GFX_evt_ancient_records
+	show_sound = evn_tox_knights_of_the_toxic_god
+	location = target
+	is_triggered_only = yes
+	immediate = {
+		
+	}
+	option = {
+		name = mem_ancestors_grudge.448.a
+		mem_ancestors_grudge_give_random_archeotech = yes
+	}
+}
+
+country_event = {
+	id = mem_ancestors_grudge.449
+	title = "mem_ancestors_grudge.449.title"
+	desc = "mem_ancestors_grudge.449.desc"
+	picture = GFX_evt_assembly_fight
+	show_sound = evn_tox_knights_of_the_toxic_god
+	location = target
+	is_triggered_only = yes
+	immediate = {
+		
+	}
+	option = {
+		name = mem_ancestors_grudge.449.a
 	}
 }
