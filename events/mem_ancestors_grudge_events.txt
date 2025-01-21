@@ -2523,11 +2523,18 @@ country_event = {
 			limit = {
 				any_owned_planet = {
 					has_designation = col_mining
+					#we don't want to end up with the edge case of a double modifier, but that one should be exceptionally rare so limiting the selection for the other outcome should have no negative impact
+					NOT = {
+						has_modifier = ultra_rich
+					}
 				}
 			}
 			random_owned_planet = {
 				limit = {
 					has_designation = col_mining
+					NOT = {
+						has_modifier = ultra_rich
+					}
 				}
 				save_event_target_as = mem_ancestors_grudge_mining_planet
 			}			
@@ -2537,6 +2544,9 @@ country_event = {
 				limit = {
 					is_artificial = no
 					has_district = district_mining
+					NOT = {
+						has_modifier = ultra_rich
+					}
 				}
 				save_event_target_as = mem_ancestors_grudge_mining_planet
 			}
