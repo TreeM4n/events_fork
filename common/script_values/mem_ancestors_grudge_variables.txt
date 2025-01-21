@@ -56,9 +56,11 @@ mem_smith_job_number = {
 				}
 			}
 		}
-		mult = 0.1
+		mult = 0.3
 		mode = add
+		
 	}
+	max = 20
 	# complex_trigger_modifier = {
 	# 	potential = {
 	# 		owner = {

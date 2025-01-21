@@ -172,7 +172,7 @@
  mem_ancestors_grudge.45.exceptional_ring:0 "§LAnd 4 more!§!"
  mem_ancestors_grudge.45.i:0 "$mem_ancestors_grudge_exceptional$: Time for a Rematch"
  mem_ancestors_grudge.45.exceptional_sword:0 "End §Revery§! truce we currently have."
- mem_ancestors_grudge_building_forge_terraform_tt:0 "World is transformed into an §YEcumenopolis§!\n\n"
+ mem_ancestors_grudge_building_forge_terraform_tt:0 "Turns the planet into an §YEcumenopolis§!\n\n"
  mem_ancestors_grudge_building_forge_empireeffect_tt:0 "§LProvides empire-wide effects based on ['concept_mem_ancestors_grudge_artifact_intensity'] and ['concept_mem_ancestors_grudge_rune_intensity']§!"
  mem_ancestors_grudge_city_planet_restored:0 "Restored Glory"
  mem_ancestors_grudge_golden_age:0 "Booming Economy"

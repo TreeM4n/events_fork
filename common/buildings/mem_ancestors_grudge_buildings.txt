@@ -303,7 +303,7 @@ mem_ancestors_grudge_building_forge_3 = {
 			trigger = {
 				host_has_dlc = "Ancient Relics Story Pack"
 			}
-			minor_artifacts = 16
+			minor_artifacts = 12
 		}
 	}
 	triggered_desc = {
@@ -383,7 +383,7 @@ mem_ancestors_grudge_building_forge_4 = {
 			trigger = {
 				host_has_dlc = "Ancient Relics Story Pack"
 			}
-			minor_artifacts = 20
+			minor_artifacts = 15
 		}
 	}
 	inline_script = {
