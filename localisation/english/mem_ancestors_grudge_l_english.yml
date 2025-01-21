@@ -6,7 +6,7 @@
  ###########
 
  #########################
- START_SCREEN_MEM_ANCESTORS_GRUDGE:0 "Long, long ago, in ages past our kin lived in wealth and prosperity. Their rule spread all across [GetHomeWorldName] and even space, first among their colonies was our homeworld's moon, which became the industrial center of our ancestors' empire. There they bent metal to their will, continuing to hone their craft, and forged an empire of runes and durasteel.\n\nTheir greatest of achievements was the Relic-Forge, a mighty complex providing all the necessities to smith the finest of artifacts.\n\nBut wealth draws unwanted attention. And so it came to be that our ancestors were beset by many envious foes. Invaders, barbaric and uncivilized warmongers, started to rampage in our ancestors' territory. Unable do deter and confine this threat, a century-long devastating war broke out. During the final days countless of our ancestors laid down their lives in defense of the Relic-Forge... All in vain.\n\nTheir empire laid to ruin, billions lost to orbital bombardment, but not all was lost. After decades, survivors on [GetHomeWorldName] slowly began to reemerge from the vaults that saved them from the apocalypse.\n\nIt has now been nearly 500 cycles since the fall and we are finally ready to reclaim what is ours by right."
+ START_SCREEN_MEM_ANCESTORS_GRUDGE:0 "Long, long ago, in ages past our kin lived in wealth and prosperity. Their rule spread all across [GetHomeWorldName] and even space, first among their colonies was our homeworld's moon, which became the industrial center of our ancestors' empire. There they bent metal to their will, continuing to hone their craft, and forged an empire of runes and durasteel.\n\nTheir greatest of achievements was the Relic-Forge, a mighty complex providing all the necessities to smith the finest of artifacts.\n\nBut wealth draws unwanted attention. And so it came to be that our ancestors were beset by many envious foes. Invaders, barbaric and uncivilized warmongers, started to rampage in our ancestors' territory. Unable do deter and confine this threat, a century-long devastating war broke out. During the final days countless of our ancestors laid down their lives in defense of the Relic-Forge... All in vain.\n\nTheir empire laid to ruin, billions perished in orbital bombardments, but not all was lost. After decades, survivors on [GetHomeWorldName] slowly began to reemerge from the vaults that saved them from the apocalypse.\n\nIt has now been nearly 500 cycles since the fall and we are finally ready to reclaim what is ours by right."
 
  START_SCREEN_MEM_ANCESTORS_GRUDGE_ROBOTS:0 "In the distant past our creators ruled the stars, their fleets patroled far away systems, protecting their wealth and prosperity. [GetHomeWorldName] was their homeworld and capital, but for them its moon was of even higher importance. It was their industrial center, where they bent metal to their will and honed their craft to smith artifacts of imcomparable quality. For this they had built a mighty complex to provide their smiths all required necessities - the Relic-Forge.\n\nBut their wealth made them a target for envious foes. Invaders, barbaric and uncivilized warmongers, started to rampage in our creators' territory. Unable do deter and confine this threat, a century-long devastating war broke out. It was during the final days of that conflict that we were activated. While the majority of their forces remained to protect the Relic-Forge in a futile last stand, we were sent from our factories to [GetHomeWorldName]. Here we were meant to protect civilians during their evacuation, but we failed. The planet's surface was set ablaze by orbital bombardment.\n\nWith only few of us remaining and our creators gone, it took many cycles for us to rebuild. Now the only thing left for us is vengeance."
 
@@ -38,7 +38,7 @@
  mem_ancestors_grudge_building_forge_4:0 "Grand Relic-Forge"
  mem_ancestors_grudge_building_forge_4_desc:0 "We fully restored our homeworld and with it the Relic-Forge."
  d_mem_ancestors_grudge_boulder:0 "Statue of the Unknown Warrior"
- d_mem_ancestors_grudge_boulder_desc:0 "A memorial to the fallen warriors of yore. Nobody dares to lay a finger on it."
+ d_mem_ancestors_grudge_boulder_desc:0 "A memorial to the fallen warriors of yore. Nobody dares to lay a hand on it."
  d_mem_ancestors_grudge_city_ruins:0 "Destroyed Cities"
  d_mem_ancestors_grudge_city_ruins_desc:0 "Ruins and whatever is left from continuous bombardment."
  d_mem_ancestors_grudge_bomb_crater:0 "Bomb Crater"
@@ -293,20 +293,17 @@
  mem_ancestors_grudge.440.desc:0 "Our rival [mem_ancestors_grudge_rival.GetName] has once again shown their treachery. Their meddling has resulted in a setback to our progress. This deliberate act of sabotage cannot be ignored. While our rage burns hot, the situation calls for a measured response.\n\nWe shall draft a strongly worded letter!"
  mem_ancestors_grudge.440.a:0 "Do it! Do it now!"
 
- mem_ancestors_grudge_diggy_hole:0 "Swing with me!"
+ mem_ancestors_grudge_diggy_hole:0 "Diggy Diggy Hole!"
  mem_ancestors_grudge.445.title:0 "Brothers of the Mine Rejoice!"
  mem_ancestors_grudge.445.desc:0 ""...Swing! Swing! Swing with me!" echoes through many a workplace. "Diggy Diggy Hole" enjoys popularity like never before, closely followed by "When the Hammer Falls" and "Hammerdeep" - all of them songs of yore resung. As a result work morale has skyrocketed and mineral production has far exceeded its quotas.\n\nWe could let this situation run its course and benefit from this improved productivity as it is or we could invest to potentially reap far greater gains."
  mem_ancestors_grudge.445.a:0 "I am a [root.GetSpeciesName], and I'm... Say again?"
  mem_ancestors_grudge.445.b:0 "We can never dig too deep!"
  mem_ancestors_grudge.446.title:0 "Hidden in the Mountain Store" 
  mem_ancestors_grudge.446.desc:0 "During our additionally funded digs, miners on [root.GetName] struck a surprisingly rich rare mineral vein. Further exploratory drills in the vicinity outline an unexpectedly large deposit. In response the mineral classification of [root.GetName] has been updated to ultra-rich.\n\nLocal workers are celebrating the prospect of many more years of mining to come."
- mem_ancestors_grudge.446.a:0 "Fascinating"
  mem_ancestors_grudge.447.title:0 "Hidden in the Mountain Store" 
  mem_ancestors_grudge.447.desc:0 "During our additionally funded digs, miners on [root.GetName] struck a previously unknown cavesystem. Within they found a rich deposit of rare resources.\n\nLocal workers celebrate the discovery."
- mem_ancestors_grudge.447.a:0 "Excellent"
  mem_ancestors_grudge.448.title:0 "Technological Treasure"
  mem_ancestors_grudge.448.desc:0 "During our additionally funded digs, archaeologists on [root.GetName] unearthed an ancient wreckage of a starship buried under dozens of meters of debris. This ship was clearly built by our ancestors and features many lost technologies.\n\nStudying its design should provide us useful insights to aid our research efforts."
- mem_ancestors_grudge.448.a:0 "Fascinating"
  mem_ancestors_grudge.449.title:0 "Grumpy Miners"
  mem_ancestors_grudge.449.desc:0 "It appears that our miners did not react kindly to our meddling in their affairs. The general enthusiasm we tried to profit from is lost and new reports show that productivity has returned to normal."
  mem_ancestors_grudge.449.a:0 "They are hard to please."
@@ -329,7 +326,7 @@
  #concept_mem_ancestors_grudge_runeforge_3_desc:0 "REPLACE_ME"
  #concept_mem_ancestors_grudge_runeforge_4:0 "REPLACE_ME"
  #concept_mem_ancestors_grudge_runeforge_4_desc:0 "REPLACE_ME"
- concept_mem_ancestors_grudge_crafting:0 "Relic Smith"
+ concept_mem_ancestors_grudge_crafting:0 "Relic-Smith"
  concept_mem_ancestors_grudge_crafting_desc:0 "The art of combining ['concept_mem_ancestors_grudge_artifact_intensity'] and ['concept_mem_ancestors_grudge_rune_intensity']"
  concept_mem_ancestors_grudge_artifact_intensity:0 "Artifact Intensity"
  concept_mem_ancestors_grudge_artifact_intensity_desc:0 "Determines the ['concept_mem_ancestors_grudge_rarity'] of ['concept_mem_ancestors_grudge_rune_relics']"

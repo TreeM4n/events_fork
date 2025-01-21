@@ -127,10 +127,7 @@ mem_ancestors_grudge_system = {
 			min = 90
 			max = 270
 		}
-		size = {
-			min = 18
-			max = 22
-		}
+		size = 21 # otherwise we lose districts if smaller because of the blockers
 		flags = {
 			homeworld
 		}
@@ -140,14 +137,13 @@ mem_ancestors_grudge_system = {
 			generate_empire_home_planet = yes
 			prevent_anomaly = yes
 		}
-		change_orbit = @base_moon_distance
 		moon = {
 			class = pc_relic
 			orbit_angle = {
 				min = 90
 				max = 180
 			}
-			orbit_distance = 5
+			orbit_distance = 11
 			size = 6
 			flags = {
 				mem_ancestors_grudge_planet
@@ -165,11 +161,7 @@ mem_ancestors_grudge_system = {
 				min = 190
 				max = 270
 			}
-			# init_effect = {
-			# 	clear_deposits = yes
-			# 	clear_planet_modifiers = yes
-			# }
-			change_orbit = @base_moon_distance
+			orbit_distance = 6
 		}
 		moon = {
 			count = 1
@@ -179,11 +171,7 @@ mem_ancestors_grudge_system = {
 				min = 280
 				max = 360
 			}
-			# init_effect = {
-			# 	clear_deposits = yes
-			# 	clear_planet_modifiers = yes
-			# }
-			change_orbit = @base_moon_distance
+			orbit_distance = 4
 		}
 	}
 	planet = {

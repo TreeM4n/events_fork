@@ -71,6 +71,7 @@ namespace = mem_ancestors_grudge
 # mem_ancestors_grudge.447	  	|	diggy hole success 2
 # mem_ancestors_grudge.448	  	|	diggy hole success 3
 # mem_ancestors_grudge.449	  	|	diggy hole fail
+# mem_ancestors_grudge.450		|	diggy hole hidden event to choose 446-449
 
 namespace = mem_ancestors_grudge
 country_event = {
@@ -2396,25 +2397,6 @@ situation_event = {
 	immediate = {
 		owner = {
 			set_country_flag = mem_ancestors_grudge_diggyhole
-			random_owned_planet = {
-				limit = {
-					OR = {
-						has_designation = col_mining
-						has_designation = col_habitat_mining
-					}
-				}
-				save_event_target_as = mem_ancestors_grudge_mine_planet
-			}
-			if = {
-				limit = {
-					NOT = {
-						exists = event_target:mem_ancestors_grudge_mine_planet
-					}
-				}
-				random_owned_planet = {
-					save_event_target_as = mem_ancestors_grudge_mine_planet
-				}
-			}
 		}
 	}
 	option = {
@@ -2432,135 +2414,91 @@ situation_event = {
 		}
 		hidden_effect = {
 			owner = {
-				random_list = {
-					25 = {
-						country_event = {
-							id = mem_ancestors_grudge.446
-							days = 380
-						}
-					}
-					25 = {
-						country_event = {
-							id = mem_ancestors_grudge.447
-							days = 380
-						}
-					}
-					25 = {
-						country_event = {
-							id = mem_ancestors_grudge.448
-							days = 380
-						}
-					}
-					25 = {
-						country_event = {
-							id = mem_ancestors_grudge.449
-							days = 380
-						}
-					}
+				#hidden event decides outcome at the time
+				country_event = {
+					id = mem_ancestors_grudge.450
+					days = 60 random = 60
 				}
 			}
 		}
 	}
 	after = {
-		event_target:mem_ancestors_grudge_mine_planet = {
+		owner = {
 			add_modifier = {
 				modifier = mem_ancestors_grudge_diggy_hole
-				days = 360
+				days = 720
 			}
 		}
 	}
 }
 
-country_event = {
+planet_event = {
 	id = mem_ancestors_grudge.446
 	title = "mem_ancestors_grudge.446.title"
 	desc = "mem_ancestors_grudge.446.desc"
-	picture = GFX_evt_signing
+	picture = GFX_evt_mining_operations
 	show_sound = evn_tox_knights_of_the_toxic_god
-	location = target
+	location = root
 	is_triggered_only = yes
-	immediate = {
-		random_owned_planet = {
-			limit = {
-				OR = {
-					has_designation = col_mining
-					has_designation = col_habitat_mining
-				}
-			}
-			save_event_target_as = mem_ancestors_grudge_mine_planet
-		}
+	option = {
+		name = FASCINATING
 		if = {
 			limit = {
-				NOT = {
-					exists = event_target:mem_ancestors_grudge_mine_planet
-				}
+				has_modifier = mineral_rich
 			}
-			random_owned_planet = {
-				save_event_target_as = mem_ancestors_grudge_mine_planet
-			}
+			remove_modifier = mineral_rich
 		}
-	}
-	option = {
-		name = mem_ancestors_grudge.446.a
-		event_target:mem_ancestors_grudge_mine_planet = {
-			add_modifier = {
-				modifier = mem_ancestors_grudge_diggy_hole
-			}
+		add_modifier = {
+			modifier = ultra_rich
 		}
 	}
 }
 
-country_event = {
+planet_event = {
 	id = mem_ancestors_grudge.447
 	title = "mem_ancestors_grudge.447.title"
 	desc = "mem_ancestors_grudge.447.desc"
-	picture = GFX_evt_tradestation_interior
+	picture = GFX_evt_in_the_dark
 	show_sound = evn_tox_knights_of_the_toxic_god
-	location = target
+	location = root
 	is_triggered_only = yes
-	immediate = {
-		random_owned_planet = {
-			limit = {
-				OR = {
-					has_designation = col_mining
-					has_designation = col_habitat_mining
-				}
-			}
-			save_event_target_as = mem_ancestors_grudge_mine_planet
-		}
-		if = {
-			limit = {
-				NOT = {
-					exists = event_target:mem_ancestors_grudge_mine_planet
-				}
-			}
-			random_owned_planet = {
-				save_event_target_as = mem_ancestors_grudge_mine_planet
-			}
-		}
-	}
 	option = {
-		name = mem_ancestors_grudge.447.a
-		event_target:mem_ancestors_grudge_mine_planet = {
-			add_deposit = d_crystalline_caverns
+		name = EXCELLENT
+		locked_random_list = {
+			1 = {
+				add_deposit = d_crystalline_caverns
+				add_deposit = d_crystalline_caverns
+			}
+			1 = {
+				add_deposit = d_dust_caverns
+				add_deposit = d_dust_caverns
+			}
+			1 = {
+				#rare deposit, but for energy, might lead to repurpose of planet - interesting choice to make
+				add_deposit = d_betharian_deposit
+				add_deposit = d_betharian_deposit
+			}
 		}
+		
 	}
 }
 
-country_event = {
+planet_event = {
 	id = mem_ancestors_grudge.448
 	title = "mem_ancestors_grudge.448.title"
 	desc = "mem_ancestors_grudge.448.desc"
-	picture = GFX_evt_ancient_records
+	picture = GFX_evt_generator_powerup
 	show_sound = evn_tox_knights_of_the_toxic_god
-	location = target
+	location = root
 	is_triggered_only = yes
 	immediate = {
 		
 	}
 	option = {
-		name = mem_ancestors_grudge.448.a
-		mem_ancestors_grudge_give_random_archeotech = yes
+		name = FASCINATING
+		owner = {
+			mem_ancestors_grudge_give_random_archeotech = yes
+		}		
 	}
 }
 
@@ -2570,12 +2508,105 @@ country_event = {
 	desc = "mem_ancestors_grudge.449.desc"
 	picture = GFX_evt_assembly_fight
 	show_sound = evn_tox_knights_of_the_toxic_god
-	location = target
 	is_triggered_only = yes
 	immediate = {
 		
 	}
 	option = {
 		name = mem_ancestors_grudge.449.a
+		remove_modifier = mem_ancestors_grudge_diggy_hole
+	}
+}
+
+#hidden event decides outcome and chooses target
+country_event = {
+	id = mem_ancestors_grudge.450
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				any_owned_planet = {
+					has_designation = col_mining
+					#we don't want to end up with the edge case of a double modifier, but that one should be exceptionally rare so limiting the selection for the other outcome should have no negative impact
+					NOT = {
+						has_modifier = ultra_rich
+					}
+				}
+			}
+			random_owned_planet = {
+				limit = {
+					has_designation = col_mining
+					NOT = {
+						has_modifier = ultra_rich
+					}
+				}
+				save_event_target_as = mem_ancestors_grudge_mining_planet
+			}			
+		}
+		else = {
+			random_owned_planet = {
+				limit = {
+					is_artificial = no
+					has_district = district_mining
+					NOT = {
+						has_modifier = ultra_rich
+					}
+				}
+				save_event_target_as = mem_ancestors_grudge_mining_planet
+			}
+		}
+		random_list = {
+			25 = {
+				modifier = {
+					factor = 0
+					NOT = {
+						exists = event_target:mem_ancestors_grudge_mining_planet
+					}
+				}
+				event_target:mem_ancestors_grudge_mining_planet = {
+					planet_event = {
+						id = mem_ancestors_grudge.446
+					}
+				}				
+			}
+			25 = {
+				modifier = {
+					factor = 0
+					NOT = {
+						exists = event_target:mem_ancestors_grudge_mining_planet
+					}
+				}
+				event_target:mem_ancestors_grudge_mining_planet = {
+					planet_event = {
+						id = mem_ancestors_grudge.447
+					}
+				}
+			}
+			25 = {
+				modifier = {
+					factor = 0
+					NOT = {
+						any_owned_planet = {
+							has_planet_flag = mem_ancestors_grudge_planet
+						}
+					}
+				}
+				random_owned_planet = {
+					limit = {
+						has_planet_flag = mem_ancestors_grudge_planet
+					}
+					planet_event = {
+						id = mem_ancestors_grudge.448
+					}
+				}
+			}
+			25 = {
+				country_event = {
+					id = mem_ancestors_grudge.449
+				}
+			}
+		}
 	}
 }
