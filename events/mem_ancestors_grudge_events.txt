@@ -2442,6 +2442,12 @@ planet_event = {
 	is_triggered_only = yes
 	option = {
 		name = FASCINATING
+		if = {
+			limit = {
+				has_modifier = mineral_rich
+			}
+			remove_modifier = mineral_rich
+		}
 		add_modifier = {
 			modifier = ultra_rich
 		}
