@@ -326,7 +326,7 @@
  #concept_mem_ancestors_grudge_runeforge_3_desc:0 "REPLACE_ME"
  #concept_mem_ancestors_grudge_runeforge_4:0 "REPLACE_ME"
  #concept_mem_ancestors_grudge_runeforge_4_desc:0 "REPLACE_ME"
- concept_mem_ancestors_grudge_crafting:0 "Relic Smith"
+ concept_mem_ancestors_grudge_crafting:0 "Relic-Smith"
  concept_mem_ancestors_grudge_crafting_desc:0 "The art of combining ['concept_mem_ancestors_grudge_artifact_intensity'] and ['concept_mem_ancestors_grudge_rune_intensity']"
  concept_mem_ancestors_grudge_artifact_intensity:0 "Artifact Intensity"
  concept_mem_ancestors_grudge_artifact_intensity_desc:0 "Determines the ['concept_mem_ancestors_grudge_rarity'] of ['concept_mem_ancestors_grudge_rune_relics']"
