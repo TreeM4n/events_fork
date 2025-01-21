@@ -127,10 +127,7 @@ mem_ancestors_grudge_system = {
 			min = 90
 			max = 270
 		}
-		size = {
-			min = 18
-			max = 22
-		}
+		size = 21 # otherwise we lose districts if smaller because of the blockers
 		flags = {
 			homeworld
 		}
