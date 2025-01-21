@@ -15,7 +15,8 @@ mem_ancestors_grudge_anvil_site = {
 	}
 	visible = {
 		default_site_visible_trigger = yes
-		has_country_flag = mem_ancestors_grudge_anvil_site
+		is_mem_runesmith = yes
+		#has_country_flag = mem_ancestors_grudge_anvil_site
 	}
 	on_visible = {
 		country_event = {

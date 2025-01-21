@@ -515,6 +515,7 @@ country_event = {
 			}
 		}
 		last_created_country = {
+			set_name = "mem_ancestors_grudge_origin_advanced_start_name"
 			add_resource = {
 				unity = 10000
 				minerals = 20000
@@ -668,9 +669,9 @@ situation_event = {
 		target = {
 			create_archaeological_site = mem_ancestors_grudge_anvil_site
 		}
-		owner = {
-			set_country_flag = mem_ancestors_grudge_anvil_site
-		}
+		# owner = {
+		# 	set_country_flag = mem_ancestors_grudge_anvil_site
+		# }
 		custom_tooltip = mem_ancestors_grudge_unlocks_forge_upgrade_tt
 		hidden_effect = {
 			event_target:mem_ancestors_grudge_planet = {
