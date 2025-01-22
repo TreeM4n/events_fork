@@ -349,5 +349,5 @@
  planet_mem_rune_smiths:0 "$job_mem_ancestors_grudge_runesmith$"
 
  mem_ancestors_grudge_system_NAME:0 "$NAME_mem_ancestors_grudge_system$"
- mem_ancestors_grudge_system_DESC:0 "$NAME_mem_ancestors_grudge_system$" # TODO
+ mem_ancestors_grudge_system_DESC:0 "$NAME_mem_ancestors_grudge_system$ System" # TODO
 
