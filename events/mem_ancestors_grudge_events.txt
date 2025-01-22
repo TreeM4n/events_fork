@@ -909,6 +909,7 @@ planet_event = {
 		}
 		remove_modifier = mem_ancestors_grudge_city_planet
 		remove_deposit = d_mem_ancestors_grudge_boulder		#i like keeping it, maybe not
+		add_deposit = d_mem_ancestors_grudge_boulder_park
 	}
 }
 
