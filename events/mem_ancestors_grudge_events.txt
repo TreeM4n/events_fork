@@ -2408,12 +2408,18 @@ situation_event = {
 	}
 	option = {
 		name = mem_ancestors_grudge.445.b
+		custom_tooltip = mem_ancestors_grudge.445.b.tooltip
 		allow = {
 			owner = {
 				resource_stockpile_compare = {
 					resource = energy
 					value >= 2000
 				}
+			}
+		}
+		owner = {
+			add_resource = {
+				energy = -2000
 			}
 		}
 		hidden_effect = {
