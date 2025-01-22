@@ -1,3 +1,4 @@
+
 triggered_planet_modifier = {
 	potential = {
 		exists = owner
@@ -25,6 +26,35 @@ triggered_planet_modifier = {
 		job_mem_ancestors_grudge_runesmith_drone_per_pop = 0.1
 	}
 }
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_regular_empire = yes
+			is_mem_runesmith = yes
+		}
+	}
+	modifier = {
+		job_mem_ancestors_grudge_relicsmith_add = 1
+		job_mem_ancestors_grudge_runesmith_add = 1
+	}
+}
+
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = yes
+			is_mem_runesmith = yes
+		}
+	}
+	modifier = {
+		job_mem_ancestors_grudge_relicsmith_drone_add = 2
+		job_mem_ancestors_grudge_runesmith_drone_add = 2
+	}
+}
+
 
 triggered_desc = {
 	trigger = {

@@ -67,7 +67,7 @@ situation_mem_ancestors_grudge_forge_repairs = {
 	}
 	on_monthly = {
 		random_events = {
-			2000 = 0
+			1000 = 0
 			1 = mem_ancestors_grudge.100			# monsters					
 			1 = mem_ancestors_grudge.105			# archeotech / minor artifacts
 			1 = mem_ancestors_grudge.110			# shiel gen ruined found
@@ -298,7 +298,7 @@ situation_mem_ancestors_grudge_crafting = {
 	}
 	on_monthly = {
 		random_events = {
-			10000 = 0
+			2000 = 0
 			1 = mem_ancestors_grudge.400
 			1 = mem_ancestors_grudge.405
 			1 = mem_ancestors_grudge.410

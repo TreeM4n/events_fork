@@ -217,8 +217,8 @@ mem_ancestors_grudge_building_forge_2 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			#minerals = 1800
-			alloys = 2400
+			minerals = 1800
+			alloys = 800
 		}
 		cost = {
 			trigger = {
@@ -285,14 +285,14 @@ mem_ancestors_grudge_building_forge_3 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = 20000
+			minerals = 15000
 			influence = 200
 		}
 		cost = {
 			trigger = {
 				host_has_dlc = "Ancient Relics Story Pack"
 			}
-			minor_artifacts = 1600
+			minor_artifacts = 1200
 		}
 		upkeep = {
 			energy = 24
@@ -366,13 +366,13 @@ mem_ancestors_grudge_building_forge_4 = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			alloys = 3600
+			alloys = 2400
 		}
 		cost = {
 			trigger = {
 				host_has_dlc = "Ancient Relics Story Pack"
 			}
-			minor_artifacts = 2000
+			minor_artifacts = 1500
 		}
 		upkeep = {
 			energy = 28

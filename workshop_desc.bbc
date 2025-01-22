@@ -16,8 +16,8 @@ You start with less pops, more blockers, a second planet and a dream. As you unc
     [*] [b]3[/b] craftable relics, each has 8 possible passive modifers and 4 quality tiers leading to a lof of possible combinations 
     [*] [b]~50[/b] events
     [*] [b]1[/b] digsite
-    [*] [b]2[/b] techs for lategame archeotechnology runs
-    [*] [b]1[/b] building: the Relic-Forge, the center piece of your empire. [spoiler]Dont ever lose it.[/spoiler]
+    [*] [b]2[/b] techs for lategame archaeotechnology runs
+    [*] [b]1[/b] building: the Relic-Forge with 4 upgrades, the center piece of your empire. [spoiler]Dont ever lose it.[/spoiler]
     [*] [b]1[/b] arch nemesis that spawns alongside with you. [i]Annihilate them![/i]
 [/list]  
 
@@ -34,7 +34,7 @@ You start with less pops, more blockers, a second planet and a dream. As you unc
 > Recycle them for minor artifacts
 > For exceptional relics only: reset truces, get random research options or casually double your income for a year
 
-Whatever you do its a one time use and after that you have to craft a new relic
+Whatever you do, its a one time use and after that you have to craft a new relic
 
 [h3]Future updates[/h3]
 
@@ -43,7 +43,8 @@ Whatever you do its a one time use and after that you have to craft a new relic
     [*] Some more special events to further improve your craft, so called "Material Quests"
     [*] A new asset for the anvil relic and some polishing for other assets
     [*] Some minor artifact actions and peaceful/more archeotechs. (maybe for everyone)
-    [*] Some more flavor for machine version
+    [*] Some more flavor for machine version (starting as indiviual machines should give you access to both origins, if they are distinct enough)
+    [*] Maybe some more craftable relics
     [*] Hive version!    
 [/list]
 
@@ -53,7 +54,8 @@ Whatever you do its a one time use and after that you have to craft a new relic
     [*] DLC requirements? Kinda none, but without Ancient Relics you will miss out on a lot of content
     [*] Compatible with X? Yes, no overwrites! 
     [*] Found a bug? Tell me. I cant fix which Im not aware of.
-    [*] I do (not) like X? Tell me. Im open for feedback and suggestions.
+    [*] You do (not) like X? Tell me. Im open for feedback and suggestions.
+    [*] You have an idea? Into the comments (Im still looking for hive and machine flavor)
     [*] Why does it say "(or Food)" in the job description? For all those catalytic lovers out there
 [/list]
 
@@ -61,9 +63,13 @@ Whatever you do its a one time use and after that you have to craft a new relic
 
 [list]
     [*] Wait, relic-crafting and a big forge. Have I seen this before? Ye, from my first public mod. Though this is a completely new version from the ground up.
-        After 2 years I refined my own craft of coding and mod making to bring this idea back to life with some much needed QA 
+        After 2 years I refined my own craft of coding and mod making to bring this idea back to life with some much needed QA, fresh ideas and some help from Malthus
     [*] Why are all your event IDs "mem_*", that's a [url=https://steamcommunity.com/sharedfiles/filedetails/?id=727000451] More Events Mod [/url] thing?
         In the not so far future this will be integrated into MEM as a replacement for "From the Ashes" origin
     [*] Small advice: use your capital as a basic resource planet and the forge as alloys/ consumer good printer. [spoiler]if it wasnt too obvious[/spoiler]
+    [*] It may feel strange that you "consume" relics for buffs, but I want a system thats lets you craft not just once a relic and be done. Because after 3 relics 
+        your relic tab would be cluttered with minor effects and you would never use them over stronger relics. This is why I decided to to implement this sudo-random
+        relic generator that relics more like exchangable tokens. Try it and give me some feedback :)
+    [*] Unlike ingame tooltips, images here may be outdated
     [*] Should you pick dwarfs portraits for this origin? Im not the one to tell you, but have you ever seen scifi mushrooms with hammers and anvils?
 [/list]

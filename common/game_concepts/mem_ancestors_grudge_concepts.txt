@@ -49,3 +49,8 @@ concept_mem_ancestors_grudge_rarity = {
 concept_mem_ancestors_grudge_intensity = {
 	icon = "gfx/interface/icons/modifiers/mod_acceptlesson_produces_mult.dds"
 }
+
+
+concept_mem_ancestors_grudge_relic_world = {
+	icon = "gfx/interface/icons/concepts/planet_classes/pc_nuked.dds"
+}

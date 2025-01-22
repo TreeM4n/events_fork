@@ -72,7 +72,6 @@ namespace = mem_ancestors_grudge
 # mem_ancestors_grudge.448	  	|	diggy hole success 3
 # mem_ancestors_grudge.449	  	|	diggy hole fail
 # mem_ancestors_grudge.450		|	diggy hole hidden event to choose 446-449
-
 namespace = mem_ancestors_grudge
 country_event = {
 	id = mem_ancestors_grudge.999
@@ -502,11 +501,11 @@ country_event = {
 					category = "domination"
 					file = "domination_21.dds"
 				}
-				background= {
+				background = {
 					category = "backgrounds"
 					file = "00_solid.dds"
 				}
-				colors={
+				colors = {
 					"black"
 					"dark_purple"
 					"null"
@@ -621,8 +620,13 @@ situation_event = {
 	}
 	option = {
 		name = mem_ancestors_grudge.10.a
-		owner = {
-			add_research_option = tech_archaeostudies
+		if = {
+			limit = {
+				host_has_dlc = "Ancient Relics Story Pack"
+			}
+			owner = {
+				add_research_option = tech_archaeostudies
+			}
 		}
 		custom_tooltip = mem_ancestors_grudge_unlocks_forge_upgrade_tt
 		hidden_effect = {
@@ -726,9 +730,9 @@ situation_event = {
 		# }
 		owner = {
 			add_resource = {
-				volatile_motes = 50
-				exotic_gases = 50
-				rare_crystals = 50
+				volatile_motes = 100
+				#exotic_gases = 50
+				rare_crystals = 100
 			}
 		}
 		custom_tooltip = mem_ancestors_grudge_unlocks_forge_upgrade_tt
@@ -935,7 +939,7 @@ country_event = {
 			limit = {
 				is_situation_type = situation_mem_ancestors_grudge_crafting
 			}
-			add_situation_progress = 50
+			add_situation_progress = 75
 		}
 	}
 }
@@ -2392,7 +2396,6 @@ situation_event = {
 			NOT = {
 				has_country_flag = mem_ancestors_grudge_diggyhole
 			}
-			
 		}
 	}
 	immediate = {
@@ -2418,7 +2421,8 @@ situation_event = {
 				#hidden event decides outcome at the time
 				country_event = {
 					id = mem_ancestors_grudge.450
-					days = 60 random = 60
+					days = 60
+					random = 60
 				}
 			}
 		}
@@ -2480,7 +2484,6 @@ planet_event = {
 				add_deposit = d_betharian_deposit
 			}
 		}
-		
 	}
 }
 
@@ -2493,13 +2496,12 @@ planet_event = {
 	location = root
 	is_triggered_only = yes
 	immediate = {
-		
 	}
 	option = {
 		name = FASCINATING
 		owner = {
 			mem_ancestors_grudge_give_random_archeotech = yes
-		}		
+		}
 	}
 }
 
@@ -2511,7 +2513,6 @@ country_event = {
 	show_sound = evn_tox_knights_of_the_toxic_god
 	is_triggered_only = yes
 	immediate = {
-		
 	}
 	option = {
 		name = mem_ancestors_grudge.449.a
@@ -2524,7 +2525,6 @@ country_event = {
 	id = mem_ancestors_grudge.450
 	hide_window = yes
 	is_triggered_only = yes
-
 	immediate = {
 		if = {
 			limit = {
@@ -2544,7 +2544,7 @@ country_event = {
 					}
 				}
 				save_event_target_as = mem_ancestors_grudge_mining_planet
-			}			
+			}
 		}
 		else = {
 			random_owned_planet = {
@@ -2570,7 +2570,7 @@ country_event = {
 					planet_event = {
 						id = mem_ancestors_grudge.446
 					}
-				}				
+				}
 			}
 			25 = {
 				modifier = {

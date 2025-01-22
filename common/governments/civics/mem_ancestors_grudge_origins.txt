@@ -25,6 +25,7 @@ mem_ancestors_grudge_origin = {
 		#is_regular_empire = yes
 	}
 	description = "mem_ancestors_grudge_origin_effects"
+	negative_description = "mem_ancestors_grudge_origin_effects_negative"
 	flags = {
 		custom_start_screen
 	}
@@ -73,6 +74,7 @@ mem_ancestors_grudge_origin_robots = {
 		}
 	}
 	description = "mem_ancestors_grudge_origin_robots_effects"
+	negative_description = "mem_ancestors_grudge_origin_robots_effects_negative"
 	flags = {
 		custom_start_screen
 	}
@@ -123,6 +125,7 @@ mem_ancestors_grudge_origin_advanced_start = {
 		#starbase_shipyard_build_speed_mult = 1
 		country_naval_cap_mult = 1
 		ships_upkeep_mult = -0.25
+		planet_crime_mult = 0.25
 		country_government_civic_points_add = 1
 	}
 	random_weight = {
