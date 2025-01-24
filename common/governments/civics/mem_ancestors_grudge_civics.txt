@@ -5,6 +5,11 @@ civic_mem_subterranean = {
 	description = "civic_tooltip_mem_subterranean_effects"
 	potential = {
 		species_archetype = { NOT = { value = MACHINE } }
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_consciousness
+			}
+		}
 	}
 	possible = {
 		species_archetype = { NOT = { value = MACHINE } }
