@@ -4,5 +4,5 @@ tags={
 	"Gameplay"
 	"Events"
 }
-name="Ancestors' Grudge"
+name="Ancestors' Grudge - A Reliccreator Origin"
 supported_version="v3.14.*"
