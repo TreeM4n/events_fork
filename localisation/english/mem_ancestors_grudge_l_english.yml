@@ -318,6 +318,13 @@
  tech_repeatable_mem_ancestors_grudge_2:0 "Archaeo-Artificing Studies"
  tech_repeatable_mem_ancestors_grudge_2_desc:0 "The continued study of ancient artificing methods should provide a better understanding of their technology."
  mem_ancestors_grudge_unlocks_forge_upgrade_tt:0 "§LUnlocks the next upgrade of the§! ['concept_mem_ancestors_grudge_runeforge']."
+
+ councilor_mem_subterranean:0 "Minister of the Depths"
+ councilor_mem_subterranean_female:0 "$councilor_mem_subterranean$"
+ councilor_mem_subterranean_desc:0 "The $TITLE$ is in charge of underground exploratory mining and expansion."
+ civic_mem_subterranean:0 "Subterranean"
+ civic_mem_subterranean_desc:0 "This society is well-adapted to subterranean environment, using the bounty of rock and stone to fuel its economy."
+ civic_tooltip_mem_subterranean_effects:0 "- $SPECIES_TRAITS$ ['concept_cave_dweller']\n- ['concept_mining_district', £district£ Mining Districts]: Uncapped"
  ########### concepts
  concept_mem_ancestors_grudge_runeforge:0 "Relic-Forge"
  concept_mem_ancestors_grudge_runeforge_desc:0 "['building:mem_ancestors_grudge_building_forge_0']$NEW_LINE$['building:mem_ancestors_grudge_building_forge_1']$NEW_LINE$['building:mem_ancestors_grudge_building_forge_2']$NEW_LINE$['building:mem_ancestors_grudge_building_forge_3']$NEW_LINE$['building:mem_ancestors_grudge_building_forge_4']"

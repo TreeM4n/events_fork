@@ -1,0 +1,13 @@
+councilor_mem_subterranean = {
+	leader_class = { official }
+	is_leader_possible = {
+		leader_class = official
+	}
+	civic = civic_mem_subterranean
+	modifier = {
+		planet_miners_minerals_produces_mult = 0.02
+	}
+	ai_hiring_weight = {
+		inline_script = councilor_leader_weights
+	}
+}

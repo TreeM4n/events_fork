@@ -24,3 +24,12 @@ mem_has_not_relic_flag ={
 		}
 	}
 }
+
+#overwrite of vanilla scripted trigger
+is_subterranean_empire = {
+	OR = {
+		has_origin = origin_subterranean
+		has_origin = origin_subterranean_machines
+		has_civic = civic_mem_subterranean
+	}
+}
