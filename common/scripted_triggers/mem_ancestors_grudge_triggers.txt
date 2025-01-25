@@ -31,5 +31,10 @@ is_subterranean_empire = {
 		has_origin = origin_subterranean
 		has_origin = origin_subterranean_machines
 		has_civic = civic_mem_subterranean
+		has_civic = civic_mem_subterranean_hive
+		has_civic = civic_mem_subterranean_machine
+		has_civic = civic_mem_subterranean_megacorp
+		has_civic = civic_mem_subterranean_regular_machine
+		has_civic = civic_mem_subterranean_regular_machine_megacorp
 	}
 }
