@@ -134,3 +134,36 @@ defined_text = {
 	}
 	default = mem_nothing
 }
+
+defined_text = {
+	name = MemGetRelic
+	random = no
+	text = {
+		trigger = {
+			owner = {
+				has_relic = r_mem_ancestors_grudge_sword
+			}
+			
+		}
+		localization_key = r_mem_ancestors_grudge_sword
+	}
+	text = {
+		trigger = {
+			owner = {
+				has_relic = r_mem_ancestors_grudge_pauldron
+			}
+			#has_relic = r_mem_ancestors_grudge_pauldron
+		}
+		localization_key = r_mem_ancestors_grudge_pauldron
+	}
+	text = {
+		trigger = {
+			owner = {
+				has_relic = r_mem_ancestors_grudge_ring
+			}
+			#has_relic = r_mem_ancestors_grudge_ring
+		}
+		localization_key = r_mem_ancestors_grudge_ring
+	}
+	default = mem_nothing
+}

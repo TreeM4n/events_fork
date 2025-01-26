@@ -283,9 +283,22 @@ situation_mem_ancestors_grudge_crafting = {
 		# final choice
 		custom_tooltip = situation_mem_ancestors_grudge_crafting_finish
 		hidden_effect = {
-			situation_event = {
+			if = {
+				limit = {
+					owner = {
+						has_country_flag = mem_ancestors_grudge_dont_event_me
+					}
+				}
+				situation_event = {
+					id = mem_ancestors_grudge.51
+				}
+			}
+			else = {
+				situation_event = {
 				id = mem_ancestors_grudge.50
 			}
+			}
+			
 		}
 	}
 	triggered_blocked_desc = {
@@ -308,7 +321,7 @@ situation_mem_ancestors_grudge_crafting = {
 			1 = mem_ancestors_grudge.430
 			1 = mem_ancestors_grudge.435
 			1 = mem_ancestors_grudge.440
-			1 = mem_ancestors_grudge.445	
+			1 = mem_ancestors_grudge.445
 		}
 	}
 	start_value = 0
@@ -318,17 +331,15 @@ situation_mem_ancestors_grudge_crafting = {
 			icon = GFX_situation_stage_1
 			icon_background = GFX_situation_stage_frame_green
 			end = 100
-
 		}
 		situation_mem_ancestors_grudge_crafting_stage1 = {
 			icon = GFX_situation_stage_2
 			icon_background = GFX_situation_stage_frame_green
 			end = 200
-			
 		}
 	}
 	monthly_progress = {
-		base = 1		
+		base = 1
 		modifier = {
 			desc = situation_mem_ancestors_grudge_crafting_smith_job_number
 			add = owner.value:mem_smith_job_number

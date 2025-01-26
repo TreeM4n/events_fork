@@ -29,7 +29,7 @@ mem_ancestors_grudge_situation_pop_count = {
 mem_ancestors_grudge_situation_rarity = {
 	base = 0
 	add = modifier:mem_ancestors_grudge_artifact_power_produces_mult
-	modulo = 50
+	modulo = 25
 	max = 4
 }
 

@@ -165,6 +165,8 @@
  mem_ancestors_grudge.50.desc:0 "Of legend and myth is the craft of the smith. A relic has been forged. A true masterpiece of our craft, and truly one of our finest creations to date. Let us now treasure what our hands have wrought, for such a work is not merely a tool, but a testament to the skill, strength, and spirit of our ancestors. May it serve as a symbol of what we can achieve, when runes, durasteel, and resolve unite!\n\nQuality: [owner.MemGetRarity]"
  mem_ancestors_grudge.50.a:0 "Runes and Durasteel!"
  mem_ancestors_grudge.50.a.tt:0 "§LDon't forget to activate it. You can only have one at a time.§!"
+ mem_ancestors_grudge.50.b:0 "Don't bother me again."
+ mem_ancestors_grudge.50.b.tt:0 "§LFurther completions will be notifications instead of events§!"
  mem_ancestors_grudge.45.name:0 "Relic Away"
  mem_ancestors_grudge.45.desc:0 "One of our greatest leaders shall be honored with the fruits of our latest creation. A prize worthy of song and legend, forged in the heart of the Relic-Forge itself.\n\nYet, as is the way of such things, only one can bear the honor, only one can receive this mighty reward. Let the choice be made wisely, for the one who carries such a relic shall carry our pride and honor in the face of all our ancestors."
  mem_ancestors_grudge.45.a:0 "$mem_ancestors_grudge_common$: Honor [leader_1.GetName]"
@@ -345,6 +347,13 @@
  councilor_mem_subterranean_megacorp_machine:0 "$councilor_mem_subterranean$"
  councilor_mem_subterranean_megacorp_machine_desc:0 "$councilor_mem_subterranean_desc$"
  councilor_mem_subterranean_megacorp_machine_female:0 "$councilor_mem_subterranean$"
+
+
+ MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE:0 "[MemGetRarity][MemGetRelic][this.GetName]"
+ MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE_dummy:0 "We created a "
+ MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE_RING:0 "$MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE_dummy$§C$r_mem_ancestors_grudge_ring$§!"
+ MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE_PAULDRON:0 "$MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE_dummy$§C$r_mem_ancestors_grudge_pauldron$§!"
+ MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE_SWORD:0 "$MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE_dummy$§C$r_mem_ancestors_grudge_sword$§!"
  ########### concepts
  concept_mem_ancestors_grudge_runeforge:0 "Relic-Forge"
  concept_mem_ancestors_grudge_runeforge_desc:0 "['building:mem_ancestors_grudge_building_forge_0']$NEW_LINE$['building:mem_ancestors_grudge_building_forge_1']$NEW_LINE$['building:mem_ancestors_grudge_building_forge_2']$NEW_LINE$['building:mem_ancestors_grudge_building_forge_3']$NEW_LINE$['building:mem_ancestors_grudge_building_forge_4']"
@@ -367,7 +376,7 @@
  concept_mem_ancestors_grudge_rune_relics:0 "Rune-Relics"
  concept_mem_ancestors_grudge_rune_relics_desc:0 "Smithed Relics enhanced with Runes$NEW_LINE$- Relics which have a ['concept_mem_ancestors_grudge_rarity'] and ['concept_mem_ancestors_grudge_intensity']$NEW_LINE$- Activation gives several options based on ['concept_mem_ancestors_grudge_rarity']$NEW_LINE$- Smithing speed influenced by number of §YArtifact Smiths§! and §YRune Artificers§!$NEW_LINE$§L- To craft a new Rune-Relic you need to activate the current!§!"
  concept_mem_ancestors_grudge_rarity:0 "Quality"
- concept_mem_ancestors_grudge_rarity_desc:0 "- Decides the number of random, passive modifiers of ['concept_mem_ancestors_grudge_rune_relics']$NEW_LINE$- Every 50% ['concept_mem_ancestors_grudge_artifact_intensity'] increases quality and adds 1 additional modifier$NEW_LINE$- Possible Qualities:$NEW_LINE$-- $mem_ancestors_grudge_common$$NEW_LINE$-- $mem_ancestors_grudge_rare$$NEW_LINE$-- $mem_ancestors_grudge_epic$$NEW_LINE$-- $mem_ancestors_grudge_exceptional$"
+ concept_mem_ancestors_grudge_rarity_desc:0 "- Decides the number of random, passive modifiers of ['concept_mem_ancestors_grudge_rune_relics']$NEW_LINE$- Every 25% ['concept_mem_ancestors_grudge_artifact_intensity'] increases quality and adds 1 additional modifier$NEW_LINE$- Possible Qualities:$NEW_LINE$-- $mem_ancestors_grudge_common$$NEW_LINE$-- $mem_ancestors_grudge_rare$$NEW_LINE$-- $mem_ancestors_grudge_epic$$NEW_LINE$-- $mem_ancestors_grudge_exceptional$"
  concept_mem_ancestors_grudge_intensity:0 "Strength"
  concept_mem_ancestors_grudge_intensity_desc:0 "- A multiplier of the ['concept_mem_ancestors_grudge_rune_relics'] passive effect between 0% and 200%$NEW_LINE$- Directly based on ['concept_mem_ancestors_grudge_artifact_intensity']"
  concept_mem_ancestors_grudge_relic_world:0 "unique"

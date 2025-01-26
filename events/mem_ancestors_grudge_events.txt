@@ -291,6 +291,21 @@ country_event = {
 			}
 		}
 	}
+	option = {
+		name = WEIRD
+		create_message = {
+			type = MEM_ANCESTORS_GRUDGE_GOT_RELIC_1
+			days = 60
+		}
+		create_message = {
+			type = MEM_ANCESTORS_GRUDGE_GOT_RELIC_2
+			days = 60
+		}
+		create_message = {
+			type = MEM_ANCESTORS_GRUDGE_GOT_RELIC_3
+			days = 60
+		}
+	}
 }
 
 # all events for crafting
@@ -329,6 +344,12 @@ situation_event = {
 		situation_event = {
 			id = mem_ancestors_grudge.445
 		}
+		situation_event = {
+			id = mem_ancestors_grudge.51
+		}
+		# situation_event = {
+		# 	id = mem_ancestors_grudge.50
+		# }
 	}
 }
 
@@ -626,6 +647,12 @@ situation_event = {
 			}
 			owner = {
 				add_research_option = tech_archaeostudies
+				hidden_effect = {
+					add_tech_progress = {
+						tech = tech_archaeostudies
+						progress = 0.7
+					}
+				}
 			}
 		}
 		custom_tooltip = mem_ancestors_grudge_unlocks_forge_upgrade_tt
@@ -1193,17 +1220,308 @@ situation_event = {
 			custom_tooltip = mem_ancestors_grudge.50.a.tt
 		}
 	}
+	option = {
+		name = mem_ancestors_grudge.50.b
+		destroy_situation = this
+		owner = {
+			if = {
+				limit = {
+					has_country_flag = mem_ancestors_grudge_sword_flag
+				}
+				add_relic = r_mem_ancestors_grudge_sword
+			}
+			else_if = {
+				limit = {
+					has_country_flag = mem_ancestors_grudge_ring_flag
+				}
+				add_relic = r_mem_ancestors_grudge_ring
+			}
+			else_if = {
+				limit = {
+					has_country_flag = mem_ancestors_grudge_pauldron_flag
+				}
+				add_relic = r_mem_ancestors_grudge_pauldron
+			}
+			custom_tooltip = mem_ancestors_grudge.50.a.tt
+			custom_tooltip = mem_ancestors_grudge.50.b.tt
+			hidden_effect = {
+				set_country_flag = mem_ancestors_grudge_dont_event_me
+			}
+		}
+	}
 	# option = {
 	# 	name = mem_ancestors_grudge.50.b
 	# }
 	after = {
+		# owner = {
+		# 	if = {
+		# 		limit = {
+		# 			has_modifier = relic_activation_cooldown
+		# 		}
+		# 		remove_modifier = relic_activation_cooldown
+		# 	}
+		# }
+		hidden_effect = {
+			owner = {
+				remove_country_flag = mem_ancestors_grudge_sword_flag
+				remove_country_flag = mem_ancestors_grudge_pauldron_flag
+				remove_country_flag = mem_ancestors_grudge_ring_flag
+				
+			}
+		}
+	}
+}
+
+#  crafted a relics
+situation_event = {
+	id = mem_ancestors_grudge.51
+	hide_window = yes
+	situation = this
+	is_triggered_only = yes
+	immediate = {
+		# clear old stuff
+		owner = {
+			clear_variable = mem_ancestors_grudge_rune_intensity
+			remove_country_flag = mem_ancestors_grudge_common
+			remove_country_flag = mem_ancestors_grudge_rare
+			remove_country_flag = mem_ancestors_grudge_epic
+			remove_country_flag = mem_ancestors_grudge_exceptional
+			remove_country_flag = mem_ancestors_grudge_relic_flag1
+			remove_country_flag = mem_ancestors_grudge_relic_flag2
+			remove_country_flag = mem_ancestors_grudge_relic_flag3
+			remove_country_flag = mem_ancestors_grudge_relic_flag4
+			remove_country_flag = mem_ancestors_grudge_relic_flag5
+			remove_country_flag = mem_ancestors_grudge_relic_flag6
+			remove_country_flag = mem_ancestors_grudge_relic_flag7
+			remove_country_flag = mem_ancestors_grudge_relic_flag8
+			# remove_country_flag = mem_ancestors_grudge_sword_flag
+			# remove_country_flag = mem_ancestors_grudge_ring_flag
+			# remove_country_flag = mem_ancestors_grudge_pauldron_flag
+		}
+		# roll for relic modifiers
+		owner = {
+			set_variable = {
+				which = mem_ancestors_grudge_rune_intensity
+				value = owner.modifier:mem_ancestors_grudge_rune_power_produces_mult
+			}
+			change_variable = {
+				which = mem_ancestors_grudge_rune_intensity
+				value = 1
+			}
+		}
 		owner = {
 			if = {
 				limit = {
-					has_modifier = relic_activation_cooldown
+					check_variable_arithmetic = {
+						which = owner.value:mem_ancestors_grudge_situation_rarity
+						value <= 2
+					}
 				}
-				remove_modifier = relic_activation_cooldown
+				set_country_flag = mem_ancestors_grudge_common
 			}
+			else_if = {
+				limit = {
+					check_variable_arithmetic = {
+						which = owner.value:mem_ancestors_grudge_situation_rarity
+						value <= 3
+					}
+				}
+				set_country_flag = mem_ancestors_grudge_rare
+			}
+			else_if = {
+				limit = {
+					check_variable_arithmetic = {
+						which = owner.value:mem_ancestors_grudge_situation_rarity
+						value <= 4
+					}
+				}
+				set_country_flag = mem_ancestors_grudge_epic
+			}
+			else_if = {
+				limit = {
+					check_variable_arithmetic = {
+						which = owner.value:mem_ancestors_grudge_situation_rarity
+						value <= 5
+					}
+				}
+				set_country_flag = mem_ancestors_grudge_exceptional
+			}
+		}
+		# at leasst on emodifer should be gainabale
+		owner = {
+			random_list = {
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag1
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag1
+						factor = 0
+					}
+				}
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag2
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag2
+						factor = 0
+					}
+				}
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag3
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag3
+						factor = 0
+					}
+				}
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag4
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag4
+						factor = 0
+					}
+				}
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag5
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag5
+						factor = 0
+					}
+				}
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag6
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag6
+						factor = 0
+					}
+				}
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag7
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag7
+						factor = 0
+					}
+				}
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag8
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag8
+						factor = 0
+					}
+				}
+			}
+		}
+		while = {
+			count = owner.value:mem_ancestors_grudge_situation_rarity
+			owner = {
+				random_list = {
+					1 = {
+						set_country_flag = mem_ancestors_grudge_relic_flag1
+						modifier = {
+							has_country_flag = mem_ancestors_grudge_relic_flag1
+							factor = 0
+						}
+					}
+					1 = {
+						set_country_flag = mem_ancestors_grudge_relic_flag2
+						modifier = {
+							has_country_flag = mem_ancestors_grudge_relic_flag2
+							factor = 0
+						}
+					}
+					1 = {
+						set_country_flag = mem_ancestors_grudge_relic_flag3
+						modifier = {
+							has_country_flag = mem_ancestors_grudge_relic_flag3
+							factor = 0
+						}
+					}
+					1 = {
+						set_country_flag = mem_ancestors_grudge_relic_flag4
+						modifier = {
+							has_country_flag = mem_ancestors_grudge_relic_flag4
+							factor = 0
+						}
+					}
+					1 = {
+						set_country_flag = mem_ancestors_grudge_relic_flag5
+						modifier = {
+							has_country_flag = mem_ancestors_grudge_relic_flag5
+							factor = 0
+						}
+					}
+					1 = {
+						set_country_flag = mem_ancestors_grudge_relic_flag6
+						modifier = {
+							has_country_flag = mem_ancestors_grudge_relic_flag6
+							factor = 0
+						}
+					}
+					1 = {
+						set_country_flag = mem_ancestors_grudge_relic_flag7
+						modifier = {
+							has_country_flag = mem_ancestors_grudge_relic_flag7
+							factor = 0
+						}
+					}
+					1 = {
+						set_country_flag = mem_ancestors_grudge_relic_flag8
+						modifier = {
+							has_country_flag = mem_ancestors_grudge_relic_flag8
+							factor = 0
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				mem_has_not_relic_flag = yes
+			}
+			# roll for relic
+			owner = {
+				random_list = {
+					100 = {
+						set_country_flag = mem_ancestors_grudge_sword_flag
+					}
+					100 = {
+						set_country_flag = mem_ancestors_grudge_ring_flag
+					}
+					100 = {
+						set_country_flag = mem_ancestors_grudge_pauldron_flag
+					}
+				}
+			}
+		}
+		owner = {
+			if = {
+				limit = {
+					has_country_flag = mem_ancestors_grudge_sword_flag
+				}
+				add_relic = r_mem_ancestors_grudge_sword
+				create_message = {
+					type = MEM_ANCESTORS_GRUDGE_GOT_RELIC_3
+					days = 60
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = mem_ancestors_grudge_ring_flag
+				}
+				add_relic = r_mem_ancestors_grudge_ring
+				create_message = {
+					type = MEM_ANCESTORS_GRUDGE_GOT_RELIC_1
+					days = 60
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = mem_ancestors_grudge_pauldron_flag
+				}
+				add_relic = r_mem_ancestors_grudge_pauldron
+				create_message = {
+					type = MEM_ANCESTORS_GRUDGE_GOT_RELIC_2
+					days = 60
+				}
+			}
+			#custom_tooltip = mem_ancestors_grudge.50.a.tt
 		}
 		hidden_effect = {
 			owner = {
@@ -1659,8 +1977,12 @@ situation_event = {
 	is_triggered_only = yes
 	situation = this
 	immediate = {
+		set_situation_flag = mem_got_shield
 	}
 	trigger = {
+		NOT = {
+			has_situation_flag = mem_got_shield
+		}
 		target = {
 			NOT = {
 				has_building = building_planetary_shield_generator

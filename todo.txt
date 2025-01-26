@@ -8,6 +8,10 @@ quests locked by techs and to the smithing situation
 chitin plating: food upkeep for more alloys or artifact power
 dragon event for endgame smithing
 
+- machine version: special protocol traits for ruler: "rune patterns" scale with rune strengh
+- normal version: special system starbase with modifiers
+- hive: colelctor , maybe grail knights copy?, you collect shiny things, you can collect too much attracting dragons?, higher relic stela chance, less productive smiths
+- reduce intensity needed for next quality , and nerf max intensity runes, 
 
 - mem vazuran integration
 - hive version
