@@ -140,7 +140,7 @@ d_mem_ancestors_grudge_city_ruins = {
 			}
 			owner = {
 				add_resource = {
-					minor_artifacts = 25
+					minor_artifacts = 75
 				}
 			}
 		}
@@ -177,7 +177,7 @@ d_mem_ancestors_grudge_bomb_crater = {
 			}
 			owner = {
 				add_resource = {
-					minor_artifacts = 25
+					minor_artifacts = 50
 				}
 			}
 		}
@@ -289,7 +289,7 @@ d_mem_ancestors_grudge_ruined_stasis = {
 	resources = {
 		category = deposit_blockers
 		cost = {
-			energy = 300
+			energy = 400
 		}
 		upkeep = {
 			energy = 1

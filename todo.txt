@@ -11,7 +11,10 @@ dragon event for endgame smithing
 - machine version: special protocol traits for ruler: "rune patterns" scale with rune strengh
 - normal version: special system starbase with modifiers
 - hive: colelctor , maybe grail knights copy?, you collect shiny things, you can collect too much attracting dragons?, higher relic stela chance, less productive smiths
-- reduce intensity needed for next quality , and nerf max intensity runes, 
+
+- hoarding mechanic: building planet unique provides benefits based on amount of hoarding minor artifacts, great vault relic converts MA overflow to unity/ policy, 
+			no relic can be stolen ? each relic provides bonii on gained
+
 
 - mem vazuran integration
 - hive version
