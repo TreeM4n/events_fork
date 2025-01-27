@@ -386,6 +386,8 @@ country_event = {
 	trigger = {
 		OR = {
 			has_origin = mem_ancestors_grudge_origin
+			has_origin = mem_ancestors_grudge_origin_machines
+			# this is only here to keep old stuff working until the origin gets removed after game update
 			has_origin = mem_ancestors_grudge_origin_robots
 		}
 	}
@@ -593,7 +595,24 @@ country_event = {
 country_event = {
 	id = mem_ancestors_grudge.5
 	title = mem_ancestors_grudge.5.name
-	desc = mem_ancestors_grudge.5.desc
+	desc = {
+		trigger = {
+			owner_main_species = {
+				is_archetype = MACHINE
+			}
+		}
+		text = mem_ancestors_grudge.5.desc_robots
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				owner_main_species = {
+					is_archetype = MACHINE
+				}
+			}			
+		}
+		text = mem_ancestors_grudge.5.desc
+	}
 	picture = GFX_evt_relic_world
 	show_sound = event_collapsing_ruins
 	location = event_target:mem_ancestors_grudge_planet
@@ -623,7 +642,24 @@ country_event = {
 situation_event = {
 	id = mem_ancestors_grudge.10
 	title = mem_ancestors_grudge.10.name
-	desc = mem_ancestors_grudge.10.desc
+	desc = {
+		trigger = {
+			owner_main_species = {
+				is_archetype = MACHINE
+			}
+		}
+		text = mem_ancestors_grudge.10.desc_robots
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				owner_main_species = {
+					is_archetype = MACHINE
+				}
+			}			
+		}
+		text = mem_ancestors_grudge.10.desc
+	}
 	picture = GFX_evt_relic_world_building
 	show_sound = event_energy_field
 	location = event_target:mem_ancestors_grudge_planet
@@ -789,7 +825,24 @@ situation_event = {
 situation_event = {
 	id = mem_ancestors_grudge.25
 	title = mem_ancestors_grudge.25.name
-	desc = mem_ancestors_grudge.25.desc
+	desc = {
+		trigger = {
+			owner_main_species = {
+				is_archetype = MACHINE
+			}
+		}
+		text = mem_ancestors_grudge.25.desc_robots
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				owner_main_species = {
+					is_archetype = MACHINE
+				}
+			}			
+		}
+		text = mem_ancestors_grudge.25.desc
+	}
 	picture = GFX_evt_city_planet_2
 	show_sound = event_celebration
 	location = event_target:mem_ancestors_grudge_planet
@@ -944,7 +997,24 @@ planet_event = {
 country_event = {
 	id = mem_ancestors_grudge.40
 	title = mem_ancestors_grudge.40.name
-	desc = mem_ancestors_grudge.40.desc
+	desc = {
+		trigger = {
+			owner_main_species = {
+				is_archetype = MACHINE
+			}
+		}
+		text = mem_ancestors_grudge.40.desc_robots
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				owner_main_species = {
+					is_archetype = MACHINE
+				}
+			}			
+		}
+		text = mem_ancestors_grudge.40.desc
+	}
 	picture = GFX_evt_cosmic_storms_calibration
 	show_sound = event_finding_loot
 	#location = event_target:mem_ancestors_grudge_planet
@@ -976,7 +1046,24 @@ country_event = {
 situation_event = {
 	id = mem_ancestors_grudge.50
 	title = mem_ancestors_grudge.50.name
-	desc = mem_ancestors_grudge.50.desc
+	desc = {
+		trigger = {
+			owner_main_species = {
+				is_archetype = MACHINE
+			}
+		}
+		text = mem_ancestors_grudge.50.desc_robots
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				owner_main_species = {
+					is_archetype = MACHINE
+				}
+			}			
+		}
+		text = mem_ancestors_grudge.50.desc
+	}
 	picture = GFX_mem_ancestors_grudge_runesmith_in_forge
 	show_sound = event_finding_loot
 	location = target
@@ -1537,7 +1624,24 @@ situation_event = {
 country_event = {
 	id = mem_ancestors_grudge.45
 	title = mem_ancestors_grudge.45.name
-	desc = mem_ancestors_grudge.45.desc
+	desc = {
+		trigger = {
+			owner_main_species = {
+				is_archetype = MACHINE
+			}
+		}
+		text = mem_ancestors_grudge.45.desc_robots
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				owner_main_species = {
+					is_archetype = MACHINE
+				}
+			}			
+		}
+		text = mem_ancestors_grudge.45.desc
+	}
 	picture = GFX_evt_knights
 	show_sound = evn_tox_knights_of_the_toxic_god
 	#location = event_target:mem_ancestors_grudge_planet
@@ -1797,7 +1901,24 @@ country_event = {
 country_event = {
 	id = mem_ancestors_grudge.75
 	title = mem_ancestors_grudge.75.name
-	desc = mem_ancestors_grudge.75.desc
+	desc = {
+		trigger = {
+			owner_main_species = {
+				is_archetype = MACHINE
+			}
+		}
+		text = mem_ancestors_grudge.75.desc_robots
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				owner_main_species = {
+					is_archetype = MACHINE
+				}
+			}			
+		}
+		text = mem_ancestors_grudge.75.desc
+	}
 	picture = GFX_evt_crisis_defeated
 	show_sound = event_space_battle
 	#location = event_target:mem_ancestors_grudge_planet
@@ -1871,7 +1992,24 @@ country_event = {
 country_event = {
 	id = mem_ancestors_grudge.70
 	title = mem_ancestors_grudge.70.name
-	desc = mem_ancestors_grudge.70.desc
+	desc = {
+		trigger = {
+			owner_main_species = {
+				is_archetype = MACHINE
+			}
+		}
+		text = mem_ancestors_grudge.70.desc_robots
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				owner_main_species = {
+					is_archetype = MACHINE
+				}
+			}			
+		}
+		text = mem_ancestors_grudge.70.desc
+	}
 	picture = GFX_evt_crisis_defeated
 	show_sound = event_space_battle
 	#location = event_target:mem_ancestors_grudge_planet
@@ -1937,7 +2075,24 @@ situation_event = {
 situation_event = {
 	id = mem_ancestors_grudge.105
 	title = "mem_ancestors_grudge.105.title"
-	desc = "mem_ancestors_grudge.105.desc"
+	desc = {
+		trigger = {
+			owner_main_species = {
+				is_archetype = MACHINE
+			}
+		}
+		text = mem_ancestors_grudge.105.desc_robots
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				owner_main_species = {
+					is_archetype = MACHINE
+				}
+			}			
+		}
+		text = mem_ancestors_grudge.105.desc
+	}
 	picture = GFX_evt_obelisk_tourists
 	show_sound = event_activating_unknown_technology
 	location = target
@@ -2014,7 +2169,24 @@ situation_event = {
 situation_event = {
 	id = mem_ancestors_grudge.115
 	title = "mem_ancestors_grudge.115.title"
-	desc = "mem_ancestors_grudge.115.desc"
+	desc = {
+		trigger = {
+			owner_main_species = {
+				is_archetype = MACHINE
+			}
+		}
+		text = mem_ancestors_grudge.115.desc_robots
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				owner_main_species = {
+					is_archetype = MACHINE
+				}
+			}			
+		}
+		text = mem_ancestors_grudge.115.desc
+	}
 	picture = GFX_evt_clones
 	show_sound = event_ancient_drone
 	location = target
@@ -2040,7 +2212,18 @@ situation_event = {
 			}
 		}
 		target = {
-			add_deposit = d_mem_ancestors_grudge_ruined_stasis
+			#same effect, different localisation
+			if = {
+				limit = {
+					owner_main_species = {
+						is_archetype = MACHINE
+					}
+				}
+				add_deposit = d_mem_ancestors_grudge_ruined_stasis_robots
+			}
+			else = {
+				add_deposit = d_mem_ancestors_grudge_ruined_stasis
+			}			
 		}
 		owner = {
 			add_resource = {
@@ -2128,11 +2311,9 @@ country_event = {
 		name = mem_ancestors_grudge.205.a		# they have wronged us !
 		if = {
 			limit = {
-				AND = {
-					exists = from
-					NOT = {
-						is_at_war_with = from
-					}
+				exists = from
+				NOT = {
+					is_at_war_with = from
 				}
 			}
 			declare_war = {
@@ -2324,7 +2505,24 @@ fleet_event = {
 fleet_event = {
 	id = mem_ancestors_grudge.310
 	title = mem_ancestors_grudge.310.name
-	desc = mem_ancestors_grudge.310.desc
+	desc = {
+		trigger = {
+			owner_main_species = {
+				is_archetype = MACHINE
+			}
+		}
+		text = mem_ancestors_grudge.310.desc_robots
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				owner_main_species = {
+					is_archetype = MACHINE
+				}
+			}			
+		}
+		text = mem_ancestors_grudge.310.desc
+	}
 	picture = GFX_evt_bone_building
 	show_sound = event_collapsing_ruins
 	#location = target
@@ -2358,11 +2556,11 @@ fleet_event = {
 			if = {
 				limit = {
 					owner = {
-						is_variable_set = mem_ancestors_grudge_activated_relics_counter
+						NOT = {
+							is_variable_set = mem_ancestors_grudge_activated_relics_counter
+						}						
 					}
 				}
-			}
-			else = {
 				owner = {
 					set_variable = {
 						which = mem_ancestors_grudge_activated_relics_counter
