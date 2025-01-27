@@ -45,6 +45,7 @@ mem_ancestors_grudge_origin = {
 	}
 }
 
+# delete after next game update. until then this stays to allow ongoing saves to continue. replaced by mem_ancestors_grudge_origin_machines
 mem_ancestors_grudge_origin_robots = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/mem_ancestors_grudge_origin.dds"
@@ -57,11 +58,7 @@ mem_ancestors_grudge_origin_robots = {
 		#host_has_dlc = "Ancient Relics Story Pack"
 	}
 	potential = {
-		ethics = {
-			#NOT = {
-			value = ethic_gestalt_consciousness
-			#}
-		}
+		always = no
 	}
 	possible = {
 		ethics = {
@@ -73,8 +70,48 @@ mem_ancestors_grudge_origin_robots = {
 			value = auth_machine_intelligence
 		}
 	}
-	description = "mem_ancestors_grudge_origin_robots_effects"
-	negative_description = "mem_ancestors_grudge_origin_robots_effects_negative"
+	description = "mem_ancestors_grudge_origin_machines_effects"
+	negative_description = "mem_ancestors_grudge_origin_machines_effects_negative"
+	flags = {
+		custom_start_screen
+	}
+	traits = {
+		trait = mem_ancestors_grudge_trait_robot_rune_golem
+	}
+	modifier = {
+		country_resource_max_minor_artifacts_add = 10000
+	}
+	random_weight = {
+		base = 0
+	}
+}
+
+mem_ancestors_grudge_origin_machines = {
+	is_origin = yes
+	icon = "gfx/interface/icons/origins/mem_ancestors_grudge_origin.dds"
+	picture = GFX_mem_ancestors_grudge_origin
+	max_once_global = yes
+	initializers = {
+		mem_ancestors_grudge_system
+	}
+	playable = {
+		#host_has_dlc = "Ancient Relics Story Pack"
+	}
+	potential = {
+		ethics = {
+			value = ethic_gestalt_consciousness
+		}
+	}
+	possible = {
+		ethics = {
+			value = ethic_gestalt_consciousness
+		}
+		authority = {
+			value = auth_machine_intelligence
+		}
+	}
+	description = "mem_ancestors_grudge_origin_machines_effects"
+	negative_description = "mem_ancestors_grudge_origin_machines_effects_negative"
 	flags = {
 		custom_start_screen
 	}

@@ -5,6 +5,7 @@ part = {
 	
 	trigger = {
 		has_origin = mem_ancestors_grudge_origin
+		is_individual_machine = no		
 	}
 }
 
@@ -12,6 +13,17 @@ part = {
 part = {
 	location = 0
 	localization = "START_SCREEN_MEM_ANCESTORS_GRUDGE_ROBOTS"
+	
+	trigger = {
+		has_origin = mem_ancestors_grudge_origin
+		is_individual_machine = yes		
+	}
+}
+
+# Ancestors Grudge Machines
+part = {
+	location = 0
+	localization = "START_SCREEN_MEM_ANCESTORS_GRUDGE_MACHINES"
 	
 	trigger = {
 		has_origin = mem_ancestors_grudge_origin_robots

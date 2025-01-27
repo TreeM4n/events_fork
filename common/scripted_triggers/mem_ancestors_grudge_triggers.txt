@@ -1,6 +1,8 @@
 is_mem_runesmith = {
 	OR = {
 		has_origin = mem_ancestors_grudge_origin
+		has_origin = mem_ancestors_grudge_origin_machines
+		# Phase out
 		has_origin = mem_ancestors_grudge_origin_robots
 	}
 }

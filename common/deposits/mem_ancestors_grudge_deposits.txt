@@ -239,7 +239,7 @@ d_mem_ancestors_grudge_ruined_district = {
 	}
 }
 
-# stasis cpsuels
+# stasis capsules
 d_mem_ancestors_grudge_ruined_stasis = {
 	icon = d_ancient_vault
 	time = 120
@@ -250,37 +250,37 @@ d_mem_ancestors_grudge_ruined_stasis = {
 	}
 	on_cleared = {
 		hidden_effect = {
-			if = {
-				limit = {
-					any_owned_pop = {
-						NOT = {
-							has_trait = trait_hive_mind
-						}
-						is_robot_pop = no
-					}
-				}
-				random_owned_pop = {
-					limit = {
-						NOT = {
-							has_trait = trait_hive_mind
-						}
-						is_robot_pop = no
-					}
-					root = {
-						create_pop = {
-							species = prev
-						}
-					}
-				}
+			create_pop = {
+				species = owner_main_species
 			}
-			else = {
-				random_owned_pop = {
-					root = {
-						create_pop = {
-							species = prev
-						}
-					}
-				}
+		}
+		custom_tooltip = d_decrepit_dwellings_custom_tooltip
+	}
+	inline_script = deposits/ai_weight_pop_creating_blocker
+	resources = {
+		category = deposit_blockers
+		cost = {
+			energy = 300
+		}
+		upkeep = {
+			energy = 1
+		}
+	}
+}
+
+# Buried Units
+d_mem_ancestors_grudge_ruined_stasis_robots = {
+	icon = d_ancient_vault
+	time = 120
+	is_for_colonizable = yes
+	category = deposit_cat_blockers
+	potential = {
+		always = no
+	}
+	on_cleared = {
+		hidden_effect = {
+			create_pop = {
+				species = owner_main_species
 			}
 		}
 		custom_tooltip = d_decrepit_dwellings_custom_tooltip
