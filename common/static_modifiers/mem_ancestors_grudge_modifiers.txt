@@ -33,8 +33,8 @@ mem_ancestors_grudge_lost_forge_butrevenge = {
 mem_ancestors_grudge_lost_forge_beat_sworn_enemy = {
 	#icon = "gfx/interface/icons/planet_modifiers/pm_land_appropriated.dds"
 	#icon_frame = 1
-	mem_ancestors_grudge_artifact_power_produces_mult = 0.5
-	mem_ancestors_grudge_rune_power_produces_mult = 0.5
+	mem_ancestors_grudge_artifact_power_produces_mult = 0.2
+	mem_ancestors_grudge_rune_power_produces_mult = 0.2
 }
 
 mem_ancestors_grudge_golden_age = {

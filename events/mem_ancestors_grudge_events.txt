@@ -306,6 +306,13 @@ country_event = {
 			days = 60
 		}
 	}
+	option = {
+		name = WEIRD
+		add_modifier = {
+			modifier = mem_ancestors_grudge_lost_forge_beat_sworn_enemy
+			mult = 3.5
+		}
+	}
 }
 
 # all events for crafting

@@ -28,8 +28,10 @@ mem_ancestors_grudge_situation_pop_count = {
 # determines rarity of relics
 mem_ancestors_grudge_situation_rarity = {
 	base = 0
-	add = modifier:mem_ancestors_grudge_artifact_power_produces_mult
-	modulo = 25
+	add = modifier:mem_ancestors_grudge_artifact_power_produces_mult # actual modifier
+	mult = 100 # go to full numbers to round down, and make compare
+	divide = 25 # every 25
+	floor = yes #round down
 	max = 4
 }
 
