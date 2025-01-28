@@ -313,6 +313,15 @@ country_event = {
 			mult = 3.5
 		}
 	}
+	option = {
+		name = WEIRD
+		give_technology = {
+			tech = tech_mem_ancestors_grudge_robot_traits
+		}
+		give_technology = {
+			tech = tech_mem_ancestors_grudge_robot_factory
+		}
+	}
 }
 
 # all events for crafting
@@ -400,6 +409,17 @@ country_event = {
 	}
 	immediate = {
 		save_event_target_as = mem_ancestors_grudge_origin
+		if = {
+			limit = {
+				has_authority = auth_machine_intelligence
+			}
+			ruler = {
+				set_variable = {
+					which = mem_ancestors_grudge_activated_rune_ruler_strength
+					value = 0.01
+				}
+			}
+		}
 		capital_scope = {
 			while = {
 				count = 6
@@ -616,7 +636,7 @@ country_event = {
 				owner_main_species = {
 					is_archetype = MACHINE
 				}
-			}			
+			}
 		}
 		text = mem_ancestors_grudge.5.desc
 	}
@@ -663,7 +683,7 @@ situation_event = {
 				owner_main_species = {
 					is_archetype = MACHINE
 				}
-			}			
+			}
 		}
 		text = mem_ancestors_grudge.10.desc
 	}
@@ -846,7 +866,7 @@ situation_event = {
 				owner_main_species = {
 					is_archetype = MACHINE
 				}
-			}			
+			}
 		}
 		text = mem_ancestors_grudge.25.desc
 	}
@@ -911,6 +931,27 @@ situation_event = {
 				modifier = mem_ancestors_grudge_city_planet_restored
 			}
 		}
+	}
+	option = {
+		name = mem_ancestors_grudge.26.b
+		trigger = {
+			owner = {
+				has_authority = auth_machine_intelligence
+			}
+		}
+		owner = {
+			give_technology = {
+				tech = tech_mem_ancestors_grudge_robot_traits
+			}
+		}
+		target = {
+			add_modifier = {
+				modifier = mem_ancestors_grudge_city_planet_restored
+				mult = 0.5
+			}
+		}
+	}
+	after = {
 		destroy_situation = this
 		owner = {
 			add_monthly_resource_mult = {
@@ -1018,7 +1059,7 @@ country_event = {
 				owner_main_species = {
 					is_archetype = MACHINE
 				}
-			}			
+			}
 		}
 		text = mem_ancestors_grudge.40.desc
 	}
@@ -1067,7 +1108,7 @@ situation_event = {
 				owner_main_species = {
 					is_archetype = MACHINE
 				}
-			}			
+			}
 		}
 		text = mem_ancestors_grudge.50.desc
 	}
@@ -1112,7 +1153,7 @@ situation_event = {
 				limit = {
 					check_variable_arithmetic = {
 						which = owner.value:mem_ancestors_grudge_situation_rarity
-						value <= 2
+						value < 2
 					}
 				}
 				set_country_flag = mem_ancestors_grudge_common
@@ -1121,7 +1162,7 @@ situation_event = {
 				limit = {
 					check_variable_arithmetic = {
 						which = owner.value:mem_ancestors_grudge_situation_rarity
-						value <= 3
+						value < 3
 					}
 				}
 				set_country_flag = mem_ancestors_grudge_rare
@@ -1130,7 +1171,7 @@ situation_event = {
 				limit = {
 					check_variable_arithmetic = {
 						which = owner.value:mem_ancestors_grudge_situation_rarity
-						value <= 4
+						value < 4
 					}
 				}
 				set_country_flag = mem_ancestors_grudge_epic
@@ -1139,7 +1180,7 @@ situation_event = {
 				limit = {
 					check_variable_arithmetic = {
 						which = owner.value:mem_ancestors_grudge_situation_rarity
-						value <= 5
+						value < 5
 					}
 				}
 				set_country_flag = mem_ancestors_grudge_exceptional
@@ -1347,20 +1388,23 @@ situation_event = {
 	# 	name = mem_ancestors_grudge.50.b
 	# }
 	after = {
-		# owner = {
-		# 	if = {
-		# 		limit = {
-		# 			has_modifier = relic_activation_cooldown
-		# 		}
-		# 		remove_modifier = relic_activation_cooldown
-		# 	}
-		# }
+		owner = {
+			if = {
+				limit = {
+					has_modifier = mem_ancestors_grudge_unknown_design
+				}
+				country_event = {
+					id = mem_ancestors_grudge.52
+					days = 10
+				}
+				#remove_modifier = mem_ancestors_grudge_unknown_design
+			}
+		}
 		hidden_effect = {
 			owner = {
 				remove_country_flag = mem_ancestors_grudge_sword_flag
 				remove_country_flag = mem_ancestors_grudge_pauldron_flag
 				remove_country_flag = mem_ancestors_grudge_ring_flag
-				
 			}
 		}
 	}
@@ -1408,7 +1452,7 @@ situation_event = {
 				limit = {
 					check_variable_arithmetic = {
 						which = owner.value:mem_ancestors_grudge_situation_rarity
-						value <= 2
+						value < 2
 					}
 				}
 				set_country_flag = mem_ancestors_grudge_common
@@ -1417,7 +1461,7 @@ situation_event = {
 				limit = {
 					check_variable_arithmetic = {
 						which = owner.value:mem_ancestors_grudge_situation_rarity
-						value <= 3
+						value < 3
 					}
 				}
 				set_country_flag = mem_ancestors_grudge_rare
@@ -1426,7 +1470,7 @@ situation_event = {
 				limit = {
 					check_variable_arithmetic = {
 						which = owner.value:mem_ancestors_grudge_situation_rarity
-						value <= 4
+						value < 4
 					}
 				}
 				set_country_flag = mem_ancestors_grudge_epic
@@ -1435,7 +1479,7 @@ situation_event = {
 				limit = {
 					check_variable_arithmetic = {
 						which = owner.value:mem_ancestors_grudge_situation_rarity
-						value <= 5
+						value < 5
 					}
 				}
 				set_country_flag = mem_ancestors_grudge_exceptional
@@ -1627,6 +1671,50 @@ situation_event = {
 	}
 }
 
+country_event = {
+	id = mem_ancestors_grudge.52
+	title = mem_ancestors_grudge.52.name
+	desc = mem_ancestors_grudge.52.desc
+	picture = GFX_evt_hive_cyberization
+	show_sound = event_the_flesh_is_weak
+	is_triggered_only = yes
+	immediate = {
+		random_owned_planet = {
+			limit = {
+				has_mem_relicforge = yes
+			}
+			save_event_target_as = mem_ancestors_grudge_planet
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.52.a
+		give_technology = {
+			tech = tech_mem_ancestors_grudge_robot_factory
+		}
+		if = {
+			limit = {
+				event_target:mem_ancestors_grudge_planet = {
+					free_building_slots > 0
+				}
+			}
+			event_target:mem_ancestors_grudge_planet = {
+				add_building = mem_ancestors_grudge_building_robot_factory
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.52.b
+		event_target:mem_ancestors_grudge_planet = {
+			add_modifier = {
+				modifier = mem_ancestors_grudge_lost_forge_apply_knowledge
+			}
+		}
+	}
+	after = {
+		remove_modifier = mem_ancestors_grudge_unknown_design
+	}
+}
+
 # actiavted a relic
 country_event = {
 	id = mem_ancestors_grudge.45
@@ -1645,7 +1733,7 @@ country_event = {
 				owner_main_species = {
 					is_archetype = MACHINE
 				}
-			}			
+			}
 		}
 		text = mem_ancestors_grudge.45.desc
 	}
@@ -1692,10 +1780,51 @@ country_event = {
 				LEADER = scientist
 			}
 		}
+		set_variable = {
+			which = mem_ancestors_grudge_activated_rune_ruler_strength
+			value = 0
+		}
+		change_variable = {
+			which = mem_ancestors_grudge_activated_rune_ruler_strength
+			value = owner.mem_ancestors_grudge_rune_intensity
+		}
+		##### balance reason
+		multiply_variable = {
+			which = mem_ancestors_grudge_activated_rune_ruler_strength
+			value = 10
+		}
+		if = {
+			limit = {
+				has_country_flag = mem_ancestors_grudge_rare
+			}
+			multiply_variable = {
+				which = mem_ancestors_grudge_activated_rune_ruler_strength
+				value = 2
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = mem_ancestors_grudge_epic
+			}
+			multiply_variable = {
+				which = mem_ancestors_grudge_activated_rune_ruler_strength
+				value = 4
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = mem_ancestors_grudge_exceptional
+			}
+			multiply_variable = {
+				which = mem_ancestors_grudge_activated_rune_ruler_strength
+				value = 6
+			}
+		}
 	}
 	option = {
 		name = mem_ancestors_grudge.45.a
 		trigger = {
+			is_gestalt = no
 			exists = event_target:leader_1
 		}
 		event_target:leader_1 = {
@@ -1705,6 +1834,7 @@ country_event = {
 	option = {
 		name = mem_ancestors_grudge.45.b
 		trigger = {
+			is_gestalt = no
 			exists = event_target:leader_2
 		}
 		event_target:leader_2 = {
@@ -1714,10 +1844,34 @@ country_event = {
 	option = {
 		name = mem_ancestors_grudge.45.c
 		trigger = {
+			is_gestalt = no
 			exists = event_target:leader_3
 		}
 		event_target:leader_3 = {
 			mem_ancestors_grudge_trait_effect = yes
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.45.a.2
+		trigger = {
+			is_gestalt = yes
+			ruler = {
+				OR = {
+					has_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_1
+					has_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_2
+					has_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_3
+					has_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_4
+				}
+			}
+		}
+		custom_tooltip = mem_ancestors_grudge.45.a.2.tt
+		hidden_effect = {
+			ruler = {
+				change_variable = {
+					which = mem_ancestors_grudge_activated_rune_ruler_strength
+					value = root.mem_ancestors_grudge_activated_rune_ruler_strength
+				}
+			}
 		}
 	}
 	option = {
@@ -1922,7 +2076,7 @@ country_event = {
 				owner_main_species = {
 					is_archetype = MACHINE
 				}
-			}			
+			}
 		}
 		text = mem_ancestors_grudge.75.desc
 	}
@@ -2013,7 +2167,7 @@ country_event = {
 				owner_main_species = {
 					is_archetype = MACHINE
 				}
-			}			
+			}
 		}
 		text = mem_ancestors_grudge.70.desc
 	}
@@ -2096,7 +2250,7 @@ situation_event = {
 				owner_main_species = {
 					is_archetype = MACHINE
 				}
-			}			
+			}
 		}
 		text = mem_ancestors_grudge.105.desc
 	}
@@ -2190,7 +2344,7 @@ situation_event = {
 				owner_main_species = {
 					is_archetype = MACHINE
 				}
-			}			
+			}
 		}
 		text = mem_ancestors_grudge.115.desc
 	}
@@ -2230,7 +2384,7 @@ situation_event = {
 			}
 			else = {
 				add_deposit = d_mem_ancestors_grudge_ruined_stasis
-			}			
+			}
 		}
 		owner = {
 			add_resource = {
@@ -2526,7 +2680,7 @@ fleet_event = {
 				owner_main_species = {
 					is_archetype = MACHINE
 				}
-			}			
+			}
 		}
 		text = mem_ancestors_grudge.310.desc
 	}
@@ -2565,7 +2719,7 @@ fleet_event = {
 					owner = {
 						NOT = {
 							is_variable_set = mem_ancestors_grudge_activated_relics_counter
-						}						
+						}
 					}
 				}
 				owner = {

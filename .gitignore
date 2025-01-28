@@ -1,6 +1,6 @@
 copy.py 
 copy_english.py
 descriptor.mod
-localisation/
+# localisation/
 *.yml
 !localisation/english/mem_ancestors_grudge_l_english.yml

@@ -25,6 +25,13 @@ mem_ancestors_grudge_situation_pop_count = {
 	mult = 0.1
 }
 
+# negativ growth
+mem_ancestors_grudge_factory_pop_count = {
+	base = 0
+	add = trigger:num_pops
+	max = 90
+}
+
 # determines rarity of relics
 mem_ancestors_grudge_situation_rarity = {
 	base = 0

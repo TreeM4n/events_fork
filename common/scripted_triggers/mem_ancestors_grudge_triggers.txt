@@ -17,12 +17,23 @@ has_mem_relicforge = {
 	}
 }
 
-mem_has_not_relic_flag ={
+mem_has_not_relic_flag = {
 	owner = {
 		NOR = {
 			has_country_flag = mem_ancestors_grudge_sword_flag
 			has_country_flag = mem_ancestors_grudge_ring_flag
 			has_country_flag = mem_ancestors_grudge_pauldron_flag
+		}
+	}
+}
+
+mem_ancestors_grudge_has_rune_ruler = {
+	ruler = {
+		OR = {
+			has_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_1
+			has_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_2
+			has_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_3
+			has_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_4
 		}
 	}
 }
@@ -39,4 +50,11 @@ is_subterranean_empire = {
 		has_civic = civic_mem_subterranean_regular_machine
 		has_civic = civic_mem_subterranean_regular_machine_megacorp
 	}
+}
+
+can_do_mem_specialized_robo_modding = {
+	always = no
+	# from = {
+	# 	has_technology = tech_mem_ancestors_grudge_robot_traits
+	# }
 }

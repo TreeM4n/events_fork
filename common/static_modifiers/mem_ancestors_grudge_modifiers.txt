@@ -47,3 +47,17 @@ mem_ancestors_grudge_golden_age = {
 mem_ancestors_grudge_diggy_hole = {
 	planet_miners_produces_mult = 0.2
 }
+
+mem_ancestors_grudge_unknown_design = {
+	planet_pop_assembly_mult = -0.5
+}
+
+mem_ancestors_grudge_lost_forge_apply_knowledge = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_land_appropriated.dds"
+	icon_frame = 1
+
+	planet_metallurgists_alloys_produces_add = 0.5
+	planet_artisans_consumer_goods_produces_add = 1
+	planet_administrators_unity_produces_mult = 1
+
+}

@@ -225,8 +225,28 @@ spriteTypes = {
 		texturefile = "gfx/interface/icons/traits/leader_trait_icons/mem_ancestors_grudge_trait_relicowner.dds"
 	}
 	spriteType = {
+		name = "GFX_leader_trait_mem_ancestors_grudge_trait_rune1"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/mem_ancestors_grudge_trait_rune1.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_trait_mem_ancestors_grudge_trait_rune2"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/mem_ancestors_grudge_trait_rune2.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_trait_mem_ancestors_grudge_trait_rune3"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/mem_ancestors_grudge_trait_rune3.dds"
+	}
+	spriteType = {
+		name = "GFX_leader_trait_mem_ancestors_grudge_trait_rune4"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/mem_ancestors_grudge_trait_rune4.dds"
+	}
+	spriteType = {
 		name = "GFX_mem_ancestors_grudge_origin"
 		texturefile = "gfx/event_pictures/origin/mem_ancestors_grudge_origin.dds"
+	}
+	spriteType = {
+		name = "GFX_mem_ancestors_grudge_origin_machines"
+		texturefile = "gfx/event_pictures/origin/mem_ancestors_grudge_origin_machines.dds"
 	}
 
 	spriteType = {

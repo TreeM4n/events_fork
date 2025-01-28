@@ -16,17 +16,220 @@ mem_ancestors_grudge_trait_robot_rune_golem = {
 	species_potential_add = {
 		always = no
 	}
-	# species_potential_remove = {
-	# 	always = no
-	# }
+	species_possible_remove = {
+		always = no
+	}
+	species_potential_remove = {
+		always = no
+	}
 	modifier = {
 		planet_jobs_minor_artifacts_produces_mult = 0.2
 		army_health = 0.5
-		planet_pop_assembly_mult = -0.1
+		#planet_pop_assembly_mult = -0.1
 	}
 	slave_cost = {
 		energy = 500
 	}
+}
+
+leader_trait_legendary_mem_ancestors_grudge_machine_nexus_1 = {
+	#Origin trait 
+	starting_ruler_trait = yes
+	leader_trait_type = veteran
+	allowed_origins = {
+		mem_ancestors_grudge_origin_machines
+	}
+	allowed_ethics = {
+		ethic_gestalt_consciousness
+	}
+	cost = 0
+	inline_script = {
+		script = trait/icon
+		ICON = "GFX_leader_trait_mem_ancestors_grudge_trait_rune1"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	#custom_tooltip_with_modifiers = "leader_trait_legendary_mem_ancestors_grudge_machine_nexus_scaling"
+	triggered_desc = {
+		trigger = {
+			always = yes
+		}
+		text = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_scaling
+	}
+	councilor_modifier = {
+		planetary_ascension_effect_mult = 0.02
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			always = yes
+		}
+		planetary_ascension_effect_mult = 0.02
+		mult = this.mem_ancestors_grudge_leader_rune_power
+	}
+	leader_class = {
+		official
+		commander
+		scientist
+	}
+	opposites = {
+		#leader_trait_legendary_mem_ancestors_grudge_machine_nexus_1
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_2
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_3
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_4
+	}
+	initial = no
+	randomized = no
+}
+
+leader_trait_legendary_mem_ancestors_grudge_machine_nexus_2 = {
+	#Origin trait 
+	starting_ruler_trait = yes
+	leader_trait_type = veteran
+	allowed_origins = {
+		mem_ancestors_grudge_origin_machines
+	}
+	allowed_ethics = {
+		ethic_gestalt_consciousness
+	}
+	cost = 0
+	inline_script = {
+		script = trait/icon
+		ICON = "GFX_leader_trait_mem_ancestors_grudge_trait_rune2"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	#custom_tooltip_with_modifiers = "leader_trait_legendary_mem_ancestors_grudge_machine_nexus_scaling"
+	triggered_desc = {
+		trigger = {
+			always = yes
+		}
+		text = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_scaling
+	}
+	councilor_modifier = {
+		add_base_country_intel = 3
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			always = yes
+		}
+		add_base_country_intel = 3
+		mult = this.mem_ancestors_grudge_leader_rune_power
+	}
+	leader_class = {
+		official
+		commander
+		scientist
+	}
+	opposites = {
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_1
+		#leader_trait_legendary_mem_ancestors_grudge_machine_nexus_2
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_3
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_4
+	}
+	initial = no
+	randomized = no
+}
+
+leader_trait_legendary_mem_ancestors_grudge_machine_nexus_3 = {
+	#Origin trait 
+	starting_ruler_trait = yes
+	leader_trait_type = veteran
+	allowed_origins = {
+		mem_ancestors_grudge_origin_machines
+	}
+	allowed_ethics = {
+		ethic_gestalt_consciousness
+	}
+	cost = 0
+	inline_script = {
+		script = trait/icon
+		ICON = "GFX_leader_trait_mem_ancestors_grudge_trait_rune3"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	#custom_tooltip_with_modifiers = "leader_trait_legendary_mem_ancestors_grudge_machine_nexus_scaling"
+	triggered_desc = {
+		trigger = {
+			always = yes
+		}
+		text = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_scaling
+	}
+	councilor_modifier = {
+		ship_speed_mult = 0.04
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			always = yes
+		}
+		ship_speed_mult = 0.04
+		mult = this.mem_ancestors_grudge_leader_rune_power
+	}
+	leader_class = {
+		official
+		commander
+		scientist
+	}
+	opposites = {
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_1
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_2
+		#leader_trait_legendary_mem_ancestors_grudge_machine_nexus_3
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_4
+	}
+	initial = no
+	randomized = no
+}
+
+leader_trait_legendary_mem_ancestors_grudge_machine_nexus_4 = {
+	#Origin trait 
+	starting_ruler_trait = yes
+	leader_trait_type = veteran
+	allowed_origins = {
+		mem_ancestors_grudge_origin_machines
+	}
+	allowed_ethics = {
+		ethic_gestalt_consciousness
+	}
+	cost = 0
+	inline_script = {
+		script = trait/icon
+		ICON = "GFX_leader_trait_mem_ancestors_grudge_trait_rune4"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	#custom_tooltip_with_modifiers = "leader_trait_legendary_mem_ancestors_grudge_machine_nexus_scaling"
+	triggered_desc = {
+		trigger = {
+			always = yes
+		}
+		text = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_scaling
+	}
+	councilor_modifier = {
+		megastructure_build_speed_mult = 0.02
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			always = yes
+		}
+		megastructure_build_speed_mult = 0.02
+		mult = this.mem_ancestors_grudge_leader_rune_power
+	}
+	leader_class = {
+		official
+		commander
+		scientist
+	}
+	opposites = {
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_1
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_2
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_3
+		#leader_trait_legendary_mem_ancestors_grudge_machine_nexus_4
+	}
+	initial = no
+	randomized = no
 }
 
 # ugly ass script 

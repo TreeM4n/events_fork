@@ -89,7 +89,7 @@ mem_ancestors_grudge_origin_robots = {
 mem_ancestors_grudge_origin_machines = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/mem_ancestors_grudge_origin.dds"
-	picture = GFX_mem_ancestors_grudge_origin
+	picture = GFX_mem_ancestors_grudge_origin_machines
 	max_once_global = yes
 	initializers = {
 		mem_ancestors_grudge_system
@@ -108,6 +108,12 @@ mem_ancestors_grudge_origin_machines = {
 		}
 		authority = {
 			value = auth_machine_intelligence
+		}
+		civics = {
+			NOR = {
+				value = civic_machine_assimilator
+				value = civic_machine_servitor
+			}
 		}
 	}
 	description = "mem_ancestors_grudge_origin_machines_effects"
