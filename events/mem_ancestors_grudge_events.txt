@@ -428,6 +428,39 @@ country_event = {
 					which = mem_ancestors_grudge_activated_rune_ruler_strength
 					value = 0.01
 				}
+				if = {
+					limit = {
+						NOR = {
+							has_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_1
+							has_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_2
+							has_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_3
+							has_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_4
+						}
+					}
+					random_list = {
+						1 = {
+							add_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_1
+						}
+						1 = {
+							add_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_2
+						}
+						1 = {
+							add_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_3
+						}
+						1 = {
+							add_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_4
+						}
+					}
+				}
+			}
+			add_modifier = {
+				modifier = mem_ancestors_grudge_unknown_design
+			}
+			owner_main_species = {
+				change_species_characteristics = {
+					can_be_modified = no
+					#can_change_leader = yes
+				}
 			}
 		}
 		capital_scope = {
@@ -758,7 +791,34 @@ event = {
 					modifier = mem_ancestors_grudge_ai_cheat
 					days = 3600
 				}
-				
+				#create_leader - Creates a new leader for the scoped country
+				create_leader = {
+					name = "mem_ancestors_grudge_zrawn"
+					species = last_created_species
+					class = commander
+					skill = 7
+					set_age = 62
+					gender = male					# Optional, default = random.
+					#event_leader = yes
+					immortal = yes
+					#randomize_traits = yes
+					custom_description = "mem_ancestors_grudge_zrawn_desc"
+					custom_catch_phrase = "mem_ancestors_grudge_zrawn_phrase"
+					effect = {
+						set_owner = event_target:mem_ancestors_grudge_system_lost_colony_country
+						set_name = "mem_ancestors_grudge_zrawn"
+						add_trait = mem_ancestors_grudge_trait_thrawn
+					}
+				}
+				# TODO fis this ownership properly up
+				last_created_leader = {
+					# set_owner = prev
+					# set_name = "mem_ancestors_grudge_zrawn"
+					# add_trait = mem_ancestors_grudge_trait_thrawn
+					change_leader_portrait = mem_ancestors_grudge_zrawn
+					set_council_position = councilor_ruler_dictatorial
+					#set_council_position = councilor_ruler_imperial
+				}
 				while = {
 					count = 10
 					add_random_research_option = {
@@ -786,7 +846,7 @@ event = {
 				owner = event_target:mem_ancestors_grudge_system_lost_colony_country
 				module = shipyard
 				module = shipyard
-				building = crew_quarters				
+				building = crew_quarters
 			}
 			every_system_planet = {
 				limit = {
@@ -1124,6 +1184,11 @@ situation_event = {
 	}
 	option = {
 		name = mem_ancestors_grudge.26.a
+		trigger = {
+			owner = {
+				has_origin = mem_ancestors_grudge_origin
+			}
+		}
 		target = {
 			add_modifier = {
 				modifier = mem_ancestors_grudge_city_planet_restored
@@ -1134,18 +1199,15 @@ situation_event = {
 		name = mem_ancestors_grudge.26.b
 		trigger = {
 			owner = {
-				has_authority = auth_machine_intelligence
+				OR = {
+					has_authority = auth_machine_intelligence
+					has_origin = mem_ancestors_grudge_origin_machines
+				}
 			}
 		}
 		owner = {
 			give_technology = {
 				tech = tech_mem_ancestors_grudge_robot_traits
-			}
-		}
-		target = {
-			add_modifier = {
-				modifier = mem_ancestors_grudge_city_planet_restored
-				mult = 0.5
 			}
 		}
 	}
@@ -1901,16 +1963,22 @@ country_event = {
 			}
 		}
 	}
-	option = {
-		name = mem_ancestors_grudge.52.b
-		event_target:mem_ancestors_grudge_planet = {
-			add_modifier = {
-				modifier = mem_ancestors_grudge_lost_forge_apply_knowledge
-			}
-		}
-	}
+	# option = {
+	# 	name = mem_ancestors_grudge.52.b
+	# 	event_target:mem_ancestors_grudge_planet = {
+	# 		add_modifier = {
+	# 			modifier = mem_ancestors_grudge_lost_forge_apply_knowledge
+	# 		}
+	# 	}
+	# }
 	after = {
 		remove_modifier = mem_ancestors_grudge_unknown_design
+		owner_main_species = {
+			change_species_characteristics = {
+				can_be_modified = no
+				#can_change_leader = yes
+			}
+		}
 	}
 }
 

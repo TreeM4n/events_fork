@@ -125,7 +125,7 @@ trait_mem_ancestors_grudge_archaeotech_excellence = {
 				has_unity_designation = yes
 			}
 		}
-		planet_administrators_unity_produces_mult = 1
+		planet_administrators_unity_produces_add = 1
 	}
 	slave_cost = {
 		energy = 1250
@@ -350,7 +350,7 @@ trait_mem_ancestors_grudge_archaeotech_robot_propaganda_machines = {
 	initial = no
 	randomized = no
 	modifier = {
-		planet_administrators_unity_produces_mult = 1
+		planet_administrators_unity_produces_add = 1
 	}
 	slave_cost = {
 		energy = 750

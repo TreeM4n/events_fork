@@ -19,9 +19,9 @@ mem_ancestors_grudge_trait_robot_rune_golem = {
 	species_possible_remove = {
 		always = no
 	}
-	species_potential_remove = {
-		always = no
-	}
+	# species_potential_remove = {
+	# 	always = no
+	# }
 	modifier = {
 		planet_jobs_minor_artifacts_produces_mult = 0.2
 		army_health = 0.5
@@ -230,6 +230,49 @@ leader_trait_legendary_mem_ancestors_grudge_machine_nexus_4 = {
 	}
 	initial = no
 	randomized = no
+}
+
+# thrawn
+mem_ancestors_grudge_trait_thrawn = {
+	#Origin trait
+	#cost = 0
+	inline_script = {
+		script = trait/icon
+		ICON = "GFX_leader_trait_great_khan"
+		CLASS = leader
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	# self_modifier = {
+		
+	# }
+	triggered_desc = {
+		trigger = {
+			always = yes
+		}
+		text = mem_ancestors_grudge_trait_thrawn_tt
+	}
+	councilor_modifier = {
+		ship_weapon_damage = 0.05
+	}
+	triggered_councilor_modifier = {
+		potential = {
+			always = yes
+		}
+		ship_weapon_damage = 0.05
+		mult = owner.trigger:num_owned_relics
+	}
+	councilor_modifier = {
+		command_limit_mult = -0.2
+	}
+	leader_class = {
+		commander
+	}
+	immortal_leaders = yes
+	initial = no
+	randomized = no
+	notify_on_gained = yes
 }
 
 # ugly ass script 

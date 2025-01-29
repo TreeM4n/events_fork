@@ -50,6 +50,8 @@ mem_ancestors_grudge_diggy_hole = {
 
 mem_ancestors_grudge_unknown_design = {
 	planet_pop_assembly_mult = -0.5
+	show_only_custom_tooltip = no
+	custom_tooltip = mem_ancestors_grudge_unknown_design_no_modify
 }
 
 mem_ancestors_grudge_lost_forge_apply_knowledge = {

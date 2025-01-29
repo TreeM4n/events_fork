@@ -6,7 +6,22 @@ situation_mem_ancestors_grudge_forge_repairs = {
 	category = positive
 	on_progress_complete = {
 		# final choice
-		custom_tooltip = situation_mem_ancestors_grudge_forge_repairs_final
+		if = {
+			limit = {
+				owner = {
+					has_origin = mem_ancestors_grudge_origin
+				}
+			}
+			custom_tooltip = situation_mem_ancestors_grudge_forge_repairs_final
+		}
+		if = {
+			limit = {
+				owner = {
+					has_origin = mem_ancestors_grudge_origin_machines
+				}
+			}
+			custom_tooltip = situation_mem_ancestors_grudge_forge_repairs_final_machines
+		}
 		hidden_effect = {
 			situation_event = {
 				id = mem_ancestors_grudge.26
@@ -295,10 +310,9 @@ situation_mem_ancestors_grudge_crafting = {
 			}
 			else = {
 				situation_event = {
-				id = mem_ancestors_grudge.50
+					id = mem_ancestors_grudge.50
+				}
 			}
-			}
-			
 		}
 	}
 	triggered_blocked_desc = {
