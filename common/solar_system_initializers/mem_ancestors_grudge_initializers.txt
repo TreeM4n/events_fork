@@ -6,7 +6,6 @@ mem_ancestors_grudge_system = {
 		type = rocky_asteroid_belt
 		radius = 50
 	}
-
 	usage = origin
 	flags = {
 		empire_home_system
@@ -65,7 +64,6 @@ mem_ancestors_grudge_system = {
 				}
 			}
 		}
-		
 	}
 	# Star
 	planet = {
@@ -127,7 +125,7 @@ mem_ancestors_grudge_system = {
 			min = 90
 			max = 270
 		}
-		size = 21 # otherwise we lose districts if smaller because of the blockers
+		size = 21		# otherwise we lose districts if smaller because of the blockers
 		flags = {
 			homeworld
 		}
@@ -150,7 +148,6 @@ mem_ancestors_grudge_system = {
 			}
 			deposit_blockers = none
 			init_effect = {
-			
 			}
 		}
 		moon = {
@@ -237,30 +234,6 @@ mem_ancestors_grudge_system_lost_colony_1 = {
 	usage = misc_system_init
 	usage_odds = {
 		base = 0
-		# modifier = {
-		# 	any_playable_country = {
-		# 		is_mem_runesmith = yes
-		# 		# NOT = {
-		# 		# 	#has_country_flag = parent_system_spawned
-		# 		# 	# don't spawn if AI-generated and adv start disabled
-		# 		# 	# see game_start.1
-		# 		# 	AND = {
-		# 		# 		is_ai = yes
-		# 		# 		check_galaxy_setup_value = {
-		# 		# 			setting = num_advanced_empires
-		# 		# 			value < 1
-		# 		# 		}
-		# 		# 	}
-		# 		# }
-		# 	}
-		# 	NOT = {
-		# 		has_star_flag = empire_cluster
-		# 	}
-		# 	NOT = {
-		# 		has_global_flag = mem_ancestors_grudge_system_lost_colony_1
-		# 	}
-		# 	add = 99999
-		# }
 	}
 	init_effect = {
 		generate_home_system_resources = yes
@@ -318,7 +291,7 @@ mem_ancestors_grudge_system_lost_colony_1 = {
 		count = 1
 		orbit_distance = 20
 		home_planet = yes
-		class = ideal_planet_class
+		class = pc_alpine
 		orbit_angle = {
 			min = 90
 			max = 270
@@ -330,50 +303,11 @@ mem_ancestors_grudge_system_lost_colony_1 = {
 		deposit_blockers = none
 		modifiers = none
 		flags = {
-			#lost_colony_homeworld
 		}
 		init_effect = {
 			prevent_anomaly = yes
-			# random_country = {
-			# 	limit = {
-			# 		has_origin = origin_lost_colony
-			# 		NOT = {
-			# 			has_country_flag = parent_system_spawned
-			# 		}
-			# 	}
-			# 	set_country_flag = parent_system_spawned
-			# 	save_event_target_as = lost_colony_child
-			# }
-			#lost_colony_generate_parent_effect = yes
-			create_colony = {
-				owner = event_target:mem_ancestors_grudge_system_lost_colony_country
-			}
-			add_deposit = d_arcane_replicator
-			#set_planet_size = 20
-			generate_start_deposits_and_blockers = yes
+			#add_deposit = d_arcane_replicator
 			clear_blockers = yes
-			generate_start_buildings_and_districts = yes
-			generate_start_pops = yes
-			#generate_lost_colony_parent_bonus = yes
-			event_target:mem_ancestors_grudge_system_lost_colony_country = {
-				create_starting_leaders = yes
-				# set_country_flag = lost_colony_parent
-				# set_country_flag = special_intro_for@event_target:lost_colony_child
-				# set_country_flag = lost_colony_parent_of@event_target:lost_colony_child
-				country_event = {
-					id = game_start.9
-				}
-				country_event = {
-					id = game_start.33
-					days = 1
-				}
-				# needs delay for system ownership to settle
-				owner_species = {
-					set_species_homeworld = prevprev
-				}
-				set_name = random				# Fixes some naming issues
-				log = "advanced empire mem grudge PARENT CREATED"
-			}
 		}
 		change_orbit = @base_moon_distance
 		moon = {
@@ -393,7 +327,7 @@ mem_ancestors_grudge_system_lost_colony_1 = {
 		count = 1
 		orbit_distance = 30
 		#home_planet = yes
-		class = ideal_planet_class
+		class = pc_arid
 		orbit_angle = {
 			min = 90
 			max = 270
@@ -409,16 +343,7 @@ mem_ancestors_grudge_system_lost_colony_1 = {
 		}
 		init_effect = {
 			prevent_anomaly = yes
-			create_colony = {
-				owner = event_target:mem_ancestors_grudge_system_lost_colony_country
-			}
-			add_deposit = d_arcane_replicator
-			#set_planet_size = 20
-			# generate_start_deposits_and_blockers = yes
-			# clear_blockers = yes
-			generate_start_buildings_and_districts = yes
-			generate_start_pops = yes
-			#generate_lost_colony_parent_bonus = yes
+			#add_deposit = d_arcane_replicator
 		}
 		change_orbit = @base_moon_distance
 		moon = {
@@ -485,59 +410,5 @@ mem_ancestors_grudge_system_lost_colony_1 = {
 		}
 	}
 	init_effect = {
-		solar_system = {
-			create_starbase = {
-				size = starbase_starport
-				module = shipyard
-				building = crew_quarters
-				owner = event_target:mem_ancestors_grudge_system_lost_colony_country
-				# effect = {
-				# 	if = {
-				# 		limit = {
-				# 			event_target:lost_colony_parent = {
-				# 				is_gestalt = yes
-				# 			}
-				# 		}
-				# 		if = {
-				# 			limit = {
-				# 				event_target:lost_colony_parent = {
-				# 					has_valid_civic = civic_machine_astromining_drones
-				# 				}
-				# 			}
-				# 			set_starbase_module = {
-				# 				slot = 1
-				# 				module = astromining_bay
-				# 			}
-				# 		}
-				# 		else = {
-				# 			set_starbase_module = {
-				# 				slot = 1
-				# 				module = solar_panel_network
-				# 			}
-				# 		}
-				# 	}
-				# 	else = {
-				# 		set_starbase_module = {
-				# 			slot = 1
-				# 			module = trading_hub
-				# 		}
-				# 	}
-				# }
-			}
-		}
 	}
-	# neighbor_system = {
-	# 	hyperlane_jumps = {
-	# 		min = 1
-	# 		max = @jumps
-	# 	}
-	# 	initializer = "lost_colony_neighbor_t1"
-	# }
-	# neighbor_system = {
-	# 	hyperlane_jumps = {
-	# 		min = 1
-	# 		max = @jumps
-	# 	}
-	# 	initializer = "lost_colony_neighbor_t1_first_colony"
-	# }
 }

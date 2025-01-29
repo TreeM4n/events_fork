@@ -61,3 +61,14 @@ mem_ancestors_grudge_lost_forge_apply_knowledge = {
 	planet_administrators_unity_produces_mult = 1
 
 }
+
+mem_ancestors_grudge_ai_cheat = {
+	#building_time_mult = -1
+	planet_building_build_speed_mult = 100
+	starbase_shipyard_build_speed_mult = 1
+	starbase_shipyard_build_cost_mult = -0.5
+	planet_crime_mult = -1
+	country_physics_tech_research_speed = 1
+	country_society_tech_research_speed = 1
+	country_engineering_tech_research_speed = 1
+}

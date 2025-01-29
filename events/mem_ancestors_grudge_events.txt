@@ -393,6 +393,16 @@ situation_event = {
 	}
 }
 
+# destroy situation
+situation_event = {
+	hide_window = yes
+	is_triggered_only = yes
+	id = mem_ancestors_grudge.996
+	immediate = {
+		destroy_situation = this
+	}
+}
+
 # setup 
 # fired at gamestart to setup the habitat
 country_event = {
@@ -513,73 +523,145 @@ country_event = {
 			id = mem_ancestors_grudge.5
 			days = 360
 		}
-		################### create enemy #######################
-		create_species = {
-			name = "Vazuran"
-			plural = "Vazurans"
-			class = ART
-			portrait = art17
-			traits = {
-				trait = trait_intelligent
-				trait = trait_natural_physicists
-				trait = trait_venerable
-				trait = trait_slow_breeders
-				trait = trait_weak
-			}
-			extra_trait_points = 3
+		# ################### create enemy #######################
+		# create_species = {
+		# 	name = "Vazuran"
+		# 	plural = "Vazurans"
+		# 	class = ART
+		# 	portrait = art17
+		# 	traits = {
+		# 		trait = trait_intelligent
+		# 		trait = trait_natural_physicists
+		# 		trait = trait_venerable
+		# 		trait = trait_slow_breeders
+		# 		trait = trait_weak
+		# 	}
+		# 	extra_trait_points = 3
+		# }
+		# create_country = {
+		# 	name = "mem_ancestors_grudge_origin_advanced_start_name"
+		# 	name_list = "ART2"
+		# 	type = default
+		# 	# type = mem_vazurans #TODO later
+		# 	origin = "mem_ancestors_grudge_origin_advanced_start"
+		# 	ignore_initial_colony_error = yes
+		# 	day_zero_contact = no
+		# 	authority = auth_dictatorial
+		# 	civics = {
+		# 		civic = civic_warrior_culture
+		# 		civic = civic_nationalistic_zeal
+		# 	}
+		# 	species = last_created_species
+		# 	ethos = {
+		# 		ethic = ethic_xenophobe
+		# 		ethic = ethic_fanatic_militarist
+		# 	}
+		# 	flag = {
+		# 		icon = {
+		# 			category = "domination"
+		# 			file = "domination_21.dds"
+		# 		}
+		# 		background = {
+		# 			category = "backgrounds"
+		# 			file = "00_solid.dds"
+		# 		}
+		# 		colors = {
+		# 			"black"
+		# 			"dark_purple"
+		# 			"null"
+		# 			"null"
+		# 		}
+		# 	}
+		# }
+		# last_created_country = {
+		# 	set_name = "mem_ancestors_grudge_origin_advanced_start_name"
+		# 	add_resource = {
+		# 		unity = 10000
+		# 		minerals = 20000
+		# 		influence = 200
+		# 		alloys = 5000
+		# 		food = 10000
+		# 		consumer_goods = 5000
+		# 		energy = 20000
+		# 	}
+		# 	force_add_civic = civic_barbaric_despoilers
+		# 	set_country_flag = mem_ancestors_grudge_system_lost_colony_country
+		# 	save_global_event_target_as = mem_ancestors_grudge_system_lost_colony_country
+		# 	#save_event_target_as = mem_ancestors_grudge_system_lost_colony_country
+		# }
+		# #set_global_flag = mem_ancestors_grudge_system_lost_colony_1
+		# random_system = {
+		# 	limit = {
+		# 		NOR = {
+		# 			has_star_flag = empire_cluster
+		# 			has_star_flag = empire_home_system
+		# 			exists = owner
+		# 			any_neighbor_system = {
+		# 				has_star_flag = empire_cluster
+		# 				has_star_flag = empire_home_system
+		# 				exists = owner
+		# 			}
+		# 		}
+		# 	}
+		# 	spawn_system = {
+		# 		initializer = mem_ancestors_grudge_system_lost_colony_1
+		# 		#min_jumps = 10
+		# 		hyperlane = yes
+		# 		#min_distance = 200
+		# 	}
+		# }
+		# last_created_system = {
+		# 	every_system_planet = {
+		# 		limit = {
+		# 			habitable_planet = yes
+		# 		}
+		# 		create_colony = {
+		# 			owner = event_target:mem_ancestors_grudge_system_lost_colony_country
+		# 		}
+		# 		set_owner = event_target:mem_ancestors_grudge_system_lost_colony_country
+		# 	}
+		# }
+		# random_owned_starbase = {
+		# 	solar_system = {
+		# 	}
+		# }
+	}
+}
+
+# # setup 
+# # fired at gamestart to setup the habitat
+# country_event = {
+# 	id = mem_ancestors_grudge.2
+# 	hide_window = yes
+# 	is_triggered_only = yes
+# 	trigger = {
+# 		is_subterranean_empire = yes
+# 	}
+# 	immediate = {
+# 		while = {
+# 			count = 20
+# 			random_owned_planet = {
+# 				limit = {
+# 					has_district = district_mining
+# 				}
+# 				remove_district = district_mining
+# 			}
+# 		}
+# 	}
+# }
+# setup 
+# fired at gamestart to setup the habitat
+event = {
+	id = mem_ancestors_grudge.2
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	trigger = {
+		any_playable_country = {
+			is_mem_runesmith = yes
 		}
-		create_country = {
-			name = "mem_ancestors_grudge_origin_advanced_start_name"
-			name_list = "ART2"
-			type = default
-			# type = mem_vazurans #TODO later
-			origin = "mem_ancestors_grudge_origin_advanced_start"
-			ignore_initial_colony_error = yes
-			day_zero_contact = no
-			authority = auth_dictatorial
-			civics = {
-				civic = civic_warrior_culture
-				civic = civic_nationalistic_zeal
-			}
-			species = last_created_species
-			ethos = {
-				ethic = ethic_xenophobe
-				ethic = ethic_fanatic_militarist
-			}
-			flag = {
-				icon = {
-					category = "domination"
-					file = "domination_21.dds"
-				}
-				background = {
-					category = "backgrounds"
-					file = "00_solid.dds"
-				}
-				colors = {
-					"black"
-					"dark_purple"
-					"null"
-					"null"
-				}
-			}
-		}
-		last_created_country = {
-			set_name = "mem_ancestors_grudge_origin_advanced_start_name"
-			add_resource = {
-				unity = 10000
-				minerals = 20000
-				influence = 200
-				alloys = 5000
-				food = 10000
-				consumer_goods = 5000
-				energy = 20000
-			}
-			force_add_civic = civic_barbaric_despoilers
-			set_country_flag = mem_ancestors_grudge_system_lost_colony_country
-			save_global_event_target_as = mem_ancestors_grudge_system_lost_colony_country
-			#save_event_target_as = mem_ancestors_grudge_system_lost_colony_country
-		}
-		#set_global_flag = mem_ancestors_grudge_system_lost_colony_1
+	}
+	immediate = {
 		random_system = {
 			limit = {
 				NOR = {
@@ -599,8 +681,113 @@ country_event = {
 				hyperlane = yes
 				#min_distance = 200
 			}
+			last_created_system = {
+				save_event_target_as = mem_ancestors_grudge_system_lost_colony_1
+			}
+		}
+		################### create enemy #######################
+		if = {
+			limit = {
+				exists = event_target:mem_ancestors_grudge_system_lost_colony_1
+			}
+			create_species = {
+				name = "Vazuran"
+				plural = "Vazurans"
+				class = ART
+				portrait = art17
+				traits = {
+					trait = trait_intelligent
+					trait = trait_natural_physicists
+					trait = trait_venerable
+					trait = trait_slow_breeders
+					trait = trait_weak
+				}
+				extra_trait_points = 3
+			}
+			create_country = {
+				name = "mem_ancestors_grudge_origin_advanced_start_name"
+				name_list = "ART2"
+				type = default
+				# type = mem_vazurans #TODO later
+				origin = "mem_ancestors_grudge_origin_advanced_start"
+				ignore_initial_colony_error = yes
+				day_zero_contact = no
+				authority = auth_dictatorial
+				civics = {
+					civic = civic_warrior_culture
+					civic = civic_nationalistic_zeal
+				}
+				species = last_created_species
+				ethos = {
+					ethic = ethic_xenophobe
+					ethic = ethic_fanatic_militarist
+				}
+				flag = {
+					icon = {
+						category = "domination"
+						file = "domination_21.dds"
+					}
+					background = {
+						category = "backgrounds"
+						file = "00_solid.dds"
+					}
+					colors = {
+						"black"
+						"dark_purple"
+						"null"
+						"null"
+					}
+				}
+			}
+			last_created_country = {
+				set_name = "mem_ancestors_grudge_origin_advanced_start_name"
+				add_resource = {
+					unity = 10000
+					minerals = 30000
+					influence = 200
+					alloys = 5000
+					food = 10000
+					consumer_goods = 5000
+					energy = 20000
+				}
+				force_add_civic = civic_barbaric_despoilers
+				set_country_flag = mem_ancestors_grudge_system_lost_colony_country
+				save_global_event_target_as = mem_ancestors_grudge_system_lost_colony_country
+				#save_event_target_as = mem_ancestors_grudge_system_lost_colony_country
+				add_modifier = {
+					modifier = mem_ancestors_grudge_ai_cheat
+					days = 3600
+				}
+				
+				while = {
+					count = 10
+					add_random_research_option = {
+						#category = random
+						#area = RANDOM
+						tier = 1
+						add_progress = 10
+						ignore_prereqs = no
+						ignore_rare = yes
+						only_rare = no
+						ignore_insight = yes
+						fail_effects = {
+							add_monthly_resource_mult = {
+								resource = engineering_research
+								value = 3
+							}
+						}
+					}
+				}
+			}
 		}
 		last_created_system = {
+			create_starbase = {
+				size = starbase_starport
+				owner = event_target:mem_ancestors_grudge_system_lost_colony_country
+				module = shipyard
+				module = shipyard
+				building = crew_quarters				
+			}
 			every_system_planet = {
 				limit = {
 					habitable_planet = yes
@@ -608,13 +795,24 @@ country_event = {
 				create_colony = {
 					owner = event_target:mem_ancestors_grudge_system_lost_colony_country
 				}
-				set_owner = event_target:mem_ancestors_grudge_system_lost_colony_country
+				while = {
+					count = 35
+					create_pop = {
+						species = event_target:mem_ancestors_grudge_system_lost_colony_country.owner_main_species
+					}
+				}
+				while = {
+					count = 3
+					add_district = district_mining
+					add_district = district_farming
+					add_district = district_generator
+					add_district = district_industrial
+					add_district = district_city
+				}
+				add_building = building_holo_theatres
+				#set_owner = event_target:mem_ancestors_grudge_system_lost_colony_country
 			}
 		}
-		# random_owned_starbase = {
-		# 	solar_system = {
-		# 	}
-		# }
 	}
 }
 
@@ -1667,6 +1865,7 @@ situation_event = {
 				remove_country_flag = mem_ancestors_grudge_pauldron_flag
 				remove_country_flag = mem_ancestors_grudge_ring_flag
 			}
+			destroy_situation = this
 		}
 	}
 }

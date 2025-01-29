@@ -1,7 +1,13 @@
 # this = country
 on_game_start_country = {
 	events = {
-		mem_ancestors_grudge.1 #setup
+		mem_ancestors_grudge.1		#setup
+	}
+}
+
+on_game_start = {
+	events = {
+		mem_ancestors_grudge.2		# create vazurans
 	}
 }
 
@@ -11,18 +17,17 @@ on_game_start_country = {
 # FromFrom = Country scope (previous owner, if any)
 on_planet_transfer = {
 	events = {
-		mem_ancestors_grudge.200 # lost forge
-		mem_ancestors_grudge.210 # got forge back
+		mem_ancestors_grudge.200		# lost forge
+		mem_ancestors_grudge.210		# got forge back
 	}
 }
-
 
 # Executed right after country has established communications with another country. Always fires, even if comms are established with establish_communications_no_message
 # This = Country which established the communications
 # From = Country which communications were established with
 on_post_communications_established_always_fire = {
 	events = {
-		mem_ancestors_grudge.55 # we found them 
+		mem_ancestors_grudge.55		# we found them 
 	}
 }
 
@@ -30,8 +35,8 @@ on_post_communications_established_always_fire = {
 #From = optional, destroyer (country)
 on_country_destroyed = {
 	events = {
-		mem_ancestors_grudge.60 # we destroyed them
-		mem_ancestors_grudge.65 # others desstroyed them
+		mem_ancestors_grudge.60		# we destroyed them
+		mem_ancestors_grudge.65		# others desstroyed them
 	}
 }
 

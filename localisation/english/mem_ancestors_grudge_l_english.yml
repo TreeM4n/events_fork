@@ -410,21 +410,22 @@
  trait_mem_ancestors_grudge_archaeotech_excellence_desc:0 "The pinnacle of rune artificing"
  automodding_trait_mem_robotic_tooltip:0 "Changes effect depending on designation\nPossible modifiers:$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_power_drills']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_harvesters']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_superconductive']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_emotion_emulators']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_propaganda_machines']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_logic_engines']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_forge_focus']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_factory_focus']" # TODO das hbscher
  trait_mem_ancestors_grudge_archaeotech_robot_power_drills:0 "Rune of the Ground"
- trait_mem_ancestors_grudge_archaeotech_robot_power_drills_desc:0 "REPLACE_ME"
+ trait_mem_ancestors_grudge_archaeotech_robot_power_drills_desc:0 ""
  trait_mem_ancestors_grudge_archaeotech_robot_harvesters:0 "Rune of Fauna"
- trait_mem_ancestors_grudge_archaeotech_robot_harvesters_desc:0 "REPLACE_ME"
+ trait_mem_ancestors_grudge_archaeotech_robot_harvesters_desc:0 ""
  trait_mem_ancestors_grudge_archaeotech_robot_superconductive:0 "Rune of Greed"
- trait_mem_ancestors_grudge_archaeotech_robot_superconductive_desc:0 "REPLACE_ME"
+ trait_mem_ancestors_grudge_archaeotech_robot_superconductive_desc:0 ""
  trait_mem_ancestors_grudge_archaeotech_robot_emotion_emulators:0 "Rune of Pride"
- trait_mem_ancestors_grudge_archaeotech_robot_emotion_emulators_desc:0 "REPLACE_ME"
+ trait_mem_ancestors_grudge_archaeotech_robot_emotion_emulators_desc:0 ""
  trait_mem_ancestors_grudge_archaeotech_robot_propaganda_machines:0 "Rune of Unity"
- trait_mem_ancestors_grudge_archaeotech_robot_propaganda_machines_desc:0 "REPLACE_ME"
+ trait_mem_ancestors_grudge_archaeotech_robot_propaganda_machines_desc:0 ""
  trait_mem_ancestors_grudge_archaeotech_robot_logic_engines:0 "Rune of Wisdom"
- trait_mem_ancestors_grudge_archaeotech_robot_logic_engines_desc:0 "REPLACE_ME"
+ trait_mem_ancestors_grudge_archaeotech_robot_logic_engines_desc:0 ""
  trait_mem_ancestors_grudge_archaeotech_robot_forge_focus:0 "Rune of Metal"
- trait_mem_ancestors_grudge_archaeotech_robot_forge_focus_desc:0 "REPLACE_ME"
+ trait_mem_ancestors_grudge_archaeotech_robot_forge_focus_desc:0 ""
  trait_mem_ancestors_grudge_archaeotech_robot_factory_focus:0 "Rune of Luxury"
- trait_mem_ancestors_grudge_archaeotech_robot_factory_focus_desc:0 "REPLACE_ME"
+ trait_mem_ancestors_grudge_archaeotech_robot_factory_focus_desc:0 ""
+
 
 
  MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE:0 "[MemGetRarity][MemGetRelic][this.GetName]"
@@ -456,6 +457,7 @@
  mem_ancestors_grudge_rune_power:0 "$concept_mem_ancestors_grudge_rune_intensity$"
  mem_ancestors_grudge_artifact_power:0 "$concept_mem_ancestors_grudge_artifact_intensity$"
  planet_mem_rune_smiths:0 "$job_mem_ancestors_grudge_runesmith$"
+ mem_ancestors_grudge_ai_cheat:0 "AI Cheat :)"
 
  mem_ancestors_grudge_system_NAME:0 "$NAME_mem_ancestors_grudge_system$"
  mem_ancestors_grudge_system_DESC:0 "$NAME_mem_ancestors_grudge_system$ System" # TODO
