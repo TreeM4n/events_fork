@@ -42,6 +42,20 @@ mem_ancestors_grudge_situation_rarity = {
 	max = 4
 }
 
+# overflow
+mem_ancestors_grudge_hoarder_overflow = {
+	base = 1
+	complex_trigger_modifier = {
+		trigger = resource_revenue_compare
+		parameters = {
+			resource = minor_artifacts
+		}
+		mode = mult
+	}
+	#max = 4
+}
+
+
 # # determines strengh of modifiers for relcs
 # mem_ancestors_grudge_situation_rarity = {
 # 	base = 0

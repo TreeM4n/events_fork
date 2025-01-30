@@ -504,3 +504,134 @@ mem_ancestors_grudge_building_robot_factory = {
 		}
 	}
 }
+
+mem_ancestors_grudge_building_robot_factory = {
+	base_buildtime = 136080
+	category = resource
+	base_cap_amount = 1
+	potential = {
+		NOR = {
+			has_modifier = resort_colony
+			has_modifier = slave_colony
+		}
+	}
+	allow = {
+		exists = owner
+		hidden_trigger = {
+			owner = {
+				is_ai = no
+			}
+		}
+	}
+	destroy_trigger = {
+		NOT = {
+			exists = owner
+		}
+		mem_ancestors_grudge_is_hoarder = no
+	}
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		exists = owner
+	# 		owner = {
+	# 			is_regular_empire = yes
+	# 		}
+	# 	}
+	# 	modifier = {
+	# 		job_clerk_add = 1
+	# 	}
+	# }
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		exists = owner
+	# 		owner = {
+	# 			is_gestalt = yes
+	# 		}
+	# 	}
+	# 	modifier = {
+	# 		job_maintenance_drone_add = 1
+	# 	}
+	# }
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 500
+			alloys = 100
+		}
+		upkeep = {
+			energy = 5
+		}
+		produces = {
+			trigger = {
+				owner = {
+					has_policy_flag = mem_ancestors_grudge_is_hoarder_policy_unity
+					mem_ancestors_grudge_is_capped_hoarder = yes #todo
+				}
+			}
+			unity = 1
+			mult = owner.value:mem_ancestors_grudge_hoarder_overflow
+		}
+	}
+	# country_modifier = {
+	# 	country_resource_max_minor_artifacts_add = 5000
+	# 	#country_resource_max_add = 5000
+	# }
+	# triggered_country_modifier = {
+	# 	potential = {
+	# 		exists = owner
+	# 		owner = {
+	# 			has_technology = tech_construction_templates
+	# 		}
+	# 		host_has_dlc = "Ancient Relics Story Pack"
+	# 	}
+	# 	country_resource_max_minor_artifacts_add = 5000
+	# }
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			host_has_dlc = "Ancient Relics Story Pack"
+		}
+		country_resource_max_minor_artifacts_add = 10000
+	}
+	# triggered_country_modifier = {
+	# 	potential = {
+	# 		exists = owner
+	# 		owner = {
+	# 			has_technology = tech_construction_templates
+	# 		}
+	# 		NOT = {
+	# 			host_has_dlc = "Ancient Relics Story Pack"
+	# 		}
+	# 	}
+	# 	country_resource_max_energy_add = 100000
+	# }
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			NOT = {
+				host_has_dlc = "Ancient Relics Story Pack"
+			}
+		}
+		country_resource_max_energy_add = 100000
+	}
+	# prerequisites = {
+	# 	"tech_basic_industry"
+	# }
+	# triggered_desc = {
+	# 	trigger = {
+	# 		exists = owner
+	# 		owner = {
+	# 			is_gestalt = yes
+	# 		}
+	# 	}
+	# 	text = job_maintenance_drone_effect_desc
+	# }
+	# triggered_desc = {
+	# 	trigger = {
+	# 		exists = owner
+	# 		owner = {
+	# 			is_gestalt = no
+	# 		}
+	# 	}
+	# 	text = job_clerk_effect_desc
+	# }
+}

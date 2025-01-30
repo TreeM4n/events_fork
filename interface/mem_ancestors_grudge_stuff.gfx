@@ -250,6 +250,11 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_mem_ancestors_grudge_origin_hive"
+		texturefile = "gfx/event_pictures/origin/mem_ancestors_grudge_origin_hives.dds"
+	}
+
+	spriteType = {
 		name = "GFX_evt_city_planet_2"
 		texturefile = "gfx/event_pictures/GFX_evt_city_planet_2.dds"
 	}

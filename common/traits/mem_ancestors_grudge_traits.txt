@@ -32,7 +32,7 @@ mem_ancestors_grudge_trait_robot_rune_golem = {
 	}
 }
 
-leader_trait_legendary_mem_ancestors_grudge_machine_nexus_1 = {
+leader_trait_legendary_mem_ancestors_grudge_machine_nexus_one = {
 	#Origin trait 
 	starting_ruler_trait = yes
 	leader_trait_type = veteran
@@ -73,16 +73,16 @@ leader_trait_legendary_mem_ancestors_grudge_machine_nexus_1 = {
 		scientist
 	}
 	opposites = {
-		#leader_trait_legendary_mem_ancestors_grudge_machine_nexus_1
-		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_2
-		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_3
-		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_4
+		#leader_trait_legendary_mem_ancestors_grudge_machine_nexus_one
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_two
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_three
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_four
 	}
 	initial = no
 	randomized = no
 }
 
-leader_trait_legendary_mem_ancestors_grudge_machine_nexus_2 = {
+leader_trait_legendary_mem_ancestors_grudge_machine_nexus_two = {
 	#Origin trait 
 	starting_ruler_trait = yes
 	leader_trait_type = veteran
@@ -123,16 +123,16 @@ leader_trait_legendary_mem_ancestors_grudge_machine_nexus_2 = {
 		scientist
 	}
 	opposites = {
-		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_1
-		#leader_trait_legendary_mem_ancestors_grudge_machine_nexus_2
-		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_3
-		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_4
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_one
+		#leader_trait_legendary_mem_ancestors_grudge_machine_nexus_two
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_three
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_four
 	}
 	initial = no
 	randomized = no
 }
 
-leader_trait_legendary_mem_ancestors_grudge_machine_nexus_3 = {
+leader_trait_legendary_mem_ancestors_grudge_machine_nexus_three = {
 	#Origin trait 
 	starting_ruler_trait = yes
 	leader_trait_type = veteran
@@ -173,16 +173,16 @@ leader_trait_legendary_mem_ancestors_grudge_machine_nexus_3 = {
 		scientist
 	}
 	opposites = {
-		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_1
-		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_2
-		#leader_trait_legendary_mem_ancestors_grudge_machine_nexus_3
-		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_4
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_one
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_two
+		#leader_trait_legendary_mem_ancestors_grudge_machine_nexus_three
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_four
 	}
 	initial = no
 	randomized = no
 }
 
-leader_trait_legendary_mem_ancestors_grudge_machine_nexus_4 = {
+leader_trait_legendary_mem_ancestors_grudge_machine_nexus_four = {
 	#Origin trait 
 	starting_ruler_trait = yes
 	leader_trait_type = veteran
@@ -223,10 +223,10 @@ leader_trait_legendary_mem_ancestors_grudge_machine_nexus_4 = {
 		scientist
 	}
 	opposites = {
-		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_1
-		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_2
-		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_3
-		#leader_trait_legendary_mem_ancestors_grudge_machine_nexus_4
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_one
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_two
+		leader_trait_legendary_mem_ancestors_grudge_machine_nexus_three
+		#leader_trait_legendary_mem_ancestors_grudge_machine_nexus_four
 	}
 	initial = no
 	randomized = no
@@ -253,7 +253,10 @@ mem_ancestors_grudge_trait_thrawn = {
 		}
 		text = mem_ancestors_grudge_trait_thrawn_tt
 	}
-	councilor_modifier = {
+	triggered_councilor_modifier = {
+		potential = {
+			always = yes
+		}
 		ship_weapon_damage = 0.05
 	}
 	triggered_councilor_modifier = {

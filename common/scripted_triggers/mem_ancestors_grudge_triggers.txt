@@ -30,10 +30,10 @@ mem_has_not_relic_flag = {
 mem_ancestors_grudge_has_rune_ruler = {
 	ruler = {
 		OR = {
-			has_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_1
-			has_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_2
-			has_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_3
-			has_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_4
+			has_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_one
+			has_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_two
+			has_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_three
+			has_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_four
 		}
 	}
 }
@@ -57,4 +57,15 @@ can_do_mem_specialized_robo_modding = {
 	# from = {
 	# 	has_technology = tech_mem_ancestors_grudge_robot_traits
 	# }
+}
+
+mem_ancestors_grudge_is_hoarder = {
+	has_origin = mem_ancestors_grudge_origin_hive
+}
+
+mem_ancestors_grudge_is_capped_hoarder = {
+	resource_stockpile_compare = {
+		resource = minor_artifacts
+		value >= modifier:country_resource_max_minor_artifacts_add
+	}
 }

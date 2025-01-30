@@ -11,6 +11,9 @@ mem_ancestors_grudge_city_planet_restored = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_arcology_project.dds"
 	icon_frame = 1
 	planet_max_districts_add = 2
+	planet_metallurgists_alloys_produces_add = 1
+	planet_artisans_consumer_goods_produces_add = 1
+	planet_administrators_unity_produces_add = 1
 }
 
 mem_ancestors_grudge_lost_forge = {
