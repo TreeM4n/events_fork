@@ -505,7 +505,7 @@ mem_ancestors_grudge_building_robot_factory = {
 	}
 }
 
-mem_ancestors_grudge_building_robot_factory = {
+mem_ancestors_grudge_building_hoarder_depot = {
 	base_buildtime = 136080
 	category = resource
 	base_cap_amount = 1
@@ -514,6 +514,7 @@ mem_ancestors_grudge_building_robot_factory = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 		}
+		mem_ancestors_grudge_is_hoarder = yes
 	}
 	allow = {
 		exists = owner
@@ -522,6 +523,7 @@ mem_ancestors_grudge_building_robot_factory = {
 				is_ai = no
 			}
 		}
+
 	}
 	destroy_trigger = {
 		NOT = {
