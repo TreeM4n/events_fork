@@ -410,7 +410,7 @@ mem_ancestors_grudge_building_robot_factory = {
 	# can_be_ruined = no
 	# can_demolish = no
 	position_priority = 5
-	empire_limit = 7
+	empire_limit = 1
 	base_cap_amount = 1
 	category = pop_assembly
 	prerequisites = {
@@ -506,7 +506,7 @@ mem_ancestors_grudge_building_robot_factory = {
 }
 
 mem_ancestors_grudge_building_hoarder_depot = {
-	base_buildtime = 136080
+	base_buildtime = 360
 	category = resource
 	base_cap_amount = 1
 	potential = {

@@ -1,5 +1,13 @@
 active_effect = {
-	custom_tooltip = mem_ancestors_grudge_activate_crafted_relic_tt
+	if = {
+		limit = {
+			is_regular_empire = yes
+		}
+		custom_tooltip = mem_ancestors_grudge_activate_crafted_relic_tt
+	}
+	else = {
+		custom_tooltip = mem_ancestors_grudge_activate_crafted_relic_tt_machines
+	}
 	custom_tooltip = relic_triumph_cooldown
 	hidden_effect = {
 		add_modifier = {

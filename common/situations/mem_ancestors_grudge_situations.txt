@@ -245,8 +245,8 @@ situation_mem_ancestors_grudge_forge_repairs = {
 					}
 				}
 			}
-			country_minerals_produces_mult = -0.15
-			country_energy_produces_mult = -0.2
+			country_minerals_produces_mult = -0.1
+			country_energy_produces_mult = -0.15
 		}
 		resources = {
 			category = situations
@@ -275,8 +275,8 @@ situation_mem_ancestors_grudge_forge_repairs = {
 			}
 			category_archaeostudies_draw_chance_mult = 0.5
 			category_archaeostudies_research_speed_mult = 0.5
-			country_minerals_produces_mult = -0.25
-			country_energy_produces_mult = -0.3
+			country_minerals_produces_mult = -0.2
+			country_energy_produces_mult = -0.25
 		}
 		resources = {
 			category = situations

@@ -65,7 +65,7 @@ leader_trait_legendary_mem_ancestors_grudge_machine_nexus_one = {
 			always = yes
 		}
 		planetary_ascension_effect_mult = 0.02
-		mult = this.mem_ancestors_grudge_leader_rune_power
+		mult = this.mem_ancestors_grudge_activated_rune_ruler_strength
 	}
 	leader_class = {
 		official
@@ -115,7 +115,7 @@ leader_trait_legendary_mem_ancestors_grudge_machine_nexus_two = {
 			always = yes
 		}
 		add_base_country_intel = 3
-		mult = this.mem_ancestors_grudge_leader_rune_power
+		mult = this.mem_ancestors_grudge_activated_rune_ruler_strength
 	}
 	leader_class = {
 		official
@@ -165,7 +165,8 @@ leader_trait_legendary_mem_ancestors_grudge_machine_nexus_three = {
 			always = yes
 		}
 		ship_speed_mult = 0.04
-		mult = this.mem_ancestors_grudge_leader_rune_power
+		mult = this.mem_ancestors_grudge_activated_rune_ruler_strength
+		
 	}
 	leader_class = {
 		official
@@ -215,7 +216,7 @@ leader_trait_legendary_mem_ancestors_grudge_machine_nexus_four = {
 			always = yes
 		}
 		megastructure_build_speed_mult = 0.02
-		mult = this.mem_ancestors_grudge_leader_rune_power
+		mult = this.mem_ancestors_grudge_activated_rune_ruler_strength
 	}
 	leader_class = {
 		official

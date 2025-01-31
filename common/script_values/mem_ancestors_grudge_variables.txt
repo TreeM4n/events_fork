@@ -39,6 +39,7 @@ mem_ancestors_grudge_situation_rarity = {
 	mult = 100 # go to full numbers to round down, and make compare
 	divide = 25 # every 25
 	floor = yes #round down
+	add = 1 # temporary fix, pls dont break anything # otheriwse it would need 25% more than for all rarities
 	max = 4
 }
 

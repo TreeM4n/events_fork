@@ -105,7 +105,7 @@ triggered_desc = {
 	trigger = {
 		exists = owner
 		owner = {
-			is_regular_empire = yes
+			#is_regular_empire = yes
 			is_mem_runesmith = yes
 		}
 	}
