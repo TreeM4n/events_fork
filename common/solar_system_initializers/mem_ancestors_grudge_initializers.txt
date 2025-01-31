@@ -1,7 +1,7 @@
 @jumps = 3
 # mem_ancestors_grudge_system init
 mem_ancestors_grudge_system = {
-	class = "rl_starting_stars"
+	class = sc_neutron_star
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 50
