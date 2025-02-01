@@ -16,7 +16,7 @@
  START_SCREEN_MEM_ANCESTORS_GRUDGE_MACHINES:0 "In the distant past our creators ruled the stars, their fleets patroled far away systems, protecting their wealth and prosperity. [GetHomeWorldName] was their homeworld and capital, but for them its moon was of even higher importance. It was their industrial center, where they bent metal to their will and honed their craft to smith artifacts of imcomparable quality. For this they had built a mighty complex to provide their smiths all required necessities - the Relic-Forge.\n\nBut their wealth made them a target for envious foes. Invaders, barbaric and uncivilized warmongers, started to rampage in our creators' territory. Unable do deter and confine this threat, a century-long devastating war broke out. It was during the final days of that conflict that we were activated. While the majority of their forces remained to protect the Relic-Forge in a futile last stand, we were sent from our factories to [GetHomeWorldName]. Here we were meant to protect civilians during their evacuation, but we failed. The planet's surface was set ablaze by orbital bombardment.\n\nWith only few of us remaining and our creators gone, it took many cycles for us to rebuild. Now the only thing left for us is vengeance."
 
  NAME_mem_ancestors_grudge_system:0 "Ancestors' Grudge"
- mem_ancestors_grudge_origin_effects:0 "- Start with a second colony on a ['concept_mem_ancestors_grudge_relic_world'] ['concept_pc_relic'] (Size: £planetsize£ 6)$NEW_LINE$- Unlock the ['concept_mem_ancestors_grudge_runeforge']$NEW_LINE$- Learn to ['concept_mem_ancestors_grudge_crafting'] unique ['concept_mem_ancestors_grudge_rune_relics']"
+ mem_ancestors_grudge_origin_effects:0 "- Start with a second ['concept_mem_ancestors_grudge_relic_world']$NEW_LINE$- Unlock the ['concept_mem_ancestors_grudge_runeforge']$NEW_LINE$- Learn to ['concept_mem_ancestors_grudge_crafting'] unique ['concept_mem_ancestors_grudge_rune_relics']"
  mem_ancestors_grudge_origin_machines_effects:0 "$mem_ancestors_grudge_origin_effects$$NEW_LINE$- Species Traits: ['trait:mem_ancestors_grudge_trait_robot_rune_golem']$NEW_LINE$- Gestalt: Additonal Ruler starting ['concept_mem_ancestors_grudge_ruler_traits']" 
  mem_ancestors_grudge_origin_effects_negative:0 "- $INITIAL_POPS$ §R-4§!$NEW_LINE$- $STARTING_PLANET$ §YAdditional £blocker£ Blockers§!$NEW_LINE$- Spawn an ['concept_advanced_empires'] somewhere in the galaxy. You will hate them."
  mem_ancestors_grudge_origin_machines_effects_negative:0 "$mem_ancestors_grudge_origin_effects_negative$$NEW_LINE$- Until the first ['concept_mem_ancestors_grudge_rune_relics'] are completed: ['modifier:mem_ancestors_grudge_unknown_design']"
@@ -400,7 +400,7 @@
  tech_mem_ancestors_grudge_robot_factory_desc:0 "The hidden knowledge of pre-industrial revolution mechanical servants."
  mem_ancestors_grudge_building_robot_factory:0 "Ancient Golem Facility"
  mem_ancestors_grudge_building_robot_factory_desc:0 "Applied golemancy helping us build a new generation of robots." 
- mem_ancestors_grudge_building_robot_factory_tt:0 "The effectiveness of this assembly reduced as population grows."
+ mem_ancestors_grudge_building_robot_factory_tt:0 "The effectiveness of this assembly reduces as population grows."
  leader_trait_legendary_mem_ancestors_grudge_machine_nexus_one:0 "Rune of Height"
  leader_trait_legendary_mem_ancestors_grudge_machine_nexus_one_desc:0 "Left or right, the rune only knows up."
  leader_trait_legendary_mem_ancestors_grudge_machine_nexus_two:0 "Rune of Sight"
@@ -447,7 +447,7 @@
  mem_ancestors_grudge_trait_thrawn_desc:0 "A mastermind of destruction enforcing total loyalty in his subjects."
  mem_ancestors_grudge_trait_thrawn_tt:0 "§LEach Culture (owned Relic) studied will make him stronger§!"
  mem_ancestors_grudge_zrawn_grand:0 "Grand Admiral"
- mem_ancestors_grudge_zrawn:0 "Zrawn"
+ mem_ancestors_grudge_zrawn:0 "Grand Admiral Zrawn"
 
  ########### concepts
  concept_mem_ancestors_grudge_ruler_traits:0 "Rune Traits"
@@ -468,8 +468,8 @@
  concept_mem_ancestors_grudge_rarity_desc:0 "- Decides the number of random, passive modifiers of ['concept_mem_ancestors_grudge_rune_relics']$NEW_LINE$- Every 25% ['concept_mem_ancestors_grudge_artifact_intensity'] increases quality and adds 1 additional modifier$NEW_LINE$- Possible Qualities:$NEW_LINE$-- $mem_ancestors_grudge_common$$NEW_LINE$-- $mem_ancestors_grudge_rare$$NEW_LINE$-- $mem_ancestors_grudge_epic$$NEW_LINE$-- $mem_ancestors_grudge_exceptional$"
  concept_mem_ancestors_grudge_intensity:0 "Strength"
  concept_mem_ancestors_grudge_intensity_desc:0 "- A multiplier of the ['concept_mem_ancestors_grudge_rune_relics'] passive effect between 0% and 200%$NEW_LINE$- Directly based on ['concept_mem_ancestors_grudge_artifact_intensity']"
- concept_mem_ancestors_grudge_relic_world:0 "unique"
- concept_mem_ancestors_grudge_relic_world_desc:0 "- additional Colony$NEW_LINE$- extra £blocker£ Blockers$NEW_LINE$- several ['building:mem_ancestors_grudge_building_ruins']$NEW_LINE$- still in Colonization Phase$NEW_LINE$- Modifiers: ['modifier:mem_ancestors_grudge_city_planet'] and ['modifier:low_gravity']$NEW_LINE$- After full restoration:$NEW_LINE$--Grudge: ['modifier:mem_ancestors_grudge_city_planet_restored']$NEW_LINE$--Automata: Unlock ['trait:trait_mem_ancestors_grudge_archaeotech_excellence']"
+ concept_mem_ancestors_grudge_relic_world:0 "unique Colony"
+ concept_mem_ancestors_grudge_relic_world_desc:0 "-['concept_pc_relic'] (Size: £planetsize£ 6)$NEW_LINE$- extra £blocker£ Blockers$NEW_LINE$- several ['building:mem_ancestors_grudge_building_ruins']$NEW_LINE$- still in Colonization Phase$NEW_LINE$- Modifiers: ['modifier:mem_ancestors_grudge_city_planet'] and ['modifier:low_gravity']$NEW_LINE$- After full restoration:$NEW_LINE$--Grudge: ['modifier:mem_ancestors_grudge_city_planet_restored']$NEW_LINE$--Automata: Unlock ['trait:trait_mem_ancestors_grudge_archaeotech_excellence']"
 
  ############# placeholders so the log does not cry 
  mem_ancestors_grudge_rune_power:0 "$concept_mem_ancestors_grudge_rune_intensity$"

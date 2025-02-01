@@ -962,8 +962,8 @@ country_event = {
 			set_immortal = yes
 			add_trait = mem_ancestors_grudge_trait_thrawn
 		}
-		# set_ruler_title_male = "mem_ancestors_grudge_zrawn_grand"
-		# set_ruler_title_female = "mem_ancestors_grudge_zrawn_grand"
+		# set_ruler_title_male = ""
+		# set_ruler_title_female = ""
 	}
 	option = {
 		name = WEIRD
