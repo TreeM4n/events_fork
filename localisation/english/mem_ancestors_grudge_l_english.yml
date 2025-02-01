@@ -197,7 +197,7 @@
  mem_ancestors_grudge.50.b.tt:0 "§LFurther completions will be notifications instead of events§!"
 
  mem_ancestors_grudge.52.name:0 "New Understanding"
- mem_ancestors_grudge.52.desc:0 "Our continuued progress to restore the Relic-Forge. Has proven successful in understanding our own design." # TODO
+ mem_ancestors_grudge.52.desc:0 "Our continued progress in restoring the Relic-Forge has led to an increased understanding of our own design." # TODO
  mem_ancestors_grudge.52.a:0 "Quantity"
  mem_ancestors_grudge.52.b:0 "Quality"
 
@@ -395,7 +395,7 @@
 
 
  tech_mem_ancestors_grudge_robot_traits:0 "Rune Golem Mastery"
- tech_mem_ancestors_grudge_robot_traits_desc:0 "The last bit of lost knowledge of our makers. Now the time to remake ourselve has come."
+ tech_mem_ancestors_grudge_robot_traits_desc:0 "The final piece of lost knowledge our makers once held. Now the time to remake ourselves has come."
  tech_mem_ancestors_grudge_robot_factory:0 "Archaeo-Golem Facility"
  tech_mem_ancestors_grudge_robot_factory_desc:0 "The hidden knowledge of pre-industrial revolution mechanical servants."
  mem_ancestors_grudge_building_robot_factory:0 "Ancient Golem Facility"
@@ -416,7 +416,7 @@
  leader_trait_legendary_mem_ancestors_grudge_machine_nexus_scaling:0 "§LCan be upgraded with ['concept_mem_ancestors_grudge_rune_relics']§!\n\n§LAdditional Performance: [this.mem_ancestors_grudge_activated_rune_ruler_strength]§!"
 
  trait_mem_ancestors_grudge_archaeotech_excellence:0 "Rune-Forged Excellence"
- trait_mem_ancestors_grudge_archaeotech_excellence_desc:0 "The pinnacle of rune artificing"
+ trait_mem_ancestors_grudge_archaeotech_excellence_desc:0 "The pinnacle of rune artificing offers unmatched performance with the drawback of increased complexity."
  automodding_trait_mem_robotic_tooltip:0 "$NEW_LINE$Depending on designation:$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_power_drills']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_harvesters']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_superconductive']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_emotion_emulators']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_propaganda_machines']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_logic_engines']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_forge_focus']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_factory_focus']" # TODO das hbscher
  trait_mem_ancestors_grudge_archaeotech_robot_power_drills:0 "Rune of Earth"
  trait_mem_ancestors_grudge_archaeotech_robot_power_drills_desc:0 ""

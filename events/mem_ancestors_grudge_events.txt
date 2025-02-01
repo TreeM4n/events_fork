@@ -1319,9 +1319,11 @@ situation_event = {
 	option = {
 		name = mem_ancestors_grudge.26.a
 		trigger = {
-			owner = {
-				has_origin = mem_ancestors_grudge_origin
-			}
+			hidden_trigger = {
+				owner = {
+					has_origin = mem_ancestors_grudge_origin
+				}
+			}			
 		}
 		target = {
 			add_modifier = {
@@ -1333,9 +1335,8 @@ situation_event = {
 		name = mem_ancestors_grudge.26.b
 		custom_tooltip = mem_ancestors_grudge.26.b.tt
 		trigger = {
-			owner = {
-				OR = {
-					has_authority = auth_machine_intelligence
+			hidden_trigger = {
+				owner = {
 					has_origin = mem_ancestors_grudge_origin_machines
 				}
 			}

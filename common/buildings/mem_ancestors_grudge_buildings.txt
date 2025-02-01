@@ -411,7 +411,8 @@ mem_ancestors_grudge_building_robot_factory = {
 	# can_demolish = no
 	position_priority = 5
 	empire_limit = 1
-	base_cap_amount = 1
+	# We have empire limit 1 so no need to have a separate planet cap - looks weird in the tooltip as well
+	#base_cap_amount = 1
 	category = pop_assembly
 	prerequisites = {
 		tech_mem_ancestors_grudge_robot_factory
