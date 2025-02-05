@@ -51,6 +51,20 @@ mem_ancestors_grudge_diggy_hole = {
 	planet_miners_produces_mult = 0.2
 }
 
+mem_ancestors_grudge_dragon_tithe = {
+	country_minor_artifacts_produces_mult = -0.1
+	space_fauna_experience_gain_mult = 0.5
+}
+mem_ancestors_grudge_dragon_tithe_energy = {
+	country_energy_produces_mult = -0.05
+	space_fauna_experience_gain_mult = 0.5
+}
+
+# mem_ancestors_grudge_dragon_knowledge = {
+# 	space_fauna_experience_gain_mult = 0.5
+# }
+
+
 mem_ancestors_grudge_unknown_design = {
 	planet_pop_assembly_mult = -0.2
 	show_only_custom_tooltip = no

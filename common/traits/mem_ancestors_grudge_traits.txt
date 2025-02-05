@@ -233,6 +233,8 @@ leader_trait_legendary_mem_ancestors_grudge_machine_nexus_four = {
 	randomized = no
 }
 
+
+
 # thrawn
 mem_ancestors_grudge_trait_thrawn = {
 	#Origin trait

@@ -5,7 +5,6 @@
 # helm - commander / governor (for later)
 # rune cube - general
 # failed/modern art - no trait but unity
-
 # legendary ideas: 
 # commander: restore all lost hitpoints when defeating a fleet with an admiral
 # scientist: finishing a digsite has a 50% chance to spawn another
@@ -326,9 +325,9 @@ r_mem_ancestors_grudge_anvil = {
 	resources = {
 		category = relics
 		# Activation cost
-		cost = {
-			society_research = 42					
-		}
+		# cost = {
+		# 	society_research = 42					
+		# }
 	}
 	ai_weight = {
 		weight = 0
@@ -365,7 +364,7 @@ r_mem_ancestors_grudge_anvil = {
 
 r_mem_ancestors_grudge_modern_art = {
 	activation_duration = 3600
-	portrait = GFX_r_mem_ancestors_grudge_modern_art	
+	portrait = GFX_r_mem_ancestors_grudge_modern_art
 	sound = "relic_activation_miniature_galaxy"
 	resources = {
 		category = relics
@@ -413,30 +412,32 @@ r_mem_ancestors_grudge_modern_art = {
 				resource = minor_artifacts
 				variable = mem_ancestors_grudge_zro_amount
 			}
-		}
-		if = {
-			limit = { mid_game_years_passed >= 0 }
-			multiply_variable = {
-				which = mem_ancestors_grudge_zro_amount
-				value = 2
+			if = {
+				limit = {
+					mid_game_years_passed >= 0
+				}
+				multiply_variable = {
+					which = mem_ancestors_grudge_zro_amount
+					value = 2
+				}
 			}
-		}
-		if = {
-			limit = { end_game_years_passed  >= 0 }
-			multiply_variable = {
-				which = mem_ancestors_grudge_zro_amount
-				value = 2
+			if = {
+				limit = {
+					end_game_years_passed >= 0
+				}
+				multiply_variable = {
+					which = mem_ancestors_grudge_zro_amount
+					value = 2
+				}
 			}
-		}
-		add_resource = {
-			minor_artifacts = -1
-			mult = mem_ancestors_grudge_zro_amount
-		}
-		add_resource = {
-			unity = 10
-			mult = mem_ancestors_grudge_zro_amount
-		}
-		hidden_effect = {
+			add_resource = {
+				minor_artifacts = -1
+				mult = mem_ancestors_grudge_zro_amount
+			}
+			add_resource = {
+				unity = 10
+				mult = mem_ancestors_grudge_zro_amount
+			}
 			clear_variable = mem_ancestors_grudge_zro_amount
 			change_variable = {
 				which = mem_ancestors_grudge_activated_relics_counter

@@ -321,6 +321,9 @@ country_event = {
 		give_technology = {
 			tech = tech_mem_ancestors_grudge_robot_factory
 		}
+		give_technology = {
+			tech = tech_mem_ancestors_grudge_dragon_lure
+		}
 	}
 	# option = {
 	# 	name = WEIRD
@@ -370,7 +373,75 @@ country_event = {
 	# }
 	option = {
 		name = WEIRD
-		mem_ancestors_grudge_give_random_archeotech = yes
+		create_fleet = {
+			name = "NAME_voidlure_mem_ancestors_grudge_dragonling"
+			settings = {
+				can_upgrade = no
+				#can_change_composition = no
+				#can_change_leader = no
+				uses_naval_capacity = no
+				spawn_debris = no
+			}
+			effect = {
+				set_owner = root.owner
+				create_ship_design = {
+					design = NAME_Ether_Drake
+				}
+				create_ship = {
+					design = last_created_design
+					name = "NAME_voidlure_mem_ancestors_grudge_dragonling"
+					prefix = no
+					upgradable = no
+				}
+				set_location = root.capital_scope
+			}
+		}
+		create_fleet = {
+			name = "NAME_voidlure_mem_ancestors_grudge_dragonling"
+			settings = {
+				can_upgrade = no
+				#can_change_composition = no
+				#can_change_leader = no
+				uses_naval_capacity = no
+				spawn_debris = no
+			}
+			effect = {
+				set_owner = root.owner
+				create_ship_design = {
+					design = NAME_Dragonspawn
+				}
+				create_ship = {
+					design = last_created_design
+					name = "NAME_voidlure_mem_ancestors_grudge_dragonling"
+					prefix = no
+					upgradable = no
+				}
+				set_location = root.capital_scope
+			}
+		}
+		create_fleet = {
+			name = "NAME_voidlure_mem_ancestors_grudge_dragonling"
+			settings = {
+				can_upgrade = no
+				#can_change_composition = no
+				#can_change_leader = no
+				uses_naval_capacity = no
+				spawn_debris = no
+			}
+			effect = {
+				set_owner = root.owner
+				create_ship_design = {
+					design = NAME_Sky_Dragon_Baby
+				}
+				create_ship = {
+					design = last_created_design
+					name = "NAME_voidlure_mem_ancestors_grudge_dragonling"
+					prefix = no
+					upgradable = no
+				}
+				set_location = root.capital_scope
+			}
+		}
 	}
 	option = {
 		name = mem_ancestors_grudge.26.b
@@ -390,7 +461,9 @@ country_event = {
 		hidden_effect = {
 			capital_scope = {
 				every_owned_pop = {
-					limit = { is_same_species = root }
+					limit = {
+						is_same_species = root
+					}
 					modify_species = {
 						species = this
 						add_trait = trait_mem_ancestors_grudge_archaeotech_excellence
@@ -399,11 +472,20 @@ country_event = {
 					#make_intelligent = yes
 					#make_unleashed_messenger = yes
 					#pop_change_ethic = ethic_pacifist
-					set_timed_pop_flag = { flag = changed_pop days = 2 }
+					set_timed_pop_flag = {
+						flag = changed_pop
+						days = 2
+					}
 				}
 				random_owned_pop = {
-					limit = { has_pop_flag = changed_pop }
-					root = { change_dominant_species = { species = prev } }
+					limit = {
+						has_pop_flag = changed_pop
+					}
+					root = {
+						change_dominant_species = {
+							species = prev
+						}
+					}
 				}
 			}
 		}
@@ -496,12 +578,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		OR = {
-			has_origin = mem_ancestors_grudge_origin
-			has_origin = mem_ancestors_grudge_origin_machines
-			# this is only here to keep old stuff working until the origin gets removed after game update
-			has_origin = mem_ancestors_grudge_origin_robots
-		}
+		is_mem_runesmith = yes
 	}
 	immediate = {
 		save_event_target_as = mem_ancestors_grudge_origin
@@ -548,6 +625,14 @@ country_event = {
 					#can_change_leader = yes
 				}
 			}
+		}
+		if = {
+			limit = {
+				has_origin = mem_ancestors_grudge_origin_hive
+			 }
+			 capital_scope = {
+				add_building = mem_ancestors_grudge_building_hoarder_depot
+			 }
 		}
 		capital_scope = {
 			while = {
@@ -1323,7 +1408,7 @@ situation_event = {
 				owner = {
 					has_origin = mem_ancestors_grudge_origin
 				}
-			}			
+			}
 		}
 		target = {
 			add_modifier = {
@@ -1349,21 +1434,31 @@ situation_event = {
 		hidden_effect = {
 			target = {
 				every_owned_pop = {
-					limit = { is_same_species = owner }
+					limit = {
+						is_same_species = owner
+					}
 					modify_species = {
 						species = this
 						add_trait = trait_mem_ancestors_grudge_archaeotech_excellence
 					}
-					
 					#wipe_pop_ethos = yes
 					#make_intelligent = yes
 					#make_unleashed_messenger = yes
 					#pop_change_ethic = ethic_pacifist
-					set_timed_pop_flag = { flag = changed_pop days = 2 }
+					set_timed_pop_flag = {
+						flag = changed_pop
+						days = 2
+					}
 				}
 				random_owned_pop = {
-					limit = { has_pop_flag = changed_pop }
-					owner = { change_dominant_species = { species = prev } }
+					limit = {
+						has_pop_flag = changed_pop
+					}
+					owner = {
+						change_dominant_species = {
+							species = prev
+						}
+					}
 				}
 			}
 		}
@@ -1376,6 +1471,296 @@ situation_event = {
 				value = 12
 			}
 		}
+	}
+}
+
+# A hissy old dragon appears!
+# copied from shard
+situation_event = {
+	id = mem_ancestors_grudge.26
+	title = mem_ancestors_grudge.26.name
+	desc = mem_ancestors_grudge.26.desc
+	picture = GFX_evt_space_dragon_blue
+	show_sound = event_dangerous_animals
+	location = target
+	situation = this
+	is_triggered_only = yes
+	immediate = {
+		owner = {
+			country_event = {
+				id = story.8
+				days = 15
+			}
+		}
+		create_country = {
+			name = "NAME_mem_ancestors_grudge_Grand_Dragon"
+			type = guardian_dragon
+			flag = {
+				icon = {
+					category = "spherical"
+					file = "flag_spherical_6.dds"
+				}
+				background = {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors = {
+					"dark_blue"
+					"dark_blue"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				set_faction_hostility = {
+					target = root.owner
+					set_hostile = no
+					set_neutral = yes
+					set_friendly = no
+				}
+				save_global_event_target_as = mem_ancestors_grudge_dragon_country
+				set_country_flag = mem_ancestors_grudge_dragon_country
+				every_playable_country = {
+					establish_communications_no_message = event_target:mem_ancestors_grudge_dragon_country
+				}
+				every_playable_country = {
+					limit = {
+						NOT = {
+							is_same_empire = root.owner
+						}
+					}
+					set_faction_hostility = {
+						target = root.owner
+						set_hostile = yes
+						set_neutral = no
+						set_friendly = no
+					}
+				}
+				create_fleet = {
+					name = "NAME_Shard"
+					settings = {
+						spawn_debris = no
+						is_boss = yes
+					}
+					effect = {
+						set_owner = event_target:mem_ancestors_grudge_dragon_country
+						create_ship = {
+							name = "NAME_mem_ancestors_grudge_Grand_Dragon"
+							design = "NAME_Shard_Dragon"
+							effect = {
+								set_ship_flag = mem_ancestors_grudge_dragon_ship
+								save_global_event_target_as = mem_ancestors_grudge_dragon_ship
+								set_disabled = no
+							}
+						}
+						save_global_event_target_as = mem_ancestors_grudge_dragon_fleet
+						set_location = {
+							target = root.target
+							distance = 10
+							angle = 90
+							direction = in_system
+						}
+						set_fleet_stance = passive
+						set_aggro_range_measure_from = self
+						set_aggro_range = 350
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.26.a
+		owner = {
+			if = {
+				limit = {
+					host_has_dlc = "Ancient Relics Story Pack"
+				}
+				add_modifier = {
+					modifier = mem_ancestors_grudge_dragon_tithe
+				}
+			}
+			else = {
+				add_modifier = {
+					modifier = mem_ancestors_grudge_dragon_tithe_energy
+				}
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.26.b
+		hidden_effect = {
+			event_target:mem_ancestors_grudge_dragon_country = {
+				set_faction_hostility = {
+					target = root.owner
+					set_hostile = yes
+					set_neutral = no
+					set_friendly = no
+				}
+			}
+			event_target:mem_ancestors_grudge_dragon_fleet = {
+				set_fleet_stance = aggressive
+			}
+		}
+	}
+	after = {
+		hidden_effect = {
+			country_event = {
+				id = mem_ancestors_grudge.29
+				days = 720
+			}
+		}
+		# if = {
+		# 	limit = {
+		# 		target = {
+		# 			is_colony = yes
+		# 		}
+		# 	}
+		# 	custom_tooltip = shard_wants_to_burn_this_planet_tooltip
+		# 	hidden_effect = {
+		# 		target = {
+		# 			planet_event = {
+		# 				id = mem_ancestors_grudge.27
+		# 				days = 720
+		# 			}
+		# 		}
+		# 	}
+		# }
+	}
+}
+
+# victorious admiral gains dragonslayer trait
+country_event = {
+	id = mem_ancestors_grudge.28
+	title = mem_ancestors_grudge.28.name
+	desc = mem_ancestors_grudge.26.desc
+	picture = GFX_evt_space_dragon
+	location = fromfrom
+	show_sound = event_mystic_reveal
+	is_triggered_only = yes
+	trigger = {
+		from = {
+			is_country_type = guardian_dragon
+			has_country_flag = mem_ancestors_grudge_dragon_country
+		}
+		#fromfromfrom = {
+		#	has_fleet_flag = dragon_fleet
+		#}
+	}
+	immediate = {
+	}
+	option = {
+		name = leviathans.670.a
+		trigger = {
+			can_harvest_dna = no
+		}
+	}
+	option = {
+		name = galactic_features.385.reanimated
+		trigger = {
+			is_reanimator = yes
+		}
+		enable_special_project = {
+			name = "REANIMATE_GUARDIAN_DRAGON"
+			location = fromfrom.solar_system.star
+			owner = root.owner
+		}
+	}
+	option = {
+		name = aquatics.105.A
+		trigger = {
+			can_harvest_dna = yes
+		}
+		set_country_flag = harvested_dragon_dna
+		custom_tooltip = aquatics.105.A.tooltip
+	}
+	after = {
+		if = {
+			limit = {
+				host_has_dlc = "Ancient Relics Story Pack"
+			}
+			add_resource = {
+				minor_artifacts = 1000
+			}
+		}
+		else = {
+			add_resource = {
+				influence = 300
+			}
+		}
+		if = {
+			limit = {
+				exists = fromfrom.leader
+			}
+			fromfrom.leader = {
+				if = {
+					limit = {
+						leader_class = commander
+					}
+					add_trait = leader_trait_dragonslayer
+				}
+			}
+		}
+		if = {
+			limit = {
+				AND = {
+					has_origin = mem_ancestors_grudge_origin_hive
+					OR = {
+						has_modifier = mem_ancestors_grudge_dragon_tithe
+						#has_modifier = mem_ancestors_grudge_dragon_tithe_energy
+					}
+				}
+			}
+			remove_modifier = mem_ancestors_grudge_dragon_tithe
+		}
+		else_if = {
+			limit = {
+				AND = {
+					has_origin = mem_ancestors_grudge_origin_hive
+					OR = {
+						#has_modifier = mem_ancestors_grudge_dragon_tithe
+						has_modifier = mem_ancestors_grudge_dragon_tithe_energy
+					}
+				}
+			}
+			remove_modifier = mem_ancestors_grudge_dragon_tithe_energy
+		}
+		else = {
+			hidden_effect = {
+				every_playable_country = {
+					limit = {
+						AND = {
+							has_origin = mem_ancestors_grudge_origin_hive
+							OR = {
+								has_modifier = mem_ancestors_grudge_dragon_tithe
+								has_modifier = mem_ancestors_grudge_dragon_tithe_energy
+							}
+						}
+					}
+					remove_modifier = mem_ancestors_grudge_dragon_tithe
+					remove_modifier = mem_ancestors_grudge_dragon_tithe_energy
+				}
+			}
+		}
+	}
+}
+
+# TODO icon sound
+# dragon luring tech
+country_event = {
+	id = mem_ancestors_grudge.29
+	title = mem_ancestors_grudge.29.name
+	desc = mem_ancestors_grudge.29.desc
+	picture = GFX_evt_crisis_defeated
+	show_sound = event_space_battle
+	is_triggered_only = yes
+	option = {
+		name = mem_ancestors_grudge.29.a
+		give_technology = {
+			tech = tech_mem_ancestors_grudge_dragon_lure
+		}
+		# add_modifier = {
+		# 	modifier = mem_ancestors_grudge_dragon_knowledge
+		# }
 	}
 }
 
@@ -1504,6 +1889,46 @@ country_event = {
 			}
 			add_situation_progress = 75
 		}
+	}
+}
+
+# get relic with choice # TODO pic and sound
+country_event = {
+	id = mem_ancestors_grudge.41
+	title = mem_ancestors_grudge.41.name
+	desc = mem_ancestors_grudge.41.desc
+	picture = GFX_evt_cosmic_storms_calibration
+	show_sound = event_finding_loot
+	#location = event_target:mem_ancestors_grudge_planet
+	is_triggered_only = yes
+	immediate = {
+		set_variable = {
+			which = mem_ancestors_grudge_situation_rarity
+			value = 1
+		}
+		set_variable = {
+			which = mem_ancestors_grudge_rune_intensity
+			value = 1.1
+		}
+		inline_script = {
+			script = mem_ancestors_grudge/reroll_passive
+			AMOUNT = 1
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.41.a
+		add_relic = r_mem_ancestors_grudge_pauldron
+		custom_tooltip = mem_ancestors_grudge.41.official
+	}
+	option = {
+		name = mem_ancestors_grudge.41.b
+		add_relic = r_mem_ancestors_grudge_ring
+		custom_tooltip = mem_ancestors_grudge.41.scientist
+	}
+	option = {
+		name = mem_ancestors_grudge.41.c
+		add_relic = r_mem_ancestors_grudge_sword
+		custom_tooltip = mem_ancestors_grudge.41.commander
 	}
 }
 
@@ -2426,6 +2851,236 @@ country_event = {
 		start_situation = {
 			type = situation_mem_ancestors_grudge_crafting
 			target = event_target:mem_ancestors_grudge_planet
+		}
+	}
+}
+
+#### hive relic activation
+# TODO more options
+country_event = {
+	id = mem_ancestors_grudge.46
+	title = mem_ancestors_grudge.46.title
+	desc = mem_ancestors_grudge.46.desc
+	#location = event_target:mem_ancestors_grudge_planet
+	is_triggered_only = yes
+	trigger = {
+	}
+	immediate = {
+		# set_variable = {
+		# 	which = mem_ancestors_grudge_situation_rarity
+		# 	value = 1
+		# }
+		# set_variable = {
+		# 	which = mem_ancestors_grudge_rune_intensity
+		# 	value = 1.1
+		# }
+		# inline_script = {
+		# 	script = mem_ancestors_grudge/reroll_passive
+		# 	AMOUNT = 1
+		# }
+	}
+	option = {
+		name = mem_ancestors_grudge.46.a		# upgrade
+		custom_tooltip = mem_ancestors_grudge.46.a.upgrade_tt
+		trigger = {
+			NOT = {
+				has_country_flag = mem_ancestors_grudge_exceptional
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = mem_ancestors_grudge_common
+				}
+				remove_country_flag = mem_ancestors_grudge_common
+				set_country_flag = mem_ancestors_grudge_rare
+			}
+			else_if = {
+				limit = {
+					has_country_flag = mem_ancestors_grudge_rare
+				}
+				remove_country_flag = mem_ancestors_grudge_rare
+				set_country_flag = mem_ancestors_grudge_epic
+			}
+			else_if = {
+				limit = {
+					has_country_flag = mem_ancestors_grudge_epic
+				}
+				remove_country_flag = mem_ancestors_grudge_epic
+				set_country_flag = mem_ancestors_grudge_exceptional
+			}
+			random_list = {
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag1
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag1
+						factor = 0
+					}
+				}
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag2
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag2
+						factor = 0
+					}
+				}
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag3
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag3
+						factor = 0
+					}
+				}
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag4
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag4
+						factor = 0
+					}
+				}
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag5
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag5
+						factor = 0
+					}
+				}
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag6
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag6
+						factor = 0
+					}
+				}
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag7
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag7
+						factor = 0
+					}
+				}
+				1 = {
+					set_country_flag = mem_ancestors_grudge_relic_flag8
+					modifier = {
+						has_country_flag = mem_ancestors_grudge_relic_flag8
+						factor = 0
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.46.b		# rare shuffle
+		custom_tooltip = mem_ancestors_grudge.46.b.shuffle_stats_tt
+		hidden_effect = {
+			inline_script = {
+				script = mem_ancestors_grudge/reroll_passive
+				AMOUNT = mem_ancestors_grudge_situation_rarity
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.46.c		# increase intensity
+		custom_tooltip = mem_ancestors_grudge.46.c.upgrade_passive_tt
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_rune_intensity
+				value < 2
+			}
+			host_has_dlc = "Ancient Relics Story Pack"
+		}
+		allow = {
+			resource_stockpile_compare = {
+				resource = minor_artifacts
+				value >= 500
+			}
+		}
+		hidden_effect = {
+			change_variable = {
+				which = mem_ancestors_grudge_rune_intensity
+				value = 0.1
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.46.c		# increase intensity
+		custom_tooltip = mem_ancestors_grudge.46.c.upgrade_passive_tt
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_rune_intensity
+				value < 2
+			}
+			NOT = {
+				host_has_dlc = "Ancient Relics Story Pack"
+			}
+		}
+		allow = {
+			resource_stockpile_compare = {
+				resource = alloys
+				value >= 1000
+			}
+		}
+		hidden_effect = {
+			change_variable = {
+				which = mem_ancestors_grudge_rune_intensity
+				value = 0.1
+			}
+		}
+	}
+	# copy from actual thing
+	option = {
+		name = mem_ancestors_grudge.45.g
+		trigger = {
+			has_country_flag = mem_ancestors_grudge_exceptional
+			has_relic = r_mem_ancestors_grudge_pauldron
+		}
+		#custom_tooltip = mem_ancestors_grudge.45.exceptional_pauldron
+		add_modifier = {
+			modifier = mem_ancestors_grudge_golden_age
+			days = 360
+		}
+		add_modifier = {
+			modifier = relic_activation_cooldown
+			days = 3600
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.45.h
+		trigger = {
+			has_country_flag = mem_ancestors_grudge_exceptional
+			has_relic = r_mem_ancestors_grudge_ring
+		}
+		while = {
+			count = 5
+			add_random_research_option = {
+				add_progress = 0.2
+				ignore_rare = yes
+				# fail_effects = { #should never fail, when do  you truly run out of research?
+				# }
+			}
+		}
+		custom_tooltip = mem_ancestors_grudge.45.exceptional_ring
+		add_modifier = {
+			modifier = relic_activation_cooldown
+			days = 3600
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.45.i
+		trigger = {
+			has_country_flag = mem_ancestors_grudge_exceptional
+			has_relic = r_mem_ancestors_grudge_sword
+		}
+		custom_tooltip = mem_ancestors_grudge.45.exceptional_sword
+		every_playable_country = {
+			limit = {
+				has_truce = root
+			}
+			end_truce = root
+		}
+		add_modifier = {
+			modifier = relic_activation_cooldown
+			days = 3600
 		}
 	}
 }
@@ -3747,6 +4402,119 @@ country_event = {
 					id = mem_ancestors_grudge.449
 				}
 			}
+		}
+	}
+}
+
+starbase_event = {
+	id = mem_ancestors_grudge.500
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_starbase_building = voidlure_mem_ancestors_grudge_dragon
+	}
+	immediate = {
+		# we dont lure we hatch
+		#create_lured_fauna_country = yes
+		# event_target:lured_fauna_country = {
+		# 	set_faction_hostility = {
+		# 		target = root.owner
+		# 		set_hostile = no
+		# 	}
+		# }
+		owner = {
+			random_list = {
+				# TODO one design
+				10 = {
+					create_fleet = {
+						name = "NAME_voidlure_mem_ancestors_grudge_dragonling"
+						settings = {
+							can_upgrade = no
+							#can_change_composition = no
+							#can_change_leader = no
+							uses_naval_capacity = no
+							spawn_debris = no
+						}
+						effect = {
+							set_owner = root.owner
+							create_ship_design = {
+								design = NAME_Sky_Dragon_Baby
+							}
+							create_ship = {
+								design = last_created_design
+								name = "NAME_voidlure_mem_ancestors_grudge_dragonling"
+								prefix = no
+								#upgradable = no
+							}
+							set_location = root
+						}
+					}
+				}
+				10 = {
+					create_fleet = {
+						name = "NAME_voidlure_mem_ancestors_grudge_dragonling"
+						settings = {
+							can_upgrade = no
+							#can_change_composition = no
+							#can_change_leader = no
+							uses_naval_capacity = no
+							spawn_debris = no
+						}
+						effect = {
+							set_owner = root.owner
+							create_ship_design = {
+								design = NAME_Dragonspawn
+							}
+							create_ship = {
+								design = last_created_design
+								name = "NAME_voidlure_mem_ancestors_grudge_dragonling"
+								prefix = no
+								upgradable = no
+							}
+							set_location = root
+						}
+					}
+				}
+				1 = {
+					create_fleet = {
+						name = "NAME_voidlure_mem_ancestors_grudge_dragonling"
+						settings = {
+							can_upgrade = no
+							#can_change_composition = no
+							#can_change_leader = no
+							uses_naval_capacity = no
+							spawn_debris = no
+						}
+						effect = {
+							set_owner = root.owner
+							create_ship_design = {
+								design = NAME_Ether_Drake
+							}
+							create_ship = {
+								design = last_created_design
+								name = "NAME_voidlure_mem_ancestors_grudge_dragonling"
+								prefix = no
+								upgradable = no
+							}
+							set_location = root
+						}
+					}
+				}
+			}
+			# last_created_fleet = {
+			# 	set_owner = event_target:lured_fauna_country
+			# 	set_fleet_flag = voidlure_fleet
+			# }
+			create_voidlure_capture_message = yes
+			set_country_flag = voidlure_attracted_mem_ancestors_grudge_dragon
+		}
+		starbase_event = {
+			id = mem_ancestors_grudge.500
+			days = @voidlure_mem_ancestors_grudge_dragon_cd			# this needs to be synced with ...
+		}
+		set_timed_starbase_flag = {
+			flag = capture_cooldown_for_mem_ancestors_grudge_dragon
+			days = @voidlure_mem_ancestors_grudge_dragon_cd			# ... this
 		}
 	}
 }

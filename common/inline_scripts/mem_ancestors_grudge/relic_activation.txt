@@ -1,9 +1,14 @@
 active_effect = {
 	if = {
 		limit = {
-			is_regular_empire = yes
+			has_origin = mem_ancestors_grudge_origin
 		}
 		custom_tooltip = mem_ancestors_grudge_activate_crafted_relic_tt
+	}
+	else_if = {
+		limit = {
+			has_origin = mem_ancestors_grudge_origin_hive
+		}
 	}
 	else = {
 		custom_tooltip = mem_ancestors_grudge_activate_crafted_relic_tt_machines
@@ -16,9 +21,20 @@ active_effect = {
 	# 	}
 	# }
 	hidden_effect = {
-		country_event = {
-			id = mem_ancestors_grudge.45
-			#days = 30
+		if = {
+			limit = {
+				has_origin = mem_ancestors_grudge_origin_hive
+			}
+			country_event = {
+				id = mem_ancestors_grudge.46
+				#days = 30
+			}
+		}
+		else = {
+			country_event = {
+				id = mem_ancestors_grudge.45
+				#days = 30
+			}
 		}
 	}
 }

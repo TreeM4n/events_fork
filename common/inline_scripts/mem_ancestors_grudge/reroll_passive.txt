@@ -1,0 +1,118 @@
+# clear old stuff
+owner = {
+	# remove_country_flag = mem_ancestors_grudge_common
+	# remove_country_flag = mem_ancestors_grudge_rare
+	# remove_country_flag = mem_ancestors_grudge_epic
+	# remove_country_flag = mem_ancestors_grudge_exceptional
+	remove_country_flag = mem_ancestors_grudge_relic_flag1
+	remove_country_flag = mem_ancestors_grudge_relic_flag2
+	remove_country_flag = mem_ancestors_grudge_relic_flag3
+	remove_country_flag = mem_ancestors_grudge_relic_flag4
+	remove_country_flag = mem_ancestors_grudge_relic_flag5
+	remove_country_flag = mem_ancestors_grudge_relic_flag6
+	remove_country_flag = mem_ancestors_grudge_relic_flag7
+	remove_country_flag = mem_ancestors_grudge_relic_flag8
+}
+
+# owner = {
+# 	if = {
+# 		limit = {
+# 			check_variable_arithmetic = {
+# 				which = owner.mem_ancestors_grudge_situation_rarity
+# 				value < 2
+# 			}
+# 		}
+# 		set_country_flag = mem_ancestors_grudge_common
+# 	}
+# 	else_if = {
+# 		limit = {
+# 			check_variable_arithmetic = {
+# 				which = owner.mem_ancestors_grudge_situation_rarity
+# 				value < 3
+# 			}
+# 		}
+# 		set_country_flag = mem_ancestors_grudge_rare
+# 	}
+# 	else_if = {
+# 		limit = {
+# 			check_variable_arithmetic = {
+# 				which = owner.mem_ancestors_grudge_situation_rarity
+# 				value < 4
+# 			}
+# 		}
+# 		set_country_flag = mem_ancestors_grudge_epic
+# 	}
+# 	else_if = {
+# 		limit = {
+# 			check_variable_arithmetic = {
+# 				which = owner.mem_ancestors_grudge_situation_rarity
+# 				value < 5
+# 			}
+# 		}
+# 		set_country_flag = mem_ancestors_grudge_exceptional
+# 	}
+# }
+
+while = {
+	count = $AMOUNT$
+	owner = {
+		random_list = {
+			1 = {
+				set_country_flag = mem_ancestors_grudge_relic_flag1
+				modifier = {
+					has_country_flag = mem_ancestors_grudge_relic_flag1
+					factor = 0
+				}
+			}
+			1 = {
+				set_country_flag = mem_ancestors_grudge_relic_flag2
+				modifier = {
+					has_country_flag = mem_ancestors_grudge_relic_flag2
+					factor = 0
+				}
+			}
+			1 = {
+				set_country_flag = mem_ancestors_grudge_relic_flag3
+				modifier = {
+					has_country_flag = mem_ancestors_grudge_relic_flag3
+					factor = 0
+				}
+			}
+			1 = {
+				set_country_flag = mem_ancestors_grudge_relic_flag4
+				modifier = {
+					has_country_flag = mem_ancestors_grudge_relic_flag4
+					factor = 0
+				}
+			}
+			1 = {
+				set_country_flag = mem_ancestors_grudge_relic_flag5
+				modifier = {
+					has_country_flag = mem_ancestors_grudge_relic_flag5
+					factor = 0
+				}
+			}
+			1 = {
+				set_country_flag = mem_ancestors_grudge_relic_flag6
+				modifier = {
+					has_country_flag = mem_ancestors_grudge_relic_flag6
+					factor = 0
+				}
+			}
+			1 = {
+				set_country_flag = mem_ancestors_grudge_relic_flag7
+				modifier = {
+					has_country_flag = mem_ancestors_grudge_relic_flag7
+					factor = 0
+				}
+			}
+			1 = {
+				set_country_flag = mem_ancestors_grudge_relic_flag8
+				modifier = {
+					has_country_flag = mem_ancestors_grudge_relic_flag8
+					factor = 0
+				}
+			}
+		}
+	}
+}

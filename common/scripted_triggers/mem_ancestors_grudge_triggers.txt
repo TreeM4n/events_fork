@@ -2,6 +2,7 @@ is_mem_runesmith = {
 	OR = {
 		has_origin = mem_ancestors_grudge_origin
 		has_origin = mem_ancestors_grudge_origin_machines
+		has_origin = mem_ancestors_grudge_origin_hive
 		# Phase out
 		has_origin = mem_ancestors_grudge_origin_robots
 	}
@@ -68,4 +69,12 @@ mem_ancestors_grudge_is_capped_hoarder = {
 		resource = minor_artifacts
 		value >= modifier:country_resource_max_minor_artifacts_add
 	}
+}
+
+has_encountered_mem_ancestors_grudge_dragon = {
+	has_origin = mem_ancestors_grudge_origin_hive
+	has_technology = tech_mem_ancestors_grudge_dragon_lure
+	# exists = event_target:mem_ancestors_grudge_dragon_country
+	# has_communications = event_target:mem_ancestors_grudge_dragon_country
+
 }

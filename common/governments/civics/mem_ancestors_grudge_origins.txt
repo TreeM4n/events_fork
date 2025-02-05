@@ -34,6 +34,8 @@ mem_ancestors_grudge_origin = {
 	}
 	modifier = {
 		country_resource_max_minor_artifacts_add = 10000
+		mem_ancestors_grudge_artifact_power_produces_mult = 0.15
+		mem_ancestors_grudge_rune_power_produces_mult = 0.15
 	}
 	random_weight = {
 		base = 5
@@ -127,7 +129,7 @@ mem_ancestors_grudge_origin_hive = {
 		}
 	}
 	possible = {
-		always = no
+		#always = no
 		species_archetype = {
 			NOT = {
 				value = MACHINE
@@ -150,7 +152,7 @@ mem_ancestors_grudge_origin_hive = {
 	}
 	modifier = {
 		country_resource_max_minor_artifacts_add = 10000
-		planet_jobs_minor_artifacts_produces_mult = -0.5
+		#planet_jobs_minor_artifacts_produces_mult = -0.5
 	}
 	random_weight = {
 		base = 5
@@ -194,8 +196,8 @@ mem_ancestors_grudge_origin_advanced_start = {
 		country_naval_cap_mult = 0.5
 		ships_upkeep_mult = -0.25
 		planet_crime_mult = 0.25
-		pop_citizen_happiness = 0.2
-		pop_happiness = -0.4
+		pop_citizen_happiness = 0.4
+		pop_happiness = -0.2
 		country_government_civic_points_add = 1
 	}
 	random_weight = {

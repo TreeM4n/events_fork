@@ -1,6 +1,8 @@
-mem_ancestors_grudge_is_hoarder_policy = { # TODO
+mem_ancestors_grudge_is_hoarder_policy = {
+	# TODO
 	potential = {
 		mem_ancestors_grudge_is_hoarder = yes
+		
 	}
 	option = {
 		name = mem_ancestors_grudge_is_hoarder_policy_unity
@@ -17,7 +19,7 @@ mem_ancestors_grudge_is_hoarder_policy = { # TODO
 			mem_ancestors_grudge_is_hoarder_policy_stability
 		}
 		modifier = {
-			space_fauna_ship_upkeep_mult = -0.3
+			#space_fauna_ship_upkeep_mult = -0.3
 		}
 		AI_weight = {
 			weight = 1
@@ -29,11 +31,34 @@ mem_ancestors_grudge_is_hoarder_policy = { # TODO
 			mem_ancestors_grudge_is_hoarder_policy_pop_growth
 		}
 		modifier = {
-			space_fauna_growth_rate_mult = 0.5
-			space_fauna_ship_upkeep_mult = 0.3
+			
 		}
 		AI_weight = {
 			weight = 1
 		}
 	}
+	option = {
+		name = mem_ancestors_grudge_is_hoarder_policy_science
+		policy_flags = {
+			mem_ancestors_grudge_is_hoarder_policy_science
+		}
+		modifier = {
+			
+		}
+		AI_weight = {
+			weight = 1
+		}
+	}
+	# option = {
+	# 	name = mem_ancestors_grudge_is_hoarder_policy_science
+	# 	policy_flags = {
+	# 		mem_ancestors_grudge_is_hoarder_policy_science
+	# 	}
+	# 	modifier = {
+			
+	# 	}
+	# 	AI_weight = {
+	# 		weight = 1
+	# 	}
+	# }
 }

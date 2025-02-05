@@ -245,9 +245,20 @@ mem_ancestors_grudge_building_forge_2 = {
 		script = mem_ancestors_grudge/mem_ancestors_grudge_building_forge_1
 	}
 	on_built = {
+		# get relic crafting or relic
 		owner = {
-			country_event = {
-				id = mem_ancestors_grudge.40
+			if = {
+				limit = {
+					has_origin = mem_ancestors_grudge_origin_hive
+				}
+				country_event = {
+					id = mem_ancestors_grudge.41
+				}
+			}
+			else = {
+				country_event = {
+					id = mem_ancestors_grudge.40
+				}
 			}
 			# start_situation = {
 			# 	type = situation_mem_ancestors_grudge_crafting
@@ -321,6 +332,7 @@ mem_ancestors_grudge_building_forge_3 = {
 		script = mem_ancestors_grudge/mem_ancestors_grudge_building_forge_1
 	}
 	on_built = {
+		# terraform to city
 		planet_event = {
 			id = mem_ancestors_grudge.35
 		}
@@ -509,13 +521,14 @@ mem_ancestors_grudge_building_robot_factory = {
 mem_ancestors_grudge_building_hoarder_depot = {
 	base_buildtime = 360
 	category = resource
-	base_cap_amount = 1
+	empire_limit = 1
+	#base_cap_amount = 1
 	potential = {
 		NOR = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 		}
-		from = {
+		owner = {
 			mem_ancestors_grudge_is_hoarder = yes
 		}
 	}
@@ -531,7 +544,7 @@ mem_ancestors_grudge_building_hoarder_depot = {
 		NOT = {
 			exists = owner
 		}
-		from = {
+		owner = {
 			mem_ancestors_grudge_is_hoarder = no
 		}
 	}
@@ -560,56 +573,78 @@ mem_ancestors_grudge_building_hoarder_depot = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			minerals = 500
-			alloys = 100
+			minerals = 5000
+		}
+		cost = {
+			trigger = {
+				host_has_dlc = "Ancient Relics Story Pack"
+			}
+			minor_artifacts = 500
+		}
+		cost = {
+			trigger = {
+				NOT = {
+					host_has_dlc = "Ancient Relics Story Pack"
+				}
+			}
+			alloys = 1000
 		}
 		upkeep = {
 			energy = 5
 		}
 		produces = {
-			trigger = {
-				owner = {
-					has_policy_flag = mem_ancestors_grudge_is_hoarder_policy_unity
-					mem_ancestors_grudge_is_capped_hoarder = yes					#todo
-				}
-			}
-			unity = 1
-			mult = owner.value:mem_ancestors_grudge_hoarder_overflow
+			unity = 10
 		}
 	}
-	# country_modifier = {
-	# 	country_resource_max_minor_artifacts_add = 5000
-	# 	#country_resource_max_add = 5000
-	# }
-	# triggered_country_modifier = {
-	# 	potential = {
-	# 		exists = owner
-	# 		owner = {
-	# 			has_technology = tech_construction_templates
-	# 		}
-	# 		host_has_dlc = "Ancient Relics Story Pack"
-	# 	}
-	# 	country_resource_max_minor_artifacts_add = 5000
-	# }
+
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_policy_flag = mem_ancestors_grudge_is_hoarder_policy_unity
+			}
+		}
+		country_unity_produces_mult = 0.02
+		mult = owner.value:mem_ancestors_grudge_hoarder_building
+	}
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_policy_flag = mem_ancestors_grudge_is_hoarder_policy_stability
+			}
+		}
+		planet_stability_add = 2
+		mult = owner.value:mem_ancestors_grudge_hoarder_building
+	}
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_policy_flag = mem_ancestors_grudge_is_hoarder_policy_pop_growth
+			}
+		}
+		pop_growth_speed = 0.03
+		planet_jobs_upkeep_mult = 0.02
+		mult = owner.value:mem_ancestors_grudge_hoarder_building
+	}
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_policy_flag = mem_ancestors_grudge_is_hoarder_policy_science
+			}
+		}
+		all_technology_research_speed = 0.02
+		mult = owner.value:mem_ancestors_grudge_hoarder_building
+	}
 	triggered_country_modifier = {
 		potential = {
 			exists = owner
 			host_has_dlc = "Ancient Relics Story Pack"
 		}
-		country_resource_max_minor_artifacts_add = 10000
+		country_resource_max_minor_artifacts_add = 100000
 	}
-	# triggered_country_modifier = {
-	# 	potential = {
-	# 		exists = owner
-	# 		owner = {
-	# 			has_technology = tech_construction_templates
-	# 		}
-	# 		NOT = {
-	# 			host_has_dlc = "Ancient Relics Story Pack"
-	# 		}
-	# 	}
-	# 	country_resource_max_energy_add = 100000
-	# }
 	triggered_country_modifier = {
 		potential = {
 			exists = owner
@@ -618,6 +653,9 @@ mem_ancestors_grudge_building_hoarder_depot = {
 			}
 		}
 		country_resource_max_energy_add = 100000
+	}
+	triggered_desc = {
+		text = mem_ancestors_grudge_building_hoarder_depot_effect_desc
 	}
 	# prerequisites = {
 	# 	"tech_basic_industry"
