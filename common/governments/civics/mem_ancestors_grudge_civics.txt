@@ -94,7 +94,7 @@ civic_mem_subterranean_regular_machine = {
 				value = origin_post_apocalyptic
 				value = origin_shattered_ring
 				value = origin_void_dwellers
-				value = origin_subterranean
+				value = origin_subterranean_machines
 			}
 		}
 		civics = {
@@ -212,7 +212,7 @@ civic_mem_subterranean_regular_machine_megacorp = {
 				value = origin_post_apocalyptic
 				value = origin_shattered_ring
 				value = origin_void_dwellers
-				value = origin_subterranean
+				value = origin_subterranean_machines
 			}
 		}
 		civics = {
@@ -267,7 +267,7 @@ civic_mem_subterranean_machine = {
 				value = origin_post_apocalyptic
 				value = origin_shattered_ring
 				value = origin_void_dwellers
-				value = origin_subterranean
+				value = origin_subterranean_machines
 			}
 		}
 		civics = {

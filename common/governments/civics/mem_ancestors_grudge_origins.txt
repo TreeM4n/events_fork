@@ -75,12 +75,12 @@ mem_ancestors_grudge_origin_machines = {
 		# authority = {
 		# 	value = auth_machine_intelligence
 		# }
-		civics = {
-			NOR = {
-				value = civic_machine_assimilator
-				value = civic_machine_servitor
-			}
-		}
+		#civics = {
+		#	NOR = {
+		#		value = civic_machine_assimilator
+		#		value = civic_machine_servitor
+		#	}
+		#}
 	}
 	description = "mem_ancestors_grudge_origin_machines_effects"
 	negative_description = "mem_ancestors_grudge_origin_machines_effects_negative"
