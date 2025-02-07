@@ -638,22 +638,23 @@ mem_ancestors_grudge_building_hoarder_depot = {
 		all_technology_research_speed = 0.02
 		mult = owner.value:mem_ancestors_grudge_hoarder_building
 	}
-	triggered_country_modifier = {
-		potential = {
-			exists = owner
-			host_has_dlc = "Ancient Relics Story Pack"
-		}
-		country_resource_max_minor_artifacts_add = 100000
-	}
-	triggered_country_modifier = {
-		potential = {
-			exists = owner
-			NOT = {
-				host_has_dlc = "Ancient Relics Story Pack"
-			}
-		}
-		country_resource_max_energy_add = 100000
-	}
+	# triggered_country_modifier = {
+	# 	potential = {
+	# 		exists = owner
+	# 		host_has_dlc = "Ancient Relics Story Pack"
+	# 	}
+	# 	country_resource_max_minor_artifacts_add = 100000
+	# 	country_resource_max_add = 100000
+	# }
+	# triggered_country_modifier = {
+	# 	potential = {
+	# 		exists = owner
+	# 		NOT = {
+	# 			host_has_dlc = "Ancient Relics Story Pack"
+	# 		}
+	# 	}
+	# 	country_resource_max_add = 100000
+	# }
 	triggered_desc = {
 		text = mem_ancestors_grudge_building_hoarder_depot_effect_desc
 	}

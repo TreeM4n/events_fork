@@ -180,3 +180,344 @@ mem_ancestors_grudge_trait_effect = {
 		}
 	}
 }
+
+# new qualities
+# countryflag name = loc name
+# mundane = mundane 
+# common = decent
+# rare = excellent
+# epic = superior
+# exceptional = exceptional
+# masterful = masterful
+# legendary = legendary
+mem_ancestors_grudge_roll_for_relic_rarity = {
+	owner = {
+		# clear old variable
+		clear_variable = mem_ancestors_grudge_smithing_quality_rolled
+		# add between 1 and 7
+		set_variable = {
+			which = mem_ancestors_grudge_smithing_chance
+			value = owner.value:mem_ancestors_grudge_situation_rarity
+		}
+		# delete before the comma and let the fraction remain
+		subtract_variable = {
+			which = mem_ancestors_grudge_smithing_chance
+			value = owner.value:mem_ancestors_grudge_situation_rarity_floored
+		}
+		# negative roll
+		set_variable = {
+			which = mem_ancestors_grudge_smithing_chance_negative
+			value = 1
+		}
+		subtract_variable = {
+			which = mem_ancestors_grudge_smithing_chance_negative
+			value = mem_ancestors_grudge_smithing_chance
+		}
+		# multiply fraction to represent percentage, not sure if random_list works with fractions
+		multiply_variable = {
+			which = mem_ancestors_grudge_smithing_chance
+			value = 100
+		}
+		multiply_variable = {
+			which = mem_ancestors_grudge_smithing_chance_negative
+			value = 100
+		}
+		# set variable for expacted value
+		set_variable = {
+			which = mem_ancestors_grudge_smithing_quality
+			value = owner.value:mem_ancestors_grudge_situation_rarity
+		}
+		# increase by roll chance events
+		if = {
+			limit = {
+				is_variable_set = mem_ancestors_grudge_rarity_increase
+			}
+			change_variable = {
+				which = mem_ancestors_grudge_smithing_quality
+				value = mem_ancestors_grudge_rarity_increase
+			}
+		}
+		# now lets start rolling 
+		if = {
+			limit = {
+				check_variable_arithmetic = {
+					which = owner.mem_ancestors_grudge_smithing_quality
+					value < 0
+				}
+			}
+			inline_script = {
+				script = mem_ancestors_grudge/roll_rarity
+				FLAG1 = mundane
+				FLAG2 = mundane
+				FLAG3 = common
+				FLAG4 = common
+				FLAG5 = common
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable_arithmetic = {
+					which = owner.mem_ancestors_grudge_smithing_quality
+					value < 1
+				}
+			}
+			inline_script = {
+				script = mem_ancestors_grudge/roll_rarity
+				FLAG1 = mundane
+				FLAG2 = common
+				FLAG3 = common
+				FLAG4 = rare
+				FLAG5 = epic
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable_arithmetic = {
+					which = owner.mem_ancestors_grudge_smithing_quality
+					value < 2
+				}
+			}
+			inline_script = {
+				script = mem_ancestors_grudge/roll_rarity
+				FLAG1 = common
+				FLAG2 = common
+				FLAG3 = rare
+				FLAG4 = epic
+				FLAG5 = exceptional
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable_arithmetic = {
+					which = owner.mem_ancestors_grudge_smithing_quality
+					value < 3
+				}
+			}
+			inline_script = {
+				script = mem_ancestors_grudge/roll_rarity
+				FLAG1 = common
+				FLAG2 = rare
+				FLAG3 = epic
+				FLAG4 = exceptional
+				FLAG5 = masterful
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable_arithmetic = {
+					which = owner.mem_ancestors_grudge_smithing_quality
+					value < 4
+				}
+			}
+			inline_script = {
+				script = mem_ancestors_grudge/roll_rarity
+				FLAG1 = common
+				FLAG2 = rare
+				FLAG3 = epic
+				FLAG4 = exceptional
+				FLAG5 = masterful
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable_arithmetic = {
+					which = owner.mem_ancestors_grudge_smithing_quality
+					value < 5
+				}
+			}
+			inline_script = {
+				script = mem_ancestors_grudge/roll_rarity
+				FLAG1 = rare
+				FLAG2 = epic
+				FLAG3 = exceptional
+				FLAG4 = masterful
+				FLAG5 = legendary
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable_arithmetic = {
+					which = owner.mem_ancestors_grudge_smithing_quality
+					value < 6
+				}
+			}
+			inline_script = {
+				script = mem_ancestors_grudge/roll_rarity
+				FLAG1 = epic
+				FLAG2 = exceptional
+				FLAG3 = masterful
+				FLAG4 = masterful
+				FLAG5 = legendary
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable_arithmetic = {
+					which = owner.mem_ancestors_grudge_smithing_quality
+					value <= 7
+				}
+			}
+			inline_script = {
+				script = mem_ancestors_grudge/roll_rarity
+				FLAG1 = exceptional
+				FLAG2 = masterful
+				FLAG3 = masterful
+				FLAG4 = legendary
+				FLAG5 = legendary
+			}
+		}
+		######## we rolled quality now lets apply some modifiers based on that
+		# i dont want 6 modifiers on this, legendary will give you powerful options instead
+		if = {
+			limit = {
+				has_country_flag = mem_ancestors_grudge_common
+			}
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_rolled
+				value = 1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = mem_ancestors_grudge_rare
+			}
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_rolled
+				value = 2
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = mem_ancestors_grudge_epic
+			}
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_rolled
+				value = 3
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = mem_ancestors_grudge_exceptional
+			}
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_rolled
+				value = 4
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = mem_ancestors_grudge_masterful
+			}
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_rolled
+				value = 5
+			}
+		}
+
+		while = {
+			count = owner.mem_ancestors_grudge_smithing_quality_rolled
+			owner = {
+				mem_ancestors_grudge_add_relic_modifier = yes
+			}
+		}
+		# do this afterwards to not screw up modifier roll
+		if = {
+			limit = {
+				has_country_flag = mem_ancestors_grudge_legendary
+			}
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_rolled
+				value = 6
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = mem_ancestors_grudge_mundane
+			}
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_rolled
+				value = -1
+			}
+		}
+		#clear_variable = mem_ancestors_grudge_smithing_quality_rolled
+		clear_variable = mem_ancestors_grudge_smithing_quality
+		clear_variable = mem_ancestors_grudge_rarity_increase
+		clear_variable = mem_ancestors_grudge_smithing_chance_negative
+		clear_variable = mem_ancestors_grudge_smithing_chance
+	}
+}
+
+mem_ancestors_grudge_increase_relic_roll_quality = {
+	change_variable = {
+		which = mem_ancestors_grudge_rarity_increase
+		value = 1
+	}
+}
+
+mem_ancestors_grudge_decrease_relic_roll_quality = {
+	change_variable = {
+		which = mem_ancestors_grudge_rarity_increase
+		value = -1
+	}
+}
+
+mem_ancestors_grudge_add_relic_modifier = {
+	random_list = {
+		1 = {
+			set_country_flag = mem_ancestors_grudge_relic_flag1
+			modifier = {
+				has_country_flag = mem_ancestors_grudge_relic_flag1
+				factor = 0
+			}
+		}
+		1 = {
+			set_country_flag = mem_ancestors_grudge_relic_flag2
+			modifier = {
+				has_country_flag = mem_ancestors_grudge_relic_flag2
+				factor = 0
+			}
+		}
+		1 = {
+			set_country_flag = mem_ancestors_grudge_relic_flag3
+			modifier = {
+				has_country_flag = mem_ancestors_grudge_relic_flag3
+				factor = 0
+			}
+		}
+		1 = {
+			set_country_flag = mem_ancestors_grudge_relic_flag4
+			modifier = {
+				has_country_flag = mem_ancestors_grudge_relic_flag4
+				factor = 0
+			}
+		}
+		1 = {
+			set_country_flag = mem_ancestors_grudge_relic_flag5
+			modifier = {
+				has_country_flag = mem_ancestors_grudge_relic_flag5
+				factor = 0
+			}
+		}
+		1 = {
+			set_country_flag = mem_ancestors_grudge_relic_flag6
+			modifier = {
+				has_country_flag = mem_ancestors_grudge_relic_flag6
+				factor = 0
+			}
+		}
+		1 = {
+			set_country_flag = mem_ancestors_grudge_relic_flag7
+			modifier = {
+				has_country_flag = mem_ancestors_grudge_relic_flag7
+				factor = 0
+			}
+		}
+		1 = {
+			set_country_flag = mem_ancestors_grudge_relic_flag8
+			modifier = {
+				has_country_flag = mem_ancestors_grudge_relic_flag8
+				factor = 0
+			}
+		}
+	}
+}

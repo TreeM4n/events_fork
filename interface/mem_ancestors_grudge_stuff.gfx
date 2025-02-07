@@ -241,6 +241,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/icons/traits/leader_trait_icons/mem_ancestors_grudge_trait_rune4.dds"
 	}
 	spriteType = {
+		name = "GFX_starbase_voidlure_mem_ancestors_grudge_dragon"
+		texturefile = "gfx/interface/icons/modules/starbase_voidlure_mem_ancestors_grudge_dragon.dds"
+	}
+	spriteType = {
 		name = "GFX_mem_ancestors_grudge_origin"
 		texturefile = "gfx/event_pictures/origin/mem_ancestors_grudge_origin.dds"
 	}

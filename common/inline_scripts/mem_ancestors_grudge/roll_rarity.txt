@@ -1,0 +1,43 @@
+# new qualities
+# countryflag name = loc name
+# mundane = mundane 
+# common = decent
+# rare = excellent
+# epic = superior
+# exceptional = exceptional
+# masterful = masterful
+# legendary = legendary
+
+
+random_list = {
+	60 = {
+		modifier = {
+			mult = owner.mem_ancestors_grudge_smithing_chance_negative
+		}
+		set_country_flag = mem_ancestors_grudge_$FLAG1$
+	}
+	120 = {
+		modifier = {
+			mult = owner.mem_ancestors_grudge_smithing_chance_negative
+		}
+		set_country_flag = mem_ancestors_grudge_$FLAG2$
+	}
+	160 = {
+		modifier = {
+			mult = owner.mem_ancestors_grudge_smithing_chance
+		}
+		set_country_flag = mem_ancestors_grudge_$FLAG3$
+	}
+	120 = {
+		modifier = {
+			mult = owner.mem_ancestors_grudge_smithing_chance
+		}
+		set_country_flag = mem_ancestors_grudge_$FLAG4$
+	}
+	20 = {
+		modifier = {
+			mult = owner.mem_ancestors_grudge_smithing_chance
+		}
+		set_country_flag = mem_ancestors_grudge_$FLAG5$
+	}
+}

@@ -95,14 +95,7 @@ r_mem_ancestors_grudge_sword = {
 	inline_script = {
 		script = mem_ancestors_grudge/relic_activation
 	}
-	# Possible check for activation
-	possible = {
-		always = yes
-		# inline_script = {
-		# 	script = relics/activation_checks
-		# 	RELIC = r_mem_ancestors_grudge_sword
-		# }
-	}
+
 }
 
 r_mem_ancestors_grudge_ring = {
@@ -204,14 +197,7 @@ r_mem_ancestors_grudge_ring = {
 	inline_script = {
 		script = mem_ancestors_grudge/relic_activation
 	}
-	# Possible check for activation
-	possible = {
-		always = yes
-		# inline_script = {
-		# 	script = relics/activation_checks
-		# 	RELIC = r_mem_ancestors_grudge_ring
-		# }
-	}
+
 }
 
 r_mem_ancestors_grudge_pauldron = {
@@ -308,14 +294,7 @@ r_mem_ancestors_grudge_pauldron = {
 	inline_script = {
 		script = mem_ancestors_grudge/relic_activation
 	}
-	# Possible check for activation
-	possible = {
-		always = yes
-		# inline_script = {
-		# 	script = relics/activation_checks
-		# 	RELIC = r_mem_ancestors_grudge_pauldron
-		# }
-	}
+
 }
 
 r_mem_ancestors_grudge_anvil = {

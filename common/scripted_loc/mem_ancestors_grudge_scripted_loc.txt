@@ -24,6 +24,24 @@ defined_text = {
 			has_country_flag = mem_ancestors_grudge_exceptional
 		}
 		localization_key = mem_ancestors_grudge_exceptional
+	}	
+	text = {
+		trigger = {
+			has_country_flag = mem_ancestors_grudge_mundane
+		}
+		localization_key = mem_ancestors_grudge_mundane
+	}
+	text = {
+		trigger = {
+			has_country_flag = mem_ancestors_grudge_legendary
+		}
+		localization_key = mem_ancestors_grudge_legendary
+	}
+	text = {
+		trigger = {
+			has_country_flag = mem_ancestors_grudge_masterful
+		}
+		localization_key = mem_ancestors_grudge_masterful
 	}
 	default = WEIRD
 }
@@ -66,9 +84,29 @@ defined_text = {
 		}
 		localization_key = mem_ancestors_grudge_exceptional
 	}
+	text = {
+		trigger = {
+			has_leader_flag = mem_ancestors_grudge_mundane
+		}
+		localization_key = mem_ancestors_grudge_mundane
+	}
+	text = {
+		trigger = {
+			has_leader_flag = mem_ancestors_grudge_masterful
+		}
+		localization_key = mem_ancestors_grudge_masterful
+	}
+	text = {
+		trigger = {
+			has_leader_flag = mem_ancestors_grudge_legendary
+		}
+		localization_key = mem_ancestors_grudge_legendary
+	}
+
 	default = mem_nothing
 }
 
+# TODO rewrite this
 defined_text = {
 	name = MemGetSituationRarity
 	random = no

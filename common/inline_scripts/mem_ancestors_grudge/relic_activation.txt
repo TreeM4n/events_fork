@@ -1,25 +1,28 @@
 active_effect = {
 	if = {
 		limit = {
-			has_origin = mem_ancestors_grudge_origin
+			NOT = {has_authority = auth_machine_intelligence}
+			#has_origin = mem_ancestors_grudge_origin_hive
 		}
 		custom_tooltip = mem_ancestors_grudge_activate_crafted_relic_tt
 	}
 	else_if = {
 		limit = {
-			has_origin = mem_ancestors_grudge_origin_hive
+			has_authority = auth_machine_intelligence
+			#has_origin = mem_ancestors_grudge_origin_hive
 		}
-	}
-	else = {
 		custom_tooltip = mem_ancestors_grudge_activate_crafted_relic_tt_machines
 	}
-	# custom_tooltip = relic_triumph_cooldown
-	# hidden_effect = {
-	# 	add_modifier = {
-	# 		modifier = "relic_activation_cooldown"
-	# 		days = 360
-	# 	}
-	# }
+	else = {
+		custom_tooltip = mem_ancestors_grudge_activate_crafted_relic_tt_hives
+	}
+	custom_tooltip = relic_triumph_cooldown
+	hidden_effect = {
+		add_modifier = {
+			modifier = "relic_activation_cooldown"
+			days = 360
+		}
+	}
 	hidden_effect = {
 		if = {
 			limit = {
@@ -38,3 +41,12 @@ active_effect = {
 		}
 	}
 }
+
+	# Possible check for activation
+	possible = {
+		#always = yes
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_mem_ancestors_grudge_sword
+		}
+	}

@@ -147,11 +147,12 @@ mem_ancestors_grudge_origin_hive = {
 	flags = {
 		custom_start_screen
 	}
-	traits = {
-		trait = trait_presapient_forcefully_devolved
-	}
+	# traits = {
+	# 	trait = trait_presapient_forcefully_devolved
+	# }
 	modifier = {
 		country_resource_max_minor_artifacts_add = 10000
+		country_resource_max_add = 100000
 		#planet_jobs_minor_artifacts_produces_mult = -0.5
 	}
 	random_weight = {

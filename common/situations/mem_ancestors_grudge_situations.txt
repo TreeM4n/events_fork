@@ -22,9 +22,29 @@ situation_mem_ancestors_grudge_forge_repairs = {
 			}
 			custom_tooltip = situation_mem_ancestors_grudge_forge_repairs_final_machines
 		}
+		if = {
+			limit = {
+				owner = {
+					has_origin = mem_ancestors_grudge_origin_hive
+				}
+			}
+			custom_tooltip = situation_mem_ancestors_grudge_forge_repairs_final_hive
+		}
 		hidden_effect = {
-			situation_event = {
-				id = mem_ancestors_grudge.26
+			if = {
+				limit = {
+					owner = {
+						has_origin = mem_ancestors_grudge_origin_hive
+					}
+				}
+				situation_event = {
+					id = mem_ancestors_grudge.27
+				}
+			}
+			else = {
+				situation_event = {
+					id = mem_ancestors_grudge.26
+				}
 			}
 		}
 	}

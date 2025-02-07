@@ -35,12 +35,23 @@ mem_ancestors_grudge_factory_pop_count = {
 # determines rarity of relics
 mem_ancestors_grudge_situation_rarity = {
 	base = 0
-	add = modifier:mem_ancestors_grudge_artifact_power_produces_mult # actual modifier
-	mult = 100 # go to full numbers to round down, and make compare
-	divide = 25 # every 25
+	add = modifier:mem_ancestors_grudge_artifact_power_produces_mult	# actual modifier
+	mult = 100	# go to full numbers to round down, and make compare
+	divide = 15	# every 25
+	#floor = yes #round down
+	#add = 1 # temporary fix, pls dont break anything # otheriwse it would need 25% more than for all rarities
+	max = 7.9 # so higher than that will be cut off
+}
+
+# determines rarity of relics
+mem_ancestors_grudge_situation_rarity_floored = {
+	base = 0
+	add = modifier:mem_ancestors_grudge_artifact_power_produces_mult	# actual modifier
+	mult = 100	# go to full numbers to round down, and make compare
+	divide = 15	# every 25
 	floor = yes #round down
-	add = 1 # temporary fix, pls dont break anything # otheriwse it would need 25% more than for all rarities
-	max = 4
+	#add = 1 # temporary fix, pls dont break anything # otheriwse it would need 25% more than for all rarities
+	max = 7
 }
 
 # overflow
@@ -56,14 +67,12 @@ mem_ancestors_grudge_hoarder_overflow = {
 	#max = 4
 }
 
-
 # relics
 mem_ancestors_grudge_hoarder_building = {
 	base = 1
 	add = trigger:num_owned_relics
 	#max = 4
 }
-
 
 # # determines strengh of modifiers for relcs
 # mem_ancestors_grudge_situation_rarity = {
@@ -73,7 +82,6 @@ mem_ancestors_grudge_hoarder_building = {
 # 	add = 1
 # 	max = 4
 # }
-
 mem_smith_job_number = {
 	base = 0
 	complex_trigger_modifier = {
@@ -90,7 +98,6 @@ mem_smith_job_number = {
 		}
 		mult = 0.3
 		mode = add
-		
 	}
 	max = 20
 	# complex_trigger_modifier = {
