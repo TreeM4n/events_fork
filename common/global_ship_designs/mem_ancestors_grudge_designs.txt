@@ -2,9 +2,11 @@ ship_design = {
 	name = "mem_ancestors_grudge_dragon"
 	ship_size = mem_ancestors_grudge_dragon
 	is_event_design = yes
+
 	section = {
-		template = mem_ancestors_grudge_dragon_key
+		template = "mem_ancestors_grudge_dragon_key"
 		slot = "mid"
+		
 		component = {
 			slot = "PRIMARY_GUN_01"
 			template = "DRAGON_WEAPON"
@@ -40,7 +42,7 @@ ship_design = {
 		component = {
 			slot = "SECONDARY_GUN_08"
 			template = "DRAGON_SECONDARY_WEAPON"
-		}
+		}		
 		component = {
 			slot = "TERTIARY_GUN_01"
 			template = "DRAGON_TERTIARY_WEAPON"
@@ -56,7 +58,8 @@ ship_design = {
 		component = {
 			slot = "TERTIARY_GUN_04"
 			template = "DRAGON_TERTIARY_WEAPON"
-		}
+		}			
+		
 		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "LARGE_DRAGON_ARMOR"
@@ -91,9 +94,11 @@ ship_design = {
 ship_design = {
 	name = "mem_ancestors_grudge_dragonling"
 	ship_size = mem_ancestors_grudge_dragon_small
+
 	section = {
 		template = "mem_ancestors_grudge_dragon_key_small"
 		slot = "mid"
+		
 		component = {
 			slot = "PRIMARY_GUN_01"
 			template = "DRAGON_WEAPON"
@@ -129,7 +134,7 @@ ship_design = {
 		component = {
 			slot = "SECONDARY_GUN_08"
 			template = "DRAGON_SECONDARY_WEAPON"
-		}
+		}		
 		component = {
 			slot = "TERTIARY_GUN_01"
 			template = "DRAGON_TERTIARY_WEAPON"
@@ -145,7 +150,8 @@ ship_design = {
 		component = {
 			slot = "TERTIARY_GUN_04"
 			template = "DRAGON_TERTIARY_WEAPON"
-		}
+		}			
+		
 		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "LARGE_DRAGON_ARMOR"
@@ -182,9 +188,11 @@ ship_design = {
 ship_design = {
 	name = "mem_ancestors_grudge_dragonling_undead"
 	ship_size = mem_ancestors_grudge_dragon_small
+
 	section = {
 		template = "mem_ancestors_grudge_dragon_key_small"
 		slot = "mid"
+		
 		component = {
 			slot = "PRIMARY_GUN_01"
 			template = "DRAGON_WEAPON"
@@ -220,7 +228,7 @@ ship_design = {
 		component = {
 			slot = "SECONDARY_GUN_08"
 			template = "DRAGON_SECONDARY_WEAPON"
-		}
+		}		
 		component = {
 			slot = "TERTIARY_GUN_01"
 			template = "DRAGON_TERTIARY_WEAPON"
@@ -236,7 +244,8 @@ ship_design = {
 		component = {
 			slot = "TERTIARY_GUN_04"
 			template = "DRAGON_TERTIARY_WEAPON"
-		}
+		}			
+		
 		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "LARGE_DRAGON_ARMOR"

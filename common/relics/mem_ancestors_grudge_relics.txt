@@ -378,7 +378,7 @@ r_mem_ancestors_grudge_modern_art = {
 		potential = {
 			always = yes
 		}
-		country_unity_produces_mult = -0.05
+		country_unity_produces_mult = -0.01
 	}
 	active_effect = {
 		custom_tooltip = r_mem_ancestors_grudge_cube_effect_tt_active

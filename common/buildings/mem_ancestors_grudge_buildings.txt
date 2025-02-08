@@ -404,6 +404,9 @@ mem_ancestors_grudge_building_forge_4 = {
 	inline_script = {
 		script = mem_ancestors_grudge/mem_ancestors_grudge_building_forge_1
 	}
+	triggered_desc = {
+		text = mem_ancestors_grudge_building_forge_empireeffect_tt
+	}
 	ai_weight = {
 		base = 9999
 	}
@@ -601,7 +604,13 @@ mem_ancestors_grudge_building_hoarder_depot = {
 		potential = {
 			exists = owner
 			owner = {
-				has_policy_flag = mem_ancestors_grudge_is_hoarder_policy_unity
+				NOR = {
+					has_policy_flag = mem_ancestors_grudge_is_hoarder_policy_stability
+					has_policy_flag = mem_ancestors_grudge_is_hoarder_policy_pop_growth
+					has_policy_flag = mem_ancestors_grudge_is_hoarder_policy_science
+					#has_policy_flag = mem_ancestors_grudge_is_hoarder_policy_unity
+				}
+				#has_policy_flag = mem_ancestors_grudge_is_hoarder_policy_unity
 			}
 		}
 		country_unity_produces_mult = 0.02
@@ -625,7 +634,7 @@ mem_ancestors_grudge_building_hoarder_depot = {
 			}
 		}
 		pop_growth_speed = 0.03
-		planet_jobs_upkeep_mult = 0.02
+		#planet_jobs_upkeep_mult = 0.02
 		mult = owner.value:mem_ancestors_grudge_hoarder_building
 	}
 	triggered_country_modifier = {

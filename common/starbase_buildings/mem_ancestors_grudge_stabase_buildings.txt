@@ -27,19 +27,23 @@ voidlure_mem_ancestors_grudge_dragon = {
 			}
 			alloys = 3000
 		}
+		# upkeep = {
+		# 	trigger = {
+		# 		NOT = {
+		# 			host_has_dlc = "Ancient Relics Story Pack"
+		# 		}
+		# 	}
+		# 	alloys = 5
+		# }
+		# upkeep = {
+		# 	trigger = {
+		# 		host_has_dlc = "Ancient Relics Story Pack"
+		# 	}
+		# 	minor_artifacts = 10
+		# }
 		upkeep = {
-			trigger = {
-				NOT = {
-					host_has_dlc = "Ancient Relics Story Pack"
-				}
-			}
-			alloys = 5
-		}
-		upkeep = {
-			trigger = {
-				host_has_dlc = "Ancient Relics Story Pack"
-			}
-			minor_artifacts = 10
+			energy = 5
+			food  = 10
 		}
 	}
 	country_modifier = {

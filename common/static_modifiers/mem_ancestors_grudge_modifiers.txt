@@ -52,11 +52,11 @@ mem_ancestors_grudge_diggy_hole = {
 }
 
 mem_ancestors_grudge_dragon_tithe = {
-	country_minor_artifacts_produces_mult = -0.1
+	country_minor_artifacts_produces_mult = -0.05
 	space_fauna_experience_gain_mult = 0.5
 }
 mem_ancestors_grudge_dragon_tithe_energy = {
-	country_energy_produces_mult = -0.05
+	country_energy_produces_mult = -0.02
 	space_fauna_experience_gain_mult = 0.5
 }
 
@@ -90,4 +90,13 @@ mem_ancestors_grudge_ai_cheat = {
 	country_physics_tech_research_speed = 1
 	country_society_tech_research_speed = 1
 	country_engineering_tech_research_speed = 1
+}
+
+
+mem_ancestors_grudge_dragon_roost = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_ether_trophy.dds"
+	icon_frame = 2	
+
+	planet_max_districts_add = -1
+	planet_crime_mult = -0.15
 }

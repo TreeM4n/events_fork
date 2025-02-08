@@ -158,7 +158,6 @@ tech_mem_ancestors_grudge_robot_traits = {
 		}
 	}
 	weight = 0
-	
 }
 
 tech_mem_ancestors_grudge_dragon_lure = {
@@ -177,6 +176,8 @@ tech_mem_ancestors_grudge_dragon_lure = {
 			desc = "tech_mem_ancestors_grudge_dragon_lure_desc"
 		}
 	}
+	modifier = {
+		space_fauna_growth_rate_mult = 0.1
+	}
 	weight = 0
-	
 }

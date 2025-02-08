@@ -27,6 +27,7 @@ mem_ancestors_grudge_trait_robot_rune_golem = {
 		army_health = 0.5
 		#planet_pop_assembly_mult = -0.1
 	}
+	initial = no
 	slave_cost = {
 		energy = 500
 	}

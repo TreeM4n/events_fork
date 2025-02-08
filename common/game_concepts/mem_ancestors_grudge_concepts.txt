@@ -64,5 +64,9 @@ concept_mem_ancestors_grudge_ruler_traits = {
 }
 
 concept_mem_ancestors_grudge_hoarding = {
-	icon = "gfx/interface/icons/modifiers/mod_acceptlesson_produces_mult.dds"
+	icon = "gfx/interface/icons/resources/minor_artifacts_large.dds"
+}
+
+concept_mem_ancestors_grudge_hoarding_dragon = {
+	icon = "gfx/interface/icons/resources/minor_artifacts_large.dds"
 }

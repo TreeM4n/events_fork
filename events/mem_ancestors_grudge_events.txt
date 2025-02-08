@@ -335,7 +335,7 @@ country_event = {
 	option = {
 		name = WEIRD
 		create_fleet = {
-			name = "NAME_voidlure_mem_ancestors_grudge_dragonling"
+			name = "Dragonling"
 			settings = {
 				can_upgrade = no
 				#can_change_composition = no
@@ -350,7 +350,7 @@ country_event = {
 				}
 				create_ship = {
 					design = last_created_design
-					name = "NAME_voidlure_mem_ancestors_grudge_dragonling"
+					name = "Dragonling"
 					prefix = no
 					upgradable = no
 				}
@@ -358,7 +358,7 @@ country_event = {
 			}
 		}
 		create_fleet = {
-			name = "NAME_voidlure_mem_ancestors_grudge_dragon"
+			name = "Hoarding Dragon"
 			settings = {
 				can_upgrade = no
 				#can_change_composition = no
@@ -378,6 +378,122 @@ country_event = {
 					upgradable = no
 				}
 				set_location = root.capital_scope
+			}
+		}
+	}
+	option = {
+		name = WEIRD
+		create_country = {
+			name = "Grand Dragon"
+			type = guardian_dragon
+			flag = {
+				icon = {
+					category = "spherical"
+					file = "flag_spherical_6.dds"
+				}
+				background = {
+					category = "backgrounds"
+					file = "00_solid.dds"
+				}
+				colors = {
+					"dark_blue"
+					"dark_blue"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				set_faction_hostility = {
+					target = root.owner
+					set_hostile = yes
+					set_neutral = no
+					set_friendly = no
+				}
+				save_global_event_target_as = mem_ancestors_grudge_dragon_country
+				set_country_flag = mem_ancestors_grudge_dragon_country
+				############## this should not break things but rather disable the ether drake on action killed event
+				set_country_flag = here_be_the_dragon
+				every_playable_country = {
+					establish_communications_no_message = event_target:mem_ancestors_grudge_dragon_country
+				}
+				create_fleet = {
+					name = "Hoarding Dragon"
+					settings = {
+						spawn_debris = no
+						is_boss = yes
+					}
+					effect = {
+						set_owner = event_target:mem_ancestors_grudge_dragon_country
+						create_ship = {
+							name = ""
+							design = "mem_ancestors_grudge_dragon"
+							effect = {
+								set_ship_flag = mem_ancestors_grudge_dragon_ship
+								save_global_event_target_as = mem_ancestors_grudge_dragon_ship
+								set_disabled = no
+							}
+						}
+						save_global_event_target_as = mem_ancestors_grudge_dragon_fleet
+						set_location = {
+							target = root.capital_scope
+							distance = 10
+							angle = 90
+							direction = in_system
+						}
+						set_fleet_stance = passive
+						set_aggro_range_measure_from = self
+						set_aggro_range = 350
+						queue_actions = {
+							repeat = {
+								find_closest_planet = {
+									trigger = {
+										id = mem_ancestors_grudge.home.1
+										is_star = yes
+									}
+									found_planet = {
+										move_to = this
+										orbit_planet = this
+										wait = {
+											duration = 30
+											random = 20
+										}
+									}
+								}
+								find_closest_planet = {
+									trigger = {
+										id = mem_ancestors_grudge.home.2
+										is_star = no
+										NOT = {
+											is_same_value = root.capital_scope
+										}
+									}
+									found_planet = {
+										move_to = this
+										orbit_planet = this
+										wait = {
+											duration = 30
+											random = 20
+										}
+									}
+								}
+								find_closest_planet = {
+									trigger = {
+										id = mem_ancestors_grudge.home.3
+										is_same_value = root.capital_scope
+									}
+									found_planet = {
+										move_to = this
+										orbit_planet = this
+										wait = {
+											duration = 30
+											random = 20
+										}
+									}
+								}
+							}
+						}
+					}
+				}
 			}
 		}
 	}
@@ -1037,7 +1153,7 @@ situation_event = {
 	desc = mem_ancestors_grudge.15.desc
 	picture = GFX_evt_riftworld_archsite_crater
 	show_sound = event_collapsing_ruins
-	location = event_target:mem_ancestors_grudge_planet
+	location = target
 	situation = this
 	is_triggered_only = yes
 	immediate = {
@@ -1060,7 +1176,7 @@ situation_event = {
 		# }
 		custom_tooltip = mem_ancestors_grudge_unlocks_forge_upgrade_tt
 		hidden_effect = {
-			event_target:mem_ancestors_grudge_planet = {
+			target = {
 				set_planet_flag = mem_ancestors_grudge_building_forge_2
 			}
 			if = {
@@ -1090,7 +1206,7 @@ situation_event = {
 	desc = mem_ancestors_grudge.20.desc
 	picture = GFX_evt_city_ruins
 	show_sound = event_collapsing_ruins
-	location = event_target:mem_ancestors_grudge_planet
+	location = target
 	situation = this
 	is_triggered_only = yes
 	immediate = {
@@ -1119,7 +1235,7 @@ situation_event = {
 		}
 		custom_tooltip = mem_ancestors_grudge_unlocks_forge_upgrade_tt
 		hidden_effect = {
-			event_target:mem_ancestors_grudge_planet = {
+			target = {
 				set_planet_flag = mem_ancestors_grudge_building_forge_3
 			}
 			if = {
@@ -1164,7 +1280,7 @@ situation_event = {
 	}
 	picture = GFX_evt_city_planet_2
 	show_sound = event_celebration
-	location = event_target:mem_ancestors_grudge_planet
+	location = target
 	situation = this
 	is_triggered_only = yes
 	immediate = {
@@ -1186,7 +1302,7 @@ situation_event = {
 		}
 		custom_tooltip = mem_ancestors_grudge_unlocks_forge_upgrade_tt
 		hidden_effect = {
-			event_target:mem_ancestors_grudge_planet = {
+			target = {
 				set_planet_flag = mem_ancestors_grudge_building_forge_4
 			}
 			if = {
@@ -1295,7 +1411,7 @@ situation_event = {
 	id = mem_ancestors_grudge.27
 	title = mem_ancestors_grudge.27.name
 	desc = mem_ancestors_grudge.27.desc
-	picture = GFX_evt_space_dragon_blue
+	picture = GFX_evt_space_dragon
 	show_sound = event_dangerous_animals
 	location = target
 	situation = this
@@ -1308,7 +1424,7 @@ situation_event = {
 			}
 		}
 		create_country = {
-			name = "NAME_mem_ancestors_grudge_Grand_Dragon"
+			name = "Grand Dragon"
 			type = guardian_dragon
 			flag = {
 				icon = {
@@ -1327,20 +1443,26 @@ situation_event = {
 				}
 			}
 			effect = {
-				set_faction_hostility = {
-					target = root.owner
-					set_hostile = no
-					set_neutral = yes
-					set_friendly = no
-				}
+			
+				# set_faction_hostility = {
+				# 	target = root.owner
+				# 	set_hostile = no
+				# 	set_neutral = yes
+				# 	set_friendly = no
+				# }
 				save_global_event_target_as = mem_ancestors_grudge_dragon_country
 				set_country_flag = mem_ancestors_grudge_dragon_country
-
+			
 				############## this should not break things but rather disable the ether drake on action killed event
 				set_country_flag = here_be_the_dragon
-				
 				every_playable_country = {
 					establish_communications_no_message = event_target:mem_ancestors_grudge_dragon_country
+					set_faction_hostility = {
+						target = event_target:mem_ancestors_grudge_dragon_country
+						set_hostile = no
+						set_neutral = yes
+						set_friendly = no
+					}
 				}
 				# every_playable_country = {
 				# 	limit = {
@@ -1356,7 +1478,7 @@ situation_event = {
 				# 	}
 				# }
 				create_fleet = {
-					name = "NAME_mem_ancestors_grudge_Grand_Dragon"
+					name = "Hoarding Dragon"
 					settings = {
 						spawn_debris = no
 						is_boss = yes
@@ -1364,7 +1486,7 @@ situation_event = {
 					effect = {
 						set_owner = event_target:mem_ancestors_grudge_dragon_country
 						create_ship = {
-							name = "NAME_mem_ancestors_grudge_Grand_Dragon"
+							name = ""
 							design = "mem_ancestors_grudge_dragon"
 							effect = {
 								set_ship_flag = mem_ancestors_grudge_dragon_ship
@@ -1386,7 +1508,7 @@ situation_event = {
 							repeat = {
 								find_closest_planet = {
 									trigger = {
-										id = dragon.home.1
+										id = mem_ancestors_grudge.home.11
 										is_star = yes
 									}
 									found_planet = {
@@ -1400,7 +1522,7 @@ situation_event = {
 								}
 								find_closest_planet = {
 									trigger = {
-										id = dragon.home.2
+										id = mem_ancestors_grudge.home.12
 										is_star = no
 										NOT = {
 											is_same_value = root.target
@@ -1417,7 +1539,7 @@ situation_event = {
 								}
 								find_closest_planet = {
 									trigger = {
-										id = dragon.home.3
+										id = mem_ancestors_grudge.home.13
 										is_same_value = root.target
 									}
 									found_planet = {
@@ -1453,9 +1575,15 @@ situation_event = {
 				}
 			}
 		}
+		target = {
+			add_modifier = {
+				modifier = mem_ancestors_grudge_dragon_roost
+			}
+		}
 	}
 	option = {
 		name = mem_ancestors_grudge.27.b
+		custom_tooltip = mem_ancestors_grudge.27.b.tt
 		hidden_effect = {
 			event_target:mem_ancestors_grudge_dragon_country = {
 				set_faction_hostility = {
@@ -1599,20 +1727,17 @@ country_event = {
 	}
 }
 
-# TODO icon sound
 # dragon luring tech
 country_event = {
 	id = mem_ancestors_grudge.29
 	title = mem_ancestors_grudge.29.name
 	desc = mem_ancestors_grudge.29.desc
-	picture = GFX_evt_crisis_defeated
-	show_sound = event_space_battle
+	picture = GFX_evt_astral_rift_lonely_planet
+	show_sound = event_vivisection
 	is_triggered_only = yes
 	option = {
 		name = mem_ancestors_grudge.29.a
-		give_technology = {
-			tech = tech_mem_ancestors_grudge_dragon_lure
-		}
+		add_research_option = tech_mem_ancestors_grudge_dragon_lure
 		# add_modifier = {
 		# 	modifier = mem_ancestors_grudge_dragon_knowledge
 		# }
@@ -2586,6 +2711,8 @@ country_event = {
 	id = mem_ancestors_grudge.46
 	title = mem_ancestors_grudge.46.title
 	desc = mem_ancestors_grudge.46.desc
+	show_sound = event_celebration
+	picture = GFX_evt_physics_research
 	#location = event_target:mem_ancestors_grudge_planet
 	is_triggered_only = yes
 	trigger = {
@@ -2694,7 +2821,6 @@ country_event = {
 	option = {
 		name = mem_ancestors_grudge.46.b		# rare shuffle
 		custom_tooltip = mem_ancestors_grudge.46.b.shuffle_stats_tt
-	
 		hidden_effect = {
 			inline_script = {
 				script = mem_ancestors_grudge/reroll_passive
@@ -2719,7 +2845,7 @@ country_event = {
 		}
 		add_modifier = {
 			modifier = relic_activation_cooldown
-			days = 3600
+			days = 1800
 		}
 	}
 	option = {
@@ -2743,7 +2869,7 @@ country_event = {
 		custom_tooltip = mem_ancestors_grudge.45.exceptional_ring
 		add_modifier = {
 			modifier = relic_activation_cooldown
-			days = 3600
+			days = 1800
 		}
 	}
 	option = {
@@ -2764,16 +2890,16 @@ country_event = {
 		}
 		add_modifier = {
 			modifier = relic_activation_cooldown
-			days = 3600
+			days = 1800
 		}
 	}
 	after = {
-		hidden_effect = {
-			add_modifier = {
-				modifier = "relic_activation_cooldown"
-				days = 1800
-			}
-		}
+		# hidden_effect = {
+		# 	add_modifier = {
+		# 		modifier = "relic_activation_cooldown"
+		# 		days = 1800
+		# 	}
+		# }
 	}
 }
 
@@ -4134,7 +4260,7 @@ starbase_event = {
 		# }
 		owner = {
 			create_fleet = {
-				name = "NAME_voidlure_mem_ancestors_grudge_dragonling"
+				name = "Dragon Offspring"
 				settings = {
 					can_upgrade = no
 					#can_change_composition = no
@@ -4149,7 +4275,7 @@ starbase_event = {
 					}
 					create_ship = {
 						design = last_created_design
-						name = "NAME_voidlure_mem_ancestors_grudge_dragonling"
+						name = "Dragonling"
 						prefix = no
 						upgradable = no
 					}
@@ -4173,7 +4299,6 @@ starbase_event = {
 		}
 	}
 }
-
 
 # Relic Acquired (HIDDEN), additional chance for grail knights
 country_event = {
