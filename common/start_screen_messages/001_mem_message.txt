@@ -57,12 +57,11 @@ part = {
 }
 
 
-# Hive + Legacy
+# Hive
 part = {
 	location = 0
 	localization = "START_SCREEN_MEM_ANCESTORS_GRUDGE_HIVE"
 	trigger = {
 		has_origin = mem_ancestors_grudge_origin_hive
-		has_civic = civic_machine_assimilator
 	}
 }
