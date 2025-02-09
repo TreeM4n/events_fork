@@ -335,7 +335,7 @@ country_event = {
 	option = {
 		name = WEIRD
 		create_fleet = {
-			name = "Dragonling"
+			name = "NAME_Dragonling"
 			settings = {
 				can_upgrade = no
 				#can_change_composition = no
@@ -350,7 +350,7 @@ country_event = {
 				}
 				create_ship = {
 					design = last_created_design
-					name = "Dragonling"
+					name = "NAME_Dragonling"
 					prefix = no
 					upgradable = no
 				}
@@ -1685,24 +1685,20 @@ country_event = {
 		}
 		if = {
 			limit = {
-				AND = {
-					has_origin = mem_ancestors_grudge_origin_hive
-					OR = {
-						has_modifier = mem_ancestors_grudge_dragon_tithe
-						#has_modifier = mem_ancestors_grudge_dragon_tithe_energy
-					}
+				has_origin = mem_ancestors_grudge_origin_hive
+				OR = {
+					has_modifier = mem_ancestors_grudge_dragon_tithe
+					#has_modifier = mem_ancestors_grudge_dragon_tithe_energy
 				}
 			}
 			remove_modifier = mem_ancestors_grudge_dragon_tithe
 		}
 		else_if = {
 			limit = {
-				AND = {
-					has_origin = mem_ancestors_grudge_origin_hive
-					OR = {
-						#has_modifier = mem_ancestors_grudge_dragon_tithe
-						has_modifier = mem_ancestors_grudge_dragon_tithe_energy
-					}
+				has_origin = mem_ancestors_grudge_origin_hive
+				OR = {
+					#has_modifier = mem_ancestors_grudge_dragon_tithe
+					has_modifier = mem_ancestors_grudge_dragon_tithe_energy
 				}
 			}
 			remove_modifier = mem_ancestors_grudge_dragon_tithe_energy
@@ -1711,12 +1707,10 @@ country_event = {
 			hidden_effect = {
 				every_playable_country = {
 					limit = {
-						AND = {
-							has_origin = mem_ancestors_grudge_origin_hive
-							OR = {
-								has_modifier = mem_ancestors_grudge_dragon_tithe
-								has_modifier = mem_ancestors_grudge_dragon_tithe_energy
-							}
+						has_origin = mem_ancestors_grudge_origin_hive
+						OR = {
+							has_modifier = mem_ancestors_grudge_dragon_tithe
+							has_modifier = mem_ancestors_grudge_dragon_tithe_energy
 						}
 					}
 					remove_modifier = mem_ancestors_grudge_dragon_tithe
@@ -4275,7 +4269,7 @@ starbase_event = {
 					}
 					create_ship = {
 						design = last_created_design
-						name = "Dragonling"
+						name = "NAME_Dragonling"
 						prefix = no
 						upgradable = no
 					}

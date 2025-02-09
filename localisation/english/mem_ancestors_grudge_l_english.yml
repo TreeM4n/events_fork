@@ -22,6 +22,8 @@
  START_SCREEN_MEM_ANCESTORS_GRUDGE_HIVE:0 "For many centuries have we now ruled over [GetHomeWorldName]. It was the ruins of a war-torn world that we had found ourselves in. A shared consciousness had formed, giving our previous selves - little more than mindless beasts - purpose.\n\nWe explored this world and found ourselves strangers to it. Others had lived here before us, but only their ruins and strange artifacts remain. We have made it a habit to collect these shiny pieces and already amassed a sizeable hoard.\n\nHowever, there is more that we long for. Our world's sky is dominated by three moons, but it is the closest, which draws us to it. We do not know why, but we feel we have to be there. It is callig for us."
 
  NAME_mem_ancestors_grudge_system:0 "Ancestors' Grudge"
+ NAME_Dragonling:0 "Dragonling"
+ NAME_voidlure_mem_ancestors_grudge_dragon:0 "Guams"
 
 # ['concept_mem_ancestors_grudge_crafting']
  mem_ancestors_grudge_origin_effects:0 "- Start with a ['concept_mem_ancestors_grudge_relic_world'] (Size: £planetsize£ 6)$NEW_LINE$- Able to rebuild the ['concept_mem_ancestors_grudge_runeforge']$NEW_LINE$- Can create unique ['concept_mem_ancestors_grudge_rune_relics']"
@@ -490,7 +492,7 @@
  mem_ancestors_grudge.27.name:0 "From The Shadows"
  mem_ancestors_grudge.27.desc:0 "Once restoration works were complete a giant signal appeared on our instruments. Before we could do anything about it, a channel opened:\n\n§LMy name ... Rhaegal. You have .. things .. I require. I offer .. cooperation ... for a tithe. Help me .. repopulate.\n\nWhat is your answer: life or death?§!"
  mem_ancestors_grudge.27.a:0 "Let us live together."
-  mem_ancestors_grudge_dragon_roost:0 "Dragon Roost"
+ mem_ancestors_grudge_dragon_roost:0 "Dragon Roost"
  mem_ancestors_grudge.27.b:0 "Death, but yours!"
  mem_ancestors_grudge.27.b.tt:0 "§YThe Dragon will be angry§!"
  mem_ancestors_grudge.28.name:0 "Dra-gone"
