@@ -1108,19 +1108,22 @@ country_event = {
 	title = mem_ancestors_grudge.5.name
 	desc = {
 		trigger = {
-			owner_main_species = {
-				is_archetype = MACHINE
+			OR = {
+				gets_mem_ancestors_grudge_robot_text = yes
+				gets_mem_ancestors_grudge_machine_text = yes
 			}
-		}
+		}		
 		text = mem_ancestors_grudge.5.desc_robots
 	}
 	desc = {
 		trigger = {
-			NOT = {
-				owner_main_species = {
-					is_archetype = MACHINE
-				}
-			}
+			gets_mem_ancestors_grudge_hive_text = yes
+		}
+		text = mem_ancestors_grudge.5.desc_hive
+	}
+	desc = {
+		trigger = {
+			gets_mem_ancestors_grudge_organic_text = yes
 		}
 		text = mem_ancestors_grudge.5.desc
 	}
@@ -1138,6 +1141,19 @@ country_event = {
 	}
 	option = {
 		name = mem_ancestors_grudge.5.a
+		trigger = {
+			gets_mem_ancestors_grudge_hive_text = no
+		}
+	}
+
+	option = {
+		name = INTERESTING
+		trigger = {
+			gets_mem_ancestors_grudge_hive_text = yes
+		}
+	}
+
+	after = {
 		start_situation = {
 			type = situation_mem_ancestors_grudge_forge_repairs
 			target = event_target:mem_ancestors_grudge_planet
@@ -1145,7 +1161,7 @@ country_event = {
 		event_target:mem_ancestors_grudge_planet = {
 			remove_building = building_mem_ancestors_grudge_ruins
 			add_building = building_mem_ancestors_grudge_forge_0
-		}
+		}		
 	}
 }
 
@@ -1155,18 +1171,27 @@ situation_event = {
 	title = mem_ancestors_grudge.10.name
 	desc = {
 		trigger = {
-			owner_main_species = {
-				is_archetype = MACHINE
-			}
-		}
+			owner = {
+				OR = {
+					gets_mem_ancestors_grudge_robot_text = yes
+					gets_mem_ancestors_grudge_machine_text = yes
+				}
+			}			
+		}		
 		text = mem_ancestors_grudge.10.desc_robots
 	}
 	desc = {
 		trigger = {
-			NOT = {
-				owner_main_species = {
-					is_archetype = MACHINE
-				}
+			owner = {
+				gets_mem_ancestors_grudge_hive_text = yes				
+			}
+		}
+		text = mem_ancestors_grudge.10.desc_hive
+	}
+	desc = {
+		trigger = {
+			owner = {
+				gets_mem_ancestors_grudge_organic_text = yes				
 			}
 		}
 		text = mem_ancestors_grudge.10.desc
