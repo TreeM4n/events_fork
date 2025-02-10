@@ -147,6 +147,10 @@ country_event = {
 			which = mem_ancestors_grudge_rune_intensity
 			value = 4
 		}
+		set_variable = {
+			which = mem_ancestors_grudge_situation_rarity
+			value = 7
+		}
 	}
 	option = {
 		name = WEIRD
@@ -166,6 +170,10 @@ country_event = {
 		set_variable = {
 			which = mem_ancestors_grudge_rune_intensity
 			value = 4
+		}
+		set_variable = {
+			which = mem_ancestors_grudge_smithing_quality_rolled
+			value = 7
 		}
 	}
 	option = {
@@ -187,64 +195,107 @@ country_event = {
 			which = mem_ancestors_grudge_rune_intensity
 			value = 4
 		}
-	}
-	option = {
-		name = WEIRD
-		add_relic = r_mem_ancestors_grudge_sword
-		#set_country_flag = mem_ancestors_grudge_relic_flag1
-		set_country_flag = mem_ancestors_grudge_relic_flag2
-		set_country_flag = mem_ancestors_grudge_relic_flag3
-		set_country_flag = mem_ancestors_grudge_relic_flag4
-		#set_country_flag = mem_ancestors_grudge_relic_flag5
-		set_country_flag = mem_ancestors_grudge_relic_flag6
-		#set_country_flag = mem_ancestors_grudge_relic_flag7
-		set_country_flag = mem_ancestors_grudge_relic_flag8
-		#set_country_flag = mem_ancestors_grudge_common
-		set_country_flag = mem_ancestors_grudge_exceptional
-		#set_country_flag = mem_ancestors_grudge_rare
-		#set_country_flag = mem_ancestors_grudge_epic
 		set_variable = {
-			which = mem_ancestors_grudge_rune_intensity
-			value = 2.1
+			which = mem_ancestors_grudge_smithing_quality_rolled
+			value = 7
 		}
 	}
 	option = {
-		name = WEIRD
-		add_relic = r_mem_ancestors_grudge_ring
-		#set_country_flag = mem_ancestors_grudge_relic_flag1
-		set_country_flag = mem_ancestors_grudge_relic_flag2
-		#set_country_flag = mem_ancestors_grudge_relic_flag3
-		#set_country_flag = mem_ancestors_grudge_relic_flag4
-		set_country_flag = mem_ancestors_grudge_relic_flag5
-		#set_country_flag = mem_ancestors_grudge_relic_flag6
-		#set_country_flag = mem_ancestors_grudge_relic_flag7
-		#set_country_flag = mem_ancestors_grudge_relic_flag8
-		#set_country_flag = mem_ancestors_grudge_common
-		#set_country_flag = mem_ancestors_grudge_exceptional
-		set_country_flag = mem_ancestors_grudge_rare
-		#set_country_flag = mem_ancestors_grudge_epic
-		set_variable = {
-			which = mem_ancestors_grudge_rune_intensity
-			value = 1.2
+		name = WEIRD2
+		if = {
+			limit = {
+				has_relic = r_mem_ancestors_grudge_pauldron
+			}
+			create_leader = {
+				class = official
+				species = root.owner_main_species
+			}
+		}
+		else_if = {
+			limit = {
+				has_relic = r_mem_ancestors_grudge_sword
+			}
+			create_leader = {
+				class = commander
+				species = root.owner_main_species
+			}
+		}
+		else_if = {
+			limit = {
+				has_relic = r_mem_ancestors_grudge_ring
+			}
+			create_leader = {
+				class = scientist
+				species = root.owner_main_species
+			}
+		}
+		last_created_leader = {
+			set_age = 0
+			add_skill = 2
+			#set_name = rand
+			mem_ancestors_grudge_trait_effect = yes
 		}
 	}
-	option = {
-		name = WEIRD
-		add_relic = r_mem_ancestors_grudge_pauldron
-		set_country_flag = mem_ancestors_grudge_relic_flag1
-		set_country_flag = mem_ancestors_grudge_relic_flag8
-		set_country_flag = mem_ancestors_grudge_common
-		set_variable = {
-			which = mem_ancestors_grudge_rune_intensity
-			value = 0.6
-		}
-	}
+	# option = {
+	# 	name = WEIRD
+	# 	add_relic = r_mem_ancestors_grudge_sword
+	# 	#set_country_flag = mem_ancestors_grudge_relic_flag1
+	# 	set_country_flag = mem_ancestors_grudge_relic_flag2
+	# 	set_country_flag = mem_ancestors_grudge_relic_flag3
+	# 	set_country_flag = mem_ancestors_grudge_relic_flag4
+	# 	#set_country_flag = mem_ancestors_grudge_relic_flag5
+	# 	set_country_flag = mem_ancestors_grudge_relic_flag6
+	# 	#set_country_flag = mem_ancestors_grudge_relic_flag7
+	# 	set_country_flag = mem_ancestors_grudge_relic_flag8
+	# 	#set_country_flag = mem_ancestors_grudge_common
+	# 	set_country_flag = mem_ancestors_grudge_exceptional
+	# 	#set_country_flag = mem_ancestors_grudge_rare
+	# 	#set_country_flag = mem_ancestors_grudge_epic
+	# 	set_variable = {
+	# 		which = mem_ancestors_grudge_rune_intensity
+	# 		value = 2.1
+	# 	}
+	# }
+	# option = {
+	# 	name = WEIRD
+	# 	add_relic = r_mem_ancestors_grudge_ring
+	# 	#set_country_flag = mem_ancestors_grudge_relic_flag1
+	# 	set_country_flag = mem_ancestors_grudge_relic_flag2
+	# 	#set_country_flag = mem_ancestors_grudge_relic_flag3
+	# 	#set_country_flag = mem_ancestors_grudge_relic_flag4
+	# 	set_country_flag = mem_ancestors_grudge_relic_flag5
+	# 	#set_country_flag = mem_ancestors_grudge_relic_flag6
+	# 	#set_country_flag = mem_ancestors_grudge_relic_flag7
+	# 	#set_country_flag = mem_ancestors_grudge_relic_flag8
+	# 	#set_country_flag = mem_ancestors_grudge_common
+	# 	#set_country_flag = mem_ancestors_grudge_exceptional
+	# 	set_country_flag = mem_ancestors_grudge_rare
+	# 	#set_country_flag = mem_ancestors_grudge_epic
+	# 	set_variable = {
+	# 		which = mem_ancestors_grudge_rune_intensity
+	# 		value = 1.2
+	# 	}
+	# }
+	# option = {
+	# 	name = WEIRD
+	# 	add_relic = r_mem_ancestors_grudge_pauldron
+	# 	set_country_flag = mem_ancestors_grudge_relic_flag1
+	# 	set_country_flag = mem_ancestors_grudge_relic_flag8
+	# 	set_country_flag = mem_ancestors_grudge_common
+	# 	set_variable = {
+	# 		which = mem_ancestors_grudge_rune_intensity
+	# 		value = 0.6
+	# 	}
+	# }
 	option = {
 		name = WEIRD
 		add_relic = r_mem_ancestors_grudge_anvil
 		set_variable = {
 			which = mem_ancestors_grudge_activated_relics_counter
 			value = 1
+		}
+		every_owned_planet = {
+			set_planetary_ascension_tier = +1
 		}
 	}
 	option = {
@@ -276,28 +327,28 @@ country_event = {
 			mult = this.value:mem_ancestors_grudge_situation_rarity
 		}
 	}
-	option = {
-		name = WEIRD
-		capital_scope = {
-			solar_system = {
-				spawn_system = {
-					initializer = mem_ancestors_grudge_system_lost_colony_1
-				}
-			}
-		}
-	}
-	option = {
-		name = WEIRD
-		random_playable_country = {
-			save_event_target_as = mem_this
-		}
-		country_event = {
-			id = mem_ancestors_grudge.205
-			scopes = {
-				from = event_target:mem_this
-			}
-		}
-	}
+	# option = {
+	# 	name = WEIRD
+	# 	capital_scope = {
+	# 		solar_system = {
+	# 			spawn_system = {
+	# 				initializer = mem_ancestors_grudge_system_lost_colony_1
+	# 			}
+	# 		}
+	# 	}
+	# }
+	# option = {
+	# 	name = WEIRD
+	# 	random_playable_country = {
+	# 		save_event_target_as = mem_this
+	# 	}
+	# 	country_event = {
+	# 		id = mem_ancestors_grudge.205
+	# 		scopes = {
+	# 			from = event_target:mem_this
+	# 		}
+	# 	}
+	# }
 	option = {
 		name = WEIRD
 		create_message = {
@@ -625,6 +676,20 @@ situation_event = {
 	}
 }
 
+# restore modification
+country_event = {
+	hide_window = yes
+	is_triggered_only = yes
+	id = mem_ancestors_grudge.995
+	immediate = {
+		owner_main_species = {
+			change_species_characteristics = {
+				can_be_modified = yes
+			}
+		}
+	}
+}
+
 # setup 
 # fired at gamestart to setup the habitat
 country_event = {
@@ -669,6 +734,11 @@ country_event = {
 						}
 					}
 				}
+			}
+		}
+		if = {
+			limit = {
+				has_origin = mem_ancestors_grudge_origin_machines
 			}
 			add_modifier = {
 				modifier = mem_ancestors_grudge_unknown_design
@@ -741,6 +811,10 @@ country_event = {
 				owner = root
 				species = research_station.
 				#ethos = root.ethos
+			}
+			set_variable = {
+				which = mem_ancestors_grudge_relicforge_extrajobs
+				value = 0
 			}
 			add_colony_progress = 0.8
 			add_planet_devastation = 100
@@ -978,8 +1052,8 @@ country_event = {
 			set_immortal = yes
 			add_trait = mem_ancestors_grudge_trait_thrawn
 		}
-		# set_ruler_title_male = ""
-		# set_ruler_title_female = ""
+		set_ruler_title_male = "Grand Admiral"
+		set_ruler_title_female = "Grand Admiral"
 	}
 	option = {
 		name = WEIRD
@@ -1443,7 +1517,6 @@ situation_event = {
 				}
 			}
 			effect = {
-			
 				# set_faction_hostility = {
 				# 	target = root.owner
 				# 	set_hostile = no
@@ -1452,7 +1525,6 @@ situation_event = {
 				# }
 				save_global_event_target_as = mem_ancestors_grudge_dragon_country
 				set_country_flag = mem_ancestors_grudge_dragon_country
-			
 				############## this should not break things but rather disable the ether drake on action killed event
 				set_country_flag = here_be_the_dragon
 				every_playable_country = {
@@ -1872,7 +1944,7 @@ country_event = {
 	}
 }
 
-# get relic with choice # TODO pic and sound
+# get relic with choice 
 country_event = {
 	id = mem_ancestors_grudge.41
 	title = mem_ancestors_grudge.41.name
@@ -2208,18 +2280,6 @@ situation_event = {
 	# 	name = mem_ancestors_grudge.50.b
 	# }
 	after = {
-		owner = {
-			if = {
-				limit = {
-					has_modifier = mem_ancestors_grudge_unknown_design
-				}
-				country_event = {
-					id = mem_ancestors_grudge.52
-					days = 10
-				}
-				#remove_modifier = mem_ancestors_grudge_unknown_design
-			}
-		}
 		hidden_effect = {
 			owner = {
 				remove_country_flag = mem_ancestors_grudge_sword_flag
@@ -2387,7 +2447,7 @@ country_event = {
 		remove_modifier = mem_ancestors_grudge_unknown_design
 		owner_main_species = {
 			change_species_characteristics = {
-				can_be_modified = no
+				can_be_modified = yes
 				#can_change_leader = yes
 			}
 		}
@@ -2501,6 +2561,28 @@ country_event = {
 		}
 	}
 	option = {
+		name = mem_ancestors_grudge.45.d
+		trigger = {
+			host_has_dlc = "Ancient Relics Story Pack"
+		}
+		add_resource = {
+			minor_artifacts = 1000
+			mult = owner.mem_ancestors_grudge_rune_intensity
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.45.d
+		trigger = {
+			NOT = {
+				host_has_dlc = "Ancient Relics Story Pack"
+			}
+		}
+		add_resource = {
+			unity = 1000
+			mult = owner.mem_ancestors_grudge_rune_intensity
+		}
+	}
+	option = {
 		name = mem_ancestors_grudge.45.a
 		trigger = {
 			check_variable_arithmetic = {
@@ -2545,7 +2627,7 @@ country_event = {
 	option = {
 		name = mem_ancestors_grudge.45.a.2
 		trigger = {
-			is_gestalt = yes
+			has_authority = auth_machine_intelligence
 			ruler = {
 				OR = {
 					has_trait = leader_trait_legendary_mem_ancestors_grudge_machine_nexus_one
@@ -2574,28 +2656,6 @@ country_event = {
 		}
 	}
 	option = {
-		name = mem_ancestors_grudge.45.d
-		trigger = {
-			host_has_dlc = "Ancient Relics Story Pack"
-		}
-		add_resource = {
-			minor_artifacts = 1000
-			mult = owner.mem_ancestors_grudge_rune_intensity
-		}
-	}
-	option = {
-		name = mem_ancestors_grudge.45.d
-		trigger = {
-			NOT = {
-				host_has_dlc = "Ancient Relics Story Pack"
-			}
-		}
-		add_resource = {
-			unity = 1000
-			mult = owner.mem_ancestors_grudge_rune_intensity
-		}
-	}
-	option = {
 		name = mem_ancestors_grudge.45.e.2
 		trigger = {
 			check_variable_arithmetic = {
@@ -2615,15 +2675,61 @@ country_event = {
 		}
 		add_monthly_resource_mult = {
 			resource = physics_research
-			value = 6
+			value = 3
 		}
 		add_monthly_resource_mult = {
 			resource = society_research
-			value = 6
+			value = 3
 		}
 		add_monthly_resource_mult = {
 			resource = engineering_research
-			value = 6
+			value = 3
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.45.ee
+		trigger = {
+			has_authority = auth_machine_intelligence
+			check_variable_arithmetic = {
+				which = mem_ancestors_grudge_smithing_quality_rolled
+				value >= 3
+			}
+		}
+		custom_tooltip = mem_ancestors_grudge.45.ee.tt_create_leader
+		hidden_effect = {
+			if = {
+				limit = {
+					has_relic = r_mem_ancestors_grudge_pauldron
+				}
+				create_leader = {
+					class = official
+					species = root.owner_main_species
+				}
+			}
+			else_if = {
+				limit = {
+					has_relic = r_mem_ancestors_grudge_sword
+				}
+				create_leader = {
+					class = commander
+					species = root.owner_main_species
+				}
+			}
+			else_if = {
+				limit = {
+					has_relic = r_mem_ancestors_grudge_ring
+				}
+				create_leader = {
+					class = scientist
+					species = root.owner_main_species
+				}
+			}
+			last_created_leader = {
+				set_age = 0
+				set_skill = 3
+				#set_name = rand
+				mem_ancestors_grudge_trait_effect = yes
+			}
 		}
 	}
 	# option = {
@@ -2633,18 +2739,76 @@ country_event = {
 	# 	}
 	# }
 	option = {
+		name = mem_ancestors_grudge.45.e.3
+		trigger = {
+			check_variable_arithmetic = {
+				which = mem_ancestors_grudge_smithing_quality_rolled
+				value >= 4
+			}
+		}
+		add_monthly_resource_mult = {
+			resource = influence
+			value = 50
+			max = 1000
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.45.e.4
+		trigger = {
+			check_variable_arithmetic = {
+				which = mem_ancestors_grudge_smithing_quality_rolled
+				value >= 5
+			}
+			has_relic = r_mem_ancestors_grudge_pauldron
+		}
+		add_modifier = {
+			modifier = mem_ancestors_grudge_golden_age
+			days = 360
+		}
+	}
+	option = {
 		name = mem_ancestors_grudge.45.g
 		trigger = {
 			check_variable_arithmetic = {
 				which = mem_ancestors_grudge_smithing_quality_rolled
-				value >= 7
+				value >= 6
 			}
 			has_relic = r_mem_ancestors_grudge_pauldron
 		}
-		#custom_tooltip = mem_ancestors_grudge.45.exceptional_pauldron
-		add_modifier = {
-			modifier = mem_ancestors_grudge_golden_age
-			days = 360
+		custom_tooltip = mem_ancestors_grudge.45.exceptional_pauldron
+		hidden_effect = {
+			every_owned_planet = {
+				if = {
+					limit = {
+						has_planetary_ascension_tier >= 0
+					}
+					set_planetary_ascension_tier = 1
+				}
+				else_if = {
+					limit = {
+						has_planetary_ascension_tier >= 1
+					}
+					set_planetary_ascension_tier = 2
+				}
+				else_if = {
+					limit = {
+						has_planetary_ascension_tier >= 2
+					}
+					set_planetary_ascension_tier = 3
+				}
+				else_if = {
+					limit = {
+						has_planetary_ascension_tier >= 3
+					}
+					set_planetary_ascension_tier = 4
+				}
+				else_if = {
+					limit = {
+						has_planetary_ascension_tier >= 4
+					}
+					set_planetary_ascension_tier = 5
+				}
+			}
 		}
 	}
 	option = {
@@ -2652,14 +2816,14 @@ country_event = {
 		trigger = {
 			check_variable_arithmetic = {
 				which = mem_ancestors_grudge_smithing_quality_rolled
-				value >= 7
+				value >= 6
 			}
 			has_relic = r_mem_ancestors_grudge_ring
 		}
 		while = {
 			count = 5
 			add_random_research_option = {
-				add_progress = 0.2
+				add_progress = 0.4
 				ignore_rare = yes
 				# fail_effects = { #should never fail, when do  you truly run out of research?
 				# }
@@ -2672,7 +2836,7 @@ country_event = {
 		trigger = {
 			check_variable_arithmetic = {
 				which = mem_ancestors_grudge_smithing_quality_rolled
-				value >= 7
+				value >= 6
 			}
 			has_relic = r_mem_ancestors_grudge_sword
 		}
@@ -2706,7 +2870,7 @@ country_event = {
 }
 
 #### hive relic activation
-# TODO more options and adjust to new script
+# TODO more options 
 country_event = {
 	id = mem_ancestors_grudge.46
 	title = mem_ancestors_grudge.46.title
@@ -2776,7 +2940,7 @@ country_event = {
 		trigger = {
 			check_variable = {
 				which = mem_ancestors_grudge_rune_intensity
-				value <= 3
+				value <= 2
 			}
 			host_has_dlc = "Ancient Relics Story Pack"
 		}
@@ -2833,7 +2997,7 @@ country_event = {
 		name = mem_ancestors_grudge.45.g
 		trigger = {
 			check_variable = {
-				which = mem_ancestors_grudge_rune_intensity
+				which = mem_ancestors_grudge_situation_rarity
 				value >= 7
 			}
 			has_relic = r_mem_ancestors_grudge_pauldron
@@ -2852,7 +3016,7 @@ country_event = {
 		name = mem_ancestors_grudge.45.h
 		trigger = {
 			check_variable = {
-				which = mem_ancestors_grudge_rune_intensity
+				which = mem_ancestors_grudge_situation_rarity
 				value >= 7
 			}
 			has_relic = r_mem_ancestors_grudge_ring
@@ -2876,7 +3040,7 @@ country_event = {
 		name = mem_ancestors_grudge.45.i
 		trigger = {
 			check_variable = {
-				which = mem_ancestors_grudge_rune_intensity
+				which = mem_ancestors_grudge_situation_rarity
 				value >= 7
 			}
 			has_relic = r_mem_ancestors_grudge_sword
@@ -3805,7 +3969,7 @@ situation_event = {
 	option = {
 		name = mem_ancestors_grudge.415.b
 		add_situation_progress = -10
-		allow = {
+		trigger = {
 			owner = {
 				NOT = {
 					has_ethic = ethic_gestalt_consciousness
@@ -3815,9 +3979,9 @@ situation_event = {
 	}
 	option = {
 		name = mem_ancestors_grudge.415.c
-		allow = {
+		trigger = {
 			owner = {
-				has_ethic = ethic_gestalt_consciousness
+				has_authority = auth_machine_intelligence
 			}
 		}
 	}
@@ -4242,6 +4406,344 @@ country_event = {
 	}
 }
 
+situation_event = {
+	id = mem_ancestors_grudge.455
+	title = "mem_ancestors_grudge.455.title"
+	desc = "mem_ancestors_grudge.455.desc"
+	picture = GFX_evt_announcement
+	show_sound = evn_tox_knights_of_the_toxic_god
+	location = target
+	is_triggered_only = yes
+	situation = this
+	trigger = {
+		# owner = {
+		# 	is_gestalt = no
+		# }
+		target = {
+			NOT = {
+				has_modifier = mem_ancestors_grudge_high_expectations
+			}
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.455.a
+		target = {
+			add_modifier = {
+				modifier = mem_ancestors_grudge_high_expectations
+				days = 1800
+			}
+		}
+		mem_ancestors_grudge_increase_relic_roll_quality = yes
+	}
+	option = {
+		name = mem_ancestors_grudge.455.b
+	}
+	after = {
+	}
+}
+
+situation_event = {
+	id = mem_ancestors_grudge.460
+	title = "mem_ancestors_grudge.460.title"
+	desc = "mem_ancestors_grudge.460.desc"
+	picture = GFX_evt_asteroid_field
+	show_sound = evn_tox_knights_of_the_toxic_god
+	location = target
+	is_triggered_only = yes
+	situation = this
+	trigger = {
+	}
+	immediate = {
+		set_variable = {
+			which = situation_progress
+			value = this.trigger:situation_progress
+		}
+		multiply_variable = {
+			which = situation_progress
+			value = -1
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.460.a
+		mem_ancestors_grudge_decrease_relic_roll_quality = yes
+	}
+	option = {
+		name = mem_ancestors_grudge.460.b
+		target = {
+			add_modifier = {
+				modifier = mem_ancestors_grudge_high_purify
+				days = 360
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.460.c
+		add_situation_progress = this.situation_progress
+	}
+	after = {
+	}
+}
+
+situation_event = {
+	id = mem_ancestors_grudge.465
+	title = "mem_ancestors_grudge.465.title"
+	desc = "mem_ancestors_grudge.465.desc"
+	picture = GFX_evt_cosmic_storms_hold_the_line
+	show_sound = evn_tox_knights_of_the_toxic_god
+	location = target
+	is_triggered_only = yes
+	situation = this
+	trigger = {
+	}
+	immediate = {
+		set_variable = {
+			which = situation_progress
+			value = this.trigger:situation_progress
+		}
+		multiply_variable = {
+			which = situation_progress
+			value = 0.5
+		}
+		set_variable = {
+			which = situation_progress_negative
+			value = situation_progress
+		}
+		multiply_variable = {
+			which = situation_progress_negative
+			value = -1
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.465.a
+		random_list = {
+			1 = {
+				add_situation_progress = situation_progress
+			}
+			1 = {
+				add_situation_progress = situation_progress_negative
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.465.b
+		mem_ancestors_grudge_decrease_relic_roll_quality = yes
+	}
+	option = {
+		name = mem_ancestors_grudge.465.c
+		allow = {
+			owner = {
+				resource_stockpile_compare = {
+					resource = energy
+					value = 2000
+				}
+			}
+		}
+		owner = {
+			add_resource = {
+				energy = -2000
+			}
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = 3
+			}
+		}
+		add_situation_progress = situation_progress_negative
+	}
+	after = {
+	}
+}
+
+situation_event = {
+	id = mem_ancestors_grudge.470
+	title = "mem_ancestors_grudge.470.title"
+	desc = "mem_ancestors_grudge.470.desc"
+	picture = GFX_evt_alpine_city
+	show_sound = evn_tox_knights_of_the_toxic_god
+	location = target
+	is_triggered_only = yes
+	situation = this
+	trigger = {
+		target = {
+			NOT = {
+				has_modifier = mem_ancestors_grudge_6_day_workweek
+			}
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.470.a
+		mem_ancestors_grudge_increase_relic_roll_quality = yes
+	}
+	option = {
+		name = mem_ancestors_grudge.470.b
+		target = {
+			add_modifier = {
+				modifier = mem_ancestors_grudge_6_day_workweek
+			}
+		}
+	}
+	after = {
+	}
+}
+
+situation_event = {
+	id = mem_ancestors_grudge.475
+	title = "mem_ancestors_grudge.475.title"
+	desc = "mem_ancestors_grudge.475.desc"
+	picture = GFX_evt_resource_cache
+	show_sound = evn_tox_knights_of_the_toxic_god
+	location = target
+	is_triggered_only = yes
+	situation = this
+	trigger = {
+		target = {
+			NOT = {
+				has_modifier = mem_ancestors_grudge_more_workload
+			}
+		}
+	}
+	immediate = {
+		set_variable = {
+			which = situation_progress
+			value = this.trigger:situation_progress
+		}
+		multiply_variable = {
+			which = situation_progress
+			value = 0.5
+		}
+		set_variable = {
+			which = situation_progress_negative
+			value = situation_progress
+		}
+		multiply_variable = {
+			which = situation_progress_negative
+			value = -1
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.475.a
+		target = {
+			add_modifier = {
+				modifier = mem_ancestors_grudge_more_workload
+				days = 1800
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.475.b
+		target = {
+			mem_ancestors_grudge_increase_jobs_onforge_planet = yes
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.475.c
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 3
+			}
+		}
+	}
+	after = {
+	}
+}
+
+situation_event = {
+	id = mem_ancestors_grudge.480
+	title = "mem_ancestors_grudge.480.title"
+	desc = "mem_ancestors_grudge.480.desc"
+	picture = GFX_evt_archaeologists_escaping
+	show_sound = evn_tox_knights_of_the_toxic_god
+	location = target
+	is_triggered_only = yes
+	situation = this
+	trigger = {
+		target = {
+			NOT = {
+				has_modifier = mem_ancestors_grudge_more_workload
+			}
+		}
+	}
+	immediate = {
+		set_variable = {
+			which = situation_progress
+			value = this.trigger:situation_progress
+		}
+		multiply_variable = {
+			which = situation_progress
+			value = 0.5
+		}
+		set_variable = {
+			which = situation_progress_negative
+			value = situation_progress
+		}
+		multiply_variable = {
+			which = situation_progress_negative
+			value = -1
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.480.a
+		allow = {
+			owner = {
+				resource_stockpile_compare = {
+					resource = influence
+					value = 100
+				}
+			}
+		}
+		owner = {
+			add_resource = {
+				influence = -100
+			}
+			add_monthly_resource_mult = {
+				resource = physics_research
+				value = 3
+			}
+		}
+		target = {
+			add_planet_devastation = 40
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.480.b
+		allow = {
+			owner = {
+				resource_stockpile_compare = {
+					resource = energy
+					value = 4000
+				}
+			}
+		}
+		owner = {
+			add_resource = {
+				energy = -4000
+			}
+		}
+		target = {
+			add_planet_devastation = 10
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.480.c
+		target = {
+			add_planet_devastation = 40
+		}
+	}
+	after = {
+	}
+}
+
+### recomended events (above)
+# high expectations: encourige (MA upkeep but more quality/ intensity modifier) , dont care 
+# poor quality materials: do nothing ( lower quality), purify ( more upkeep), scrap it( reset situation)
+# sudden inspiration: experiments ( random slow or speed up), focus ( default speed but lower quality), fund experiemnt (energy cost, physics research, slow down)
+# in sync, good day: excellent ( +1 quality), higher! ( +2 quality but insane upkeep), study ( less progress, permanent buff)
+# workfever, dug too dip?, nuclear explosion esh: oberserve ( influence cost,engi research + devastion), deal will it ( energy cost, less devastion), do nothing (  devastion )
+# increasing demand: keep up(upkeep and production bonus, timed planet modifier),  train more ( more jobs from forge permanent), assure delivery (unity)
 starbase_event = {
 	id = mem_ancestors_grudge.500
 	hide_window = yes

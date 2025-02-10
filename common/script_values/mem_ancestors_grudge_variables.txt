@@ -74,6 +74,13 @@ mem_ancestors_grudge_hoarder_building = {
 	#max = 4
 }
 
+# extra forge jobs
+mem_ancestors_grudge_relicforge_jobs = {
+	base = 2
+	add = this.mem_ancestors_grudge_relicforge_extrajobs
+	#max = 4
+}
+
 # # determines strengh of modifiers for relcs
 # mem_ancestors_grudge_situation_rarity = {
 # 	base = 0

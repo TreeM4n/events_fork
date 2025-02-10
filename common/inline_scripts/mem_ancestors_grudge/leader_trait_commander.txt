@@ -1,0 +1,60 @@
+# unused, you cant do it liek that, disappointing
+
+# ship_fire_rate_mult = 0.15
+# mult = this.mem_ancestors_grudge_rune_intensity
+# }
+# triggered_fleet_modifier = {
+# potential = {
+# 	leader_class = commander
+# 	has_leader_flag = mem_ancestors_grudge_relic_flag2
+# }
+# ship_hull_regen_add_perc = 0.04
+# mult = this.mem_ancestors_grudge_rune_intensity
+# }
+# triggered_fleet_modifier = {
+# potential = {
+# 	leader_class = commander
+# 	has_leader_flag = mem_ancestors_grudge_relic_flag3
+# }
+# ship_shield_mult = 0.1
+# mult = this.mem_ancestors_grudge_rune_intensity
+# }
+# triggered_fleet_modifier = {
+# potential = {
+# 	leader_class = commander
+# 	has_leader_flag = mem_ancestors_grudge_relic_flag4
+# }
+# ship_armor_mult = 0.05
+# mult = this.mem_ancestors_grudge_rune_intensity
+# }
+# triggered_fleet_modifier = {
+# potential = {
+# 	leader_class = commander
+# 	has_leader_flag = mem_ancestors_grudge_relic_flag5
+# }
+# create_debris_chance = 0.2
+# mult = this.mem_ancestors_grudge_rune_intensity
+# }
+# triggered_fleet_modifier = {
+# potential = {
+# 	leader_class = commander
+# 	has_leader_flag = mem_ancestors_grudge_relic_flag6
+# }
+# ship_cloaking_strength_add = 2
+# mult = this.mem_ancestors_grudge_rune_intensity
+# }
+# triggered_fleet_modifier = {
+# potential = {
+# 	leader_class = commander
+# 	has_leader_flag = mem_ancestors_grudge_relic_flag7
+# }
+# ship_orbital_bombardment_mult = 0.5
+# mult = this.mem_ancestors_grudge_rune_intensity
+# }
+# triggered_fleet_modifier = {
+# potential = {
+# 	leader_class = commander
+# 	has_leader_flag = mem_ancestors_grudge_relic_flag8
+# }
+# ship_damage_against_starbases_mult = 0.15
+# mult = this.mem_ancestors_grudge_rune_intensity

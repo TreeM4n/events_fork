@@ -55,6 +55,7 @@ mem_ancestors_grudge_dragon_tithe = {
 	country_minor_artifacts_produces_mult = -0.05
 	space_fauna_experience_gain_mult = 0.5
 }
+
 mem_ancestors_grudge_dragon_tithe_energy = {
 	country_energy_produces_mult = -0.02
 	space_fauna_experience_gain_mult = 0.5
@@ -63,8 +64,6 @@ mem_ancestors_grudge_dragon_tithe_energy = {
 # mem_ancestors_grudge_dragon_knowledge = {
 # 	space_fauna_experience_gain_mult = 0.5
 # }
-
-
 mem_ancestors_grudge_unknown_design = {
 	planet_pop_assembly_mult = -0.2
 	show_only_custom_tooltip = no
@@ -74,11 +73,9 @@ mem_ancestors_grudge_unknown_design = {
 mem_ancestors_grudge_lost_forge_apply_knowledge = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_land_appropriated.dds"
 	icon_frame = 1
-
 	planet_metallurgists_alloys_produces_add = 0.5
 	planet_artisans_consumer_goods_produces_add = 1
 	planet_administrators_unity_produces_mult = 1
-
 }
 
 mem_ancestors_grudge_ai_cheat = {
@@ -92,11 +89,39 @@ mem_ancestors_grudge_ai_cheat = {
 	country_engineering_tech_research_speed = 1
 }
 
-
 mem_ancestors_grudge_dragon_roost = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_ether_trophy.dds"
-	icon_frame = 2	
-
+	icon_frame = 2
 	planet_max_districts_add = -1
 	planet_crime_mult = -0.15
+}
+
+mem_ancestors_grudge_high_expectations = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_luxuries.dds"
+	icon_frame = 1
+	planet_mem_relic_smiths_alloys_produces_mult = 0.2
+	planet_metallurgists_minor_artifacts_upkeep_add = 1
+}
+
+mem_ancestors_grudge_high_purify = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_mineral_poor.dds"
+	icon_frame = 3
+	planet_metallurgists_upkeep_mult = 0.3
+	planet_artisans_upkeep_mult = 0.3
+}
+
+mem_ancestors_grudge_more_workload = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_burning_settlement.dds"
+	icon_frame = 2
+	planet_metallurgists_produces_mult = 0.2
+	planet_artisans_produces_mult = 0.2
+	planet_metallurgists_upkeep_mult = 0.1
+	planet_artisans_upkeep_mult = 0.1
+	pop_happiness = -0.1
+}
+
+mem_ancestors_grudge_6_day_workweek = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_ocean_paradise.dds"
+	icon_frame = 1
+	planet_mem_rune_smiths_produces_mult = 0.1
 }

@@ -38,6 +38,7 @@ triggered_planet_modifier = {
 	modifier = {
 		job_mem_ancestors_grudge_relicsmith_add = 1
 		job_mem_ancestors_grudge_runesmith_add = 1
+		mult = this.value:mem_ancestors_grudge_relicforge_jobs
 	}
 }
 
@@ -50,8 +51,9 @@ triggered_planet_modifier = {
 		}
 	}
 	modifier = {
-		job_mem_ancestors_grudge_relicsmith_drone_add = 2
-		job_mem_ancestors_grudge_runesmith_drone_add = 2
+		job_mem_ancestors_grudge_relicsmith_drone_add = 1
+		job_mem_ancestors_grudge_runesmith_drone_add = 1
+		mult = this.value:mem_ancestors_grudge_relicforge_jobs
 	}
 }
 

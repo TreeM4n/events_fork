@@ -3,15 +3,22 @@ defined_text = {
 	random = no
 	text = {
 		trigger = {
-			has_country_flag = mem_ancestors_grudge_common
+			has_country_flag = mem_ancestors_grudge_legendary
+			
 		}
-		localization_key = mem_ancestors_grudge_common
+		localization_key = mem_ancestors_grudge_legendary
 	}
 	text = {
 		trigger = {
-			has_country_flag = mem_ancestors_grudge_rare
+			has_country_flag = mem_ancestors_grudge_masterful
 		}
-		localization_key = mem_ancestors_grudge_rare
+		localization_key = mem_ancestors_grudge_masterful
+	}
+	text = {
+		trigger = {
+			has_country_flag = mem_ancestors_grudge_exceptional
+		}
+		localization_key = mem_ancestors_grudge_exceptional
 	}
 	text = {
 		trigger = {
@@ -21,27 +28,21 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			has_country_flag = mem_ancestors_grudge_exceptional
+			has_country_flag = mem_ancestors_grudge_rare
 		}
-		localization_key = mem_ancestors_grudge_exceptional
-	}	
+		localization_key = mem_ancestors_grudge_rare
+	}
+	text = {
+		trigger = {
+			has_country_flag = mem_ancestors_grudge_common
+		}
+		localization_key = mem_ancestors_grudge_common
+	}
 	text = {
 		trigger = {
 			has_country_flag = mem_ancestors_grudge_mundane
 		}
 		localization_key = mem_ancestors_grudge_mundane
-	}
-	text = {
-		trigger = {
-			has_country_flag = mem_ancestors_grudge_legendary
-		}
-		localization_key = mem_ancestors_grudge_legendary
-	}
-	text = {
-		trigger = {
-			has_country_flag = mem_ancestors_grudge_masterful
-		}
-		localization_key = mem_ancestors_grudge_masterful
 	}
 	default = WEIRD
 }
@@ -57,14 +58,27 @@ defined_text = {
 # 	}
 # 	default = WEIRD
 # }
+### this needs to be in inverse order of raities
 defined_text = {
 	name = MemGetRelicNameRarity
 	random = no
 	text = {
 		trigger = {
-			has_leader_flag = mem_ancestors_grudge_common
+			has_leader_flag = mem_ancestors_grudge_legendary
 		}
-		localization_key = mem_ancestors_grudge_common
+		localization_key = mem_ancestors_grudge_legendary
+	}
+	text = {
+		trigger = {
+			has_leader_flag = mem_ancestors_grudge_masterful
+		}
+		localization_key = mem_ancestors_grudge_masterful
+	}
+	text = {
+		trigger = {
+			has_leader_flag = mem_ancestors_grudge_exceptional
+		}
+		localization_key = mem_ancestors_grudge_exceptional
 	}
 	text = {
 		trigger = {
@@ -80,9 +94,9 @@ defined_text = {
 	}
 	text = {
 		trigger = {
-			has_leader_flag = mem_ancestors_grudge_exceptional
+			has_leader_flag = mem_ancestors_grudge_common
 		}
-		localization_key = mem_ancestors_grudge_exceptional
+		localization_key = mem_ancestors_grudge_common
 	}
 	text = {
 		trigger = {
@@ -90,19 +104,6 @@ defined_text = {
 		}
 		localization_key = mem_ancestors_grudge_mundane
 	}
-	text = {
-		trigger = {
-			has_leader_flag = mem_ancestors_grudge_masterful
-		}
-		localization_key = mem_ancestors_grudge_masterful
-	}
-	text = {
-		trigger = {
-			has_leader_flag = mem_ancestors_grudge_legendary
-		}
-		localization_key = mem_ancestors_grudge_legendary
-	}
-
 	default = mem_nothing
 }
 
@@ -114,10 +115,28 @@ defined_text = {
 		trigger = {
 			check_variable_arithmetic = {
 				which = owner.value:mem_ancestors_grudge_situation_rarity
-				value <= 2
+				value <= 7
 			}
 		}
-		localization_key = mem_ancestors_grudge_common
+		localization_key = mem_ancestors_grudge_legendary
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = owner.value:mem_ancestors_grudge_situation_rarity
+				value <= 6
+			}
+		}
+		localization_key = mem_ancestors_grudge_masterful
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = owner.value:mem_ancestors_grudge_situation_rarity
+				value <= 5
+			}
+		}
+		localization_key = mem_ancestors_grudge_exceptional
 	}
 	text = {
 		trigger = {
@@ -141,12 +160,12 @@ defined_text = {
 		trigger = {
 			check_variable_arithmetic = {
 				which = owner.value:mem_ancestors_grudge_situation_rarity
-				value <= 5
+				value <= 2
 			}
 		}
-		localization_key = mem_ancestors_grudge_exceptional
+		localization_key = mem_ancestors_grudge_common
 	}
-	default = WEIRD
+	default = mem_ancestors_grudge_common
 }
 
 defined_text = {
@@ -181,7 +200,6 @@ defined_text = {
 			owner = {
 				has_relic = r_mem_ancestors_grudge_sword
 			}
-			
 		}
 		localization_key = r_mem_ancestors_grudge_sword
 	}

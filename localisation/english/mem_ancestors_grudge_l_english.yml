@@ -213,13 +213,14 @@
  mem_ancestors_grudge.50.b.tt:0 "§LFurther completions will be notifications instead of events§!"
 
  mem_ancestors_grudge.52.name:0 "New Understanding"
- mem_ancestors_grudge.52.desc:0 "Our continued progress in restoring the Relic-Forge has led to an increased understanding of our own design." # TODO
+ mem_ancestors_grudge.52.desc:0 "Our continued progress in restoring the Relic-Forge has led to an increased understanding of our own design." 
  mem_ancestors_grudge.52.a:0 "Quantity"
  mem_ancestors_grudge.52.b:0 "Quality"
 
  mem_ancestors_grudge.45.name:0 "Relic Away"
  mem_ancestors_grudge.45.desc:0 "One of our greatest leaders shall be honored with the fruits of our latest creation. A prize worthy of song and legend, forged in the heart of the Relic-Forge itself.\n\nYet, as is the way of such things, only one can bear the honor, only one can receive this mighty reward. Let the choice be made wisely, for the one who carries such a relic shall carry our pride and honor in the face of all our ancestors."
  mem_ancestors_grudge.45.desc_robots:0 "One of our greatest leaders shall be honored with the fruits of our latest creation. A prize worthy of song and legend, forged in the heart of the Relic-Forge itself.\n\nYet, as is the way of such things, only one can bear the honor, only one can receive this mighty reward. Let the choice be made wisely, for the one who carries such a relic shall carry our pride and honor in the face of all our makers."
+ # TODO adjust options based on new criteria
  mem_ancestors_grudge.45.a:0 "$mem_ancestors_grudge_common$: Honor [leader_1.GetName]"
  mem_ancestors_grudge.45.b:0 "$mem_ancestors_grudge_common$: Honor [leader_2.GetName]"
  mem_ancestors_grudge.45.c:0 "$mem_ancestors_grudge_common$: Honor [leader_3.GetName]"
@@ -227,17 +228,20 @@
  mem_ancestors_grudge.45.a.2.tt:0 "§LCalculating...\nImprovement: [root.mem_ancestors_grudge_activated_rune_ruler_strength]%§!\n"
  mem_ancestors_grudge.45.e:0 "$mem_ancestors_grudge_epic$: Study it"
  mem_ancestors_grudge.45.e.2:0 "$mem_ancestors_grudge_rare$: Tinker around"
- mem_ancestors_grudge.45.g:0 "$mem_ancestors_grudge_exceptional$: Boost the Economy"
- mem_ancestors_grudge.45.h:0 "$mem_ancestors_grudge_exceptional$: Research the Unknown"
+ mem_ancestors_grudge.45.e.3:0 "$mem_ancestors_grudge_exceptional$: Show superiority to everyone"
+ mem_ancestors_grudge.45.e.4:0 "$mem_ancestors_grudge_masterful$: Boost the Economy"
+ mem_ancestors_grudge.45.g:0 "$mem_ancestors_grudge_legendary$: Ascend"
+ mem_ancestors_grudge.45.h:0 "$mem_ancestors_grudge_legendary$: Research the Unknown"
  mem_ancestors_grudge.45.exceptional_ring:0 "§LAnd 4 more!§!"
- mem_ancestors_grudge.45.i:0 "$mem_ancestors_grudge_exceptional$: Time for a Rematch"
+ mem_ancestors_grudge.45.i:0 "$mem_ancestors_grudge_legendary$: Time for a Rematch"
  mem_ancestors_grudge.45.exceptional_sword:0 "End §Revery§! truce we currently have."
+ mem_ancestors_grudge.45.exceptional_pauldron:0 "Every colony below ascension tier 5: +1"
  mem_ancestors_grudge_building_forge_terraform_tt:0 "Turns the planet into an §YEcumenopolis§!\n\n"
  mem_ancestors_grudge_building_forge_empireeffect_tt:0 "§LProvides empire-wide effects based on ['concept_mem_ancestors_grudge_artifact_intensity'] and ['concept_mem_ancestors_grudge_rune_intensity']§!"
  mem_ancestors_grudge_city_planet_restored:0 "Restored Glory"
  mem_ancestors_grudge_golden_age:0 "Booming Economy"
 
- mem_ancestors_grudge.45.d:0 "$mem_ancestors_grudge_common$: Recycle it"
+ mem_ancestors_grudge.45.d:0 "$mem_ancestors_grudge_mundane$: Recycle and try again!"
  r_mem_ancestors_grudge_anvil:0 "Dranir's Rune-Anvil"
  r_mem_ancestors_grudge_anvil_desc:0 "A runed anvil steeped in legend and created out of a rare material extracted from a fallen vazuran ship by the Master Artifact-Smith Dranir himself. For centuries, it was believed to be lost for all eternity, its fate sealed with the fall of the old world. But as it turns out, Dranir's wisdom and foresight was unsurpassed. He safeguarded the anvil, shielding it from destruction until the very end."
  r_mem_ancestors_grudge_anvil_effect_tt:0 "Increases with each ['concept_mem_ancestors_grudge_rune_relics'] used. Currently:\n"
@@ -434,7 +438,7 @@
 
  trait_mem_ancestors_grudge_archaeotech_excellence:0 "Rune-Forged Excellence"
  trait_mem_ancestors_grudge_archaeotech_excellence_desc:0 "The pinnacle of rune artificing offers unmatched performance with the drawback of increased complexity."
- automodding_trait_mem_robotic_tooltip:0 "$NEW_LINE$Depending on designation:$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_power_drills']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_harvesters']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_superconductive']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_emotion_emulators']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_propaganda_machines']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_logic_engines']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_forge_focus']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_factory_focus']" # TODO das hbscher
+ automodding_trait_mem_robotic_tooltip:0 "$NEW_LINE$Depending on designation:$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_power_drills']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_harvesters']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_superconductive']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_emotion_emulators']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_propaganda_machines']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_logic_engines']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_forge_focus']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_factory_focus']" 
  trait_mem_ancestors_grudge_archaeotech_robot_power_drills:0 "Rune of Earth"
  trait_mem_ancestors_grudge_archaeotech_robot_power_drills_desc:0 ""
  trait_mem_ancestors_grudge_archaeotech_robot_harvesters:0 "Rune of Fauna"
@@ -529,7 +533,7 @@
  mem_ancestors_grudge_trait_thrawn_desc:0 "A mastermind of destruction enforcing total loyalty in his subjects."
  mem_ancestors_grudge_trait_thrawn_tt:0 "§LEach Culture (owned Relic) studied will make him stronger§!"
  mem_ancestors_grudge_zrawn_grand:0 "Grand Admiral"
- mem_ancestors_grudge_zrawn:0 "Grand Admiral Zrawn"
+ mem_ancestors_grudge_zrawn:0 "Zrawn"
 
  ########### concepts
 

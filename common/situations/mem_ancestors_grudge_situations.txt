@@ -1,4 +1,5 @@
 situation_mem_ancestors_grudge_forge_repairs = {
+
 	#this is for repairing the forge
 	picture = GFX_evt_city_planet_2
 	complete_icon_frame = GFX_situation_outcome_frame_green
@@ -356,6 +357,12 @@ situation_mem_ancestors_grudge_crafting = {
 			1 = mem_ancestors_grudge.435
 			1 = mem_ancestors_grudge.440
 			1 = mem_ancestors_grudge.445
+			1 = mem_ancestors_grudge.455
+			1 = mem_ancestors_grudge.460
+			1 = mem_ancestors_grudge.465
+			1 = mem_ancestors_grudge.470
+			1 = mem_ancestors_grudge.475
+			1 = mem_ancestors_grudge.480
 		}
 	}
 	start_value = 0

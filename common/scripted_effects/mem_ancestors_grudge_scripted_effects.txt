@@ -79,6 +79,10 @@ mem_ancestors_grudge_trait_effect = {
 			which = mem_ancestors_grudge_rune_intensity
 			value = owner.mem_ancestors_grudge_rune_intensity
 		}
+		set_variable = {
+			which = mem_ancestors_grudge_smithing_quality_rolled
+			value = owner.mem_ancestors_grudge_smithing_quality_rolled
+		}
 		if = {
 			limit = {
 				#leader_class = commander
@@ -113,6 +117,30 @@ mem_ancestors_grudge_trait_effect = {
 				}
 			}
 			set_leader_flag = mem_ancestors_grudge_exceptional
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = mem_ancestors_grudge_mundane
+				}
+			}
+			set_leader_flag = mem_ancestors_grudge_mundane
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = mem_ancestors_grudge_masterful
+				}
+			}
+			set_leader_flag = mem_ancestors_grudge_masterful
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = mem_ancestors_grudge_legendary
+				}
+			}
+			set_leader_flag = mem_ancestors_grudge_legendary
 		}
 		if = {
 			limit = {
@@ -447,18 +475,37 @@ mem_ancestors_grudge_roll_for_relic_rarity = {
 	}
 }
 
+mem_ancestors_grudge_increase_jobs_onforge_planet = {
+	custom_tooltip = mem_ancestors_grudge_increase_jobs_onforge_planet_tt
+	hidden_effect = {
+		change_variable = {
+		which = mem_ancestors_grudge_relicforge_extrajobs
+		value = 1
+	}
+	}
+	
+}
+
 mem_ancestors_grudge_increase_relic_roll_quality = {
-	change_variable = {
+	custom_tooltip = mem_ancestors_grudge_increase_relic_roll_quality_tt
+	hidden_effect = {
+		change_variable = {
 		which = mem_ancestors_grudge_rarity_increase
 		value = 1
 	}
+	}
+	
 }
 
 mem_ancestors_grudge_decrease_relic_roll_quality = {
-	change_variable = {
+	custom_tooltip = mem_ancestors_grudge_decrease_relic_roll_quality_tt
+	hidden_effect = {
+		change_variable = {
 		which = mem_ancestors_grudge_rarity_increase
 		value = -1
 	}
+	}
+	
 }
 
 mem_ancestors_grudge_add_relic_modifier = {

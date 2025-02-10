@@ -167,7 +167,6 @@ leader_trait_legendary_mem_ancestors_grudge_machine_nexus_three = {
 		}
 		ship_speed_mult = 0.04
 		mult = this.mem_ancestors_grudge_activated_rune_ruler_strength
-		
 	}
 	leader_class = {
 		official
@@ -234,8 +233,6 @@ leader_trait_legendary_mem_ancestors_grudge_machine_nexus_four = {
 	randomized = no
 }
 
-
-
 # thrawn
 mem_ancestors_grudge_trait_thrawn = {
 	#Origin trait
@@ -249,7 +246,6 @@ mem_ancestors_grudge_trait_thrawn = {
 		TIER = none
 	}
 	# self_modifier = {
-		
 	# }
 	triggered_desc = {
 		trigger = {
@@ -299,11 +295,14 @@ mem_ancestors_grudge_trait_relicowner = {
 	}
 	triggered_desc = {
 		trigger = {
-			NOR = {
-				has_leader_flag = mem_ancestors_grudge_common
-				has_leader_flag = mem_ancestors_grudge_rare
-				has_leader_flag = mem_ancestors_grudge_exceptional
-				has_leader_flag = mem_ancestors_grudge_epic
+			# NOR = {
+			# 	has_leader_flag = mem_ancestors_grudge_common
+			# 	has_leader_flag = mem_ancestors_grudge_rare
+			# 	has_leader_flag = mem_ancestors_grudge_exceptional
+			# 	has_leader_flag = mem_ancestors_grudge_epic
+			# }
+			NOT = {
+				is_variable_set = mem_ancestors_grudge_smithing_quality_rolled
 			}
 		}
 		text = mem_ancestors_grudge_trait_relicowner_tt
