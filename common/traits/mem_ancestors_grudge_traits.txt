@@ -12,7 +12,7 @@ trait_mem_ancestors_grudge_robot_rune_golem = {
 	}
 	opposites = {
 	}
-	icon = "gfx/interface/icons/traits/mem_ancestors_grudge_trait_robot_rune_golem.dds"
+	icon = "gfx/interface/icons/traits/trait_mem_ancestors_grudge_robot_rune_golem.dds"
 	species_potential_add = {
 		always = no
 	}
@@ -234,7 +234,7 @@ leader_trait_legendary_mem_ancestors_grudge_machine_nexus_four = {
 }
 
 # thrawn
-mem_ancestors_grudge_trait_thrawn = {
+leader_trait_mem_ancestors_grudge_thrawn = {
 	#Origin trait
 	#cost = 0
 	inline_script = {
@@ -251,7 +251,7 @@ mem_ancestors_grudge_trait_thrawn = {
 		trigger = {
 			always = yes
 		}
-		text = mem_ancestors_grudge_trait_thrawn_tt
+		text = leader_trait_mem_ancestors_grudge_thrawn_tt
 	}
 	triggered_councilor_modifier = {
 		potential = {

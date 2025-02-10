@@ -62,8 +62,8 @@ situation_mem_ancestors_grudge_forge_repairs = {
 		trigger = {
 			target = {
 				AND = {
-					has_building = mem_ancestors_grudge_building_forge_0
-					has_planet_flag = mem_ancestors_grudge_building_forge_1
+					has_building = building_mem_ancestors_grudge_forge_0
+					has_planet_flag = building_mem_ancestors_grudge_forge_1
 				}
 			}
 		}
@@ -73,8 +73,8 @@ situation_mem_ancestors_grudge_forge_repairs = {
 		trigger = {
 			target = {
 				AND = {
-					has_building = mem_ancestors_grudge_building_forge_1
-					has_planet_flag = mem_ancestors_grudge_building_forge_2
+					has_building = building_mem_ancestors_grudge_forge_1
+					has_planet_flag = building_mem_ancestors_grudge_forge_2
 				}
 			}
 		}
@@ -84,8 +84,8 @@ situation_mem_ancestors_grudge_forge_repairs = {
 		trigger = {
 			target = {
 				AND = {
-					has_building = mem_ancestors_grudge_building_forge_2
-					has_planet_flag = mem_ancestors_grudge_building_forge_3
+					has_building = building_mem_ancestors_grudge_forge_2
+					has_planet_flag = building_mem_ancestors_grudge_forge_3
 				}
 			}
 		}
@@ -95,8 +95,8 @@ situation_mem_ancestors_grudge_forge_repairs = {
 		trigger = {
 			target = {
 				AND = {
-					has_building = mem_ancestors_grudge_building_forge_3
-					has_planet_flag = mem_ancestors_grudge_building_forge_4
+					has_building = building_mem_ancestors_grudge_forge_3
+					has_planet_flag = building_mem_ancestors_grudge_forge_4
 				}
 			}
 		}
@@ -189,8 +189,8 @@ situation_mem_ancestors_grudge_forge_repairs = {
 			desc = situation_mem_ancestors_grudge_forge_repairs_buidling1
 			target = {
 				AND = {
-					has_building = mem_ancestors_grudge_building_forge_0
-					has_planet_flag = mem_ancestors_grudge_building_forge_1
+					has_building = building_mem_ancestors_grudge_forge_0
+					has_planet_flag = building_mem_ancestors_grudge_forge_1
 				}
 			}
 			factor = 0
@@ -199,8 +199,8 @@ situation_mem_ancestors_grudge_forge_repairs = {
 			desc = situation_mem_ancestors_grudge_forge_repairs_buidling1
 			target = {
 				AND = {
-					has_building = mem_ancestors_grudge_building_forge_1
-					has_planet_flag = mem_ancestors_grudge_building_forge_2
+					has_building = building_mem_ancestors_grudge_forge_1
+					has_planet_flag = building_mem_ancestors_grudge_forge_2
 				}
 			}
 			factor = 0
@@ -209,8 +209,8 @@ situation_mem_ancestors_grudge_forge_repairs = {
 			desc = situation_mem_ancestors_grudge_forge_repairs_buidling1
 			target = {
 				AND = {
-					has_building = mem_ancestors_grudge_building_forge_2
-					has_planet_flag = mem_ancestors_grudge_building_forge_3
+					has_building = building_mem_ancestors_grudge_forge_2
+					has_planet_flag = building_mem_ancestors_grudge_forge_3
 				}
 			}
 			factor = 0
@@ -219,8 +219,8 @@ situation_mem_ancestors_grudge_forge_repairs = {
 			desc = situation_mem_ancestors_grudge_forge_repairs_buidling1
 			target = {
 				AND = {
-					has_building = mem_ancestors_grudge_building_forge_3
-					has_planet_flag = mem_ancestors_grudge_building_forge_4
+					has_building = building_mem_ancestors_grudge_forge_3
+					has_planet_flag = building_mem_ancestors_grudge_forge_4
 				}
 			}
 			factor = 0

@@ -109,5 +109,5 @@ triggered_desc = {
 			is_mem_runesmith = yes
 		}
 	}
-	text = mem_ancestors_grudge_building_forge_effect_designation
+	text = building_mem_ancestors_grudge_forge_effect_designation
 }

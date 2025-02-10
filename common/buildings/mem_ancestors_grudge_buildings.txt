@@ -1,5 +1,5 @@
 # ruins of the forge
-mem_ancestors_grudge_building_ruins = {
+building_mem_ancestors_grudge_ruins = {
 	base_buildtime = @b2_time
 	can_build = no
 	can_be_disabled = no
@@ -56,11 +56,11 @@ mem_ancestors_grudge_building_ruins = {
 		text = job_scrap_miner_effect_desc
 	}
 	upgrades = {
-		mem_ancestors_grudge_building_ruins_1
+		building_mem_ancestors_grudge_ruins_1
 	}
 }
 
-mem_ancestors_grudge_building_ruins_1 = {
+building_mem_ancestors_grudge_ruins_1 = {
 	base_buildtime = @b2_time
 	can_build = no
 	can_be_disabled = no
@@ -77,7 +77,7 @@ mem_ancestors_grudge_building_ruins_1 = {
 		}
 	}
 	triggered_desc = {
-		text = mem_ancestors_grudge_building_ruins_effect
+		text = building_mem_ancestors_grudge_ruins_effect
 	}
 	triggered_desc = {
 		trigger = {
@@ -88,7 +88,7 @@ mem_ancestors_grudge_building_ruins_1 = {
 		text = mem_ancestors_grudge_boosts_repairs_effect
 	}
 	on_built = {
-		remove_building = mem_ancestors_grudge_building_ruins_1
+		remove_building = building_mem_ancestors_grudge_ruins_1
 		# owner = {
 		# 	mem_ancestors_grudge_give_random_archeotech = yes
 		# }
@@ -103,7 +103,7 @@ mem_ancestors_grudge_building_ruins_1 = {
 }
 
 # ruins of the forge
-mem_ancestors_grudge_building_forge_0 = {
+building_mem_ancestors_grudge_forge_0 = {
 	base_buildtime = @b2_time
 	can_build = no
 	can_be_disabled = no
@@ -135,11 +135,11 @@ mem_ancestors_grudge_building_forge_0 = {
 	# 	planet_miners_minor_artifacts_produces_add = 0.1
 	# }
 	upgrades = {
-		mem_ancestors_grudge_building_forge_1
+		building_mem_ancestors_grudge_forge_1
 	}
 }
 
-mem_ancestors_grudge_building_forge_1 = {
+building_mem_ancestors_grudge_forge_1 = {
 	base_buildtime = @b3_time
 	can_build = no
 	can_be_disabled = no
@@ -152,11 +152,11 @@ mem_ancestors_grudge_building_forge_1 = {
 		owner = {
 			is_mem_runesmith = yes
 		}
-		custom_tooltip = mem_ancestors_grudge_building_forge_1_tt
+		custom_tooltip = building_mem_ancestors_grudge_forge_1_tt
 		hidden_trigger = {
-			has_planet_flag = mem_ancestors_grudge_building_forge_1
+			has_planet_flag = building_mem_ancestors_grudge_forge_1
 		}
-		#has_planet_flag = mem_ancestors_grudge_building_forge_1
+		#has_planet_flag = building_mem_ancestors_grudge_forge_1
 	}
 	resources = {
 		category = planet_buildings
@@ -182,12 +182,12 @@ mem_ancestors_grudge_building_forge_1 = {
 		}
 	}
 	inline_script = {
-		script = mem_ancestors_grudge/mem_ancestors_grudge_building_forge_1
+		script = mem_ancestors_grudge/building_mem_ancestors_grudge_forge_1
 	}
 	# on_built = {
 	# }
 	upgrades = {
-		mem_ancestors_grudge_building_forge_2
+		building_mem_ancestors_grudge_forge_2
 	}
 	ai_weight = {
 		base = 9996
@@ -195,7 +195,7 @@ mem_ancestors_grudge_building_forge_1 = {
 }
 
 #additional jobs
-mem_ancestors_grudge_building_forge_2 = {
+building_mem_ancestors_grudge_forge_2 = {
 	base_buildtime = @b3_time
 	can_build = no
 	can_be_disabled = no
@@ -208,11 +208,11 @@ mem_ancestors_grudge_building_forge_2 = {
 		owner = {
 			is_mem_runesmith = yes
 		}
-		custom_tooltip = mem_ancestors_grudge_building_forge_1_tt
+		custom_tooltip = building_mem_ancestors_grudge_forge_1_tt
 		hidden_trigger = {
-			has_planet_flag = mem_ancestors_grudge_building_forge_2
+			has_planet_flag = building_mem_ancestors_grudge_forge_2
 		}
-		#has_planet_flag = mem_ancestors_grudge_building_forge_1
+		#has_planet_flag = building_mem_ancestors_grudge_forge_1
 	}
 	resources = {
 		category = planet_buildings
@@ -239,10 +239,10 @@ mem_ancestors_grudge_building_forge_2 = {
 		}
 	}
 	inline_script = {
-		script = mem_ancestors_grudge/mem_ancestors_grudge_building_forge_2
+		script = mem_ancestors_grudge/building_mem_ancestors_grudge_forge_2
 	}
 	inline_script = {
-		script = mem_ancestors_grudge/mem_ancestors_grudge_building_forge_1
+		script = mem_ancestors_grudge/building_mem_ancestors_grudge_forge_1
 	}
 	on_built = {
 		# get relic crafting or relic
@@ -266,7 +266,7 @@ mem_ancestors_grudge_building_forge_2 = {
 		}
 	}
 	upgrades = {
-		mem_ancestors_grudge_building_forge_3
+		building_mem_ancestors_grudge_forge_3
 	}
 	ai_weight = {
 		base = 9997
@@ -274,7 +274,7 @@ mem_ancestors_grudge_building_forge_2 = {
 }
 
 # ecu upgrade
-mem_ancestors_grudge_building_forge_3 = {
+building_mem_ancestors_grudge_forge_3 = {
 	base_buildtime = 3600
 	can_build = no
 	can_be_disabled = no
@@ -287,11 +287,11 @@ mem_ancestors_grudge_building_forge_3 = {
 		owner = {
 			is_mem_runesmith = yes
 		}
-		custom_tooltip = mem_ancestors_grudge_building_forge_1_tt
+		custom_tooltip = building_mem_ancestors_grudge_forge_1_tt
 		hidden_trigger = {
-			has_planet_flag = mem_ancestors_grudge_building_forge_3
+			has_planet_flag = building_mem_ancestors_grudge_forge_3
 		}
-		#has_planet_flag = mem_ancestors_grudge_building_forge_1
+		#has_planet_flag = building_mem_ancestors_grudge_forge_1
 	}
 	resources = {
 		category = planet_buildings
@@ -323,13 +323,13 @@ mem_ancestors_grudge_building_forge_3 = {
 				is_planet_class = pc_city
 			}
 		}
-		text = mem_ancestors_grudge_building_forge_terraform_tt
+		text = building_mem_ancestors_grudge_forge_terraform_tt
 	}
 	inline_script = {
-		script = mem_ancestors_grudge/mem_ancestors_grudge_building_forge_2
+		script = mem_ancestors_grudge/building_mem_ancestors_grudge_forge_2
 	}
 	inline_script = {
-		script = mem_ancestors_grudge/mem_ancestors_grudge_building_forge_1
+		script = mem_ancestors_grudge/building_mem_ancestors_grudge_forge_1
 	}
 	on_built = {
 		# terraform to city
@@ -339,7 +339,7 @@ mem_ancestors_grudge_building_forge_3 = {
 		#change_pc = pc_city
 	}
 	upgrades = {
-		mem_ancestors_grudge_building_forge_4
+		building_mem_ancestors_grudge_forge_4
 	}
 	ai_weight = {
 		base = 9998
@@ -347,7 +347,7 @@ mem_ancestors_grudge_building_forge_3 = {
 }
 
 # modifier
-mem_ancestors_grudge_building_forge_4 = {
+building_mem_ancestors_grudge_forge_4 = {
 	base_buildtime = @b3_time
 	can_build = no
 	can_be_disabled = no
@@ -369,11 +369,11 @@ mem_ancestors_grudge_building_forge_4 = {
 		owner = {
 			is_mem_runesmith = yes
 		}
-		custom_tooltip = mem_ancestors_grudge_building_forge_1_tt
+		custom_tooltip = building_mem_ancestors_grudge_forge_1_tt
 		hidden_trigger = {
-			has_planet_flag = mem_ancestors_grudge_building_forge_4
+			has_planet_flag = building_mem_ancestors_grudge_forge_4
 		}
-		#has_planet_flag = mem_ancestors_grudge_building_forge_1
+		#has_planet_flag = building_mem_ancestors_grudge_forge_1
 	}
 	resources = {
 		category = planet_buildings
@@ -399,13 +399,13 @@ mem_ancestors_grudge_building_forge_4 = {
 		}
 	}
 	inline_script = {
-		script = mem_ancestors_grudge/mem_ancestors_grudge_building_forge_2
+		script = mem_ancestors_grudge/building_mem_ancestors_grudge_forge_2
 	}
 	inline_script = {
-		script = mem_ancestors_grudge/mem_ancestors_grudge_building_forge_1
+		script = mem_ancestors_grudge/building_mem_ancestors_grudge_forge_1
 	}
 	triggered_desc = {
-		text = mem_ancestors_grudge_building_forge_empireeffect_tt
+		text = building_mem_ancestors_grudge_forge_empireeffect_tt
 	}
 	ai_weight = {
 		base = 9999
@@ -418,7 +418,7 @@ mem_ancestors_grudge_building_forge_4 = {
 	# }
 }
 
-mem_ancestors_grudge_building_robot_factory = {
+building_mem_ancestors_grudge_robot_factory = {
 	base_buildtime = @b3_time
 	can_build = yes
 	# can_be_disabled = no
@@ -436,7 +436,7 @@ mem_ancestors_grudge_building_robot_factory = {
 	# 	owner = {
 	# 		is_mem_runesmith = yes
 	# 	}
-	# 	#has_planet_flag = mem_ancestors_grudge_building_forge_1
+	# 	#has_planet_flag = building_mem_ancestors_grudge_forge_1
 	# }
 	destroy_trigger = {
 		owner = {
@@ -502,7 +502,7 @@ mem_ancestors_grudge_building_robot_factory = {
 		mult = this.value:mem_ancestors_grudge_factory_pop_count
 	}
 	triggered_desc = {
-		text = mem_ancestors_grudge_building_robot_factory_tt
+		text = building_mem_ancestors_grudge_robot_factory_tt
 	}
 	ai_weight = {
 		base = 9996
@@ -521,7 +521,7 @@ mem_ancestors_grudge_building_robot_factory = {
 	}
 }
 
-mem_ancestors_grudge_building_hoarder_depot = {
+building_mem_ancestors_grudge_hoarder_depot = {
 	base_buildtime = 360
 	category = resource
 	empire_limit = 1
@@ -665,7 +665,7 @@ mem_ancestors_grudge_building_hoarder_depot = {
 	# 	country_resource_max_add = 100000
 	# }
 	triggered_desc = {
-		text = mem_ancestors_grudge_building_hoarder_depot_effect_desc
+		text = building_mem_ancestors_grudge_hoarder_depot_effect_desc
 	}
 	# prerequisites = {
 	# 	"tech_basic_industry"

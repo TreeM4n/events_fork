@@ -8,11 +8,11 @@ is_mem_runesmith = {
 
 has_mem_relicforge = {
 	OR = {
-		has_building = mem_ancestors_grudge_building_forge_0
-		has_building = mem_ancestors_grudge_building_forge_1
-		has_building = mem_ancestors_grudge_building_forge_2
-		has_building = mem_ancestors_grudge_building_forge_3
-		has_building = mem_ancestors_grudge_building_forge_4
+		has_building = building_mem_ancestors_grudge_forge_0
+		has_building = building_mem_ancestors_grudge_forge_1
+		has_building = building_mem_ancestors_grudge_forge_2
+		has_building = building_mem_ancestors_grudge_forge_3
+		has_building = building_mem_ancestors_grudge_forge_4
 	}
 }
 

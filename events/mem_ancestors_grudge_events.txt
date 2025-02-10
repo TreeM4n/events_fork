@@ -92,7 +92,7 @@ country_event = {
 	option = {
 		name = WEIRD
 		event_target:mem_ancestors_grudge_planet = {
-			add_building = mem_ancestors_grudge_building_forge_0
+			add_building = building_mem_ancestors_grudge_forge_0
 		}
 	}
 	option = {
@@ -755,7 +755,7 @@ country_event = {
 				has_origin = mem_ancestors_grudge_origin_hive
 			}
 			capital_scope = {
-				add_building = mem_ancestors_grudge_building_hoarder_depot
+				add_building = building_mem_ancestors_grudge_hoarder_depot
 			}
 		}
 		capital_scope = {
@@ -832,8 +832,8 @@ country_event = {
 			add_deposit = d_mem_ancestors_grudge_boulder
 			while = {
 				count = 8
-				add_building = mem_ancestors_grudge_building_ruins
-				#ruin_building = mem_ancestors_grudge_building_ruins
+				add_building = building_mem_ancestors_grudge_ruins
+				#ruin_building = building_mem_ancestors_grudge_ruins
 			}
 			while = {
 				count = 3
@@ -1047,10 +1047,10 @@ country_event = {
 			change_leader_class = commander
 			set_gender = male
 			set_name = "NAME_Grand_Admiral_Zrawn"
-			add_trait = mem_ancestors_grudge_trait_thrawn
+			add_trait = leader_trait_mem_ancestors_grudge_thrawn
 			change_leader_portrait = mem_ancestors_grudge_zrawn
 			set_immortal = yes
-			add_trait = mem_ancestors_grudge_trait_thrawn
+			add_trait = leader_trait_mem_ancestors_grudge_thrawn
 		}
 		set_ruler_title_male = "Grand Admiral"
 		set_ruler_title_female = "Grand Admiral"
@@ -1091,7 +1091,7 @@ country_event = {
 			effect = {
 				set_owner = root
 				set_name = "NAME_Grand_Admiral_Zrawn"
-				add_trait = mem_ancestors_grudge_trait_thrawn
+				add_trait = leader_trait_mem_ancestors_grudge_thrawn
 				set_council_position = councilor_ruler_dictatorial
 				set_council_position = councilor_ruler_imperial
 				#save_event_target_as = mem_ancestors_grudge_zrawn
@@ -1141,8 +1141,8 @@ country_event = {
 			target = event_target:mem_ancestors_grudge_planet
 		}
 		event_target:mem_ancestors_grudge_planet = {
-			remove_building = mem_ancestors_grudge_building_ruins
-			add_building = mem_ancestors_grudge_building_forge_0
+			remove_building = building_mem_ancestors_grudge_ruins
+			add_building = building_mem_ancestors_grudge_forge_0
 		}
 	}
 }
@@ -1203,7 +1203,7 @@ situation_event = {
 		custom_tooltip =  mem_ancestors_grudge_10_a_tt
 		hidden_effect = {
 			event_target:mem_ancestors_grudge_planet = {
-				set_planet_flag = mem_ancestors_grudge_building_forge_1
+				set_planet_flag = building_mem_ancestors_grudge_forge_1
 			}
 			if = {
 				limit = {
@@ -1212,8 +1212,8 @@ situation_event = {
 					}
 				}
 				target = {
-					remove_building = mem_ancestors_grudge_building_forge_0
-					add_building = mem_ancestors_grudge_building_forge_1
+					remove_building = building_mem_ancestors_grudge_forge_0
+					add_building = building_mem_ancestors_grudge_forge_1
 				}
 			}
 		}
@@ -1251,7 +1251,7 @@ situation_event = {
 		custom_tooltip = mem_ancestors_grudge_unlocks_forge_upgrade_tt
 		hidden_effect = {
 			target = {
-				set_planet_flag = mem_ancestors_grudge_building_forge_2
+				set_planet_flag = building_mem_ancestors_grudge_forge_2
 			}
 			if = {
 				limit = {
@@ -1260,8 +1260,8 @@ situation_event = {
 					}
 				}
 				target = {
-					remove_building = mem_ancestors_grudge_building_forge_1
-					add_building = mem_ancestors_grudge_building_forge_2
+					remove_building = building_mem_ancestors_grudge_forge_1
+					add_building = building_mem_ancestors_grudge_forge_2
 				}
 				owner = {
 					country_event = {
@@ -1310,7 +1310,7 @@ situation_event = {
 		custom_tooltip = mem_ancestors_grudge_unlocks_forge_upgrade_tt
 		hidden_effect = {
 			target = {
-				set_planet_flag = mem_ancestors_grudge_building_forge_3
+				set_planet_flag = building_mem_ancestors_grudge_forge_3
 			}
 			if = {
 				limit = {
@@ -1319,8 +1319,8 @@ situation_event = {
 					}
 				}
 				target = {
-					remove_building = mem_ancestors_grudge_building_forge_2
-					add_building = mem_ancestors_grudge_building_forge_3
+					remove_building = building_mem_ancestors_grudge_forge_2
+					add_building = building_mem_ancestors_grudge_forge_3
 					planet_event = {
 						id = mem_ancestors_grudge.35
 					}
@@ -1377,7 +1377,7 @@ situation_event = {
 		custom_tooltip = mem_ancestors_grudge_unlocks_forge_upgrade_tt
 		hidden_effect = {
 			target = {
-				set_planet_flag = mem_ancestors_grudge_building_forge_4
+				set_planet_flag = building_mem_ancestors_grudge_forge_4
 			}
 			if = {
 				limit = {
@@ -1386,8 +1386,8 @@ situation_event = {
 					}
 				}
 				target = {
-					remove_building = mem_ancestors_grudge_building_forge_3
-					add_building = mem_ancestors_grudge_building_forge_4
+					remove_building = building_mem_ancestors_grudge_forge_3
+					add_building = building_mem_ancestors_grudge_forge_4
 				}
 			}
 		}
@@ -2414,18 +2414,18 @@ country_event = {
 				}
 			}
 			event_target:mem_ancestors_grudge_planet = {
-				add_building = mem_ancestors_grudge_building_robot_factory
+				add_building = building_mem_ancestors_grudge_robot_factory
 			}
 		}
 		else_if = {
 			limit = {
 				event_target:mem_ancestors_grudge_planet = {
-					has_building = mem_ancestors_grudge_building_ruins
+					has_building = building_mem_ancestors_grudge_ruins
 				}
 			}
 			event_target:mem_ancestors_grudge_planet = {
-				add_building = mem_ancestors_grudge_building_robot_factory
-				remove_building = mem_ancestors_grudge_building_ruins
+				add_building = building_mem_ancestors_grudge_robot_factory
+				remove_building = building_mem_ancestors_grudge_ruins
 			}
 		}
 	}
@@ -3392,9 +3392,9 @@ situation_event = {
 		target = {
 			if = {
 				limit = {
-					has_building = mem_ancestors_grudge_building_ruins
+					has_building = building_mem_ancestors_grudge_ruins
 				}
-				remove_building = mem_ancestors_grudge_building_ruins
+				remove_building = building_mem_ancestors_grudge_ruins
 			}
 			add_building = building_planetary_shield_generator
 			ruin_building = building_planetary_shield_generator
@@ -3643,11 +3643,11 @@ planet_event = {
 				id = mem_ancestors_grudge.220
 			}
 		}
-		remove_building = mem_ancestors_grudge_building_forge_0
-		remove_building = mem_ancestors_grudge_building_forge_1
-		remove_building = mem_ancestors_grudge_building_forge_2
-		remove_building = mem_ancestors_grudge_building_forge_3
-		remove_building = mem_ancestors_grudge_building_forge_4
+		remove_building = building_mem_ancestors_grudge_forge_0
+		remove_building = building_mem_ancestors_grudge_forge_1
+		remove_building = building_mem_ancestors_grudge_forge_2
+		remove_building = building_mem_ancestors_grudge_forge_3
+		remove_building = building_mem_ancestors_grudge_forge_4
 	}
 }
 
