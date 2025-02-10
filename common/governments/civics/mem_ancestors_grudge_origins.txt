@@ -91,7 +91,7 @@ mem_ancestors_grudge_origin_machines = {
 		custom_start_screen
 	}
 	traits = {
-		trait = mem_ancestors_grudge_trait_robot_rune_golem
+		trait = trait_mem_ancestors_grudge_robot_rune_golem
 	}
 	modifier = {
 		country_resource_max_minor_artifacts_add = 10000
@@ -187,12 +187,11 @@ mem_ancestors_grudge_origin_advanced_start = {
 	possible = {
 		always = yes
 	}
-	#description = "mem_ancestors_grudge_origin_robots_effects"
 	# flags = {
 	# 	custom_start_screen
 	# }
 	# traits = {
-	# 	trait = mem_ancestors_grudge_trait_robot_rune_golem
+	# 	trait = trait_mem_ancestors_grudge_robot_rune_golem
 	# }
 	modifier = {
 		starbase_shipyard_build_cost_mult = -0.2
@@ -209,45 +208,3 @@ mem_ancestors_grudge_origin_advanced_start = {
 	}
 }
 
-
-
-# delete after next game update. until then this stays to allow ongoing saves to continue. replaced by mem_ancestors_grudge_origin_machines
-mem_ancestors_grudge_origin_robots = {
-	is_origin = yes
-	icon = "gfx/interface/icons/origins/mem_ancestors_grudge_origin.dds"
-	picture = GFX_mem_ancestors_grudge_origin
-	max_once_global = yes
-	initializers = {
-		mem_ancestors_grudge_system
-	}
-	playable = {
-		#host_has_dlc = "Ancient Relics Story Pack"
-	}
-	potential = {
-		always = no
-	}
-	possible = {
-		ethics = {
-			#NOT = {
-			value = ethic_gestalt_consciousness
-			#}
-		}
-		authority = {
-			value = auth_machine_intelligence
-		}
-	}
-	description = "mem_ancestors_grudge_origin_machines_effects"
-	negative_description = "mem_ancestors_grudge_origin_machines_effects_negative"
-	flags = {
-		custom_start_screen
-	}
-	traits = {
-		trait = mem_ancestors_grudge_trait_robot_rune_golem
-	}
-	modifier = {
-		country_resource_max_minor_artifacts_add = 10000
-	}
-	random_weight = {
-		base = 0
-	}
-}

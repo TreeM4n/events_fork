@@ -30,10 +30,7 @@
 
  mem_ancestors_grudge_origin:0 "Ancestors' Grudge"
  mem_ancestors_grudge_origin_desc:0 "A once great nation of the finest smiths who just barely survived the destruction of their empire. Now the survivors have recovered and once again venture into the stars. First and foremost to reclaim their ancestor's most holy site - the Relic-Forge. And then vengeance..."
- ##################################################
- # Phase out
- mem_ancestors_grudge_origin_robots:0 "$mem_ancestors_grudge_origin_machines$"
- mem_ancestors_grudge_origin_robots_desc:0 "$mem_ancestors_grudge_origin_machines_desc$"
+
  ##################################################
  mem_ancestors_grudge_origin_machines:0 "Ancestors' Automata"
  mem_ancestors_grudge_origin_machines_desc:0 "A once great nation of the finest smiths fell to the onslaught of a merciless foe. Now, the only remnants of that past - automata created to support their makers - venture into the stars. First and foremost to restore their creators' most holy site - the Relic-Forge. And then vengeance..."
@@ -41,7 +38,7 @@
  mem_ancestors_grudge_origin_hive_desc:0 "A hivemind finding itself in a place it doesn't belong, driven by qavarice and greed to amass artifacts of those who came before it and to follow the mysterious call leading to its worlds moon and the shadow of its past."
 
  mem_ancestors_grudge_origin_effects:0 "- Start with a ['concept_mem_ancestors_grudge_relic_world'] (Size: £planetsize£ 6)$NEW_LINE$- Able to rebuild the ['concept_mem_ancestors_grudge_runeforge']$NEW_LINE$- Can create unique ['concept_mem_ancestors_grudge_rune_relics']"
- mem_ancestors_grudge_origin_machines_effects:0 "$mem_ancestors_grudge_origin_effects$$NEW_LINE$- Species Traits: ['trait:mem_ancestors_grudge_trait_robot_rune_golem']$NEW_LINE$- Gestalt: Additonal Ruler starting ['concept_mem_ancestors_grudge_ruler_traits']" 
+ mem_ancestors_grudge_origin_machines_effects:0 "$mem_ancestors_grudge_origin_effects$$NEW_LINE$- Species Traits: ['trait:trait_mem_ancestors_grudge_robot_rune_golem']$NEW_LINE$- Gestalt: Additonal Ruler starting ['concept_mem_ancestors_grudge_ruler_traits']" 
  mem_ancestors_grudge_origin_effects_negative:0 "- $INITIAL_POPS$ §R-4§!$NEW_LINE$- $STARTING_PLANET$ §YAdditional £blocker£ Blockers§!$NEW_LINE$- Spawn an ['concept_advanced_empires'] somewhere in the galaxy. You will hate them."
  mem_ancestors_grudge_origin_machines_effects_negative:0 "$mem_ancestors_grudge_origin_effects_negative$$NEW_LINE$- Until the first ['concept_mem_ancestors_grudge_rune_relics'] are completed: ['modifier:mem_ancestors_grudge_unknown_design']"
  mem_ancestors_grudge_origin_hive_effects:0 "- Start with a ['concept_mem_ancestors_grudge_relic_world'] (Size: £planetsize£ 6)$NEW_LINE$- Able to rebuild the ['concept_mem_ancestors_grudge_runeforge']$NEW_LINE$- Has access to ['concept_mem_ancestors_grudge_hoarding'] Stance"
@@ -214,17 +211,17 @@
  tech_mem_ancestors_grudge_dragon_lure_title:0 "§YUnlocks Stabase Building:§! $sm_voidlure_mem_ancestors_grudge_dragon$"
 
  ##########################################################################
- # TRAITS - naming is a mess
+ # TRAITS - naming is a mess ... there you go
  ##########################################################################
 
- mem_ancestors_grudge_trait_relicowner:0 "Relic Keeper [MemGetRelicNameRarity]"
- mem_ancestors_grudge_trait_relicowner_desc:0 "This leader was gifted a rune-infused relic. One of the greatest honors someone in our service can receive."
- mem_ancestors_grudge_trait_relicowner_tt:0 "§LThis leader will inherit even stronger modifiers of the given relic.\n\nEach leader can have no more than one relic in his possession!§!"
- mem_ancestors_grudge_trait_robot_rune_golem:0 "Rune Golem"
- mem_ancestors_grudge_trait_robot_rune_golem_desc:0 "A construct powered by the runes of the lost art of Rune Artificing."
+ leader_trait_legendary_mem_ancestors_grudge_relicowner:0 "Relic Keeper [MemGetRelicNameRarity]"
+ leader_trait_legendary_mem_ancestors_grudge_relicowner_desc:0 "This leader was gifted a rune-infused relic. One of the greatest honors someone in our service can receive."
+ leader_trait_legendary_mem_ancestors_grudge_relicowner_tt:0 "§LThis leader will inherit even stronger modifiers of the given relic.\n\nEach leader can have no more than one relic in his possession!§!"
+ trait_mem_ancestors_grudge_robot_rune_golem:0 "Rune Golem"
+ trait_mem_ancestors_grudge_robot_rune_golem_desc:0 "A construct powered by the runes of the lost art of Rune Artificing."
  trait_mem_ancestors_grudge_archaeotech_excellence:0 "Rune-Forged Excellence"
  trait_mem_ancestors_grudge_archaeotech_excellence_desc:0 "The pinnacle of rune artificing offers unmatched performance with the drawback of increased complexity."
- automodding_trait_mem_robotic_tooltip:0 "$NEW_LINE$Depending on designation:$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_power_drills']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_harvesters']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_superconductive']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_emotion_emulators']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_propaganda_machines']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_logic_engines']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_forge_focus']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_factory_focus']" # TODO das hbscher
+ automodding_trait_mem_robotic_tooltip:0 "$NEW_LINE$Depending on designation:$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_power_drills']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_harvesters']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_superconductive']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_emotion_emulators']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_propaganda_machines']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_logic_engines']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_forge_focus']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_factory_focus']" 
  trait_mem_ancestors_grudge_archaeotech_robot_power_drills:0 "Rune of Earth"
  trait_mem_ancestors_grudge_archaeotech_robot_power_drills_desc:0 ""
  trait_mem_ancestors_grudge_archaeotech_robot_harvesters:0 "Rune of Fauna"
@@ -395,7 +392,7 @@
  mem_ancestors_grudge_unknown_design_no_modify:0 "§RCannot modify Main Species§!"
  mem_ancestors_grudge_lost_forge_apply_knowledge:0 "Ancient Wisdom"
  mem_ancestors_grudge_dragon_tithe:0 "A Dragon's Tithe"
- mem_ancestors_grudge_dragon_tithe_energy:0 "§mem_ancestors_grudge_dragon_tithe§"
+ mem_ancestors_grudge_dragon_tithe_energy:0 "§mem_ancestors_grudge_dragon_tithe§!"
 
  ##########################################################################
  # MESSAGES

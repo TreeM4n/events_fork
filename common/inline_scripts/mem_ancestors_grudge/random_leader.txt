@@ -2,7 +2,7 @@ random_owned_leader = {
 	limit = {
 		leader_class = $LEADER$
 		NOT = {
-			has_trait = mem_ancestors_grudge_trait_relicowner
+			has_trait = leader_trait_legendary_mem_ancestors_grudge_relicowner
 		}
 	}
 	save_event_target_as = leader_1
@@ -16,7 +16,7 @@ if = {
 			leader_class = $LEADER$
 			NOR = {
 				is_same_value = event_target:leader_1
-				has_trait = mem_ancestors_grudge_trait_relicowner
+				has_trait = leader_trait_legendary_mem_ancestors_grudge_relicowner
 			}
 		}
 		save_event_target_as = leader_2
@@ -32,7 +32,7 @@ if = {
 			NOR = {
 				is_same_value = event_target:leader_1
 				is_same_value = event_target:leader_2
-				has_trait = mem_ancestors_grudge_trait_relicowner
+				has_trait = leader_trait_legendary_mem_ancestors_grudge_relicowner
 			}
 		}
 		save_event_target_as = leader_3

@@ -221,7 +221,7 @@ spriteTypes = {
 		legacy_lazy_load = no
 	}
 	spriteType = {
-		name = "GFX_leader_trait_mem_ancestors_grudge_trait_relicowner"
+		name = "GFX_leader_trait_leader_trait_legendary_mem_ancestors_grudge_relicowner"
 		texturefile = "gfx/interface/icons/traits/leader_trait_icons/mem_ancestors_grudge_trait_relicowner.dds"
 	}
 	spriteType = {

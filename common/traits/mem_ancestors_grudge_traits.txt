@@ -4,7 +4,7 @@
 # tr33
 #
 ###########
-mem_ancestors_grudge_trait_robot_rune_golem = {
+trait_mem_ancestors_grudge_robot_rune_golem = {
 	cost = 0
 	allowed_archetypes = {
 		ROBOT
@@ -279,12 +279,12 @@ mem_ancestors_grudge_trait_thrawn = {
 }
 
 # ugly ass script 
-mem_ancestors_grudge_trait_relicowner = {
+leader_trait_legendary_mem_ancestors_grudge_relicowner = {
 	#Origin trait
 	#cost = 0
 	inline_script = {
 		script = trait/icon
-		ICON = "GFX_leader_trait_mem_ancestors_grudge_trait_relicowner"
+		ICON = "GFX_leader_trait_leader_trait_legendary_mem_ancestors_grudge_relicowner"
 		CLASS = leader
 		RARITY = paragon
 		COUNCIL = no
@@ -305,7 +305,7 @@ mem_ancestors_grudge_trait_relicowner = {
 				is_variable_set = mem_ancestors_grudge_smithing_quality_rolled
 			}
 		}
-		text = mem_ancestors_grudge_trait_relicowner_tt
+		text = leader_trait_legendary_mem_ancestors_grudge_relicowner_tt
 	}
 	# weapon fire rate
 	# hull repair in frinedly territory

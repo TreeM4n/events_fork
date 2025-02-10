@@ -23,10 +23,9 @@ part = {
 	location = 0
 	localization = "START_SCREEN_MEM_ANCESTORS_GRUDGE_MACHINES"
 	trigger = {
-		OR = {
-			has_origin = mem_ancestors_grudge_origin_robots
+		
 			has_origin = mem_ancestors_grudge_origin_machines
-		}
+		
 		NOR = {
 			has_civic = civic_machine_assimilator
 			has_civic = civic_machine_servitor
