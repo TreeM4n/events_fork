@@ -245,17 +245,17 @@ spriteTypes = {
 		texturefile = "gfx/interface/icons/modules/starbase_voidlure_mem_ancestors_grudge_dragon.dds"
 	}
 	spriteType = {
-		name = "GFX_mem_ancestors_grudge_origin"
-		texturefile = "gfx/event_pictures/origin/mem_ancestors_grudge_origin.dds"
+		name = "GFX_origin_mem_ancestors_grudge"
+		texturefile = "gfx/event_pictures/origin/origin_mem_ancestors_grudge.dds"
 	}
 	spriteType = {
-		name = "GFX_mem_ancestors_grudge_origin_machines"
-		texturefile = "gfx/event_pictures/origin/mem_ancestors_grudge_origin_machines.dds"
+		name = "GFX_origin_mem_ancestors_grudge_machines"
+		texturefile = "gfx/event_pictures/origin/origin_mem_ancestors_grudge_machines.dds"
 	}
 
 	spriteType = {
-		name = "GFX_mem_ancestors_grudge_origin_hive"
-		texturefile = "gfx/event_pictures/origin/mem_ancestors_grudge_origin_hives.dds"
+		name = "GFX_origin_mem_ancestors_grudge_hive"
+		texturefile = "gfx/event_pictures/origin/origin_mem_ancestors_grudge_hives.dds"
 	}
 
 	spriteType = {

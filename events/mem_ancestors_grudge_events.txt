@@ -94,7 +94,7 @@ country_event = {
 	option = {
 		name = WEIRD
 		event_target:mem_ancestors_grudge_planet = {
-			add_building = mem_ancestors_grudge_building_forge_0
+			add_building = building_mem_ancestors_grudge_forge_0
 		}
 	}
 	option = {
@@ -556,7 +556,7 @@ country_event = {
 			owner = {
 				OR = {
 					has_authority = auth_machine_intelligence
-					has_origin = mem_ancestors_grudge_origin_machines
+					has_origin = origin_mem_ancestors_grudge_machines
 				}
 			}
 		}
@@ -702,7 +702,7 @@ country_event = {
 		is_mem_runesmith = yes
 	}
 	immediate = {
-		save_event_target_as = mem_ancestors_grudge_origin
+		save_event_target_as = origin_mem_ancestors_grudge
 		if = {
 			limit = {
 				has_authority = auth_machine_intelligence
@@ -740,7 +740,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				has_origin = mem_ancestors_grudge_origin_machines
+				has_origin = origin_mem_ancestors_grudge_machines
 			}
 			add_modifier = {
 				modifier = mem_ancestors_grudge_unknown_design
@@ -754,17 +754,17 @@ country_event = {
 		}
 		if = {
 			limit = {
-				has_origin = mem_ancestors_grudge_origin_hive
+				has_origin = origin_mem_ancestors_grudge_hive
 			}
 			capital_scope = {
-				add_building = mem_ancestors_grudge_building_hoarder_depot
+				add_building = building_mem_ancestors_grudge_hoarder_depot
 			}
 		}
 		capital_scope = {
 			while = {
 				count = 6
 				random_owned_pop = {
-					#save_event_target_as = mem_ancestors_grudge_origin_species
+					#save_event_target_as = origin_mem_ancestors_grudge_species
 					kill_pop = yes
 				}
 				#
@@ -834,8 +834,8 @@ country_event = {
 			add_deposit = d_mem_ancestors_grudge_boulder
 			while = {
 				count = 8
-				add_building = mem_ancestors_grudge_building_ruins
-				#ruin_building = mem_ancestors_grudge_building_ruins
+				add_building = building_mem_ancestors_grudge_ruins
+				#ruin_building = building_mem_ancestors_grudge_ruins
 			}
 			while = {
 				count = 3
@@ -916,11 +916,11 @@ event = {
 				extra_trait_points = 3
 			}
 			create_country = {
-				name = "mem_ancestors_grudge_origin_advanced_start_name"
+				name = "origin_mem_ancestors_grudge_advanced_start_name"
 				name_list = "ART2"
 				type = default
 				# type = mem_vazurans #TODO later
-				origin = "mem_ancestors_grudge_origin_advanced_start"
+				origin = "origin_mem_ancestors_grudge_advanced_start"
 				ignore_initial_colony_error = yes
 				day_zero_contact = no
 				authority = auth_dictatorial
@@ -951,7 +951,7 @@ event = {
 				}
 			}
 			last_created_country = {
-				set_name = "mem_ancestors_grudge_origin_advanced_start_name"
+				set_name = "origin_mem_ancestors_grudge_advanced_start_name"
 				add_resource = {
 					unity = 10000
 					minerals = 30000
@@ -1038,7 +1038,7 @@ country_event = {
 	picture = GFX_evt_city_ruins
 	is_triggered_only = yes
 	trigger = {
-		has_origin = mem_ancestors_grudge_origin_advanced_start
+		has_origin = origin_mem_ancestors_grudge_advanced_start
 	}
 	immediate = {
 	}
@@ -1049,10 +1049,10 @@ country_event = {
 			change_leader_class = commander
 			set_gender = male
 			set_name = "NAME_Grand_Admiral_Zrawn"
-			add_trait = mem_ancestors_grudge_trait_thrawn
+			add_trait = leader_trait_mem_ancestors_grudge_thrawn
 			change_leader_portrait = mem_ancestors_grudge_zrawn
 			set_immortal = yes
-			add_trait = mem_ancestors_grudge_trait_thrawn
+			add_trait = leader_trait_mem_ancestors_grudge_thrawn
 		}
 		set_ruler_title_male = "Grand Admiral"
 		set_ruler_title_female = "Grand Admiral"
@@ -1093,7 +1093,7 @@ country_event = {
 			effect = {
 				set_owner = root
 				set_name = "NAME_Grand_Admiral_Zrawn"
-				add_trait = mem_ancestors_grudge_trait_thrawn
+				add_trait = leader_trait_mem_ancestors_grudge_thrawn
 				set_council_position = councilor_ruler_dictatorial
 				set_council_position = councilor_ruler_imperial
 				#save_event_target_as = mem_ancestors_grudge_zrawn
@@ -1143,8 +1143,8 @@ country_event = {
 			target = event_target:mem_ancestors_grudge_planet
 		}
 		event_target:mem_ancestors_grudge_planet = {
-			remove_building = mem_ancestors_grudge_building_ruins
-			add_building = mem_ancestors_grudge_building_forge_0
+			remove_building = building_mem_ancestors_grudge_ruins
+			add_building = building_mem_ancestors_grudge_forge_0
 		}
 	}
 }
@@ -1205,7 +1205,7 @@ situation_event = {
 		custom_tooltip =  mem_ancestors_grudge_10_a_tt
 		hidden_effect = {
 			event_target:mem_ancestors_grudge_planet = {
-				set_planet_flag = mem_ancestors_grudge_building_forge_1
+				set_planet_flag = building_mem_ancestors_grudge_forge_1
 			}
 			if = {
 				limit = {
@@ -1214,8 +1214,8 @@ situation_event = {
 					}
 				}
 				target = {
-					remove_building = mem_ancestors_grudge_building_forge_0
-					add_building = mem_ancestors_grudge_building_forge_1
+					remove_building = building_mem_ancestors_grudge_forge_0
+					add_building = building_mem_ancestors_grudge_forge_1
 				}
 			}
 		}
@@ -1253,7 +1253,7 @@ situation_event = {
 		custom_tooltip = mem_ancestors_grudge_unlocks_forge_upgrade_tt
 		hidden_effect = {
 			target = {
-				set_planet_flag = mem_ancestors_grudge_building_forge_2
+				set_planet_flag = building_mem_ancestors_grudge_forge_2
 			}
 			if = {
 				limit = {
@@ -1262,8 +1262,8 @@ situation_event = {
 					}
 				}
 				target = {
-					remove_building = mem_ancestors_grudge_building_forge_1
-					add_building = mem_ancestors_grudge_building_forge_2
+					remove_building = building_mem_ancestors_grudge_forge_1
+					add_building = building_mem_ancestors_grudge_forge_2
 				}
 				owner = {
 					country_event = {
@@ -1312,7 +1312,7 @@ situation_event = {
 		custom_tooltip = mem_ancestors_grudge_unlocks_forge_upgrade_tt
 		hidden_effect = {
 			target = {
-				set_planet_flag = mem_ancestors_grudge_building_forge_3
+				set_planet_flag = building_mem_ancestors_grudge_forge_3
 			}
 			if = {
 				limit = {
@@ -1321,8 +1321,8 @@ situation_event = {
 					}
 				}
 				target = {
-					remove_building = mem_ancestors_grudge_building_forge_2
-					add_building = mem_ancestors_grudge_building_forge_3
+					remove_building = building_mem_ancestors_grudge_forge_2
+					add_building = building_mem_ancestors_grudge_forge_3
 					planet_event = {
 						id = mem_ancestors_grudge.35
 					}
@@ -1379,7 +1379,7 @@ situation_event = {
 		custom_tooltip = mem_ancestors_grudge_unlocks_forge_upgrade_tt
 		hidden_effect = {
 			target = {
-				set_planet_flag = mem_ancestors_grudge_building_forge_4
+				set_planet_flag = building_mem_ancestors_grudge_forge_4
 			}
 			if = {
 				limit = {
@@ -1388,8 +1388,8 @@ situation_event = {
 					}
 				}
 				target = {
-					remove_building = mem_ancestors_grudge_building_forge_3
-					add_building = mem_ancestors_grudge_building_forge_4
+					remove_building = building_mem_ancestors_grudge_forge_3
+					add_building = building_mem_ancestors_grudge_forge_4
 				}
 			}
 		}
@@ -1413,7 +1413,7 @@ situation_event = {
 		trigger = {
 			hidden_trigger = {
 				owner = {
-					has_origin = mem_ancestors_grudge_origin
+					has_origin = origin_mem_ancestors_grudge
 				}
 			}
 		}
@@ -1429,7 +1429,7 @@ situation_event = {
 		trigger = {
 			hidden_trigger = {
 				owner = {
-					has_origin = mem_ancestors_grudge_origin_machines
+					has_origin = origin_mem_ancestors_grudge_machines
 				}
 			}
 		}
@@ -1759,7 +1759,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				has_origin = mem_ancestors_grudge_origin_hive
+				has_origin = origin_mem_ancestors_grudge_hive
 				OR = {
 					has_modifier = mem_ancestors_grudge_dragon_tithe
 					#has_modifier = mem_ancestors_grudge_dragon_tithe_energy
@@ -1769,7 +1769,7 @@ country_event = {
 		}
 		else_if = {
 			limit = {
-				has_origin = mem_ancestors_grudge_origin_hive
+				has_origin = origin_mem_ancestors_grudge_hive
 				OR = {
 					#has_modifier = mem_ancestors_grudge_dragon_tithe
 					has_modifier = mem_ancestors_grudge_dragon_tithe_energy
@@ -1781,7 +1781,7 @@ country_event = {
 			hidden_effect = {
 				every_playable_country = {
 					limit = {
-						has_origin = mem_ancestors_grudge_origin_hive
+						has_origin = origin_mem_ancestors_grudge_hive
 						OR = {
 							has_modifier = mem_ancestors_grudge_dragon_tithe
 							has_modifier = mem_ancestors_grudge_dragon_tithe_energy
@@ -2416,18 +2416,18 @@ country_event = {
 				}
 			}
 			event_target:mem_ancestors_grudge_planet = {
-				add_building = mem_ancestors_grudge_building_robot_factory
+				add_building = building_mem_ancestors_grudge_robot_factory
 			}
 		}
 		else_if = {
 			limit = {
 				event_target:mem_ancestors_grudge_planet = {
-					has_building = mem_ancestors_grudge_building_ruins
+					has_building = building_mem_ancestors_grudge_ruins
 				}
 			}
 			event_target:mem_ancestors_grudge_planet = {
-				add_building = mem_ancestors_grudge_building_robot_factory
-				remove_building = mem_ancestors_grudge_building_ruins
+				add_building = building_mem_ancestors_grudge_robot_factory
+				remove_building = building_mem_ancestors_grudge_ruins
 			}
 		}
 	}
@@ -3080,14 +3080,14 @@ country_event = {
 			AND = {
 				is_mem_runesmith = yes
 				from = {
-					has_origin = mem_ancestors_grudge_origin_advanced_start
+					has_origin = origin_mem_ancestors_grudge_advanced_start
 				}
 			}
 			AND = {
 				from = {
 					is_mem_runesmith = yes
 				}
-				has_origin = mem_ancestors_grudge_origin_advanced_start
+				has_origin = origin_mem_ancestors_grudge_advanced_start
 			}
 		}
 	}
@@ -3098,7 +3098,7 @@ country_event = {
 		# communcation is not triggered for both countries so we just proc it for both
 		if = {
 			limit = {
-				has_origin = mem_ancestors_grudge_origin_advanced_start
+				has_origin = origin_mem_ancestors_grudge_advanced_start
 			}
 			from = {
 				country_event = {
@@ -3127,7 +3127,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		AND = {
-			has_origin = mem_ancestors_grudge_origin_advanced_start
+			has_origin = origin_mem_ancestors_grudge_advanced_start
 			from = {
 				is_mem_runesmith = yes
 			}
@@ -3170,7 +3170,7 @@ country_event = {
 	is_triggered_only = yes
 	# trigger = {
 	# 	AND = {
-	# 		has_origin = mem_ancestors_grudge_origin_advanced_start
+	# 		has_origin = origin_mem_ancestors_grudge_advanced_start
 	# 		from = {
 	# 			is_mem_runesmith = yes
 	# 		}
@@ -3208,7 +3208,7 @@ country_event = {
 	hide_window = yes
 	trigger = {
 		AND = {
-			has_origin = mem_ancestors_grudge_origin_advanced_start
+			has_origin = origin_mem_ancestors_grudge_advanced_start
 			NOT = {
 				from = {
 					is_mem_runesmith = yes
@@ -3394,9 +3394,9 @@ situation_event = {
 		target = {
 			if = {
 				limit = {
-					has_building = mem_ancestors_grudge_building_ruins
+					has_building = building_mem_ancestors_grudge_ruins
 				}
-				remove_building = mem_ancestors_grudge_building_ruins
+				remove_building = building_mem_ancestors_grudge_ruins
 			}
 			add_building = building_planetary_shield_generator
 			ruin_building = building_planetary_shield_generator
@@ -3645,11 +3645,11 @@ planet_event = {
 				id = mem_ancestors_grudge.220
 			}
 		}
-		remove_building = mem_ancestors_grudge_building_forge_0
-		remove_building = mem_ancestors_grudge_building_forge_1
-		remove_building = mem_ancestors_grudge_building_forge_2
-		remove_building = mem_ancestors_grudge_building_forge_3
-		remove_building = mem_ancestors_grudge_building_forge_4
+		remove_building = building_mem_ancestors_grudge_forge_0
+		remove_building = building_mem_ancestors_grudge_forge_1
+		remove_building = building_mem_ancestors_grudge_forge_2
+		remove_building = building_mem_ancestors_grudge_forge_3
+		remove_building = building_mem_ancestors_grudge_forge_4
 	}
 }
 
@@ -3797,7 +3797,7 @@ fleet_event = {
 		trigger = {
 			NOT = {
 				owner = {
-					has_origin = mem_ancestors_grudge_origin_hive
+					has_origin = origin_mem_ancestors_grudge_hive
 				}
 			}
 		}
@@ -3826,7 +3826,7 @@ fleet_event = {
 		name = mem_ancestors_grudge.315.b
 		trigger = {
 			owner = {
-				has_origin = mem_ancestors_grudge_origin_hive
+				has_origin = origin_mem_ancestors_grudge_hive
 			}
 		}
 		owner = {
@@ -4805,7 +4805,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		root = {
-			has_origin = mem_ancestors_grudge_origin_hive
+			has_origin = origin_mem_ancestors_grudge_hive
 		}
 		From = {
 			is_country_type = default

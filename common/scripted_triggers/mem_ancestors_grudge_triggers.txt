@@ -1,18 +1,18 @@
 is_mem_runesmith = {
 	OR = {
-		has_origin = mem_ancestors_grudge_origin
-		has_origin = mem_ancestors_grudge_origin_machines
-		has_origin = mem_ancestors_grudge_origin_hive
+		has_origin = origin_mem_ancestors_grudge
+		has_origin = origin_mem_ancestors_grudge_machines
+		has_origin = origin_mem_ancestors_grudge_hive
 	}
 }
 
 has_mem_relicforge = {
 	OR = {
-		has_building = mem_ancestors_grudge_building_forge_0
-		has_building = mem_ancestors_grudge_building_forge_1
-		has_building = mem_ancestors_grudge_building_forge_2
-		has_building = mem_ancestors_grudge_building_forge_3
-		has_building = mem_ancestors_grudge_building_forge_4
+		has_building = building_mem_ancestors_grudge_forge_0
+		has_building = building_mem_ancestors_grudge_forge_1
+		has_building = building_mem_ancestors_grudge_forge_2
+		has_building = building_mem_ancestors_grudge_forge_3
+		has_building = building_mem_ancestors_grudge_forge_4
 	}
 }
 
@@ -59,7 +59,7 @@ can_do_mem_specialized_robo_modding = {
 }
 
 mem_ancestors_grudge_is_hoarder = {
-	has_origin = mem_ancestors_grudge_origin_hive
+	has_origin = origin_mem_ancestors_grudge_hive
 }
 
 mem_ancestors_grudge_is_capped_hoarder = {
@@ -70,7 +70,7 @@ mem_ancestors_grudge_is_capped_hoarder = {
 }
 
 has_encountered_mem_ancestors_grudge_dragon = {
-	has_origin = mem_ancestors_grudge_origin_hive
+	has_origin = origin_mem_ancestors_grudge_hive
 	has_technology = tech_mem_ancestors_grudge_dragon_lure
 	# exists = event_target:mem_ancestors_grudge_dragon_country
 	# has_communications = event_target:mem_ancestors_grudge_dragon_country
