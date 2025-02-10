@@ -386,7 +386,7 @@ country_event = {
 	option = {
 		name = WEIRD
 		create_fleet = {
-			name = "Dragonling"
+			name = "NAME_Dragonling"
 			settings = {
 				can_upgrade = no
 				#can_change_composition = no
@@ -401,7 +401,7 @@ country_event = {
 				}
 				create_ship = {
 					design = last_created_design
-					name = "Dragonling"
+					name = "NAME_Dragonling"
 					prefix = no
 					upgradable = no
 				}
@@ -1046,7 +1046,7 @@ country_event = {
 		ruler = {
 			change_leader_class = commander
 			set_gender = male
-			set_name = "mem_ancestors_grudge_zrawn"
+			set_name = "NAME_Grand_Admiral_Zrawn"
 			add_trait = mem_ancestors_grudge_trait_thrawn
 			change_leader_portrait = mem_ancestors_grudge_zrawn
 			set_immortal = yes
@@ -1061,7 +1061,7 @@ country_event = {
 			always = no
 		}
 		create_species = {
-			name = "NAME_Unknown"
+			name = "Vazuran"
 			class = PARAGON
 			portrait = mem_ancestors_grudge_zrawn
 			namelist = "PRT1"
@@ -1077,7 +1077,7 @@ country_event = {
 			}
 		}
 		create_leader = {
-			name = "mem_ancestors_grudge_zrawn"
+			name = "NAME_Grand_Admiral_Zrawn"
 			species = event_target:mem_ancestors_grudge_zrawn_species
 			class = commander
 			skill = 7
@@ -1090,7 +1090,7 @@ country_event = {
 			# custom_catch_phrase = "mem_ancestors_grudge_zrawn_phrase"
 			effect = {
 				set_owner = root
-				set_name = "mem_ancestors_grudge_zrawn"
+				set_name = "NAME_Grand_Admiral_Zrawn"
 				add_trait = mem_ancestors_grudge_trait_thrawn
 				set_council_position = councilor_ruler_dictatorial
 				set_council_position = councilor_ruler_imperial
@@ -1200,7 +1200,7 @@ situation_event = {
 				}
 			}
 		}
-		custom_tooltip = mem_ancestors_grudge_unlocks_forge_upgrade_tt
+		custom_tooltip =  mem_ancestors_grudge_10_a_tt
 		hidden_effect = {
 			event_target:mem_ancestors_grudge_planet = {
 				set_planet_flag = mem_ancestors_grudge_building_forge_1
@@ -1757,24 +1757,20 @@ country_event = {
 		}
 		if = {
 			limit = {
-				AND = {
-					has_origin = mem_ancestors_grudge_origin_hive
-					OR = {
-						has_modifier = mem_ancestors_grudge_dragon_tithe
-						#has_modifier = mem_ancestors_grudge_dragon_tithe_energy
-					}
+				has_origin = mem_ancestors_grudge_origin_hive
+				OR = {
+					has_modifier = mem_ancestors_grudge_dragon_tithe
+					#has_modifier = mem_ancestors_grudge_dragon_tithe_energy
 				}
 			}
 			remove_modifier = mem_ancestors_grudge_dragon_tithe
 		}
 		else_if = {
 			limit = {
-				AND = {
-					has_origin = mem_ancestors_grudge_origin_hive
-					OR = {
-						#has_modifier = mem_ancestors_grudge_dragon_tithe
-						has_modifier = mem_ancestors_grudge_dragon_tithe_energy
-					}
+				has_origin = mem_ancestors_grudge_origin_hive
+				OR = {
+					#has_modifier = mem_ancestors_grudge_dragon_tithe
+					has_modifier = mem_ancestors_grudge_dragon_tithe_energy
 				}
 			}
 			remove_modifier = mem_ancestors_grudge_dragon_tithe_energy
@@ -1783,12 +1779,10 @@ country_event = {
 			hidden_effect = {
 				every_playable_country = {
 					limit = {
-						AND = {
-							has_origin = mem_ancestors_grudge_origin_hive
-							OR = {
-								has_modifier = mem_ancestors_grudge_dragon_tithe
-								has_modifier = mem_ancestors_grudge_dragon_tithe_energy
-							}
+						has_origin = mem_ancestors_grudge_origin_hive
+						OR = {
+							has_modifier = mem_ancestors_grudge_dragon_tithe
+							has_modifier = mem_ancestors_grudge_dragon_tithe_energy
 						}
 					}
 					remove_modifier = mem_ancestors_grudge_dragon_tithe
@@ -4777,7 +4771,7 @@ starbase_event = {
 					}
 					create_ship = {
 						design = last_created_design
-						name = "Dragonling"
+						name = "NAME_Dragonling"
 						prefix = no
 						upgradable = no
 					}

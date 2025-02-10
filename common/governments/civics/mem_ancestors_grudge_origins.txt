@@ -10,11 +10,11 @@ mem_ancestors_grudge_origin = {
 		#host_has_dlc = "Ancient Relics Story Pack"
 	}
 	potential = {
-		ethics = {
-			NOT = {
-				value = ethic_gestalt_consciousness
-			}
-		}
+		# ethics = {
+		# 	NOT = {
+		# 		value = ethic_gestalt_consciousness
+		# 	}
+		# }
 
 	}
 	possible = {
@@ -64,11 +64,14 @@ mem_ancestors_grudge_origin_machines = {
 		# ethics = {
 		# 	value = ethic_gestalt_consciousness
 		# }
+		# species_archetype = {
+		# 	value = MACHINE
+		# }
+	}
+	possible = {
 		species_archetype = {
 			value = MACHINE
 		}
-	}
-	possible = {
 		# ethics = {
 		# 	value = ethic_gestalt_consciousness
 		# }
@@ -122,25 +125,25 @@ mem_ancestors_grudge_origin_hive = {
 		# authority = {
 		# 	value = auth_hive_mind
 		# }
-		species_archetype = {
-			NOT = {
-				value = MACHINE
-			}
-		}
+		# species_archetype = {
+		# 	NOT = {
+		# 		value = MACHINE
+		# 	}
+		# }
 	}
 	possible = {
 		#always = no
-		species_archetype = {
-			NOT = {
-				value = MACHINE
-			}
-		}
+		# species_archetype = {
+		# 	NOT = {
+		# 		value = MACHINE
+		# 	}
+		# }
 		# ethics = {
 		# 	value = ethic_gestalt_consciousness
 		# }
-		# authority = {
-		# 	value = auth_hive_mind
-		# }
+		authority = {
+			value = auth_hive_mind
+		}
 	}
 	description = "mem_ancestors_grudge_origin_hive_effects"
 	negative_description = "mem_ancestors_grudge_origin_hive_effects_negative"
