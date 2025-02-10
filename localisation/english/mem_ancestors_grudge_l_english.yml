@@ -45,9 +45,9 @@
  mem_ancestors_grudge_origin_hive_effects_negative:0 "$mem_ancestors_grudge_origin_effects_negative$$NEW_LINE$- Cannot create unique ['concept_mem_ancestors_grudge_rune_relics']"
 
  # only standalone mod
- mem_ancestors_grudge_origin_advanced_start_name:0 "Vazuran Hegemony"
- mem_ancestors_grudge_origin_advanced_start:0 "Blood and Iron"
- mem_ancestors_grudge_origin_advanced_start_desc:0 "The civilization based only on plunder and warfare. They believe only in their own superiority and the principle of might makes right."
+ origin_mem_ancestors_grudge_advanced_start_name:0 "Vazuran Hegemony"
+ origin_mem_ancestors_grudge_advanced_start:0 "Blood and Iron"
+ origin_mem_ancestors_grudge_advanced_start_desc:0 "The civilization based only on plunder and warfare. They believe only in their own superiority and the principle of might makes right."
 
  ##########################################################################
  # SITUATION

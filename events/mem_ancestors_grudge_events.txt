@@ -914,11 +914,11 @@ event = {
 				extra_trait_points = 3
 			}
 			create_country = {
-				name = "mem_ancestors_grudge_origin_advanced_start_name"
+				name = "origin_mem_ancestors_grudge_advanced_start_name"
 				name_list = "ART2"
 				type = default
 				# type = mem_vazurans #TODO later
-				origin = "mem_ancestors_grudge_origin_advanced_start"
+				origin = "origin_mem_ancestors_grudge_advanced_start"
 				ignore_initial_colony_error = yes
 				day_zero_contact = no
 				authority = auth_dictatorial
@@ -949,7 +949,7 @@ event = {
 				}
 			}
 			last_created_country = {
-				set_name = "mem_ancestors_grudge_origin_advanced_start_name"
+				set_name = "origin_mem_ancestors_grudge_advanced_start_name"
 				add_resource = {
 					unity = 10000
 					minerals = 30000
@@ -1036,7 +1036,7 @@ country_event = {
 	picture = GFX_evt_city_ruins
 	is_triggered_only = yes
 	trigger = {
-		has_origin = mem_ancestors_grudge_origin_advanced_start
+		has_origin = origin_mem_ancestors_grudge_advanced_start
 	}
 	immediate = {
 	}
@@ -3078,14 +3078,14 @@ country_event = {
 			AND = {
 				is_mem_runesmith = yes
 				from = {
-					has_origin = mem_ancestors_grudge_origin_advanced_start
+					has_origin = origin_mem_ancestors_grudge_advanced_start
 				}
 			}
 			AND = {
 				from = {
 					is_mem_runesmith = yes
 				}
-				has_origin = mem_ancestors_grudge_origin_advanced_start
+				has_origin = origin_mem_ancestors_grudge_advanced_start
 			}
 		}
 	}
@@ -3096,7 +3096,7 @@ country_event = {
 		# communcation is not triggered for both countries so we just proc it for both
 		if = {
 			limit = {
-				has_origin = mem_ancestors_grudge_origin_advanced_start
+				has_origin = origin_mem_ancestors_grudge_advanced_start
 			}
 			from = {
 				country_event = {
@@ -3125,7 +3125,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		AND = {
-			has_origin = mem_ancestors_grudge_origin_advanced_start
+			has_origin = origin_mem_ancestors_grudge_advanced_start
 			from = {
 				is_mem_runesmith = yes
 			}
@@ -3168,7 +3168,7 @@ country_event = {
 	is_triggered_only = yes
 	# trigger = {
 	# 	AND = {
-	# 		has_origin = mem_ancestors_grudge_origin_advanced_start
+	# 		has_origin = origin_mem_ancestors_grudge_advanced_start
 	# 		from = {
 	# 			is_mem_runesmith = yes
 	# 		}
@@ -3206,7 +3206,7 @@ country_event = {
 	hide_window = yes
 	trigger = {
 		AND = {
-			has_origin = mem_ancestors_grudge_origin_advanced_start
+			has_origin = origin_mem_ancestors_grudge_advanced_start
 			NOT = {
 				from = {
 					is_mem_runesmith = yes
