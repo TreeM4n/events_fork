@@ -41,7 +41,7 @@
  origin_mem_ancestors_grudge_machines_effects:0 "$origin_mem_ancestors_grudge_effects$$NEW_LINE$- Species Traits: ['trait:trait_mem_ancestors_grudge_robot_rune_golem']$NEW_LINE$- Gestalt: Additonal Ruler starting ['concept_mem_ancestors_grudge_ruler_traits']" 
  origin_mem_ancestors_grudge_effects_negative:0 "- $INITIAL_POPS$ §R-4§!$NEW_LINE$- $STARTING_PLANET$ §YAdditional £blocker£ Blockers§!$NEW_LINE$- Spawn an ['concept_advanced_empires'] somewhere in the galaxy. You will hate them."
  origin_mem_ancestors_grudge_machines_effects_negative:0 "$origin_mem_ancestors_grudge_effects_negative$$NEW_LINE$- Until the first ['concept_mem_ancestors_grudge_rune_relics'] are completed: ['modifier:mem_ancestors_grudge_unknown_design']"
- origin_mem_ancestors_grudge_hive_effects:0 "- Start with a ['concept_mem_ancestors_grudge_relic_world'] (Size: £planetsize£ 6)$NEW_LINE$- Able to rebuild the ['concept_mem_ancestors_grudge_runeforge']$NEW_LINE$- Has access to ['concept_mem_ancestors_grudge_hoarding'] Stance"
+ origin_mem_ancestors_grudge_hive_effects:0 "- Start with a ['concept_mem_ancestors_grudge_relic_world'] (Size: £planetsize£ 6)$NEW_LINE$- Able to rebuild the ['concept_mem_ancestors_grudge_runeforge']$NEW_LINE$- Has access to ['concept_mem_ancestors_grudge_hoarding'] Feature"
  origin_mem_ancestors_grudge_hive_effects_negative:0 "$origin_mem_ancestors_grudge_effects_negative$$NEW_LINE$- Cannot create unique ['concept_mem_ancestors_grudge_rune_relics']"
 
  # only standalone mod
@@ -400,6 +400,13 @@
  mem_ancestors_grudge_lost_forge_apply_knowledge:0 "Ancient Wisdom"
  mem_ancestors_grudge_dragon_tithe:0 "A Dragon's Tithe"
  mem_ancestors_grudge_dragon_tithe_energy:0 "§mem_ancestors_grudge_dragon_tithe§!"
+ mem_ancestors_grudge_city_planet_restored:0 "Restored Glory"
+ mem_ancestors_grudge_lost_forge:0 "Forsaken Grudge"
+ mem_ancestors_grudge_lost_forge_butrevenge:0 "A New Grudge"
+ mem_ancestors_grudge_high_expectations:0 "REPLACE_ME"
+ mem_ancestors_grudge_high_purify:0 "REPLACE_ME"
+ mem_ancestors_grudge_more_workload:0 "REPLACE_ME"
+ mem_ancestors_grudge_6_day_workweek:0 "REPLACE_ME"
 
  ##########################################################################
  # MESSAGES
@@ -409,8 +416,8 @@
  MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE_RING:0 "$MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE_dummy$§C$r_mem_ancestors_grudge_ring$§!"
  MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE_PAULDRON:0 "$MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE_dummy$§C$r_mem_ancestors_grudge_pauldron$§!"
  MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE_SWORD:0 "$MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE_dummy$§C$r_mem_ancestors_grudge_sword$§!"
- # is this one even used?
- MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE:0 "[MemGetRarity][MemGetRelic][this.GetName]"
+ # is this one even used? no, it did not work
+ # MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE:0 "[MemGetRarity][MemGetRelic][this.GetName]"
 
  ##########################################################################
  # SOLAR SYSTEMS
@@ -655,6 +662,35 @@
  mem_ancestors_grudge.46.b:0 "REPLACE_ME"
  mem_ancestors_grudge.46.b.shuffle_stats_tt:0 "REPLACE_ME"
 
+ mem_ancestors_grudge.455.title:0 "REPLACE_ME"
+ mem_ancestors_grudge.455.desc:0 "REPLACE_ME"
+ mem_ancestors_grudge.455.a:0 "REPLACE_ME"
+ mem_ancestors_grudge.455.b:0 "REPLACE_ME"
+ mem_ancestors_grudge.460.title:0 "REPLACE_ME"
+ mem_ancestors_grudge.460.desc:0 "REPLACE_ME"
+ mem_ancestors_grudge.460.a:0 "REPLACE_ME"
+ mem_ancestors_grudge.460.b:0 "REPLACE_ME"
+ mem_ancestors_grudge.460.c:0 "REPLACE_ME"
+ mem_ancestors_grudge.465.title:0 "REPLACE_ME"
+ mem_ancestors_grudge.465.desc:0 "REPLACE_ME"
+ mem_ancestors_grudge.465.a:0 "REPLACE_ME"
+ mem_ancestors_grudge.465.b:0 "REPLACE_ME"
+ mem_ancestors_grudge.465.c:0 "REPLACE_ME"
+ mem_ancestors_grudge.470.title:0 "REPLACE_ME"
+ mem_ancestors_grudge.470.desc:0 "REPLACE_ME"
+ mem_ancestors_grudge.470.a:0 "REPLACE_ME"
+ mem_ancestors_grudge.470.b:0 "REPLACE_ME"
+ mem_ancestors_grudge.475.title:0 "REPLACE_ME"
+ mem_ancestors_grudge.475.desc:0 "REPLACE_ME"
+ mem_ancestors_grudge.475.a:0 "REPLACE_ME"
+ mem_ancestors_grudge.475.b:0 "REPLACE_ME"
+ mem_ancestors_grudge.475.c:0 "REPLACE_ME"
+ mem_ancestors_grudge.480.title:0 "REPLACE_ME"
+ mem_ancestors_grudge.480.desc:0 "REPLACE_ME"
+ mem_ancestors_grudge.480.a:0 "REPLACE_ME"
+ mem_ancestors_grudge.480.b:0 "REPLACE_ME"
+ mem_ancestors_grudge.480.c:0 "REPLACE_ME"
+
 
 
 
@@ -666,6 +702,10 @@
 
  WEIRD:0 "WEIRD"
  triggered_runesmiths_to_grudgers:0 "Ancestors' Grudge"
+ WEIRD2:0 "WEIRD2"
+ mem_ancestors_grudge_increase_jobs_onforge_planet_tt:0 "REPLACE_ME"
+ mem_ancestors_grudge_increase_relic_roll_quality_tt:0 "REPLACE_ME"
+ mem_ancestors_grudge_decrease_relic_roll_quality_tt:0 "REPLACE_ME"
 
 
 
@@ -676,6 +716,7 @@
  mem_ancestors_grudge_ai_cheat:0 "AI Cheat :|"
  mem_ancestors_grudge_empty:0 ""
  mem_ancestors_grudge_city_planet:0 "Lost Colony"
+
 
  # ['concept_mem_ancestors_grudge_crafting']
 

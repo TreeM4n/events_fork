@@ -182,7 +182,7 @@ building_mem_ancestors_grudge_forge_1 = {
 		}
 	}
 	inline_script = {
-		script = mem_ancestors_grudge/building_mem_ancestors_grudge_forge_1
+		script = mem_ancestors_grudge/building_forge_1
 	}
 	# on_built = {
 	# }
@@ -239,10 +239,10 @@ building_mem_ancestors_grudge_forge_2 = {
 		}
 	}
 	inline_script = {
-		script = mem_ancestors_grudge/building_mem_ancestors_grudge_forge_2
+		script = mem_ancestors_grudge/building_forge_2
 	}
 	inline_script = {
-		script = mem_ancestors_grudge/building_mem_ancestors_grudge_forge_1
+		script = mem_ancestors_grudge/building_forge_1
 	}
 	on_built = {
 		# get relic crafting or relic
@@ -326,10 +326,10 @@ building_mem_ancestors_grudge_forge_3 = {
 		text = building_mem_ancestors_grudge_forge_terraform_tt
 	}
 	inline_script = {
-		script = mem_ancestors_grudge/building_mem_ancestors_grudge_forge_2
+		script = mem_ancestors_grudge/building_forge_2
 	}
 	inline_script = {
-		script = mem_ancestors_grudge/building_mem_ancestors_grudge_forge_1
+		script = mem_ancestors_grudge/building_forge_1
 	}
 	on_built = {
 		# terraform to city
@@ -399,10 +399,10 @@ building_mem_ancestors_grudge_forge_4 = {
 		}
 	}
 	inline_script = {
-		script = mem_ancestors_grudge/building_mem_ancestors_grudge_forge_2
+		script = mem_ancestors_grudge/building_forge_2
 	}
 	inline_script = {
-		script = mem_ancestors_grudge/building_mem_ancestors_grudge_forge_1
+		script = mem_ancestors_grudge/building_forge_1
 	}
 	triggered_desc = {
 		text = building_mem_ancestors_grudge_forge_empireeffect_tt
