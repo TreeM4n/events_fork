@@ -38,7 +38,7 @@ leader_trait_legendary_mem_ancestors_grudge_machine_nexus_one = {
 	starting_ruler_trait = yes
 	leader_trait_type = veteran
 	allowed_origins = {
-		mem_ancestors_grudge_origin_machines
+		origin_mem_ancestors_grudge_machines
 	}
 	allowed_ethics = {
 		ethic_gestalt_consciousness
@@ -88,7 +88,7 @@ leader_trait_legendary_mem_ancestors_grudge_machine_nexus_two = {
 	starting_ruler_trait = yes
 	leader_trait_type = veteran
 	allowed_origins = {
-		mem_ancestors_grudge_origin_machines
+		origin_mem_ancestors_grudge_machines
 	}
 	allowed_ethics = {
 		ethic_gestalt_consciousness
@@ -138,7 +138,7 @@ leader_trait_legendary_mem_ancestors_grudge_machine_nexus_three = {
 	starting_ruler_trait = yes
 	leader_trait_type = veteran
 	allowed_origins = {
-		mem_ancestors_grudge_origin_machines
+		origin_mem_ancestors_grudge_machines
 	}
 	allowed_ethics = {
 		ethic_gestalt_consciousness
@@ -188,7 +188,7 @@ leader_trait_legendary_mem_ancestors_grudge_machine_nexus_four = {
 	starting_ruler_trait = yes
 	leader_trait_type = veteran
 	allowed_origins = {
-		mem_ancestors_grudge_origin_machines
+		origin_mem_ancestors_grudge_machines
 	}
 	allowed_ethics = {
 		ethic_gestalt_consciousness

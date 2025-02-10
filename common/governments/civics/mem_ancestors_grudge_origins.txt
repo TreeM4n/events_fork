@@ -1,7 +1,7 @@
-mem_ancestors_grudge_origin = {
+origin_mem_ancestors_grudge = {
 	is_origin = yes
-	icon = "gfx/interface/icons/origins/mem_ancestors_grudge_origin.dds"
-	picture = GFX_mem_ancestors_grudge_origin
+	icon = "gfx/interface/icons/origins/origin_mem_ancestors_grudge.dds"
+	picture = GFX_origin_mem_ancestors_grudge
 	max_once_global = yes
 	initializers = {
 		mem_ancestors_grudge_system
@@ -25,8 +25,8 @@ mem_ancestors_grudge_origin = {
 		}
 		#is_regular_empire = yes
 	}
-	description = "mem_ancestors_grudge_origin_effects"
-	negative_description = "mem_ancestors_grudge_origin_effects_negative"
+	description = "origin_mem_ancestors_grudge_effects"
+	negative_description = "origin_mem_ancestors_grudge_effects_negative"
 	flags = {
 		custom_start_screen
 	}
@@ -49,10 +49,10 @@ mem_ancestors_grudge_origin = {
 }
 
 
-mem_ancestors_grudge_origin_machines = {
+origin_mem_ancestors_grudge_machines = {
 	is_origin = yes
-	icon = "gfx/interface/icons/origins/mem_ancestors_grudge_origin.dds"
-	picture = GFX_mem_ancestors_grudge_origin_machines
+	icon = "gfx/interface/icons/origins/origin_mem_ancestors_grudge.dds"
+	picture = GFX_origin_mem_ancestors_grudge_machines
 	max_once_global = yes
 	initializers = {
 		mem_ancestors_grudge_system
@@ -85,8 +85,8 @@ mem_ancestors_grudge_origin_machines = {
 		#	}
 		#}
 	}
-	description = "mem_ancestors_grudge_origin_machines_effects"
-	negative_description = "mem_ancestors_grudge_origin_machines_effects_negative"
+	description = "origin_mem_ancestors_grudge_machines_effects"
+	negative_description = "origin_mem_ancestors_grudge_machines_effects_negative"
 	flags = {
 		custom_start_screen
 	}
@@ -107,10 +107,10 @@ mem_ancestors_grudge_origin_machines = {
 	}
 }
 
-mem_ancestors_grudge_origin_hive = {
+origin_mem_ancestors_grudge_hive = {
 	is_origin = yes
-	icon = "gfx/interface/icons/origins/mem_ancestors_grudge_origin.dds"
-	picture = GFX_mem_ancestors_grudge_origin_hive
+	icon = "gfx/interface/icons/origins/origin_mem_ancestors_grudge.dds"
+	picture = GFX_origin_mem_ancestors_grudge_hive
 	max_once_global = yes
 	initializers = {
 		mem_ancestors_grudge_system
@@ -145,8 +145,8 @@ mem_ancestors_grudge_origin_hive = {
 			value = auth_hive_mind
 		}
 	}
-	description = "mem_ancestors_grudge_origin_hive_effects"
-	negative_description = "mem_ancestors_grudge_origin_hive_effects_negative"
+	description = "origin_mem_ancestors_grudge_hive_effects"
+	negative_description = "origin_mem_ancestors_grudge_hive_effects_negative"
 	flags = {
 		custom_start_screen
 	}
@@ -172,7 +172,7 @@ mem_ancestors_grudge_origin_hive = {
 origin_mem_ancestors_grudge_advanced_start = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origins_post_apocalyptic.dds"
-	picture = GFX_mem_ancestors_grudge_origin
+	picture = GFX_origin_mem_ancestors_grudge
 	#max_once_global = yes
 	# initializers = {
 	# 	mem_ancestors_grudge_system

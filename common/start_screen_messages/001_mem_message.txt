@@ -3,7 +3,7 @@ part = {
 	location = 0
 	localization = "START_SCREEN_MEM_ANCESTORS_GRUDGE"
 	trigger = {
-		has_origin = mem_ancestors_grudge_origin
+		has_origin = origin_mem_ancestors_grudge
 		is_individual_machine = no
 	}
 }
@@ -13,7 +13,7 @@ part = {
 	location = 0
 	localization = "START_SCREEN_MEM_ANCESTORS_GRUDGE_ROBOTS"
 	trigger = {
-		has_origin = mem_ancestors_grudge_origin
+		has_origin = origin_mem_ancestors_grudge
 		is_individual_machine = yes
 	}
 }
@@ -24,7 +24,7 @@ part = {
 	localization = "START_SCREEN_MEM_ANCESTORS_GRUDGE_MACHINES"
 	trigger = {
 		
-			has_origin = mem_ancestors_grudge_origin_machines
+			has_origin = origin_mem_ancestors_grudge_machines
 		
 		NOR = {
 			has_civic = civic_machine_assimilator
@@ -38,7 +38,7 @@ part = {
 	localization = "START_SCREEN_MEM_ANCESTORS_GRUDGE_MACHINES_RS"
 	trigger = {
 		AND = {
-			has_origin = mem_ancestors_grudge_origin_machines
+			has_origin = origin_mem_ancestors_grudge_machines
 			has_civic = civic_machine_servitor
 		}
 	}
@@ -49,7 +49,7 @@ part = {
 	localization = "START_SCREEN_MEM_ANCESTORS_GRUDGE_MACHINES_DA"
 	trigger = {
 		AND = {
-			has_origin = mem_ancestors_grudge_origin_machines
+			has_origin = origin_mem_ancestors_grudge_machines
 			has_civic = civic_machine_assimilator
 		}
 	}
@@ -61,6 +61,6 @@ part = {
 	location = 0
 	localization = "START_SCREEN_MEM_ANCESTORS_GRUDGE_HIVE"
 	trigger = {
-		has_origin = mem_ancestors_grudge_origin_hive
+		has_origin = origin_mem_ancestors_grudge_hive
 	}
 }
