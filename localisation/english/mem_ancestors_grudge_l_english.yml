@@ -31,7 +31,6 @@
  origin_mem_ancestors_grudge:0 "Ancestors' Grudge"
  origin_mem_ancestors_grudge_desc:0 "A once great nation of the finest smiths who just barely survived the destruction of their empire. Now the survivors have recovered and once again venture into the stars. First and foremost to reclaim their ancestor's most holy site - the Relic-Forge. And then vengeance..."
 
- ##################################################
  origin_mem_ancestors_grudge_machines:0 "Ancestors' Automata"
  origin_mem_ancestors_grudge_machines_desc:0 "A once great nation of the finest smiths fell to the onslaught of a merciless foe. Now, the only remnants of that past - automata created to support their makers - venture into the stars. First and foremost to restore their creators' most holy site - the Relic-Forge. And then vengeance..."
  origin_mem_ancestors_grudge_hive:0 "Hive's Hoard"
@@ -514,6 +513,7 @@
  mem_ancestors_grudge.45.name:0 "Relic Away"
  mem_ancestors_grudge.45.desc:0 "One of our greatest leaders shall be honored with the fruits of our latest creation. A prize worthy of song and legend, forged in the heart of the Relic-Forge itself.\n\nYet, as is the way of such things, only one can bear the honor, only one can receive this mighty reward. Let the choice be made wisely, for the one who carries such a relic shall carry our pride and honor in the face of all our ancestors."
  mem_ancestors_grudge.45.desc_robots:0 "One of our greatest leaders shall be honored with the fruits of our latest creation. A prize worthy of song and legend, forged in the heart of the Relic-Forge itself.\n\nYet, as is the way of such things, only one can bear the honor, only one can receive this mighty reward. Let the choice be made wisely, for the one who carries such a relic shall carry our pride and honor in the face of all our makers."
+ mem_ancestors_grudge.45.desc_machines:0 "The time has come to decide how to the relic shall be used. Will we study its intricacies to further deepen our understanding of the craft with which our makers also produced us or will we use it for more mundance concerns?"
  # TODO adjust options based on new criteria
  mem_ancestors_grudge.45.a:0 "$mem_ancestors_grudge_common$: Honor [leader_1.GetName]"
  mem_ancestors_grudge.45.b:0 "$mem_ancestors_grudge_common$: Honor [leader_2.GetName]"
