@@ -458,7 +458,22 @@
  mem_ancestors_grudge.315.name:0 "The Warrior's Identity" # corpse of Dranir
  mem_ancestors_grudge.315.desc:0 "The lone warrior, who made his last stand in the great hall was none other than Dranir himself, the legendary artifact smith only known from ancient texts. Within the hall stands his famed runed anvil. His hammer lies beside him, a tool of his craft transformed to a weapon of violence in defense of his kin. By ancient tradition, such an act meant the smith swore an oath to never to forge again.\n\nIn death, Dranir held true to that oath, felling dozens of Vazurans before his own life was bygone. We shall fulfill his final rite as is fitting a hero. Dranir will be laid to rest alongside his hammer, never to forge nor fight again, his oath carried into eternity. The anvil will remain here, as a silent reminder of the past."
  mem_ancestors_grudge.315.a:0 "Make it so."
- mem_ancestors_grudge.315.b:0 "Shiny!"
+
+ # hivemind digsite
+ mem_ancestors_grudge_anvil_site_hive:0 "The Last Beacon"
+ mem_ancestors_grudge_anvil_site_hive_desc:0 "The last signal has led us to an enormous bunker complex. It appears the beacon had penetrated deep into the structure as we feel its presence far below."
+ mem_ancestors_grudge.320.name:0 "REPLACE_ME"
+ mem_ancestors_grudge.320.desc:0 "REPLACE_ME"
+ mem_ancestors_grudge.320.a:0 "REPLACE_ME"
+ mem_ancestors_grudge.325.name:0 "REPLACE_ME"
+ mem_ancestors_grudge.325.desc:0 "REPLACE_ME"
+ mem_ancestors_grudge.325.a:0 "REPLACE_ME"
+ mem_ancestors_grudge.330.name:0 "REPLACE_ME"
+ mem_ancestors_grudge.330.desc:0 "REPLACE_ME"
+ mem_ancestors_grudge.330.a:0 "REPLACE_ME"
+ mem_ancestors_grudge.335.name:0 "REPLACE_ME"
+ mem_ancestors_grudge.335.desc:0 "REPLACE_ME"
+ mem_ancestors_grudge.335.a:0 "Shiny!"
 
  ##########################################################################
  # EVENTS

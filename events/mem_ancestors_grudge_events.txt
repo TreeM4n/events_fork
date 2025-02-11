@@ -57,6 +57,10 @@ namespace = mem_ancestors_grudge
 # mem_ancestors_grudge.305	  	|	digsite 2
 # mem_ancestors_grudge.310	  	|	digsite 3
 # mem_ancestors_grudge.315	  	|	digsite 4 final
+# mem_ancestors_grudge.320	  	|	digsite 1
+# mem_ancestors_grudge.325	  	|	digsite 2
+# mem_ancestors_grudge.330	  	|	digsite 3
+# mem_ancestors_grudge.335	  	|	digsite 4 final
 ############################################################################################################
 # random events for crafting situation
 ############################################################################################################
@@ -1324,11 +1328,8 @@ situation_event = {
 	option = {
 		name = INTERESTING
 		target = {
-			create_archaeological_site = mem_ancestors_grudge_anvil_site
+			create_archaeological_site = mem_ancestors_grudge_anvil_site_hive
 		}
-		# owner = {
-		# 	set_country_flag = mem_ancestors_grudge_anvil_site
-		# }
 		custom_tooltip = mem_ancestors_grudge_unlocks_forge_upgrade_tt
 		hidden_effect = {
 			target = {
@@ -3860,6 +3861,7 @@ country_event = {
 	}
 }
 
+# normal digsite
 #  digiste 1
 fleet_event = {
 	id = mem_ancestors_grudge.300
@@ -3942,13 +3944,6 @@ fleet_event = {
 	}
 	option = {
 		name = mem_ancestors_grudge.315.a
-		trigger = {
-			NOT = {
-				owner = {
-					has_origin = origin_mem_ancestors_grudge_hive
-				}
-			}
-		}
 		owner = {
 			add_relic = r_mem_ancestors_grudge_anvil
 		}
@@ -3970,13 +3965,74 @@ fleet_event = {
 			}
 		}
 	}
+}
+
+# hive digsite
+#  digiste 1
+fleet_event = {
+	id = mem_ancestors_grudge.320
+	title = mem_ancestors_grudge.320.name
+	desc = mem_ancestors_grudge.320.desc
+	picture = GFX_evt_laser_grid
+	show_sound = event_collapsing_ruins
+	#location = target
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+	}
 	option = {
-		name = mem_ancestors_grudge.315.b
-		trigger = {
-			owner = {
-				has_origin = origin_mem_ancestors_grudge_hive
-			}
-		}
+		name = mem_ancestors_grudge.320.a
+	}
+}
+
+#  digiste 2
+fleet_event = {
+	id = mem_ancestors_grudge.325
+	title = mem_ancestors_grudge.325.name
+	desc = mem_ancestors_grudge.325.desc
+	picture = GFX_evt_derelict_interior
+	show_sound = event_collapsing_ruins
+	#location = target
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.325.a
+	}
+}
+
+#  digiste 3
+fleet_event = {
+	id = mem_ancestors_grudge.330
+	title = mem_ancestors_grudge.330.name
+	desc = mem_ancestors_grudge.330.desc
+	picture = GFX_evt_bone_building
+	show_sound = event_collapsing_ruins
+	#location = target
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.330.a
+	}
+}
+
+#  digiste 4
+fleet_event = {
+	id = mem_ancestors_grudge.335
+	title = mem_ancestors_grudge.335.name
+	desc = mem_ancestors_grudge.335.desc
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = event_collapsing_ruins
+	#location = target
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.335.a
 		owner = {
 			add_relic = r_mem_ancestors_grudge_modern_art
 		}
