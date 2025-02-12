@@ -71,3 +71,10 @@ on_planet_attackers_win = {
 		mem_ancestors_grudge.505 # relic stealing chance for hive origin
 	}	
 }
+
+# This = Country
+on_relic_received = {
+	events = {
+		mem_ancestors_grudge.510 # unity for relic gained
+	}
+}

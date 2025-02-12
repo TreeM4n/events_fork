@@ -92,10 +92,10 @@
  # CONCEPTS
  ########################################################################## 
 
- concept_mem_ancestors_grudge_hoarding_dragon:0 "An uninvited Guest"
+ concept_mem_ancestors_grudge_hoarding_dragon:0 "Unforeseen consequences"
  concept_mem_ancestors_grudge_hoarding_dragon_desc:0 "- A dragon will appear and make you an offer you cannot refuse$NEW_LINE$- Learn to incubate dragonlings"
  concept_mem_ancestors_grudge_hoarding:0 "Hoarding"
- concept_mem_ancestors_grudge_hoarding_desc:0 "- Starts with ['building:building_mem_ancestors_grudge_hoarder_depot']$NEW_LINE$- Access to §Y$policy_mem_ancestors_grudge_is_hoarder_policy$§! Policy$NEW_LINE$- Higher chance to steal Relics upon invading enemy capitals"
+ concept_mem_ancestors_grudge_hoarding_desc:0 "- Starts with ['building:building_mem_ancestors_grudge_hoarder_depot']$NEW_LINE$- Access to §Y$policy_mem_ancestors_grudge_is_hoarder_policy$§! Policy$NEW_LINE$- Higher chance to steal Relics upon invading enemy capitals$NEW_LINE$- Gain Unity when you acquire relics"
  concept_mem_ancestors_grudge_ruler_traits:0 "Rune Traits"
  concept_mem_ancestors_grudge_ruler_traits_desc:0 "- ['trait:leader_trait_legendary_mem_ancestors_grudge_machine_nexus_one']$NEW_LINE$- ['trait:leader_trait_legendary_mem_ancestors_grudge_machine_nexus_two']$NEW_LINE$- ['trait:leader_trait_legendary_mem_ancestors_grudge_machine_nexus_three']$NEW_LINE$- ['trait:leader_trait_legendary_mem_ancestors_grudge_machine_nexus_four']$NEW_LINE$- §LCan be upgraded with ['concept_mem_ancestors_grudge_rune_relics']§!"
  concept_mem_ancestors_grudge_archaeotech_excellence:0 "Rune-Forged Excellence"
@@ -206,7 +206,7 @@
  tech_mem_ancestors_grudge_robot_factory_desc:0 "The hidden knowledge of pre-industrial revolution mechanical servants."
  tech_mem_ancestors_grudge_robot_traits_title:0 "§YUnlocks Trait:§! ['trait:trait_mem_ancestors_grudge_archaeotech_excellence']"
  tech_mem_ancestors_grudge_dragon_lure:0 "Ancient Leviathan Incubation"
- tech_mem_ancestors_grudge_dragon_lure_desc:0 "The encounter with the hoarding dragon has inspired our scientist. The knowledge and offspring acquired can be applied for our own dragon hatcheries."
+ tech_mem_ancestors_grudge_dragon_lure_desc:0 "A specialised hatcheries for clones of the Hoarding Dragon."
  tech_mem_ancestors_grudge_dragon_lure_title:0 "§YUnlocks Stabase Building:§! $sm_voidlure_mem_ancestors_grudge_dragon$"
 
  ##########################################################################
@@ -373,16 +373,16 @@
 
  policy_mem_ancestors_grudge_is_hoarder_policy:0 "Hoarding"
  policy_mem_ancestors_grudge_is_hoarder_policy_desc:0 "The collection of ancient artifacts is an art and every art has its forms."
- mem_ancestors_grudge_is_hoarder_policy_unity_name:0 "£unity£ §H$unity$§"
+ mem_ancestors_grudge_is_hoarder_policy_unity_name:0 "£unity£ $unity$"
  mem_ancestors_grudge_is_hoarder_policy_unity:0 "$mem_ancestors_grudge_is_hoarder_policy_unity_name$"
  mem_ancestors_grudge_is_hoarder_policy_unity_desc:0 "The $building_mem_ancestors_grudge_hoarder_depot$ will focus Unity"
- mem_ancestors_grudge_is_hoarder_policy_stability_name:0 "£stability£ §HStability§"
+ mem_ancestors_grudge_is_hoarder_policy_stability_name:0 "£stability£ Stability"
  mem_ancestors_grudge_is_hoarder_policy_stability:0 "$mem_ancestors_grudge_is_hoarder_policy_stability_name$"
  mem_ancestors_grudge_is_hoarder_policy_stability_desc:0 "The $building_mem_ancestors_grudge_hoarder_depot$ will focus Stability"
- mem_ancestors_grudge_is_hoarder_policy_pop_growth_name:0 "£mod_pop_growth_speed£ §HPop Growth Speed§!"
+ mem_ancestors_grudge_is_hoarder_policy_pop_growth_name:0 "£mod_pop_growth_speed£ Pop Growth Speed"
  mem_ancestors_grudge_is_hoarder_policy_pop_growth:0 "$mem_ancestors_grudge_is_hoarder_policy_pop_growth_name$"
  mem_ancestors_grudge_is_hoarder_policy_pop_growth_desc:0 "The $building_mem_ancestors_grudge_hoarder_depot$ will focus Pop Growth"
- mem_ancestors_grudge_is_hoarder_policy_science_name:0 "£research£ §HResearch Speed§!"
+ mem_ancestors_grudge_is_hoarder_policy_science_name:0 "£research£ Research Speed"
  mem_ancestors_grudge_is_hoarder_policy_science:0 "$mem_ancestors_grudge_is_hoarder_policy_science_name$"
  mem_ancestors_grudge_is_hoarder_policy_science_desc:0 "The $building_mem_ancestors_grudge_hoarder_depot$ will focus Research Speed"
 

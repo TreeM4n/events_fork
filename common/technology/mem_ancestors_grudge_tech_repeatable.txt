@@ -142,7 +142,7 @@ tech_mem_ancestors_grudge_robot_factory = {
 }
 
 tech_mem_ancestors_grudge_robot_traits = {
-	cost = @tier5cost1
+	cost = @tier3cost1
 	area = society
 	tier = 5
 	is_rare = yes

@@ -2005,16 +2005,16 @@ country_event = {
 	is_triggered_only = yes
 	immediate = {
 		set_variable = {
-			which = mem_ancestors_grudge_situation_rarity
+			which = mem_ancestors_grudge_smithing_quality_rolled
 			value = 1
 		}
 		set_variable = {
-			which = mem_ancestors_grudge_rune_intensity
+			which = mem_ancestors_grudge_smithing_purity_rolled
 			value = 1
 		}
 		inline_script = {
 			script = mem_ancestors_grudge/reroll_passive
-			AMOUNT = mem_ancestors_grudge_situation_rarity
+			AMOUNT = mem_ancestors_grudge_smithing_quality_rolled
 		}
 	}
 	option = {
@@ -2887,7 +2887,7 @@ country_event = {
 # 		# }
 # 	}
 # }
-# TODO more options 
+# hidden activation
 country_event = {
 	id = mem_ancestors_grudge.46
 	hide_window = yes
@@ -2904,10 +2904,14 @@ country_event = {
 				}
 			}
 			change_variable = {
-				which = mem_ancestors_grudge_situation_rarity
+				which = mem_ancestors_grudge_smithing_quality_rolled
 				value = 1
 			}
 			mem_ancestors_grudge_add_relic_modifier = yes
+			add_modifier = {
+				modifier = relic_activation_cooldown
+				days = 360
+			}
 		}
 		else_if = {
 			limit = {
@@ -2918,6 +2922,10 @@ country_event = {
 					has_truce = root
 				}
 				end_truce = root
+			}
+			add_modifier = {
+				modifier = relic_activation_cooldown
+				days = 1800
 			}
 		}
 		else_if = {
@@ -2956,6 +2964,10 @@ country_event = {
 					set_planetary_ascension_tier = 5
 				}
 			}
+			add_modifier = {
+				modifier = relic_activation_cooldown
+				days = 1800
+			}
 		}
 		else_if = {
 			limit = {
@@ -2970,13 +2982,14 @@ country_event = {
 					# }
 				}
 			}
+			add_modifier = {
+				modifier = relic_activation_cooldown
+				days = 1800
+			}
 		}
 	}
 	after = {
-		add_modifier = {
-			modifier = relic_activation_cooldown
-			days = 1800
-		}
+		
 	}
 }
 
@@ -4765,7 +4778,7 @@ starbase_event = {
 	}
 }
 
-# Relic Acquired (HIDDEN), additional chance for grail knights
+# Relic Acquired (HIDDEN), additional chance for hive
 country_event = {
 	id = mem_ancestors_grudge.505
 	hide_window = yes
@@ -4830,6 +4843,21 @@ country_event = {
 					id = ancrel.6500
 				}
 			}
+		}
+	}
+}
+# on relic acquried
+country_event = {
+	id = mem_ancestors_grudge.510
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		mem_ancestors_grudge_is_hoarder = yes
+	}
+	immediate = {
+		add_monthly_resource_mult = {
+			resource = unity
+			value = 12
 		}
 	}
 }

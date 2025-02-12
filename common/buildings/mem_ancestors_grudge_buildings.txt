@@ -613,7 +613,8 @@ building_mem_ancestors_grudge_hoarder_depot = {
 				#has_policy_flag = mem_ancestors_grudge_is_hoarder_policy_unity
 			}
 		}
-		country_unity_produces_mult = 0.02
+		country_unity_produces_mult = 0.03
+		planetary_ascension_effect_mult = 0.02
 		mult = owner.value:mem_ancestors_grudge_hoarder_building
 	}
 	triggered_country_modifier = {
@@ -624,6 +625,7 @@ building_mem_ancestors_grudge_hoarder_depot = {
 			}
 		}
 		planet_stability_add = 2
+		planet_amenities_mult = 0.02
 		mult = owner.value:mem_ancestors_grudge_hoarder_building
 	}
 	triggered_country_modifier = {
@@ -634,6 +636,7 @@ building_mem_ancestors_grudge_hoarder_depot = {
 			}
 		}
 		pop_growth_speed = 0.03
+		planet_pop_assembly_mult = 0.02
 		#planet_jobs_upkeep_mult = 0.02
 		mult = owner.value:mem_ancestors_grudge_hoarder_building
 	}
@@ -645,6 +648,7 @@ building_mem_ancestors_grudge_hoarder_depot = {
 			}
 		}
 		all_technology_research_speed = 0.02
+		category_archaeostudies_research_speed_mult = 0.02
 		mult = owner.value:mem_ancestors_grudge_hoarder_building
 	}
 	# triggered_country_modifier = {
