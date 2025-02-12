@@ -5,7 +5,7 @@ namespace = mem_ancestors_grudge
 # tr33 & Malthus
 #
 ###########
-#TODO : neuer craftin situatio nsound evn_ove_engineering_bay
+
 #TODO. find out why sometimes leader dont get the trait ??
 ############################################################################################################
 # Setup Events
@@ -3859,7 +3859,7 @@ situation_event = {
 	title = "mem_ancestors_grudge.400.title"
 	desc = "mem_ancestors_grudge.400.desc"
 	picture = GFX_mem_ancestors_grudge_runesmith_in_forge
-	show_sound = evn_tox_knights_of_the_toxic_god
+	show_sound = evn_ove_engineering_bay
 	location = target
 	is_triggered_only = yes
 	situation = this
@@ -3885,7 +3885,7 @@ situation_event = {
 	title = "mem_ancestors_grudge.405.title"
 	desc = "mem_ancestors_grudge.405.desc"
 	picture = GFX_mem_ancestors_grudge_runesmith_in_forge
-	show_sound = evn_tox_knights_of_the_toxic_god
+	show_sound = evn_ove_engineering_bay
 	location = target
 	is_triggered_only = yes
 	situation = this
@@ -3923,7 +3923,7 @@ situation_event = {
 	title = "mem_ancestors_grudge.410.title"
 	desc = "mem_ancestors_grudge.410.desc"
 	picture = GFX_evt_deficit
-	show_sound = evn_tox_knights_of_the_toxic_god
+	show_sound = evn_ove_engineering_bay
 	location = target
 	is_triggered_only = yes
 	situation = this
@@ -3950,7 +3950,7 @@ situation_event = {
 	title = "mem_ancestors_grudge.415.title"
 	desc = "mem_ancestors_grudge.415.desc"
 	picture = GFX_evt_civil_action
-	show_sound = evn_tox_knights_of_the_toxic_god
+	show_sound = evn_ove_engineering_bay
 	location = target
 	is_triggered_only = yes
 	situation = this
@@ -3997,7 +3997,7 @@ situation_event = {
 	title = "mem_ancestors_grudge.420.title"
 	desc = "mem_ancestors_grudge.420.desc"
 	picture = GFX_evt_archaeologists_escaping
-	show_sound = evn_tox_knights_of_the_toxic_god
+	show_sound = evn_ove_engineering_bay
 	location = target
 	is_triggered_only = yes
 	situation = this
@@ -4048,7 +4048,7 @@ situation_event = {
 	title = "mem_ancestors_grudge.425.title"
 	desc = "mem_ancestors_grudge.425.desc"
 	picture = GFX_evt_decryption
-	show_sound = evn_tox_knights_of_the_toxic_god
+	show_sound = evn_ove_engineering_bay
 	location = target
 	is_triggered_only = yes
 	situation = this
@@ -4075,7 +4075,7 @@ situation_event = {
 	title = "mem_ancestors_grudge.430.title"
 	desc = "mem_ancestors_grudge.430.desc"
 	picture = GFX_evt_engineering_bay
-	show_sound = evn_tox_knights_of_the_toxic_god
+	show_sound = evn_ove_engineering_bay
 	location = target
 	is_triggered_only = yes
 	situation = this
@@ -4113,7 +4113,7 @@ situation_event = {
 	title = "mem_ancestors_grudge.435.title"
 	desc = "mem_ancestors_grudge.435.desc"
 	picture = GFX_evt_gray_goo
-	show_sound = evn_tox_knights_of_the_toxic_god
+	show_sound = evn_ove_engineering_bay
 	location = target
 	is_triggered_only = yes
 	situation = this
@@ -4143,7 +4143,7 @@ situation_event = {
 	title = "mem_ancestors_grudge.440.title"
 	desc = "mem_ancestors_grudge.440.desc"
 	picture = GFX_evt_ancient_artifact
-	show_sound = evn_tox_knights_of_the_toxic_god
+	show_sound = evn_ove_engineering_bay
 	location = target
 	is_triggered_only = yes
 	situation = this
@@ -4180,7 +4180,7 @@ situation_event = {
 	title = "mem_ancestors_grudge.445.title"
 	desc = "mem_ancestors_grudge.445.desc"
 	picture = GFX_evt_ship_offloading_cargo
-	show_sound = evn_tox_knights_of_the_toxic_god
+	show_sound = evn_ove_engineering_bay
 	location = target
 	is_triggered_only = yes
 	situation = this
@@ -4241,7 +4241,7 @@ planet_event = {
 	title = "mem_ancestors_grudge.446.title"
 	desc = "mem_ancestors_grudge.446.desc"
 	picture = GFX_evt_mining_operations
-	show_sound = evn_tox_knights_of_the_toxic_god
+	show_sound = evn_ove_engineering_bay
 	location = root
 	is_triggered_only = yes
 	option = {
@@ -4263,7 +4263,7 @@ planet_event = {
 	title = "mem_ancestors_grudge.447.title"
 	desc = "mem_ancestors_grudge.447.desc"
 	picture = GFX_evt_in_the_dark
-	show_sound = evn_tox_knights_of_the_toxic_god
+	show_sound = evn_ove_engineering_bay
 	location = root
 	is_triggered_only = yes
 	option = {
@@ -4291,7 +4291,7 @@ planet_event = {
 	title = "mem_ancestors_grudge.448.title"
 	desc = "mem_ancestors_grudge.448.desc"
 	picture = GFX_evt_generator_powerup
-	show_sound = evn_tox_knights_of_the_toxic_god
+	show_sound = evn_ove_engineering_bay
 	location = root
 	is_triggered_only = yes
 	immediate = {
@@ -4309,7 +4309,7 @@ country_event = {
 	title = "mem_ancestors_grudge.449.title"
 	desc = "mem_ancestors_grudge.449.desc"
 	picture = GFX_evt_assembly_fight
-	show_sound = evn_tox_knights_of_the_toxic_god
+	show_sound = evn_ove_engineering_bay
 	is_triggered_only = yes
 	immediate = {
 	}
@@ -4416,7 +4416,7 @@ situation_event = {
 	title = "mem_ancestors_grudge.455.title"
 	desc = "mem_ancestors_grudge.455.desc"
 	picture = GFX_evt_announcement
-	show_sound = evn_tox_knights_of_the_toxic_god
+	show_sound = evn_ove_engineering_bay
 	location = target
 	is_triggered_only = yes
 	situation = this
@@ -4454,7 +4454,7 @@ situation_event = {
 	title = "mem_ancestors_grudge.460.title"
 	desc = "mem_ancestors_grudge.460.desc"
 	picture = GFX_evt_asteroid_field
-	show_sound = evn_tox_knights_of_the_toxic_god
+	show_sound = evn_ove_engineering_bay
 	location = target
 	is_triggered_only = yes
 	situation = this
@@ -4496,7 +4496,7 @@ situation_event = {
 	title = "mem_ancestors_grudge.465.title"
 	desc = "mem_ancestors_grudge.465.desc"
 	picture = GFX_evt_cosmic_storms_hold_the_line
-	show_sound = evn_tox_knights_of_the_toxic_god
+	show_sound = evn_ove_engineering_bay
 	location = target
 	is_triggered_only = yes
 	situation = this
@@ -4565,7 +4565,7 @@ situation_event = {
 	title = "mem_ancestors_grudge.470.title"
 	desc = "mem_ancestors_grudge.470.desc"
 	picture = GFX_evt_alpine_city
-	show_sound = evn_tox_knights_of_the_toxic_god
+	show_sound = evn_ove_engineering_bay
 	location = target
 	is_triggered_only = yes
 	situation = this
@@ -4599,7 +4599,7 @@ situation_event = {
 	title = "mem_ancestors_grudge.475.title"
 	desc = "mem_ancestors_grudge.475.desc"
 	picture = GFX_evt_resource_cache
-	show_sound = evn_tox_knights_of_the_toxic_god
+	show_sound = evn_ove_engineering_bay
 	location = target
 	is_triggered_only = yes
 	situation = this
@@ -4661,29 +4661,14 @@ situation_event = {
 	title = "mem_ancestors_grudge.480.title"
 	desc = "mem_ancestors_grudge.480.desc"
 	picture = GFX_evt_archaeologists_escaping
-	show_sound = evn_tox_knights_of_the_toxic_god
+	show_sound = evn_ove_engineering_bay
 	location = target
 	is_triggered_only = yes
 	situation = this
 	trigger = {
 	}
 	immediate = {
-		set_variable = {
-			which = situation_progress
-			value = this.trigger:situation_progress
-		}
-		multiply_variable = {
-			which = situation_progress
-			value = 0.5
-		}
-		set_variable = {
-			which = situation_progress_negative
-			value = situation_progress
-		}
-		multiply_variable = {
-			which = situation_progress_negative
-			value = -1
-		}
+		
 	}
 	option = {
 		name = mem_ancestors_grudge.480.a
@@ -4731,6 +4716,71 @@ situation_event = {
 		name = mem_ancestors_grudge.480.c
 		target = {
 			add_planet_devastation = 40
+		}
+	}
+	after = {
+	}
+}
+
+situation_event = {
+	id = mem_ancestors_grudge.485
+	title = "mem_ancestors_grudge.485.title"
+	desc = "mem_ancestors_grudge.485.desc"
+	picture = GFX_evt_civil_action
+	show_sound = evn_ove_engineering_bay
+	location = target
+	is_triggered_only = yes
+	situation = this
+	trigger = {
+	}
+	immediate = {
+		set_variable = {
+			which = situation_progress
+			value = this.trigger:situation_progress
+		}
+		multiply_variable = {
+			which = situation_progress
+			value = 0.5
+		}
+		set_variable = {
+			which = situation_progress_negative
+			value = situation_progress
+		}
+		multiply_variable = {
+			which = situation_progress_negative
+			value = -1
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.485.a
+		
+		owner = {
+			mem_ancestors_grudge_decrease_relic_roll_quality = yes
+		}
+		
+	}
+	option = {
+		name = mem_ancestors_grudge.485.b
+		add_situation_progress = situation_progress_negative
+	}
+	option = {
+		name = mem_ancestors_grudge.485.c
+		allow = {
+			owner = {
+				resource_stockpile_compare = {
+					resource = energy
+					value = 2000
+				}
+			}
+		}
+		owner = {
+			add_resource = {
+				energy = -2000
+			}
+		}
+		add_situation_progress = situation_progress_negative
+		owner = {
+			mem_ancestors_grudge_increase_relic_roll_quality = yes
 		}
 	}
 	after = {

@@ -95,25 +95,25 @@
  concept_mem_ancestors_grudge_hoarding_dragon:0 "Unforeseen consequences"
  concept_mem_ancestors_grudge_hoarding_dragon_desc:0 "- A dragon will appear and make you an offer you cannot refuse$NEW_LINE$- Learn to incubate dragonlings"
  concept_mem_ancestors_grudge_hoarding:0 "Hoarding"
- concept_mem_ancestors_grudge_hoarding_desc:0 "- Starts with ['building:building_mem_ancestors_grudge_hoarder_depot']$NEW_LINE$- Access to §Y$policy_mem_ancestors_grudge_is_hoarder_policy$§! Policy$NEW_LINE$- Higher chance to steal Relics upon invading enemy capitals$NEW_LINE$- Gain Unity when you acquire relics"
+ concept_mem_ancestors_grudge_hoarding_desc:0 "- Starts with ['building:building_mem_ancestors_grudge_hoarder_depot']$NEW_LINE$- Access to §Y$policy_mem_ancestors_grudge_is_hoarder_policy$§! Policy$NEW_LINE$- Higher chance to steal Relics upon invading enemy capitals$NEW_LINE$- Gain £unity£ §Y$unity$§! when you acquire relics"
  concept_mem_ancestors_grudge_ruler_traits:0 "Rune Traits"
  concept_mem_ancestors_grudge_ruler_traits_desc:0 "- ['trait:leader_trait_legendary_mem_ancestors_grudge_machine_nexus_one']$NEW_LINE$- ['trait:leader_trait_legendary_mem_ancestors_grudge_machine_nexus_two']$NEW_LINE$- ['trait:leader_trait_legendary_mem_ancestors_grudge_machine_nexus_three']$NEW_LINE$- ['trait:leader_trait_legendary_mem_ancestors_grudge_machine_nexus_four']$NEW_LINE$- §LCan be upgraded with ['concept_mem_ancestors_grudge_rune_relics']§!"
  concept_mem_ancestors_grudge_archaeotech_excellence:0 "Rune-Forged Excellence"
  concept_mem_ancestors_grudge_archaeotech_excellence_desc:0 "- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_power_drills']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_harvesters']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_superconductive']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_emotion_emulators']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_propaganda_machines']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_logic_engines']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_forge_focus']$NEW_LINE$- ['trait:trait_mem_ancestors_grudge_archaeotech_robot_factory_focus']"
  concept_mem_ancestors_grudge_runeforge:0 "Relic-Forge"
  concept_mem_ancestors_grudge_runeforge_desc:0 "['building:building_mem_ancestors_grudge_forge_0']$NEW_LINE$['building:building_mem_ancestors_grudge_forge_1']$NEW_LINE$['building:building_mem_ancestors_grudge_forge_2']$NEW_LINE$['building:building_mem_ancestors_grudge_forge_3']$NEW_LINE$['building:building_mem_ancestors_grudge_forge_4']"
- concept_mem_ancestors_grudge_crafting:0 "Relic-Smith"
- concept_mem_ancestors_grudge_crafting_desc:0 "The art of combining ['concept_mem_ancestors_grudge_artifact_intensity'] and ['concept_mem_ancestors_grudge_rune_intensity']"
+ #  concept_mem_ancestors_grudge_crafting:0 "Relic-Smith"
+ #  concept_mem_ancestors_grudge_crafting_desc:0 "The art of combining ['concept_mem_ancestors_grudge_artifact_intensity'] and ['concept_mem_ancestors_grudge_rune_intensity']"
  concept_mem_ancestors_grudge_artifact_intensity:0 "Artifact Intensity"
  concept_mem_ancestors_grudge_artifact_intensity_desc:0 "Determines the ['concept_mem_ancestors_grudge_rarity'] of ['concept_mem_ancestors_grudge_rune_relics']"
- concept_mem_ancestors_grudge_rune_intensity:0 "Rune Intensity"
+ concept_mem_ancestors_grudge_rune_intensity:0 "Rune Purity"
  concept_mem_ancestors_grudge_rune_intensity_desc:0 "Determines the ['concept_mem_ancestors_grudge_intensity'] of ['concept_mem_ancestors_grudge_rune_relics']"
  concept_mem_ancestors_grudge_rune_relics:0 "Rune-Relics"
  concept_mem_ancestors_grudge_rune_relics_desc:0 "Smithed Relics enhanced with Runes$NEW_LINE$- Relics which have a ['concept_mem_ancestors_grudge_rarity'] and ['concept_mem_ancestors_grudge_intensity']$NEW_LINE$- Activation gives several options based on ['concept_mem_ancestors_grudge_rarity']$NEW_LINE$- Smithing speed influenced by number of §YArtifact Smiths§! and §YRune Artificers§!$NEW_LINE$§L- To craft a new Rune-Relic you need to activate the current!§!"
  concept_mem_ancestors_grudge_rarity:0 "Quality"
- concept_mem_ancestors_grudge_rarity_desc:0 "- Decides the number of random, passive modifiers of ['concept_mem_ancestors_grudge_rune_relics']$NEW_LINE$- Is rolled upon creating §YRune-Relics§!$NEW_LINE$- Every 15% of §YArtifact Intensity§! increases quality of rolls$NEW_LINE$- Produced by §Y$job_mem_ancestors_grudge_relicsmith$§!$NEW_LINE$- Possible Qualities:$NEW_LINE$-- $mem_ancestors_grudge_mundane$$NEW_LINE$-- $mem_ancestors_grudge_common$$NEW_LINE$-- $mem_ancestors_grudge_rare$$NEW_LINE$-- $mem_ancestors_grudge_epic$$NEW_LINE$-- $mem_ancestors_grudge_exceptional$$NEW_LINE$-- $mem_ancestors_grudge_masterful$$NEW_LINE$-- $mem_ancestors_grudge_legendary$"
- concept_mem_ancestors_grudge_intensity:0 "Strength"
- concept_mem_ancestors_grudge_intensity_desc:0 "- A multiplier of the ['concept_mem_ancestors_grudge_rune_relics'] passive effect$NEW_LINE$- Determined by §YRune Intensity§!$NEW_LINE$- Produced by §Y$job_mem_ancestors_grudge_runesmith$§!"
+ concept_mem_ancestors_grudge_rarity_desc:0 "- Decides the number of random, passive modifiers of ['concept_mem_ancestors_grudge_rune_relics']$NEW_LINE$- Is rolled upon creating §YRune-Relics§!$NEW_LINE$- Every 15% of §YArtifact Intensity§! increases quality of rolls$NEW_LINE$- Higher Tiers destabilize ['concept_mem_ancestors_grudge_intensity']$NEW_LINE$-Produced by §Y$job_mem_ancestors_grudge_relicsmith$§!$NEW_LINE$- Possible Qualities:$NEW_LINE$-- $mem_ancestors_grudge_mundane$$NEW_LINE$-- $mem_ancestors_grudge_common$$NEW_LINE$-- $mem_ancestors_grudge_rare$$NEW_LINE$-- $mem_ancestors_grudge_epic$$NEW_LINE$-- $mem_ancestors_grudge_exceptional$$NEW_LINE$-- $mem_ancestors_grudge_masterful$$NEW_LINE$-- $mem_ancestors_grudge_legendary$"
+ concept_mem_ancestors_grudge_intensity:0 "Purity"
+ concept_mem_ancestors_grudge_intensity_desc:0 "- A multiplier of the ['concept_mem_ancestors_grudge_rune_relics'] passive effect$NEW_LINE$- Influenced by §YRune Purity§! and $concept_mem_ancestors_grudge_rarity$ $NEW_LINE$- Produced by §Y$job_mem_ancestors_grudge_runesmith$§!Possible Qualities:$NEW_LINE$-- $mem_ancestors_grudge_purity5$$NEW_LINE$-- $mem_ancestors_grudge_purity4$$NEW_LINE$-- $mem_ancestors_grudge_purity3$$NEW_LINE$-- $mem_ancestors_grudge_purity2$$NEW_LINE$-- $mem_ancestors_grudge_purity1$"
  concept_mem_ancestors_grudge_relic_world:0 "Lost Hold"
  concept_mem_ancestors_grudge_relic_world_desc:0 "- ['concept_pc_relic']$NEW_LINE$- extra £blocker£ Blockers$NEW_LINE$- several ['building:building_mem_ancestors_grudge_ruins']$NEW_LINE$- still in Colonization Phase$NEW_LINE$- Modifiers: ['modifier:mem_ancestors_grudge_city_planet'] and ['modifier:low_gravity']$NEW_LINE$- After full restoration:$NEW_LINE$-- Grudge: ['modifier:mem_ancestors_grudge_city_planet_restored']$NEW_LINE$-- Automata: Unlock ['trait:trait_mem_ancestors_grudge_archaeotech_excellence']$NEW_LINE$-- Hoard: ['concept_mem_ancestors_grudge_hoarding_dragon']"
 
@@ -160,8 +160,9 @@
  mod_leader_officials_minor_artifacts_upkeep_add:0 "$r_minor_artifacts$ $UPKEEP$"
  mod_leader_scientists_minor_artifacts_upkeep_add:0 "$r_minor_artifacts$ $UPKEEP$"
  mod_leader_commanders_minor_artifacts_upkeep_add:0 "$r_minor_artifacts$ $UPKEEP$"
- mod_planet_metallurgists_minor_artifacts_upkeep_add:0 "REPLACE_ME"
- mod_planet_mem_relic_smiths_alloys_produces_mult:0 "REPLACE_ME"
+ mod_planet_metallurgists_minor_artifacts_upkeep_add:0 "£minor_artifacts£ $minor_artifacts$ Upkeep of £job_foundry£ [GetAlloyProducerPlural]"
+ mod_planet_mem_relic_smiths_alloys_produces_mult:0 "£alloys£ $alloys$ from £job_foundry£ $job_mem_ancestors_grudge_relicsmith$s"
+
  
  ##########################################################################
  # CIVICS
@@ -283,7 +284,7 @@
  building_mem_ancestors_grudge_robot_factory_tt:0 "The effectiveness of this assembly reduces as population grows."
  building_mem_ancestors_grudge_hoarder_depot:0 "Vault of Brightness"
  building_mem_ancestors_grudge_hoarder_depot_desc:0 "A giant vault. Some would even say the greatest vault ever built. It true purpose is to store all the precious collected relics of its owner."
- building_mem_ancestors_grudge_hoarder_depot_effect_desc:0 "§LChanges modifier based on $policy_mem_ancestors_grudge_is_hoarder_policy$ policy\n\nGrows stronger with each owned relic§!"
+ building_mem_ancestors_grudge_hoarder_depot_effect_desc:0 "§KChanges modifier based on $policy_mem_ancestors_grudge_is_hoarder_policy$ policy\n\nGrows stronger with each owned relic§!"
 
  ##########################################################################
  # RELICS
@@ -317,14 +318,14 @@
  # Relic Rarities
  mem_ancestors_grudge_get_relic_rarity:0 "[MemGetRarity]"
  
- # old
- mem_ancestors_grudge_common:0 "§CCommon§!"
- mem_ancestors_grudge_rare:0 "§BRare§!"
- mem_ancestors_grudge_epic:0 "§MEpic§!"
- mem_ancestors_grudge_exceptional:0 "§KExceptional§!"
- mem_ancestors_grudge_mundane:0 "§TMundane§!"
- mem_ancestors_grudge_masterful:0 "§RMasterful§!"
- mem_ancestors_grudge_legendary:0 "§DLegendary§!"
+ # old - im way too lazy to rewrite this everywhere
+ mem_ancestors_grudge_common:0 "$mem_ancestors_grudge_quality_1$"
+ mem_ancestors_grudge_rare:0 "$mem_ancestors_grudge_quality_2$"
+ mem_ancestors_grudge_epic:0 "$mem_ancestors_grudge_quality_3$"
+ mem_ancestors_grudge_exceptional:0 "$mem_ancestors_grudge_quality_4$!"
+ mem_ancestors_grudge_mundane:0 "$mem_ancestors_grudge_quality_5$"
+ mem_ancestors_grudge_masterful:0 "$mem_ancestors_grudge_quality_6$"
+ mem_ancestors_grudge_legendary:0 "$mem_ancestors_grudge_quality_7$"
 
  # new
  mem_ancestors_grudge_quality_1:0 "§WMundane§!"
@@ -335,14 +336,14 @@
  mem_ancestors_grudge_quality_6:0 "§dMasterful§!"
  mem_ancestors_grudge_quality_7:0 "§KLegendary§!"
 
-# Purity # TODO colorin
- mem_ancestors_grudge_purity5:0 "Strong"
- mem_ancestors_grudge_purity4:0 "Higher"
- mem_ancestors_grudge_purity3:0 "Average"
- mem_ancestors_grudge_purity2:0 "Lesser"
- mem_ancestors_grudge_purity1:0 "Weak"
+# Purity 
+ mem_ancestors_grudge_purity5:0 "§_Strong§!"
+ mem_ancestors_grudge_purity4:0 "§MHigher§!"
+ mem_ancestors_grudge_purity3:0 "§BAverage§!"
+ mem_ancestors_grudge_purity2:0 "§CLesser§!"
+ mem_ancestors_grudge_purity1:0 "§TWeak§!"
 
- # Roll TT
+ # Roll TT # TODO
  mem_ancestors_grudge_legendary_situation:0 "REPLACE_ME"
  mem_ancestors_grudge_masterful_situation:0 "REPLACE_ME"
  mem_ancestors_grudge_exceptional_situation:0 "REPLACE_ME"
@@ -762,14 +763,13 @@
  mem_ancestors_grudge.480.b:0 "Stop it! Now!"
  mem_ancestors_grudge.480.c:0 "No need to worry."
 
- #TODO
- #mem_ancestors_grudge.485.title:0 "Trouble in the Forge"
- #mem_ancestors_grudge.485.desc:0 "During the ongoing smithing ritual our appointed smith blundered spectacularly. All work so far has been undone and the process has to start anew. The honor of a smith, however, demands that a project begun must see its completion.\n\nHow will we react to this mistake?"
- #mem_ancestors_grudge.485.a:0 "Let him sort it out, but remind him of the deadline."
+ mem_ancestors_grudge.485.title:0 "Trouble in the Forge"
+ mem_ancestors_grudge.485.desc:0 "During the ongoing smithing ritual our appointed smith blundered spectacularly. All work so far has been undone and the process has to start anew. The honor of a smith, however, demands that a project begun must see its completion.\n\nHow will we react to this mistake?"
+ mem_ancestors_grudge.485.a:0 "Let him sort it out, but remind him of the deadline."
  #(no costs - minimum and maximum quality lowered by 1 level - progress reset to 0 - double monthly progress until finished)
- #mem_ancestors_grudge.485.b:0 "Let senior smiths offer their insight on his design flaws."
+ mem_ancestors_grudge.485.b:0 "Let senior smiths offer their insight on his design flaws."
  #(unity cost - minimum quality raised by 1 level - progress reset to 0)
- #mem_ancestors_grudge.485.c:0 "Let senior smiths suggest improvements on his design."
+ mem_ancestors_grudge.485.c:0 "Let senior smiths suggest improvements on his design."
  #(unity cost - maximum quality raised by 1 level - progress reset to 0)
 
 

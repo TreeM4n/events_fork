@@ -155,7 +155,7 @@ origin_mem_ancestors_grudge_hive = {
 	# }
 	modifier = {
 		country_resource_max_minor_artifacts_add = 10000
-		country_resource_max_add = 100000
+		country_resource_max_add = 35000
 		#planet_jobs_minor_artifacts_produces_mult = -0.5
 	}
 	random_weight = {
@@ -198,9 +198,9 @@ origin_mem_ancestors_grudge_advanced_start = {
 		#starbase_shipyard_build_speed_mult = 1
 		country_naval_cap_mult = 0.5
 		ships_upkeep_mult = -0.25
-		planet_crime_mult = 0.25
-		pop_citizen_happiness = 0.4
-		pop_happiness = -0.2
+		#planet_crime_mult = 0.25
+		pop_citizen_happiness = 0.2
+		pop_cat_slave_happiness = -0.2
 		country_government_civic_points_add = 1
 	}
 	random_weight = {

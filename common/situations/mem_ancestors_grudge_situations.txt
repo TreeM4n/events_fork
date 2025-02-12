@@ -365,6 +365,7 @@ situation_mem_ancestors_grudge_crafting = {
 			1 = mem_ancestors_grudge.470
 			1 = mem_ancestors_grudge.475
 			1 = mem_ancestors_grudge.480
+			1 = mem_ancestors_grudge.485
 		}
 	}
 	start_value = 0
