@@ -50,6 +50,7 @@ namespace = mem_ancestors_grudge
 # mem_ancestors_grudge.110	  	|	shield gen found
 # mem_ancestors_grudge.115	  	|	stasis pod
 # mem_ancestors_grudge.120	  	|	bomb found
+# mem_ancestors_grudge.125		|	feral drones found
 ############################################################################################################
 # digsite events
 ############################################################################################################
@@ -572,7 +573,7 @@ country_event = {
 }
 
 # setup 
-# fired at gamestart to setup the habitat
+# fired at gamestart to setup stuff
 country_event = {
 	id = mem_ancestors_grudge.1
 	hide_window = yes
@@ -710,7 +711,17 @@ country_event = {
 			add_modifier = {
 				modifier = low_gravity
 			}
-			add_deposit = d_mem_ancestors_grudge_boulder
+			if = {
+				limit = {
+					root = {
+						has_origin = origin_mem_ancestors_grudge_hive
+					}
+				}
+				add_deposit = d_mem_ancestors_grudge_boulder_hive
+			}
+			else = {
+				add_deposit = d_mem_ancestors_grudge_boulder
+			}			
 			while = {
 				count = 8
 				add_building = building_mem_ancestors_grudge_ruins
@@ -1901,8 +1912,20 @@ planet_event = {
 			}
 		}
 		remove_modifier = mem_ancestors_grudge_city_planet
-		remove_deposit = d_mem_ancestors_grudge_boulder		#i like keeping it, maybe not
-		add_deposit = d_mem_ancestors_grudge_boulder_park
+		if = {
+			limit = {
+				owner = {
+					has_origin = origin_mem_ancestors_grudge_hive
+				}
+			}
+			remove_deposit = d_mem_ancestors_grudge_boulder_hive
+			add_deposit = d_mem_ancestors_grudge_boulder_park_hive
+		}
+		else = {
+			remove_deposit = d_mem_ancestors_grudge_boulder
+			add_deposit = d_mem_ancestors_grudge_boulder_park
+		}
+		
 	}
 }
 
@@ -1912,19 +1935,16 @@ country_event = {
 	title = mem_ancestors_grudge.40.name
 	desc = {
 		trigger = {
-			owner_main_species = {
-				is_archetype = MACHINE
+			OR = {
+				gets_mem_ancestors_grudge_robot_text = yes
+				gets_mem_ancestors_grudge_machine_text = yes
 			}
 		}
 		text = mem_ancestors_grudge.40.desc_robots
 	}
 	desc = {
 		trigger = {
-			NOT = {
-				owner_main_species = {
-					is_archetype = MACHINE
-				}
-			}
+			gets_mem_ancestors_grudge_organic_text = yes
 		}
 		text = mem_ancestors_grudge.40.desc
 	}
@@ -2001,18 +2021,19 @@ situation_event = {
 	title = mem_ancestors_grudge.50.name
 	desc = {
 		trigger = {
-			owner_main_species = {
-				is_archetype = MACHINE
+			owner = {
+				OR = {
+					gets_mem_ancestors_grudge_robot_text = yes
+					gets_mem_ancestors_grudge_machine_text = yes
+				}
 			}
 		}
 		text = mem_ancestors_grudge.50.desc_robots
 	}
 	desc = {
 		trigger = {
-			NOT = {
-				owner_main_species = {
-					is_archetype = MACHINE
-				}
+			owner = {
+				gets_mem_ancestors_grudge_organic_text = yes
 			}
 		}
 		text = mem_ancestors_grudge.50.desc
@@ -2303,19 +2324,16 @@ country_event = {
 	title = mem_ancestors_grudge.45.name
 	desc = {
 		trigger = {
-			owner_main_species = {
-				is_archetype = MACHINE
+			OR = {
+				gets_mem_ancestors_grudge_robot_text = yes
+				gets_mem_ancestors_grudge_machine_text = yes
 			}
 		}
 		text = mem_ancestors_grudge.45.desc_robots
 	}
 	desc = {
 		trigger = {
-			NOT = {
-				owner_main_species = {
-					is_archetype = MACHINE
-				}
-			}
+			gets_mem_ancestors_grudge_organic_text = yes
 		}
 		text = mem_ancestors_grudge.45.desc
 	}
@@ -3040,19 +3058,16 @@ country_event = {
 	title = mem_ancestors_grudge.75.name
 	desc = {
 		trigger = {
-			owner_main_species = {
-				is_archetype = MACHINE
+			OR = {
+				gets_mem_ancestors_grudge_robot_text = yes
+				gets_mem_ancestors_grudge_machine_text = yes
 			}
 		}
 		text = mem_ancestors_grudge.75.desc_robots
 	}
 	desc = {
 		trigger = {
-			NOT = {
-				owner_main_species = {
-					is_archetype = MACHINE
-				}
-			}
+			gets_mem_ancestors_grudge_organic_text = yes
 		}
 		text = mem_ancestors_grudge.75.desc
 	}
@@ -3131,19 +3146,16 @@ country_event = {
 	title = mem_ancestors_grudge.70.name
 	desc = {
 		trigger = {
-			owner_main_species = {
-				is_archetype = MACHINE
+			OR = {
+				gets_mem_ancestors_grudge_robot_text = yes
+				gets_mem_ancestors_grudge_machine_text = yes
 			}
 		}
 		text = mem_ancestors_grudge.70.desc_robots
 	}
 	desc = {
 		trigger = {
-			NOT = {
-				owner_main_species = {
-					is_archetype = MACHINE
-				}
-			}
+			gets_mem_ancestors_grudge_organic_text = yes
 		}
 		text = mem_ancestors_grudge.70.desc
 	}
@@ -3171,6 +3183,11 @@ situation_event = {
 	situation = this
 	trigger = {
 		situation_progress >= 200		# if you get this too early, you are screwed
+		owner = {
+			NOT = {
+				has_origin = origin_mem_ancestors_grudge_hive
+			}
+		}
 	}
 	immediate = {
 		target = {
@@ -3214,22 +3231,31 @@ situation_event = {
 	title = "mem_ancestors_grudge.105.title"
 	desc = {
 		trigger = {
-			owner_main_species = {
-				is_archetype = MACHINE
+			owner = {
+				OR = {
+					gets_mem_ancestors_grudge_robot_text = yes
+					gets_mem_ancestors_grudge_machine_text = yes
+				}
 			}
 		}
 		text = mem_ancestors_grudge.105.desc_robots
 	}
 	desc = {
 		trigger = {
-			NOT = {
-				owner_main_species = {
-					is_archetype = MACHINE
-				}
+			owner = {
+				gets_mem_ancestors_grudge_organic_text = yes
 			}
 		}
 		text = mem_ancestors_grudge.105.desc
 	}
+	desc = {
+		trigger = {
+			owner = {
+				gets_mem_ancestors_grudge_hive_text = yes
+			}
+		}
+		text = mem_ancestors_grudge.105.desc_hive
+	}	
 	picture = GFX_evt_obelisk_tourists
 	show_sound = event_activating_unknown_technology
 	location = target
@@ -3308,18 +3334,19 @@ situation_event = {
 	title = "mem_ancestors_grudge.115.title"
 	desc = {
 		trigger = {
-			owner_main_species = {
-				is_archetype = MACHINE
+			owner = {
+				OR = {
+					gets_mem_ancestors_grudge_robot_text = yes
+					gets_mem_ancestors_grudge_machine_text = yes	
+				}
 			}
 		}
 		text = mem_ancestors_grudge.115.desc_robots
 	}
 	desc = {
 		trigger = {
-			NOT = {
-				owner_main_species = {
-					is_archetype = MACHINE
-				}
+			owner = {
+				gets_mem_ancestors_grudge_organic_text = yes
 			}
 		}
 		text = mem_ancestors_grudge.115.desc
@@ -3331,13 +3358,13 @@ situation_event = {
 	situation = this
 	immediate = {
 	}
-	# trigger = {
-	# 	target = {
-	# 		NOT = {
-	# 			has_building = building_planetary_shield_generator
-	# 		}
-	# 	}
-	# }
+	trigger = {
+		owner = {
+			NOT = {
+				has_origin = origin_mem_ancestors_grudge_hive
+			}
+		}
+	}
 	option = {
 		name = mem_ancestors_grudge.115.a
 		allow = {
@@ -3374,6 +3401,7 @@ situation_event = {
 	}
 }
 
+
 # random bomb
 situation_event = {
 	id = mem_ancestors_grudge.120
@@ -3401,6 +3429,47 @@ situation_event = {
 				add_situation_progress = 5
 			}
 		}
+	}
+}
+
+# feral drones
+situation_event = {
+	id = mem_ancestors_grudge.125
+	title = "mem_ancestors_grudge.125.title"
+	desc = mem_ancestors_grudge.125.desc
+	picture = GFX_evt_riftworld_archsite_ancestors
+	show_sound = event_alien_nature
+	location = target
+	is_triggered_only = yes
+	situation = this
+
+	trigger = {
+		owner = {
+			has_origin = origin_mem_ancestors_grudge_hive
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.125.a
+		allow = {
+			owner = {
+				resource_stockpile_compare = {
+					resource = influence
+					value >= 20
+				}
+			}
+		}
+		target = {
+			add_deposit = d_mem_ancestors_grudge_feral_drones
+		}
+		owner = {
+			add_resource = {
+				influence = -20
+			}
+		}
+	}
+	option = {
+		name = mem_ancestors_grudge.125.b
+		add_situation_progress = 10
 	}
 }
 
@@ -3612,7 +3681,6 @@ fleet_event = {
 	desc = mem_ancestors_grudge.300.desc
 	picture = GFX_evt_laser_grid
 	show_sound = event_collapsing_ruins
-	#location = target
 	archaeology = yes
 	is_triggered_only = yes
 	immediate = {
@@ -3629,7 +3697,6 @@ fleet_event = {
 	desc = mem_ancestors_grudge.305.desc
 	picture = GFX_evt_derelict_interior
 	show_sound = event_collapsing_ruins
-	#location = target
 	archaeology = yes
 	is_triggered_only = yes
 	immediate = {
@@ -3645,25 +3712,25 @@ fleet_event = {
 	title = mem_ancestors_grudge.310.name
 	desc = {
 		trigger = {
-			owner_main_species = {
-				is_archetype = MACHINE
+			owner = {
+				OR = {
+					gets_mem_ancestors_grudge_robot_text = yes
+					gets_mem_ancestors_grudge_hive_text = yes
+				}
 			}
 		}
 		text = mem_ancestors_grudge.310.desc_robots
 	}
 	desc = {
 		trigger = {
-			NOT = {
-				owner_main_species = {
-					is_archetype = MACHINE
-				}
+			owner = {
+				gets_mem_ancestors_grudge_organic_text = yes
 			}
 		}
 		text = mem_ancestors_grudge.310.desc
 	}
 	picture = GFX_evt_bone_building
 	show_sound = event_collapsing_ruins
-	#location = target
 	archaeology = yes
 	is_triggered_only = yes
 	immediate = {
@@ -3680,7 +3747,6 @@ fleet_event = {
 	desc = mem_ancestors_grudge.315.desc
 	picture = GFX_evt_analyzing_artifacts
 	show_sound = event_collapsing_ruins
-	#location = target
 	archaeology = yes
 	is_triggered_only = yes
 	immediate = {
@@ -3718,7 +3784,6 @@ fleet_event = {
 	desc = mem_ancestors_grudge.320.desc
 	picture = GFX_evt_laser_grid
 	show_sound = event_collapsing_ruins
-	#location = target
 	archaeology = yes
 	is_triggered_only = yes
 	immediate = {
@@ -3735,7 +3800,6 @@ fleet_event = {
 	desc = mem_ancestors_grudge.325.desc
 	picture = GFX_evt_derelict_interior
 	show_sound = event_collapsing_ruins
-	#location = target
 	archaeology = yes
 	is_triggered_only = yes
 	immediate = {
@@ -3752,7 +3816,6 @@ fleet_event = {
 	desc = mem_ancestors_grudge.330.desc
 	picture = GFX_evt_bone_building
 	show_sound = event_collapsing_ruins
-	#location = target
 	archaeology = yes
 	is_triggered_only = yes
 	immediate = {
@@ -3769,7 +3832,6 @@ fleet_event = {
 	desc = mem_ancestors_grudge.335.desc
 	picture = GFX_evt_analyzing_artifacts
 	show_sound = event_collapsing_ruins
-	#location = target
 	archaeology = yes
 	is_triggered_only = yes
 	immediate = {

@@ -91,12 +91,13 @@ situation_mem_ancestors_grudge_forge_repairs = {
 	}
 	on_monthly = {
 		random_events = {
-			1000 = 0
+			994 = 0
 			1 = mem_ancestors_grudge.100			# monsters					
 			1 = mem_ancestors_grudge.105			# archeotech / minor artifacts
 			1 = mem_ancestors_grudge.110			# shiel gen ruined found
 			1 = mem_ancestors_grudge.115			# stasis pop found
 			1 = mem_ancestors_grudge.120			# ordnance exploded
+			1 = mem_ancestors_grudge.125			# feral drones
 		}
 	}
 	start_value = 0
