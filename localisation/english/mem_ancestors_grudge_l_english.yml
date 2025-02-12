@@ -735,33 +735,42 @@
 
  mem_ancestors_grudge.455.title:0 "Demanding Smiths"
  mem_ancestors_grudge.455.desc:0 "Several of our Artifact Smiths have high expectations for their newest creations. It occured to them that not their skill is the problem but rather the underfunded workplace. They assured us that more funding would lead to better outcomes."
- mem_ancestors_grudge.455.a:0 "Give them what they want"
- mem_ancestors_grudge.455.b:0 "Hone your skill, not your speech"
+ mem_ancestors_grudge.455.a:0 "Give them what they want."
+ mem_ancestors_grudge.455.b:0 "Hone your skill, not your speech."
  mem_ancestors_grudge.460.title:0 "Poor Rocks"
  mem_ancestors_grudge.460.desc:0 "Several of our refineries got minerals with very low purity. Even the normal Metallurgists are currently debating if they can qeven use them."
- mem_ancestors_grudge.460.a:0 "Tolerate lower quality"
- mem_ancestors_grudge.460.b:0 "Spare no rock"
- mem_ancestors_grudge.460.c:0 "Scrap all"
+ mem_ancestors_grudge.460.a:0 "Tolerate lower quality."
+ mem_ancestors_grudge.460.b:0 "Spare no rock."
+ mem_ancestors_grudge.460.c:0 "Scrap all."
  mem_ancestors_grudge.465.title:0 "Inspired Folk"
  mem_ancestors_grudge.465.desc:0 "Our rune articiers felt a great disturbance and are suddenly in the mood for experiments."
- mem_ancestors_grudge.465.a:0 "Let them"
- mem_ancestors_grudge.465.b:0 "No chance"
- mem_ancestors_grudge.465.c:0 "Fund other hobbies"
+ mem_ancestors_grudge.465.a:0 "Let them."
+ mem_ancestors_grudge.465.b:0 "No chance."
+ mem_ancestors_grudge.465.c:0 "Fund other hobbies."
  mem_ancestors_grudge.470.title:0 "Mutual Friendliness"
  mem_ancestors_grudge.470.desc:0 "Today something truly rare happened: all the workers in facility 6A went to their shifts happy to be there. The increased moral had a quite interesting effect on productivity.\n\nThe managers of facility 6A proposed to prefer moral over productivity. They suggest to permanently reduce the working days from 7 days per week to 6 days."
- mem_ancestors_grudge.470.a:0 "Back to work"
- mem_ancestors_grudge.470.b:0 "6 Days it is"
+ mem_ancestors_grudge.470.a:0 "Back to work."
+ mem_ancestors_grudge.470.b:0 "6 Days it is."
  mem_ancestors_grudge.475.title:0 "Increasing Demand"
  mem_ancestors_grudge.475.desc:0 "Our work on [target.GetName] has not gone unnoticed. Several private buyers are now ordering on regular basis new artifacts. But this also leads to more demand which is currently impossible to meet."
  mem_ancestors_grudge.475.a:0 "Worker harder, not smarter!"
- mem_ancestors_grudge.475.b:0 "Hire new smiths"
- mem_ancestors_grudge.475.c:0 "We got this"
+ mem_ancestors_grudge.475.b:0 "Hire new smiths."
+ mem_ancestors_grudge.475.c:0 "We got this."
  mem_ancestors_grudge.480.title:0 "Crumbling Generators"
  mem_ancestors_grudge.480.desc:0 "Our maintenance stuff on [target.GetName] has noticed strange behaviours on the ancient power generators. It might be strange to think our ancestors did not build with millennia and a war in mind, but the current situation seems quite dire. The staff noted that without proper restoration the system might explode in our faces."
- mem_ancestors_grudge.480.a:0 "Observe the explosion"
+ mem_ancestors_grudge.480.a:0 "Observe the explosion."
  mem_ancestors_grudge.480.b:0 "Stop it! Now!"
- mem_ancestors_grudge.480.c:0 "No need to worry"
+ mem_ancestors_grudge.480.c:0 "No need to worry."
 
+ #TODO
+ #mem_ancestors_grudge.485.title:0 "Trouble in the Forge"
+ #mem_ancestors_grudge.485.desc:0 "During the ongoing smithing ritual our appointed smith blundered spectacularly. All work so far has been undone and the process has to start anew. The honor of a smith, however, demands that a project begun must see its completion.\n\nHow will we react to this mistake?"
+ #mem_ancestors_grudge.485.a:0 "Let him sort it out, but remind him of the deadline."
+ #(no costs - minimum and maximum quality lowered by 1 level - progress reset to 0 - double monthly progress until finished)
+ #mem_ancestors_grudge.485.b:0 "Let senior smiths offer their insight on his design flaws."
+ #(unity cost - minimum quality raised by 1 level - progress reset to 0)
+ #mem_ancestors_grudge.485.c:0 "Let senior smiths suggest improvements on his design."
+ #(unity cost - maximum quality raised by 1 level - progress reset to 0)
 
 
 
@@ -792,17 +801,3 @@
  # ['concept_mem_ancestors_grudge_crafting']
 
  planet_mem_relic_smiths:0 "$job_mem_ancestors_grudge_relicsmith_plural$"
-
-
-
-
- 
-
-
-
-
-
- 
- ##########################################################################
- # Schnipsel für hivemind
- # The entire hive trembles in unison as the ancient machinery comes online.
