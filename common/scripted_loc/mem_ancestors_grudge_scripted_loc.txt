@@ -295,3 +295,26 @@ defined_text = {
 	}
 	default = mem_ancestors_grudge_empty
 }
+
+definded_text = {
+	name = MemGetSitDesc
+	random = no
+	text = {
+		trigger = {
+			owner = {
+				NOT = {
+					has_origin = origin_mem_ancestors_grudge_hive					
+				}
+			}
+		}
+		localization_key = situation_mem_ancestors_grudge_forge_repairs_desc_normal
+	}
+	text = {
+		trigger = {
+			owner = {
+				has_origin = origin_mem_ancestors_grudge_hive
+			}
+		}
+		localization_key = situation_mem_ancestors_grudge_forge_repairs_desc_hive
+	}
+}
