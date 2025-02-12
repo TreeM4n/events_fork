@@ -13,7 +13,7 @@
  START_SCREEN_MEM_ANCESTORS_GRUDGE:0 "Long, long ago, in ages past our kin lived in wealth and prosperity. Their rule spread all across [GetHomeWorldName] and even space, first among their colonies was our homeworld's moon, which became the industrial center of our ancestors' empire. There they bent metal to their will, continuing to hone their craft, and forged an empire of runes and durasteel.\n\nTheir greatest of achievements was the Relic-Forge, a mighty complex providing all the necessities to smith the finest of artifacts.\n\nBut wealth draws unwanted attention. And so it came to be that our ancestors were beset by many envious foes. Invaders, barbaric and uncivilized warmongers, started to rampage in our ancestors' territory. Unable do deter and confine this threat, a century-long devastating war broke out. During the final days countless of our ancestors laid down their lives in defense of the Relic-Forge... All in vain.\n\nTheir empire laid to ruin, billions perished in orbital bombardments, but not all was lost. After decades, survivors on [GetHomeWorldName] slowly began to reemerge from the vaults that saved them from the apocalypse.\n\nIt has now been nearly 500 cycles since the fall and we are finally ready to reclaim what is ours by right."
 
  # Individual Robots - origin_mem_ancestors_grudge
- START_SCREEN_MEM_ANCESTORS_GRUDGE_ROBOTS:0 "Long, long ago, in ages past our makers lived in wealth and prosperity. Their rule spread all across [GetHomeWorldName] and even space, first among their colonies was their homeworld's moon, which became the industrial center of our makers' empire. There they bent metal to their will, continuing to hone their craft, and forged an empire of runes and durasteel.\n\nTheir greatest of achievements was the Relic-Forge, a mighty complex providing all the necessities to smith the finest of artifacts. There it was, where our kind was was first created in the image of our makers to stand among them as kin and equals.\n\nBut wealth draws unwanted attention. And so it came to be that our makers were beset by many envious foes. Invaders, barbaric and uncivilized warmongers, started to rampage in their territory. Unable do deter and confine this threat, a century-long devastating war broke out. During the final days countless of our kin laid down their lives in defense of the Relic-Forge... All in vain.\n\nTheir empire laid to ruin, billions perished in orbital bombardments, and our makers wiped from existence. Yet, some of us remained and in the aftermath of these cataclysmic events, surviving units on [GetHomeWorldName] slowly began to reemerge from the ruins.\n\nIt has now been nearly 500 cycles since the fall and we are finally ready to reclaim what was lost, in the name of our makers."
+ START_SCREEN_MEM_ANCESTORS_GRUDGE_ROBOTS:0 "Long, long ago, in ages past our makers lived in wealth and prosperity. Their rule spread all across [GetHomeWorldName] and even space, first among their colonies was their homeworld's moon, which became the industrial center of our makers' empire. There they bent metal to their will, continuing to hone their craft, and forged an empire of runes and durasteel.\n\nTheir greatest of achievements was the Relic-Forge, a mighty complex providing all the necessities to smith the finest of artifacts. There it was, where our kind was first created in the image of our makers to stand among them as kin and equals.\n\nBut wealth draws unwanted attention. And so it came to be that our makers were beset by many envious foes. Invaders, barbaric and uncivilized warmongers, started to rampage in their territory. Unable do deter and confine this threat, a century-long devastating war broke out. During the final days countless of our kin laid down their lives in defense of the Relic-Forge... All in vain.\n\nTheir empire laid to ruin, billions perished in orbital bombardments, and our makers wiped from existence. Yet, some of us remained and in the aftermath of these cataclysmic events, surviving units on [GetHomeWorldName] slowly began to reemerge from the ruins.\n\nIt has now been nearly 500 cycles since the fall and we are finally ready to reclaim what was lost, in the name of our makers."
 
  # Machine Consciousness - origin_mem_ancestors_grudge_machines
  START_SCREEN_MEM_ANCESTORS_GRUDGE_MACHINES_START:0 "In the distant past our creators ruled the stars, their fleets patroled far away systems, protecting their wealth and prosperity. [GetHomeWorldName] was their homeworld and capital, but for them its moon was of even higher importance. It was their industrial center, where they bent metal to their will and honed their craft to smith artifacts of imcomparable quality. For this they had built a mighty complex to provide their smiths all required necessities - the Relic-Forge.\n\nBut their wealth made them a target for envious foes. Invaders, barbaric and uncivilized warmongers, started to rampage in our creators' territory. Unable do deter and confine this threat, a century-long devastating war broke out. It was during the final days of that conflict that we were activated. While the majority of their forces remained to protect the Relic-Forge in a futile last stand, we were sent from our factories to [GetHomeWorldName]. Here we were meant to protect civilians during their evacuation, but we failed. The planet's surface was set ablaze by orbital bombardment."
@@ -430,8 +430,6 @@
  MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE_RING:0 "$MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE_dummy$§C$r_mem_ancestors_grudge_ring$§!"
  MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE_PAULDRON:0 "$MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE_dummy$§C$r_mem_ancestors_grudge_pauldron$§!"
  MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE_SWORD:0 "$MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE_dummy$§C$r_mem_ancestors_grudge_sword$§!"
- # is this one even used? no, it did not work
- # MEM_ANCESTORS_GRUDGE_GOT_RELIC_TITLE:0 "[MemGetRarity][MemGetRelic][this.GetName]"
 
  ##########################################################################
  # SOLAR SYSTEMS
@@ -475,36 +473,96 @@
  mem_ancestors_grudge.315.name:0 "The Warrior's Identity" # corpse of Dranir
  mem_ancestors_grudge.315.desc:0 "The lone warrior, who made his last stand in the great hall was none other than Dranir himself, the legendary artifact smith only known from ancient texts. Within the hall stands his famed runed anvil. His hammer lies beside him, a tool of his craft transformed to a weapon of violence in defense of his kin. By ancient tradition, such an act meant the smith swore an oath to never to forge again.\n\nIn death, Dranir held true to that oath, felling dozens of Vazurans before his own life was bygone. We shall fulfill his final rite as is fitting a hero. Dranir will be laid to rest alongside his hammer, never to forge nor fight again, his oath carried into eternity. The anvil will remain here, as a silent reminder of the past."
  mem_ancestors_grudge.315.a:0 "Make it so."
- mem_ancestors_grudge.315.b:0 "Shiny!"
+
+ # hivemind digsite
+ mem_ancestors_grudge_anvil_site_hive:0 "The Last Beacon"
+ mem_ancestors_grudge_anvil_site_hive_desc:0 "The last signal has led us to an enormous bunker complex. It appears the beacon had penetrated deep into the structure as we feel its presence far below."
+ mem_ancestors_grudge.320.name:0 "REPLACE_ME"
+ mem_ancestors_grudge.320.desc:0 "REPLACE_ME"
+ mem_ancestors_grudge.320.a:0 "REPLACE_ME"
+ mem_ancestors_grudge.325.name:0 "REPLACE_ME"
+ mem_ancestors_grudge.325.desc:0 "REPLACE_ME"
+ mem_ancestors_grudge.325.a:0 "REPLACE_ME"
+ mem_ancestors_grudge.330.name:0 "REPLACE_ME"
+ mem_ancestors_grudge.330.desc:0 "REPLACE_ME"
+ mem_ancestors_grudge.330.a:0 "REPLACE_ME"
+ mem_ancestors_grudge.335.name:0 "REPLACE_ME"
+ mem_ancestors_grudge.335.desc:0 "REPLACE_ME"
+ mem_ancestors_grudge.335.a:0 "Shiny!"
 
  ##########################################################################
  # EVENTS
  ##########################################################################
 
  # Colony on moon has been established
+ # Get Restoration situation
  mem_ancestors_grudge.5.name:0 "Among the Ruins"
  mem_ancestors_grudge.5.desc:0 "Our scouts bring tidings from the expedition to our lost hold. Their company has ventured forth to chart the ruins surrounding our landing site and ascertain the task that lies before us. The location for our planetfall had not been chosen by chance, however, and so they quickly located our main objective - our ancestors' crowning jewel: the Relic-Forge. Half in ruins and buried by debris, yet despite all that it still stands. A testament to the mastery of skill displayed in its construction.\n\nMuch work lies ahead, if we ever want to return this world to its former glory."
  mem_ancestors_grudge.5.desc_robots:0 "Our scouts bring tidings from the expedition to our lost hold. Their company has ventured forth to chart the ruins surrounding our landing site and ascertain the task that lies before us. The location for our planetfall had not been chosen by chance, however, and so they quickly located our main objective - our makers' crowning jewel: the Relic-Forge. Half in ruins and buried by debris, yet despite all that it still stands. A testament to the mastery of skill displayed in its construction.\n\nMuch work lies ahead, if we ever want to return this world to its former glory."
+ mem_ancestors_grudge.5.desc_hive:0 "Our surveyor drones report the successful landing on [mem_ancestors_grudge_planet.GetName]. They have already begun to explore the surrounding ruins to determine our next steps. The location for our planetfall had not been chosen by chance, however, as we are heading for the strongest source of the calling. It is not as we had previously assumed one singular signal, that led us here. Instead we can now discern multiple signals of varying strength spread over this world's surface.\n\nThis place appears to have once been a vast industrial zone and the calling pulls us towards its heart..."
  mem_ancestors_grudge.5.a:0 "Good News."
  
+ # Finished Stage 1
  mem_ancestors_grudge.10.name:0 "Barely Functional"
  mem_ancestors_grudge.10.desc:0 "The pillars of [mem_ancestors_grudge_planet.GetName] still stand, though battered and blackened by fire. Their runes are faded, but their frame holds strong, a testament to the craft of our ancestors.\n\nA glimmer of hope spreads through our ranks as the Relic-Forge itself appears structurally intact. Though buried beneath rubble, it hums faintly, as though awaiting [Root.owner_main_species.GetAdj] hands to wake it from its slumber. If it can be rekindled, it may serve as the hearthstone for the hold's restoration."
  mem_ancestors_grudge.10.desc_robots:0 "The pillars of [mem_ancestors_grudge_planet.GetName] still stand, though battered and blackened by fire. Their runes are faded, but their frame holds strong, a testament to the craft of our makers.\n\nA glimmer of hope spreads through our ranks as the Relic-Forge itself appears structurally intact. Though buried beneath rubble, it hums faintly, as though awaiting [Root.owner_main_species.GetAdj] hands to wake it from its slumber. If it can be rekindled, it may serve as the hearthstone for the hold's restoration."
+ mem_ancestors_grudge.10.desc_hive:0 "During our search for the source of the calling, we have found a most wonderous place filled with precious artifacts and if our understanding of it is correct, it is a place of creation. Thinking about how many of these shiny pieces could be ours, if only we brought it back to working order, nearly made us forget about the reason of our visit.\n\nBut there it was - a mechanical device, clearly not made by the builders of this place. It was firmly lodged into the machinery, as if driven into it by en enourmous force. Quite likely it had penetrated the outer hull of this complex before having beeen stopped where we found it. Based on its effects it can only be described as a beacon interfering with the psychic link of our hivemind. Knowing what it is, does little though to remedy its effect on us, so we shut it down for good. Why it was here remains a mystery, however.\n\nWe came here for the calling, but the machinery we found might be our true reward."
  mem_ancestors_grudge.10.a:0 "Repair it, now!"
- mem_ancestors_grudge_10_a_tt:0 "§LUnlocks the next upgrade of the§! ['concept_mem_ancestors_grudge_runeforge']."
+ mem_ancestors_grudge_unlocks_forge_upgrade_tt:0 "§LUnlocks the next upgrade of the§! ['concept_mem_ancestors_grudge_runeforge']."
+
+ # Finished Stage 2
  mem_ancestors_grudge.15.name:0 "Ancestors' Holds"
  mem_ancestors_grudge.15.desc:0 "During our cleanup efforts our workers found quite a deep entrenchment. It appears to be one of several bunkers constructed with haste anticipating the world's siege during the late days of the war. This one in particular seems to be the central construction of its complex and also the most sizeable we have found so far.\n\nPreparations are being made to explore its interior.\n\nIn the meantime our scientists progress in reverse engineering the Relic-Forge by studying its construction. As far as they can tell, it is no coincidence, that it was located here on [mem_ancestors_grudge_planet.GetName] instead of our homeworld. Many of its processes do require the weak gravity of this world and simply would work on [Root.Owner.GetHomeWorldName]. With this new understanding we should now be able to further restore it."
+ # Hive version
+ mem_ancestors_grudge.16.name:0 "The Last Beacon"
+ mem_ancestors_grudge.16.desc:0 "During our cleanup efforts we have already found and deactivated numerous beacons, reducing the strain they had put on our mind. The last one of them has now been reached. It appears to have penetrated deep into an enormous bunker complex.\n\nPreparations are being made to explore its interior.\n\nIn the meantime our brain drones progress in reverse engineering the Relic-Forge by studying its construction. As far as they can tell, it is no coincidence, that it was located here on [mem_ancestors_grudge_planet.GetName]. Many of its processes do require the weak gravity of this world and simply would work on [Root.Owner.GetHomeWorldName]. With this new understanding we should now be able to further restore it."
+
+ # Finished Stage 3
  mem_ancestors_grudge.20.name:0 "Breakthrough"
  mem_ancestors_grudge.20.desc:0 "The work goes apace, with the stout hearts of the workers eager to clear away the rubble and filth of the ages.\n\nMore crucially, our clever minds studying the forge have struck upon grand discoveries! With what they have unearthed, we are now set to bring the forge back to full roaring life, as it was in the days of our forefathers."
+ mem_ancestors_grudge.20.desc_hive:0 "The work goes on, with the workers drones eagerly clearing away the rubble and ruin of the past.\n\nMore crucially, our brain drones studying the forge have struck upon grand discoveries! With what they have found, we are now set to bring the forge back to full productivity. We cannot wait for the treasures it will create."
+
+ # Finished Stage 4
  mem_ancestors_grudge.25.name:0 "Shining Bright"
  mem_ancestors_grudge.25.desc:0 "Our sharp-witted tinkering folk have struck upon a revelation! After much toil, studying the runes and mechanisms of the Relic-Forge, they have uncovered the final spark needed to breathe life back into its grand heart.\n\nThis spark, they say, is the very key to awakening its fires and bringing it roaring to its former glory, as it once blazed in the golden days of our ancestors. Soon, the clang of hammers and the hum of molten metal shall echo through the entire world once more!"
  mem_ancestors_grudge.25.desc_robots:0 "Our sharp-witted tinkering folk have struck upon a revelation! After much toil, studying the runes and mechanisms of the Relic-Forge, they have uncovered the final spark needed to breathe life back into its grand heart.\n\nThis spark, they say, is the very key to awakening its fires and bringing it roaring to its former glory, as it once blazed in the golden days of our makers. Soon, the clang of hammers and the hum of molten metal shall echo through the entire world once more!"
+ mem_ancestors_grudge.25.desc_hive:0 "Our brain drones have struck upon a revelation! After studying the ancient ways of the precursors, they realized that runes and mechanisms are only part of what brings the Relic-Forge to life. What is yet needed is the ancient art of relic smithing which the precursors once used to create the finest treasures. Where they celebrated the process, we cherish its results. Two ways, one destination. Our smithing drones will work tirelessly to match their greatness and give us what we long for."
  mem_ancestors_grudge.25.a:0 "Finally!"
+
+ # Finished Stage 5
  mem_ancestors_grudge.26.name:0 "A World Reborn"
  mem_ancestors_grudge.26.desc:0 "After years of sweat, toil, and the strength of our hearts tested by many challenges, the work is done! The hold [target.GetName], once lost to ruin and ashes, now stands proud and whole once more.\n\n[target.GetName] is reborn, its halls now echo golden to songs of yore re-sung. The sound of life and hammers is heard once more, its forges ablaze, and its strongholds a bulwark to defy time itself. The heart of [target.GetName] beats anew!"
+ mem_ancestors_grudge.26.desc_hive:0 "After many cycles of tireless work, this world has finally been restored. A whole world dedicated to fulfill our longing. The entire hive trembled in unison as the ancient machinery came online, anticipating the treasures to be. Just as the engines started, alarms pulled our attention towards a giant signal on our sensors closing in on [target.GetName].\n\nWe are receiving a transmission."
  mem_ancestors_grudge.26.a:0 "Glorious!"
  mem_ancestors_grudge.26.b:0 "Glorious Evolution!"
  mem_ancestors_grudge.26.b.tt:0 "§LWill reshape us.§!"
+ mem_ancestors_grudge.26.c:0 "My Precious!"
+
+ # A dragon appears
+ mem_ancestors_grudge.27.name:0 "From The Shadows"
+ mem_ancestors_grudge.27.desc:0 "§LMy name ... Rhaegal. You have .. things .. I require. I offer .. cooperation ... for a tithe. Help me .. repopulate.\n\nWhat is your answer: life or death?§!"
+ mem_ancestors_grudge.27.a:0 "Let us live together."
+ mem_ancestors_grudge_dragon_roost:0 "Dragon Roost"
+ mem_ancestors_grudge.27.b:0 "Death, but yours!"
+ mem_ancestors_grudge.27.b.tt:0 "§YThe Dragon will be angry§!"
+
+ # Dragon killed
+ mem_ancestors_grudge.28.name:0 "Dra-gone"
+ mem_ancestors_grudge.28.desc:0 "How the mighty have fallen. In the end it was just another creature to be slain."
+
+ mem_ancestors_grudge.29.name:0 "Dragon Fever"
+ mem_ancestors_grudge.29.desc:0 "The encounter with the hoarding dragon has inspired our scientist. The knowledge and data acquired can be applied for our own dragon hatcheries. Luckily the dragon in our system provided us with enough tissue sample to begin theorizing."
+ mem_ancestors_grudge.29.a:0 "Give it a try"
+
+ mem_ancestors_grudge.41.name:0 "Unusual Findings"
+ mem_ancestors_grudge.41.desc:0 "Among the ruins of [target.GetName] we have located three unique relics: a pauldron, a ring and a sword.\n\nAll seem to be in rather bad shape. Our excavation teams suggest scrapping two of them to save the third. They are unsure which one would benefit us the most."
+ mem_ancestors_grudge.41.a:0 "Save the Pauldron"
+ mem_ancestors_grudge.41.official:0 "§LFocus on Officials and economy§!"
+ mem_ancestors_grudge.41.b:0 "Save the Ring"
+ mem_ancestors_grudge.41.scientist:0 "§LFocus on Scientists and science§!"
+ mem_ancestors_grudge.41.c:0 "Save the Sword"
+ mem_ancestors_grudge.41.commander:0 "§LFocus on Commanders and war§!"
+
  mem_ancestors_grudge.35.name:0 "New Ground, Same Sky"
  mem_ancestors_grudge.35.desc:0 "When the forge was finally restored a mighty spark surged through the heart of the world itself. Ancient mechanisms, long silent and forgotten, stirred to life, awakened by the rhythm of our hammers and the heat of our craft.\n\nThe mountain sang, the stone hummed, and as the forge roared, the entire world seemed to draw breath anew. By our hands, the world has been reborn, its slumbering soul rekindled in the fires of new glory to come!"
  mem_ancestors_grudge.35.a:0 "We are rich!"
@@ -650,25 +708,6 @@
  mem_ancestors_grudge.449.desc:0 "It appears that our miners did not react kindly to our meddling in their affairs. The general enthusiasm we tried to profit from is lost and new reports show that productivity has returned to normal."
  mem_ancestors_grudge.449.a:0 "They are hard to please."
 
- mem_ancestors_grudge.27.name:0 "From The Shadows"
- mem_ancestors_grudge.27.desc:0 "Once restoration works were complete, a giant signal appeared on our instruments. Before we could do anything about it, a channel opened:\n\n§LMy name ... Rhaegal. You have .. things .. I require. I offer .. cooperation ... for a tithe. Help me .. repopulate.\n\nWhat is your answer: life or death?§!"
- mem_ancestors_grudge.27.a:0 "Let us live together."
- mem_ancestors_grudge_dragon_roost:0 "Dragon Roost"
- mem_ancestors_grudge.27.b:0 "Death, but yours!"
- mem_ancestors_grudge.27.b.tt:0 "§YThe Dragon will be angry§!"
- mem_ancestors_grudge.28.name:0 "Dra-gone"
- mem_ancestors_grudge.28.desc:0 "How the mighty have fallen. In the end it was just another creature to be slain."
- mem_ancestors_grudge.29.name:0 "Dragon Fever"
- mem_ancestors_grudge.29.desc:0 "The encounter with the hoarding dragon has inspired our scientist. The knowledge and data acquired can be applied for our own dragon hatcheries. Luckily the dragon in our system provided us with enough tissue sample to begin theorizing."
- mem_ancestors_grudge.29.a:0 "Give it a try"
- mem_ancestors_grudge.41.name:0 "Unusual Findings"
- mem_ancestors_grudge.41.desc:0 "Among the ruins of [target.GetName] we have located three unique relics: a pauldron, a ring and a sword.\n\nAll seem to be in rather bad shape. Our excavation teams suggest scrapping two of them to save the third. They are unsure which one would benefit us the most."
- mem_ancestors_grudge.41.a:0 "Save the Pauldron"
- mem_ancestors_grudge.41.official:0 "§LFocus on Officials and economy§!"
- mem_ancestors_grudge.41.b:0 "Save the Ring"
- mem_ancestors_grudge.41.scientist:0 "§LFocus on Scientists and science§!"
- mem_ancestors_grudge.41.c:0 "Save the Sword"
- mem_ancestors_grudge.41.commander:0 "§LFocus on Commanders and war§!"
  # relic activation of hives, TODO
  mem_ancestors_grudge.46.title:0 "REPLACE_ME"
  mem_ancestors_grudge.46.desc:0 "REPLACE_ME"
@@ -735,7 +774,6 @@
  mem_ancestors_grudge_empty:0 ""
  mem_ancestors_grudge_city_planet:0 "Lost Colony"
 
-
  # ['concept_mem_ancestors_grudge_crafting']
 
  planet_mem_relic_smiths:0 "$job_mem_ancestors_grudge_relicsmith_plural$"
@@ -752,5 +790,4 @@
  
  ##########################################################################
  # Schnipsel für hivemind
- # They celebrated the process, we cherish its results. Two ways, one destination.
  # The entire hive trembles in unison as the ancient machinery comes online.

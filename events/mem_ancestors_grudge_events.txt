@@ -21,6 +21,7 @@ namespace = mem_ancestors_grudge
 ## restoration situation
 # mem_ancestors_grudge.10	  	|	situation event stage 1
 # mem_ancestors_grudge.15	  	|	situation event stage 2
+# mem_ancestors_grudge.16	  	|	situation event stage 2 Hive
 # mem_ancestors_grudge.20	  	|	situation event stage 3
 # mem_ancestors_grudge.25	  	|	situation event stage 4
 # mem_ancestors_grudge.26	  	|	situation event stage 5 final
@@ -56,6 +57,10 @@ namespace = mem_ancestors_grudge
 # mem_ancestors_grudge.305	  	|	digsite 2
 # mem_ancestors_grudge.310	  	|	digsite 3
 # mem_ancestors_grudge.315	  	|	digsite 4 final
+# mem_ancestors_grudge.320	  	|	digsite 1
+# mem_ancestors_grudge.325	  	|	digsite 2
+# mem_ancestors_grudge.330	  	|	digsite 3
+# mem_ancestors_grudge.335	  	|	digsite 4 final
 ############################################################################################################
 # random events for crafting situation
 ############################################################################################################
@@ -1018,19 +1023,22 @@ country_event = {
 	title = mem_ancestors_grudge.5.name
 	desc = {
 		trigger = {
-			owner_main_species = {
-				is_archetype = MACHINE
+			OR = {
+				gets_mem_ancestors_grudge_robot_text = yes
+				gets_mem_ancestors_grudge_machine_text = yes
 			}
-		}
+		}		
 		text = mem_ancestors_grudge.5.desc_robots
 	}
 	desc = {
 		trigger = {
-			NOT = {
-				owner_main_species = {
-					is_archetype = MACHINE
-				}
-			}
+			gets_mem_ancestors_grudge_hive_text = yes
+		}
+		text = mem_ancestors_grudge.5.desc_hive
+	}
+	desc = {
+		trigger = {
+			gets_mem_ancestors_grudge_organic_text = yes
 		}
 		text = mem_ancestors_grudge.5.desc
 	}
@@ -1048,6 +1056,19 @@ country_event = {
 	}
 	option = {
 		name = mem_ancestors_grudge.5.a
+		trigger = {
+			gets_mem_ancestors_grudge_hive_text = no
+		}
+	}
+
+	option = {
+		name = INTERESTING
+		trigger = {
+			gets_mem_ancestors_grudge_hive_text = yes
+		}
+	}
+
+	after = {
 		start_situation = {
 			type = situation_mem_ancestors_grudge_forge_repairs
 			target = event_target:mem_ancestors_grudge_planet
@@ -1055,7 +1076,7 @@ country_event = {
 		event_target:mem_ancestors_grudge_planet = {
 			remove_building = building_mem_ancestors_grudge_ruins
 			add_building = building_mem_ancestors_grudge_forge_0
-		}
+		}		
 	}
 }
 
@@ -1065,18 +1086,27 @@ situation_event = {
 	title = mem_ancestors_grudge.10.name
 	desc = {
 		trigger = {
-			owner_main_species = {
-				is_archetype = MACHINE
-			}
-		}
+			owner = {
+				OR = {
+					gets_mem_ancestors_grudge_robot_text = yes
+					gets_mem_ancestors_grudge_machine_text = yes
+				}
+			}			
+		}		
 		text = mem_ancestors_grudge.10.desc_robots
 	}
 	desc = {
 		trigger = {
-			NOT = {
-				owner_main_species = {
-					is_archetype = MACHINE
-				}
+			owner = {
+				gets_mem_ancestors_grudge_hive_text = yes				
+			}
+		}
+		text = mem_ancestors_grudge.10.desc_hive
+	}
+	desc = {
+		trigger = {
+			owner = {
+				gets_mem_ancestors_grudge_organic_text = yes				
 			}
 		}
 		text = mem_ancestors_grudge.10.desc
@@ -1112,7 +1142,7 @@ situation_event = {
 				}
 			}
 		}
-		custom_tooltip =  mem_ancestors_grudge_10_a_tt
+		custom_tooltip =  mem_ancestors_grudge_unlocks_forge_upgrade_tt
 		hidden_effect = {
 			event_target:mem_ancestors_grudge_planet = {
 				set_planet_flag = building_mem_ancestors_grudge_forge_1
@@ -1185,11 +1215,76 @@ situation_event = {
 	}
 }
 
+# stage 3 for hive
+situation_event = {
+	id = mem_ancestors_grudge.16
+	title = mem_ancestors_grudge.16.name
+	desc = mem_ancestors_grudge.16.desc
+	picture = GFX_evt_riftworld_archsite_crater
+	show_sound = event_collapsing_ruins
+	location = target
+	situation = this
+	is_triggered_only = yes
+	immediate = {
+		owner = {
+			random_owned_planet = {
+				limit = {
+					has_planet_flag = mem_ancestors_grudge_planet
+				}
+				save_event_target_as = mem_ancestors_grudge_planet
+			}
+		}
+	}
+	option = {
+		name = INTERESTING
+		target = {
+			create_archaeological_site = mem_ancestors_grudge_anvil_site_hive
+		}
+		custom_tooltip = mem_ancestors_grudge_unlocks_forge_upgrade_tt
+		hidden_effect = {
+			target = {
+				set_planet_flag = building_mem_ancestors_grudge_forge_2
+			}
+			if = {
+				limit = {
+					owner = {
+						is_ai = yes
+					}
+				}
+				target = {
+					remove_building = building_mem_ancestors_grudge_forge_1
+					add_building = building_mem_ancestors_grudge_forge_2
+				}
+				owner = {
+					country_event = {
+						id = mem_ancestors_grudge.40
+					}
+				}
+			}
+		}
+	}
+}
+
 #  lets upgrade this even further
 situation_event = {
 	id = mem_ancestors_grudge.20
 	title = mem_ancestors_grudge.20.name
-	desc = mem_ancestors_grudge.20.desc
+	desc = {
+		trigger = {
+			owner = {
+				gets_mem_ancestors_grudge_hive_text = yes				
+			}
+		}
+		text = mem_ancestors_grudge.20.desc_hive
+	}
+	desc = {
+		trigger = {
+			owner = {
+				gets_mem_ancestors_grudge_hive_text = no				
+			}
+		}
+		text = mem_ancestors_grudge.20.desc
+	}
 	picture = GFX_evt_city_ruins
 	show_sound = event_collapsing_ruins
 	location = target
@@ -1248,18 +1343,27 @@ situation_event = {
 	title = mem_ancestors_grudge.25.name
 	desc = {
 		trigger = {
-			owner_main_species = {
-				is_archetype = MACHINE
-			}
-		}
+			owner = {
+				OR = {
+					gets_mem_ancestors_grudge_robot_text = yes
+					gets_mem_ancestors_grudge_machine_text = yes
+				}
+			}			
+		}		
 		text = mem_ancestors_grudge.25.desc_robots
 	}
 	desc = {
 		trigger = {
-			NOT = {
-				owner_main_species = {
-					is_archetype = MACHINE
-				}
+			owner = {
+				gets_mem_ancestors_grudge_hive_text = yes				
+			}
+		}
+		text = mem_ancestors_grudge.25.desc_hive
+	}
+	desc = {
+		trigger = {
+			owner = {
+				gets_mem_ancestors_grudge_organic_text = yes				
 			}
 		}
 		text = mem_ancestors_grudge.25.desc
@@ -1310,7 +1414,22 @@ situation_event = {
 situation_event = {
 	id = mem_ancestors_grudge.26
 	title = mem_ancestors_grudge.26.name
-	desc = mem_ancestors_grudge.26.desc
+	desc = {
+		trigger = {
+			owner = {
+				gets_mem_ancestors_grudge_hive_text = yes				
+			}
+		}
+		text = mem_ancestors_grudge.26.desc_hive
+	}
+	desc = {
+		trigger = {
+			owner = {
+				gets_mem_ancestors_grudge_hive_text = no				
+			}
+		}
+		text = mem_ancestors_grudge.26.desc
+	}
 	picture = GFX_evt_coronation
 	show_sound = event_celebration
 	location = target
@@ -1380,34 +1499,69 @@ situation_event = {
 			}
 		}
 	}
-	after = {
-		destroy_situation = this
-		owner = {
-			add_monthly_resource_mult = {
-				resource = unity
-				value = 12
+	option = {
+		name = mem_ancestors_grudge.26.c
+		trigger = {
+			hidden_trigger = {
+				owner = {
+					has_origin = origin_mem_ancestors_grudge_hive
+				}
+			}
+		}		
+		hidden_effect = {
+			owner = {
+				country_event = {
+					id = mem_ancestors_grudge.27
+				}
 			}
 		}
+	}
+	after = {
+		destroy_situation = this
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						has_origin = origin_mem_ancestors_grudge_hive
+					}
+				}
+			}
+			owner = {
+				add_monthly_resource_mult = {
+					resource = unity
+					value = 12
+				}
+			}
+		}		
 	}
 }
 
 # A hissy old dragon appears!
 # copied from shard
-situation_event = {
+country_event = {
 	id = mem_ancestors_grudge.27
 	title = mem_ancestors_grudge.27.name
+	diplomatic_title = BLANK_STRING
 	desc = mem_ancestors_grudge.27.desc
-	picture = GFX_evt_space_dragon
+	location = event_target:mem_ancestors_grudge_dragon_fleet
 	show_sound = event_dangerous_animals
-	location = target
-	situation = this
+	diplomatic = yes
+
 	is_triggered_only = yes
+
+	picture_event_data = {
+		room = no_video_feed_room
+	}
 	immediate = {
-		owner = {
-			country_event = {
-				id = story.8
-				days = 15
+		country_event = {
+			id = story.8
+			days = 15
+		}
+		random_owned_planet = {
+			limit = {
+				has_planet_flag = mem_ancestors_grudge_planet
 			}
+			save_event_target_as = mem_ancestors_grudge_planet
 		}
 		create_country = {
 			name = "Grand Dragon"
@@ -1480,7 +1634,7 @@ situation_event = {
 						}
 						save_global_event_target_as = mem_ancestors_grudge_dragon_fleet
 						set_location = {
-							target = root.target
+							target = event_target:mem_ancestors_grudge_planet
 							distance = 10
 							angle = 90
 							direction = in_system
@@ -1509,7 +1663,7 @@ situation_event = {
 										id = mem_ancestors_grudge.home.12
 										is_star = no
 										NOT = {
-											is_same_value = root.target
+											is_same_value = event_target:mem_ancestors_grudge_planet
 										}
 									}
 									found_planet = {
@@ -1524,7 +1678,7 @@ situation_event = {
 								find_closest_planet = {
 									trigger = {
 										id = mem_ancestors_grudge.home.13
-										is_same_value = root.target
+										is_same_value = event_target:mem_ancestors_grudge_planet
 									}
 									found_planet = {
 										move_to = this
@@ -1544,22 +1698,20 @@ situation_event = {
 	}
 	option = {
 		name = mem_ancestors_grudge.27.a
-		owner = {
-			if = {
-				limit = {
-					host_has_dlc = "Ancient Relics Story Pack"
-				}
-				add_modifier = {
-					modifier = mem_ancestors_grudge_dragon_tithe
-				}
+		if = {
+			limit = {
+				host_has_dlc = "Ancient Relics Story Pack"
 			}
-			else = {
-				add_modifier = {
-					modifier = mem_ancestors_grudge_dragon_tithe_energy
-				}
+			add_modifier = {
+				modifier = mem_ancestors_grudge_dragon_tithe
 			}
 		}
-		target = {
+		else = {
+			add_modifier = {
+				modifier = mem_ancestors_grudge_dragon_tithe_energy
+			}
+		}
+		event_target:mem_ancestors_grudge_planet = {
 			add_modifier = {
 				modifier = mem_ancestors_grudge_dragon_roost
 			}
@@ -1571,7 +1723,7 @@ situation_event = {
 		hidden_effect = {
 			event_target:mem_ancestors_grudge_dragon_country = {
 				set_faction_hostility = {
-					target = root.owner
+					target = root
 					set_hostile = yes
 					set_neutral = no
 					set_friendly = no
@@ -1583,13 +1735,10 @@ situation_event = {
 		}
 	}
 	after = {
-		destroy_situation = this
 		hidden_effect = {
-			owner = {
-				country_event = {
-					id = mem_ancestors_grudge.29
-					days = 720
-				}
+			country_event = {
+				id = mem_ancestors_grudge.29
+				days = 720
 			}
 		}
 	}
@@ -3394,6 +3543,7 @@ country_event = {
 	}
 }
 
+# normal digsite
 #  digiste 1
 fleet_event = {
 	id = mem_ancestors_grudge.300
@@ -3476,13 +3626,6 @@ fleet_event = {
 	}
 	option = {
 		name = mem_ancestors_grudge.315.a
-		trigger = {
-			NOT = {
-				owner = {
-					has_origin = origin_mem_ancestors_grudge_hive
-				}
-			}
-		}
 		owner = {
 			add_relic = r_mem_ancestors_grudge_anvil
 		}
@@ -3504,13 +3647,74 @@ fleet_event = {
 			}
 		}
 	}
+}
+
+# hive digsite
+#  digiste 1
+fleet_event = {
+	id = mem_ancestors_grudge.320
+	title = mem_ancestors_grudge.320.name
+	desc = mem_ancestors_grudge.320.desc
+	picture = GFX_evt_laser_grid
+	show_sound = event_collapsing_ruins
+	#location = target
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+	}
 	option = {
-		name = mem_ancestors_grudge.315.b
-		trigger = {
-			owner = {
-				has_origin = origin_mem_ancestors_grudge_hive
-			}
-		}
+		name = mem_ancestors_grudge.320.a
+	}
+}
+
+#  digiste 2
+fleet_event = {
+	id = mem_ancestors_grudge.325
+	title = mem_ancestors_grudge.325.name
+	desc = mem_ancestors_grudge.325.desc
+	picture = GFX_evt_derelict_interior
+	show_sound = event_collapsing_ruins
+	#location = target
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.325.a
+	}
+}
+
+#  digiste 3
+fleet_event = {
+	id = mem_ancestors_grudge.330
+	title = mem_ancestors_grudge.330.name
+	desc = mem_ancestors_grudge.330.desc
+	picture = GFX_evt_bone_building
+	show_sound = event_collapsing_ruins
+	#location = target
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.330.a
+	}
+}
+
+#  digiste 4
+fleet_event = {
+	id = mem_ancestors_grudge.335
+	title = mem_ancestors_grudge.335.name
+	desc = mem_ancestors_grudge.335.desc
+	picture = GFX_evt_analyzing_artifacts
+	show_sound = event_collapsing_ruins
+	#location = target
+	archaeology = yes
+	is_triggered_only = yes
+	immediate = {
+	}
+	option = {
+		name = mem_ancestors_grudge.335.a
 		owner = {
 			add_relic = r_mem_ancestors_grudge_modern_art
 		}

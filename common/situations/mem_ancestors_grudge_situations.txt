@@ -32,20 +32,8 @@ situation_mem_ancestors_grudge_forge_repairs = {
 			custom_tooltip = situation_mem_ancestors_grudge_forge_repairs_final_hive
 		}
 		hidden_effect = {
-			if = {
-				limit = {
-					owner = {
-						has_origin = origin_mem_ancestors_grudge_hive
-					}
-				}
-				situation_event = {
-					id = mem_ancestors_grudge.27
-				}
-			}
-			else = {
-				situation_event = {
-					id = mem_ancestors_grudge.26
-				}
+			situation_event = {
+				id = mem_ancestors_grudge.26
 			}
 		}
 	}
@@ -143,9 +131,22 @@ situation_mem_ancestors_grudge_forge_repairs = {
 			icon_background = GFX_situation_stage_frame_green
 			end = 300
 			on_first_enter = {
-				situation_event = {
-					id = mem_ancestors_grudge.15
+				if = {
+					limit = { 
+						owner = {
+							gets_mem_ancestors_grudge_hive_text = yes
+						}						
+					}
+					situation_event = {
+						id = mem_ancestors_grudge.16
+					}
 				}
+				else = {
+					situation_event = {
+						id = mem_ancestors_grudge.15
+					}
+				}
+				
 			}
 		}
 		situation_mem_ancestors_grudge_forge_repairs_stage3 = {
