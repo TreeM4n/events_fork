@@ -1,4 +1,3 @@
-
 triggered_planet_modifier = {
 	potential = {
 		exists = owner
@@ -35,11 +34,11 @@ triggered_planet_modifier = {
 			is_mem_runesmith = yes
 		}
 	}
-	modifier = {
-		job_mem_ancestors_grudge_relicsmith_add = 1
-		job_mem_ancestors_grudge_runesmith_add = 1
-		mult = this.value:mem_ancestors_grudge_relicforge_jobs
-	}
+	#modifier = {
+	job_mem_ancestors_grudge_relicsmith_add = 1
+	job_mem_ancestors_grudge_runesmith_add = 1
+	#}
+	mult = this.value:mem_ancestors_grudge_relicforge_jobs
 }
 
 triggered_planet_modifier = {
@@ -50,13 +49,13 @@ triggered_planet_modifier = {
 			is_mem_runesmith = yes
 		}
 	}
-	modifier = {
-		job_mem_ancestors_grudge_relicsmith_drone_add = 1
-		job_mem_ancestors_grudge_runesmith_drone_add = 1
-		mult = this.value:mem_ancestors_grudge_relicforge_jobs
-	}
+	#modifier = {
+	job_mem_ancestors_grudge_relicsmith_drone_add = 1
+	job_mem_ancestors_grudge_runesmith_drone_add = 1
+	#multiplier = this.value:mem_ancestors_grudge_relicforge_jobs
+	#}
+	mult = this.value:mem_ancestors_grudge_relicforge_jobs
 }
-
 
 triggered_desc = {
 	trigger = {

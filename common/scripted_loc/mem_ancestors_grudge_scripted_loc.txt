@@ -113,7 +113,7 @@ defined_text = {
 				value < 6
 			}
 		}
-		localization_key = mem_ancestors_grudge.46.tooltip:0 "§YIncrease the Quality§!
+		localization_key = mem_ancestors_grudge.46.tooltip
 	}
 	default = WEIRD
 }

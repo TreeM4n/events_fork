@@ -12,7 +12,6 @@ on_game_start = {
 	}
 }
 
-#TODO: unity for hives on relic gain
 
 # Fired whenever a new owner is set for a planet, following a war or through trade
 # This = Planet scope

@@ -160,6 +160,8 @@
  mod_leader_officials_minor_artifacts_upkeep_add:0 "$r_minor_artifacts$ $UPKEEP$"
  mod_leader_scientists_minor_artifacts_upkeep_add:0 "$r_minor_artifacts$ $UPKEEP$"
  mod_leader_commanders_minor_artifacts_upkeep_add:0 "$r_minor_artifacts$ $UPKEEP$"
+ mod_planet_metallurgists_minor_artifacts_upkeep_add:0 "REPLACE_ME"
+ mod_planet_mem_relic_smiths_alloys_produces_mult:0 "REPLACE_ME"
  
  ##########################################################################
  # CIVICS

@@ -6,6 +6,7 @@ namespace = mem_ancestors_grudge
 #
 ###########
 #TODO : neuer craftin situatio nsound evn_ove_engineering_bay
+#TODO. find out why sometimes leader dont get the trait ??
 ############################################################################################################
 # Setup Events
 ############################################################################################################
@@ -168,42 +169,6 @@ country_event = {
 		set_variable = {
 			which = mem_ancestors_grudge_smithing_quality_rolled
 			value = 7
-		}
-	}
-	option = {
-		name = WEIRD2
-		if = {
-			limit = {
-				has_relic = r_mem_ancestors_grudge_pauldron
-			}
-			create_leader = {
-				class = official
-				species = root.owner_main_species
-			}
-		}
-		else_if = {
-			limit = {
-				has_relic = r_mem_ancestors_grudge_sword
-			}
-			create_leader = {
-				class = commander
-				species = root.owner_main_species
-			}
-		}
-		else_if = {
-			limit = {
-				has_relic = r_mem_ancestors_grudge_ring
-			}
-			create_leader = {
-				class = scientist
-				species = root.owner_main_species
-			}
-		}
-		last_created_leader = {
-			set_age = 0
-			add_skill = 2
-			#set_name = rand
-			mem_ancestors_grudge_trait_effect = yes
 		}
 	}
 	option = {
@@ -1144,15 +1109,15 @@ situation_event = {
 			event_target:mem_ancestors_grudge_planet = {
 				set_planet_flag = building_mem_ancestors_grudge_forge_1
 			}
-			if = {
-				limit = {
-					owner = {
+			owner = {
+				if = {
+					limit = {
 						is_ai = yes
 					}
-				}
-				target = {
-					remove_building = building_mem_ancestors_grudge_forge_0
-					add_building = building_mem_ancestors_grudge_forge_1
+					root.target = {
+						remove_building = building_mem_ancestors_grudge_forge_0
+						add_building = building_mem_ancestors_grudge_forge_1
+					}
 				}
 			}
 		}
@@ -1192,17 +1157,15 @@ situation_event = {
 			target = {
 				set_planet_flag = building_mem_ancestors_grudge_forge_2
 			}
-			if = {
-				limit = {
-					owner = {
+			owner = {
+				if = {
+					limit = {
 						is_ai = yes
 					}
-				}
-				target = {
-					remove_building = building_mem_ancestors_grudge_forge_1
-					add_building = building_mem_ancestors_grudge_forge_2
-				}
-				owner = {
+					root.target = {
+						remove_building = building_mem_ancestors_grudge_forge_1
+						add_building = building_mem_ancestors_grudge_forge_2
+					}
 					country_event = {
 						id = mem_ancestors_grudge.40
 					}
@@ -1242,17 +1205,15 @@ situation_event = {
 			target = {
 				set_planet_flag = building_mem_ancestors_grudge_forge_2
 			}
-			if = {
-				limit = {
-					owner = {
+			owner = {
+				if = {
+					limit = {
 						is_ai = yes
 					}
-				}
-				target = {
-					remove_building = building_mem_ancestors_grudge_forge_1
-					add_building = building_mem_ancestors_grudge_forge_2
-				}
-				owner = {
+					root.target = {
+						remove_building = building_mem_ancestors_grudge_forge_1
+						add_building = building_mem_ancestors_grudge_forge_2
+					}
 					country_event = {
 						id = mem_ancestors_grudge.40
 					}
@@ -1316,17 +1277,17 @@ situation_event = {
 			target = {
 				set_planet_flag = building_mem_ancestors_grudge_forge_3
 			}
-			if = {
-				limit = {
-					owner = {
+			owner = {
+				if = {
+					limit = {
 						is_ai = yes
 					}
-				}
-				target = {
-					remove_building = building_mem_ancestors_grudge_forge_2
-					add_building = building_mem_ancestors_grudge_forge_3
-					planet_event = {
-						id = mem_ancestors_grudge.35
+					root.target = {
+						remove_building = building_mem_ancestors_grudge_forge_2
+						add_building = building_mem_ancestors_grudge_forge_3
+						planet_event = {
+							id = mem_ancestors_grudge.35
+						}
 					}
 				}
 			}
@@ -1392,15 +1353,15 @@ situation_event = {
 			target = {
 				set_planet_flag = building_mem_ancestors_grudge_forge_4
 			}
-			if = {
-				limit = {
-					owner = {
+			owner = {
+				if = {
+					limit = {
 						is_ai = yes
 					}
-				}
-				target = {
-					remove_building = building_mem_ancestors_grudge_forge_3
-					add_building = building_mem_ancestors_grudge_forge_4
+					root.target = {
+						remove_building = building_mem_ancestors_grudge_forge_3
+						add_building = building_mem_ancestors_grudge_forge_4
+					}
 				}
 			}
 		}
@@ -2209,6 +2170,8 @@ situation_event = {
 		}
 		# roll for rarity
 		mem_ancestors_grudge_roll_for_relic_rarity = yes
+		# roll for purity
+		mem_ancestors_grudge_roll_for_relic_purity = yes
 		if = {
 			limit = {
 				mem_has_not_relic_flag = yes
@@ -2237,7 +2200,7 @@ situation_event = {
 				create_message = {
 					type = MEM_ANCESTORS_GRUDGE_GOT_RELIC_3
 					days = 60
-					target = this
+					#target = this
 				}
 			}
 			else_if = {
@@ -2248,7 +2211,7 @@ situation_event = {
 				create_message = {
 					type = MEM_ANCESTORS_GRUDGE_GOT_RELIC_1
 					days = 60
-					target = this
+					#target = this
 				}
 			}
 			else_if = {
@@ -2259,7 +2222,7 @@ situation_event = {
 				create_message = {
 					type = MEM_ANCESTORS_GRUDGE_GOT_RELIC_2
 					days = 60
-					target = this
+					#target = this
 				}
 			}
 			#custom_tooltip = mem_ancestors_grudge.50.a.tt
@@ -2725,7 +2688,7 @@ country_event = {
 }
 
 #### hive relic activation
-# # TODO more options 
+# 
 # country_event = {
 # 	id = mem_ancestors_grudge.46
 # 	title = mem_ancestors_grudge.46.title
@@ -2756,7 +2719,7 @@ country_event = {
 # 		}
 # 	}
 # 	option = {
-# 		name = mem_ancestors_grudge.46.c		# increase intensity # TODO purity
+# 		name = mem_ancestors_grudge.46.c		# increase intensity 
 # 		custom_tooltip = mem_ancestors_grudge.46.c.upgrade_passive_tt
 # 		trigger = {
 # 			check_variable = {
@@ -2989,7 +2952,6 @@ country_event = {
 		}
 	}
 	after = {
-		
 	}
 }
 
@@ -4846,6 +4808,7 @@ country_event = {
 		}
 	}
 }
+
 # on relic acquried
 country_event = {
 	id = mem_ancestors_grudge.510
