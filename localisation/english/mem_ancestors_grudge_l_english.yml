@@ -115,7 +115,7 @@
  concept_mem_ancestors_grudge_intensity:0 "Strength"
  concept_mem_ancestors_grudge_intensity_desc:0 "- A multiplier of the ['concept_mem_ancestors_grudge_rune_relics'] passive effect$NEW_LINE$- Determined by §YRune Intensity§!$NEW_LINE$- Produced by §Y$job_mem_ancestors_grudge_runesmith$§!"
  concept_mem_ancestors_grudge_relic_world:0 "Lost Hold"
- concept_mem_ancestors_grudge_relic_world_desc:0 "- ['concept_pc_relic']$NEW_LINE$- extra £blocker£ Blockers$NEW_LINE$- several ['building:building_mem_ancestors_grudge_ruins']$NEW_LINE$- still in Colonization Phase$NEW_LINE$- Modifiers: ['modifier:mem_ancestors_grudge_city_planet'] and ['modifier:low_gravity']$NEW_LINE$- After full restoration:$NEW_LINE$--Grudge: ['modifier:mem_ancestors_grudge_city_planet_restored']$NEW_LINE$--Automata: Unlock ['trait:trait_mem_ancestors_grudge_archaeotech_excellence']$NEW_LINE$--Legacy: ['concept_mem_ancestors_grudge_hoarding_dragon']"
+ concept_mem_ancestors_grudge_relic_world_desc:0 "- ['concept_pc_relic']$NEW_LINE$- extra £blocker£ Blockers$NEW_LINE$- several ['building:building_mem_ancestors_grudge_ruins']$NEW_LINE$- still in Colonization Phase$NEW_LINE$- Modifiers: ['modifier:mem_ancestors_grudge_city_planet'] and ['modifier:low_gravity']$NEW_LINE$- After full restoration:$NEW_LINE$-- Grudge: ['modifier:mem_ancestors_grudge_city_planet_restored']$NEW_LINE$-- Automata: Unlock ['trait:trait_mem_ancestors_grudge_archaeotech_excellence']$NEW_LINE$-- Hoard: ['concept_mem_ancestors_grudge_hoarding_dragon']"
 
  ##########################################################################
  # JOBS
@@ -153,8 +153,8 @@
  mod_job_mem_ancestors_grudge_runesmith_per_pop_short: "§G+1§! £job_artisan£ per $VALUE$ £pops£"
  mod_job_mem_ancestors_grudge_runesmith_drone_per_pop_short: "§G+1§! £job_artisan£ per $VALUE$ £pops£"
  mod_country_minor_artifacts_produces_mult:0 "Monthly £minor_artifacts£ §Y$minor_artifacts$§!"
- mod_mem_ancestors_grudge_artifact_power_produces_mult: "§G$VALUE$§! Artifact Intensity"
- mod_mem_ancestors_grudge_rune_power_produces_mult: "§G$VALUE$§! Rune Intensity"
+ mod_mem_ancestors_grudge_artifact_power_produces_mult: "§G$VALUE$§!Artifact Intensity"
+ mod_mem_ancestors_grudge_rune_power_produces_mult: "§G$VALUE$§!Rune Intensity"
  mod_planet_mem_rune_smiths_produces_mult:0 "£job_artisan£ $job_mem_ancestors_grudge_runesmith_plural$ Output"
  mod_planet_mem_relic_smiths_produces_mult:0 "£job_foundry£ $job_mem_ancestors_grudge_relicsmith_plural$ Output"
  mod_leader_officials_minor_artifacts_upkeep_add:0 "$r_minor_artifacts$ $UPKEEP$"
@@ -235,7 +235,7 @@
  trait_mem_ancestors_grudge_archaeotech_robot_factory_focus:0 "Rune of Luxury"
  trait_mem_ancestors_grudge_archaeotech_robot_factory_focus_desc:0 ""
 
- leader_trait_legendary_mem_ancestors_grudge_relicowner:0 "Relic Keeper [MemGetRelicNameRarity]"
+ leader_trait_legendary_mem_ancestors_grudge_relicowner:0 "Relic Keeper [MemGetRarity]"
  leader_trait_legendary_mem_ancestors_grudge_relicowner_desc:0 "This leader was gifted a rune-infused relic. One of the greatest honors someone in our service can receive."
  leader_trait_legendary_mem_ancestors_grudge_relicowner_tt:0 "§LThis leader will inherit even stronger modifiers of the given relic.\n\nEach leader can have no more than one relic in his possession!§!"
  leader_trait_legendary_mem_ancestors_grudge_machine_nexus_one:0 "Rune of Height"
@@ -332,6 +332,21 @@
  mem_ancestors_grudge_quality_5:0 "§MExceptional§!"
  mem_ancestors_grudge_quality_6:0 "§dMasterful§!"
  mem_ancestors_grudge_quality_7:0 "§KLegendary§!"
+
+# Purity # TODO colorin
+ mem_ancestors_grudge_purity5:0 "Strong"
+ mem_ancestors_grudge_purity4:0 "Higher"
+ mem_ancestors_grudge_purity3:0 "Average"
+ mem_ancestors_grudge_purity2:0 "Lesser"
+ mem_ancestors_grudge_purity1:0 "Weak"
+
+ # Roll TT
+ mem_ancestors_grudge_legendary_situation:0 "REPLACE_ME"
+ mem_ancestors_grudge_masterful_situation:0 "REPLACE_ME"
+ mem_ancestors_grudge_exceptional_situation:0 "REPLACE_ME"
+ mem_ancestors_grudge_epic_situation:0 "REPLACE_ME"
+ mem_ancestors_grudge_rare_situation:0 "REPLACE_ME"
+ mem_ancestors_grudge_common_situation:0 "REPLACE_ME"
 
  ##########################################################################
  # DEPOSITS/BLOCKERS
@@ -514,13 +529,15 @@
  mem_ancestors_grudge.45.desc:0 "One of our greatest leaders shall be honored with the fruits of our latest creation. A prize worthy of song and legend, forged in the heart of the Relic-Forge itself.\n\nYet, as is the way of such things, only one can bear the honor, only one can receive this mighty reward. Let the choice be made wisely, for the one who carries such a relic shall carry our pride and honor in the face of all our ancestors."
  mem_ancestors_grudge.45.desc_robots:0 "One of our greatest leaders shall be honored with the fruits of our latest creation. A prize worthy of song and legend, forged in the heart of the Relic-Forge itself.\n\nYet, as is the way of such things, only one can bear the honor, only one can receive this mighty reward. Let the choice be made wisely, for the one who carries such a relic shall carry our pride and honor in the face of all our makers."
  mem_ancestors_grudge.45.desc_machines:0 "The time has come to decide how to the relic shall be used. Will we study its intricacies to further deepen our understanding of the craft with which our makers also produced us or will we use it for more mundance concerns?"
- # TODO adjust options based on new criteria
+
  mem_ancestors_grudge.45.a:0 "$mem_ancestors_grudge_common$: Honor [leader_1.GetName]"
  mem_ancestors_grudge.45.b:0 "$mem_ancestors_grudge_common$: Honor [leader_2.GetName]"
  mem_ancestors_grudge.45.c:0 "$mem_ancestors_grudge_common$: Honor [leader_3.GetName]"
  mem_ancestors_grudge.45.a.2:0 "$mem_ancestors_grudge_common$: Upgrade [ruler.GetName]"
  mem_ancestors_grudge.45.a.2.tt:0 "§LCalculating...\nImprovement: [root.mem_ancestors_grudge_activated_rune_ruler_strength]%§!\n"
  mem_ancestors_grudge.45.e:0 "$mem_ancestors_grudge_epic$: Study it"
+ mem_ancestors_grudge.45.ee:0 "$mem_ancestors_grudge_epic$: Assemble"
+ mem_ancestors_grudge.45.ee.tt_create_leader:0 "§LCreate a LvL 3 Leader with the $leader_trait_legendary_mem_ancestors_grudge_relicowner$ Trait§!"
  mem_ancestors_grudge.45.e.2:0 "$mem_ancestors_grudge_rare$: Tinker around"
  mem_ancestors_grudge.45.e.3:0 "$mem_ancestors_grudge_exceptional$: Show superiority to everyone"
  mem_ancestors_grudge.45.e.4:0 "$mem_ancestors_grudge_masterful$: Boost the Economy"
@@ -706,6 +723,7 @@
  mem_ancestors_grudge_increase_jobs_onforge_planet_tt:0 "REPLACE_ME"
  mem_ancestors_grudge_increase_relic_roll_quality_tt:0 "REPLACE_ME"
  mem_ancestors_grudge_decrease_relic_roll_quality_tt:0 "REPLACE_ME"
+ mem_ancestors_grudge_unlocks_forge_upgrade_tt:0 "REPLACE_ME"
 
 
 
@@ -721,7 +739,7 @@
  # ['concept_mem_ancestors_grudge_crafting']
 
  planet_mem_relic_smiths:0 "$job_mem_ancestors_grudge_relicsmith_plural$"
- mem_nothing:0 ""
+
 
 
 

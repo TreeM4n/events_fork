@@ -295,12 +295,6 @@ leader_trait_legendary_mem_ancestors_grudge_relicowner = {
 	}
 	triggered_desc = {
 		trigger = {
-			# NOR = {
-			# 	has_leader_flag = mem_ancestors_grudge_common
-			# 	has_leader_flag = mem_ancestors_grudge_rare
-			# 	has_leader_flag = mem_ancestors_grudge_exceptional
-			# 	has_leader_flag = mem_ancestors_grudge_epic
-			# }
 			NOT = {
 				is_variable_set = mem_ancestors_grudge_smithing_quality_rolled
 			}
@@ -320,64 +314,64 @@ leader_trait_legendary_mem_ancestors_grudge_relicowner = {
 			leader_class = commander
 			has_leader_flag = mem_ancestors_grudge_relic_flag1
 		}
-		ship_fire_rate_mult = 0.15
-		mult = this.mem_ancestors_grudge_rune_intensity
+		ship_fire_rate_mult = 0.3
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_fleet_modifier = {
 		potential = {
 			leader_class = commander
 			has_leader_flag = mem_ancestors_grudge_relic_flag2
 		}
-		ship_hull_regen_add_perc = 0.04
-		mult = this.mem_ancestors_grudge_rune_intensity
+		ship_hull_regen_add_perc = 0.08
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_fleet_modifier = {
 		potential = {
 			leader_class = commander
 			has_leader_flag = mem_ancestors_grudge_relic_flag3
 		}
-		ship_shield_mult = 0.1
-		mult = this.mem_ancestors_grudge_rune_intensity
+		ship_shield_mult = 0.2
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_fleet_modifier = {
 		potential = {
 			leader_class = commander
 			has_leader_flag = mem_ancestors_grudge_relic_flag4
 		}
-		ship_armor_mult = 0.05
-		mult = this.mem_ancestors_grudge_rune_intensity
+		ship_armor_mult = 0.1
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_fleet_modifier = {
 		potential = {
 			leader_class = commander
 			has_leader_flag = mem_ancestors_grudge_relic_flag5
 		}
-		create_debris_chance = 0.2
-		mult = this.mem_ancestors_grudge_rune_intensity
+		create_debris_chance = 0.4
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_fleet_modifier = {
 		potential = {
 			leader_class = commander
 			has_leader_flag = mem_ancestors_grudge_relic_flag6
 		}
-		ship_cloaking_strength_add = 2
-		mult = this.mem_ancestors_grudge_rune_intensity
+		ship_cloaking_strength_add = 3
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_fleet_modifier = {
 		potential = {
 			leader_class = commander
 			has_leader_flag = mem_ancestors_grudge_relic_flag7
 		}
-		ship_orbital_bombardment_mult = 0.5
-		mult = this.mem_ancestors_grudge_rune_intensity
+		ship_orbital_bombardment_mult = 1
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_fleet_modifier = {
 		potential = {
 			leader_class = commander
 			has_leader_flag = mem_ancestors_grudge_relic_flag8
 		}
-		ship_damage_against_starbases_mult = 0.15
-		mult = this.mem_ancestors_grudge_rune_intensity
+		ship_damage_against_starbases_mult = 0.3
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	#################################################
 	# survey speed/anomaly chance
@@ -393,65 +387,66 @@ leader_trait_legendary_mem_ancestors_grudge_relicowner = {
 			leader_class = scientist
 			has_leader_flag = mem_ancestors_grudge_relic_flag1
 		}
-		science_ship_survey_speed = 0.16
-		mult = this.mem_ancestors_grudge_rune_intensity
+		science_ship_survey_speed = 0.3
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_self_modifier = {
 		potential = {
 			leader_class = scientist
 			has_leader_flag = mem_ancestors_grudge_relic_flag2
 		}
-		species_leader_exp_gain = 0.08
-		mult = this.mem_ancestors_grudge_rune_intensity
+		species_leader_exp_gain = 0.15
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_modifier = {
 		potential = {
 			leader_class = scientist
 			has_leader_flag = mem_ancestors_grudge_relic_flag3
 		}
-		ship_astral_rift_clues_add = 1.5
-		country_astral_rift_speed_mult = 0.2
-		mult = this.mem_ancestors_grudge_rune_intensity
+		ship_astral_rift_clues_add = 3
+		country_astral_rift_speed_mult = 0.4
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_modifier = {
 		potential = {
 			leader_class = scientist
 			has_leader_flag = mem_ancestors_grudge_relic_flag4
 		}
-		ship_archaeological_site_clues_add = 1.5
-		ship_archaeological_site_excavation_speed_mult = 0.2
-		mult = this.mem_ancestors_grudge_rune_intensity
+		ship_archaeological_site_clues_add = 3
+		ship_archaeological_site_excavation_speed_mult = 0.4
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_planet_modifier = {
 		potential = {
 			leader_class = scientist
 			has_leader_flag = mem_ancestors_grudge_relic_flag5
 		}
-		planet_researchers_produces_mult = 0.12
-		mult = this.mem_ancestors_grudge_rune_intensity
+		planet_researchers_produces_mult = 0.25
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_modifier = {
 		potential = {
 			leader_class = scientist
 			has_leader_flag = mem_ancestors_grudge_relic_flag6
 		}
-		ship_cloaking_strength_add = 1.5
-		mult = this.mem_ancestors_grudge_rune_intensity
+		ship_cloaking_strength_add = 3
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_planet_modifier = {
 		potential = {
 			leader_class = scientist
 			has_leader_flag = mem_ancestors_grudge_relic_flag7
 		}
-		planet_jobs_engineering_research_produces_mult = 0.2
+		planet_jobs_engineering_research_produces_mult = 0.4
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_planet_modifier = {
 		potential = {
 			leader_class = scientist
 			has_leader_flag = mem_ancestors_grudge_relic_flag8
 		}
-		planet_researchers_unity_produces_add = 1
-		mult = this.mem_ancestors_grudge_rune_intensity
+		planet_researchers_unity_produces_add = 2
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	########################################################################
 	# federation guy
@@ -467,8 +462,8 @@ leader_trait_legendary_mem_ancestors_grudge_relicowner = {
 			leader_class = official
 			has_leader_flag = mem_ancestors_grudge_relic_flag1
 		}
-		diplo_weight_mult = 0.04
-		mult = this.mem_ancestors_grudge_rune_intensity
+		diplo_weight_mult = 0.1
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -478,8 +473,8 @@ leader_trait_legendary_mem_ancestors_grudge_relicowner = {
 				is_regular_empire = yes
 			}
 		}
-		planet_jobs_worker_produces_mult = 0.1
-		mult = this.mem_ancestors_grudge_rune_intensity
+		planet_jobs_worker_produces_mult = 0.2
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -489,8 +484,8 @@ leader_trait_legendary_mem_ancestors_grudge_relicowner = {
 				is_regular_empire = no
 			}
 		}
-		planet_jobs_simple_drone_produces_mult = 0.1
-		mult = this.mem_ancestors_grudge_rune_intensity
+		planet_jobs_simple_drone_produces_mult = 0.2
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -500,8 +495,8 @@ leader_trait_legendary_mem_ancestors_grudge_relicowner = {
 				is_regular_empire = yes
 			}
 		}
-		planet_jobs_specialist_produces_mult = 0.1
-		mult = this.mem_ancestors_grudge_rune_intensity
+		planet_jobs_specialist_produces_mult = 0.2
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -511,49 +506,49 @@ leader_trait_legendary_mem_ancestors_grudge_relicowner = {
 				is_regular_empire = no
 			}
 		}
-		planet_jobs_complex_drone_produces_mult = 0.1
-		mult = this.mem_ancestors_grudge_rune_intensity
+		planet_jobs_complex_drone_produces_mult = 0.2
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_planet_modifier = {
 		potential = {
 			leader_class = official
 			has_leader_flag = mem_ancestors_grudge_relic_flag4
 		}
-		pop_happiness = 0.05
-		mult = this.mem_ancestors_grudge_rune_intensity
+		pop_happiness = 0.1
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_self_modifier = {
 		potential = {
 			leader_class = official
 			has_leader_flag = mem_ancestors_grudge_relic_flag5
 		}
-		species_leader_exp_gain = 0.08
-		mult = this.mem_ancestors_grudge_rune_intensity
+		species_leader_exp_gain = 0.15
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_planet_modifier = {
 		potential = {
 			leader_class = official
 			has_leader_flag = mem_ancestors_grudge_relic_flag6
 		}
-		planet_psionic_jobs_produces_mult = 0.1
-		mult = this.mem_ancestors_grudge_rune_intensity
+		planet_psionic_jobs_produces_mult = 0.2
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_planet_modifier = {
 		potential = {
 			leader_class = official
 			has_leader_flag = mem_ancestors_grudge_relic_flag7
 		}
-		planet_jobs_robot_worker_produces_mult = 0.1
-		mult = this.mem_ancestors_grudge_rune_intensity
+		planet_jobs_robot_worker_produces_mult = 0.2
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	triggered_planet_modifier = {
 		potential = {
 			leader_class = official
 			has_leader_flag = mem_ancestors_grudge_relic_flag8
 		}
-		planet_districts_upkeep_mult = -0.1
-		planet_buildings_upkeep_mult = -0.1
-		mult = this.mem_ancestors_grudge_rune_intensity
+		planet_districts_upkeep_mult = -0.2
+		planet_buildings_upkeep_mult = -0.2
+		mult = this.mem_ancestors_grudge_smithing_purity_rolled
 	}
 	# inline_script = {
 	# 	script = paragon/leader_resource_upkeep

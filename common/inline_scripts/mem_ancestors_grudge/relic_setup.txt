@@ -40,39 +40,6 @@ ai_weight = {
 }
 can_be_stolen = no
 
-## rune intensity as a tootlip via scripted locs
-# triggered_country_modifier = {
-# 	potential = {
-# 		always = yes
-# 		#has_country_flag = mem_ancestors_grudge_rune_intensity
-# 	}
-# 	custom_tooltip = mem_ancestors_grudge_rune_intensity
-# }
-# triggered_country_modifier = {
-# 	potential = {
-# 		has_country_flag = mem_ancestors_grudge_common
-# 	}
-# 	custom_tooltip = mem_ancestors_grudge_common
-# }
-# triggered_country_modifier = {
-# 	potential = {
-# 		has_country_flag = mem_ancestors_grudge_rare
-# 	}
-# 	custom_tooltip = mem_ancestors_grudge_rare
-# }
-# triggered_country_modifier = {
-# 	potential = {
-# 		has_country_flag = mem_ancestors_grudge_exceptional
-# 	}
-# 	custom_tooltip = mem_ancestors_grudge_exceptional
-# }
-# triggered_country_modifier = {
-# 	potential = {
-# 		has_country_flag = mem_ancestors_grudge_epic
-# 	}
-# 	custom_tooltip = mem_ancestors_grudge_epic
-# }
-
 triggered_country_modifier = {
 	potential = {
 		always = yes

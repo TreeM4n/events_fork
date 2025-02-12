@@ -3,169 +3,192 @@ defined_text = {
 	random = no
 	text = {
 		trigger = {
-			has_country_flag = mem_ancestors_grudge_legendary
-			
+			check_variable_arithmetic = {
+				which = this.mem_ancestors_grudge_smithing_quality_rolled
+				value >= 6
+			}
 		}
 		localization_key = mem_ancestors_grudge_legendary
 	}
 	text = {
 		trigger = {
-			has_country_flag = mem_ancestors_grudge_masterful
+			check_variable_arithmetic = {
+				which = this.mem_ancestors_grudge_smithing_quality_rolled
+				value >= 5
+			}
 		}
 		localization_key = mem_ancestors_grudge_masterful
 	}
 	text = {
 		trigger = {
-			has_country_flag = mem_ancestors_grudge_exceptional
+			check_variable_arithmetic = {
+				which = this.mem_ancestors_grudge_smithing_quality_rolled
+				value >= 4
+			}
 		}
 		localization_key = mem_ancestors_grudge_exceptional
 	}
 	text = {
 		trigger = {
-			has_country_flag = mem_ancestors_grudge_epic
+			check_variable_arithmetic = {
+				which = this.mem_ancestors_grudge_smithing_quality_rolled
+				value >= 3
+			}
 		}
 		localization_key = mem_ancestors_grudge_epic
 	}
 	text = {
 		trigger = {
-			has_country_flag = mem_ancestors_grudge_rare
+			check_variable_arithmetic = {
+				which = this.mem_ancestors_grudge_smithing_quality_rolled
+				value >= 2
+			}
 		}
 		localization_key = mem_ancestors_grudge_rare
 	}
 	text = {
 		trigger = {
-			has_country_flag = mem_ancestors_grudge_common
+			check_variable_arithmetic = {
+				which = this.mem_ancestors_grudge_smithing_quality_rolled
+				value >= 1
+			}
 		}
 		localization_key = mem_ancestors_grudge_common
 	}
 	text = {
 		trigger = {
-			has_country_flag = mem_ancestors_grudge_mundane
+			check_variable_arithmetic = {
+				which = this.mem_ancestors_grudge_smithing_quality_rolled
+				value <= 0
+			}
 		}
 		localization_key = mem_ancestors_grudge_mundane
 	}
-	default = WEIRD
+	default = mem_ancestors_grudge_common
 }
 
-# defined_text = {
-# 	name = MemGetRarityTrait
-# 	random = no
-# 	text = {
-# 		trigger = {
-# 			#has_leader_flag = 
-# 		}
-# 		localization_key = mem_ancestors_grudge_common
-# 	}
-# 	default = WEIRD
-# }
-### this needs to be in inverse order of raities
+
 defined_text = {
-	name = MemGetRelicNameRarity
+	name = MemGetPurity
 	random = no
 	text = {
 		trigger = {
-			has_leader_flag = mem_ancestors_grudge_legendary
+			check_variable_arithmetic = {
+				which = this.mem_ancestors_grudge_smithing_purity_rolled
+				value >= 1.5
+			}
 		}
-		localization_key = mem_ancestors_grudge_legendary
+		localization_key = mem_ancestors_grudge_purity5
 	}
 	text = {
 		trigger = {
-			has_leader_flag = mem_ancestors_grudge_masterful
+			check_variable_arithmetic = {
+				which = this.mem_ancestors_grudge_smithing_purity_rolled
+				value >= 1.25
+			}
 		}
-		localization_key = mem_ancestors_grudge_masterful
+		localization_key = mem_ancestors_grudge_purity4
 	}
 	text = {
 		trigger = {
-			has_leader_flag = mem_ancestors_grudge_exceptional
+			check_variable_arithmetic = {
+				which = this.mem_ancestors_grudge_smithing_purity_rolled
+				value >= 1
+			}
 		}
-		localization_key = mem_ancestors_grudge_exceptional
+		localization_key = mem_ancestors_grudge_purity3
 	}
 	text = {
 		trigger = {
-			has_leader_flag = mem_ancestors_grudge_epic
+			check_variable_arithmetic = {
+				which = this.mem_ancestors_grudge_smithing_purity_rolled
+				value >= 0.75
+			}
 		}
-		localization_key = mem_ancestors_grudge_epic
+		localization_key = mem_ancestors_grudge_purity2
 	}
 	text = {
 		trigger = {
-			has_leader_flag = mem_ancestors_grudge_rare
+			check_variable_arithmetic = {
+				which = this.mem_ancestors_grudge_smithing_purity_rolled
+				value < 0.75
+			}
 		}
-		localization_key = mem_ancestors_grudge_rare
+		localization_key = mem_ancestors_grudge_purity1
 	}
-	text = {
-		trigger = {
-			has_leader_flag = mem_ancestors_grudge_common
-		}
-		localization_key = mem_ancestors_grudge_common
-	}
-	text = {
-		trigger = {
-			has_leader_flag = mem_ancestors_grudge_mundane
-		}
-		localization_key = mem_ancestors_grudge_mundane
-	}
-	default = mem_nothing
+	default = mem_ancestors_grudge_empty
 }
 
 # TODO rewrite this
+# this refers to the scripted effect "mem_ancestors_grudge_roll_for_relic_rarity" where the inline script takes care of rolling
+# for example:
+# inline_script = {
+# 	script = mem_ancestors_grudge/roll_rarity
+# 	FLAG1 = 0
+# 	FLAG2 = 0
+# 	FLAG3 = 1
+# 	FLAG4 = 1
+# 	FLAG5 = 1
+# }
+# this means the min quality Flag1 is is 0 ( = mundane), the average Flag3 is  is 1 ( = common ), the maximun Flag5 is 1 (= common)
 defined_text = {
 	name = MemGetSituationRarity
 	random = no
 	text = {
 		trigger = {
 			check_variable_arithmetic = {
-				which = owner.value:mem_ancestors_grudge_situation_rarity
+				which = owner.value:mem_ancestors_grudge_situation_rarity_tooltip
 				value <= 7
 			}
 		}
-		localization_key = mem_ancestors_grudge_legendary
+		localization_key = mem_ancestors_grudge_legendary_situation
 	}
 	text = {
 		trigger = {
 			check_variable_arithmetic = {
-				which = owner.value:mem_ancestors_grudge_situation_rarity
+				which = owner.value:mem_ancestors_grudge_situation_rarity_tooltip
 				value <= 6
 			}
 		}
-		localization_key = mem_ancestors_grudge_masterful
+		localization_key = mem_ancestors_grudge_masterful_situation
 	}
 	text = {
 		trigger = {
 			check_variable_arithmetic = {
-				which = owner.value:mem_ancestors_grudge_situation_rarity
+				which = owner.value:mem_ancestors_grudge_situation_rarity_tooltip
 				value <= 5
 			}
 		}
-		localization_key = mem_ancestors_grudge_exceptional
+		localization_key = mem_ancestors_grudge_exceptional_situation
 	}
 	text = {
 		trigger = {
 			check_variable_arithmetic = {
-				which = owner.value:mem_ancestors_grudge_situation_rarity
+				which = owner.value:mem_ancestors_grudge_situation_rarity_tooltip
 				value <= 4
 			}
 		}
-		localization_key = mem_ancestors_grudge_epic
+		localization_key = mem_ancestors_grudge_epic_situation
 	}
 	text = {
 		trigger = {
 			check_variable_arithmetic = {
-				which = owner.value:mem_ancestors_grudge_situation_rarity
+				which = owner.value:mem_ancestors_grudge_situation_rarity_tooltip
 				value <= 3
 			}
 		}
-		localization_key = mem_ancestors_grudge_rare
+		localization_key = mem_ancestors_grudge_rare_situation
 	}
 	text = {
 		trigger = {
 			check_variable_arithmetic = {
-				which = owner.value:mem_ancestors_grudge_situation_rarity
+				which = owner.value:mem_ancestors_grudge_situation_rarity_tooltip
 				value <= 2
 			}
 		}
-		localization_key = mem_ancestors_grudge_common
+		localization_key = mem_ancestors_grudge_common_situation
 	}
-	default = mem_ancestors_grudge_common
+	default = mem_ancestors_grudge_common_situation
 }
 
 defined_text = {
@@ -189,7 +212,7 @@ defined_text = {
 		}
 		localization_key = mem_ancestors_grudge_scientist
 	}
-	default = mem_nothing
+	default = mem_ancestors_grudge_empty
 }
 
 defined_text = {
@@ -221,5 +244,5 @@ defined_text = {
 		}
 		localization_key = r_mem_ancestors_grudge_ring
 	}
-	default = mem_nothing
+	default = mem_ancestors_grudge_empty
 }

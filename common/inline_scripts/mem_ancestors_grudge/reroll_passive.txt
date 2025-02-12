@@ -1,9 +1,5 @@
 # clear old stuff
 owner = {
-	# remove_country_flag = mem_ancestors_grudge_common
-	# remove_country_flag = mem_ancestors_grudge_rare
-	# remove_country_flag = mem_ancestors_grudge_epic
-	# remove_country_flag = mem_ancestors_grudge_exceptional
 	remove_country_flag = mem_ancestors_grudge_relic_flag1
 	remove_country_flag = mem_ancestors_grudge_relic_flag2
 	remove_country_flag = mem_ancestors_grudge_relic_flag3
@@ -13,45 +9,6 @@ owner = {
 	remove_country_flag = mem_ancestors_grudge_relic_flag7
 	remove_country_flag = mem_ancestors_grudge_relic_flag8
 }
-
-# owner = {
-# 	if = {
-# 		limit = {
-# 			check_variable_arithmetic = {
-# 				which = owner.mem_ancestors_grudge_situation_rarity
-# 				value < 2
-# 			}
-# 		}
-# 		set_country_flag = mem_ancestors_grudge_common
-# 	}
-# 	else_if = {
-# 		limit = {
-# 			check_variable_arithmetic = {
-# 				which = owner.mem_ancestors_grudge_situation_rarity
-# 				value < 3
-# 			}
-# 		}
-# 		set_country_flag = mem_ancestors_grudge_rare
-# 	}
-# 	else_if = {
-# 		limit = {
-# 			check_variable_arithmetic = {
-# 				which = owner.mem_ancestors_grudge_situation_rarity
-# 				value < 4
-# 			}
-# 		}
-# 		set_country_flag = mem_ancestors_grudge_epic
-# 	}
-# 	else_if = {
-# 		limit = {
-# 			check_variable_arithmetic = {
-# 				which = owner.mem_ancestors_grudge_situation_rarity
-# 				value < 5
-# 			}
-# 		}
-# 		set_country_flag = mem_ancestors_grudge_exceptional
-# 	}
-# }
 
 while = {
 	count = $AMOUNT$

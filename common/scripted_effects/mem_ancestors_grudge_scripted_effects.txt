@@ -76,71 +76,12 @@ mem_ancestors_grudge_trait_effect = {
 	add_trait = leader_trait_legendary_mem_ancestors_grudge_relicowner
 	hidden_effect = {
 		set_variable = {
-			which = mem_ancestors_grudge_rune_intensity
-			value = owner.mem_ancestors_grudge_rune_intensity
+			which = mem_ancestors_grudge_smithing_purity_rolled
+			value = owner.mem_ancestors_grudge_smithing_purity_rolled
 		}
 		set_variable = {
 			which = mem_ancestors_grudge_smithing_quality_rolled
 			value = owner.mem_ancestors_grudge_smithing_quality_rolled
-		}
-		if = {
-			limit = {
-				#leader_class = commander
-				owner = {
-					has_country_flag = mem_ancestors_grudge_common
-				}
-			}
-			set_leader_flag = mem_ancestors_grudge_common
-		}
-		if = {
-			limit = {
-				#leader_class = commander
-				owner = {
-					has_country_flag = mem_ancestors_grudge_rare
-				}
-			}
-			set_leader_flag = mem_ancestors_grudge_rare
-		}
-		if = {
-			limit = {
-				#leader_class = commander
-				owner = {
-					has_country_flag = mem_ancestors_grudge_epic
-				}
-			}
-			set_leader_flag = mem_ancestors_grudge_epic
-		}
-		if = {
-			limit = {
-				owner = {
-					has_country_flag = mem_ancestors_grudge_exceptional
-				}
-			}
-			set_leader_flag = mem_ancestors_grudge_exceptional
-		}
-		if = {
-			limit = {
-				owner = {
-					has_country_flag = mem_ancestors_grudge_mundane
-				}
-			}
-			set_leader_flag = mem_ancestors_grudge_mundane
-		}
-		if = {
-			limit = {
-				owner = {
-					has_country_flag = mem_ancestors_grudge_masterful
-				}
-			}
-			set_leader_flag = mem_ancestors_grudge_masterful
-		}
-		if = {
-			limit = {
-				owner = {
-					has_country_flag = mem_ancestors_grudge_legendary
-				}
-			}
-			set_leader_flag = mem_ancestors_grudge_legendary
 		}
 		if = {
 			limit = {
@@ -209,6 +150,114 @@ mem_ancestors_grudge_trait_effect = {
 	}
 }
 
+# new purities
+mem_ancestors_grudge_roll_for_relic_purity = {
+	owner = {
+		clear_variable = mem_ancestors_grudge_smithing_purity_rolled
+		set_variable = {
+			which = mem_ancestors_grudge_smithing_chance_purity
+			value = owner.modifier:mem_ancestors_grudge_rune_power_produces_mult
+		}
+		change_variable = {
+			which = mem_ancestors_grudge_smithing_chance_purity
+			value = 1
+		}
+		random_list = {
+			1 = {
+				modifier = {
+					mult = owner.mem_ancestors_grudge_smithing_quality_rolled
+					NOT = {
+						check_variable_arithmetic = {
+							which = owner.mem_ancestors_grudge_smithing_quality_rolled
+							value < 0
+						}
+					}
+				}
+				set_variable = {
+					which = mem_ancestors_grudge_smithing_purity_rolled
+					value = 0.5
+				}
+			}
+			2 = {
+				modifier = {
+					mult = owner.mem_ancestors_grudge_smithing_quality_rolled
+					NOT = {
+						check_variable_arithmetic = {
+							which = owner.mem_ancestors_grudge_smithing_quality_rolled
+							value < 0
+						}
+					}
+				}
+				set_variable = {
+					which = mem_ancestors_grudge_smithing_purity_rolled
+					value = 0.75
+				}
+			}
+			20 = {
+				# modifier = {
+				# 	mult = owner.mem_ancestors_grudge_smithing_chance_purity
+				# }
+				set_variable = {
+					which = mem_ancestors_grudge_smithing_purity_rolled
+					value = 1
+				}
+			}
+			20 = {
+				modifier = {
+					mult = owner.mem_ancestors_grudge_smithing_chance_purity
+				}
+				set_variable = {
+					which = mem_ancestors_grudge_smithing_purity_rolled
+					value = 1.25
+				}
+			}
+			10 = {
+				modifier = {
+					mult = owner.mem_ancestors_grudge_smithing_chance_purity
+				}
+				set_variable = {
+					which = mem_ancestors_grudge_smithing_purity_rolled
+					value = 1.5
+				}
+			}
+		}
+		# this is to produce more random looking variables
+		random_list = {
+			1 = {
+				multiply_variable = {
+					which = mem_ancestors_grudge_smithing_purity_rolled
+					value = 1.07
+				}
+			}
+			1 = {
+				multiply_variable = {
+					which = mem_ancestors_grudge_smithing_purity_rolled
+					value = 1.13
+				}
+			}
+			1 = {
+				multiply_variable = {
+					which = mem_ancestors_grudge_smithing_purity_rolled
+					value = 0.96
+				}
+			}
+			1 = {
+				multiply_variable = {
+					which = mem_ancestors_grudge_smithing_purity_rolled
+					value = 0.83
+				}
+			}
+			1 = {
+				multiply_variable = {
+					which = mem_ancestors_grudge_smithing_purity_rolled
+					value = 1.02
+				}
+			}
+		}
+		clear_variable = mem_ancestors_grudge_smithing_chance_purity
+	}
+}
+
 # new qualities
 # countryflag name = loc name
 # mundane = mundane 
@@ -266,6 +315,8 @@ mem_ancestors_grudge_roll_for_relic_rarity = {
 			}
 		}
 		# now lets start rolling 
+		# numbers refer to the actual rarity
+		# if you change something here, you also need to change the Tooltips!
 		if = {
 			limit = {
 				check_variable_arithmetic = {
@@ -275,11 +326,11 @@ mem_ancestors_grudge_roll_for_relic_rarity = {
 			}
 			inline_script = {
 				script = mem_ancestors_grudge/roll_rarity
-				FLAG1 = mundane
-				FLAG2 = mundane
-				FLAG3 = common
-				FLAG4 = common
-				FLAG5 = common
+				FLAG1 = 0
+				FLAG2 = 0
+				FLAG3 = 1
+				FLAG4 = 1
+				FLAG5 = 1
 			}
 		}
 		else_if = {
@@ -291,11 +342,11 @@ mem_ancestors_grudge_roll_for_relic_rarity = {
 			}
 			inline_script = {
 				script = mem_ancestors_grudge/roll_rarity
-				FLAG1 = mundane
-				FLAG2 = common
-				FLAG3 = common
-				FLAG4 = rare
-				FLAG5 = epic
+				FLAG1 = 0
+				FLAG2 = 1
+				FLAG3 = 1
+				FLAG4 = 2
+				FLAG5 = 3
 			}
 		}
 		else_if = {
@@ -307,11 +358,11 @@ mem_ancestors_grudge_roll_for_relic_rarity = {
 			}
 			inline_script = {
 				script = mem_ancestors_grudge/roll_rarity
-				FLAG1 = common
-				FLAG2 = common
-				FLAG3 = rare
-				FLAG4 = epic
-				FLAG5 = exceptional
+				FLAG1 = 1
+				FLAG2 = 1
+				FLAG3 = 2
+				FLAG4 = 3
+				FLAG5 = 4
 			}
 		}
 		else_if = {
@@ -323,11 +374,11 @@ mem_ancestors_grudge_roll_for_relic_rarity = {
 			}
 			inline_script = {
 				script = mem_ancestors_grudge/roll_rarity
-				FLAG1 = common
-				FLAG2 = rare
-				FLAG3 = epic
-				FLAG4 = exceptional
-				FLAG5 = masterful
+				FLAG1 = 1
+				FLAG2 = 2
+				FLAG3 = 3
+				FLAG4 = 4
+				FLAG5 = 4
 			}
 		}
 		else_if = {
@@ -339,11 +390,11 @@ mem_ancestors_grudge_roll_for_relic_rarity = {
 			}
 			inline_script = {
 				script = mem_ancestors_grudge/roll_rarity
-				FLAG1 = common
-				FLAG2 = rare
-				FLAG3 = epic
-				FLAG4 = exceptional
-				FLAG5 = masterful
+				FLAG1 = 2
+				FLAG2 = 3
+				FLAG3 = 3
+				FLAG4 = 4
+				FLAG5 = 4
 			}
 		}
 		else_if = {
@@ -355,11 +406,11 @@ mem_ancestors_grudge_roll_for_relic_rarity = {
 			}
 			inline_script = {
 				script = mem_ancestors_grudge/roll_rarity
-				FLAG1 = rare
-				FLAG2 = epic
-				FLAG3 = exceptional
-				FLAG4 = masterful
-				FLAG5 = legendary
+				FLAG1 = 3
+				FLAG2 = 3
+				FLAG3 = 4
+				FLAG4 = 4
+				FLAG5 = 5
 			}
 		}
 		else_if = {
@@ -371,103 +422,41 @@ mem_ancestors_grudge_roll_for_relic_rarity = {
 			}
 			inline_script = {
 				script = mem_ancestors_grudge/roll_rarity
-				FLAG1 = epic
-				FLAG2 = exceptional
-				FLAG3 = masterful
-				FLAG4 = masterful
-				FLAG5 = legendary
+				FLAG1 = 3
+				FLAG2 = 4
+				FLAG3 = 4
+				FLAG4 = 5
+				FLAG5 = 5
 			}
 		}
 		else_if = {
 			limit = {
-				check_variable_arithmetic = {
-					which = owner.mem_ancestors_grudge_smithing_quality
-					value <= 7
+				OR = {
+					check_variable_arithmetic = {
+						which = owner.mem_ancestors_grudge_smithing_quality
+						value <= 7
+					}
+					check_variable_arithmetic = {
+						which = owner.mem_ancestors_grudge_smithing_quality
+						value > 7
+					}
 				}
 			}
 			inline_script = {
 				script = mem_ancestors_grudge/roll_rarity
-				FLAG1 = exceptional
-				FLAG2 = masterful
-				FLAG3 = masterful
-				FLAG4 = legendary
-				FLAG5 = legendary
+				FLAG1 = 4
+				FLAG2 = 5
+				FLAG3 = 5
+				FLAG4 = 5
+				FLAG5 = 6
 			}
 		}
-		######## we rolled quality now lets apply some modifiers based on that
-		# i dont want 6 modifiers on this, legendary will give you powerful options instead
-		if = {
-			limit = {
-				has_country_flag = mem_ancestors_grudge_common
-			}
-			set_variable = {
-				which = mem_ancestors_grudge_smithing_quality_rolled
-				value = 1
-			}
-		}
-		else_if = {
-			limit = {
-				has_country_flag = mem_ancestors_grudge_rare
-			}
-			set_variable = {
-				which = mem_ancestors_grudge_smithing_quality_rolled
-				value = 2
-			}
-		}
-		else_if = {
-			limit = {
-				has_country_flag = mem_ancestors_grudge_epic
-			}
-			set_variable = {
-				which = mem_ancestors_grudge_smithing_quality_rolled
-				value = 3
-			}
-		}
-		else_if = {
-			limit = {
-				has_country_flag = mem_ancestors_grudge_exceptional
-			}
-			set_variable = {
-				which = mem_ancestors_grudge_smithing_quality_rolled
-				value = 4
-			}
-		}
-		else_if = {
-			limit = {
-				has_country_flag = mem_ancestors_grudge_masterful
-			}
-			set_variable = {
-				which = mem_ancestors_grudge_smithing_quality_rolled
-				value = 5
-			}
-		}
-
 		while = {
 			count = owner.mem_ancestors_grudge_smithing_quality_rolled
 			owner = {
 				mem_ancestors_grudge_add_relic_modifier = yes
 			}
 		}
-		# do this afterwards to not screw up modifier roll
-		if = {
-			limit = {
-				has_country_flag = mem_ancestors_grudge_legendary
-			}
-			set_variable = {
-				which = mem_ancestors_grudge_smithing_quality_rolled
-				value = 6
-			}
-		}
-		else_if = {
-			limit = {
-				has_country_flag = mem_ancestors_grudge_mundane
-			}
-			set_variable = {
-				which = mem_ancestors_grudge_smithing_quality_rolled
-				value = -1
-			}
-		}
-		#clear_variable = mem_ancestors_grudge_smithing_quality_rolled
 		clear_variable = mem_ancestors_grudge_smithing_quality
 		clear_variable = mem_ancestors_grudge_rarity_increase
 		clear_variable = mem_ancestors_grudge_smithing_chance_negative
@@ -479,33 +468,30 @@ mem_ancestors_grudge_increase_jobs_onforge_planet = {
 	custom_tooltip = mem_ancestors_grudge_increase_jobs_onforge_planet_tt
 	hidden_effect = {
 		change_variable = {
-		which = mem_ancestors_grudge_relicforge_extrajobs
-		value = 1
+			which = mem_ancestors_grudge_relicforge_extrajobs
+			value = 1
+		}
 	}
-	}
-	
 }
 
 mem_ancestors_grudge_increase_relic_roll_quality = {
 	custom_tooltip = mem_ancestors_grudge_increase_relic_roll_quality_tt
 	hidden_effect = {
 		change_variable = {
-		which = mem_ancestors_grudge_rarity_increase
-		value = 1
+			which = mem_ancestors_grudge_rarity_increase
+			value = 1
+		}
 	}
-	}
-	
 }
 
 mem_ancestors_grudge_decrease_relic_roll_quality = {
 	custom_tooltip = mem_ancestors_grudge_decrease_relic_roll_quality_tt
 	hidden_effect = {
 		change_variable = {
-		which = mem_ancestors_grudge_rarity_increase
-		value = -1
+			which = mem_ancestors_grudge_rarity_increase
+			value = -1
+		}
 	}
-	}
-	
 }
 
 mem_ancestors_grudge_add_relic_modifier = {

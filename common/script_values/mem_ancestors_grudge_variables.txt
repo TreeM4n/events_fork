@@ -1,11 +1,3 @@
-# mem_ancestors_grudge_rune_power = {
-# 	add = this.modifier:mem_ancestors_grudge_rune_power_produces_mult
-# 	#add = species.modifier:planet_jobs_worker_only_produces_mult
-# }
-# mem_ancestors_grudge_rune_power = {
-# 	add = this.modifier:mem_ancestors_grudge_artifact_power_produces_mult
-# 	#add = species.modifier:planet_jobs_worker_only_produces_mult
-# }
 mem_ancestors_grudge_situation_speed = {
 	base = -100
 	#add = modifier:mem_ancestors_grudge_artifact_power_produces_mult
@@ -54,6 +46,14 @@ mem_ancestors_grudge_situation_rarity_floored = {
 	max = 7
 }
 
+# determines rarity of relics, tooltip
+mem_ancestors_grudge_situation_rarity_tooltip = {
+	base = 0
+	add = value:mem_ancestors_grudge_situation_rarity
+	add = mem_ancestors_grudge_rarity_increase
+	max = 7.9 # so higher than that will be cut off
+}
+
 # overflow
 mem_ancestors_grudge_hoarder_overflow = {
 	base = 1
@@ -81,14 +81,7 @@ mem_ancestors_grudge_relicforge_jobs = {
 	#max = 4
 }
 
-# # determines strengh of modifiers for relcs
-# mem_ancestors_grudge_situation_rarity = {
-# 	base = 0
-# 	add = modifier:mem_ancestors_grudge_rune_power_produces_mult
-# 	mult = 0.02
-# 	add = 1
-# 	max = 4
-# }
+
 mem_smith_job_number = {
 	base = 0
 	complex_trigger_modifier = {
