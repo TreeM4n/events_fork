@@ -5,7 +5,6 @@ namespace = mem_ancestors_grudge
 # tr33 & Malthus
 #
 ###########
-
 #TODO : neuer craftin situatio nsound evn_ove_engineering_bay
 ############################################################################################################
 # Setup Events
@@ -1027,7 +1026,7 @@ country_event = {
 				gets_mem_ancestors_grudge_robot_text = yes
 				gets_mem_ancestors_grudge_machine_text = yes
 			}
-		}		
+		}
 		text = mem_ancestors_grudge.5.desc_robots
 	}
 	desc = {
@@ -1060,14 +1059,12 @@ country_event = {
 			gets_mem_ancestors_grudge_hive_text = no
 		}
 	}
-
 	option = {
 		name = INTERESTING
 		trigger = {
 			gets_mem_ancestors_grudge_hive_text = yes
 		}
 	}
-
 	after = {
 		start_situation = {
 			type = situation_mem_ancestors_grudge_forge_repairs
@@ -1076,7 +1073,7 @@ country_event = {
 		event_target:mem_ancestors_grudge_planet = {
 			remove_building = building_mem_ancestors_grudge_ruins
 			add_building = building_mem_ancestors_grudge_forge_0
-		}		
+		}
 	}
 }
 
@@ -1091,14 +1088,14 @@ situation_event = {
 					gets_mem_ancestors_grudge_robot_text = yes
 					gets_mem_ancestors_grudge_machine_text = yes
 				}
-			}			
-		}		
+			}
+		}
 		text = mem_ancestors_grudge.10.desc_robots
 	}
 	desc = {
 		trigger = {
 			owner = {
-				gets_mem_ancestors_grudge_hive_text = yes				
+				gets_mem_ancestors_grudge_hive_text = yes
 			}
 		}
 		text = mem_ancestors_grudge.10.desc_hive
@@ -1106,7 +1103,7 @@ situation_event = {
 	desc = {
 		trigger = {
 			owner = {
-				gets_mem_ancestors_grudge_organic_text = yes				
+				gets_mem_ancestors_grudge_organic_text = yes
 			}
 		}
 		text = mem_ancestors_grudge.10.desc
@@ -1142,7 +1139,7 @@ situation_event = {
 				}
 			}
 		}
-		custom_tooltip =  mem_ancestors_grudge_unlocks_forge_upgrade_tt
+		custom_tooltip = mem_ancestors_grudge_unlocks_forge_upgrade_tt
 		hidden_effect = {
 			event_target:mem_ancestors_grudge_planet = {
 				set_planet_flag = building_mem_ancestors_grudge_forge_1
@@ -1272,7 +1269,7 @@ situation_event = {
 	desc = {
 		trigger = {
 			owner = {
-				gets_mem_ancestors_grudge_hive_text = yes				
+				gets_mem_ancestors_grudge_hive_text = yes
 			}
 		}
 		text = mem_ancestors_grudge.20.desc_hive
@@ -1280,7 +1277,7 @@ situation_event = {
 	desc = {
 		trigger = {
 			owner = {
-				gets_mem_ancestors_grudge_hive_text = no				
+				gets_mem_ancestors_grudge_hive_text = no
 			}
 		}
 		text = mem_ancestors_grudge.20.desc
@@ -1348,14 +1345,14 @@ situation_event = {
 					gets_mem_ancestors_grudge_robot_text = yes
 					gets_mem_ancestors_grudge_machine_text = yes
 				}
-			}			
-		}		
+			}
+		}
 		text = mem_ancestors_grudge.25.desc_robots
 	}
 	desc = {
 		trigger = {
 			owner = {
-				gets_mem_ancestors_grudge_hive_text = yes				
+				gets_mem_ancestors_grudge_hive_text = yes
 			}
 		}
 		text = mem_ancestors_grudge.25.desc_hive
@@ -1363,7 +1360,7 @@ situation_event = {
 	desc = {
 		trigger = {
 			owner = {
-				gets_mem_ancestors_grudge_organic_text = yes				
+				gets_mem_ancestors_grudge_organic_text = yes
 			}
 		}
 		text = mem_ancestors_grudge.25.desc
@@ -1417,7 +1414,7 @@ situation_event = {
 	desc = {
 		trigger = {
 			owner = {
-				gets_mem_ancestors_grudge_hive_text = yes				
+				gets_mem_ancestors_grudge_hive_text = yes
 			}
 		}
 		text = mem_ancestors_grudge.26.desc_hive
@@ -1425,7 +1422,7 @@ situation_event = {
 	desc = {
 		trigger = {
 			owner = {
-				gets_mem_ancestors_grudge_hive_text = no				
+				gets_mem_ancestors_grudge_hive_text = no
 			}
 		}
 		text = mem_ancestors_grudge.26.desc
@@ -1507,7 +1504,7 @@ situation_event = {
 					has_origin = origin_mem_ancestors_grudge_hive
 				}
 			}
-		}		
+		}
 		hidden_effect = {
 			owner = {
 				country_event = {
@@ -1532,7 +1529,7 @@ situation_event = {
 					value = 12
 				}
 			}
-		}		
+		}
 	}
 }
 
@@ -1546,9 +1543,7 @@ country_event = {
 	location = event_target:mem_ancestors_grudge_dragon_fleet
 	show_sound = event_dangerous_animals
 	diplomatic = yes
-
 	is_triggered_only = yes
-
 	picture_event_data = {
 		room = no_video_feed_room
 	}
@@ -2594,7 +2589,6 @@ country_event = {
 			}
 		}
 	}
-	
 	option = {
 		name = mem_ancestors_grudge.45.e.3
 		trigger = {
@@ -2731,166 +2725,258 @@ country_event = {
 }
 
 #### hive relic activation
+# # TODO more options 
+# country_event = {
+# 	id = mem_ancestors_grudge.46
+# 	title = mem_ancestors_grudge.46.title
+# 	desc = mem_ancestors_grudge.46.desc
+# 	show_sound = event_celebration
+# 	picture = GFX_evt_physics_research
+# 	#location = event_target:mem_ancestors_grudge_planet
+# 	is_triggered_only = yes
+# 	trigger = {
+# 	}
+# 	immediate = {
+# 	}
+# 	option = {
+# 		name = mem_ancestors_grudge.46.a		# upgrade
+# 		custom_tooltip = mem_ancestors_grudge.46.a.upgrade_tt
+# 		trigger = {
+# 			check_variable_arithmetic = {
+# 				which = this.mem_ancestors_grudge_smithing_quality_rolled
+# 				value < 6
+# 			}
+# 		}
+# 		hidden_effect = {
+# 			change_variable = {
+# 				which = mem_ancestors_grudge_situation_rarity
+# 				value = 1
+# 			}
+# 			mem_ancestors_grudge_add_relic_modifier = yes
+# 		}
+# 	}
+# 	option = {
+# 		name = mem_ancestors_grudge.46.c		# increase intensity # TODO purity
+# 		custom_tooltip = mem_ancestors_grudge.46.c.upgrade_passive_tt
+# 		trigger = {
+# 			check_variable = {
+# 				which = mem_ancestors_grudge_rune_intensity
+# 				value <= 2
+# 			}
+# 			host_has_dlc = "Ancient Relics Story Pack"
+# 		}
+# 		allow = {
+# 			resource_stockpile_compare = {
+# 				resource = minor_artifacts
+# 				value >= 500
+# 			}
+# 		}
+# 		hidden_effect = {
+# 			change_variable = {
+# 				which = mem_ancestors_grudge_rune_intensity
+# 				value = 0.25
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = mem_ancestors_grudge.46.c		# increase intensity
+# 		custom_tooltip = mem_ancestors_grudge.46.c.upgrade_passive_tt
+# 		trigger = {
+# 			check_variable = {
+# 				which = mem_ancestors_grudge_rune_intensity
+# 				value <= 3
+# 			}
+# 			NOT = {
+# 				host_has_dlc = "Ancient Relics Story Pack"
+# 			}
+# 		}
+# 		allow = {
+# 			resource_stockpile_compare = {
+# 				resource = alloys
+# 				value >= 1000
+# 			}
+# 		}
+# 		hidden_effect = {
+# 			change_variable = {
+# 				which = mem_ancestors_grudge_rune_intensity
+# 				value = 0.25
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = mem_ancestors_grudge.46.b		# rare shuffle
+# 		custom_tooltip = mem_ancestors_grudge.46.b.shuffle_stats_tt
+# 		hidden_effect = {
+# 			inline_script = {
+# 				script = mem_ancestors_grudge/reroll_passive
+# 				AMOUNT = mem_ancestors_grudge_situation_rarity
+# 			}
+# 		}
+# 	}
+# 	# copy from actual thing
+# 	option = {
+# 		name = mem_ancestors_grudge.45.g
+# 		trigger = {
+# 			check_variable = {
+# 				which = mem_ancestors_grudge_situation_rarity
+# 				value >= 7
+# 			}
+# 			has_relic = r_mem_ancestors_grudge_pauldron
+# 		}
+# 		#custom_tooltip = mem_ancestors_grudge.45.exceptional_pauldron
+# 		add_modifier = {
+# 			modifier = mem_ancestors_grudge_golden_age
+# 			days = 360
+# 		}
+# 		add_modifier = {
+# 			modifier = relic_activation_cooldown
+# 			days = 1800
+# 		}
+# 	}
+# 	option = {
+# 		name = mem_ancestors_grudge.45.h
+# 		trigger = {
+# 			check_variable = {
+# 				which = mem_ancestors_grudge_situation_rarity
+# 				value >= 7
+# 			}
+# 			has_relic = r_mem_ancestors_grudge_ring
+# 		}
+# 		while = {
+# 			count = 5
+# 			add_random_research_option = {
+# 				add_progress = 0.2
+# 				ignore_rare = yes
+# 				# fail_effects = { #should never fail, when do  you truly run out of research?
+# 				# }
+# 			}
+# 		}
+# 		custom_tooltip = mem_ancestors_grudge.45.exceptional_ring
+# 		add_modifier = {
+# 			modifier = relic_activation_cooldown
+# 			days = 1800
+# 		}
+# 	}
+# 	option = {
+# 		name = mem_ancestors_grudge.45.i
+# 		trigger = {
+# 			check_variable = {
+# 				which = mem_ancestors_grudge_situation_rarity
+# 				value >= 7
+# 			}
+# 			has_relic = r_mem_ancestors_grudge_sword
+# 		}
+# 		custom_tooltip = mem_ancestors_grudge.45.exceptional_sword
+# 		every_playable_country = {
+# 			limit = {
+# 				has_truce = root
+# 			}
+# 			end_truce = root
+# 		}
+# 		add_modifier = {
+# 			modifier = relic_activation_cooldown
+# 			days = 1800
+# 		}
+# 	}
+# 	after = {
+# 		# hidden_effect = {
+# 		# 	add_modifier = {
+# 		# 		modifier = "relic_activation_cooldown"
+# 		# 		days = 1800
+# 		# 	}
+# 		# }
+# 	}
+# }
 # TODO more options 
 country_event = {
 	id = mem_ancestors_grudge.46
-	title = mem_ancestors_grudge.46.title
-	desc = mem_ancestors_grudge.46.desc
-	show_sound = event_celebration
-	picture = GFX_evt_physics_research
+	hide_window = yes
 	#location = event_target:mem_ancestors_grudge_planet
 	is_triggered_only = yes
 	trigger = {
 	}
 	immediate = {
-	}
-	option = {
-		name = mem_ancestors_grudge.46.a		# upgrade
-		custom_tooltip = mem_ancestors_grudge.46.a.upgrade_tt
-		trigger = {
-			check_variable_arithmetic = {
-				which = this.mem_ancestors_grudge_smithing_quality_rolled
-				value < 6
+		if = {
+			limit = {
+				check_variable_arithmetic = {
+					which = this.mem_ancestors_grudge_smithing_quality_rolled
+					value < 6
+				}
 			}
-		}
-		hidden_effect = {
 			change_variable = {
 				which = mem_ancestors_grudge_situation_rarity
 				value = 1
 			}
 			mem_ancestors_grudge_add_relic_modifier = yes
 		}
-	}
-	option = {
-		name = mem_ancestors_grudge.46.c		# increase intensity # TODO purity
-		custom_tooltip = mem_ancestors_grudge.46.c.upgrade_passive_tt
-		trigger = {
-			check_variable = {
-				which = mem_ancestors_grudge_rune_intensity
-				value <= 2
-			}
-			host_has_dlc = "Ancient Relics Story Pack"
-		}
-		allow = {
-			resource_stockpile_compare = {
-				resource = minor_artifacts
-				value >= 500
-			}
-		}
-		hidden_effect = {
-			change_variable = {
-				which = mem_ancestors_grudge_rune_intensity
-				value = 0.25
-			}
-		}
-	}
-	option = {
-		name = mem_ancestors_grudge.46.c		# increase intensity
-		custom_tooltip = mem_ancestors_grudge.46.c.upgrade_passive_tt
-		trigger = {
-			check_variable = {
-				which = mem_ancestors_grudge_rune_intensity
-				value <= 3
-			}
-			NOT = {
-				host_has_dlc = "Ancient Relics Story Pack"
-			}
-		}
-		allow = {
-			resource_stockpile_compare = {
-				resource = alloys
-				value >= 1000
-			}
-		}
-		hidden_effect = {
-			change_variable = {
-				which = mem_ancestors_grudge_rune_intensity
-				value = 0.25
-			}
-		}
-	}
-	option = {
-		name = mem_ancestors_grudge.46.b		# rare shuffle
-		custom_tooltip = mem_ancestors_grudge.46.b.shuffle_stats_tt
-		hidden_effect = {
-			inline_script = {
-				script = mem_ancestors_grudge/reroll_passive
-				AMOUNT = mem_ancestors_grudge_situation_rarity
-			}
-		}
-	}
-	# copy from actual thing
-	option = {
-		name = mem_ancestors_grudge.45.g
-		trigger = {
-			check_variable = {
-				which = mem_ancestors_grudge_situation_rarity
-				value >= 7
-			}
-			has_relic = r_mem_ancestors_grudge_pauldron
-		}
-		#custom_tooltip = mem_ancestors_grudge.45.exceptional_pauldron
-		add_modifier = {
-			modifier = mem_ancestors_grudge_golden_age
-			days = 360
-		}
-		add_modifier = {
-			modifier = relic_activation_cooldown
-			days = 1800
-		}
-	}
-	option = {
-		name = mem_ancestors_grudge.45.h
-		trigger = {
-			check_variable = {
-				which = mem_ancestors_grudge_situation_rarity
-				value >= 7
-			}
-			has_relic = r_mem_ancestors_grudge_ring
-		}
-		while = {
-			count = 5
-			add_random_research_option = {
-				add_progress = 0.2
-				ignore_rare = yes
-				# fail_effects = { #should never fail, when do  you truly run out of research?
-				# }
-			}
-		}
-		custom_tooltip = mem_ancestors_grudge.45.exceptional_ring
-		add_modifier = {
-			modifier = relic_activation_cooldown
-			days = 1800
-		}
-	}
-	option = {
-		name = mem_ancestors_grudge.45.i
-		trigger = {
-			check_variable = {
-				which = mem_ancestors_grudge_situation_rarity
-				value >= 7
-			}
-			has_relic = r_mem_ancestors_grudge_sword
-		}
-		custom_tooltip = mem_ancestors_grudge.45.exceptional_sword
-		every_playable_country = {
+		else_if = {
 			limit = {
-				has_truce = root
+				has_relic = r_mem_ancestors_grudge_sword
 			}
-			end_truce = root
+			every_playable_country = {
+				limit = {
+					has_truce = root
+				}
+				end_truce = root
+			}
 		}
-		add_modifier = {
-			modifier = relic_activation_cooldown
-			days = 1800
+		else_if = {
+			limit = {
+				has_relic = r_mem_ancestors_grudge_pauldron
+			}
+			every_owned_planet = {
+				if = {
+					limit = {
+						has_planetary_ascension_tier = 0
+					}
+					set_planetary_ascension_tier = 1
+				}
+				else_if = {
+					limit = {
+						has_planetary_ascension_tier = 1
+					}
+					set_planetary_ascension_tier = 2
+				}
+				else_if = {
+					limit = {
+						has_planetary_ascension_tier = 2
+					}
+					set_planetary_ascension_tier = 3
+				}
+				else_if = {
+					limit = {
+						has_planetary_ascension_tier = 3
+					}
+					set_planetary_ascension_tier = 4
+				}
+				else_if = {
+					limit = {
+						has_planetary_ascension_tier = 4
+					}
+					set_planetary_ascension_tier = 5
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_relic = r_mem_ancestors_grudge_ring
+			}
+			while = {
+				count = 5
+				add_random_research_option = {
+					add_progress = 0.2
+					ignore_rare = yes
+					# fail_effects = { #should never fail, when do  you truly run out of research?
+					# }
+				}
+			}
 		}
 	}
 	after = {
-		# hidden_effect = {
-		# 	add_modifier = {
-		# 		modifier = "relic_activation_cooldown"
-		# 		days = 1800
-		# 	}
-		# }
+		add_modifier = {
+			modifier = relic_activation_cooldown
+			days = 1800
+		}
 	}
 }
 
@@ -4543,11 +4629,6 @@ situation_event = {
 	is_triggered_only = yes
 	situation = this
 	trigger = {
-		target = {
-			NOT = {
-				has_modifier = mem_ancestors_grudge_more_workload
-			}
-		}
 	}
 	immediate = {
 		set_variable = {
@@ -4624,8 +4705,8 @@ situation_event = {
 # poor quality materials: do nothing ( lower quality), purify ( more upkeep), scrap it( reset situation)
 # sudden inspiration: experiments ( random slow or speed up), focus ( default speed but lower quality), fund experiemnt (energy cost, physics research, slow down)
 # in sync, good day: excellent ( +1 quality), higher! ( +2 quality but insane upkeep), study ( less progress, permanent buff)
-# workfever, dug too dip?, nuclear explosion esh: oberserve ( influence cost,engi research + devastion), deal will it ( energy cost, less devastion), do nothing (  devastion )
 # increasing demand: keep up(upkeep and production bonus, timed planet modifier),  train more ( more jobs from forge permanent), assure delivery (unity)
+# workfever, dug too dip?, nuclear explosion esh: oberserve ( influence cost,engi research + devastion), deal will it ( energy cost, less devastion), do nothing (  devastion )
 starbase_event = {
 	id = mem_ancestors_grudge.500
 	hide_window = yes

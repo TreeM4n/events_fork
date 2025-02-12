@@ -67,6 +67,56 @@ defined_text = {
 	default = mem_ancestors_grudge_common
 }
 
+defined_text = {
+	name = MemAncestorsHiveGetActive
+	random = no
+	text = {
+		trigger = {
+			AND = {
+				check_variable_arithmetic = {
+					which = this.mem_ancestors_grudge_smithing_quality_rolled
+					value >= 6
+				}
+				has_relic = r_mem_ancestors_grudge_pauldron
+			}
+		}
+		localization_key = mem_ancestors_grudge.45.exceptional_pauldron
+	}
+	text = {
+		trigger = {
+			AND = {
+				check_variable_arithmetic = {
+					which = this.mem_ancestors_grudge_smithing_quality_rolled
+					value >= 6
+				}
+				has_relic = r_mem_ancestors_grudge_ring
+			}
+		}
+		localization_key = mem_ancestors_grudge.45.exceptional_ring_hive
+	}
+	text = {
+		trigger = {
+			AND = {
+				check_variable_arithmetic = {
+					which = this.mem_ancestors_grudge_smithing_quality_rolled
+					value >= 6
+				}
+				has_relic = r_mem_ancestors_grudge_sword
+			}
+		}
+		localization_key = mem_ancestors_grudge.45.exceptional_sword
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = this.mem_ancestors_grudge_smithing_quality_rolled
+				value < 6
+			}
+		}
+		localization_key = mem_ancestors_grudge.46.tooltip:0 "§YIncrease the Quality§!
+	}
+	default = WEIRD
+}
 
 defined_text = {
 	name = MemGetPurity
@@ -119,7 +169,6 @@ defined_text = {
 	default = mem_ancestors_grudge_empty
 }
 
-# TODO rewrite this
 # this refers to the scripted effect "mem_ancestors_grudge_roll_for_relic_rarity" where the inline script takes care of rolling
 # for example:
 # inline_script = {
