@@ -79,22 +79,22 @@ mem_ancestors_grudge_anvil_site_hive = {
 	stage = {
 		difficulty = 2		# sealed hold
 		icon = GFX_archaeology_runes_E1
-		event = mem_ancestors_grudge.300
+		event = mem_ancestors_grudge.320
 	}
 	stage = {
 		difficulty = 3		# corpse corridors
 		icon = GFX_archaeology_runes_E2
-		event = mem_ancestors_grudge.305
+		event = mem_ancestors_grudge.325
 	}
 	stage = {
 		difficulty = 5		# sealed tomb
 		icon = GFX_archaeology_runes_E3
-		event = mem_ancestors_grudge.310
+		event = mem_ancestors_grudge.330
 	}
 	stage = {
-		difficulty = 6		# found anvil
+		difficulty = 6		# found cube
 		icon = GFX_archaeology_runes_E4
-		event = mem_ancestors_grudge.315
+		event = mem_ancestors_grudge.335
 	}
 	on_roll_failed = {
 		from = {
