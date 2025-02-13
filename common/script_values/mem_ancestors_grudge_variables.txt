@@ -54,6 +54,15 @@ mem_ancestors_grudge_situation_rarity_tooltip = {
 	max = 7.9 # so higher than that will be cut off
 }
 
+
+# determines purity of relics, tooltip
+mem_ancestors_grudge_situation_purity_tooltip = {
+	base = 1
+	add = modifier:mem_ancestors_grudge_rune_power_produces_mult
+	mult = 12.5 # weight of postive modifers
+	subtract = value:mem_ancestors_grudge_situation_rarity_tooltip 	
+}
+
 # overflow
 mem_ancestors_grudge_hoarder_overflow = {
 	base = 1

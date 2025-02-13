@@ -72,37 +72,31 @@ defined_text = {
 	random = no
 	text = {
 		trigger = {
-			AND = {
-				check_variable_arithmetic = {
-					which = this.mem_ancestors_grudge_smithing_quality_rolled
-					value >= 6
-				}
-				has_relic = r_mem_ancestors_grudge_pauldron
+			check_variable_arithmetic = {
+				which = this.mem_ancestors_grudge_smithing_quality_rolled
+				value >= 6
 			}
+			has_relic = r_mem_ancestors_grudge_pauldron
 		}
 		localization_key = mem_ancestors_grudge.45.exceptional_pauldron
 	}
 	text = {
 		trigger = {
-			AND = {
-				check_variable_arithmetic = {
-					which = this.mem_ancestors_grudge_smithing_quality_rolled
-					value >= 6
-				}
-				has_relic = r_mem_ancestors_grudge_ring
+			check_variable_arithmetic = {
+				which = this.mem_ancestors_grudge_smithing_quality_rolled
+				value >= 6
 			}
+			has_relic = r_mem_ancestors_grudge_ring
 		}
 		localization_key = mem_ancestors_grudge.45.exceptional_ring_hive
 	}
 	text = {
 		trigger = {
-			AND = {
-				check_variable_arithmetic = {
-					which = this.mem_ancestors_grudge_smithing_quality_rolled
-					value >= 6
-				}
-				has_relic = r_mem_ancestors_grudge_sword
+			check_variable_arithmetic = {
+				which = this.mem_ancestors_grudge_smithing_quality_rolled
+				value >= 6
 			}
+			has_relic = r_mem_ancestors_grudge_sword
 		}
 		localization_key = mem_ancestors_grudge.45.exceptional_sword
 	}
@@ -187,7 +181,7 @@ defined_text = {
 		trigger = {
 			check_variable_arithmetic = {
 				which = owner.value:mem_ancestors_grudge_situation_rarity_tooltip
-				value <= 7
+				value > 6
 			}
 		}
 		localization_key = mem_ancestors_grudge_legendary_situation
@@ -196,7 +190,7 @@ defined_text = {
 		trigger = {
 			check_variable_arithmetic = {
 				which = owner.value:mem_ancestors_grudge_situation_rarity_tooltip
-				value <= 6
+				value > 5
 			}
 		}
 		localization_key = mem_ancestors_grudge_masterful_situation
@@ -205,7 +199,7 @@ defined_text = {
 		trigger = {
 			check_variable_arithmetic = {
 				which = owner.value:mem_ancestors_grudge_situation_rarity_tooltip
-				value <= 5
+				value > 4
 			}
 		}
 		localization_key = mem_ancestors_grudge_exceptional_situation
@@ -214,7 +208,7 @@ defined_text = {
 		trigger = {
 			check_variable_arithmetic = {
 				which = owner.value:mem_ancestors_grudge_situation_rarity_tooltip
-				value <= 4
+				value > 3
 			}
 		}
 		localization_key = mem_ancestors_grudge_epic_situation
@@ -223,7 +217,7 @@ defined_text = {
 		trigger = {
 			check_variable_arithmetic = {
 				which = owner.value:mem_ancestors_grudge_situation_rarity_tooltip
-				value <= 3
+				value > 2
 			}
 		}
 		localization_key = mem_ancestors_grudge_rare_situation
@@ -232,12 +226,75 @@ defined_text = {
 		trigger = {
 			check_variable_arithmetic = {
 				which = owner.value:mem_ancestors_grudge_situation_rarity_tooltip
-				value <= 2
+				value > 1
 			}
 		}
 		localization_key = mem_ancestors_grudge_common_situation
 	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = owner.value:mem_ancestors_grudge_situation_rarity_tooltip
+				value <= 1
+			}
+		}
+		localization_key = mem_ancestors_grudge_mundane_situation
+	}
 	default = mem_ancestors_grudge_common_situation
+}
+
+
+# tbh i hvae no clue what the right numbers here are
+# i only guessed them based on some calculations in my head and i really dont wanna do the proper math here
+defined_text = {
+	name = MemGetSituationPurity
+	random = no
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = owner.value:mem_ancestors_grudge_situation_purity_tooltip
+				value > 5
+			}
+		}
+		localization_key = mem_ancestors_grudge_purity5
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = owner.value:mem_ancestors_grudge_situation_purity_tooltip
+				value > 3
+			}
+		}
+		localization_key = mem_ancestors_grudge_purity4
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = owner.value:mem_ancestors_grudge_situation_purity_tooltip
+				value > 0
+			}
+		}
+		localization_key = mem_ancestors_grudge_purity3
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = owner.value:mem_ancestors_grudge_situation_purity_tooltip
+				value > -3
+			}
+		}
+		localization_key = mem_ancestors_grudge_purity2
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = owner.value:mem_ancestors_grudge_situation_purity_tooltip
+				value < -3
+			}
+		}
+		localization_key = mem_ancestors_grudge_purity1
+	}
+	default = mem_ancestors_grudge_purity3
 }
 
 defined_text = {
@@ -303,7 +360,7 @@ definded_text = {
 		trigger = {
 			owner = {
 				NOT = {
-					has_origin = origin_mem_ancestors_grudge_hive					
+					has_origin = origin_mem_ancestors_grudge_hive
 				}
 			}
 		}

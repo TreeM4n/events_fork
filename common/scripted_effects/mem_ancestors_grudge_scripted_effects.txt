@@ -158,6 +158,10 @@ mem_ancestors_grudge_roll_for_relic_purity = {
 			which = mem_ancestors_grudge_smithing_chance_purity
 			value = owner.modifier:mem_ancestors_grudge_rune_power_produces_mult
 		}
+		multiply_variable = {	
+			which = mem_ancestors_grudge_smithing_chance_purity
+			value = 1.25
+		}
 		change_variable = {
 			which = mem_ancestors_grudge_smithing_chance_purity
 			value = 1
@@ -431,15 +435,9 @@ mem_ancestors_grudge_roll_for_relic_rarity = {
 		}
 		else_if = {
 			limit = {
-				OR = {
-					check_variable_arithmetic = {
-						which = owner.mem_ancestors_grudge_smithing_quality
-						value <= 7
-					}
-					check_variable_arithmetic = {
-						which = owner.mem_ancestors_grudge_smithing_quality
-						value > 7
-					}
+				check_variable_arithmetic = {
+					which = owner.mem_ancestors_grudge_smithing_quality
+					value > 6
 				}
 			}
 			inline_script = {

@@ -8,11 +8,5 @@ quests locked by techs and to the smithing situation
 chitin plating: food upkeep for more alloys or artifact power
 dragon event for endgame smithing
 
-- machine version: special protocol traits for ruler: "rune patterns" scale with rune strengh
-- normal version: special system starbase with modifiers
-
 
 - mem vazuran integration
-
-- rewrite concepts for rune relics to include total values and be more straightforward
-- random modifer for situation, to get earlier better relics

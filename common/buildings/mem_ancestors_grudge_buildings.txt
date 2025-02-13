@@ -636,8 +636,7 @@ building_mem_ancestors_grudge_hoarder_depot = {
 			}
 		}
 		pop_growth_speed = 0.03
-		planet_pop_assembly_mult = 0.02
-		#planet_jobs_upkeep_mult = 0.02
+		planet_pop_assembly_organic_mult = 0.02
 		mult = owner.value:mem_ancestors_grudge_hoarder_building
 	}
 	triggered_country_modifier = {
