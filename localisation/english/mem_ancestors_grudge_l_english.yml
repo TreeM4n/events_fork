@@ -304,7 +304,7 @@
  r_mem_ancestors_grudge_anvil_effect_tt_active:0 "§RDranir vowed to never swing a hammer on his anvil again!§!"
  r_mem_ancestors_grudge_modern_art:0 "Runix Cube"
  r_mem_ancestors_grudge_modern_art_desc:0 "This interesting piece of art was created by a single artifact smith. Covered with runic inscriptions, but devoid of any practical use, it is a rather odd artifact..."
- r_mem_ancestors_grudge_cube_effect_tt_passive:0 "§LImprovised§!"
+ r_mem_ancestors_grudge_cube_effect_tt_passive:0 "§dUnique§!"
  r_mem_ancestors_grudge_cube_effect_tt_active:0 "Convert all your £minor_artifacts£ §Y$minor_artifacts$§! to £unity£ §Y$unity$§!"
  
  mem_ancestors_grudge_relic_triumph_cooldown:0 "\n$relic_activation_cooldown$: £time£ §Y360§!"
@@ -557,6 +557,7 @@
  mem_ancestors_grudge.27.desc:0 "§LMy name ... Rhaegal. You have .. things .. I require. I offer .. cooperation ... for a tithe. Help me .. repopulate.\n\nWhat is your answer: life or death?§!"
  mem_ancestors_grudge.27.a:0 "Let us live together."
  mem_ancestors_grudge_dragon_roost:0 "Dragon Roost"
+ mem_ancestors_grudge_dragon_roost_desc:0 "A dragon has chosen this world as its place to rest. Naturally this prevents any operation in the immediate area and diviancy is kept in check, lest the dragon might get hungry."
  mem_ancestors_grudge.27.b:0 "Death, but yours!"
  mem_ancestors_grudge.27.b.tt:0 "§YThe Dragon will be angry§!"
 
@@ -565,7 +566,7 @@
  mem_ancestors_grudge.28.desc:0 "How the mighty have fallen. In the end it was just another creature to be slain."
 
  mem_ancestors_grudge.29.name:0 "Dragon Fever"
- mem_ancestors_grudge.29.desc:0 "The encounter with the hoarding dragon has inspired our scientist. The knowledge and data acquired can be applied for our own dragon hatcheries. Luckily the dragon in our system provided us with enough tissue sample to begin theorizing."
+ mem_ancestors_grudge.29.desc:0 "The encounter with the hoarding dragon has inspired our brain drones. The knowledge and data acquired can be applied for our own dragon hatcheries. Luckily, the dragon in our system provided us with enough tissue samples to begin theorizing."
  mem_ancestors_grudge.29.a:0 "Give it a try!"
 
  mem_ancestors_grudge.41.name:0 "Unusual Findings"
