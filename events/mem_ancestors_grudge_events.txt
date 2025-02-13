@@ -5,7 +5,6 @@ namespace = mem_ancestors_grudge
 # tr33 & Malthus
 #
 ###########
-
 #TODO. find out why sometimes leader dont get the trait ??
 ############################################################################################################
 # Setup Events
@@ -721,7 +720,7 @@ country_event = {
 			}
 			else = {
 				add_deposit = d_mem_ancestors_grudge_boulder
-			}			
+			}
 			while = {
 				count = 8
 				add_building = building_mem_ancestors_grudge_ruins
@@ -1925,7 +1924,6 @@ planet_event = {
 			remove_deposit = d_mem_ancestors_grudge_boulder
 			add_deposit = d_mem_ancestors_grudge_boulder_park
 		}
-		
 	}
 }
 
@@ -3255,7 +3253,7 @@ situation_event = {
 			}
 		}
 		text = mem_ancestors_grudge.105.desc_hive
-	}	
+	}
 	picture = GFX_evt_obelisk_tourists
 	show_sound = event_activating_unknown_technology
 	location = target
@@ -3337,7 +3335,7 @@ situation_event = {
 			owner = {
 				OR = {
 					gets_mem_ancestors_grudge_robot_text = yes
-					gets_mem_ancestors_grudge_machine_text = yes	
+					gets_mem_ancestors_grudge_machine_text = yes
 				}
 			}
 		}
@@ -3401,7 +3399,6 @@ situation_event = {
 	}
 }
 
-
 # random bomb
 situation_event = {
 	id = mem_ancestors_grudge.120
@@ -3442,7 +3439,6 @@ situation_event = {
 	location = target
 	is_triggered_only = yes
 	situation = this
-
 	trigger = {
 		owner = {
 			has_origin = origin_mem_ancestors_grudge_hive
@@ -4668,7 +4664,6 @@ situation_event = {
 	trigger = {
 	}
 	immediate = {
-		
 	}
 	option = {
 		name = mem_ancestors_grudge.480.a
@@ -4753,11 +4748,9 @@ situation_event = {
 	}
 	option = {
 		name = mem_ancestors_grudge.485.a
-		
 		owner = {
 			mem_ancestors_grudge_decrease_relic_roll_quality = yes
 		}
-		
 	}
 	option = {
 		name = mem_ancestors_grudge.485.b
@@ -4825,11 +4818,43 @@ starbase_event = {
 					create_ship_design = {
 						design = mem_ancestors_grudge_dragonling
 					}
-					create_ship = {
-						design = last_created_design
-						name = "NAME_Dragonling"
-						prefix = no
-						upgradable = no
+					random_list = {
+						80 = {
+							create_ship = {
+								design = last_created_design
+								name = "NAME_Dragonling"
+								prefix = no
+								upgradable = no
+								rarity = common
+							}
+						}
+						20 = {
+							create_ship = {
+								design = last_created_design
+								name = "NAME_Dragonling"
+								prefix = no
+								upgradable = no
+								rarity = rare
+							}
+						}
+						10 = {
+							create_ship = {
+								design = last_created_design
+								name = "NAME_Dragonling"
+								prefix = no
+								upgradable = no
+								rarity = epic
+							}
+						}
+						5 = {
+							create_ship = {
+								design = last_created_design
+								name = "NAME_Dragonling"
+								prefix = no
+								upgradable = no
+								rarity = exceptional
+							}
+						}
 					}
 					set_location = owner.capital_scope
 				}

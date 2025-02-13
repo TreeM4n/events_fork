@@ -304,7 +304,7 @@
  r_mem_ancestors_grudge_anvil_effect_tt_active:0 "§RDranir vowed to never swing a hammer on his anvil again!§!"
  r_mem_ancestors_grudge_modern_art:0 "Runix Cube"
  r_mem_ancestors_grudge_modern_art_desc:0 "This interesting piece of art was created by a single artifact smith. Covered with runic inscriptions, but devoid of any practical use, it is a rather odd artifact..."
- r_mem_ancestors_grudge_cube_effect_tt_passive:0 "§dUnique§!"
+ r_mem_ancestors_grudge_cube_effect_tt_passive:0 "Quality: §dUnique§!\nPurity: §lSpecial§!"
  r_mem_ancestors_grudge_cube_effect_tt_active:0 "Convert all your £minor_artifacts£ §Y$minor_artifacts$§! to £unity£ §Y$unity$§!"
  
  mem_ancestors_grudge_relic_triumph_cooldown:0 "\n$relic_activation_cooldown$: £time£ §Y360§!"

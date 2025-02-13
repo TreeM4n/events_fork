@@ -384,19 +384,19 @@ r_mem_ancestors_grudge_modern_art = {
 		custom_tooltip = r_mem_ancestors_grudge_cube_effect_tt_active
 		hidden_effect = {
 			set_variable = {
-				which = mem_ancestors_grudge_zro_amount
+				which = mem_ancestors_grudge_ma_amount
 				value = 0
 			}
 			export_resource_stockpile_to_variable = {
 				resource = minor_artifacts
-				variable = mem_ancestors_grudge_zro_amount
+				variable = mem_ancestors_grudge_ma_amount
 			}
 			if = {
 				limit = {
 					mid_game_years_passed >= 0
 				}
 				multiply_variable = {
-					which = mem_ancestors_grudge_zro_amount
+					which = mem_ancestors_grudge_ma_amount
 					value = 2
 				}
 			}
@@ -405,19 +405,19 @@ r_mem_ancestors_grudge_modern_art = {
 					end_game_years_passed >= 0
 				}
 				multiply_variable = {
-					which = mem_ancestors_grudge_zro_amount
+					which = mem_ancestors_grudge_ma_amount
 					value = 2
 				}
 			}
 			add_resource = {
 				minor_artifacts = -1
-				mult = mem_ancestors_grudge_zro_amount
+				mult = mem_ancestors_grudge_ma_amount
 			}
 			add_resource = {
 				unity = 10
-				mult = mem_ancestors_grudge_zro_amount
+				mult = mem_ancestors_grudge_ma_amount
 			}
-			clear_variable = mem_ancestors_grudge_zro_amount
+			clear_variable = mem_ancestors_grudge_ma_amount
 			change_variable = {
 				which = mem_ancestors_grudge_activated_relics_counter
 				value = 1
