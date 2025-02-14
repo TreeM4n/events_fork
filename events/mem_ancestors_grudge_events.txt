@@ -12,7 +12,11 @@ namespace = mem_ancestors_grudge
 # mem_ancestors_grudge.999  	|	test event / give access to various stuff
 # mem_ancestors_grudge.998  	|	test all situation events. crafting
 # mem_ancestors_grudge.997  	|	test all situation events. restoration
-# mem_ancestors_grudge.1	  	|	nromal begin game setup (forge + arch nemesis)
+# mem_ancestors_grudge.996  	|	debug delete scoped situation
+# mem_ancestors_grudge.995  	|	debug fix species non modifiable
+# mem_ancestors_grudge.1	  	|	origin begin game setup 
+# mem_ancestors_grudge.2	  	|	arch nemesis begin game setup 
+# mem_ancestors_grudge.3	  	|	arch nemesis transform ruler to zrawn 
 ############################################################################################################
 # Story Events
 ############################################################################################################
@@ -24,12 +28,19 @@ namespace = mem_ancestors_grudge
 # mem_ancestors_grudge.20	  	|	situation event stage 3
 # mem_ancestors_grudge.25	  	|	situation event stage 4
 # mem_ancestors_grudge.26	  	|	situation event stage 5 final
+# mem_ancestors_grudge.27	  	|	situation event stage 5 hive # A hissy old dragon appears!
+# mem_ancestors_grudge.28	  	|	dragon got killed, reward killer
+# mem_ancestors_grudge.29	  	|	give dragon voidlure
 # mem_ancestors_grudge.30	  	|	hidden repaired/cleareed somethign
 # mem_ancestors_grudge.35	  	|	on upgrade forge: make it an ecu world
 # mem_ancestors_grudge.40	  	|	on upgrade forge: learn to forge
+# mem_ancestors_grudge.41	  	|	on upgrade forge: hive give relic choice
 ## crafting situation
 # mem_ancestors_grudge.50	  	|	finished crafting situation/ randomize relic
+# mem_ancestors_grudge.51	  	|	finished crafting situation/ randomize relic but hide event window
+# mem_ancestors_grudge.52	  	|	follow up finished crafting first tiem robots/ give factory
 # mem_ancestors_grudge.45	  	|	activated crafted relic
+# mem_ancestors_grudge.46	  	|	activated  relic hive upgrade
 # mem_ancestors_grudge.55	  	|	on communication: arch nemesis 
 # mem_ancestors_grudge.60	  	|	on country destroyed: we arch nemesis hidden
 # mem_ancestors_grudge.75	  	|	on country destroyed: we arch nemesis 
@@ -79,6 +90,20 @@ namespace = mem_ancestors_grudge
 # mem_ancestors_grudge.448	  	|	diggy hole success 3
 # mem_ancestors_grudge.449	  	|	diggy hole fail
 # mem_ancestors_grudge.450		|	diggy hole hidden event to choose 446-449
+# mem_ancestors_grudge.455		|	smiths need more material
+# mem_ancestors_grudge.460		|	bad rocks got in
+# mem_ancestors_grudge.465		|	inspired smihts
+# mem_ancestors_grudge.470		|	good workday?!
+# mem_ancestors_grudge.475		|	high demand
+# mem_ancestors_grudge.480		|	ancient generators failing
+# mem_ancestors_grudge.485		|	failed big time
+############################################################################################################
+# extra hive events
+############################################################################################################
+# mem_ancestors_grudge.500		|	dragon voidlure
+# mem_ancestors_grudge.505		|	on capital invasion: higher chance to steal relic
+# mem_ancestors_grudge.510		|	on  on relic acquried: give unity to hive ,,, yes-yes shiny-sparkling trophy-thing-thing
+
 namespace = mem_ancestors_grudge
 country_event = {
 	id = mem_ancestors_grudge.999
@@ -750,7 +775,7 @@ country_event = {
 }
 
 # setup 
-# fired at gamestart to setup the habitat
+# arch nemesis begin game setup 
 event = {
 	id = mem_ancestors_grudge.2
 	hide_window = yes
@@ -918,7 +943,7 @@ event = {
 		}
 	}
 }
-
+# arch nemesis transform ruler to zrawn 
 country_event = {
 	id = mem_ancestors_grudge.3
 	title = WEIRD
@@ -4787,6 +4812,8 @@ situation_event = {
 # in sync, good day: excellent ( +1 quality), higher! ( +2 quality but insane upkeep), study ( less progress, permanent buff)
 # increasing demand: keep up(upkeep and production bonus, timed planet modifier),  train more ( more jobs from forge permanent), assure delivery (unity)
 # workfever, dug too dip?, nuclear explosion esh: oberserve ( influence cost,engi research + devastion), deal will it ( energy cost, less devastion), do nothing (  devastion )
+
+# dragon voidlure
 starbase_event = {
 	id = mem_ancestors_grudge.500
 	hide_window = yes
@@ -4918,25 +4945,22 @@ country_event = {
 		random_list = {
 			100 = {
 			}
-			5 = {
+			5 = {				
 				modifier = {
-					factor = 15
-					has_valid_civic = civic_barbaric_despoilers
-				}
-				modifier = {
-					factor = 6.67					# 50% chance of success
-					any_war = {
-						any_attacker = {
-							is_same_value = root
-						}
-						any_defender = {
-							is_same_value = from
-						}
-						using_war_goal = {
-							type = wg_plunder
-							owner = attacker
-						}
-					}
+					factor = 20					# 50% chance of success
+					# we cant plunder so just increase it
+					# any_war = {
+					# 	any_attacker = {
+					# 		is_same_value = root
+					# 	}
+					# 	any_defender = {
+					# 		is_same_value = from
+					# 	}
+					# 	# using_war_goal = {
+					# 	# 	type = wg_plunder
+					# 	# 	owner = attacker
+					# 	# }
+					# }
 				}
 				country_event = {
 					id = ancrel.6500

@@ -1,7 +1,7 @@
 ###########
 # mem_ancestors_grudge
 # made by:
-# tr33
+# tr33 & Malthus
 #
 ###########
 # Start of specialized robot traits
