@@ -22,10 +22,8 @@ part = {
 part = {
 	location = 0
 	localization = "START_SCREEN_MEM_ANCESTORS_GRUDGE_MACHINES"
-	trigger = {
-		
-			has_origin = origin_mem_ancestors_grudge_machines
-		
+	trigger = {		
+		has_origin = origin_mem_ancestors_grudge_machines		
 		NOR = {
 			has_civic = civic_machine_assimilator
 			has_civic = civic_machine_servitor
@@ -37,10 +35,8 @@ part = {
 	location = 0
 	localization = "START_SCREEN_MEM_ANCESTORS_GRUDGE_MACHINES_RS"
 	trigger = {
-		AND = {
-			has_origin = origin_mem_ancestors_grudge_machines
-			has_civic = civic_machine_servitor
-		}
+		has_origin = origin_mem_ancestors_grudge_machines
+		has_civic = civic_machine_servitor
 	}
 }
 
@@ -48,10 +44,8 @@ part = {
 	location = 0
 	localization = "START_SCREEN_MEM_ANCESTORS_GRUDGE_MACHINES_DA"
 	trigger = {
-		AND = {
-			has_origin = origin_mem_ancestors_grudge_machines
-			has_civic = civic_machine_assimilator
-		}
+		has_origin = origin_mem_ancestors_grudge_machines
+		has_civic = civic_machine_assimilator
 	}
 }
 
