@@ -1,0 +1,16 @@
+pc_mem_ceaseless_star = {
+	entity = "shroud_creature_corrupted_01_entity"
+	entity_scale = 12.0
+	picture = "pc_rift_star"
+	icon = GFX_planet_type_rift_star
+	
+	star = yes
+	star_gfx = no
+	astral_rift_gfx = yes
+
+	spawn_odds = 0
+	chance_of_ring = 0
+	
+	
+	colonizable = no
+}

@@ -1,0 +1,189 @@
+
+# #########################
+# # mem_frontier_sector SPECIALIST #
+# #########################
+
+mem_frontier_sector_1_modifier = {
+	main_perk = yes
+	subject_modifier = {
+		station_researchers_produces_mult = 0.25
+		station_gatherers_produces_mult = 0.25	
+		#description = mem_frontier_sector_1_modifier_desc
+	}
+
+	# For setting the room background
+	activate_effect = {
+		target = {
+			store_country_backup_data = {
+				flag = no
+				room = yes
+				name = no
+				ethics = no
+				government = no
+			}
+			room_name_override = ""
+		}
+	}
+
+	# Restore room background back to normal
+	deactivate_effect = {
+		target = {
+			restore_country_backup_data = yes
+		}
+	}
+}
+
+mem_frontier_sector_1_penalties = {
+	main_perk = yes
+	subject_modifier = {
+		pop_growth_speed = -0.3	
+		pop_ethics_shift_speed_mult = 0.3		
+	}
+}
+
+mem_frontier_sector_1_overlord_modifier = {
+	icon = "GFX_specialist_perk_mem_frontier_sector_1_overlord_modifier"
+	overlord_modifier = {
+		planet_jobs_upkeep_mult = -0.05
+		#description = mem_frontier_sector_1_overlord_modifier_desc
+	}
+}
+
+mem_frontier_sector_1_neighbor_bonuses = {
+	icon = "GFX_specialist_perk_mem_frontier_sector_1_neighbor_bonuses"
+
+	subject_modifier = {
+		ship_friendly_territory_fire_rate_mult = 0.2
+	}
+
+	overlord_modifier = {
+		ship_friendly_territory_fire_rate_mult = 0.1
+	}
+
+# 	desc = {
+# 		#description = mem_frontier_sector_1_neighbor_bonuses_desc
+# 	}
+}
+
+
+
+mem_frontier_sector_1_discovery = {
+	icon = "GFX_specialist_perk_mem_frontier_sector_1_discovery"
+	subject_modifier = {
+		country_starbase_capacity_add = 2
+	}
+	# desc = {
+	# 	#description = mem_frontier_sector_1_discovery_desc
+	# }
+}
+
+mem_frontier_sector_2_modifier = {
+	main_perk = yes
+	subject_modifier = {
+		station_researchers_produces_mult = 0.5
+		station_gatherers_produces_mult = 0.5	
+	
+		#description = mem_frontier_sector_2_modifier_desc
+	}
+}
+
+mem_frontier_sector_2_penalties = {
+	main_perk = yes
+	subject_modifier = {
+		pop_growth_speed = -0.5
+		pop_ethics_shift_speed_mult = 0.5
+	}
+}
+
+mem_frontier_sector_2_leaders = {
+	icon = "GFX_specialist_perk_mem_frontier_sector_2_leaders"
+	subject_modifier = {
+		starbase_defensive_war_ship_build_speed_mult = 0.5
+		monthly_loyalty = 1
+	}
+
+	# desc = {
+	# 	#description = mem_frontier_sector_2_leaders_desc
+	# }
+}
+
+mem_frontier_sector_2_traits = {
+	icon = "GFX_specialist_perk_mem_frontier_sector_2_traits"
+	overlord_modifier = {
+		ship_speed_mult = 0.2
+	}
+	subject_modifier = {
+		ship_speed_mult = 0.1
+	}
+	# desc = {
+	# 	#description = mem_frontier_sector_2_traits_desc
+	# }
+}
+
+mem_frontier_sector_2_discovery = {
+	icon = "GFX_specialist_perk_mem_frontier_sector_2_discovery"
+	# desc = {
+	# 	#description = mem_frontier_sector_2_discovery_desc
+	# }
+	overlord_modifier = {
+		empire_size_add = -20
+	}
+}
+
+mem_frontier_sector_3_modifier = {
+	main_perk = yes
+	subject_modifier = {
+		station_researchers_produces_mult = 0.75
+		station_gatherers_produces_mult = 0.75
+		
+		#description = mem_frontier_sector_3_modifier_desc
+	}
+}
+
+mem_frontier_sector_3_penalties = {
+	main_perk = yes
+	subject_modifier = {
+		pop_growth_speed = -0.7
+		pop_ethics_shift_speed_mult = 0.7
+	}
+}
+
+mem_frontier_sector_3_discovery = {
+	icon = "GFX_specialist_perk_mem_frontier_sector_3_discovery"
+	# desc = {
+	# 	#description = mem_frontier_sector_3_discovery_desc
+	# }
+
+	subject_modifier = {
+		tradition_cost_empire_size_mult = -0.3
+	}
+}
+
+mem_frontier_sector_3_arctrellis = {
+	icon = "GFX_specialist_perk_mem_frontier_sector_3_arctrellis"
+
+	# desc = {
+	# 	#description = mem_frontier_sector_3_arctrellis_desc
+	# }
+
+	overlord_modifier = {
+		divided_patrongage_max_subjects = 1
+	}
+}
+
+
+mem_frontier_sector_3_tier3_3 = {
+	icon = "GFX_specialist_perk_mem_frontier_sector_3_tier3_3"
+
+	# desc = {
+	# 	#description = mem_frontier_sector_3_tier3_3_desc
+	# }
+
+	subject_modifier = {
+		research_sharing_mult = 1
+	}
+
+	overlord_modifier = {
+		research_sharing_mult = 0.2
+	}
+}

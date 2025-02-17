@@ -1,0 +1,43 @@
+special_project = {
+	key = "MEM_CEASELESS_PROBE_SIGNATURE_PROJECT"
+	#cost = 0
+	days_to_research = 360
+	event_chain = mem_ceaseless_lost_probes
+	picture = GFX_evt_astral_rift_advisor_exploding
+	icon = "gfx/interface/icons/situation_log/situation_log_projectile.dds"	# TODO
+	event_scope = ship_event
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	on_success = {
+		random_list = {
+			# random list for all events depending on some features
+			0 = {
+				ship_event = {
+					id = mem_ceaseless.6
+				}
+				modifier = {
+					from = {
+						any_system_colony = {
+							exists = owner
+							owner = {
+								is_pre_industrial = yes
+							}
+						}
+					}
+					add = 5
+				}
+			}
+		}
+	}
+	# abort_trigger = {
+	# 	owner = {
+	# 		NOT = {
+	# 			any_situation = {
+	# 				is_situation_type = situation_last_gift
+	# 			}
+	# 		}
+	# 	}
+	# }
+}

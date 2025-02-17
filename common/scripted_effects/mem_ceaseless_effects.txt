@@ -1,0 +1,124 @@
+# planet root scope
+mem_ceaseless_give_or_create_vassal = {
+	owner = {
+		capital_scope = {
+			if = {
+				limit = {
+					num_pops > 10
+				}
+				while = {
+					count = 5
+					random_owned_pop = {
+						resettle_pop = {
+							pop = THIS
+							planet = root
+						}
+					}
+				}
+			}
+		}
+	}
+	solar_system = {
+		## give to existing vassal in 2 distance reach
+		if = {
+			limit = {
+				# OR = {
+				# 	any_neighbor_system = {
+				# 		exists = owner
+				# 		owner = {
+				# 			has_origin = origin_mem_ceaseless_gaze_vassal
+				# 		}
+				# 	}
+				# 	any_neighbor_system = {
+				# 		any_neighbor_system = {
+				# 			exists = owner
+				# 			owner = {
+				# 				has_origin = origin_mem_ceaseless_gaze_vassal
+				# 			}
+				# 		}
+				# 	}
+				# }
+				any_system = {
+					exists = owner
+					owner = {
+						has_origin = origin_mem_ceaseless_gaze_vassal
+					}
+					root.owner = {
+						has_subject = from.owner
+					}
+					distance = {
+						source = root
+						max_distance = 10
+						type = hyperlane
+					}
+				}
+			}
+			random_system = {
+				limit = {
+					exists = owner
+					owner = {
+						has_origin = origin_mem_ceaseless_gaze_vassal
+					}
+					root.owner = {
+						has_subject = from.owner
+					}
+					distance = {
+						source = root
+						max_distance = 10
+						type = hyperlane
+					}
+				}
+				owner = {
+					save_event_target_as = mem_ceaseless_give_vassal
+				}
+			}
+		}
+		### create new vassal
+		else = {
+			create_country = {
+				name = RANDOM
+				civics = RANDOM
+				species = root.owner.owner_main_species
+				effect = {
+					set_origin = origin_mem_ceaseless_gaze_vassal
+					save_event_target_as = mem_ceaseless_give_vassal
+					#copy_ethos_and_authority = root.owner 
+					copy_techs_from = {
+						target = root.owner
+					}
+				}
+				ignore_initial_colony_error = yes
+			}
+			last_created_country = {
+				if = {
+					limit = { 
+						has_civic = civic_fanatic_purifiers
+					}
+					force_remove_civic = civic_fanatic_purifiers
+				}
+				set_subject_of = {
+					who = root.owner
+					allow_instant_negotiation = yes
+					preset = preset_scholarium_mean_01					# TODO preset
+				}
+				establish_communications_no_message = root.owner
+				add_resource = {
+					minerals = 2000
+					energy = 5000
+					influence = 200
+					alloys = 500
+					consumer_goods = 500
+					food = 1000
+				}
+				# TODO add  modifier for pops demoting
+			}
+		}
+		root.starbase = {
+			set_owner = event_target:mem_ceaseless_give_vassal
+		}
+		root = {
+			#add_colony_progress = 100
+			set_owner = event_target:mem_ceaseless_give_vassal
+		}
+	}
+}

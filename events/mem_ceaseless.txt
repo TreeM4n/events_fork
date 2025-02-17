@@ -1,0 +1,306 @@
+# Continued events for Surveyor
+namespace = mem_ceaseless
+# Origin event setup wormhole system
+country_event = {
+	id = mem_ceaseless.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_origin = origin_mem_ceaseless_gaze
+	}
+	immediate = {
+		capital_scope = {
+			solar_system = {
+				spawn_system = {
+					initializer = mem_mirror_hall_system
+					hyperlane = no
+				}
+			}
+			last_created_system = {
+				add_hyperlane = {
+					from = THIS
+					to = root.capital_scope.solar_system
+				}
+			}
+			change_planet_size = 21			# mod compatibility thing
+		}
+		give_technology = {
+			tech = tech_wormhole_stabilization
+			message = no
+		}
+		while = {
+			count = 4
+			random_system = {
+				limit = {
+					NOR = {
+						has_star_flag = empire_home_system
+						has_star_flag = empire_cluster
+						exists = owner
+					}
+				}
+				set_star_flag = mem_ceaseless_wormhole_target
+				spawn_megastructure = {
+					type = mem_ceaseless_base
+					orbit_distance = 200
+					# orbit_angle = {
+					# 	min = 0
+					# 	max = 360
+					# }
+				}
+				# TODO make this effect for probe locs
+				# random_megastructure = {
+				# 	limit = {
+				# 		is_megastructure_type = mem_ceaseless_base
+				# 	}
+				# 	save_event_target_as = mem_ceaseless_base
+				# }
+				# activate_gateway = event_target:mem_ceaseless_base
+			}
+		}
+	}
+}
+
+# check for mem_ceaseless_colonizer ship
+planet_event = {
+	id = mem_ceaseless.3
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		owner = {
+			has_origin = origin_mem_ceaseless_gaze
+		}
+		has_planet_flag = mem_ceaseless_colonizer_start
+		# NOR = {
+		# 	is_same_value = owner.capital_scope
+		# 	exists = sector
+		# }
+	}
+	immediate = {
+		owner = {
+			save_event_target_as = future_overlrod
+			capital_scope = {
+				if = {
+					limit = {
+						num_pops > 10
+					}
+					while = {
+						count = 5
+						random_owned_pop = {
+							resettle_pop = {
+								pop = THIS
+								planet = root
+							}
+						}
+					}
+				}
+			}
+		}
+		add_district = district_city
+		if = {
+			limit = {
+				any_system = {
+					exists = owner
+					owner = {
+						has_origin = origin_mem_ceaseless_gaze_vassal
+					}
+					event_target:future_overlrod = {
+						has_subject = prevprev.owner
+					}
+					distance = {
+						source = root
+						max_jumps = 10
+						type = hyperlane
+					}
+				}
+			}
+			random_system = {
+				limit = {
+					exists = owner
+					owner = {
+						has_origin = origin_mem_ceaseless_gaze_vassal
+					}
+					event_target:future_overlrod = {
+						has_subject = prevprev.owner
+					}
+					distance = {
+						source = root
+						max_jumps = 10
+						type = hyperlane
+					}
+				}
+				owner = {
+					save_event_target_as = mem_ceaseless_give_vassal
+				}
+			}
+		}
+		### create new vassal
+		else = {
+			create_country = {
+				name = RANDOM
+				civics = RANDOM
+				species = event_target:future_overlrod.owner_main_species
+				effect = {
+					set_origin = origin_mem_ceaseless_gaze_vassal
+					save_event_target_as = mem_ceaseless_give_vassal
+					#copy_ethos_and_authority = root.owner 
+					copy_techs_from = {
+						target = event_target:future_overlrod
+					}
+				}
+				ignore_initial_colony_error = yes
+			}
+			last_created_country = {
+				if = {
+					limit = {
+						has_civic = civic_fanatic_purifiers
+					}
+					force_remove_civic = civic_fanatic_purifiers
+				}
+				establish_communications_no_message = event_target:future_overlrod
+				if = {
+					limit = {
+						host_has_dlc = "Overlord"
+					}
+					set_subject_of = {
+						who = event_target:future_overlrod.owner
+						allow_instant_negotiation = yes
+						preset = preset_specialist_mem_frontier_sector
+					}
+				}
+				else = {
+					set_subject_of = {
+						who = event_target:future_overlrod.owner
+						allow_instant_negotiation = yes
+						preset = preset_release_sector
+					}
+				}
+				#establish_communications_no_message = root.owner
+				add_resource = {
+					minerals = 2000
+					energy = 5000
+					influence = 200
+					alloys = 500
+					consumer_goods = 500
+					food = 1000
+				}
+				save_event_target_as = future_subject
+				# TODO add  modifier for pops demoting
+			}
+			event_target:future_overlrod = {
+				add_intel = {
+					who = event_target:future_subject
+					amount = 100
+				}
+			}
+		}
+		starbase = {
+			set_owner = event_target:mem_ceaseless_give_vassal
+		}
+		#add_colony_progress = 100
+		set_owner = event_target:mem_ceaseless_give_vassal
+		remove_planet_flag = mem_ceaseless_colonizer_start
+	}
+}
+
+# check for mem_ceaseless_colonizer ship
+planet_event = {
+	id = mem_ceaseless.4
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		exists = FROM
+		FROM = {
+			is_ship_size = mem_ceaseless_colonizer
+		}
+		#is_artificial = no
+	}
+	immediate = {
+		set_planet_flag = mem_ceaseless_colonizer_start
+	}
+}
+
+country_event = {
+	id = mem_ceaseless.999
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_origin = origin_mem_ceaseless_gaze
+	}
+	immediate = {
+		random_system = {
+			limit = {
+				NOT = {
+					exists = owner
+				}
+				any_system_planet = {
+					is_colonizable = yes
+				}
+			}
+			create_starbase = {
+				size = starbase_outpost
+			}
+			random_system_planet = {
+				limit = {
+					is_colonizable = yes
+				}
+				set_planet_flag = mem_ceaseless_colonizer_start
+				create_colony = {
+					owner = root
+				}
+				planet_event = {
+					id = mem_ceaseless.3
+				}
+			}
+		}
+	}
+}
+# on enter system, %chance for probe to died here
+ship_event = {
+	id = mem_ceaseless.5
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		exists = owner
+		owner = {
+			has_origin = origin_mem_ceaseless_gaze
+		}
+	}
+	immediate = {
+		from = {
+			random_list = {
+				5 = {
+					root.owner = {
+						create_message = {
+							type = MESSAGE_MEM_CEASELESS_FOUND_PROBE_SIGNATURE
+							days = 30
+						}
+					}
+					random_system_planet = {
+						root.owner = {
+							enable_special_project = {
+								name = MEM_SURVEYOR_HELP_ENGINEERING
+							}
+						}
+					}
+				}
+				95 = {
+
+				}
+
+			}
+		}
+	}
+}
+#################################### all random events
+# random event
+ship_event = {
+	id = mem_ceaseless.6
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		
+	}
+	immediate = {
+		
+	}
+}
