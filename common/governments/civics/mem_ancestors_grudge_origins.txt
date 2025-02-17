@@ -38,7 +38,7 @@ origin_mem_ancestors_grudge = {
 		mem_ancestors_grudge_rune_power_produces_mult = 0.15
 	}
 	random_weight = {
-		base = 5
+		base = 3
 		modifier = {
 			any_playable_country = {
 				is_mem_runesmith = yes
@@ -97,7 +97,7 @@ origin_mem_ancestors_grudge_machines = {
 		country_resource_max_minor_artifacts_add = 10000
 	}
 	random_weight = {
-		base = 5
+		base = 3
 		modifier = {
 			any_playable_country = {
 				is_mem_runesmith = yes
@@ -159,7 +159,7 @@ origin_mem_ancestors_grudge_hive = {
 		#planet_jobs_minor_artifacts_produces_mult = -0.5
 	}
 	random_weight = {
-		base = 5
+		base = 3
 		modifier = {
 			any_playable_country = {
 				is_mem_runesmith = yes

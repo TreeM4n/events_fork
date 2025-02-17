@@ -358,10 +358,22 @@ building_mem_ancestors_grudge_forge_4 = {
 	category = resource
 	#show only for upgrades not for the building
 	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_mem_runesmith = yes
+			}
+		}
 		weapon_archaeotech_weapon_damage_mult = 1
 		mult = owner.modifier:mem_ancestors_grudge_artifact_power_produces_mult
 	}
 	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_mem_runesmith = yes
+			}
+		}
 		category_archaeostudies_research_speed_mult = 1
 		mult = owner.modifier:mem_ancestors_grudge_rune_power_produces_mult
 	}
@@ -405,6 +417,12 @@ building_mem_ancestors_grudge_forge_4 = {
 		script = mem_ancestors_grudge/building_forge_1
 	}
 	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_mem_runesmith = yes
+			}
+		}
 		text = building_mem_ancestors_grudge_forge_empireeffect_tt
 	}
 	ai_weight = {
@@ -531,6 +549,7 @@ building_mem_ancestors_grudge_hoarder_depot = {
 			has_modifier = resort_colony
 			has_modifier = slave_colony
 		}
+		exists = from
 		owner = {
 			mem_ancestors_grudge_is_hoarder = yes
 		}
@@ -544,11 +563,13 @@ building_mem_ancestors_grudge_hoarder_depot = {
 		}
 	}
 	destroy_trigger = {
-		NOT = {
-			exists = owner
-		}
-		owner = {
-			mem_ancestors_grudge_is_hoarder = no
+		OR = {
+			NOT = {
+				exists = owner
+			}
+			owner = {
+				mem_ancestors_grudge_is_hoarder = no
+			}
 		}
 	}
 	# triggered_planet_modifier = {
@@ -599,7 +620,6 @@ building_mem_ancestors_grudge_hoarder_depot = {
 			unity = 10
 		}
 	}
-
 	triggered_country_modifier = {
 		potential = {
 			exists = owner
@@ -667,7 +687,7 @@ building_mem_ancestors_grudge_hoarder_depot = {
 	# 	}
 	# 	country_resource_max_add = 100000
 	# }
-	triggered_desc = {
+	triggered_desc = {		
 		text = building_mem_ancestors_grudge_hoarder_depot_effect_desc
 	}
 	# prerequisites = {

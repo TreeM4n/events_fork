@@ -77,7 +77,8 @@
 
  # Crafting
  situation_mem_ancestors_grudge_crafting:0 "Forge Ritual"
- situation_mem_ancestors_grudge_crafting_desc:0 "Our smiths are currently hard at work to smith the next ['concept_mem_ancestors_grudge_rune_relics']\n\nPredicted Smithing Quality:\n[MemGetSituationRarity]\nPredicted Rune Purity:\n[MemGetSituationPurity]" 
+ situation_mem_ancestors_grudge_crafting_desc:0 "Our smiths are hard at work to smith the next ['concept_mem_ancestors_grudge_rune_relics']" 
+ # \n\nPredicted Smithing Quality:\n[MemGetSituationRarity]\nPredicted Rune Purity:\n[MemGetSituationPurity]" 
  situation_mem_ancestors_grudge_crafting_stage0:0 "Smithing" 
  situation_mem_ancestors_grudge_crafting_stage1:0 "Runecrafting" 
  situation_mem_ancestors_grudge_crafting_type:0 "$situation_mem_ancestors_grudge_crafting$"
@@ -686,7 +687,7 @@
  mem_ancestors_grudge.405.a:0 "Resources!"
  mem_ancestors_grudge.405.b:0 "Tradition."
  mem_ancestors_grudge.410.title:0 "Curses!" # failed several times and underperformed
- mem_ancestors_grudge.410.desc:0 "Several attempts have failed, and our kin have fallen short of the expectations placed upon them. The work has tested their skill and resolve, yet still, they could not deliver.\n\nAs for the leading smith, their response was: §LThese REDACTED could not even do REDACTED right.§!"
+ mem_ancestors_grudge.410.desc:0 "Several attempts have failed, and our kin have fallen short of the expectations placed upon them. The work has tested their skill and resolve, yet still, they could not deliver.\n\nAs for the leading smith, their response was: §LThese REDACTED could not even REDACTED right.§!"
  mem_ancestors_grudge.410.a:0 "Disturbing."
  mem_ancestors_grudge.415.title:0 "The Cube" # modern art relic
  mem_ancestors_grudge.415.desc:0 "Today, one of our artificers approached us with a most curious enigma. In their efforts to craft relevant artifacts for the Trial, they have unexpectedly produced a rune-inscripted cube.\n\nAt first glance, it appears as an oddity. Yet the runes upon its surface pulse faintly. Though its purpose is unclear, it may very well qualify as an artifact, in its own right."
@@ -716,7 +717,7 @@
  mem_ancestors_grudge_diggy_hole:0 "Diggy Diggy Hole!"
  mem_ancestors_grudge.445.title:0 "Brothers of the Mine Rejoice!"
  mem_ancestors_grudge.445.desc:0 ""...Swing! Swing! Swing with me!" echoes through many a workplace. "Diggy Diggy Hole" enjoys popularity like never before, closely followed by "When the Hammer Falls" and "Hammerdeep" - all of them songs of yore resung. As a result work morale has skyrocketed and mineral production has far exceeded its quotas.\n\nWe could let this situation run its course and benefit from this improved productivity as it is or we could invest to potentially reap far greater gains."
- mem_ancestors_grudge.445.a:0 "I am a [root.GetSpeciesName], and I'm... Say again?"
+ mem_ancestors_grudge.445.a:0 "I am a [owner.GetSpeciesName], and I'm... Say again?"
  mem_ancestors_grudge.445.b:0 "We can never dig too deep!"
  mem_ancestors_grudge.445.b.tooltip:0 "We will try to capitalize on this development by investing into further exploratory mining efforts."
  mem_ancestors_grudge.446.title:0 "Hidden in the Mountain Store" 
@@ -745,7 +746,7 @@
  mem_ancestors_grudge.455.a:0 "Give them what they want."
  mem_ancestors_grudge.455.b:0 "Hone your skill, not your speech!"
  mem_ancestors_grudge.460.title:0 "Poor Rocks"
- mem_ancestors_grudge.460.desc:0 "Several of our refineries got minerals with very low purity. Even the normal Metallurgists are currently debating if they can qeven use them."
+ mem_ancestors_grudge.460.desc:0 "Several of our refineries got minerals with very low purity. Even the normal Metallurgists are currently debating if they can even use them."
  mem_ancestors_grudge.460.a:0 "Tolerate lower quality."
  mem_ancestors_grudge.460.b:0 "Spare no rock."
  mem_ancestors_grudge.460.c:0 "Scrap all."
@@ -760,7 +761,7 @@
  mem_ancestors_grudge.470.b:0 "Six Days it is."
  mem_ancestors_grudge.475.title:0 "Increasing Demand"
  mem_ancestors_grudge.475.desc:0 "Our work on [target.GetName] has not gone unnoticed. Several private buyers are now ordering on regular basis new artifacts. But this also leads to more demand which is currently impossible to meet."
- mem_ancestors_grudge.475.a:0 "Worker harder, not smarter!"
+ mem_ancestors_grudge.475.a:0 "Work harder, not smarter!"
  mem_ancestors_grudge.475.b:0 "Hire new smiths!"
  mem_ancestors_grudge.475.c:0 "We got this."
  mem_ancestors_grudge.480.title:0 "Crumbling Generators"
