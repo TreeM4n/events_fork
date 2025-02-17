@@ -353,7 +353,8 @@ defined_text = {
 	default = mem_ancestors_grudge_empty
 }
 
-definded_text = {
+# Alternative text for Restoration Situation normal/hive
+defined_text = {
 	name = MemGetSitDesc
 	random = no
 	text = {
@@ -373,5 +374,434 @@ definded_text = {
 			}
 		}
 		localization_key = situation_mem_ancestors_grudge_forge_repairs_desc_hive
+	}
+}
+
+# Alternative text between different smithing systems
+defined_text = {
+	name = MemGetSmithingSitDesc
+	random = no
+	text = {
+		trigger = {
+			owner = {
+				has_country_flag = mem_malthus_test
+			}
+		}
+		localization_key = situation_mem_ancestors_grudge_crafting_desc_test
+	}
+	text = {
+		trigger = {
+			owner = {
+				NOT = {
+					has_country_flag = mem_malthus_test
+				}
+			}
+		}
+		localization_key = situation_mem_ancestors_grudge_crafting_desc_normal
+	}
+}
+
+# Alternative text on relic between different smithing systems
+defined_text = {
+	name = MemAncestorsGrudgeRelicRarity
+	random = no
+	text = {
+		trigger = {
+			owner = {
+				has_country_flag = mem_malthus_test
+			}
+		}
+		localization_key = mem_ancestors_grudge_get_relic_rarity_test
+	}
+	text = {
+		trigger = {
+			owner = {
+				NOT = {
+					has_country_flag = mem_malthus_test
+				}
+			}
+		}
+		localization_key = mem_ancestors_grudge_get_relic_rarity_normal
+	}
+}
+
+# Defining text for qualities and purities
+# MemAncestorsGrudgeQualityMin
+defined_text = {
+	name = MemAncestorsGrudgeQualityMin
+	random = no
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_smithing_quality_min
+				value <= 1
+			}
+		}
+		localization_key = mem_ancestors_grudge_quality_1
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_smithing_quality_min
+				value = 2
+			}
+		}
+		localization_key = mem_ancestors_grudge_quality_2
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_smithing_quality_min
+				value = 3
+			}
+		}
+		localization_key = mem_ancestors_grudge_quality_3
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_smithing_quality_min
+				value = 4
+			}
+		}
+		localization_key = mem_ancestors_grudge_quality_4
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_smithing_quality_min
+				value = 5
+			}
+		}
+		localization_key = mem_ancestors_grudge_quality_5
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_smithing_quality_min
+				value = 6
+			}
+		}
+		localization_key = mem_ancestors_grudge_quality_6
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_smithing_quality_min
+				value >= 7
+			}
+		}
+		localization_key = mem_ancestors_grudge_quality_7
+	}
+}
+# MemAncestorsGrudgeQualityMax
+defined_text = {
+	name = MemAncestorsGrudgeQualityMax
+	random = no
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_smithing_quality_max
+				value <= 1
+			}
+		}
+		localization_key = mem_ancestors_grudge_quality_1
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_smithing_quality_max
+				value = 2
+			}
+		}
+		localization_key = mem_ancestors_grudge_quality_2
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_smithing_quality_max
+				value = 3
+			}
+		}
+		localization_key = mem_ancestors_grudge_quality_3
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_smithing_quality_max
+				value = 4
+			}
+		}
+		localization_key = mem_ancestors_grudge_quality_4
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_smithing_quality_max
+				value = 5
+			}
+		}
+		localization_key = mem_ancestors_grudge_quality_5
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_smithing_quality_max
+				value = 6
+			}
+		}
+		localization_key = mem_ancestors_grudge_quality_6
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_smithing_quality_max
+				value >= 7
+			}
+		}
+		localization_key = mem_ancestors_grudge_quality_7
+	}
+}
+# MemAncestorsGrudgeQualityFinal
+defined_text = {
+	name = MemAncestorsGrudgeQualityFinal
+	random = no
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = mem_ancestors_grudge_smithing_quality_final
+				value <= 1
+			}
+		}
+		localization_key = mem_ancestors_grudge_quality_1
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = mem_ancestors_grudge_smithing_quality_final
+				value = 2
+			}
+		}
+		localization_key = mem_ancestors_grudge_quality_2
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = mem_ancestors_grudge_smithing_quality_final
+				value = 3
+			}
+		}
+		localization_key = mem_ancestors_grudge_quality_3
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = mem_ancestors_grudge_smithing_quality_final
+				value = 4
+			}
+		}
+		localization_key = mem_ancestors_grudge_quality_4
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = mem_ancestors_grudge_smithing_quality_final
+				value = 5
+			}
+		}
+		localization_key = mem_ancestors_grudge_quality_5
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = mem_ancestors_grudge_smithing_quality_final
+				value = 6
+			}
+		}
+		localization_key = mem_ancestors_grudge_quality_6
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = mem_ancestors_grudge_smithing_quality_final
+				value >= 7
+			}
+		}
+		localization_key = mem_ancestors_grudge_quality_7
+	}
+}
+# MemAncestorsGrudgePurityMin
+defined_text = {
+	name = MemAncestorsGrudgePurityMin
+	random = no
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_rune_purity_min
+				value <= 1
+			}
+		}
+		localization_key = mem_ancestors_grudge_purity_1
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_rune_purity_min
+				value = 2
+			}
+		}
+		localization_key = mem_ancestors_grudge_purity_2
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_rune_purity_min
+				value = 3
+			}
+		}
+		localization_key = mem_ancestors_grudge_purity_3
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_rune_purity_min
+				value = 4
+			}
+		}
+		localization_key = mem_ancestors_grudge_purity_4
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_rune_purity_min
+				value >= 5
+			}
+		}
+		localization_key = mem_ancestors_grudge_purity_5
+	}
+}
+# MemAncestorsGrudgePurityMax
+defined_text = {
+	name = MemAncestorsGrudgePurityMax
+	random = no
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_rune_purity_max
+				value <= 1
+			}
+		}
+		localization_key = mem_ancestors_grudge_purity1
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_rune_purity_max
+				value = 2
+			}
+		}
+		localization_key = mem_ancestors_grudge_purity_2
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_rune_purity_max
+				value = 3
+			}
+		}
+		localization_key = mem_ancestors_grudge_purity_3
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_rune_purity_max
+				value = 4
+			}
+		}
+		localization_key = mem_ancestors_grudge_purity_4
+	}
+	text = {
+		trigger = {
+			check_variable = {
+				which = mem_ancestors_grudge_rune_purity_max
+				value >= 5
+			}
+		}
+		localization_key = mem_ancestors_grudge_purity_5
+	}
+}
+# MemAncestorsGrudgePurityFinal
+defined_text = {
+	name = MemAncestorsGrudgePurityFinal
+	random = no
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = owner.mem_ancestors_grudge_rune_purity_final
+				value <= 1
+			}
+		}
+		localization_key = mem_ancestors_grudge_purity_1
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = owner.mem_ancestors_grudge_rune_purity_final
+				value = 2
+			}
+		}
+		localization_key = mem_ancestors_grudge_purity_2
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = owner.mem_ancestors_grudge_rune_purity_final
+				value = 3
+			}
+		}
+		localization_key = mem_ancestors_grudge_purity_3
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = owner.mem_ancestors_grudge_rune_purity_final
+				value = 4
+			}
+		}
+		localization_key = mem_ancestors_grudge_purity_4
+	}
+	text = {
+		trigger = {
+			check_variable_arithmetic = {
+				which = owner.mem_ancestors_grudge_rune_purity_final
+				value >= 5
+			}
+		}
+		localization_key = mem_ancestors_grudge_purity_5
+	}
+}
+
+# Relic finished Message
+# MemAncestorsGrudgeRelicResult
+defined_text = {
+	name = MemAncestorsGrudgeRelicResult
+	random = no
+	text = {
+		trigger = {
+			owner = {
+				has_country_flag = mem_malthus_test
+			}
+		}
+		localization_key = mem_ancestors_grudge.50.desc_result_test
+	}
+	text = {
+		trigger = {
+			owner = {
+				NOT = {
+					has_country_flag = mem_malthus_test					
+				}
+			}
+		}
+		localization_key = mem_ancestors_grudge.50.desc_result_normal
 	}
 }

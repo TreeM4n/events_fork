@@ -493,6 +493,7 @@ mem_ancestors_grudge_decrease_relic_roll_quality = {
 }
 
 mem_ancestors_grudge_add_relic_modifier = {
+	reroll_random = yes
 	random_list = {
 		1 = {
 			set_country_flag = mem_ancestors_grudge_relic_flag1
@@ -548,6 +549,1183 @@ mem_ancestors_grudge_add_relic_modifier = {
 			modifier = {
 				has_country_flag = mem_ancestors_grudge_relic_flag8
 				factor = 0
+			}
+		}
+	}
+}
+
+# Malthus' Experimental script for Relic-Crafting
+
+# Beginning of Situation
+# This effect will define the minimum quality result of the situation
+# Minimum can range from 1 - 5
+mem_ancestors_grudge_roll_quality_min = {
+	reroll_random = yes
+	random_list = {
+		# mem_ancestors_grudge_quality_1
+		100 = {
+			# If a threshold in smithing quality is surpassed, this quality will not be chosen as minimum
+			modifier = {
+				factor = 0
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_artifact_power_produces_mult
+						value > 0.1
+					}
+				}				
+			}
+			# If a threshold in smithing quality is not surpassed, this outcome will be more likely
+			modifier = {
+				factor = 2
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_artifact_power_produces_mult
+						value < 0.05
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_artifact_power_produces_mult
+						value < 0.08
+					}
+				}
+			}
+			# Set minimum quality variable
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_min
+				value = 1
+			}
+		}
+		# mem_ancestors_grudge_quality_2
+		100 = {
+			# If a threshold in smithing quality is surpassed, this quality will be less likely
+			modifier = {
+				factor = 0.5
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_artifact_power_produces_mult
+						value > 0.15
+					}
+				}				
+			}
+			# If a threshold in smithing quality is not surpassed, this outcome will be more likely
+			modifier = {
+				factor = 2
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_artifact_power_produces_mult
+						value < 0.08
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_artifact_power_produces_mult
+						value < 0.12
+					}
+				}
+			}
+			# Set minimum quality variable
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_min
+				value = 2
+			}
+		}
+		# mem_ancestors_grudge_quality_3
+		100 = {
+			# If a threshold in smithing quality is surpassed, this quality will be less likely
+			modifier = {
+				factor = 0.5
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_artifact_power_produces_mult
+						value > 0.25
+					}
+				}				
+			}
+			# If a threshold in smithing quality is not surpassed, this outcome will be more likely
+			modifier = {
+				factor = 2
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_artifact_power_produces_mult
+						value < 0.10
+					}
+				}
+			}
+			modifier = {
+				factor = 2
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_artifact_power_produces_mult
+						value < 0.2
+					}
+				}
+			}
+			# Set minimum quality variable
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_min
+				value = 3
+			}
+		}
+		# mem_ancestors_grudge_quality_4
+		100 = {
+			# If a threshold in smithing quality is surpassed, this quality will be less likely
+			modifier = {
+				factor = 0.5
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_artifact_power_produces_mult
+						value > 0.5
+					}
+				}				
+			}
+			# If a threshold in smithing quality is not surpassed, this outcome will be more likely
+			modifier = {
+				factor = 2
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_artifact_power_produces_mult
+						value < 0.25
+					}
+				}
+			}
+			# Set minimum quality variable
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_min
+				value = 4
+			}
+		}
+		# mem_ancestors_grudge_quality_5
+		100 = {
+			# Set minimum quality variable
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_min
+				value = 5
+			}
+		}
+	}
+}
+# This effect will define the maximum quality result of the situation
+# Maximum can range from 2 - 7
+# Maximum will always be atleast 1 level higher than minimum
+mem_ancestors_grudge_roll_quality_max = {
+	reroll_random = yes
+	random_list = {
+		# mem_ancestors_grudge_quality_2
+		100 = {
+			# If outcome is not higher than min, it will be
+			modifier = {
+				factor = 0
+				check_variable = {
+					which = mem_ancestors_grudge_smithing_quality_min
+					value >= 2
+				}
+			}
+			# If a threshold in smithing quality is surpassed, this quality will be less likely
+			modifier = {
+				factor = 0.5
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_artifact_power_produces_mult
+						value > 0.1
+					}
+				}				
+			}
+			# Set maximum quality variable
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_max
+				value = 2
+			}
+		}
+		# mem_ancestors_grudge_quality_3
+		100 = {
+			# If outcome is not higher than min, it will be
+			modifier = {
+				factor = 0
+				check_variable = {
+					which = mem_ancestors_grudge_smithing_quality_min
+					value >= 3
+				}
+			}
+			# If a threshold in smithing quality is surpassed, this quality will be less likely
+			modifier = {
+				factor = 0.5
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_artifact_power_produces_mult
+						value > 0.15
+					}
+				}				
+			}
+			# Set maximum quality variable
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_max
+				value = 3
+			}
+		}
+		# mem_ancestors_grudge_quality_4
+		100 = {
+			# If outcome is not higher than min, it will be
+			modifier = {
+				factor = 0
+				check_variable = {
+					which = mem_ancestors_grudge_smithing_quality_min
+					value >= 4
+				}
+			}
+			# If a threshold in smithing quality is surpassed, this quality will be less likely
+			modifier = {
+				factor = 0.5
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_artifact_power_produces_mult
+						value > 0.20
+					}
+				}				
+			}
+			# Set maximum quality variable
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_max
+				value = 4
+			}
+		}
+		# mem_ancestors_grudge_quality_5
+		100 = {
+			# If outcome is not higher than min, it will be
+			modifier = {
+				factor = 0
+				check_variable = {
+					which = mem_ancestors_grudge_smithing_quality_min
+					value >= 5
+				}
+			}
+			# If a threshold in smithing quality is not surpassed, this quality will be less likely
+			modifier = {
+				factor = 0.5
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_artifact_power_produces_mult
+						value < 0.2
+					}
+				}				
+			}
+			modifier = {
+				factor = 0.5
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_artifact_power_produces_mult
+						value < 0.05
+					}
+				}				
+			}
+			# Set maximum quality variable
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_max
+				value = 5
+			}
+		}
+		# mem_ancestors_grudge_quality_6
+		100 = {
+			# If a threshold in smithing quality is not surpassed, this quality will be less likely
+			modifier = {
+				factor = 0.5
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_artifact_power_produces_mult
+						value < 0.35
+					}
+				}				
+			}
+			modifier = {
+				factor = 0.5
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_artifact_power_produces_mult
+						value < 0.15
+					}
+				}				
+			}
+			modifier = {
+				factor = 0.5
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_artifact_power_produces_mult
+						value < 0.05
+					}
+				}				
+			}
+			# Set maximum quality variable
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_max
+				value = 6
+			}
+		}
+		# mem_ancestors_grudge_quality_7
+		100 = {
+			# If a threshold in smithing quality is not surpassed, this quality will be less likely
+			modifier = {
+				factor = 0.5
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_artifact_power_produces_mult
+						value < 0.5
+					}
+				}				
+			}
+			modifier = {
+				factor = 0.5
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_artifact_power_produces_mult
+						value < 0.25
+					}
+				}				
+			}
+			modifier = {
+				factor = 0.5
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_artifact_power_produces_mult
+						value < 0.10
+					}
+				}				
+			}
+			# Set maximum quality variable
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_max
+				value = 7
+			}
+		}
+	}
+}
+
+# This effect will define the minimum purity result of the situation
+# Minimum can range from 1 - 4
+# Chances are antiproportionally affected by the result of quality min -> higher quality makes high purity a bit less likely
+# Rune power makes higher quality more likely
+mem_ancestors_grudge_roll_purity_min = {
+	reroll_random = yes
+	random_list = {
+		# mem_ancestors_grudge_purity_1
+		100 = {
+			# Multiply it with min quality value to increse likelyhood
+			modifier = {
+				factor = mem_ancestors_grudge_smithing_quality_min
+			}
+			# Decrease likelyhood with higher rune power
+			modifier = {
+				factor = 0.75
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.10
+					}
+				}
+			}
+			modifier = {
+				factor = 0.75
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.20
+					}
+				}
+			}
+			modifier = {
+				factor = 0.75
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.30
+					}
+				}
+			}
+			modifier = {
+				factor = 0.75
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.40
+					}
+				}
+			}
+			modifier = {
+				factor = 0.75
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.50
+					}
+				}
+			}
+			# Set minimum rune quality
+			set_variable = {
+				which = mem_ancestors_grudge_rune_purity_min
+				value = 1
+			}
+		}
+		# mem_ancestors_grudge_purity_2
+		75 = {
+			# Multiply it with min quality value to increse likelyhood
+			modifier = {
+				factor = mem_ancestors_grudge_smithing_quality_min
+			}
+			# Decrease likelyhood with higher rune power
+			modifier = {
+				factor = 0.8
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.10
+					}
+				}
+			}
+			modifier = {
+				factor = 0.8
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.20
+					}
+				}
+			}
+			modifier = {
+				factor = 0.8
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.30
+					}
+				}
+			}
+			modifier = {
+				factor = 0.8
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.40
+					}
+				}
+			}
+			modifier = {
+				factor = 0.8
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.50
+					}
+				}
+			}
+			# Set minimum rune quality
+			set_variable = {
+				which = mem_ancestors_grudge_rune_purity_min
+				value = 2
+			}
+		}
+		# mem_ancestors_grudge_purity_3
+		50 = {
+			# Multiply it with min quality value to increse likelyhood
+			modifier = {
+				factor = mem_ancestors_grudge_smithing_quality_min
+			}
+			# Decrease likelyhood with higher rune power
+			modifier = {
+				factor = 0.9
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.10
+					}
+				}
+			}
+			modifier = {
+				factor = 0.9
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.20
+					}
+				}
+			}
+			modifier = {
+				factor = 0.9
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.30
+					}
+				}
+			}
+			modifier = {
+				factor = 0.9
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.40
+					}
+				}
+			}
+			modifier = {
+				factor = 0.9
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.50
+					}
+				}
+			}
+			# Set minimum rune quality
+			set_variable = {
+				which = mem_ancestors_grudge_rune_purity_min
+				value = 3
+			}
+		}
+		# mem_ancestors_grudge_purity_4
+		50 = {
+			# Multiply it with min quality value to increse likelyhood
+			modifier = {
+				factor = mem_ancestors_grudge_smithing_quality_min
+			}
+			# Decrease likelyhood with higher rune power
+			modifier = {
+				factor = 1.1
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.10
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.20
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.30
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.40
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.50
+					}
+				}
+			}
+			# Set minimum rune quality
+			set_variable = {
+				which = mem_ancestors_grudge_rune_purity_min
+				value = 4
+			}
+		}
+	}
+}
+
+# This effect will define the maximum purity result of the situation
+# Maximum can range from 2 - 5
+# Chances are antiproportionally affected by the result of quality min -> higher quality makes high purity a bit less likely
+# Rune power makes higher quality more likely
+mem_ancestors_grudge_roll_purity_max = {
+	reroll_random = yes
+	random_list = {
+		# mem_ancestors_grudge_purity_2
+		100 = {
+			# If min is on the same level or higher this will not happen
+			modifier = {
+				factor = 0
+				check_variable = {
+					which = mem_ancestors_grudge_rune_purity_min
+					value >= 2
+				}
+			}
+			# Multiply it with min quality value to increse likelyhood
+			modifier = {
+				factor = mem_ancestors_grudge_smithing_quality_min
+			}
+			# Decrease likelyhood with higher rune power
+			modifier = {
+				factor = 0.75
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.10
+					}
+				}
+			}
+			modifier = {
+				factor = 0.75
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.20
+					}
+				}
+			}
+			modifier = {
+				factor = 0.75
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.30
+					}
+				}
+			}
+			modifier = {
+				factor = 0.75
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.40
+					}
+				}
+			}
+			modifier = {
+				factor = 0.75
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.50
+					}
+				}
+			}
+			# Set minimum rune quality
+			set_variable = {
+				which = mem_ancestors_grudge_rune_purity_max
+				value = 2
+			}
+		}
+		# mem_ancestors_grudge_purity_3
+		75 = {
+			# If min is on the same level or higher this will not happen
+			modifier = {
+				factor = 0
+				check_variable = {
+					which = mem_ancestors_grudge_rune_purity_min
+					value >= 3
+				}
+			}
+			# Multiply it with min quality value to increse likelyhood
+			modifier = {
+				factor = mem_ancestors_grudge_smithing_quality_min
+			}
+			# Decrease likelyhood with higher rune power
+			modifier = {
+				factor = 0.8
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.10
+					}
+				}
+			}
+			modifier = {
+				factor = 0.8
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.20
+					}
+				}
+			}
+			modifier = {
+				factor = 0.8
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.30
+					}
+				}
+			}
+			modifier = {
+				factor = 0.8
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.40
+					}
+				}
+			}
+			modifier = {
+				factor = 0.8
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.50
+					}
+				}
+			}
+			# Set minimum rune quality
+			set_variable = {
+				which = mem_ancestors_grudge_rune_purity_max
+				value = 3
+			}
+		}
+		# mem_ancestors_grudge_purity_4
+		50 = {
+			# If min is on the same level or higher this will not happen
+			modifier = {
+				factor = 0
+				check_variable = {
+					which = mem_ancestors_grudge_rune_purity_min
+					value >= 4
+				}
+			}
+			# Multiply it with min quality value to increse likelyhood
+			modifier = {
+				factor = mem_ancestors_grudge_smithing_quality_min
+			}
+			# Decrease likelyhood with higher rune power
+			modifier = {
+				factor = 0.9
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.10
+					}
+				}
+			}
+			modifier = {
+				factor = 0.9
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.20
+					}
+				}
+			}
+			modifier = {
+				factor = 0.9
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.30
+					}
+				}
+			}
+			modifier = {
+				factor = 0.9
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.40
+					}
+				}
+			}
+			modifier = {
+				factor = 0.9
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.50
+					}
+				}
+			}
+			# Set minimum rune quality
+			set_variable = {
+				which = mem_ancestors_grudge_rune_purity_max
+				value = 4
+			}
+		}
+		# mem_ancestors_grudge_purity_5
+		50 = {
+			# Multiply it with min quality value to increse likelyhood
+			modifier = {
+				factor = mem_ancestors_grudge_smithing_quality_min
+			}
+			# Decrease likelyhood with higher rune power
+			modifier = {
+				factor = 1.1
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.10
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.20
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.30
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.40
+					}
+				}
+			}
+			modifier = {
+				factor = 1.1
+				owner = {
+					check_modifier_value = {
+						modifier = mem_ancestors_grudge_rune_power_produces_mult
+						value > 0.50
+					}
+				}
+			}
+			# Set minimum rune quality
+			set_variable = {
+				which = mem_ancestors_grudge_rune_purity_max
+				value = 5
+			}
+		}
+	}
+}
+
+# End of Situation
+mem_ancestors_grudge_roll_quality_final = {
+	reroll_random = yes
+	random_list = {
+		# mem_ancestors_grudge_quality_1
+		100 = {
+			# If quality value lies outside of min and max it won't happen
+			modifier = {
+				factor = 0
+				check_variable = {
+					which = mem_ancestors_grudge_smithing_quality_min
+					value > 1
+				}		
+			}
+
+			# Set final quality variable
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_final
+				value = 1
+			}
+			
+		}
+		# mem_ancestors_grudge_quality_2
+		100 = {
+			# If quality value lies outside of min and max it won't happen
+			modifier = {
+				factor = 0
+				OR = {
+					check_variable = {
+						which = mem_ancestors_grudge_smithing_quality_min
+						value > 2
+					}
+					check_variable = {
+						which = mem_ancestors_grudge_smithing_quality_max
+						value < 2
+					}
+				}			
+			}
+
+			# Set final quality variable
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_final
+				value = 2
+			}
+		}
+		# mem_ancestors_grudge_quality_3
+		100 = {
+			# If quality value lies outside of min and max it won't happen
+			modifier = {
+				factor = 0
+				OR = {
+					check_variable = {
+						which = mem_ancestors_grudge_smithing_quality_min
+						value > 3
+					}
+					check_variable = {
+						which = mem_ancestors_grudge_smithing_quality_max
+						value < 3
+					}
+				}		
+			}
+
+			# Set final quality variable
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_final
+				value = 3
+			}
+		}
+		# mem_ancestors_grudge_quality_4
+		100 = {
+			# If quality value lies outside of min and max it won't happen
+			modifier = {
+				factor = 0
+				OR = {
+					check_variable = {
+						which = mem_ancestors_grudge_smithing_quality_min
+						value > 4
+					}
+					check_variable = {
+						which = mem_ancestors_grudge_smithing_quality_max
+						value < 4
+					}
+				}			
+			}
+
+			# Set final quality variable
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_final
+				value = 4
+			}
+		}
+		# mem_ancestors_grudge_quality_5
+		100 = {
+			# If quality value lies outside of min and max it won't happen
+			modifier = {
+				factor = 0
+				OR = {
+					check_variable = {
+						which = mem_ancestors_grudge_smithing_quality_min
+						value > 5
+					}
+					check_variable = {
+						which = mem_ancestors_grudge_smithing_quality_max
+						value < 5
+					}
+				}
+			}
+
+			# Set final quality variable
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_final
+				value = 5
+			}
+		}
+		# mem_ancestors_grudge_quality_6
+		100 = {
+			# If quality value lies outside of min and max it won't happen
+			modifier = {
+				factor = 0
+				OR = {
+					check_variable = {
+						which = mem_ancestors_grudge_smithing_quality_min
+						value > 6
+					}
+					check_variable = {
+						which = mem_ancestors_grudge_smithing_quality_max
+						value < 6
+					}
+				}
+			}
+
+			# Set final quality variable
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_final
+				value = 6
+			}
+		}
+		# mem_ancestors_grudge_quality_7
+		100 = {
+			# If quality value lies outside of min and max it won't happen
+			modifier = {
+				factor = 0
+				check_variable = {
+					which = mem_ancestors_grudge_smithing_quality_max
+					value < 7
+				}
+			}
+
+			# Set final quality variable
+			set_variable = {
+				which = mem_ancestors_grudge_smithing_quality_final
+				value = 7
+			}
+		}
+	}
+	# Put the value on the already used variable
+	owner = {
+		set_variable = {
+			which = mem_ancestors_grudge_smithing_quality_final
+			value = prev.mem_ancestors_grudge_smithing_quality_final
+		}
+		set_variable = {
+			which = mem_ancestors_grudge_smithing_quality_rolled
+			value = prev.mem_ancestors_grudge_smithing_quality_final
+		}
+	}
+}
+
+# End of Situation
+mem_ancestors_grudge_roll_purity_final = {
+	reroll_random = yes
+	random_list = {
+		# mem_ancestors_grudge_purity_1
+		100 = {
+			# If purity value lies outsdte of min and max it won't happen
+			modifier = {
+				factor = 0
+				check_variable = {
+					which = mem_ancestors_grudge_rune_purity_min
+					value > 1
+				}				
+			}
+
+			owner = {
+				# Set final purity variable - for naming
+				set_variable = {
+					which = mem_ancestors_grudge_rune_purity_final
+					value = 1
+				}
+			
+				# For Relic modifier
+				set_variable = {
+					which = mem_ancestors_grudge_smithing_purity_rolled
+					value = 0.5
+				}
+			}			
+		}
+		# mem_ancestors_grudge_purity_2
+		100 = {
+			# If purity value lies outsdte of min and max it won't happen
+			modifier = {
+				factor = 0
+				OR = {
+					check_variable = {
+						which = mem_ancestors_grudge_rune_purity_min
+						value > 2
+					}
+					check_variable = {
+						which = mem_ancestors_grudge_rune_purity_max
+						value < 2
+					}
+				}		
+			}
+
+			owner = {
+				# Set final purity variable - for naming
+				set_variable = {
+					which = mem_ancestors_grudge_rune_purity_final
+					value = 2
+				}
+			
+				# For Relic modifier
+				set_variable = {
+					which = mem_ancestors_grudge_smithing_purity_rolled
+					value = 0.75
+				}
+			}
+		}
+		# mem_ancestors_grudge_purity_3
+		100 = {
+			# If purity value lies outsdte of min and max it won't happen
+			modifier = {
+				factor = 0
+				OR = {
+					check_variable = {
+						which = mem_ancestors_grudge_rune_purity_min
+						value > 3
+					}
+					check_variable = {
+						which = mem_ancestors_grudge_rune_purity_max
+						value < 3
+					}
+				}			
+			}
+
+			owner = {
+				# Set final purity variable - for naming
+				set_variable = {
+					which = mem_ancestors_grudge_rune_purity_final
+					value = 3
+				}
+			
+				# For Relic modifier
+				set_variable = {
+					which = mem_ancestors_grudge_smithing_purity_rolled
+					value = 1
+				}
+			}
+		}
+		# mem_ancestors_grudge_purity_4
+		100 = {
+			# If purity value lies outsdte of min and max it won't happen
+			modifier = {
+				factor = 0
+				OR = {
+					check_variable = {
+						which = mem_ancestors_grudge_rune_purity_min
+						value > 4
+					}
+					check_variable = {
+						which = mem_ancestors_grudge_rune_purity_max
+						value < 4
+					}
+				}			
+			}
+
+			owner = {
+				# Set final purity variable - for naming
+				set_variable = {
+					which = mem_ancestors_grudge_rune_purity_final
+					value = 4
+				}
+			
+				# For Relic modifier
+				set_variable = {
+					which = mem_ancestors_grudge_smithing_purity_rolled
+					value = 1.25
+				}
+			}
+		}
+		# mem_ancestors_grudge_purity_5
+		100 = {
+			# If purity value lies outsdte of min and max it won't happen
+			modifier = {
+				factor = 0
+				check_variable = {
+					which = mem_ancestors_grudge_rune_purity_max
+					value < 5
+				}		
+			}
+			
+			owner = {
+				# Set final purity variable - for naming
+				set_variable = {
+					which = mem_ancestors_grudge_rune_purity_final
+					value = 5
+				}
+			
+				# For Relic modifier
+				set_variable = {
+					which = mem_ancestors_grudge_smithing_purity_rolled
+					value = 1.5
+				}
 			}
 		}
 	}

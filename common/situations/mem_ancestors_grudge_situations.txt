@@ -317,6 +317,12 @@ situation_mem_ancestors_grudge_crafting = {
 	complete_icon_frame = GFX_situation_outcome_frame_green
 	complete_icon = GFX_situation_outcome_ascension
 	category = positive
+	on_start = {
+		mem_ancestors_grudge_roll_quality_min = yes
+		mem_ancestors_grudge_roll_quality_max = yes
+		mem_ancestors_grudge_roll_purity_min = yes
+		mem_ancestors_grudge_roll_purity_max = yes
+	}
 	on_progress_complete = {
 		# final choice
 		custom_tooltip = situation_mem_ancestors_grudge_crafting_finish

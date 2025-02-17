@@ -2111,10 +2111,27 @@ situation_event = {
 				value = 1
 			}
 		}
-		# roll for rarity
-		mem_ancestors_grudge_roll_for_relic_rarity = yes
-		# roll for purity
-		mem_ancestors_grudge_roll_for_relic_purity = yes
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = mem_malthus_test
+				}
+			}
+			mem_ancestors_grudge_roll_quality_final = yes
+			mem_ancestors_grudge_roll_purity_final = yes
+			while = {
+				count = owner.mem_ancestors_grudge_smithing_quality_rolled
+				owner = {
+					mem_ancestors_grudge_add_relic_modifier = yes
+				}
+			}
+		}
+		else = {
+			# roll for rarity
+			mem_ancestors_grudge_roll_for_relic_rarity = yes
+			# roll for purity
+			mem_ancestors_grudge_roll_for_relic_purity = yes
+		}
 		if = {
 			limit = {
 				mem_has_not_relic_flag = yes
@@ -2233,10 +2250,28 @@ situation_event = {
 				value = 1
 			}
 		}
-		# roll for rarity
-		mem_ancestors_grudge_roll_for_relic_rarity = yes
-		# roll for purity
-		mem_ancestors_grudge_roll_for_relic_purity = yes
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = mem_malthus_test
+				}
+			}
+			mem_ancestors_grudge_roll_quality_final = yes
+			mem_ancestors_grudge_roll_purity_final = yes
+			while = {
+				count = owner.mem_ancestors_grudge_smithing_quality_rolled
+				owner = {
+					mem_ancestors_grudge_add_relic_modifier = yes
+				}
+			}
+		}
+		else = {
+			# roll for rarity
+			mem_ancestors_grudge_roll_for_relic_rarity = yes
+			# roll for purity
+			mem_ancestors_grudge_roll_for_relic_purity = yes
+		}
+		
 		if = {
 			limit = {
 				mem_has_not_relic_flag = yes
@@ -4740,7 +4775,7 @@ situation_event = {
 			owner = {
 				resource_stockpile_compare = {
 					resource = energy
-					value = 4000
+					value >= 4000
 				}
 			}
 		}

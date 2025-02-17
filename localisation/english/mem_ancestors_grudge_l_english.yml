@@ -77,8 +77,9 @@
 
  # Crafting
  situation_mem_ancestors_grudge_crafting:0 "Forge Ritual"
- situation_mem_ancestors_grudge_crafting_desc:0 "Our smiths are hard at work to smith the next ['concept_mem_ancestors_grudge_rune_relics']" 
- # \n\nPredicted Smithing Quality:\n[MemGetSituationRarity]\nPredicted Rune Purity:\n[MemGetSituationPurity]" 
+ situation_mem_ancestors_grudge_crafting_desc:0 "[MemGetSmithingSitDesc]"
+ situation_mem_ancestors_grudge_crafting_desc_normal:0 "Our smiths are hard at work to smith the next ['concept_mem_ancestors_grudge_rune_relics']\n\nPredicted Smithing Quality:\n[MemGetSituationRarity]\nPredicted Rune Purity:\n[MemGetSituationPurity]"
+ situation_mem_ancestors_grudge_crafting_desc_test:0 "Our smiths are hard at work to smith the next ['concept_mem_ancestors_grudge_rune_relics']\n\nPredicted Smithing Quality:\n[MemAncestorsGrudgeQualityMin] - [MemAncestorsGrudgeQualityMax]\nPredicted Rune Purity:\n[MemAncestorsGrudgePurityMin] - [MemAncestorsGrudgePurityMax]"
  situation_mem_ancestors_grudge_crafting_stage0:0 "Smithing" 
  situation_mem_ancestors_grudge_crafting_stage1:0 "Runecrafting" 
  situation_mem_ancestors_grudge_crafting_type:0 "$situation_mem_ancestors_grudge_crafting$"
@@ -319,7 +320,9 @@
  mem_ancestors_grudge_activate_crafted_relic_tt_hives:0 "[MemAncestorsHiveGetActive]"
 
  # Relic Rarities
- mem_ancestors_grudge_get_relic_rarity:0 "Quality: [MemGetRarity]\nPurity: [MemGetPurity]"
+ mem_ancestors_grudge_get_relic_rarity:0 "[MemAncestorsGrudgeRelicRarity]"
+ mem_ancestors_grudge_get_relic_rarity_normal:0 "Quality: [MemGetRarity]\nPurity: [MemGetPurity]"
+ mem_ancestors_grudge_get_relic_rarity_test:0 "Quality: [MemAncestorsGrudgeQualityFinal]\nPurity: [MemAncestorsGrudgePurityFinal]"
  
  # old - im way too lazy to rewrite this everywhere
  mem_ancestors_grudge_common:0 "$mem_ancestors_grudge_quality_2$"
@@ -330,7 +333,7 @@
  mem_ancestors_grudge_masterful:0 "$mem_ancestors_grudge_quality_6$"
  mem_ancestors_grudge_legendary:0 "$mem_ancestors_grudge_quality_7$"
 
- # new
+ # Quality
  mem_ancestors_grudge_quality_1:0 "§WMundane§!"
  mem_ancestors_grudge_quality_2:0 "§GWell-crafted§!"
  mem_ancestors_grudge_quality_3:0 "§cFinely-crafted§!"
@@ -339,7 +342,14 @@
  mem_ancestors_grudge_quality_6:0 "§dMasterful§!"
  mem_ancestors_grudge_quality_7:0 "§KLegendary§!"
 
-# Purity 
+ # Purity 
+ mem_ancestors_grudge_purity_1:0 "§TFaint§!"
+ mem_ancestors_grudge_purity_2:0 "§CWeak§!"
+ mem_ancestors_grudge_purity_3:0 "§BAverage§!"
+ mem_ancestors_grudge_purity_4:0 "§MStrong§!"
+ mem_ancestors_grudge_purity_5:0 "§_Potent§!"
+
+ # Purity old
  mem_ancestors_grudge_purity5:0 "§_Strong§!"
  mem_ancestors_grudge_purity4:0 "§MHigher§!"
  mem_ancestors_grudge_purity3:0 "§BAverage§!"
@@ -587,8 +597,10 @@
  mem_ancestors_grudge.40.desc_robots:0 "After fully restoring the Relic-Forge, we have come to grasp its true purpose. This mighty forge is not just a place for crafting trinkets or minor artifacts.\n\nIt is a sacred engine of creation, allowing our artifact smiths and rune artificers to forge relics of a quality never seen before! These relics are no mere tools or weapons, but treasures.\n\nTruly, the Relic-Forge is a gift from the makers themselves, and its rebirth marks the dawn of a new era for our kin."
  mem_ancestors_grudge.40.a:0 "Start Smithing!"
  mem_ancestors_grudge.50.name:0 "Runes and Durasteel"
- mem_ancestors_grudge.50.desc:0 "Of legend and myth is the craft of the smith. A relic has been forged. A true masterpiece of our craft, and truly one of our finest creations to date. Let us now treasure what our hands have wrought, for such a work is not merely a tool, but a testament to the skill, strength, and spirit of our ancestors. May it serve as a symbol of what we can achieve, when runes, durasteel, and resolve unite!\n\nQuality: [owner.MemGetRarity]"
- mem_ancestors_grudge.50.desc_robots:0 "Of legend and myth is the craft of the smith. A relic has been forged. A true masterpiece of our craft, and truly one of our finest creations to date. Let us now treasure what our hands have wrought, for such a work is not merely a tool, but a testament to the skill, strength, and spirit of our makers. May it serve as a symbol of what we can achieve, when runes, durasteel, and resolve unite!\n\nQuality: [owner.MemGetRarity]"
+ mem_ancestors_grudge.50.desc:0 "Of legend and myth is the craft of the smith. A relic has been forged. A true masterpiece of our craft, and truly one of our finest creations to date. Let us now treasure what our hands have wrought, for such a work is not merely a tool, but a testament to the skill, strength, and spirit of our ancestors. May it serve as a symbol of what we can achieve, when runes, durasteel, and resolve unite!\n\n[MemAncestorsGrudgeRelicResult]"
+ mem_ancestors_grudge.50.desc_robots:0 "Of legend and myth is the craft of the smith. A relic has been forged. A true masterpiece of our craft, and truly one of our finest creations to date. Let us now treasure what our hands have wrought, for such a work is not merely a tool, but a testament to the skill, strength, and spirit of our makers. May it serve as a symbol of what we can achieve, when runes, durasteel, and resolve unite!\n\n[MemAncestorsGrudgeRelicResult]"
+ mem_ancestors_grudge.50.desc_result_normal:0 "Quality: [owner.MemGetRarity]"
+ mem_ancestors_grudge.50.desc_result_test:0 "Quality: [owner.MemAncestorsGrudgeQualityFinal] Purity: [owner.MemAncestorsGrudgePurityFinal]"
  mem_ancestors_grudge.50.a:0 "Runes and Durasteel!"
  mem_ancestors_grudge.50.a.tt:0 "§LDon't forget to activate it. You can only have one at a time.§!"
  mem_ancestors_grudge.50.b:0 "Don't bother me again."
@@ -732,14 +744,14 @@
 
 
  mem_ancestors_grudge.46.tooltip:0 "§YIncrease Quality permanently§!"
-#  mem_ancestors_grudge.46.title:0 "Precious Shininess"
-#  mem_ancestors_grudge.46.desc:0 ""
-#  mem_ancestors_grudge.46.a:0 "$mem_ancestors_grudge_common$: Improve it."
-#  mem_ancestors_grudge.46.a.upgrade_tt:0 "§LIncreases the Quality by 1§!"
-#  mem_ancestors_grudge.46.c:0 ""
-#  mem_ancestors_grudge.46.c.upgrade_passive_tt:0 ""
-#  mem_ancestors_grudge.46.b:0 ""
-#  mem_ancestors_grudge.46.b.shuffle_stats_tt:0 ""
+ #  mem_ancestors_grudge.46.title:0 "Precious Shininess"
+ #  mem_ancestors_grudge.46.desc:0 ""
+ #  mem_ancestors_grudge.46.a:0 "$mem_ancestors_grudge_common$: Improve it."
+ #  mem_ancestors_grudge.46.a.upgrade_tt:0 "§LIncreases the Quality by 1§!"
+ #  mem_ancestors_grudge.46.c:0 ""
+ #  mem_ancestors_grudge.46.c.upgrade_passive_tt:0 ""
+ #  mem_ancestors_grudge.46.b:0 ""
+ #  mem_ancestors_grudge.46.b.shuffle_stats_tt:0 ""
 
  mem_ancestors_grudge.455.title:0 "Demanding Smiths"
  mem_ancestors_grudge.455.desc:0 "Several of our Artifact Smiths have high expectations for their newest creations. It occured to them that not their skill is the problem but rather the underfunded workplace. They assured us that more funding would lead to better outcomes."
