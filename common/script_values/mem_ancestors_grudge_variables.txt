@@ -24,45 +24,6 @@ mem_ancestors_grudge_factory_pop_count = {
 	max = 90
 }
 
-# determines rarity of relics
-mem_ancestors_grudge_situation_rarity = {
-	base = 0
-	add = modifier:mem_ancestors_grudge_artifact_power_produces_mult	# actual modifier
-	mult = 100	# go to full numbers to round down, and make compare
-	divide = 15	# every 15
-	#floor = yes #round down
-	#add = 1 # temporary fix, pls dont break anything # otheriwse it would need 25% more than for all rarities
-	max = 7.9 # so higher than that will be cut off
-}
-
-# determines rarity of relics
-mem_ancestors_grudge_situation_rarity_floored = {
-	base = 0
-	add = modifier:mem_ancestors_grudge_artifact_power_produces_mult	# actual modifier
-	mult = 100	# go to full numbers to round down, and make compare
-	divide = 15	# every 25
-	floor = yes #round down
-	#add = 1 # temporary fix, pls dont break anything # otheriwse it would need 25% more than for all rarities
-	max = 7
-}
-
-# determines rarity of relics, tooltip
-mem_ancestors_grudge_situation_rarity_tooltip = {
-	base = 0
-	add = value:mem_ancestors_grudge_situation_rarity
-	add = mem_ancestors_grudge_rarity_increase
-	max = 7.9 # so higher than that will be cut off
-}
-
-
-# determines purity of relics, tooltip
-mem_ancestors_grudge_situation_purity_tooltip = {
-	base = 1
-	add = modifier:mem_ancestors_grudge_rune_power_produces_mult
-	mult = 12.5 # weight of postive modifers
-	subtract = value:mem_ancestors_grudge_situation_rarity_tooltip 	
-}
-
 # overflow
 mem_ancestors_grudge_hoarder_overflow = {
 	base = 1
@@ -109,42 +70,4 @@ mem_smith_job_number = {
 		mode = add
 	}
 	max = 20
-	# complex_trigger_modifier = {
-	# 	potential = {
-	# 		owner = {
-	# 			is_overlord = yes
-	# 		}
-	# 	}
-	# 	trigger = count_galaxy_planet
-	# 	parameters = {
-	# 		limit = {
-	# 			has_owner = yes
-	# 			has_holding = {
-	# 				holding = holding_knight_commandery
-	# 				owner = root
-	# 			}
-	# 		}
-	# 	}
-	# 	mult = 0.05
-	# 	mode = add
-	# }
-	# complex_trigger_modifier = {
-	# 	potential = {
-	# 		owner = {
-	# 			has_corporate_government = yes
-	# 		}
-	# 	}
-	# 	trigger = count_galaxy_planet
-	# 	parameters = {
-	# 		limit = {
-	# 			has_owner = yes
-	# 			has_holding = {
-	# 				holding = building_knightly_theme_park
-	# 				owner = root
-	# 			}
-	# 		}
-	# 	}
-	# 	mult = 0.01
-	# 	mode = add
-	# }
 }

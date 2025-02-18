@@ -77,9 +77,7 @@
 
  # Crafting
  situation_mem_ancestors_grudge_crafting:0 "Forge Ritual"
- situation_mem_ancestors_grudge_crafting_desc:0 "[MemGetSmithingSitDesc]"
- situation_mem_ancestors_grudge_crafting_desc_normal:0 "Our smiths are hard at work to smith the next ['concept_mem_ancestors_grudge_rune_relics']\n\nPredicted Smithing Quality:\n[MemGetSituationRarity]\nPredicted Rune Purity:\n[MemGetSituationPurity]"
- situation_mem_ancestors_grudge_crafting_desc_test:0 "Our smiths are hard at work to smith the next ['concept_mem_ancestors_grudge_rune_relics']\n\nPredicted Smithing Quality:\n[MemAncestorsGrudgeQualityMin] - [MemAncestorsGrudgeQualityMax]\nPredicted Rune Purity:\n[MemAncestorsGrudgePurityMin] - [MemAncestorsGrudgePurityMax]"
+ situation_mem_ancestors_grudge_crafting_desc:0 "Our smiths are hard at work to smith the next ['concept_mem_ancestors_grudge_rune_relics']\n\nPredicted Smithing Quality:\n[MemAncestorsGrudgeQualityMin] - [MemAncestorsGrudgeQualityMax]\nPredicted Rune Purity:\n[MemAncestorsGrudgePurityMin] - [MemAncestorsGrudgePurityMax]"
  situation_mem_ancestors_grudge_crafting_stage0:0 "Smithing" 
  situation_mem_ancestors_grudge_crafting_stage1:0 "Runecrafting" 
  situation_mem_ancestors_grudge_crafting_type:0 "$situation_mem_ancestors_grudge_crafting$"
@@ -115,9 +113,9 @@
  concept_mem_ancestors_grudge_rune_relics:0 "Rune-Relics"
  concept_mem_ancestors_grudge_rune_relics_desc:0 "Smithed Relics enhanced with Runes$NEW_LINE$- Relics which have a ['concept_mem_ancestors_grudge_rarity'] and ['concept_mem_ancestors_grudge_intensity']$NEW_LINE$- Activation gives several options based on ['concept_mem_ancestors_grudge_rarity']$NEW_LINE$- Smithing speed influenced by number of §YArtifact Smiths§! and §YRune Artificers§!$NEW_LINE$§L- To craft a new Rune-Relic you need to activate the current!§!"
  concept_mem_ancestors_grudge_rarity:0 "Quality"
- concept_mem_ancestors_grudge_rarity_desc:0 "- Decides the number of random, passive modifiers of ['concept_mem_ancestors_grudge_rune_relics']$NEW_LINE$- Is rolled upon creating §YRune-Relics§!$NEW_LINE$- Every 15% of §Y$concept_mem_ancestors_grudge_artifact_intensity$§! increases quality of rolls$NEW_LINE$- Higher Tiers destabilize ['concept_mem_ancestors_grudge_intensity']$NEW_LINE$- Produced by §Y$job_mem_ancestors_grudge_relicsmith$§!$NEW_LINE$- Possible Tiers:$NEW_LINE$-- $mem_ancestors_grudge_mundane$$NEW_LINE$-- $mem_ancestors_grudge_common$$NEW_LINE$-- $mem_ancestors_grudge_rare$$NEW_LINE$-- $mem_ancestors_grudge_epic$$NEW_LINE$-- $mem_ancestors_grudge_exceptional$$NEW_LINE$-- $mem_ancestors_grudge_masterful$$NEW_LINE$-- $mem_ancestors_grudge_legendary$"
+ concept_mem_ancestors_grudge_rarity_desc:0 "- Decides the number of random, passive modifiers of ['concept_mem_ancestors_grudge_rune_relics']$NEW_LINE$- Likelyhood of creating higher quality §YRune-Relics§! is increased by higher §Y$concept_mem_ancestors_grudge_artifact_intensity$§!$NEW_LINE$- Higher Tiers destabilize ['concept_mem_ancestors_grudge_intensity']$NEW_LINE$- Produced by §Y$job_mem_ancestors_grudge_relicsmith$§!$NEW_LINE$- Possible Tiers:$NEW_LINE$-- $mem_ancestors_grudge_quality_1$$NEW_LINE$-- $mem_ancestors_grudge_quality_2$$NEW_LINE$-- $mem_ancestors_grudge_quality_3$$NEW_LINE$-- $mem_ancestors_grudge_quality_4$$NEW_LINE$-- $mem_ancestors_grudge_quality_5$$NEW_LINE$-- $mem_ancestors_grudge_quality_6$$NEW_LINE$-- $mem_ancestors_grudge_quality_7$"
  concept_mem_ancestors_grudge_intensity:0 "Purity"
- concept_mem_ancestors_grudge_intensity_desc:0 "- A multiplier of the ['concept_mem_ancestors_grudge_rune_relics'] passive effect$NEW_LINE$- Influenced by §Y$concept_mem_ancestors_grudge_rune_intensity$§! and §Y$concept_mem_ancestors_grudge_rarity$§! $NEW_LINE$- Produced by §Y$job_mem_ancestors_grudge_runesmith$§!$NEW_LINE$- Possible Tiers:$NEW_LINE$-- $mem_ancestors_grudge_purity5$$NEW_LINE$-- $mem_ancestors_grudge_purity4$$NEW_LINE$-- $mem_ancestors_grudge_purity3$$NEW_LINE$-- $mem_ancestors_grudge_purity2$$NEW_LINE$-- $mem_ancestors_grudge_purity1$"
+ concept_mem_ancestors_grudge_intensity_desc:0 "- A multiplier of the ['concept_mem_ancestors_grudge_rune_relics'] passive effect$NEW_LINE$- Influenced by §Y$concept_mem_ancestors_grudge_rune_intensity$§! and §Y$concept_mem_ancestors_grudge_rarity$§! $NEW_LINE$- Produced by §Y$job_mem_ancestors_grudge_runesmith$§!$NEW_LINE$- Possible Tiers:$NEW_LINE$-- $mem_ancestors_grudge_purity_1$$NEW_LINE$-- $mem_ancestors_grudge_purity_2$$NEW_LINE$-- $mem_ancestors_grudge_purity_3$$NEW_LINE$-- $mem_ancestors_grudge_purity_4$$NEW_LINE$-- $mem_ancestors_grudge_purity_5$"
  concept_mem_ancestors_grudge_relic_world:0 "Lost Hold"
  concept_mem_ancestors_grudge_relic_world_desc:0 "- ['concept_pc_relic']$NEW_LINE$- extra £blocker£ Blockers$NEW_LINE$- several ['building:building_mem_ancestors_grudge_ruins']$NEW_LINE$- still in Colonization Phase$NEW_LINE$- Modifiers: ['modifier:mem_ancestors_grudge_city_planet'] and ['modifier:low_gravity']$NEW_LINE$- After full restoration:$NEW_LINE$-- Grudge: ['modifier:mem_ancestors_grudge_city_planet_restored']$NEW_LINE$-- Automata: Unlock ['trait:trait_mem_ancestors_grudge_archaeotech_excellence']$NEW_LINE$-- Hoard: ['concept_mem_ancestors_grudge_hoarding_dragon']"
 
@@ -320,19 +318,8 @@
  mem_ancestors_grudge_activate_crafted_relic_tt_hives:0 "[MemAncestorsHiveGetActive]"
 
  # Relic Rarities
- mem_ancestors_grudge_get_relic_rarity:0 "[MemAncestorsGrudgeRelicRarity]"
- mem_ancestors_grudge_get_relic_rarity_normal:0 "Quality: [MemGetRarity]\nPurity: [MemGetPurity]"
- mem_ancestors_grudge_get_relic_rarity_test:0 "Quality: [MemAncestorsGrudgeQualityFinal]\nPurity: [MemAncestorsGrudgePurityFinal]"
+ mem_ancestors_grudge_get_relic_rarity:0 "Quality: [MemAncestorsGrudgeQualityFinal]\nPurity: [MemAncestorsGrudgePurityFinal]"
  
- # old - im way too lazy to rewrite this everywhere
- mem_ancestors_grudge_common:0 "$mem_ancestors_grudge_quality_2$"
- mem_ancestors_grudge_rare:0 "$mem_ancestors_grudge_quality_3$"
- mem_ancestors_grudge_epic:0 "$mem_ancestors_grudge_quality_4$"
- mem_ancestors_grudge_exceptional:0 "$mem_ancestors_grudge_quality_5$"
- mem_ancestors_grudge_mundane:0 "$mem_ancestors_grudge_quality_1$"
- mem_ancestors_grudge_masterful:0 "$mem_ancestors_grudge_quality_6$"
- mem_ancestors_grudge_legendary:0 "$mem_ancestors_grudge_quality_7$"
-
  # Quality
  mem_ancestors_grudge_quality_1:0 "§WMundane§!"
  mem_ancestors_grudge_quality_2:0 "§GWell-crafted§!"
@@ -348,24 +335,6 @@
  mem_ancestors_grudge_purity_3:0 "§BAverage§!"
  mem_ancestors_grudge_purity_4:0 "§MStrong§!"
  mem_ancestors_grudge_purity_5:0 "§_Potent§!"
-
- # Purity old
- mem_ancestors_grudge_purity5:0 "§_Strong§!"
- mem_ancestors_grudge_purity4:0 "§MHigher§!"
- mem_ancestors_grudge_purity3:0 "§BAverage§!"
- mem_ancestors_grudge_purity2:0 "§CLesser§!"
- mem_ancestors_grudge_purity1:0 "§TWeak§!"
-
- # Roll TT
- mem_ancestors_grudge_legendary_situation:0 "$mem_ancestors_grudge_quality_5$ - $mem_ancestors_grudge_quality_7$"
- mem_ancestors_grudge_masterful_situation:0 "$mem_ancestors_grudge_quality_4$ - $mem_ancestors_grudge_quality_6$"
- mem_ancestors_grudge_exceptional_situation:0 "$mem_ancestors_grudge_quality_3$ - $mem_ancestors_grudge_quality_5$"
- mem_ancestors_grudge_epic_situation:0 "$mem_ancestors_grudge_quality_2$ - $mem_ancestors_grudge_quality_4$"
- mem_ancestors_grudge_rare_situation:0 "$mem_ancestors_grudge_quality_2$ - $mem_ancestors_grudge_quality_5$"
- mem_ancestors_grudge_common_situation:0 "$mem_ancestors_grudge_quality_1$ - $mem_ancestors_grudge_quality_4$"
- mem_ancestors_grudge_mundane_situation: "$mem_ancestors_grudge_quality_1$ - $mem_ancestors_grudge_quality_2$"
-
- # Roll TT Purity
 
  ##########################################################################
  # DEPOSITS/BLOCKERS
@@ -597,10 +566,8 @@
  mem_ancestors_grudge.40.desc_robots:0 "After fully restoring the Relic-Forge, we have come to grasp its true purpose. This mighty forge is not just a place for crafting trinkets or minor artifacts.\n\nIt is a sacred engine of creation, allowing our artifact smiths and rune artificers to forge relics of a quality never seen before! These relics are no mere tools or weapons, but treasures.\n\nTruly, the Relic-Forge is a gift from the makers themselves, and its rebirth marks the dawn of a new era for our kin."
  mem_ancestors_grudge.40.a:0 "Start Smithing!"
  mem_ancestors_grudge.50.name:0 "Runes and Durasteel"
- mem_ancestors_grudge.50.desc:0 "Of legend and myth is the craft of the smith. A relic has been forged. A true masterpiece of our craft, and truly one of our finest creations to date. Let us now treasure what our hands have wrought, for such a work is not merely a tool, but a testament to the skill, strength, and spirit of our ancestors. May it serve as a symbol of what we can achieve, when runes, durasteel, and resolve unite!\n\n[MemAncestorsGrudgeRelicResult]"
- mem_ancestors_grudge.50.desc_robots:0 "Of legend and myth is the craft of the smith. A relic has been forged. A true masterpiece of our craft, and truly one of our finest creations to date. Let us now treasure what our hands have wrought, for such a work is not merely a tool, but a testament to the skill, strength, and spirit of our makers. May it serve as a symbol of what we can achieve, when runes, durasteel, and resolve unite!\n\n[MemAncestorsGrudgeRelicResult]"
- mem_ancestors_grudge.50.desc_result_normal:0 "Quality: [owner.MemGetRarity]"
- mem_ancestors_grudge.50.desc_result_test:0 "Quality: [owner.MemAncestorsGrudgeQualityFinal] Purity: [owner.MemAncestorsGrudgePurityFinal]"
+ mem_ancestors_grudge.50.desc:0 "Of legend and myth is the craft of the smith. A relic has been forged. A true masterpiece of our craft, and truly one of our finest creations to date. Let us now treasure what our hands have wrought, for such a work is not merely a tool, but a testament to the skill, strength, and spirit of our ancestors. May it serve as a symbol of what we can achieve, when runes, durasteel, and resolve unite!\n\nQuality: [owner.MemAncestorsGrudgeQualityFinal] Purity: [owner.MemAncestorsGrudgePurityFinal]"
+ mem_ancestors_grudge.50.desc_robots:0 "Of legend and myth is the craft of the smith. A relic has been forged. A true masterpiece of our craft, and truly one of our finest creations to date. Let us now treasure what our hands have wrought, for such a work is not merely a tool, but a testament to the skill, strength, and spirit of our makers. May it serve as a symbol of what we can achieve, when runes, durasteel, and resolve unite!\n\nQuality: [owner.MemAncestorsGrudgeQualityFinal] Purity: [owner.MemAncestorsGrudgePurityFinal]"
  mem_ancestors_grudge.50.a:0 "Runes and Durasteel!"
  mem_ancestors_grudge.50.a.tt:0 "§LDon't forget to activate it. You can only have one at a time.§!"
  mem_ancestors_grudge.50.b:0 "Don't bother me again."
@@ -754,22 +721,27 @@
  #  mem_ancestors_grudge.46.b.shuffle_stats_tt:0 ""
 
  mem_ancestors_grudge.455.title:0 "Demanding Smiths"
- mem_ancestors_grudge.455.desc:0 "Several of our Artifact Smiths have high expectations for their newest creations. It occured to them that not their skill is the problem but rather the underfunded workplace. They assured us that more funding would lead to better outcomes."
+ mem_ancestors_grudge.455.desc:0 "Several of our Artifact Smiths have high expectations for their newest creations. It occured to them that not their skill but rather the underfunded workplace is the problem. They assured us that more funding would lead to better outcomes."
  mem_ancestors_grudge.455.a:0 "Give them what they want."
+ mem_ancestors_grudge.455.a_tt:0 "The predicted outcome will be increased by one quality tier."
  mem_ancestors_grudge.455.b:0 "Hone your skill, not your speech!"
  mem_ancestors_grudge.460.title:0 "Poor Rocks"
  mem_ancestors_grudge.460.desc:0 "Several of our refineries got minerals with very low purity. Even the normal Metallurgists are currently debating if they can even use them."
  mem_ancestors_grudge.460.a:0 "Tolerate lower quality."
+ mem_ancestors_grudge.460.a_tt:0 "The predicted outcome will be lowered by one quality tier."
  mem_ancestors_grudge.460.b:0 "Spare no rock."
  mem_ancestors_grudge.460.c:0 "Scrap all."
  mem_ancestors_grudge.465.title:0 "Inspired Folk"
  mem_ancestors_grudge.465.desc:0 "Our rune articiers felt a great disturbance and are suddenly in the mood for experiments."
  mem_ancestors_grudge.465.a:0 "Let them!"
+ mem_ancestors_grudge.465.a_tt:0 "The outcome of this is a true gamble. The rune artificers might greatly improve their work or do the opposite."
  mem_ancestors_grudge.465.b:0 "No chance!"
+ mem_ancestors_grudge.465.b_tt: 0 "The predicted maximum outcome will be lowered by one purity tier."
  mem_ancestors_grudge.465.c:0 "Fund other hobbies!"
  mem_ancestors_grudge.470.title:0 "Mutual Friendliness"
- mem_ancestors_grudge.470.desc:0 "Today something truly rare happened: all the workers in facility 6A went to their shifts happy to be there. The increased moral had a quite interesting effect on productivity.\n\nThe managers of facility 6A proposed to prefer moral over productivity. They suggest to permanently reduce the working days from 7 days per week to 6 days."
+ mem_ancestors_grudge.470.desc:0 "Today something truly rare happened: all the workers in facility 6A went to their shifts happy to be there. The increased morale had quite an interesting effect on productivity.\n\nThe managers of facility 6A proposed to prefer morale over productivity. They suggest to permanently reduce the working days from 7 days per week to 6 days."
  mem_ancestors_grudge.470.a:0 "Back to work!"
+ mem_ancestors_grudge.470.a_tt: 0 "The predicted outcome will be increased by one quality tier."
  mem_ancestors_grudge.470.b:0 "Six Days it is."
  mem_ancestors_grudge.475.title:0 "Increasing Demand"
  mem_ancestors_grudge.475.desc:0 "Our work on [target.GetName] has not gone unnoticed. Several private buyers are now ordering on regular basis new artifacts. But this also leads to more demand which is currently impossible to meet."
@@ -781,16 +753,21 @@
  mem_ancestors_grudge.480.a:0 "Observe the explosion."
  mem_ancestors_grudge.480.b:0 "Stop it! Now!"
  mem_ancestors_grudge.480.c:0 "No need to worry."
-
  mem_ancestors_grudge.485.title:0 "Trouble in the Forge"
  mem_ancestors_grudge.485.desc:0 "During the ongoing smithing ritual our appointed smith blundered spectacularly. All work so far has been undone and the process has to start anew. The honor of a smith, however, demands that a project begun must see its completion.\n\nHow will we react to this mistake?"
  mem_ancestors_grudge.485.a:0 "Let him sort it out, but remind him of the deadline."
- #(no costs - minimum and maximum quality lowered by 1 level - progress reset to 0 - double monthly progress until finished)
+ mem_ancestors_grudge.485.a_tt:0 "The predicted outcome will be lowered by one quality tier."
  mem_ancestors_grudge.485.b:0 "Let senior smiths offer their insight on his design flaws."
- #(unity cost - minimum quality raised by 1 level - progress reset to 0)
+ mem_ancestors_grudge.485.b_tt:0 "The predicted minimum outcome will be increased by one quality tier."
  mem_ancestors_grudge.485.c:0 "Let senior smiths suggest improvements on his design."
- #(unity cost - maximum quality raised by 1 level - progress reset to 0)
-
+ mem_ancestors_grudge.485.c_tt:0 "The predicted maximum outcome will be increased by one quality tier."
+ mem_ancestors_grudge.490.title:0 "Strange Mood"
+ mem_ancestors_grudge.490.desc:0 "One of our artifact smiths has withdrawn from society and barricaded himself inside of the Relic-Forge. The only thing we are left with is some cryptic message that can only be described as weird gibberish."
+ mem_ancestors_grudge.490.a:0 "Let him smith!"
+ mem_ancestors_grudge.490.a_tt:0 "The outcome of this strange mood is a true gamble. The smith might greatly improve his work or do the opposite."
+ mem_ancestors_grudge.490.b:0 "Someone put him under surveilance!"
+ mem_ancestors_grudge.490.b_tt:0 "The predicted maximum outcome will be lowered by one quality tier."
+ mem_ancestors_grudge.490.c:0 "Try to lead his attention elsewhere!"
 
 
 
@@ -803,8 +780,6 @@
  triggered_runesmiths_to_grudgers:0 "Ancestors' Grudge"
  WEIRD2:0 "WEIRD2"
  mem_ancestors_grudge_increase_jobs_onforge_planet_tt:0 "§LThe Relic Forge will provide 2 more Jobs§!"
- mem_ancestors_grudge_increase_relic_roll_quality_tt:0 "§LThe next Rune Relic will have higher Quality§!"
- mem_ancestors_grudge_decrease_relic_roll_quality_tt:0 "§LThe next Rune Relic will have lower Quality§!"
 
 
 

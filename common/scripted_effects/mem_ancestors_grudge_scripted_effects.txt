@@ -150,344 +150,12 @@ mem_ancestors_grudge_trait_effect = {
 	}
 }
 
-# new purities
-mem_ancestors_grudge_roll_for_relic_purity = {
-	owner = {
-		clear_variable = mem_ancestors_grudge_smithing_purity_rolled
-		set_variable = {
-			which = mem_ancestors_grudge_smithing_chance_purity
-			value = owner.modifier:mem_ancestors_grudge_rune_power_produces_mult
-		}
-		multiply_variable = {	
-			which = mem_ancestors_grudge_smithing_chance_purity
-			value = 1.25
-		}
-		change_variable = {
-			which = mem_ancestors_grudge_smithing_chance_purity
-			value = 1
-		}
-		random_list = {
-			1 = {
-				modifier = {
-					mult = owner.mem_ancestors_grudge_smithing_quality_rolled
-					NOT = {
-						check_variable_arithmetic = {
-							which = owner.mem_ancestors_grudge_smithing_quality_rolled
-							value < 0
-						}
-					}
-				}
-				set_variable = {
-					which = mem_ancestors_grudge_smithing_purity_rolled
-					value = 0.5
-				}
-			}
-			2 = {
-				modifier = {
-					mult = owner.mem_ancestors_grudge_smithing_quality_rolled
-					NOT = {
-						check_variable_arithmetic = {
-							which = owner.mem_ancestors_grudge_smithing_quality_rolled
-							value < 0
-						}
-					}
-				}
-				set_variable = {
-					which = mem_ancestors_grudge_smithing_purity_rolled
-					value = 0.75
-				}
-			}
-			20 = {
-				# modifier = {
-				# 	mult = owner.mem_ancestors_grudge_smithing_chance_purity
-				# }
-				set_variable = {
-					which = mem_ancestors_grudge_smithing_purity_rolled
-					value = 1
-				}
-			}
-			20 = {
-				modifier = {
-					mult = owner.mem_ancestors_grudge_smithing_chance_purity
-				}
-				set_variable = {
-					which = mem_ancestors_grudge_smithing_purity_rolled
-					value = 1.25
-				}
-			}
-			10 = {
-				modifier = {
-					mult = owner.mem_ancestors_grudge_smithing_chance_purity
-				}
-				set_variable = {
-					which = mem_ancestors_grudge_smithing_purity_rolled
-					value = 1.5
-				}
-			}
-		}
-		# this is to produce more random looking variables
-		random_list = {
-			1 = {
-				multiply_variable = {
-					which = mem_ancestors_grudge_smithing_purity_rolled
-					value = 1.07
-				}
-			}
-			1 = {
-				multiply_variable = {
-					which = mem_ancestors_grudge_smithing_purity_rolled
-					value = 1.13
-				}
-			}
-			1 = {
-				multiply_variable = {
-					which = mem_ancestors_grudge_smithing_purity_rolled
-					value = 0.96
-				}
-			}
-			1 = {
-				multiply_variable = {
-					which = mem_ancestors_grudge_smithing_purity_rolled
-					value = 0.83
-				}
-			}
-			1 = {
-				multiply_variable = {
-					which = mem_ancestors_grudge_smithing_purity_rolled
-					value = 1.02
-				}
-			}
-		}
-		clear_variable = mem_ancestors_grudge_smithing_chance_purity
-	}
-}
-
-# new qualities
-# countryflag name = loc name
-# mundane = mundane 
-# common = decent
-# rare = excellent
-# epic = superior
-# exceptional = exceptional
-# masterful = masterful
-# legendary = legendary
-mem_ancestors_grudge_roll_for_relic_rarity = {
-	owner = {
-		# clear old variable
-		clear_variable = mem_ancestors_grudge_smithing_quality_rolled
-		# add between 1 and 7
-		set_variable = {
-			which = mem_ancestors_grudge_smithing_chance
-			value = owner.value:mem_ancestors_grudge_situation_rarity
-		}
-		# delete before the comma and let the fraction remain
-		subtract_variable = {
-			which = mem_ancestors_grudge_smithing_chance
-			value = owner.value:mem_ancestors_grudge_situation_rarity_floored
-		}
-		# negative roll
-		set_variable = {
-			which = mem_ancestors_grudge_smithing_chance_negative
-			value = 1
-		}
-		subtract_variable = {
-			which = mem_ancestors_grudge_smithing_chance_negative
-			value = mem_ancestors_grudge_smithing_chance
-		}
-		# multiply fraction to represent percentage, not sure if random_list works with fractions
-		multiply_variable = {
-			which = mem_ancestors_grudge_smithing_chance
-			value = 100
-		}
-		multiply_variable = {
-			which = mem_ancestors_grudge_smithing_chance_negative
-			value = 100
-		}
-		# set variable for expacted value
-		set_variable = {
-			which = mem_ancestors_grudge_smithing_quality
-			value = owner.value:mem_ancestors_grudge_situation_rarity
-		}
-		# increase by roll chance events
-		if = {
-			limit = {
-				is_variable_set = mem_ancestors_grudge_rarity_increase
-			}
-			change_variable = {
-				which = mem_ancestors_grudge_smithing_quality
-				value = mem_ancestors_grudge_rarity_increase
-			}
-		}
-		# now lets start rolling 
-		# numbers refer to the actual rarity
-		# if you change something here, you also need to change the Tooltips!
-		if = {
-			limit = {
-				check_variable_arithmetic = {
-					which = owner.mem_ancestors_grudge_smithing_quality
-					value < 0
-				}
-			}
-			inline_script = {
-				script = mem_ancestors_grudge/roll_rarity
-				FLAG1 = 0
-				FLAG2 = 0
-				FLAG3 = 1
-				FLAG4 = 1
-				FLAG5 = 1
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable_arithmetic = {
-					which = owner.mem_ancestors_grudge_smithing_quality
-					value < 1
-				}
-			}
-			inline_script = {
-				script = mem_ancestors_grudge/roll_rarity
-				FLAG1 = 0
-				FLAG2 = 1
-				FLAG3 = 1
-				FLAG4 = 2
-				FLAG5 = 3
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable_arithmetic = {
-					which = owner.mem_ancestors_grudge_smithing_quality
-					value < 2
-				}
-			}
-			inline_script = {
-				script = mem_ancestors_grudge/roll_rarity
-				FLAG1 = 1
-				FLAG2 = 1
-				FLAG3 = 2
-				FLAG4 = 3
-				FLAG5 = 4
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable_arithmetic = {
-					which = owner.mem_ancestors_grudge_smithing_quality
-					value < 3
-				}
-			}
-			inline_script = {
-				script = mem_ancestors_grudge/roll_rarity
-				FLAG1 = 1
-				FLAG2 = 2
-				FLAG3 = 3
-				FLAG4 = 4
-				FLAG5 = 4
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable_arithmetic = {
-					which = owner.mem_ancestors_grudge_smithing_quality
-					value < 4
-				}
-			}
-			inline_script = {
-				script = mem_ancestors_grudge/roll_rarity
-				FLAG1 = 2
-				FLAG2 = 3
-				FLAG3 = 3
-				FLAG4 = 4
-				FLAG5 = 4
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable_arithmetic = {
-					which = owner.mem_ancestors_grudge_smithing_quality
-					value < 5
-				}
-			}
-			inline_script = {
-				script = mem_ancestors_grudge/roll_rarity
-				FLAG1 = 3
-				FLAG2 = 3
-				FLAG3 = 4
-				FLAG4 = 4
-				FLAG5 = 5
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable_arithmetic = {
-					which = owner.mem_ancestors_grudge_smithing_quality
-					value < 6
-				}
-			}
-			inline_script = {
-				script = mem_ancestors_grudge/roll_rarity
-				FLAG1 = 3
-				FLAG2 = 4
-				FLAG3 = 4
-				FLAG4 = 5
-				FLAG5 = 5
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable_arithmetic = {
-					which = owner.mem_ancestors_grudge_smithing_quality
-					value > 6
-				}
-			}
-			inline_script = {
-				script = mem_ancestors_grudge/roll_rarity
-				FLAG1 = 4
-				FLAG2 = 5
-				FLAG3 = 5
-				FLAG4 = 5
-				FLAG5 = 6
-			}
-		}
-		while = {
-			count = owner.mem_ancestors_grudge_smithing_quality_rolled
-			owner = {
-				mem_ancestors_grudge_add_relic_modifier = yes
-			}
-		}
-		clear_variable = mem_ancestors_grudge_smithing_quality
-		clear_variable = mem_ancestors_grudge_rarity_increase
-		clear_variable = mem_ancestors_grudge_smithing_chance_negative
-		clear_variable = mem_ancestors_grudge_smithing_chance
-	}
-}
-
 mem_ancestors_grudge_increase_jobs_onforge_planet = {
 	custom_tooltip = mem_ancestors_grudge_increase_jobs_onforge_planet_tt
 	hidden_effect = {
 		change_variable = {
 			which = mem_ancestors_grudge_relicforge_extrajobs
 			value = 1
-		}
-	}
-}
-
-mem_ancestors_grudge_increase_relic_roll_quality = {
-	custom_tooltip = mem_ancestors_grudge_increase_relic_roll_quality_tt
-	hidden_effect = {
-		change_variable = {
-			which = mem_ancestors_grudge_rarity_increase
-			value = 1
-		}
-	}
-}
-
-mem_ancestors_grudge_decrease_relic_roll_quality = {
-	custom_tooltip = mem_ancestors_grudge_decrease_relic_roll_quality_tt
-	hidden_effect = {
-		change_variable = {
-			which = mem_ancestors_grudge_rarity_increase
-			value = -1
 		}
 	}
 }
@@ -554,7 +222,7 @@ mem_ancestors_grudge_add_relic_modifier = {
 	}
 }
 
-# Malthus' Experimental script for Relic-Crafting
+# Malthus' new script for Relic-Crafting
 
 # Beginning of Situation
 # This effect will define the minimum quality result of the situation
@@ -1578,6 +1246,12 @@ mem_ancestors_grudge_roll_quality_final = {
 			which = mem_ancestors_grudge_smithing_quality_rolled
 			value = prev.mem_ancestors_grudge_smithing_quality_final
 		}
+		# This value is used as a factor with <tier> -1 for adding bonuses (tier 1 gets none)
+		# also used in event checks after relic is finished (don't want to change them again)
+		change_variable = {
+			which = mem_ancestors_grudge_smithing_quality_rolled
+			value = -1
+		}
 	}
 }
 
@@ -1727,6 +1401,88 @@ mem_ancestors_grudge_roll_purity_final = {
 					value = 1.5
 				}
 			}
+		}
+	}
+}
+
+# Crafting event effects to change quality and purity outcomes
+
+# add min quality
+mem_ancestors_grudge_roll_quality_min_add = {
+	change_variable = {
+		which = mem_ancestors_grudge_rune_quality_min
+		value = 1
+	}
+}
+# substract min quality
+mem_ancestors_grudge_roll_quality_min_sub = {
+	change_variable = {
+		which = mem_ancestors_grudge_rune_quality_min
+		value = -1
+	}
+}
+
+# add max quality
+mem_ancestors_grudge_roll_quality_max_add = {
+	change_variable = {
+		which = mem_ancestors_grudge_rune_quality_max
+		value = 1
+	}
+}
+# substract max quality
+mem_ancestors_grudge_roll_quality_max_sub = {
+	change_variable = {
+		which = mem_ancestors_grudge_rune_quality_max
+		value = -1
+	}
+}
+
+# add min purity
+mem_ancestors_grudge_roll_purity_min_add = {
+	change_variable = {
+		which = mem_ancestors_grudge_rune_purity_min
+		value = 1
+	}
+}
+# substract min purity
+mem_ancestors_grudge_roll_purity_min_sub = {
+	change_variable = {
+		which = mem_ancestors_grudge_rune_purity_min
+		value = -1
+	}
+}
+
+# add max purity
+mem_ancestors_grudge_roll_purity_max_add = {
+	change_variable = {
+		which = mem_ancestors_grudge_rune_purity_max
+		value = 1
+	}
+}
+# substract max purity
+mem_ancestors_grudge_roll_purity_max_sub = {
+	change_variable = {
+		which = mem_ancestors_grudge_rune_purity_max
+		value = -1
+	}
+}
+
+# unity production of 1 month for option costs
+mem_ancestors_grudge_get_unity_cost = {
+	owner = {
+		export_resource_income_to_variable = {
+			resource = unity
+			variable = unity_prod
+		}
+	}
+}
+
+# energy production of 1 month for option costs
+mem_ancestors_grudge_get_energy_cost = {
+	owner = {
+		export_resource_income_to_variable = {
+			resource = energy
+			variable = energy_prod
 		}
 	}
 }

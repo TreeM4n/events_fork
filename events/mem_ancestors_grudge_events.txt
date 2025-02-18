@@ -96,7 +96,8 @@ namespace = mem_ancestors_grudge
 # mem_ancestors_grudge.470		|	good workday?!
 # mem_ancestors_grudge.475		|	high demand
 # mem_ancestors_grudge.480		|	ancient generators failing
-# mem_ancestors_grudge.485		|	failed big time
+# mem_ancestors_grudge.485		|	Trouble in the Forge
+# mem_ancestors_grudge.490		|	Strange Mood
 ############################################################################################################
 # extra hive events
 ############################################################################################################
@@ -161,18 +162,6 @@ country_event = {
 	}
 	option = {
 		name = WEIRD
-		add_relic = r_mem_ancestors_grudge_pauldron
-		set_variable = {
-			which = mem_ancestors_grudge_rune_intensity
-			value = 4
-		}
-		set_variable = {
-			which = mem_ancestors_grudge_situation_rarity
-			value = 7
-		}
-	}
-	option = {
-		name = WEIRD
 		add_relic = r_mem_ancestors_grudge_ring
 		set_variable = {
 			which = mem_ancestors_grudge_rune_intensity
@@ -226,13 +215,6 @@ country_event = {
 		add_resource = {
 			unity = 1000
 			mult = this.modifier:mem_ancestors_grudge_rune_power_produces_mult
-		}
-	}
-	option = {
-		name = WEIRD
-		add_resource = {
-			unity = 1000
-			mult = this.value:mem_ancestors_grudge_situation_rarity
 		}
 	}
 	# option = {
@@ -2111,26 +2093,13 @@ situation_event = {
 				value = 1
 			}
 		}
-		if = {
-			limit = {
-				owner = {
-					has_country_flag = mem_malthus_test
-				}
+		mem_ancestors_grudge_roll_quality_final = yes
+		mem_ancestors_grudge_roll_purity_final = yes
+		while = {
+			count = owner.mem_ancestors_grudge_smithing_quality_rolled
+			owner = {
+				mem_ancestors_grudge_add_relic_modifier = yes
 			}
-			mem_ancestors_grudge_roll_quality_final = yes
-			mem_ancestors_grudge_roll_purity_final = yes
-			while = {
-				count = owner.mem_ancestors_grudge_smithing_quality_rolled
-				owner = {
-					mem_ancestors_grudge_add_relic_modifier = yes
-				}
-			}
-		}
-		else = {
-			# roll for rarity
-			mem_ancestors_grudge_roll_for_relic_rarity = yes
-			# roll for purity
-			mem_ancestors_grudge_roll_for_relic_purity = yes
 		}
 		if = {
 			limit = {
@@ -2250,26 +2219,14 @@ situation_event = {
 				value = 1
 			}
 		}
-		if = {
-			limit = {
-				owner = {
-					has_country_flag = mem_malthus_test
-				}
+
+		mem_ancestors_grudge_roll_quality_final = yes
+		mem_ancestors_grudge_roll_purity_final = yes
+		while = {
+			count = owner.mem_ancestors_grudge_smithing_quality_rolled
+			owner = {
+				mem_ancestors_grudge_add_relic_modifier = yes
 			}
-			mem_ancestors_grudge_roll_quality_final = yes
-			mem_ancestors_grudge_roll_purity_final = yes
-			while = {
-				count = owner.mem_ancestors_grudge_smithing_quality_rolled
-				owner = {
-					mem_ancestors_grudge_add_relic_modifier = yes
-				}
-			}
-		}
-		else = {
-			# roll for rarity
-			mem_ancestors_grudge_roll_for_relic_rarity = yes
-			# roll for purity
-			mem_ancestors_grudge_roll_for_relic_purity = yes
 		}
 		
 		if = {
@@ -4497,27 +4454,28 @@ situation_event = {
 	location = target
 	is_triggered_only = yes
 	situation = this
-	trigger = {
-		# owner = {
-		# 	is_gestalt = no
-		# }
-		target = {
-			NOT = {
+	trigger = {		
+		NOR = {
+			target = {
 				has_modifier = mem_ancestors_grudge_high_expectations
 			}
+			has_situation_flag = mem_ancestors_grudge_got_sit_event
 		}
 	}
 	immediate = {
+		set_situation_flag = mem_ancestors_grudge_got_sit_event
 	}
 	option = {
 		name = mem_ancestors_grudge.455.a
+		custom_tooltip = mem_ancestors_grudge.455.a_tt
 		target = {
 			add_modifier = {
 				modifier = mem_ancestors_grudge_high_expectations
 				days = 1800
 			}
-		}
-		mem_ancestors_grudge_increase_relic_roll_quality = yes
+		}		
+		mem_ancestors_grudge_roll_quality_min_sub = yes
+		mem_ancestors_grudge_roll_quality_max_sub = yes
 	}
 	option = {
 		name = mem_ancestors_grudge.455.b
@@ -4536,8 +4494,12 @@ situation_event = {
 	is_triggered_only = yes
 	situation = this
 	trigger = {
+		NOT = {
+			has_situation_flag = mem_ancestors_grudge_got_sit_event
+		}
 	}
 	immediate = {
+		set_situation_flag = mem_ancestors_grudge_got_sit_event
 		set_variable = {
 			which = situation_progress
 			value = this.trigger:situation_progress
@@ -4549,7 +4511,9 @@ situation_event = {
 	}
 	option = {
 		name = mem_ancestors_grudge.460.a
-		mem_ancestors_grudge_decrease_relic_roll_quality = yes
+		custom_tooltip = mem_ancestors_grudge.460.a_tt
+		mem_ancestors_grudge_roll_quality_min_sub = yes
+		mem_ancestors_grudge_roll_quality_max_sub = yes
 	}
 	option = {
 		name = mem_ancestors_grudge.460.b
@@ -4578,8 +4542,12 @@ situation_event = {
 	is_triggered_only = yes
 	situation = this
 	trigger = {
+		NOT = {
+			has_situation_flag = mem_ancestors_grudge_got_sit_event
+		}
 	}
 	immediate = {
+		set_situation_flag = mem_ancestors_grudge_got_sit_event
 		set_variable = {
 			which = situation_progress
 			value = this.trigger:situation_progress
@@ -4596,21 +4564,58 @@ situation_event = {
 			which = situation_progress_negative
 			value = -1
 		}
+		# we want to have dynamic costs for our options 
+		mem_ancestors_grudge_get_energy_cost = yes
 	}
 	option = {
 		name = mem_ancestors_grudge.465.a
-		random_list = {
-			1 = {
-				add_situation_progress = situation_progress
+		custom_tooltip = mem_ancestors_grudge.465.a_tt
+		# very unpredictable outcome, but the last part does skew it into the positive, so it is likely a good choice, though with a risk
+		hidden_effect = {
+			random_list = {
+				1 = {
+					mem_ancestors_grudge_roll_purity_max_add = yes
+				}
+				1 = {
+					mem_ancestors_grudge_roll_purity_min_add = yes
+				}
+				1 = {
+					mem_ancestors_grudge_roll_purity_min_add = yes
+					mem_ancestors_grudge_roll_purity_max_add = yes
+				}
+				1 = {
+					mem_ancestors_grudge_roll_purity_max_sub = yes
+				}
+				1 = {
+					mem_ancestors_grudge_roll_purity_min_sub = yes
+				}
+				1 = {
+					mem_ancestors_grudge_roll_purity_min_sub = yes
+					mem_ancestors_grudge_roll_purity_max_sub = yes
+				}
+				1 = {
+					mem_ancestors_grudge_roll_purity_min_sub = yes
+					mem_ancestors_grudge_roll_purity_max_add = yes
+				}
+				1 = {
+					mem_ancestors_grudge_roll_purity_min_sub = yes
+					mem_ancestors_grudge_roll_purity_max_add = yes
+					mem_ancestors_grudge_roll_purity_min_sub = yes
+					mem_ancestors_grudge_roll_purity_max_add = yes
+				}
+				1 = {
+					mem_ancestors_grudge_roll_purity_min_add = yes
+					mem_ancestors_grudge_roll_purity_max_add = yes
+					mem_ancestors_grudge_roll_purity_min_add = yes
+					mem_ancestors_grudge_roll_purity_max_add = yes
+				}
 			}
-			1 = {
-				add_situation_progress = situation_progress_negative
-			}
-		}
+		}		
 	}
-	option = {
+	option = { 
 		name = mem_ancestors_grudge.465.b
-		mem_ancestors_grudge_decrease_relic_roll_quality = yes
+		custom_tooltip = mem_ancestors_grudge.465.b_tt
+		mem_ancestors_grudge_roll_purity_max_sub = yes
 	}
 	option = {
 		name = mem_ancestors_grudge.465.c
@@ -4618,17 +4623,19 @@ situation_event = {
 			owner = {
 				resource_stockpile_compare = {
 					resource = energy
-					value = 2000
+					value >= energy_prod
+					mult = 10
 				}
 			}
 		}
 		owner = {
 			add_resource = {
-				energy = -2000
+				energy = -10
+				mult = energy_prod
 			}
 			add_monthly_resource_mult = {
 				resource = physics_research
-				value = 3
+				value = 12
 			}
 		}
 		add_situation_progress = situation_progress_negative
@@ -4647,17 +4654,38 @@ situation_event = {
 	is_triggered_only = yes
 	situation = this
 	trigger = {
-		target = {
-			NOT = {
+		NOR = {
+			target = {
 				has_modifier = mem_ancestors_grudge_6_day_workweek
 			}
+			has_situation_flag = mem_ancestors_grudge_got_sit_event
 		}
 	}
 	immediate = {
+		set_situation_flag = mem_ancestors_grudge_got_sit_event
+		# we want to have dynamic costs for our options 
+		mem_ancestors_grudge_get_unity_cost = yes
 	}
 	option = {
 		name = mem_ancestors_grudge.470.a
-		mem_ancestors_grudge_increase_relic_roll_quality = yes
+		custom_tooltip = mem_ancestors_grudge.470.a_tt
+		allow = {
+			owner = {
+				resource_stockpile_compare = {
+					resource = unity
+					value >= unity_prod
+					mult = 18
+				}
+			}
+		}
+		owner = {
+			add_resource = {
+				unity = -18
+				mult = unity_prod
+			}
+		}
+		mem_ancestors_grudge_roll_quality_min_add = yes
+		mem_ancestors_grudge_roll_quality_max_add = yes
 	}
 	option = {
 		name = mem_ancestors_grudge.470.b
@@ -4668,6 +4696,9 @@ situation_event = {
 		}
 	}
 	after = {
+		owner = {
+			clear_variable = unity_prod
+		}
 	}
 }
 
@@ -4688,22 +4719,6 @@ situation_event = {
 		}
 	}
 	immediate = {
-		set_variable = {
-			which = situation_progress
-			value = this.trigger:situation_progress
-		}
-		multiply_variable = {
-			which = situation_progress
-			value = 0.5
-		}
-		set_variable = {
-			which = situation_progress_negative
-			value = situation_progress
-		}
-		multiply_variable = {
-			which = situation_progress_negative
-			value = -1
-		}
 	}
 	option = {
 		name = mem_ancestors_grudge.475.a
@@ -4725,7 +4740,7 @@ situation_event = {
 		owner = {
 			add_monthly_resource_mult = {
 				resource = unity
-				value = 3
+				value = 6
 			}
 		}
 	}
@@ -4808,8 +4823,12 @@ situation_event = {
 	is_triggered_only = yes
 	situation = this
 	trigger = {
+		NOT = {
+			has_situation_flag = mem_ancestors_grudge_got_sit_event
+		}
 	}
 	immediate = {
+		set_situation_flag = mem_ancestors_grudge_got_sit_event
 		set_variable = {
 			which = situation_progress
 			value = this.trigger:situation_progress
@@ -4826,36 +4845,172 @@ situation_event = {
 			which = situation_progress_negative
 			value = -1
 		}
+		# we want to have dynamic costs for our options 
+		mem_ancestors_grudge_get_unity_cost = yes
 	}
 	option = {
 		name = mem_ancestors_grudge.485.a
-		owner = {
-			mem_ancestors_grudge_decrease_relic_roll_quality = yes
-		}
+		custom_tooltip = mem_ancestors_grudge.485.a_tt
+		mem_ancestors_grudge_roll_quality_min_sub = yes
+		mem_ancestors_grudge_roll_quality_max_sub = yes
 	}
+		
 	option = {
 		name = mem_ancestors_grudge.485.b
-		add_situation_progress = situation_progress_negative
-	}
-	option = {
-		name = mem_ancestors_grudge.485.c
+		custom_tooltip = mem_ancestors_grudge.485.b_tt
 		allow = {
 			owner = {
 				resource_stockpile_compare = {
-					resource = energy
-					value = 2000
+					resource = unity
+					value >= unity_prod
+					mult = 18
 				}
 			}
 		}
 		owner = {
 			add_resource = {
-				energy = -2000
+				unity = -18
+				mult = unity_prod
+			}
+		}
+		mem_ancestors_grudge_roll_quality_min_add = yes
+		add_situation_progress = situation_progress_negative
+	}
+	option = {
+		name = mem_ancestors_grudge.485.c
+		custom_tooltip = mem_ancestors_grudge.485.c_tt
+		allow = {
+			owner = {
+				resource_stockpile_compare = {
+					resource = unity
+					value >= unity_prod
+					mult = 18
+				}
+			}
+		}
+		owner = {
+			add_resource = {
+				unity = -18
+				mult = unity_prod
+			}
+		}
+		mem_ancestors_grudge_roll_quality_max_add = yes
+		add_situation_progress = situation_progress_negative
+	}
+	after = {
+		owner = {
+			clear_variable = unity_prod
+		}
+	}
+}
+
+situation_event = {
+	id = mem_ancestors_grudge.490
+	title = "mem_ancestors_grudge.490.title"
+	desc = "mem_ancestors_grudge.490.desc"
+	picture = GFX_evt_cyberization_2
+	show_sound = event_mystic_reveal
+	location = target
+	is_triggered_only = yes
+	situation = this
+	trigger = {
+		NOT = {
+			has_situation_flag = mem_ancestors_grudge_got_sit_event
+		}
+	}
+	immediate = {
+		set_situation_flag = mem_ancestors_grudge_got_sit_event
+		set_variable = {
+			which = situation_progress
+			value = this.trigger:situation_progress
+		}
+		multiply_variable = {
+			which = situation_progress
+			value = 0.5
+		}
+		set_variable = {
+			which = situation_progress_negative
+			value = situation_progress
+		}
+		multiply_variable = {
+			which = situation_progress_negative
+			value = -1
+		}
+		# we want to have dynamic costs for our options 
+		mem_ancestors_grudge_get_energy_cost = yes
+	}
+	option = {
+		name = mem_ancestors_grudge.490.a
+		custom_tooltip = mem_ancestors_grudge.490.a_tt
+		# very unpredictable outcome, but the last part does skew it into the positive, so it is likely a good choice, though with a risk
+		hidden_effect = {
+			random_list = {
+				1 = {
+					mem_ancestors_grudge_roll_quality_max_add = yes
+				}
+				1 = {
+					mem_ancestors_grudge_roll_quality_min_add = yes
+				}
+				1 = {
+					mem_ancestors_grudge_roll_quality_min_add = yes
+					mem_ancestors_grudge_roll_quality_max_add = yes
+				}
+				1 = {
+					mem_ancestors_grudge_roll_quality_max_sub = yes
+				}
+				1 = {
+					mem_ancestors_grudge_roll_quality_min_sub = yes
+				}
+				1 = {
+					mem_ancestors_grudge_roll_quality_min_sub = yes
+					mem_ancestors_grudge_roll_quality_max_sub = yes
+				}
+				1 = {
+					mem_ancestors_grudge_roll_quality_min_sub = yes
+					mem_ancestors_grudge_roll_quality_max_add = yes
+				}
+				1 = {
+					mem_ancestors_grudge_roll_quality_min_sub = yes
+					mem_ancestors_grudge_roll_quality_max_add = yes
+					mem_ancestors_grudge_roll_quality_min_sub = yes
+					mem_ancestors_grudge_roll_quality_max_add = yes
+				}
+				1 = {
+					mem_ancestors_grudge_roll_quality_min_add = yes
+					mem_ancestors_grudge_roll_quality_max_add = yes
+					mem_ancestors_grudge_roll_quality_min_add = yes
+					mem_ancestors_grudge_roll_quality_max_add = yes
+				}
+			}
+		}		
+	}
+	option = { 
+		name = mem_ancestors_grudge.490.b
+		custom_tooltip = mem_ancestors_grudge.490.b_tt
+		mem_ancestors_grudge_roll_purity_max_sub = yes
+	}
+	option = {
+		name = mem_ancestors_grudge.490.c
+		allow = {
+			owner = {
+				resource_stockpile_compare = {
+					resource = energy
+					value >= energy_prod
+					mult = 10
+				}
+			}
+		}
+		owner = {
+			add_resource = {
+				energy = -10
+				mult = energy_prod
+			}
+			add_monthly_resource_mult = {
+				resource = alloys
+				value = 12
 			}
 		}
 		add_situation_progress = situation_progress_negative
-		owner = {
-			mem_ancestors_grudge_increase_relic_roll_quality = yes
-		}
 	}
 	after = {
 	}
