@@ -3,6 +3,15 @@
 defined_text = {
 	name = MemGetRarity
 	random = no
+	# otherwise the logs start to cry
+	text = {
+		trigger = {
+			NOT = {
+				is_variable_set = mem_ancestors_grudge_smithing_quality_rolled
+			}
+		}
+		localization_key = mem_ancestors_grudge_empty
+	}
 	text = {
 		trigger = {
 			check_variable_arithmetic = {
