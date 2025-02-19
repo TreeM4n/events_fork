@@ -1467,22 +1467,3 @@ mem_ancestors_grudge_roll_purity_max_sub = {
 	}
 }
 
-# unity production of 1 month for option costs
-mem_ancestors_grudge_get_unity_cost = {
-	owner = {
-		export_resource_income_to_variable = {
-			resource = unity
-			variable = unity_prod
-		}
-	}
-}
-
-# energy production of 1 month for option costs
-mem_ancestors_grudge_get_energy_cost = {
-	owner = {
-		export_resource_income_to_variable = {
-			resource = energy
-			variable = energy_prod
-		}
-	}
-}

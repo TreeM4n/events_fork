@@ -2219,7 +2219,6 @@ situation_event = {
 				value = 1
 			}
 		}
-
 		mem_ancestors_grudge_roll_quality_final = yes
 		mem_ancestors_grudge_roll_purity_final = yes
 		while = {
@@ -2228,7 +2227,6 @@ situation_event = {
 				mem_ancestors_grudge_add_relic_modifier = yes
 			}
 		}
-		
 		if = {
 			limit = {
 				mem_has_not_relic_flag = yes
@@ -4454,7 +4452,7 @@ situation_event = {
 	location = target
 	is_triggered_only = yes
 	situation = this
-	trigger = {		
+	trigger = {
 		NOR = {
 			target = {
 				has_modifier = mem_ancestors_grudge_high_expectations
@@ -4473,7 +4471,7 @@ situation_event = {
 				modifier = mem_ancestors_grudge_high_expectations
 				days = 1800
 			}
-		}		
+		}
 		mem_ancestors_grudge_roll_quality_min_sub = yes
 		mem_ancestors_grudge_roll_quality_max_sub = yes
 	}
@@ -4564,8 +4562,11 @@ situation_event = {
 			which = situation_progress_negative
 			value = -1
 		}
-		# we want to have dynamic costs for our options 
-		mem_ancestors_grudge_get_energy_cost = yes
+		inline_script = {
+			script = mem_ancestors_grudge/monthly_production_variable
+			AMOUNT = 1
+			RESOURCE = energy
+		}
 	}
 	option = {
 		name = mem_ancestors_grudge.465.a
@@ -4610,9 +4611,9 @@ situation_event = {
 					mem_ancestors_grudge_roll_purity_max_add = yes
 				}
 			}
-		}		
+		}
 	}
-	option = { 
+	option = {
 		name = mem_ancestors_grudge.465.b
 		custom_tooltip = mem_ancestors_grudge.465.b_tt
 		mem_ancestors_grudge_roll_purity_max_sub = yes
@@ -4663,8 +4664,17 @@ situation_event = {
 	}
 	immediate = {
 		set_situation_flag = mem_ancestors_grudge_got_sit_event
-		# we want to have dynamic costs for our options 
-		mem_ancestors_grudge_get_unity_cost = yes
+		
+		# mem_ancestors_grudge_get_unity_cost = yes
+
+		# this will put create a variable named unity_prod
+		# dont forget to clear it afterwards!
+		inline_script = {
+			script = mem_ancestors_grudge/monthly_production_variable
+			AMOUNT = 1
+			RESOURCE = unity
+		}
+		
 	}
 	option = {
 		name = mem_ancestors_grudge.470.a
@@ -4845,8 +4855,14 @@ situation_event = {
 			which = situation_progress_negative
 			value = -1
 		}
-		# we want to have dynamic costs for our options 
-		mem_ancestors_grudge_get_unity_cost = yes
+		
+		# this will put create a variable named unity_prod
+		# dont forget to clear it afterwards!
+		inline_script = {
+			script = mem_ancestors_grudge/monthly_production_variable
+			AMOUNT = 1
+			RESOURCE = unity
+		}
 	}
 	option = {
 		name = mem_ancestors_grudge.485.a
@@ -4854,7 +4870,6 @@ situation_event = {
 		mem_ancestors_grudge_roll_quality_min_sub = yes
 		mem_ancestors_grudge_roll_quality_max_sub = yes
 	}
-		
 	option = {
 		name = mem_ancestors_grudge.485.b
 		custom_tooltip = mem_ancestors_grudge.485.b_tt
@@ -4936,8 +4951,11 @@ situation_event = {
 			which = situation_progress_negative
 			value = -1
 		}
-		# we want to have dynamic costs for our options 
-		mem_ancestors_grudge_get_energy_cost = yes
+		inline_script = {
+			script = mem_ancestors_grudge/monthly_production_variable
+			AMOUNT = 1
+			RESOURCE = energy
+		}
 	}
 	option = {
 		name = mem_ancestors_grudge.490.a
@@ -4982,9 +5000,9 @@ situation_event = {
 					mem_ancestors_grudge_roll_quality_max_add = yes
 				}
 			}
-		}		
+		}
 	}
-	option = { 
+	option = {
 		name = mem_ancestors_grudge.490.b
 		custom_tooltip = mem_ancestors_grudge.490.b_tt
 		mem_ancestors_grudge_roll_purity_max_sub = yes
