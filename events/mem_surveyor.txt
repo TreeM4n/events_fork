@@ -26,6 +26,7 @@ event = {
             random_owned_fleet = {
                 fleet_event = { id = mem_surveyor.2 }
             }
+            # TODO this is not stable for future updates
 			if = {
 				limit = {
 					exists = event_target:amoeba_country
@@ -286,17 +287,27 @@ country_event = {
 
     trigger = {
         # # log = "Trying to initiate first contact. [From.GetName]"
+       
         FROM = { is_country_type = mem_surveyor_country_green }
         NOT = { has_country_flag = mem_surveyor_spotted_probe }
+        
     }
 
     picture = GFX_evt_unknown_ships
     show_sound = event_radio_chatter
-    location = FROMFROMFROM
+    #location = FROMFROMFROM
     
     immediate = {
         set_country_flag = mem_surveyor_spotted_probe
-        FROMFROMFROM = { save_event_target_as = surveyor_system } # TODO fix this FROMFROMFROM logs starts to cry
+        
+        if = {
+            limit = { 
+                exists =  FROMFROMFROM
+            }
+
+            FROMFROMFROM = { save_event_target_as = surveyor_system } 
+        }
+        
     }
 
     option = {

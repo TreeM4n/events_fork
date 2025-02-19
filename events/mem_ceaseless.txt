@@ -47,14 +47,6 @@ country_event = {
 					# 	max = 360
 					# }
 				}
-				# TODO make this effect for probe locs
-				# random_megastructure = {
-				# 	limit = {
-				# 		is_megastructure_type = mem_ceaseless_base
-				# 	}
-				# 	save_event_target_as = mem_ceaseless_base
-				# }
-				# activate_gateway = event_target:mem_ceaseless_base
 			}
 		}
 	}
@@ -184,7 +176,7 @@ planet_event = {
 					food = 1000
 				}
 				save_event_target_as = future_subject
-				# TODO add  modifier for pops demoting
+				
 			}
 			event_target:future_overlrod = {
 				add_intel = {
@@ -254,6 +246,7 @@ country_event = {
 		}
 	}
 }
+
 # on enter system, %chance for probe to died here
 ship_event = {
 	id = mem_ceaseless.5
@@ -266,41 +259,681 @@ ship_event = {
 		}
 	}
 	immediate = {
-		from = {
-			random_list = {
-				5 = {
-					root.owner = {
-						create_message = {
-							type = MESSAGE_MEM_CEASELESS_FOUND_PROBE_SIGNATURE
-							days = 30
+		random_list = {
+			10 = {
+				if = {
+					limit = {
+						owner = {
+							has_event_chain = mem_ceaseless_lost_probes
 						}
 					}
-					random_system_planet = {
+					system_star = {
 						root.owner = {
 							enable_special_project = {
-								name = MEM_SURVEYOR_HELP_ENGINEERING
+								name = MEM_CEASELESS_PROBE_SIGNATURE_PROJECT
+								location = prev
 							}
 						}
 					}
+					owner = {
+						create_message = {
+							type = MESSAGE_MEM_CEASELESS_FOUND_PROBE_SIGNATURE
+							target = root.solar_system
+							days = 30
+						}
+					}
 				}
-				95 = {
-
+				else = {
+					ship_event = {
+						id = mem_ceaseless.6
+					}
 				}
-
+			}
+			90 = {
 			}
 		}
 	}
 }
-#################################### all random events
-# random event
+
+# first time we found probe
 ship_event = {
 	id = mem_ceaseless.6
-	hide_window = yes
+	title = mem_ceaseless.6.title
+	desc = mem_ceaseless.6.desc
+	picture = GFX_evt_ship_travel
+	location = this
+	show_sound = event_bad_omen
 	is_triggered_only = yes
 	trigger = {
-		
+		exists = owner
+		owner = {
+			has_origin = origin_mem_ceaseless_gaze
+		}
 	}
 	immediate = {
-		
+	}
+	option = {
+		name = mem_ceaseless.6.a
+		owner = {
+			begin_event_chain = {
+				event_chain = mem_ceaseless_lost_probes
+			}
+		}
+		system_star = {
+			root.owner = {
+				enable_special_project = {
+					name = MEM_CEASELESS_PROBE_SIGNATURE_PROJECT
+					location = prev
+				}
+			}
+		}
+	}
+}
+
+#################################### all random events
+# - evolving probe
+ship_event = {
+	id = mem_ceaseless.185
+	title = mem_ceaseless.185.title
+	desc = mem_ceaseless.185.desc
+	picture = GFX_evt_intelligence_report
+	location = this
+	show_sound = event_bad_omen
+	is_triggered_only = yes
+	trigger = {
+	}
+	immediate = {
+	}
+	option = {
+		name = mem_ceaseless.185.a		#  fasc
+		owner = {
+			add_monthly_resource_mult = {
+				value = 3
+				resource = society_research
+			}
+		}
+	}
+	after = {
+		mem_ceaseless_open_portals = yes
+	}
+}
+
+# - “Was I ever yours to begin with?”
+ship_event = {
+	id = mem_ceaseless.180
+	title = mem_ceaseless.180.title
+	desc = mem_ceaseless.180.desc
+	picture = GFX_evt_intelligence_report
+	location = this
+	show_sound = event_bad_omen
+	is_triggered_only = yes
+	trigger = {
+	}
+	immediate = {
+	}
+	option = {
+		name = mem_ceaseless.180.a		#  on purpose no allow trigger
+		owner = {
+			add_resource = {
+				influence = -100
+			}
+		}
+	}
+	after = {
+		mem_ceaseless_open_portals = yes
+	}
+}
+
+# - swalloed by black hole but still sending stuff 
+ship_event = {
+	id = mem_ceaseless.175
+	title = mem_ceaseless.175.title
+	desc = mem_ceaseless.175.desc
+	picture = GFX_evt_black_hole
+	location = this
+	show_sound = event_bad_omen
+	is_triggered_only = yes
+	trigger = {
+	}
+	immediate = {
+	}
+	option = {
+		name = mem_ceaseless.175.a		# fasc
+		system_star = {
+			add_deposit = d_physics_10
+		}
+	}
+	after = {
+		mem_ceaseless_open_portals = yes
+	}
+}
+
+# - bladerunner tannenhäuser reference
+ship_event = {
+	id = mem_ceaseless.170
+	title = mem_ceaseless.170.title
+	desc = mem_ceaseless.170.desc
+	picture = GFX_evt_cosmic_storms_shroud_storm
+	location = this
+	show_sound = event_bad_omen
+	is_triggered_only = yes
+	trigger = {
+	}
+	immediate = {
+	}
+	option = {
+		name = mem_ceaseless.170.a		# fasc
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = 6
+			}
+		}
+	}
+	after = {
+		mem_ceaseless_open_portals = yes
+	}
+}
+
+# - waited until batteires ran out
+ship_event = {
+	id = mem_ceaseless.165
+	title = mem_ceaseless.165.title
+	desc = mem_ceaseless.165.desc
+	picture = GFX_evt_alien_hieroglyphics
+	location = this
+	show_sound = event_bad_omen
+	is_triggered_only = yes
+	trigger = {
+	}
+	immediate = {
+		system_star = {
+			create_ambient_object = {
+				type = mem_surveyor_ambient_object
+			}
+		}
+	}
+	option = {
+		name = mem_ceaseless.165.a		# like a good dog
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 6
+			}
+		}
+	}
+	option = {
+		name = mem_ceaseless.165.a		# imrpove battery
+		owner = {
+			add_monthly_resource_mult = {
+				resource = engineering_research
+				value = 6
+			}
+		}
+	}
+	after = {
+		mem_ceaseless_open_portals = yes
+	}
+}
+
+# - a pre-ftl god?
+ship_event = {
+	id = mem_ceaseless.160
+	title = mem_ceaseless.160.title
+	desc = mem_ceaseless.160.desc
+	picture = GFX_evt_alien_hieroglyphics
+	location = this
+	show_sound = event_bad_omen
+	is_triggered_only = yes
+	trigger = {
+	}
+	immediate = {
+		owner = {
+			set_country_flag = mem_ceaseless_preftl
+		}
+	}
+	option = {
+		name = mem_ceaseless.160.a		# fascinating
+		owner = {
+			add_modifier = {
+				modifier = mem_ceaseless_preftl_god
+			}
+		}
+	}
+	after = {
+		mem_ceaseless_open_portals = yes
+	}
+}
+
+# - now a trap / beacon /  lure
+ship_event = {
+	id = mem_ceaseless.155
+	title = mem_ceaseless.155.title
+	desc = mem_ceaseless.155.desc
+	picture = GFX_evt_pirates_attacking_cargo
+	location = this
+	show_sound = event_bad_omen
+	is_triggered_only = yes
+	trigger = {
+	}
+	immediate = {
+		# TODO hostiles
+	}
+	option = {
+		name = mem_ceaseless.155.a		# evasive manourvers
+	}
+	after = {
+		mem_ceaseless_open_portals = yes
+	}
+}
+
+# - repurposed to relic, still runnning core
+ship_event = {
+	id = mem_ceaseless.150
+	title = mem_ceaseless.150.title
+	desc = mem_ceaseless.150.desc
+	picture = GFX_evt_the_last_stormshelter
+	location = this
+	show_sound = event_bad_omen
+	is_triggered_only = yes
+	trigger = {
+	}
+	immediate = {
+		owner = {
+			set_country_flag = mem_ceaseless_relic
+		}
+	}
+	# option = {
+	# 	name = mem_ceaseless.150.a		# r_mem_surveyor_mobile_production_matrix
+	# 	owner = {
+	# 		add_relic = r_mem_surveyor_mobile_production_matrix
+	# 	}
+	# }
+	option = {
+		name = mem_ceaseless.150.b		# r_mem_surveyor_personality_core
+		owner = {
+			add_relic = r_mem_surveyor_personality_core
+		}
+	}
+	after = {
+		mem_ceaseless_open_portals = yes
+	}
+}
+
+# - concious explorer leave behind missions and explores on its own?
+ship_event = {
+	id = mem_ceaseless.145
+	title = mem_ceaseless.145.title
+	desc = mem_ceaseless.145.desc
+	picture = GFX_evt_ship_travel
+	location = this
+	show_sound = event_bad_omen
+	is_triggered_only = yes
+	trigger = {
+	}
+	immediate = {
+	}
+	option = {
+		name = mem_ceaseless.145.a		# it left us somthing
+		hidden_effect = {
+			solar_system = {
+				every_system_planet = {
+					set_surveyed = {
+						surveyed = yes
+						surveyor = root.owner
+					}
+				}
+			}
+		}
+	}
+	after = {
+		mem_ceaseless_open_portals = yes
+	}
+}
+
+# - berserker got destroyed
+ship_event = {
+	id = mem_ceaseless.140
+	title = mem_ceaseless.140.title
+	desc = mem_ceaseless.140.desc
+	picture = GFX_evt_astral_rift_advisor_evil
+	location = this
+	show_sound = event_bad_omen
+	is_triggered_only = yes
+	trigger = {
+	}
+	immediate = {
+		owner = {
+			set_country_flag = mem_ceaseless_berserker
+		}
+	}
+	option = {
+		name = mem_ceaseless.140.a		# we might need that knowledge
+		owner = {
+			add_modifier = {
+				modifier = mem_surveyor_how_to_kill
+			}
+		}
+	}
+	option = {
+		name = mem_ceaseless.140.b		# gimme tech
+		owner = {
+			scion_engineering_tech = yes
+		}
+	}
+	after = {
+		mem_ceaseless_open_portals = yes
+	}
+}
+
+# - got shredded by particles
+ship_event = {
+	id = mem_ceaseless.135
+	title = mem_ceaseless.135.title
+	desc = mem_ceaseless.135.desc
+	picture = GFX_evt_astral_rift_ancient_battlegrounds
+	location = this
+	show_sound = event_bad_omen
+	is_triggered_only = yes
+	trigger = {
+	}
+	immediate = {
+	}
+	option = {
+		name = mem_ceaseless.135.a		# regretable
+		owner = {
+			add_resource = {
+				alloys = 10
+			}
+		}
+	}
+	after = {
+		mem_ceaseless_open_portals = yes
+	}
+}
+
+# - crashed into planet
+ship_event = {
+	id = mem_ceaseless.130
+	title = mem_ceaseless.130.title
+	desc = mem_ceaseless.130.desc
+	picture = GFX_evt_storm_formation
+	location = this
+	show_sound = event_bad_omen
+	is_triggered_only = yes
+	trigger = {
+	}
+	immediate = {
+	}
+	option = {
+		name = mem_ceaseless.130.a		# regretable
+	}
+	after = {
+		mem_ceaseless_open_portals = yes
+	}
+}
+
+# - ship from theseus probe - all replaced but still the same?
+ship_event = {
+	id = mem_ceaseless.125
+	title = mem_ceaseless.125.title
+	desc = mem_ceaseless.125.desc
+	picture = GFX_evt_space_debris
+	location = this
+	show_sound = event_bad_omen
+	is_triggered_only = yes
+	trigger = {
+	}
+	immediate = {
+		system_star = {
+			create_ambient_object = {
+				type = mem_surveyor_ambient_object
+			}
+		}
+		owner = {
+			set_country_flag = mem_ceaseless_theseus
+		}
+	}
+	option = {
+		name = mem_ceaseless.125.a		# its the same probe
+	}
+	option = {
+		name = mem_ceaseless.120.b		# its not ours anymore
+	}
+	after = {
+		owner = {
+			give_technology = {
+				tech = tech_modular_engineering
+			}
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 3
+			}
+		}
+		mem_ceaseless_open_portals = yes
+	}
+}
+
+# - worm reference - " what was will be"
+# worm cultist started looping
+ship_event = {
+	id = mem_ceaseless.120
+	title = mem_ceaseless.120.title
+	desc = mem_ceaseless.120.desc
+	picture = GFX_evt_conclave
+	location = this
+	show_sound = event_bad_omen
+	is_triggered_only = yes
+	trigger = {
+	}
+	immediate = {
+		solar_system = {
+			random_system_planet = {
+				limit = {
+					can_have_mineral_deposits = yes
+					habitable_planet = no
+				}
+				save_event_target_as = mem_ceaseless_wormy
+			}
+		}
+		owner = {
+			set_country_flag = mem_ceaseless_wormy
+		}
+	}
+	option = {
+		name = mem_ceaseless.120.a		# lies!
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 3
+			}
+		}
+	}
+	option = {
+		name = mem_ceaseless.120.b		# how?
+		owner = {
+			add_monthly_resource_mult = {
+				resource = society_research
+				value = 3
+			}
+		}
+	}
+	after = {
+		if = {
+			limit = {
+				exists = event_target:mem_ceaseless_wormy
+			}
+			event_target:mem_ceaseless_wormy = {
+				change_pc = pc_nuked
+				set_planet_size = 12
+				add_building = building_akx_worm_3
+			}
+		}
+		mem_ceaseless_open_portals = yes
+	}
+}
+
+# - merged with something metallic
+ship_event = {
+	id = mem_ceaseless.115
+	title = mem_ceaseless.115.title
+	desc = mem_ceaseless.115.desc
+	picture = GFX_evt_shrouded_planet
+	show_sound = event_bad_omen
+	is_triggered_only = yes
+	location = this
+	trigger = {
+	}
+	immediate = {
+		solar_system = {
+			random_system_planet = {
+				save_event_target_as = mem_ceaseless_wormy
+			}
+		}
+	}
+	option = {
+		name = mem_ceaseless.115.a		# cscrap it
+		owner = {
+			add_resource = {
+				alloys = 1000
+				minerals = 2000
+			}
+		}
+	}
+	option = {
+		name = mem_ceaseless.115.b		# research it
+		event_target:mem_ceaseless_wormy = {
+			add_deposit = d_engineering_10
+		}
+	}
+	after = {
+		mem_ceaseless_open_portals = yes
+	}
+}
+
+# - intact but not active - warning inscribe: "dont do this again"
+ship_event = {
+	id = mem_ceaseless.110
+	title = mem_ceaseless.110.title
+	desc = mem_ceaseless.110.desc
+	picture = GFX_evt_ship_in_orbit_2
+	show_sound = event_bad_omen
+	is_triggered_only = yes
+	location = this
+	trigger = {
+	}
+	immediate = {
+		solar_system = {
+			random_system_planet = {
+				create_ambient_object = {
+					type = mem_surveyor_ambient_object
+				}
+			}
+		}
+	}
+	option = {
+		name = mem_ceaseless.110.a		# scary xenos
+		owner = {
+			add_modifier = {
+				modifier = promoted_xenophobe
+				days = 720
+			}
+		}
+	}
+	option = {
+		name = mem_ceaseless.110.b		# no worries
+		allow = {
+			owner = {
+				resource_stockpile_compare = {
+					resource = influence
+					value = 100
+				}
+			}
+		}
+		owner = {
+			add_resource = {
+				influence = -100
+			}
+		}
+	}
+	after = {
+		mem_ceaseless_open_portals = yes
+	}
+}
+
+# - recycle one - got scrapped by something enourmous -scrapper bot system if exists
+ship_event = {
+	id = mem_ceaseless.105
+	title = mem_ceaseless.105.title
+	desc = mem_ceaseless.105.desc
+	picture = GFX_evt_scavenger_bot
+	show_sound = event_bad_omen
+	is_triggered_only = yes
+	location = this
+	trigger = {
+	}
+	immediate = {
+		owner = {
+			set_country_flag = mem_ceaseless_scavenger
+		}
+	}
+	option = {
+		name = mem_ceaseless.105.a
+		trigger = {
+			any_system = {
+				has_star_flag = scavenger_bot_system
+			}
+		}
+		random_system = {
+			limit = {
+				has_star_flag = scavenger_bot_system
+			}
+			set_surveyed = {
+				surveyed = yes
+				surveyor = root.owner
+			}
+		}
+		owner = {
+			add_modifier = {
+				modifier = scavenger_weak_points
+				mult = 1.5
+			}
+		}
+	}
+	option = {
+		name = mem_ceaseless.105.b
+		system_star = {
+			add_deposit = d_alloys_4
+		}
+	}
+	after = {
+		mem_ceaseless_open_portals = yes
+	}
+}
+
+# - curious probe following a signal leading to unkown ?
+ship_event = {
+	id = mem_ceaseless.100
+	title = mem_ceaseless.100.title
+	desc = mem_ceaseless.100.desc
+	picture = GFX_evt_communication_event
+	show_sound = event_bad_omen
+	is_triggered_only = yes
+	location = this
+	trigger = {
+	}
+	immediate = {
+	}
+	option = {
+		name = mem_ceaseless.100.a
+		owner = {
+			add_monthly_resource_mult = {
+				resource = unity
+				value = 2
+			}
+		}
+	}
+	after = {
+		mem_ceaseless_open_portals = yes
 	}
 }

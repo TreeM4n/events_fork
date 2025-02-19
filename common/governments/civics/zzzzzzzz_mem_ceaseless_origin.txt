@@ -59,7 +59,7 @@ origin_mem_ceaseless_gaze_vassal = {
 	# 	# }
 	# }
 	modifier = {
-		# TODO what should they get
+		
 	}
 	description = "origin_tooltip_mem_ceaseless_gaze_vassal"
 	negative_description = "origin_tooltip_mem_ceaseless_gaze_vassal_negative"

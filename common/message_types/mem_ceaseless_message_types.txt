@@ -20,10 +20,21 @@
 
 message_type = {
 	key = "MESSAGE_MEM_CEASELESS_FOUND_PROBE_SIGNATURE"
-	icon = "GFX_message_specimen"  # TODO
+	icon = "GFX_message_terraform_started"  
 	icon_frame = 1
 
 	name = "MESSAGE_MEM_CEASELESS_FOUND_PROBE_SIGNATURE_TITLE"
+	sound = "notification"
+	ping = "ping_notification_yellow"
+	auto_opens = others
+}
+
+message_type = {
+	key = "MESSAGE_MEM_CEASELESS_OPENED_PORTAL"
+	icon = "GFX_message_fleet_order_catapult_windup_complete" 
+	icon_frame = 1
+
+	name = "MESSAGE_MEM_CEASELESS_OPENED_PORTAL_TITLE"
 	sound = "notification"
 	ping = "ping_notification_yellow"
 	auto_opens = others

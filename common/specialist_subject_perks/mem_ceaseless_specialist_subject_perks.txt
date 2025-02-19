@@ -36,7 +36,7 @@ mem_frontier_sector_1_modifier = {
 mem_frontier_sector_1_penalties = {
 	main_perk = yes
 	subject_modifier = {
-		pop_growth_speed = -0.3	
+		empire_size_pops_mult = 0.2
 		pop_ethics_shift_speed_mult = 0.3		
 	}
 }
@@ -90,7 +90,7 @@ mem_frontier_sector_2_modifier = {
 mem_frontier_sector_2_penalties = {
 	main_perk = yes
 	subject_modifier = {
-		pop_growth_speed = -0.5
+		empire_size_pops_mult = 0.4
 		pop_ethics_shift_speed_mult = 0.5
 	}
 }
@@ -143,7 +143,7 @@ mem_frontier_sector_3_modifier = {
 mem_frontier_sector_3_penalties = {
 	main_perk = yes
 	subject_modifier = {
-		pop_growth_speed = -0.7
+		empire_size_pops_mult = 0.6
 		pop_ethics_shift_speed_mult = 0.7
 	}
 }

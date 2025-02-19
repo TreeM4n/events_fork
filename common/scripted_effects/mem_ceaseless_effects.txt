@@ -91,7 +91,7 @@ mem_ceaseless_give_or_create_vassal = {
 			}
 			last_created_country = {
 				if = {
-					limit = { 
+					limit = {
 						has_civic = civic_fanatic_purifiers
 					}
 					force_remove_civic = civic_fanatic_purifiers
@@ -99,7 +99,7 @@ mem_ceaseless_give_or_create_vassal = {
 				set_subject_of = {
 					who = root.owner
 					allow_instant_negotiation = yes
-					preset = preset_scholarium_mean_01					# TODO preset
+					preset = preset_scholarium_mean_01					
 				}
 				establish_communications_no_message = root.owner
 				add_resource = {
@@ -110,7 +110,7 @@ mem_ceaseless_give_or_create_vassal = {
 					consumer_goods = 500
 					food = 1000
 				}
-				# TODO add  modifier for pops demoting
+				
 			}
 		}
 		root.starbase = {
@@ -119,6 +119,55 @@ mem_ceaseless_give_or_create_vassal = {
 		root = {
 			#add_colony_progress = 100
 			set_owner = event_target:mem_ceaseless_give_vassal
+		}
+	}
+}
+
+mem_ceaseless_open_portals = {
+	owner = {
+		add_event_chain_counter = {
+			event_chain = mem_ceaseless_lost_probes
+			counter = mem_ceaseless_lost_probes_found
+			amount = 1
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_completed_event_chain_counter = {
+							event_chain = mem_ceaseless_lost_probes
+							counter = mem_ceaseless_lost_probes_wormholes_charted
+						}
+					}
+				}
+				random_list = {
+					25 = {
+						add_event_chain_counter = {
+							event_chain = mem_ceaseless_lost_probes
+							counter = mem_ceaseless_lost_probes_wormholes_charted
+							amount = 1
+						}
+						random_megastructure = {
+							limit = {
+								is_megastructure_type = mem_ceaseless_base
+								NOT = {
+									has_megastructure_flag = mem_activated
+								}
+							}
+							activate_gateway = this
+							set_megastructure_flag = mem_activated
+							save_event_target_as = mem_ceaseless_base_avtivated
+						}
+						create_message = {
+							type = MESSAGE_MEM_CEASELESS_OPENED_PORTAL
+							days = 30
+							target = event_target:mem_ceaseless_base_avtivated
+						}
+					}
+					75 = {
+					}
+				}
+			}
 		}
 	}
 }

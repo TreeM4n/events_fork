@@ -4,17 +4,18 @@ utility_component_template = {
 	icon = "GFX_ship_part_hyper_drive_1"
 	icon_frame = 1
 	ftl = yes
-
 	ship_modifier = {
 		ship_disengage_opportunities_add = 1
 	}
-
 	ai_weight = {
 		weight = 1
 	}
-
-	size_restriction = { mem_ceaseless_colonizer }
-	prerequisites = { "tech_hyper_drive_1" }
+	size_restriction = {
+		mem_ceaseless_colonizer
+	}
+	prerequisites = {
+		"tech_hyper_drive_1"
+	}
 	component_set = "ftl_components"
 	upgrades_to = "HYPER_DRIVE_2_CIVILIAN"
 }
@@ -31,16 +32,18 @@ utility_component_template = {
 			alloys = 10
 		}
 		upkeep = {
-			energy = 0.10
+			energy = 0.1
 			alloys = 0.01
 		}
 	}
-
-	prerequisites = { "tech_fission_power" }
+	prerequisites = {
+		"tech_fission_power"
+	}
 	component_set = "power_core"
-	size_restriction = {mem_ceaseless_colonizer }
+	size_restriction = {
+		mem_ceaseless_colonizer
+	}
 	upgrades_to = "CORVETTE_FUSION_REACTOR"
-
 	ai_weight = {
 		weight = 1
 	}
@@ -58,15 +61,16 @@ utility_component_template = {
 			alloys = 10
 		}
 	}
-
 	modifier = {
 	}
-
-	prerequisites = { "tech_thrusters_1" }
+	prerequisites = {
+		"tech_thrusters_1"
+	}
 	component_set = "thruster_components"
-	size_restriction = { mem_ceaseless_colonizer }
+	size_restriction = {
+		mem_ceaseless_colonizer
+	}
 	upgrades_to = "SHIP_THRUSTER_2"
-
 	ai_weight = {
 		weight = 1
 	}
