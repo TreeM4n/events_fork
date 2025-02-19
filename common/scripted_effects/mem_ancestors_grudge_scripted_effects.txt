@@ -223,7 +223,6 @@ mem_ancestors_grudge_add_relic_modifier = {
 }
 
 # Malthus' new script for Relic-Crafting
-
 # Beginning of Situation
 # This effect will define the minimum quality result of the situation
 # Minimum can range from 1 - 5
@@ -240,7 +239,7 @@ mem_ancestors_grudge_roll_quality_min = {
 						modifier = mem_ancestors_grudge_artifact_power_produces_mult
 						value > 0.1
 					}
-				}				
+				}
 			}
 			# If a threshold in smithing quality is not surpassed, this outcome will be more likely
 			modifier = {
@@ -277,7 +276,7 @@ mem_ancestors_grudge_roll_quality_min = {
 						modifier = mem_ancestors_grudge_artifact_power_produces_mult
 						value > 0.15
 					}
-				}				
+				}
 			}
 			# If a threshold in smithing quality is not surpassed, this outcome will be more likely
 			modifier = {
@@ -314,7 +313,7 @@ mem_ancestors_grudge_roll_quality_min = {
 						modifier = mem_ancestors_grudge_artifact_power_produces_mult
 						value > 0.25
 					}
-				}				
+				}
 			}
 			# If a threshold in smithing quality is not surpassed, this outcome will be more likely
 			modifier = {
@@ -322,7 +321,7 @@ mem_ancestors_grudge_roll_quality_min = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_artifact_power_produces_mult
-						value < 0.10
+						value < 0.1
 					}
 				}
 			}
@@ -351,7 +350,7 @@ mem_ancestors_grudge_roll_quality_min = {
 						modifier = mem_ancestors_grudge_artifact_power_produces_mult
 						value > 0.5
 					}
-				}				
+				}
 			}
 			# If a threshold in smithing quality is not surpassed, this outcome will be more likely
 			modifier = {
@@ -379,6 +378,7 @@ mem_ancestors_grudge_roll_quality_min = {
 		}
 	}
 }
+
 # This effect will define the maximum quality result of the situation
 # Maximum can range from 2 - 7
 # Maximum will always be atleast 1 level higher than minimum
@@ -403,7 +403,7 @@ mem_ancestors_grudge_roll_quality_max = {
 						modifier = mem_ancestors_grudge_artifact_power_produces_mult
 						value > 0.1
 					}
-				}				
+				}
 			}
 			# Set maximum quality variable
 			set_variable = {
@@ -429,7 +429,7 @@ mem_ancestors_grudge_roll_quality_max = {
 						modifier = mem_ancestors_grudge_artifact_power_produces_mult
 						value > 0.15
 					}
-				}				
+				}
 			}
 			# Set maximum quality variable
 			set_variable = {
@@ -453,9 +453,9 @@ mem_ancestors_grudge_roll_quality_max = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_artifact_power_produces_mult
-						value > 0.20
+						value > 0.2
 					}
-				}				
+				}
 			}
 			# Set maximum quality variable
 			set_variable = {
@@ -481,7 +481,7 @@ mem_ancestors_grudge_roll_quality_max = {
 						modifier = mem_ancestors_grudge_artifact_power_produces_mult
 						value < 0.2
 					}
-				}				
+				}
 			}
 			modifier = {
 				factor = 0.5
@@ -490,7 +490,7 @@ mem_ancestors_grudge_roll_quality_max = {
 						modifier = mem_ancestors_grudge_artifact_power_produces_mult
 						value < 0.05
 					}
-				}				
+				}
 			}
 			# Set maximum quality variable
 			set_variable = {
@@ -508,7 +508,7 @@ mem_ancestors_grudge_roll_quality_max = {
 						modifier = mem_ancestors_grudge_artifact_power_produces_mult
 						value < 0.35
 					}
-				}				
+				}
 			}
 			modifier = {
 				factor = 0.5
@@ -517,7 +517,7 @@ mem_ancestors_grudge_roll_quality_max = {
 						modifier = mem_ancestors_grudge_artifact_power_produces_mult
 						value < 0.15
 					}
-				}				
+				}
 			}
 			modifier = {
 				factor = 0.5
@@ -526,7 +526,7 @@ mem_ancestors_grudge_roll_quality_max = {
 						modifier = mem_ancestors_grudge_artifact_power_produces_mult
 						value < 0.05
 					}
-				}				
+				}
 			}
 			# Set maximum quality variable
 			set_variable = {
@@ -544,7 +544,7 @@ mem_ancestors_grudge_roll_quality_max = {
 						modifier = mem_ancestors_grudge_artifact_power_produces_mult
 						value < 0.5
 					}
-				}				
+				}
 			}
 			modifier = {
 				factor = 0.5
@@ -553,16 +553,16 @@ mem_ancestors_grudge_roll_quality_max = {
 						modifier = mem_ancestors_grudge_artifact_power_produces_mult
 						value < 0.25
 					}
-				}				
+				}
 			}
 			modifier = {
 				factor = 0.5
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_artifact_power_produces_mult
-						value < 0.10
+						value < 0.1
 					}
-				}				
+				}
 			}
 			# Set maximum quality variable
 			set_variable = {
@@ -592,7 +592,7 @@ mem_ancestors_grudge_roll_purity_min = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.10
+						value > 0.1
 					}
 				}
 			}
@@ -601,7 +601,7 @@ mem_ancestors_grudge_roll_purity_min = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.20
+						value > 0.2
 					}
 				}
 			}
@@ -610,7 +610,7 @@ mem_ancestors_grudge_roll_purity_min = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.30
+						value > 0.3
 					}
 				}
 			}
@@ -619,7 +619,7 @@ mem_ancestors_grudge_roll_purity_min = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.40
+						value > 0.4
 					}
 				}
 			}
@@ -628,7 +628,7 @@ mem_ancestors_grudge_roll_purity_min = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.50
+						value > 0.5
 					}
 				}
 			}
@@ -650,7 +650,7 @@ mem_ancestors_grudge_roll_purity_min = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.10
+						value > 0.1
 					}
 				}
 			}
@@ -659,7 +659,7 @@ mem_ancestors_grudge_roll_purity_min = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.20
+						value > 0.2
 					}
 				}
 			}
@@ -668,7 +668,7 @@ mem_ancestors_grudge_roll_purity_min = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.30
+						value > 0.3
 					}
 				}
 			}
@@ -677,7 +677,7 @@ mem_ancestors_grudge_roll_purity_min = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.40
+						value > 0.4
 					}
 				}
 			}
@@ -686,7 +686,7 @@ mem_ancestors_grudge_roll_purity_min = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.50
+						value > 0.5
 					}
 				}
 			}
@@ -708,7 +708,7 @@ mem_ancestors_grudge_roll_purity_min = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.10
+						value > 0.1
 					}
 				}
 			}
@@ -717,7 +717,7 @@ mem_ancestors_grudge_roll_purity_min = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.20
+						value > 0.2
 					}
 				}
 			}
@@ -726,7 +726,7 @@ mem_ancestors_grudge_roll_purity_min = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.30
+						value > 0.3
 					}
 				}
 			}
@@ -735,7 +735,7 @@ mem_ancestors_grudge_roll_purity_min = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.40
+						value > 0.4
 					}
 				}
 			}
@@ -744,7 +744,7 @@ mem_ancestors_grudge_roll_purity_min = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.50
+						value > 0.5
 					}
 				}
 			}
@@ -766,7 +766,7 @@ mem_ancestors_grudge_roll_purity_min = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.10
+						value > 0.1
 					}
 				}
 			}
@@ -775,7 +775,7 @@ mem_ancestors_grudge_roll_purity_min = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.20
+						value > 0.2
 					}
 				}
 			}
@@ -784,7 +784,7 @@ mem_ancestors_grudge_roll_purity_min = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.30
+						value > 0.3
 					}
 				}
 			}
@@ -793,7 +793,7 @@ mem_ancestors_grudge_roll_purity_min = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.40
+						value > 0.4
 					}
 				}
 			}
@@ -802,7 +802,7 @@ mem_ancestors_grudge_roll_purity_min = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.50
+						value > 0.5
 					}
 				}
 			}
@@ -842,7 +842,7 @@ mem_ancestors_grudge_roll_purity_max = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.10
+						value > 0.1
 					}
 				}
 			}
@@ -851,7 +851,7 @@ mem_ancestors_grudge_roll_purity_max = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.20
+						value > 0.2
 					}
 				}
 			}
@@ -860,7 +860,7 @@ mem_ancestors_grudge_roll_purity_max = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.30
+						value > 0.3
 					}
 				}
 			}
@@ -869,7 +869,7 @@ mem_ancestors_grudge_roll_purity_max = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.40
+						value > 0.4
 					}
 				}
 			}
@@ -878,7 +878,7 @@ mem_ancestors_grudge_roll_purity_max = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.50
+						value > 0.5
 					}
 				}
 			}
@@ -908,7 +908,7 @@ mem_ancestors_grudge_roll_purity_max = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.10
+						value > 0.1
 					}
 				}
 			}
@@ -917,7 +917,7 @@ mem_ancestors_grudge_roll_purity_max = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.20
+						value > 0.2
 					}
 				}
 			}
@@ -926,7 +926,7 @@ mem_ancestors_grudge_roll_purity_max = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.30
+						value > 0.3
 					}
 				}
 			}
@@ -935,7 +935,7 @@ mem_ancestors_grudge_roll_purity_max = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.40
+						value > 0.4
 					}
 				}
 			}
@@ -944,7 +944,7 @@ mem_ancestors_grudge_roll_purity_max = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.50
+						value > 0.5
 					}
 				}
 			}
@@ -974,7 +974,7 @@ mem_ancestors_grudge_roll_purity_max = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.10
+						value > 0.1
 					}
 				}
 			}
@@ -983,7 +983,7 @@ mem_ancestors_grudge_roll_purity_max = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.20
+						value > 0.2
 					}
 				}
 			}
@@ -992,7 +992,7 @@ mem_ancestors_grudge_roll_purity_max = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.30
+						value > 0.3
 					}
 				}
 			}
@@ -1001,7 +1001,7 @@ mem_ancestors_grudge_roll_purity_max = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.40
+						value > 0.4
 					}
 				}
 			}
@@ -1010,7 +1010,7 @@ mem_ancestors_grudge_roll_purity_max = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.50
+						value > 0.5
 					}
 				}
 			}
@@ -1032,7 +1032,7 @@ mem_ancestors_grudge_roll_purity_max = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.10
+						value > 0.1
 					}
 				}
 			}
@@ -1041,7 +1041,7 @@ mem_ancestors_grudge_roll_purity_max = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.20
+						value > 0.2
 					}
 				}
 			}
@@ -1050,7 +1050,7 @@ mem_ancestors_grudge_roll_purity_max = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.30
+						value > 0.3
 					}
 				}
 			}
@@ -1059,7 +1059,7 @@ mem_ancestors_grudge_roll_purity_max = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.40
+						value > 0.4
 					}
 				}
 			}
@@ -1068,7 +1068,7 @@ mem_ancestors_grudge_roll_purity_max = {
 				owner = {
 					check_modifier_value = {
 						modifier = mem_ancestors_grudge_rune_power_produces_mult
-						value > 0.50
+						value > 0.5
 					}
 				}
 			}
@@ -1093,15 +1093,13 @@ mem_ancestors_grudge_roll_quality_final = {
 				check_variable = {
 					which = mem_ancestors_grudge_smithing_quality_min
 					value > 1
-				}		
+				}
 			}
-
 			# Set final quality variable
 			set_variable = {
 				which = mem_ancestors_grudge_smithing_quality_final
 				value = 1
 			}
-			
 		}
 		# mem_ancestors_grudge_quality_2
 		100 = {
@@ -1117,9 +1115,8 @@ mem_ancestors_grudge_roll_quality_final = {
 						which = mem_ancestors_grudge_smithing_quality_max
 						value < 2
 					}
-				}			
+				}
 			}
-
 			# Set final quality variable
 			set_variable = {
 				which = mem_ancestors_grudge_smithing_quality_final
@@ -1140,9 +1137,8 @@ mem_ancestors_grudge_roll_quality_final = {
 						which = mem_ancestors_grudge_smithing_quality_max
 						value < 3
 					}
-				}		
+				}
 			}
-
 			# Set final quality variable
 			set_variable = {
 				which = mem_ancestors_grudge_smithing_quality_final
@@ -1163,9 +1159,8 @@ mem_ancestors_grudge_roll_quality_final = {
 						which = mem_ancestors_grudge_smithing_quality_max
 						value < 4
 					}
-				}			
+				}
 			}
-
 			# Set final quality variable
 			set_variable = {
 				which = mem_ancestors_grudge_smithing_quality_final
@@ -1188,7 +1183,6 @@ mem_ancestors_grudge_roll_quality_final = {
 					}
 				}
 			}
-
 			# Set final quality variable
 			set_variable = {
 				which = mem_ancestors_grudge_smithing_quality_final
@@ -1211,7 +1205,6 @@ mem_ancestors_grudge_roll_quality_final = {
 					}
 				}
 			}
-
 			# Set final quality variable
 			set_variable = {
 				which = mem_ancestors_grudge_smithing_quality_final
@@ -1228,7 +1221,6 @@ mem_ancestors_grudge_roll_quality_final = {
 					value < 7
 				}
 			}
-
 			# Set final quality variable
 			set_variable = {
 				which = mem_ancestors_grudge_smithing_quality_final
@@ -1267,22 +1259,20 @@ mem_ancestors_grudge_roll_purity_final = {
 				check_variable = {
 					which = mem_ancestors_grudge_rune_purity_min
 					value > 1
-				}				
+				}
 			}
-
 			owner = {
 				# Set final purity variable - for naming
 				set_variable = {
 					which = mem_ancestors_grudge_rune_purity_final
 					value = 1
 				}
-			
 				# For Relic modifier
 				set_variable = {
 					which = mem_ancestors_grudge_smithing_purity_rolled
 					value = 0.5
 				}
-			}			
+			}
 		}
 		# mem_ancestors_grudge_purity_2
 		100 = {
@@ -1298,16 +1288,14 @@ mem_ancestors_grudge_roll_purity_final = {
 						which = mem_ancestors_grudge_rune_purity_max
 						value < 2
 					}
-				}		
+				}
 			}
-
 			owner = {
 				# Set final purity variable - for naming
 				set_variable = {
 					which = mem_ancestors_grudge_rune_purity_final
 					value = 2
 				}
-			
 				# For Relic modifier
 				set_variable = {
 					which = mem_ancestors_grudge_smithing_purity_rolled
@@ -1329,16 +1317,14 @@ mem_ancestors_grudge_roll_purity_final = {
 						which = mem_ancestors_grudge_rune_purity_max
 						value < 3
 					}
-				}			
+				}
 			}
-
 			owner = {
 				# Set final purity variable - for naming
 				set_variable = {
 					which = mem_ancestors_grudge_rune_purity_final
 					value = 3
 				}
-			
 				# For Relic modifier
 				set_variable = {
 					which = mem_ancestors_grudge_smithing_purity_rolled
@@ -1360,16 +1346,14 @@ mem_ancestors_grudge_roll_purity_final = {
 						which = mem_ancestors_grudge_rune_purity_max
 						value < 4
 					}
-				}			
+				}
 			}
-
 			owner = {
 				# Set final purity variable - for naming
 				set_variable = {
 					which = mem_ancestors_grudge_rune_purity_final
 					value = 4
 				}
-			
 				# For Relic modifier
 				set_variable = {
 					which = mem_ancestors_grudge_smithing_purity_rolled
@@ -1385,16 +1369,14 @@ mem_ancestors_grudge_roll_purity_final = {
 				check_variable = {
 					which = mem_ancestors_grudge_rune_purity_max
 					value < 5
-				}		
+				}
 			}
-			
 			owner = {
 				# Set final purity variable - for naming
 				set_variable = {
 					which = mem_ancestors_grudge_rune_purity_final
 					value = 5
 				}
-			
 				# For Relic modifier
 				set_variable = {
 					which = mem_ancestors_grudge_smithing_purity_rolled
@@ -1406,64 +1388,83 @@ mem_ancestors_grudge_roll_purity_final = {
 }
 
 # Crafting event effects to change quality and purity outcomes
-
 # add min quality
 mem_ancestors_grudge_roll_quality_min_add = {
-	change_variable = {
-		which = mem_ancestors_grudge_rune_quality_min
-		value = 1
+	hidden_effect = {
+		change_variable = {
+			which = mem_ancestors_grudge_rune_quality_min
+			value = 1
+		}
 	}
 }
+
 # substract min quality
 mem_ancestors_grudge_roll_quality_min_sub = {
-	change_variable = {
-		which = mem_ancestors_grudge_rune_quality_min
-		value = -1
+	hidden_effect = {
+		change_variable = {
+			which = mem_ancestors_grudge_rune_quality_min
+			value = -1
+		}
 	}
 }
 
 # add max quality
 mem_ancestors_grudge_roll_quality_max_add = {
-	change_variable = {
-		which = mem_ancestors_grudge_rune_quality_max
-		value = 1
+	hidden_effect = {
+		change_variable = {
+			which = mem_ancestors_grudge_rune_quality_max
+			value = 1
+		}
 	}
 }
+
 # substract max quality
 mem_ancestors_grudge_roll_quality_max_sub = {
-	change_variable = {
-		which = mem_ancestors_grudge_rune_quality_max
-		value = -1
+	hidden_effect = {
+		change_variable = {
+			which = mem_ancestors_grudge_rune_quality_max
+			value = -1
+		}
 	}
 }
 
 # add min purity
 mem_ancestors_grudge_roll_purity_min_add = {
-	change_variable = {
-		which = mem_ancestors_grudge_rune_purity_min
-		value = 1
+	hidden_effect = {
+		change_variable = {
+			which = mem_ancestors_grudge_rune_purity_min
+			value = 1
+		}
 	}
 }
+
 # substract min purity
 mem_ancestors_grudge_roll_purity_min_sub = {
-	change_variable = {
-		which = mem_ancestors_grudge_rune_purity_min
-		value = -1
+	hidden_effect = {
+		change_variable = {
+			which = mem_ancestors_grudge_rune_purity_min
+			value = -1
+		}
 	}
 }
 
 # add max purity
 mem_ancestors_grudge_roll_purity_max_add = {
-	change_variable = {
-		which = mem_ancestors_grudge_rune_purity_max
-		value = 1
+	hidden_effect = {
+		change_variable = {
+			which = mem_ancestors_grudge_rune_purity_max
+			value = 1
+		}
 	}
 }
+
 # substract max purity
 mem_ancestors_grudge_roll_purity_max_sub = {
-	change_variable = {
-		which = mem_ancestors_grudge_rune_purity_max
-		value = -1
+	hidden_effect = {
+		change_variable = {
+			which = mem_ancestors_grudge_rune_purity_max
+			value = -1
+		}
 	}
 }
 

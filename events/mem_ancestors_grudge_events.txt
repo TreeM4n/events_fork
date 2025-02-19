@@ -4663,7 +4663,6 @@ situation_event = {
 			AMOUNT = 18
 			RESOURCE = unity
 		}
-		
 	}
 	option = {
 		name = mem_ancestors_grudge.470.a
@@ -4694,8 +4693,10 @@ situation_event = {
 		}
 	}
 	after = {
-		owner = {
-			clear_variable = unity_prod
+		hidden_effect = {
+			owner = {
+				clear_variable = unity_prod
+			}
 		}
 		mem_ancestors_grudge_roll_fix = yes
 	}
@@ -4896,8 +4897,17 @@ situation_event = {
 		add_situation_progress = situation_progress_negative
 	}
 	after = {
-		owner = {
-			clear_variable = unity_prod
+		hidden_effect = {
+			owner = {
+				clear_variable = unity_prod
+				# random_owned_leader = {
+				# 	limit = {
+				# 		has_trait = trait_imperial_heir
+				# 	}
+				# }
+			}
+			
+		
 		}
 		mem_ancestors_grudge_roll_fix = yes
 	}
