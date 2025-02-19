@@ -4453,15 +4453,13 @@ situation_event = {
 	is_triggered_only = yes
 	situation = this
 	trigger = {
-		NOR = {
+		NOT = {
 			target = {
 				has_modifier = mem_ancestors_grudge_high_expectations
 			}
-			has_situation_flag = mem_ancestors_grudge_got_sit_event
 		}
 	}
 	immediate = {
-		set_situation_flag = mem_ancestors_grudge_got_sit_event
 	}
 	option = {
 		name = mem_ancestors_grudge.455.a
@@ -4479,6 +4477,7 @@ situation_event = {
 		name = mem_ancestors_grudge.455.b
 	}
 	after = {
+		mem_ancestors_grudge_roll_fix = yes
 	}
 }
 
@@ -4492,12 +4491,8 @@ situation_event = {
 	is_triggered_only = yes
 	situation = this
 	trigger = {
-		NOT = {
-			has_situation_flag = mem_ancestors_grudge_got_sit_event
-		}
 	}
 	immediate = {
-		set_situation_flag = mem_ancestors_grudge_got_sit_event
 		set_variable = {
 			which = situation_progress
 			value = this.trigger:situation_progress
@@ -4527,6 +4522,7 @@ situation_event = {
 		add_situation_progress = this.situation_progress
 	}
 	after = {
+		mem_ancestors_grudge_roll_fix = yes
 	}
 }
 
@@ -4540,12 +4536,8 @@ situation_event = {
 	is_triggered_only = yes
 	situation = this
 	trigger = {
-		NOT = {
-			has_situation_flag = mem_ancestors_grudge_got_sit_event
-		}
 	}
 	immediate = {
-		set_situation_flag = mem_ancestors_grudge_got_sit_event
 		set_variable = {
 			which = situation_progress
 			value = this.trigger:situation_progress
@@ -4562,9 +4554,10 @@ situation_event = {
 			which = situation_progress_negative
 			value = -1
 		}
+		# fill a variable with monthly net production of a resource
 		inline_script = {
 			script = mem_ancestors_grudge/monthly_production_variable
-			AMOUNT = 1
+			AMOUNT = 10
 			RESOURCE = energy
 		}
 	}
@@ -4625,13 +4618,12 @@ situation_event = {
 				resource_stockpile_compare = {
 					resource = energy
 					value >= energy_prod
-					mult = 10
 				}
 			}
 		}
 		owner = {
 			add_resource = {
-				energy = -10
+				energy = -1
 				mult = energy_prod
 			}
 			add_monthly_resource_mult = {
@@ -4642,6 +4634,7 @@ situation_event = {
 		add_situation_progress = situation_progress_negative
 	}
 	after = {
+		mem_ancestors_grudge_roll_fix = yes
 	}
 }
 
@@ -4655,23 +4648,19 @@ situation_event = {
 	is_triggered_only = yes
 	situation = this
 	trigger = {
-		NOR = {
+		NOT = {
 			target = {
 				has_modifier = mem_ancestors_grudge_6_day_workweek
 			}
-			has_situation_flag = mem_ancestors_grudge_got_sit_event
 		}
 	}
 	immediate = {
-		set_situation_flag = mem_ancestors_grudge_got_sit_event
-		
-		# mem_ancestors_grudge_get_unity_cost = yes
-
+		# fill a variable with monthly net production of a resource
 		# this will put create a variable named unity_prod
 		# dont forget to clear it afterwards!
 		inline_script = {
 			script = mem_ancestors_grudge/monthly_production_variable
-			AMOUNT = 1
+			AMOUNT = 18
 			RESOURCE = unity
 		}
 		
@@ -4684,13 +4673,12 @@ situation_event = {
 				resource_stockpile_compare = {
 					resource = unity
 					value >= unity_prod
-					mult = 18
 				}
 			}
 		}
 		owner = {
 			add_resource = {
-				unity = -18
+				unity = -1
 				mult = unity_prod
 			}
 		}
@@ -4709,6 +4697,7 @@ situation_event = {
 		owner = {
 			clear_variable = unity_prod
 		}
+		mem_ancestors_grudge_roll_fix = yes
 	}
 }
 
@@ -4833,12 +4822,8 @@ situation_event = {
 	is_triggered_only = yes
 	situation = this
 	trigger = {
-		NOT = {
-			has_situation_flag = mem_ancestors_grudge_got_sit_event
-		}
 	}
 	immediate = {
-		set_situation_flag = mem_ancestors_grudge_got_sit_event
 		set_variable = {
 			which = situation_progress
 			value = this.trigger:situation_progress
@@ -4855,12 +4840,12 @@ situation_event = {
 			which = situation_progress_negative
 			value = -1
 		}
-		
+		# fill a variable with monthly net production of a resource
 		# this will put create a variable named unity_prod
 		# dont forget to clear it afterwards!
 		inline_script = {
 			script = mem_ancestors_grudge/monthly_production_variable
-			AMOUNT = 1
+			AMOUNT = 18
 			RESOURCE = unity
 		}
 	}
@@ -4878,13 +4863,12 @@ situation_event = {
 				resource_stockpile_compare = {
 					resource = unity
 					value >= unity_prod
-					mult = 18
 				}
 			}
 		}
 		owner = {
 			add_resource = {
-				unity = -18
+				unity = -1
 				mult = unity_prod
 			}
 		}
@@ -4899,13 +4883,12 @@ situation_event = {
 				resource_stockpile_compare = {
 					resource = unity
 					value >= unity_prod
-					mult = 18
 				}
 			}
 		}
 		owner = {
 			add_resource = {
-				unity = -18
+				unity = -1
 				mult = unity_prod
 			}
 		}
@@ -4916,6 +4899,7 @@ situation_event = {
 		owner = {
 			clear_variable = unity_prod
 		}
+		mem_ancestors_grudge_roll_fix = yes
 	}
 }
 
@@ -4929,12 +4913,8 @@ situation_event = {
 	is_triggered_only = yes
 	situation = this
 	trigger = {
-		NOT = {
-			has_situation_flag = mem_ancestors_grudge_got_sit_event
-		}
 	}
 	immediate = {
-		set_situation_flag = mem_ancestors_grudge_got_sit_event
 		set_variable = {
 			which = situation_progress
 			value = this.trigger:situation_progress
@@ -4951,9 +4931,10 @@ situation_event = {
 			which = situation_progress_negative
 			value = -1
 		}
+		# fill a variable with monthly net production of a resource
 		inline_script = {
 			script = mem_ancestors_grudge/monthly_production_variable
-			AMOUNT = 1
+			AMOUNT = 10
 			RESOURCE = energy
 		}
 	}
@@ -5014,13 +4995,12 @@ situation_event = {
 				resource_stockpile_compare = {
 					resource = energy
 					value >= energy_prod
-					mult = 10
 				}
 			}
 		}
 		owner = {
 			add_resource = {
-				energy = -10
+				energy = -1
 				mult = energy_prod
 			}
 			add_monthly_resource_mult = {
@@ -5031,6 +5011,7 @@ situation_event = {
 		add_situation_progress = situation_progress_negative
 	}
 	after = {
+		mem_ancestors_grudge_roll_fix = yes
 	}
 }
 

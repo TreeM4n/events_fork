@@ -1467,3 +1467,50 @@ mem_ancestors_grudge_roll_purity_max_sub = {
 	}
 }
 
+# fix edge cases after min max changing events
+mem_ancestors_grudge_roll_fix = {
+	if = {
+		limit = {
+			check_variable = {
+				which = mem_ancestors_grudge_smithing_quality_min
+				value > mem_ancestors_grudge_smithing_quality_max
+			}
+		}
+		random_list = {
+			1 = {
+				change_variable = {
+					which = mem_ancestors_grudge_smithing_quality_max
+					value = mem_ancestors_grudge_smithing_quality_min
+				}
+			}
+			1 = {
+				change_variable = {
+					which = mem_ancestors_grudge_smithing_quality_min
+					value = mem_ancestors_grudge_smithing_quality_max
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			check_variable = {
+				which = mem_ancestors_grudge_rune_purity_min
+				value > mem_ancestors_grudge_rune_purity_max
+			}
+		}
+		random_list = {
+			1 = {
+				change_variable = {
+					which = mem_ancestors_grudge_rune_purity_max
+					value = mem_ancestors_grudge_rune_purity_min
+				}
+			}
+			1 = {
+				change_variable = {
+					which = mem_ancestors_grudge_rune_purity_min
+					value = mem_ancestors_grudge_rune_purity_max
+				}
+			}
+		}
+	}
+}
