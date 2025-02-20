@@ -107,7 +107,7 @@ mem_frontier_sector_2_traits = {
 	activate_effect = {
 		target = {
 			append_technology = {
-				TECH = tech_hyper_relays
+				TECH = hyper_relays
 			}
 		}
 	}
@@ -161,10 +161,10 @@ mem_frontier_sector_3_discovery = {
 					host_has_dlc = "The Machine Age"
 				}
 				append_technology = {
-					TECH = tech_orbital_arc_furnace
+					TECH = orbital_arc_furnace
 				}
 				append_technology = {
-					TECH = tech_dyson_swarm
+					TECH = dyson_swarm
 				}
 			}
 		}

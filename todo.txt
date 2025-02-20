@@ -1,0 +1,3 @@
+- speciemn locs und event adding
+- tt for barren garantueed and startup event
+- probe interactions
