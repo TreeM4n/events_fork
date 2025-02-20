@@ -147,12 +147,12 @@ mem_frontier_sector_3_penalties = {
 
 mem_frontier_sector_3_discovery = {
 	icon = "GFX_specialist_perk_bulwark_1_bulwark_array"
-	desc = {
-		description = mem_frontier_sector_3_discovery_desc
-	}
+	
 	subject_modifier = {
 		empire_size_systems_mult = -0.5
 		tradition_cost_empire_size_mult = -0.2
+	}desc = {
+		description = mem_frontier_sector_3_discovery_desc
 	}
 	activate_effect = {
 		target = {
