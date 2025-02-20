@@ -35,7 +35,7 @@ l_english:
  MEM_CEASELESS_PROBE_SIGNATURE_PROJECT_DESC:0 "We found another probe`s trail. We should take a closer look to indentify it and recovers anything of us."
 
  preset_specialist_mem_frontier_sector:0 "$specialist_mem_frontier_sector$"
- preset_specialist_mem_frontier_sector_desc:0 "A $specialist_mem_frontier_sector$ Specialist Subject Type is a subject specialized in keeping the borders safe while not overstretching the overlords government resources."
+ preset_specialist_mem_frontier_sector_desc:0 "An $specialist_mem_frontier_sector$ Specialist Subject Type is a subject specialized in keeping the borders safe while not overstretching the overlords government resources."
  mem_frontier_sector_1_modifier:0 "$specialist_mem_frontier_sector$ Bonuses Tier I"
  mem_frontier_sector_1_penalties:0 "$specialist_mem_frontier_sector$ Penalties Tier I"
  mem_frontier_sector_1_overlord_modifier:0 "$specialist_mem_frontier_sector$ Unified Communication"
@@ -45,12 +45,12 @@ l_english:
  mem_frontier_sector_2_penalties:0 "$specialist_mem_frontier_sector$ Penalties Tier II"
  mem_frontier_sector_2_leaders:0 "$specialist_mem_frontier_sector$ Centralization II"
  mem_frontier_sector_2_traits:0 "$specialist_mem_frontier_sector$ Unified Communication II"
- mem_frontier_sector_2_traits_desc:0 "$tt$Add to Researchable Technologies:\n$ttt$£physics£ $tech_hyper_relays$"
+ mem_frontier_sector_2_traits_desc:0 "§EAdd to Researchable Technologies:§!$TABBED_NEW_LINE$£physics£ $tech_hyper_relays$"
  mem_frontier_sector_2_discovery:0 "$specialist_mem_frontier_sector$ Border Guards II"
  mem_frontier_sector_3_modifier:0 "$specialist_mem_frontier_sector$ Bonuses Tier III"
  mem_frontier_sector_3_penalties:0 "$specialist_mem_frontier_sector$ Penalties Tier III"
  mem_frontier_sector_3_discovery:0 "$specialist_mem_frontier_sector$ Hyperspace Mapping"
- mem_frontier_sector_3_discovery_desc:0 "$tt$Add to Researchable Technologies:\n$ttt$£engineering£ $tech_orbital_arc_furnace$\n$ttt$£physics£$tech_dyson_swarm$"
+ mem_frontier_sector_3_discovery_desc:0 "§EAdd to Researchable Technologies:§!$TABBED_NEW_LINE$£engineering£ $tech_orbital_arc_furnace$$TABBED_NEW_LINE$£physics£ $tech_dyson_swarm$"
  mem_frontier_sector_3_arctrellis:0 "$specialist_mem_frontier_sector$ Unified Communication III"
  mem_frontier_sector_3_tier3_3:0 "$specialist_mem_frontier_sector$ Centralization III"
 
