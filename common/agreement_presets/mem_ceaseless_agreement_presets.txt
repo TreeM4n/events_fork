@@ -60,12 +60,12 @@ preset_specialist_mem_frontier_sector = {
 		}
 		modifier = {
 			factor = 0
-			has_specialist_subject_type = { TYPE = specialist_mem_frontier_sector }
-			NOT = { from = { is_specialist_subject_type = { TYPE = specialist_mem_frontier_sector } } }
+			has_specialist_subject_type = { TYPE = mem_frontier_sector }
+			NOT = { from = { is_specialist_subject_type = { TYPE = mem_frontier_sector } } }
 		}
 		modifier = {
 			factor = 1.5
-			from = { is_specialist_subject_type = { TYPE = specialist_mem_frontier_sector } }
+			from = { is_specialist_subject_type = { TYPE = mem_frontier_sector } }
 		}
 	}
 	subject_weight = {

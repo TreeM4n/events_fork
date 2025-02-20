@@ -23,7 +23,7 @@ special_project = {
 	days_to_research = 360
 	event_chain = mem_ceaseless_lost_probes
 	picture = GFX_evt_astral_rift_advisor_exploding
-	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"	
+	icon = "gfx/interface/icons/situation_log/situation_log_scanning_beam.dds"	
 	event_scope = ship_event
 	requirements = {
 		shipclass_science_ship = 1
@@ -52,7 +52,7 @@ special_project = {
 					add = 2000
 				}
 				modifier = {
-					owner = {
+					PREV = {
 						has_country_flag = mem_ceaseless_preftl
 					}
 					factor = 0
@@ -81,7 +81,7 @@ special_project = {
 					id = mem_ceaseless.105
 				}
 				modifier = {
-					owner = {
+					PREV = {
 						has_country_flag = mem_ceaseless_scavenger
 					}
 					factor = 0
@@ -103,7 +103,7 @@ special_project = {
 					id = mem_ceaseless.120
 				}
 				modifier = {
-					owner = {
+					PREV = {
 						has_country_flag = mem_ceaseless_wormy
 					}
 					factor = 0
@@ -114,7 +114,7 @@ special_project = {
 					id = mem_ceaseless.125
 				}
 				modifier = {
-					owner = {
+					PREV = {
 						has_country_flag = mem_ceaseless_theseus
 					}
 					factor = 0
@@ -130,7 +130,7 @@ special_project = {
 					id = mem_ceaseless.140
 				}
 				modifier = {
-					owner = {
+					PREV = {
 						has_country_flag = mem_ceaseless_berserker
 					}
 					factor = 0
@@ -146,17 +146,17 @@ special_project = {
 					id = mem_ceaseless.150
 				}
 				modifier = {
-					owner = {
+					PREV = {
 						has_country_flag = mem_ceaseless_relic
 					}
 					factor = 0
 				}
 			}
-			5 = {
-				ship_event = {
-					id = mem_ceaseless.155
-				}
-			}
+			# 5 = {
+			# 	ship_event = {
+			# 		id = mem_ceaseless.155
+			# 	}
+			# }
 			# 5 = {
 			# 	ship_event = {
 			# 		id = mem_ceaseless.160
@@ -190,11 +190,11 @@ special_project = {
 		}
 		abort_special_project = {
 			type = MEM_CEASELESS_PROBE_SIGNATURE_PROJECT
-			location = this
+			location = from
 		}
 	}
 	# abort_trigger = {
-	# 	owner = {
+	# 	PREV = {
 	# 		NOT = {
 	# 			any_situation = {
 	# 				is_situation_type = situation_last_gift

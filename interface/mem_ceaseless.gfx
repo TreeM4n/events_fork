@@ -1,0 +1,15 @@
+# i cant believe im doing this for a single gfx
+spriteTypes = {
+	spriteType = {
+		name = "GFX_diplomacy_specialist_subject_mem_frontier_sector"
+		texturefile = "gfx/interface/subjugation/specialists_icons/specialist_subject_frontier_sector_icon_large.dds"
+	}
+
+	spriteType = {
+		name = "GFX_diplomacy_specialist_subject_mem_frontier_sector_large"
+		texturefile = "gfx/interface/subjugation/specialists_icons/specialist_subject_frontier_sector_icon.dds"
+	}
+	
+}
+
+

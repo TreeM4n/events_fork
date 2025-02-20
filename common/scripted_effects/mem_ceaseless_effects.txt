@@ -1,128 +1,3 @@
-# planet root scope
-mem_ceaseless_give_or_create_vassal = {
-	owner = {
-		capital_scope = {
-			if = {
-				limit = {
-					num_pops > 10
-				}
-				while = {
-					count = 5
-					random_owned_pop = {
-						resettle_pop = {
-							pop = THIS
-							planet = root
-						}
-					}
-				}
-			}
-		}
-	}
-	solar_system = {
-		## give to existing vassal in 2 distance reach
-		if = {
-			limit = {
-				# OR = {
-				# 	any_neighbor_system = {
-				# 		exists = owner
-				# 		owner = {
-				# 			has_origin = origin_mem_ceaseless_gaze_vassal
-				# 		}
-				# 	}
-				# 	any_neighbor_system = {
-				# 		any_neighbor_system = {
-				# 			exists = owner
-				# 			owner = {
-				# 				has_origin = origin_mem_ceaseless_gaze_vassal
-				# 			}
-				# 		}
-				# 	}
-				# }
-				any_system = {
-					exists = owner
-					owner = {
-						has_origin = origin_mem_ceaseless_gaze_vassal
-					}
-					root.owner = {
-						has_subject = from.owner
-					}
-					distance = {
-						source = root
-						max_distance = 10
-						type = hyperlane
-					}
-				}
-			}
-			random_system = {
-				limit = {
-					exists = owner
-					owner = {
-						has_origin = origin_mem_ceaseless_gaze_vassal
-					}
-					root.owner = {
-						has_subject = from.owner
-					}
-					distance = {
-						source = root
-						max_distance = 10
-						type = hyperlane
-					}
-				}
-				owner = {
-					save_event_target_as = mem_ceaseless_give_vassal
-				}
-			}
-		}
-		### create new vassal
-		else = {
-			create_country = {
-				name = RANDOM
-				civics = RANDOM
-				species = root.owner.owner_main_species
-				effect = {
-					set_origin = origin_mem_ceaseless_gaze_vassal
-					save_event_target_as = mem_ceaseless_give_vassal
-					#copy_ethos_and_authority = root.owner 
-					copy_techs_from = {
-						target = root.owner
-					}
-				}
-				ignore_initial_colony_error = yes
-			}
-			last_created_country = {
-				if = {
-					limit = {
-						has_civic = civic_fanatic_purifiers
-					}
-					force_remove_civic = civic_fanatic_purifiers
-				}
-				set_subject_of = {
-					who = root.owner
-					allow_instant_negotiation = yes
-					preset = preset_scholarium_mean_01					
-				}
-				establish_communications_no_message = root.owner
-				add_resource = {
-					minerals = 2000
-					energy = 5000
-					influence = 200
-					alloys = 500
-					consumer_goods = 500
-					food = 1000
-				}
-				
-			}
-		}
-		root.starbase = {
-			set_owner = event_target:mem_ceaseless_give_vassal
-		}
-		root = {
-			#add_colony_progress = 100
-			set_owner = event_target:mem_ceaseless_give_vassal
-		}
-	}
-}
-
 mem_ceaseless_open_portals = {
 	owner = {
 		add_event_chain_counter = {
@@ -130,7 +5,7 @@ mem_ceaseless_open_portals = {
 			counter = mem_ceaseless_lost_probes_found
 			amount = 1
 		}
-		hidden_effect = {
+		#hidden_effect = {
 			if = {
 				limit = {
 					NOT = {
@@ -140,34 +15,28 @@ mem_ceaseless_open_portals = {
 						}
 					}
 				}
-				random_list = {
-					25 = {
-						add_event_chain_counter = {
-							event_chain = mem_ceaseless_lost_probes
-							counter = mem_ceaseless_lost_probes_wormholes_charted
-							amount = 1
-						}
-						random_megastructure = {
-							limit = {
-								is_megastructure_type = mem_ceaseless_base
-								NOT = {
-									has_megastructure_flag = mem_activated
-								}
-							}
-							activate_gateway = this
-							set_megastructure_flag = mem_activated
-							save_event_target_as = mem_ceaseless_base_avtivated
-						}
-						create_message = {
-							type = MESSAGE_MEM_CEASELESS_OPENED_PORTAL
-							days = 30
-							target = event_target:mem_ceaseless_base_avtivated
+				add_event_chain_counter = {
+					event_chain = mem_ceaseless_lost_probes
+					counter = mem_ceaseless_lost_probes_wormholes_charted
+					amount = 1
+				}
+				random_megastructure = {
+					limit = {
+						is_megastructure_type = mem_ceaseless_base
+						NOT = {
+							has_megastructure_flag = mem_activated
 						}
 					}
-					75 = {
-					}
+					activate_gateway = this
+					set_megastructure_flag = mem_activated
+					save_event_target_as = mem_ceaseless_base_avtivated
+				}
+				create_message = {
+					type = MESSAGE_MEM_CEASELESS_OPENED_PORTAL
+					days = 30
+					target = event_target:mem_ceaseless_base_avtivated
 				}
 			}
-		}
+		#}
 	}
 }

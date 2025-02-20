@@ -18,13 +18,13 @@ origin_mem_ceaseless_gaze = {
 		# }
 	}
 	modifier = {
-		# TODO colony ships cost influence
-		empire_size_systems_mult = 0.2
+		#  colony ships cost influence, nah 
+		#empire_size_systems_mult = 0.2
 		empire_size_branch_office_mult = 0.5		
 		empire_size_colonies_mult = 4
 	}
 	description = "origin_tooltip_mem_ceaseless_gaze"
-	negative_description = "origin_tooltip_mem_ceaseless_gaze_negative"
+	#negative_description = "origin_tooltip_mem_ceaseless_gaze_negative"
 	flags = {
 		custom_start_screen
 	}
@@ -35,41 +35,41 @@ origin_mem_ceaseless_gaze = {
 		factor = 1
 	}
 }
-
-origin_mem_ceaseless_gaze_vassal = {
-	is_origin = yes
-	icon = "gfx/interface/icons/origins/origins_mem_ceaseless_gaze.dds"
-	picture = GFX_origin_mem_ceaseless_gaze
-	#starting_colony = pc_nuked
-	#max_once_global = yes
-	potential = {
-		always = no
-	}
-	playable = {
-		always = no
-	}
-	# possible = {
-	# 	ethics = {
-	# 		NOT = {
-	# 			value = ethic_gestalt_consciousness
-	# 		}
-	# 	}
-	# 	# civics = {
-	# 	# 	NOT = { value = civic_agrarian_idyll }
-	# 	# }
-	# }
-	modifier = {
+# maybe aas a released vassal origin but do i really wanna do this?
+# origin_mem_ceaseless_gaze_vassal = {
+# 	is_origin = yes
+# 	icon = "gfx/interface/icons/origins/origins_mem_ceaseless_gaze.dds"
+# 	picture = GFX_origin_mem_ceaseless_gaze
+# 	#starting_colony = pc_nuked
+# 	#max_once_global = yes
+# 	potential = {
+# 		always = no
+# 	}
+# 	playable = {
+# 		always = no
+# 	}
+# 	# possible = {
+# 	# 	ethics = {
+# 	# 		NOT = {
+# 	# 			value = ethic_gestalt_consciousness
+# 	# 		}
+# 	# 	}
+# 	# 	# civics = {
+# 	# 	# 	NOT = { value = civic_agrarian_idyll }
+# 	# 	# }
+# 	# }
+# 	modifier = {
 		
-	}
-	description = "origin_tooltip_mem_ceaseless_gaze_vassal"
-	negative_description = "origin_tooltip_mem_ceaseless_gaze_vassal_negative"
-	flags = {
-		custom_start_screen
-	}
-	traits = {
-	}
-	random_weight = {
-		base = 0
-		factor = 0
-	}
-}
+# 	}
+# 	description = "origin_tooltip_mem_ceaseless_gaze_vassal"
+# 	negative_description = "origin_tooltip_mem_ceaseless_gaze_vassal_negative"
+# 	flags = {
+# 		custom_start_screen
+# 	}
+# 	traits = {
+# 	}
+# 	random_weight = {
+# 		base = 0
+# 		factor = 0
+# 	}
+# }
