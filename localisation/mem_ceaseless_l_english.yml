@@ -56,7 +56,7 @@ l_english:
 
  mem_ceaseless_preftl_god:0 "Deus Ex Machina"
  mem_ceaseless.2.title:0 "$NAME_mem_mirror_hall_system$"
- mem_ceaseless.2.desc:0 "A rare sign to behold. $NAME_mem_mirror_hall_system$ is a giant wormhole breaching our dimension and forming connections all over the known universe. Only this system seems to be effected by the strong gravitional pull of the wormhole. It is the center of the §Y$mem_ceaseless_base$§! network and whoever controls this entrypoint controls the network."
+ mem_ceaseless.2.desc:0 "A rare sight to behold. $NAME_mem_mirror_hall_system$ is a giant wormhole breaching our dimension and forming connections to locations all over the known galaxy. Only this system seems to be affected by the strong gravitional pull of the wormhole. It is the center of the §Y$mem_ceaseless_base$§! network and whoever controls this entrypoint controls the network."
  mem_ceaseless.6.title:0 "Lost And Found"
  mem_ceaseless.6.desc:0 "The first signs of probe remains have been found in [solar_system.GetName]. We should find several more as we explore other systems. "
  mem_ceaseless.185.title:0 "Ascended One"
